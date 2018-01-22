@@ -6,9 +6,10 @@ Rails.application.routes.draw do
     resources :posts, only: [:show]
     resources :movies, only: [:index, :show]
     resources :genres, only: [:index, :show]
+    get '/genres/:id/movie_ids' => 'genres#movie_ids', as: :genres_movie_ids
   end
 
-  resources :quotes
+  # resources :quotes
 
   resources :genres
 
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
   resources :subgenres
 
   get '/quotes' => 'pages#quotes'
+  get '/slider' => 'pages#slider'
 
   root to: 'pages#home'
 end

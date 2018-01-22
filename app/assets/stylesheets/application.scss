@@ -12,7 +12,15 @@
  *
 */
 
-// Custom bootstrap variables must be set or imported *before* bootstrap.
+// _config partial manages the application's smart defaults
+@import "config";
+
+// Import Gems
 @import "bootstrap";
 @import "font-awesome";
-@import "quotes";
+
+// Import Primary Partials
+@import "color";
+@import "ui_patterns/**/*";
+@import "modules/**/*";
+@import "layouts/*";

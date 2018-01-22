@@ -1,0 +1,26 @@
+// app/assets/stylesheets/layouts/_footer.scss
+
+/* FOOTER STYLES 
+====================================*/
+
+footer { 
+  padding-bottom: 2em;
+  background-color: $dark-bg;
+  // background-image: url(http://s3.amazonaws.com/codecademy-content/projects/bolt-network/diagmonds_@2X.png);
+
+  .container {
+    padding-top: 1rem;
+  }
+  
+  h3 {
+    color:#fff;
+    font-size:18px;
+    font-weight:300;  
+  }
+
+  ul {
+    color:$azure-radiance; 
+    list-style:none;
+    padding-left:0px;  
+  }
+}

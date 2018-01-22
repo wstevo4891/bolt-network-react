@@ -1,40 +1,68 @@
 // app/javascript/quotes/components/App.jsx
 import React from 'react';
-import { GenreSlider } from './GenreSlider';
+import axios from 'axios';
+import { GenreSlidersContainer } from './GenreSlidersContainer';
 
 export class App extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      genres: this.props.genres,
-      movies: this.props.movies
+      genres: null,
+      movies: null
     };
 
-    this.buildMoviesObject = this.buildMoviesObject.bind(this);
+    this.fetchGenres = this.fetchGenres.bind(this);
+    this.fetchMovies = this.fetchMovies.bind(this);
   }
 
-  buildMoviesObject(genre) {
-    const movies_object = {};
-    genre.movie_ids.map((movie_id) =>
-      movies_object[movie_id] = this.state.movies[movie_id]
-    )
-    return movies_object;
+  fetchGenres() {
+    axios.get(`api/genres`)
+      .then(response => {
+        localStorage.setItem('Genres', JSON.stringify(response.data));
+        this.setState({ genres: response.data });
+      })
+      .catch(error => {
+        console.error(error);
+      })
   }
+
+  fetchMovies() {
+    axios.get(`api/movies`)
+      .then(response => {
+        localStorage.setItem('Movies', JSON.stringify(response.data));
+        this.setState({ movies: response.data });
+      })
+      .catch(error => {
+        console.error(error);
+      })
+  }
+
+  componentWillMount() {
+    const genresData = localStorage.getItem('Genres');
+    const moviesData = localStorage.getItem('Movies');
+    if (genresData && moviesData) {
+      this.setState({
+        genres: JSON.parse(genresData),
+        movies: JSON.parse(moviesData)
+      });
+      return;
+    }
+    this.fetchGenres();
+    this.fetchMovies();
+  }
+
+  // componentDidMount() {
+  //   console.log('App mounted!');
+  //   console.log(this.state);
+  // }
 
   render () {
-    const genres = this.state.genres;
-    const movies = this.state.movies;
+    let genres = this.state.genres;
 
     return (
-      <div>
-        {
-          genres.map((genre) =>
-            <div key={genre.id} id={`${genre.name}_slider`} className='row'>
-              <GenreSlider genre={genre} moviesObject={this.buildMoviesObject(genre)} />
-            </div>
-          )
-        }
-      </div>
-    )
+      <GenreSlidersContainer
+        genres={this.state.genres}
+        movies={this.state.movies} />
+    );
   }
 }

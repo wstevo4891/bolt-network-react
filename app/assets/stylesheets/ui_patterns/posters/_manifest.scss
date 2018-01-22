@@ -1,0 +1,34 @@
+// app/assets/stylesheets/ui_patterns/posters/_manifest.scss
+
+@import "ui_patterns/posters/mixins";
+
+.poster-container {
+  @include bp-poster-width;
+  @include poster-container;
+  @include slide-transition;
+
+  .poster {
+    margin: 0 2px;
+    height: 100%;
+    @include slide-transition;
+  }
+
+  &:hover {
+    box-shadow: 2px 2px 40px $azure-radiance;
+    transform: scale(1.75);
+    z-index: 8;
+    margin: 3em 4.2em 0;
+
+    .poster {
+      margin: 0;
+    }
+  }
+
+  @include bp-tablet {
+    height: 8.13868em;
+
+    &:hover {
+      margin: 3em 5.5em 0;
+    }
+  }
+}

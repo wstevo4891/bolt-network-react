@@ -1,7 +1,7 @@
 # app/controllers/api/movies_controller.rb
 
-# API Movies Controller
-# Send Movie data as json
+# Movies API
+# Get Movie data as json
 class Api::MoviesController < ApplicationController
   def index
     @movies = Movie.all
