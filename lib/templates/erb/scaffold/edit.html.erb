@@ -1,0 +1,18 @@
+<%= "<!-- app/views/#{plural_table_name}/edit.html.erb -->" %>
+
+<div class="container mt-4 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <%= "<%= link_to 'Show', @#{singular_table_name}, class: 'btn btn-sm btn-outline-info' %%>" %> |
+      <%= "<%= link_to 'Back to List', #{plural_table_name}_path, class: 'btn btn-secondary' %%>" %>
+    </div>
+  </div>
+
+  <h1 class="text-center mt-4 mb-4">Editing <%= singular_table_name.gsub('_', ' ').capitalize %></h1>
+
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <%%= render 'form', <%= singular_table_name %>: @<%= singular_table_name %> %>
+    </div>
+  </div>
+</div>

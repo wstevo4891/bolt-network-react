@@ -1,9 +1,16 @@
 // app/assets/stylesheets/ui_patterns/genre_sliders/_manifest.scss
 
 .genre-slider-row {
+  z-index: 1;
   margin: 3vw 0;
   padding: 0;
   box-sizing: border-box;
+  position: relative;
+  transition: transform .54s cubic-bezier(.5,0,.1,1) 0s;
+
+  &:hover {
+    z-index: 3;
+  }
 
   .rowHeader {
     line-height: 1.3;
@@ -36,6 +43,7 @@
   padding: 0 4%;
   z-index: 2;
   white-space: nowrap;
+  overflow-x: visible;
 
   .handle.handleNext {
     right: 0;
@@ -47,6 +55,12 @@
 
   .handle.active {
     cursor: pointer;
+  }
+
+  &:hover {
+    .handle .indicator-icon {
+      display: block;
+    }
   }
 
   .handle {
@@ -63,18 +77,20 @@
     background: rgba(20,20,20,.5);
   }
 
-  .handle b i {
+  .handle .indicator-icon {
+    display: none;
     height: auto;
     position: relative;
-    top: 33%;
-    font-size: 2vw;
+    font-size: 4vw;
     align-self: center;
     transform-origin: 45% 50%;
-    -webkit-text-stroke: 3px $dark-bg;
-    transition: all .2s ease;
+
+    i {
+      transition: all .2s ease;
+    }
   }
 
-  .handle:hover b i {
+  .handle:hover .indicator-icon i {
     transform: scale(1.5);
   }
 }

@@ -1,4 +1,5 @@
-// app/javascript/quotes/components/App.jsx
+// app/javascript/movies/components/App.jsx
+
 import React from 'react';
 import axios from 'axios';
 import { GenreSlidersContainer } from './GenreSlidersContainer';

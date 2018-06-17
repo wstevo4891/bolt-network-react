@@ -1,24 +1,22 @@
 Rails.application.routes.draw do
-  get '/search', to: 'search#index'
+  root to: 'home#index'
+
+  # get '/search', to: 'search#index'
+
+  namespace :admin do
+    resources :quotes
+    resources :genres
+    resources :movies
+    resources :subgenres
+  end
 
   namespace :api, defaults: { format: :json } do
     resources :quotes, only: [:show]
-    resources :posts, only: [:show]
-    resources :movies, only: [:index, :show]
-    resources :genres, only: [:index, :show]
+    resources :movies, only: %i[index show]
+    resources :genres, only: %i[index show]
     get '/genres/:id/movie_ids' => 'genres#movie_ids', as: :genres_movie_ids
   end
 
-  # resources :quotes
-
-  resources :genres
-
-  resources :movies
-
-  resources :subgenres
-
-  get '/quotes' => 'pages#quotes'
-  get '/slider' => 'pages#slider'
-
-  root to: 'pages#home'
+  get '/quotes' => 'quotes#index'
+  get '/slider' => 'slider#index'
 end

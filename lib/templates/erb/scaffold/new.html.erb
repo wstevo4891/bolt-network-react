@@ -1,0 +1,11 @@
+<%= "<!-- app/views/#{plural_table_name}/new.html.erb -->" %>
+
+<div class="container">
+  <h1 class="text-center mt-4"><%= singular_table_name.gsub('_', ' ').capitalize %></h1>
+
+  <div class="row mt-4 justify-content-center">
+    <div class="col-lg-10">
+      <%%= render 'form' %>
+    </div>
+  </div>
+</div>

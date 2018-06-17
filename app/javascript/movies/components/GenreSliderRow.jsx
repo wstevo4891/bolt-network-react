@@ -28,7 +28,7 @@ export class GenreSliderRow extends React.Component {
   fetchMovieIds(genre) {
     axios.get(`api/genres/${genre.id}/movie_ids`)
       .then(response => {
-        localStorage.setItem(`${genre}_movie_ids`, JSON.stringify(response.data));
+        localStorage.setItem(`${genre.name}_movie_ids`, JSON.stringify(response.data));
         console.log(`movie_ids: ${response.data}`);
         this.setState(function() {
           this.state.movie_ids = response.data;
@@ -63,7 +63,7 @@ export class GenreSliderRow extends React.Component {
   componentWillMount() {
     this.updateSlideLength();
     let genre = this.state.genre;
-    const movie_ids = localStorage.getItem(`${genre}_movie_ids`);
+    const movie_ids = localStorage.getItem(`${genre.name}_movie_ids`);
     if (movie_ids) {
       this.setState({ movie_ids: JSON.parse(movie_ids)});
       return;

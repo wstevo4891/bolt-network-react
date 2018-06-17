@@ -5,5 +5,5 @@ json.array!(@movies) do |movie|
   json.extract! movie, :id, :title, :photo, :year,
                 :rating, :length, :summary,
                 :tomato_meter, :genre_ids
-  json.url movie_url(movie, format: false)
+  json.url movie_url(movie.id)
 end

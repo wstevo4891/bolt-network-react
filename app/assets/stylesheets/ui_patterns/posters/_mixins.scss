@@ -19,11 +19,11 @@
 }
 
 @mixin poster-container {
+  z-index: 1;
+  white-space: normal;
+  vertical-align: top;
   height: 6.5em;
   display: inline-block;
   position: relative;
-  background: transparent;
-  border: none;
-  padding: 0;
-  // margin-top: 1rem;
+  transform-origin: 50% 100%;
 }

@@ -69,7 +69,7 @@ export class GenreSlider extends React.Component {
         }
         <span className='handle handleNext active'>
           <b className='indicator-icon icon-rightCaret'>
-            <i className='fa fa-chevron-right'></i>
+            <i className='fa fa-angle-right'></i>
           </b>
         </span>
       </div>

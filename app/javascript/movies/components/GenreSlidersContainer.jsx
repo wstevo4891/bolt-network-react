@@ -1,4 +1,4 @@
-// app/javascript/movies/components/SlidersContainer.jsx
+// app/javascript/movies/components/GenreSlidersContainer.jsx
 
 import React from 'react';
 import { GenreSliderRow } from './GenreSliderRow';
