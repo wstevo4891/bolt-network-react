@@ -2,29 +2,23 @@
 
 import React from 'react';
 
-export class Poster extends React.Component {
-  // componentDidMount() {
-  //   console.log('Poster mounted!');
-  //   console.log('this.props.movie: ' + JSON.stringify(this.props.movie));
-  // }
+const Poster = (props) => {
+  if (typeof props.movie != 'undefined') {
+    const photoUrl = props.movie.photo.url;
 
-  render() {
-    if (typeof this.props.movie != 'undefined') {
-      let photo_url = this.props.movie.photo.url;
-      const posterImage = {
-        backgroundImage: `url(${photo_url})`,
-        backgroundSize: '100% 100%'
-      }
-
-      return(
-        <div className='poster-container'>
-          <div className='poster' style={posterImage}></div>
-        </div>
-      );
-    } else {
-      return(
-        <div></div>
-      );
+    const posterImage = {
+      backgroundImage: `url(${photoUrl})`,
+      backgroundSize: '100% 100%'
     }
+
+    return (
+      <div className='poster-container'>
+        <div className='poster' style={posterImage}></div>
+      </div>
+    );
+  } else {
+    return(<div></div>);
   }
 }
+
+export default Poster;

@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   root to: 'home#index'
 
-  # get '/search', to: 'search#index'
+  get '/quotes' => 'quotes#index'
+
+  get '/slider' => 'slider#index'
+
+  resources :movies, only: :show
+
+  resources :genres, only: :show
 
   namespace :admin do
     resources :quotes
@@ -16,7 +22,4 @@ Rails.application.routes.draw do
     resources :genres, only: %i[index show]
     get '/genres/:id/movie_ids' => 'genres#movie_ids', as: :genres_movie_ids
   end
-
-  get '/quotes' => 'quotes#index'
-  get '/slider' => 'slider#index'
 end

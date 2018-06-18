@@ -37,8 +37,8 @@ ActiveRecord::Schema.define(version: 20180118041414) do
     t.string "blurb"
     t.string "summary"
     t.integer "tomato_meter"
-    t.json "scenes", default: [], array: true
-    t.json "people", default: [], array: true
+    t.string "scenes", default: [], array: true
+    t.string "people", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

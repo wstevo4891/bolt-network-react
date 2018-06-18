@@ -1,50 +1,27 @@
 // app/javascript/movies/components/GenreSlidersContainer.jsx
 
 import React from 'react';
+
 import { GenreSliderRow } from './GenreSliderRow';
 
-export class GenreSlidersContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      genres: this.props.genres,
-      movies: this.props.movies,
-      moviesObject: null
-    }
+const GenreSlidersContainer = (props) => {
+  const genres = props.genres;
 
-    this.buildMoviesObject = this.buildMoviesObject.bind(this);
-  }
-
-  buildMoviesObject() {
-    let movies_object = {};
-    this.state.movies.map((movie) =>
-      movies_object[movie.id] = movie
-    )
-    this.setState(function() {
-      this.state.moviesObject = movies_object;
-    });
-  }
-
-  componentWillMount() {
-    this.buildMoviesObject();
-  }
-
-  // componentDidMount() {
-  //   console.log('GenreSliderContainer mounted!');
-  //   console.log(this.state);
-  // }
-
-  render() {
-    let genres = this.state.genres;
-
+  if (genres && genres.length > 0) {
     return(
       <div className='genre-sliders-container'>
         {
           genres.map((genre) =>
-            <GenreSliderRow key={genre.id} genre={genre} movies={this.state.moviesObject} />
+            <GenreSliderRow key={genre.id} genre={genre} movies={props.moviesIndex} />
           )
         }
       </div>
     );
+  } else {
+    return(
+      <div className='genre-sliders-container'></div>
+    );
   }
 }
+
+export default GenreSlidersContainer;

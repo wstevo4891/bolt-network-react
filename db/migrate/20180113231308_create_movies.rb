@@ -9,8 +9,8 @@ class CreateMovies < ActiveRecord::Migration[5.1]
       t.string   :blurb
       t.string   :summary
       t.integer  :tomato_meter
-      t.json     :scenes, array: true, default: []
-      t.json     :people, array: true, default: []
+      t.string   :scenes, array: true, default: []
+      t.string   :people, array: true, default: []
 
       t.timestamps null: false
     end

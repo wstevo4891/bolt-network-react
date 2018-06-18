@@ -10,9 +10,13 @@ def seed_image(file_name)
   "https://s3-us-west-2.amazonaws.com/bolt-network/#{file_name}"
 end
 
+def load_yaml(file)
+  YAML.load_file(Rails.root.join("db/yaml_data/#{file}.yml"))
+end
+
 puts 'Seeding the Database ==================================='
 
-quotes = YAML.load_file(Rails.root.join('db/yaml_data/quotes.yml'))
+quotes = load_yaml('quotes')
 
 puts 'Delete old quotes ===================================='
 Quote.delete_all
@@ -24,23 +28,25 @@ puts 'Delete old Genres ===================================='
 Genre.delete_all
 
 puts 'Loading Genres YAML ==================================='
-genres = YAML.load_file(Rails.root.join('db/yaml_data/genres.yml'))
+genres = load_yaml('genres')
 
 puts 'Creating Genres ==================================='
 genres.each do |genre|
   puts "Creating genre: #{genre}"
+
   Genre.create!(name: genre)
 end
 
 puts 'Delete old Movies ================================='
-# Movie.delete_all
+Movie.delete_all
 
 puts 'Loading Movies YAML ==================================='
-movies = YAML.load_file(Rails.root.join('db/yaml_data/movies.yml'))
+movies = load_yaml('movies')
 
 puts 'Creating Movies ==================================='
 movies.each do |movie|
   puts "Creating movie: #{movie['title']}\n"
+
   Movie.create!(
     title: movie['title'],
     remote_photo_url: seed_image(movie['image']),
