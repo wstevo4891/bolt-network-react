@@ -12,7 +12,10 @@ const GenreSlidersContainer = (props) => {
       <div className='genre-sliders-container'>
         {
           genres.map((genre) =>
-            <GenreSliderRow key={genre.id} genre={genre} movies={props.moviesIndex} />
+            <GenreSliderRow
+              key={genre.id}
+              genre={genre}
+              movies={props.moviesIndex} />
           )
         }
       </div>

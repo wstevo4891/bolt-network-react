@@ -103,6 +103,7 @@ export class GenreSliderRow extends React.Component {
               <div className='row-header-title'>{genre.name}</div>
             </a>
           </h2>
+
           <GenreSlider
             genre={genre}
             movies={this.state.movies}
