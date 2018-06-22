@@ -5,17 +5,17 @@
 .poster-container {
   @include bp-poster-width;
   @include poster-container;
-  @include slide-transition;
+  // @include slide-transition;
 
   .poster {
     margin: 0 2px;
     height: 100%;
-    @include slide-transition;
+    // @include slide-transition;
   }
 
   &:hover {
     box-shadow: 2px 2px 40px $azure-radiance;
-    transform: scale(1.75);
+    // transform: scale(1.75);
     z-index: 2;
 
     .poster {
@@ -26,8 +26,8 @@
   @include bp-tablet {
     height: 8.13868em;
 
-    &:hover {
-      margin: 0 5.5em;
-    }
+    // &:hover {
+    //   margin: 0 5.5em;
+    // }
   }
 }

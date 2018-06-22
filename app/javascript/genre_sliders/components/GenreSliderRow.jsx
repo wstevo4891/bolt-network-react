@@ -1,17 +1,15 @@
 // app/javascript/movies/components/GenreSliderRow.jsx
 
-import React from 'react';
-import axios from 'axios';
+import React, { Component } from 'react';
 
 import { GenreSlider } from './GenreSlider';
 
-export class GenreSliderRow extends React.Component {
+export class GenreSliderRow extends Component {
   constructor (props) {
     super(props);
     this.state = {
       genre: this.props.genre,
       movies: this.props.movies,
-      movie_ids: [],
       slideLength: null
     };
     this.slideLengths = {
@@ -19,26 +17,10 @@ export class GenreSliderRow extends React.Component {
       1100: 5,
       800: 4,
       500: 3
-    }
-    this.breakpoints = [1400, 1100, 800, 500]
+    };
+    this.breakpoints = [1400, 1100, 800, 500];
 
-    this.fetchMovieIds = this.fetchMovieIds.bind(this);
     this.updateSlideLength = this.updateSlideLength.bind(this);
-  }
-
-  fetchMovieIds(genre) {
-    axios.get(`api/genres/${genre.id}/movie_ids`)
-      .then(response => {
-        localStorage.setItem(`${genre.name}_movie_ids`, JSON.stringify(response.data));
-        console.log(`movie_ids: ${response.data}`);
-
-        this.setState(function() {
-          this.state.movie_ids = response.data;
-        });
-      })
-      .catch(error => {
-        console.error(error);
-      })
   }
 
   updateSlideLength() {
@@ -67,24 +49,13 @@ export class GenreSliderRow extends React.Component {
   }
 
   componentDidMount() {
-    this.updateSlideLength();
-
-    let genre = this.state.genre;
-    const movie_ids = localStorage.getItem(`${genre.name}_movie_ids`);
+    if (this.state.slideLength === null) {
+      this.updateSlideLength();
+    }
 
     window.addEventListener("resize", this.updateSlideLength.bind(this));
 
     console.log('GenreSliderRow mounted');
-    console.log(this.state);
-
-    if (movie_ids) {
-      console.log(`movie_ids: ${movie_ids}`);
-
-      this.setState({ movie_ids: JSON.parse(movie_ids)});
-      return;
-    }
-
-    this.fetchMovieIds(genre);
   }
 
   componentDidUpdate() {
@@ -98,10 +69,10 @@ export class GenreSliderRow extends React.Component {
 
   render() {
     const genre = this.state.genre;
+    const movies = this.state.movies;
+    const slideLength = this.state.slideLength;
 
-    const movieIds = this.state.movie_ids;
-
-    if (movieIds && movieIds.length > 0) {
+    if (movies && movies.length > 0) {
       return (
         <div id={`${genre.name}_row`} className='genre-slider-row'>
           <h2 className='rowHeader'>
@@ -112,9 +83,8 @@ export class GenreSliderRow extends React.Component {
 
           <GenreSlider
             genre={genre}
-            movies={this.state.movies}
-            movie_ids={movieIds}
-            slideLength={this.state.slideLength} />
+            movies={movies}
+            slideLength={slideLength} />
         </div>
       );
     } else {
