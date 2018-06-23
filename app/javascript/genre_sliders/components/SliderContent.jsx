@@ -45,8 +45,9 @@ export class SliderContent extends Component {
   }
 
   handleMouseOut(event) {
-    const target = event.target.closest('.poster-container');
-    // return scale value to 1.0
+    // const mouseOut = 'transform: translate3d(0px, 0px, 0px); transition-duration: 400ms; transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1); transition-delay: 0ms;';
+    // const target = event.target.closest('.poster-container');
+    // target.setAttribute('style', mouseOut);
 
     this.setState({
       hoverItem: null
@@ -139,7 +140,12 @@ export class SliderContent extends Component {
       }
 
     } else {
-      return {};
+      return {
+        transform: 'translate3d(0px, 0px, 0px)',
+        transitionDuration: '400ms',
+        transitionTimingFunction: 'cubic-bezier(0.5, 0, 0.1, 1)',
+        transitionDelay: '0ms'
+      };;
     }
   }
 
