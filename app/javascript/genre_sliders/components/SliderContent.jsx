@@ -62,6 +62,12 @@ export class SliderContent extends Component {
 
   buildPosterStyle(index) {
     const hoverItem = this.state.hoverItem;
+    let hoverStyle = {
+      transform: 'translate3d(0px, 0px, 0px)',
+      transitionDuration: '400ms',
+      transitionTimingFunction: 'cubic-bezier(0.5, 0, 0.1, 1)',
+      transitionDelay: '0ms'
+    };
 
     if (hoverItem || hoverItem === 0) {
       const slideLength = this.state.slideLength;
@@ -75,12 +81,8 @@ export class SliderContent extends Component {
           transform = `translate3d(-${translateX}px, 0px, 0px)`;
         }
 
-        return {
-          transform: transform,
-          transitionDuration: '400ms',
-          transitionTimingFunction: 'cubic-bezier(0.5, 0, 0.1, 1)',
-          transitionDelay: '0ms'
-        };
+        hoverStyle.transform = transform;
+        return hoverStyle;
 
       } else if (index === hoverItem) {
         let translateHalf;
@@ -88,30 +90,18 @@ export class SliderContent extends Component {
         if (index === 0) {
           translateHalf = Math.floor((translateX / 2) + 5);
           transform = `scale(1.75) translate3d(${translateHalf}px, 0px, 0px)`;
-          return {
-            transform: transform,
-            transitionDuration: '400ms',
-            transitionTimingFunction: 'cubic-bezier(0.5, 0, 0.1, 1)',
-            transitionDelay: '0ms'
-          };
+          hoverStyle.transform = transform;
+          return hoverStyle;
 
         } else if (index === slideLength - 1) {
           translateHalf = Math.floor((translateX / 2) + 8);
           transform = `scale(1.75) translate3d(-${translateHalf}px, 0px, 0px)`;
-          return {
-            transform: transform,
-            transitionDuration: '400ms',
-            transitionTimingFunction: 'cubic-bezier(0.5, 0, 0.1, 1)',
-            transitionDelay: '0ms'
-          };
+          hoverStyle.transform = transform;
+          return hoverStyle;
 
         } else {
-          return {
-            transform: 'scale(1.75) translate3d(0px, 0px, 0px)',
-            transitionDuration: '400ms',
-            transitionTimingFunction: 'cubic-bezier(0.5, 0, 0.1, 1)',
-            transitionDelay: '0ms'
-          };
+          hoverStyle.transform = 'scale(1.75) translate3d(0px, 0px, 0px)';
+          return hoverStyle;
         }
 
       } else if (index > hoverItem) {
@@ -120,32 +110,18 @@ export class SliderContent extends Component {
 
         } else if (hoverItem === 0) {
           transform = `translate3d(${translateX * 2}px, 0px, 0px)`;
-          return {
-            transform: transform,
-            transitionDuration: '400ms',
-            transitionTimingFunction: 'cubic-bezier(0.5, 0, 0.1, 1)',
-            transitionDelay: '0ms'
-          };
+          hoverStyle.transform = transform;
+          return hoverStyle;
 
         } else {
           transform = `translate3d(${translateX}px, 0px, 0px)`;
-          return {
-            transform: transform,
-            transitionDuration: '400ms',
-            transitionTimingFunction: 'cubic-bezier(0.5, 0, 0.1, 1)',
-            transitionDelay: '0ms'
-          };
+          hoverStyle.transform = transform;
+          return hoverStyle;
         }
-
       }
 
     } else {
-      return {
-        transform: 'translate3d(0px, 0px, 0px)',
-        transitionDuration: '400ms',
-        transitionTimingFunction: 'cubic-bezier(0.5, 0, 0.1, 1)',
-        transitionDelay: '0ms'
-      };;
+      return hoverStyle;
     }
   }
 
