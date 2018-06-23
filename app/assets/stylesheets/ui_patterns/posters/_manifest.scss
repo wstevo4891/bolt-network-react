@@ -2,9 +2,16 @@
 
 @import "ui_patterns/posters/mixins";
 
+// @mixin slide-transition {
+//   transition-duration: 400ms;
+//   transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+// 	transition-delay: 0ms;
+// }
+
 .poster-container {
   @include bp-poster-width;
   @include poster-container;
+  // transition-delay: 500ms;
   // @include slide-transition;
 
   .poster {
