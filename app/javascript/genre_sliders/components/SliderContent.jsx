@@ -11,28 +11,25 @@ export class SliderContent extends Component {
       slides: this.props.slides,
       slideLength: this.props.slideLength,
       start: this.props.start,
+      next: this.props.next,
+      prev: this.props.prev,
       hoverItem: null
     }
 
     this.transformations = {
-      2: '-150%',
-      3: '-133.33333333333334%',
-      4: '-125%',
-      5: '-120%',
-      6: '-116.66666666666667%'
-    }
-
-    this.hoverStyle = {
-      transform: 'scale(1.75) translate3d(0px, 0px, 0px)',
-      transitionDuration: '400ms',
-      transitionTimingFunction: 'cubic-bezier(0.5, 0, 0.1, 1)',
-      transitionDelay: '0ms'
+      2: -150,
+      3: -133.33333333333334,
+      4: -125,
+      5: -120,
+      6: -116.66666666666667
     }
 
     this.handleMouseOver = this.handleMouseOver.bind(this);
     this.handleMouseOut = this.handleMouseOut.bind(this);
     this.determineTranslateX = this.determineTranslateX.bind(this);
     this.buildPosterStyle = this.buildPosterStyle.bind(this);
+    this.buildNextPosterStyle = this.buildNextPosterStyle.bind(this);
+    this.buildContainerStyle = this.buildContainerStyle.bind(this);
   }
 
   handleMouseOver(event) {
@@ -45,10 +42,6 @@ export class SliderContent extends Component {
   }
 
   handleMouseOut(event) {
-    // const mouseOut = 'transform: translate3d(0px, 0px, 0px); transition-duration: 400ms; transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1); transition-delay: 0ms;';
-    // const target = event.target.closest('.poster-container');
-    // target.setAttribute('style', mouseOut);
-
     this.setState({
       hoverItem: null
     });
@@ -125,53 +118,165 @@ export class SliderContent extends Component {
     }
   }
 
+  buildNextPosterStyle(index) {
+    let hoverItem = this.state.hoverItem;
+    let hoverStyle = {
+      transform: 'translate3d(0px, 0px, 0px)',
+      transitionDuration: '400ms',
+      transitionTimingFunction: 'cubic-bezier(0.5, 0, 0.1, 1)',
+      transitionDelay: '0ms'
+    };
+
+    if (hoverItem) {
+      const slideLength = this.state.slideLength;
+      const translateX = this.determineTranslateX();
+      const begin = slideLength;
+      const end = (slideLength * 2) + 1;
+      const actualHover = hoverItem + slideLength;
+      let transform;
+
+      if (index >= begin && index <= end) {
+        if (index < actualHover) {
+          if (actualHover === end - 1) {
+            transform = `translate3d(-${translateX * 2}px, 0px, 0px)`;
+
+          } else if (actualHover === begin + 1) {
+            return hoverStyle;
+
+          } else {
+            transform = `translate3d(-${translateX}px, 0px, 0px)`;
+          }
+  
+          hoverStyle.transform = transform;
+          return hoverStyle;
+  
+        } else if (index === actualHover) {
+          let translateHalf;
+  
+          if (index === begin + 1) {
+            translateHalf = Math.floor((translateX / 2) + 5);
+            transform = `scale(1.75) translate3d(${translateHalf}px, 0px, 0px)`;
+            hoverStyle.transform = transform;
+            return hoverStyle;
+  
+          } else if (index === end - 1) {
+            translateHalf = Math.floor((translateX / 2) + 8);
+            transform = `scale(1.75) translate3d(-${translateHalf}px, 0px, 0px)`;
+            hoverStyle.transform = transform;
+            return hoverStyle;
+  
+          } else {
+            hoverStyle.transform = 'scale(1.75) translate3d(0px, 0px, 0px)';
+            return hoverStyle;
+          }
+  
+        } else if (index > actualHover) {
+          if (actualHover === begin + 1) {
+            transform = `translate3d(${translateX * 2}px, 0px, 0px)`;
+            hoverStyle.transform = transform;
+            return hoverStyle;
+          
+          } else if (actualHover === end - 1) {
+            return hoverStyle;
+  
+          } else {
+            transform = `translate3d(${translateX}px, 0px, 0px)`;
+            hoverStyle.transform = transform;
+            return hoverStyle;
+          }
+        }
+
+      } else {
+        return hoverStyle;
+      }
+
+    } else {
+      return hoverStyle;
+    }
+
+  }
+
+  buildContainerStyle() {
+    const slideLength = this.state.slideLength;
+    const start = this.state.start;
+    const next = this.state.next;
+    const prev = this.state.prev;
+
+    if (start) {
+      if (next) {
+        return {
+          transform: `translate3d(-100%, 0px, 0px)`
+        }
+  
+      } else if (prev) {
+        return {
+          transform: `translate3d(100%, 0px, 0px)`
+        }
+
+      } else {
+        return {
+          transform: ''
+        }
+      }
+
+    } else {
+      let translateX = this.transformations[slideLength];
+
+      if (next) {
+        translateX -= 100;
+        return {
+          transform: `translate3d(${translateX}%, 0px, 0px)`
+        }
+  
+      } else if (prev) {
+        translateX += 100;
+        return {
+          transform: `translate3d(${translateX}%, 0px, 0px)`
+        }
+
+      } else {
+        return {
+          transform: `translate3d(${translateX}%, 0px, 0px)`
+        }
+      }
+    }
+  }
+
   componentDidUpdate() {
     console.log('SliderContent Updated');
     console.log(this.state);
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      next: nextProps.next,
+      prev: nextProps.prev
+    });
+  }
+
   render() {
     const slides = this.state.slides;
     const slideLength = this.state.slideLength;
-    const slideOver = {
-      transform: `translate3d(${this.transformations[slideLength]}, 0px, 0px)`
-    };
+    const slideOver = this.buildContainerStyle();
 
     if (slides && slides.length > 0) {
-      if (this.state.start === true) {
-        return (
-          <div className="sliderContent">
-            {
-              slides.map((slide, index) =>
-                <Poster key={index}
-                        index={index}
-                        movie={slide}
-                        slideLength={slideLength}
-                        start={this.state.start}
-                        mouseOver={this.handleMouseOver}
-                        mouseOut={this.handleMouseOut}
-                        buildPosterStyle={this.buildPosterStyle} />
-              )
-            }
-          </div>
-        );
-      } else {
-        return (
-          <div className="sliderContent" style={slideOver}>
-            {
-              slides.map((slide, index) =>
-                <Poster key={index}
-                        index={index}
-                        movie={slide}
-                        slideLength={slideLength}
-                        start={this.state.start}
-                        mouseOver={this.handleMouseOver}
-                        mouseOut={this.handleMouseOut} />
-              )
-            }
-          </div>
-        );
-      }
+      return (
+        <div className="sliderContent" style={slideOver}>
+          {
+            slides.map((slide, index) =>
+              <Poster key={index}
+                      index={index}
+                      movie={slide}
+                      slideLength={slideLength}
+                      start={this.state.start}
+                      mouseOver={this.handleMouseOver}
+                      mouseOut={this.handleMouseOut}
+                      buildPosterStyle={this.buildPosterStyle}
+                      buildNextPosterStyle={this.buildNextPosterStyle} />
+            )
+          }
+        </div>
+      );
 
     } else {
       return null;

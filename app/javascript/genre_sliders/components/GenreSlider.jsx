@@ -15,11 +15,10 @@ export class GenreSlider extends Component {
       slideLength: this.props.slideLength,
       moviesList: null,
       slides: [],
-      position: 0,
+      position: 1,
       start: true,
-      sliderStyle: {
-        transform: ''
-      }
+      next: false,
+      prev: false
     };
 
     this.transformations = {
@@ -69,7 +68,7 @@ export class GenreSlider extends Component {
     const position = this.state.position;
     let slides;
 
-    if (position === 0) {
+    if (position === 1) {
       slides = list.tail.data;
       slides = slides.concat(list.head.data);
       slides = slides.concat(list.head.next.data);
@@ -104,13 +103,69 @@ export class GenreSlider extends Component {
     return slides;
   }
 
-  handleNext() {}
+  handleNext() {
+    this.setState({
+      next: true
+    });
 
-  handlePrev() {}
+    const self = this;
 
-  componentDidMount() {
-    console.log('GenreSlider mounted');
+    setTimeout(function() {
+      // const genre = this.state.genre;
+      const listLength = self.state.moviesList._length;
+      // const slideOver = 'transform: translate3d(-100%, 0px, 0px)';
+      // const parent = document.getElementById(`${genre.name}_slider`);
+      // const target = parent.find('.sliderContent');
+      let position = self.state.position;
+
+      if (position === listLength) {
+        position = 1;
+      } else {
+        position++;
+      }
+
+      // target.setAttribute('style', slideOver);
+      self.setState({
+        position: position,
+        start: false,
+        next: false
+      });
+    }, 2000);
   }
+
+  handlePrev() {
+    this.setState({
+      prev: true
+    });
+
+    const self = this;
+
+    setTimeout(function() {
+      // const genre = this.state.genre;
+      const listLength = self.state.moviesList._length;
+      // const slideOver = 'transform: translate3d(-100%, 0px, 0px)';
+      // const parent = document.getElementById(`${genre.name}_slider`);
+      // const target = parent.find('.sliderContent');
+      let position = self.state.position;
+
+      if (position === 1) {
+        position = listLength;
+      } else {
+        position--;
+      }
+
+      // target.setAttribute('style', slideOver);
+      self.setState({
+        position: position,
+        start: false,
+        next: false
+      });
+    }, 2000);
+  }
+
+  // componentDidMount() {
+  //   console.log('GenreSlider mounted');
+  // }
 
   componentDidUpdate() {
     console.log('GenreSlider updated');
@@ -118,7 +173,6 @@ export class GenreSlider extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    // const matrix = this.buildMoviesMatrix(nextProps);
     const self = this;
     let list;
     let slides;
@@ -132,7 +186,6 @@ export class GenreSlider extends Component {
       promTwo.then(function() {
         self.setState({
           slideLength: nextProps.slideLength,
-          // moviesMatrix: matrix,
           moviesList: list,
           slides: slides
         });
@@ -147,17 +200,42 @@ export class GenreSlider extends Component {
     const genre = this.state.genre;
     const slides = this.state.slides;
 
-    if (slides.length > 0) {
+    if (slides.length > 0 && this.state.start) {
       return (
         <div id={`${genre.name}_slider`} className='genre-slider'>
           <SliderContent
             slides={slides}
             slideLength={this.state.slideLength}
+            next={this.state.next}
+            prev={this.state.prev}
             start={this.state.start} />
           
           <span className='handle handleNext active'>
             <b className='indicator-icon icon-rightCaret'>
-              <i className='fa fa-angle-right'></i>
+              <i className='fa fa-angle-right' onClick={this.handleNext}></i>
+            </b>
+          </span>
+        </div>
+      );
+    } else if (slides.length > 0) {
+      return (
+        <div id={`${genre.name}_slider`} className='genre-slider'>
+          <span className='handle handlePrev active'>
+            <b className='indicator-icon icon-rightCaret'>
+              <i className='fa fa-angle-left' onClick={this.handlePrev}></i>
+            </b>
+          </span>
+
+          <SliderContent
+            slides={slides}
+            slideLength={this.state.slideLength}
+            next={this.state.next}
+            prev={this.state.prev}
+            start={this.state.start} />
+          
+          <span className='handle handleNext active'>
+            <b className='indicator-icon icon-rightCaret'>
+              <i className='fa fa-angle-right' onClick={this.handleNext}></i>
             </b>
           </span>
         </div>

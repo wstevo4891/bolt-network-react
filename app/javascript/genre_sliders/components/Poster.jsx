@@ -23,22 +23,36 @@ const Poster = (props) => {
     }
 
     const renderContainerClass = function(props) {
+      const slideLength = props.slideLength;
+      const index = props.index;
+
       if (props.start) {
-        if (props.index <= props.slideLength) {
+        if (index <= slideLength) {
           return `poster-container slide-item-${props.index}`;
         } else {
           return 'poster-container';
         }
+
       } else {
-        if (props.index <= props.slideLength + 1) {
-          return `poster-container slide-item-${props.index}`;
+        const limit = (slideLength * 2) + 2;
+
+        if (index >= slideLength && index <= limit) {
+          const diff = (index - slideLength);
+          return `poster-container slide-item-${diff}`;
+
         } else {
           return 'poster-container';
         }
       }
     }
 
-    const posterStyle = props.buildPosterStyle(props.index);
+    let posterStyle;
+
+    if (props.start) {
+      posterStyle = props.buildPosterStyle(props.index);
+    } else {
+      posterStyle = props.buildNextPosterStyle(props.index);
+    }
 
     return (
       <div className={renderContainerClass(props)}
