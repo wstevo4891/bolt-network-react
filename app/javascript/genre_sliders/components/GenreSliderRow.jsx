@@ -12,12 +12,14 @@ export class GenreSliderRow extends Component {
       movies: this.props.movies,
       slideLength: null
     };
+
     this.slideLengths = {
       1400: 6,
       1100: 5,
       800: 4,
       500: 3
     };
+
     this.breakpoints = [1400, 1100, 800, 500];
 
     this.updateSlideLength = this.updateSlideLength.bind(this);
@@ -30,7 +32,7 @@ export class GenreSliderRow extends Component {
     console.log('width: ' + width);
     let num = null;
 
-    for (var point of this.breakpoints) {
+    for (let point of this.breakpoints) {
       if (width >= point) {
         num = this.slideLengths[point];
         break;
@@ -46,25 +48,6 @@ export class GenreSliderRow extends Component {
     this.setState({
       slideLength: num
     });
-  }
-
-  componentDidMount() {
-    if (this.state.slideLength === null) {
-      this.updateSlideLength();
-    }
-
-    window.addEventListener("resize", this.updateSlideLength.bind(this));
-
-    console.log('GenreSliderRow mounted');
-  }
-
-  componentDidUpdate() {
-    console.log('GenreSliderRow updated');
-    console.log(this.state);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.updateSlideLength.bind(this));
   }
 
   render() {
@@ -90,5 +73,24 @@ export class GenreSliderRow extends Component {
     } else {
       return null;
     }
+  }
+
+  componentDidMount() {
+    if (this.state.slideLength === null) {
+      this.updateSlideLength();
+    }
+
+    window.addEventListener("resize", this.updateSlideLength.bind(this));
+
+    console.log('GenreSliderRow mounted');
+  }
+
+  componentDidUpdate() {
+    console.log('GenreSliderRow updated');
+    console.log(this.state);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateSlideLength.bind(this));
   }
 }

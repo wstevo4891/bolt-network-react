@@ -6,19 +6,18 @@
 // Body
 //=================================
 
-body.home.index {
+main.application {
   /*
     background-image:url(http://s3.amazonaws.com/codecademy-content/projects/bolt-network/diagmonds_@2X.png);
     background-size:141px 142px;
   */
-    background-color: $dark-bg;
-    font-family: "Oxygen"; 
-    font-weight: 300;
-    font-size: 16px;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-  }
+  background-color: $dark-bg;
+  font-family: "Oxygen"; 
+  font-weight: 300;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
   
   h1, h3, p {
     color: #fff;
@@ -33,6 +32,7 @@ body.home.index {
       width: 970px;
     }
   }
+}
 
 /* SUPPORTING DIV
 =================================*/

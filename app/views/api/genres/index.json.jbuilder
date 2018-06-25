@@ -2,5 +2,5 @@
 
 json.array!(@genres) do |genre|
   json.extract! genre, :id, :name
-  json.url genre_url(genre.id)
+  json.url genre_url(genre)
 end

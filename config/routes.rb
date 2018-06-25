@@ -17,9 +17,10 @@ Rails.application.routes.draw do
   end
 
   namespace :api, defaults: { format: :json } do
-    resources :quotes, only: [:show]
+    resources :quotes, only: :show
     resources :movies, only: %i[index show]
     resources :genres, only: %i[index show]
+    resources :movies_index, only: :index
     get '/genres/:id/movie_ids' => 'genres#movie_ids', as: :genres_movie_ids
   end
 end

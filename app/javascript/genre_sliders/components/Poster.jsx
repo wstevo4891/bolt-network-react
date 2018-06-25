@@ -34,9 +34,10 @@ const Poster = (props) => {
         }
 
       } else {
-        const limit = (slideLength * 2) + 2;
+        const begin = slideLength;
+        const limit = (slideLength * 2) + 1;
 
-        if (index >= slideLength && index <= limit) {
+        if (index >= begin && index <= limit) {
           const diff = (index - slideLength);
           return `poster-container slide-item-${diff}`;
 

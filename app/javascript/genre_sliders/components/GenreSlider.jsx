@@ -22,11 +22,11 @@ export class GenreSlider extends Component {
     };
 
     this.transformations = {
-      2: '-150%',
-      3: '-133.33333333333334%',
-      4: '-125%',
-      5: '-120%',
-      6: '-116.66666666666667%'
+      2: -150,
+      3: -133.33333333333334,
+      4: -125,
+      5: -120,
+      6: -116.66666666666667
     }
 
     this.buildMoviesList = this.buildMoviesList.bind(this);
@@ -38,12 +38,12 @@ export class GenreSlider extends Component {
 
   buildMoviesList(nextProps) {
     const movies = nextProps.movies;
-    const last = movies.length - 1;
     const slideLength = nextProps.slideLength;
+    const last = movies.length - 1;
     const list = new LinkedList();
-    let i = 0;
-    let j = 0;
-    let arr = []
+    let i = 1;
+    let j = 1;
+    let arr = [];
 
     for (let movie of movies) {
       arr.push(movie);
@@ -56,7 +56,7 @@ export class GenreSlider extends Component {
       } else {
         list.add(arr);
         arr = [];
-        i = 0;
+        i = 1;
       }
     }
 
@@ -64,58 +64,93 @@ export class GenreSlider extends Component {
   }
 
   buildSlides(list) {
-    // const list = this.state.moviesList;
     const position = this.state.position;
-    let slides;
+    const slideLength = this.state.slideLength;
+    let slides = [];
 
     if (position === 1) {
-      slides = list.tail.data;
+      slides.push(list.tail.previous.last());
+      slides = slides.concat(list.tail.data);
       slides = slides.concat(list.head.data);
       slides = slides.concat(list.head.next.data);
+      slides.push(list.head.next.next.data[0]);
 
     } else if (position === list._length) {
-      slides = list.tail.data;
+      slides.push(list.tail.previous.previous.last());
+      slides = slides.concat(list.tail.previous.data);
+      slides = slides.concat(list.tail.data);
       slides = slides.concat(list.head.data);
-      slides = slides.concat(list.head.next.data);
+      slides.push(list.head.next.data[0]);
 
     } else {
       const current = list.searchNodeAt(position);
-      slides = current.previous.data;
+      if (position === 2) {
+        slides.push(list.tail.last());
+      } else {
+        slides.push(current.previous.previous.last());
+      }
+
+      slides = slides.concat(current.previous.data);
       slides = slides.concat(current.data);
       slides = slides.concat(current.next.data);
+
+      if (position === list._length - 1) {
+        slides.push(list.head.data[0]);
+      } else {
+        slides.push(current.next.next.data[0]);
+      }
     }
 
     return slides;
   }
 
-  renderSlides(list) {
+  renderSlides() {
+    const list = this.state.moviesList;
     let slides;
 
-    if (this.state.start) {
-      // const list = this.state.moviesList;
-      slides = list.head.data;
-      slides = slides.concat(list.head.next.data);
-
+    if (list) {
+      if (this.state.start) {
+        slides = list.head.data;
+        slides = slides.concat(list.head.next.data);
+        slides.push(list.head.next.next.data[0]);
+  
+      } else {
+        slides = this.buildSlides(list);
+      }
+  
+      return slides;
     } else {
-      slides = this.buildSlides(list);
+      return [];
     }
-
-    return slides;
   }
 
   handleNext() {
     this.setState({
       next: true
     });
-
     const self = this;
 
+    // Experiment ===============
+    // const genre = this.state.genre;
+    // const slideLength = this.state.slideLength;
+    // let sliderContent;
+    // let translateX;
+
+    // if (this.state.start) {
+    //   sliderContent = document.getElementById(`${genre.name}_slider`).children[0];
+    //   translateX = -100;
+    // } else {
+    //   sliderContent = document.getElementById(`${genre.name}_slider`).children[1];
+    //   translateX = this.transformations[slideLength] - 100;
+    // }
+
+    // console.log('TRANSLATE X: ' + translateX);
+
+    // sliderContent.setAttribute('style', `transform: translate3d(${translateX}%, 0px, 0px`);
+    // Experiment ===============
+
     setTimeout(function() {
-      // const genre = this.state.genre;
       const listLength = self.state.moviesList._length;
-      // const slideOver = 'transform: translate3d(-100%, 0px, 0px)';
-      // const parent = document.getElementById(`${genre.name}_slider`);
-      // const target = parent.find('.sliderContent');
       let position = self.state.position;
 
       if (position === listLength) {
@@ -124,13 +159,36 @@ export class GenreSlider extends Component {
         position++;
       }
 
-      // target.setAttribute('style', slideOver);
       self.setState({
         position: position,
         start: false,
         next: false
       });
-    }, 2000);
+    }, 1000);
+
+    // const self = this;
+
+    // setTimeout(function() {
+    //   // const genre = this.state.genre;
+    //   const listLength = self.state.moviesList._length;
+    //   // const slideOver = 'transform: translate3d(-100%, 0px, 0px)';
+    //   // const parent = document.getElementById(`${genre.name}_slider`);
+    //   // const target = parent.find('.sliderContent');
+    //   let position = self.state.position;
+
+    //   if (position === listLength) {
+    //     position = 1;
+    //   } else {
+    //     position++;
+    //   }
+
+    //   // target.setAttribute('style', slideOver);
+    //   self.setState({
+    //     position: position,
+    //     start: false,
+    //     next: false
+    //   });
+    // }, 1000);
   }
 
   handlePrev() {
@@ -158,39 +216,30 @@ export class GenreSlider extends Component {
       self.setState({
         position: position,
         start: false,
-        next: false
+        prev: false
       });
-    }, 2000);
-  }
-
-  // componentDidMount() {
-  //   console.log('GenreSlider mounted');
-  // }
-
-  componentDidUpdate() {
-    console.log('GenreSlider updated');
-    console.log(this.state);
+    }, 1000);
   }
 
   componentWillReceiveProps(nextProps) {
     const self = this;
     let list;
-    let slides;
+    // let slides;
     const promOne = new Promise(function(resolve) {
       resolve(list = self.buildMoviesList(nextProps));
     });
-    const promTwo = new Promise(function(resolve) {
-      resolve(slides = self.renderSlides(list));
-    });
-    promOne.then(function() {
-      promTwo.then(function() {
+    // const promTwo = new Promise(function(resolve) {
+    //   resolve(slides = self.renderSlides(list));
+    // });
+
+    if (this.state.moviesList === null || nextProps.slideLength !== this.state.slideLength) {
+      promOne.then(function() {
         self.setState({
           slideLength: nextProps.slideLength,
-          moviesList: list,
-          slides: slides
+          moviesList: list
         });
       });
-    });
+    }
 
     // const list = this.buildMoviesList(nextProps);
     // const slides = this.renderSlides(list);
@@ -198,7 +247,9 @@ export class GenreSlider extends Component {
 
   render() {
     const genre = this.state.genre;
-    const slides = this.state.slides;
+    const list = this.state.moviesList;
+    // const slides = this.state.slides;
+    const slides = this.renderSlides(list);
 
     if (slides.length > 0 && this.state.start) {
       return (
@@ -217,6 +268,7 @@ export class GenreSlider extends Component {
           </span>
         </div>
       );
+
     } else if (slides.length > 0) {
       return (
         <div id={`${genre.name}_slider`} className='genre-slider'>
@@ -240,8 +292,18 @@ export class GenreSlider extends Component {
           </span>
         </div>
       );
+
     } else {
       return null;
     }
+  }
+
+  componentDidMount() {
+    console.log('GenreSlider mounted');
+  }
+
+  componentDidUpdate() {
+    console.log('GenreSlider updated');
+    console.log(this.state);
   }
 }
