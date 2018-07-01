@@ -5,6 +5,10 @@ Rails.application.routes.draw do
 
   get '/slider' => 'slider#index'
 
+  get '/cards' => 'cards#index'
+
+  get '/animations' => 'animations#index'
+
   resources :movies, only: :show
 
   resources :genres, only: :show

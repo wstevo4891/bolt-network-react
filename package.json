@@ -6,11 +6,13 @@
     "axios": "^0.17.1",
     "babel-preset-react": "^6.24.1",
     "coffeescript": "1.12.7",
+    "gsap": "^2.0.1",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
-    "react-slick": "^0.16.0"
+    "react-slick": "^0.16.0",
+    "react-transition-group": "1.x"
   },
   "devDependencies": {
     "webpack-dev-server": "^2.10.1"

@@ -55,6 +55,7 @@ const LinkedList = class {
       success: 'Node was successfully removed.'
     };
     let beforeNodeToDelete = null;
+    let afterNodeToDelete = null;
     let nodeToDelete = null;
     let deletedNode = null;
 

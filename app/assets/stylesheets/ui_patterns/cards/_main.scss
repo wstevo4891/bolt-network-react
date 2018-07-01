@@ -1,0 +1,31 @@
+// app/assets/stylesheets/ui_patterns/cards/_main.scss
+
+#cards-app {
+  background-color: white;
+} 
+
+.cardApp_card {
+  border: 1px solid #dadada;
+  display: block;
+  flex: 0 1 300px;
+  padding: 0.5rem;
+
+  button {
+    margin-left: 1rem;
+  }
+}
+
+.cardApp_board {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  list-style: none;
+  padding-left: 0;
+}
+
+.cardApp_board__item {
+  flex: 0 0 300px;
+  padding: 0.5rem;
+}

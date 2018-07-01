@@ -2,12 +2,13 @@
 
 import React, { Component } from 'react';
 
-import LinkedList from '../structures/doubly_linked_list/LinkedList';
-// import { GenreSlider } from './GenreSlider';
+import * as actions from '../actions/buildMoviesList';
+import GenreSlider from './GenreSlider';
 
 class GenreSliderRow extends Component {
   constructor (props) {
     super(props);
+
     this.state = {
       genre: this.props.genre,
       movies: this.props.movies,
@@ -16,12 +17,25 @@ class GenreSliderRow extends Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.slideLength !== this.state.slideLength) {
+      const moviesList = actions.buildMoviesList(nextProps);
+
+      this.setState({
+        slideLength: nextProps.slideLength,
+        moviesList: moviesList
+      });
+
+    } else {
+      return;
+    }
+  }
+
   render() {
     const moviesList = this.state.moviesList;
 
     if (moviesList) {
       const genre = this.state.genre;
-      const movies = this.state.movies;
       const slideLength = this.state.slideLength;
 
       return (
@@ -32,10 +46,10 @@ class GenreSliderRow extends Component {
             </a>
           </h2>
 
-          {/* <GenreSlider
+          <GenreSlider
             genre={genre}
-            movies={movies}
-            slideLength={slideLength} /> */}
+            moviesList={moviesList}
+            slideLength={slideLength} />
         </div>
       );
     } else {
@@ -45,46 +59,12 @@ class GenreSliderRow extends Component {
 
   componentDidMount() {
     if (this.state.moviesList === null) {
-      this.buildMoviesList();
+      const moviesList = actions.buildMoviesList(this.state);
+
+      this.setState({
+        moviesList: moviesList
+      });
     }
-
-    console.log('GenreSliderRow mounted');
-  }
-
-  buildMoviesList() {
-    const movies = this.state.movies;
-    const slideLength = this.state.slideLength;
-    const last = movies.length - 1;
-    const list = new LinkedList();
-    let i = 1;
-    let j = 1;
-    let arr = [];
-
-    for (let movie of movies) {
-      arr.push(movie);
-      j++;
-
-      if (i < slideLength && j < last) {
-        i++;
-
-      } else if (j === last) {
-        list.add(arr);
-
-      } else {
-        list.add(arr);
-        arr = [];
-        i = 1;
-      }
-    }
-
-    this.setState({
-      moviesList: list
-    });
-  }
-
-  componentDidUpdate() {
-    console.log('GenreSliderRow updated');
-    console.log(this.state);
   }
 }
 

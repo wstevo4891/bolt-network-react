@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bolt Network</title>
+    <%= csrf_meta_tags %>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,600,700' rel='stylesheet' type='text/css'>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+
+    <%= yield(:head).force_encoding(Encoding::UTF_8)  %>
+  </head>
+
+  <body class="<%= controller_name %> <%= action_name %>" >
+    <%= render 'shared/navbar' %>
+
+    <main>
+      <%= yield %>
+    </main>
+
+    <%= render 'shared/footer' %>
+  </body>
+</html>

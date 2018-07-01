@@ -74,8 +74,6 @@ class GenreSlidersContainer extends Component {
     }
 
     window.addEventListener("resize", this.updateSlideLength.bind(this));
-
-    console.log('GenreSlidersContainer mounted!');
   }
 
   fetchMoviesIndex = () => {
@@ -127,11 +125,6 @@ class GenreSlidersContainer extends Component {
     this.setState({
       slideLength: num
     });
-  }
-
-  componentDidUpdate() {
-    console.log('GenreSlidersContainer updated!');
-    console.log(this.state);
   }
 
   componentWillUnmount() {
