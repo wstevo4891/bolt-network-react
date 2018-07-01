@@ -11,24 +11,54 @@ class CardContainer extends Component {
     showCard: this.props.card.show
   }
 
+  componentWillReceiveProps(nextProps) {
+    const card = nextProps.card
+
+    this.setState({
+      card: card,
+      showCard: card.show
+    })
+
+    if (card.show === false) {
+      card.show = true 
+
+      setTimeout(() => {
+        this.setState({
+          card: card,
+          showCard: card.show
+        })
+      }, 300)
+    }
+  }
+
   render() {
     const show = this.state.showCard
     const card = this.state.card
 
     return (
       <TransitionGroup>
-        { show && <Card card={card} onRemove={this.removeCard} /> }
+        { show &&
+            <Card
+              card={card}
+              index={this.props.index}
+              hideCard={this.hideCard}
+              removeCard={this.props.removeCard}
+            /> }
       </TransitionGroup>
     )
   }
 
   componentDidMount() {
+    const card = this.state.card
+    card.show = true
+
     this.setState({
+      card: card,
       showCard: true
     })
   }
 
-  removeCard = () => {
+  hideCard = () => {
     this.setState({
       showCard: false
     })

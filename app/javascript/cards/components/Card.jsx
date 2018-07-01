@@ -5,7 +5,8 @@ import TweenMax from 'gsap/TweenMax'
 
 class Card extends Component {
   state = {
-    card: this.props.card
+    card: this.props.card,
+    index: this.props.index
   }
 
   componentWillEnter(callback) {
@@ -20,13 +21,22 @@ class Card extends Component {
 
   render() {
     const card = this.state.card
+    const index = this.state.index
 
     return (
       <div className="cardApp_card" ref={c => this.container = c}>
         {card.content}
-        <button onClick={() => this.props.onRemove()}>Remove</button>
+        <button onClick={() => this.handleClick(index)}>Remove</button>
       </div>
     )
+  }
+
+  handleClick = (index) => {
+    this.props.hideCard()
+
+    setTimeout(() => {
+      this.props.removeCard(index)
+    }, 300)
   }
 
   componentWillLeave(callback) {

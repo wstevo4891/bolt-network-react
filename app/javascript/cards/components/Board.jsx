@@ -1,28 +1,42 @@
 // app/javascript/cards/components/Board.js
 
-import React from 'react'
+import React, { Component } from 'react'
 
 import CardContainer from './CardContainer'
 
-const Board = (props) => {
-  const cards = props.cards
+class Board extends Component {
+  state = {
+    cards: this.props.cards
+  }
 
-  if (cards.length > 0) {
-    return (
-      <ul className="cardApp_board">
-        {
-          cards.map(card =>
-            <li className="cardApp_board__item" key={card.id}>
-              <CardContainer
-                card={card}
-              />
-            </li>
-          )
-        }
-      </ul>
-    )
-  } else {
-    return null
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      cards: nextProps.cards
+    })
+  }
+
+  render() {
+    const cards = this.state.cards
+
+    if (cards.length > 0) {
+      return (
+        <ul className="cardApp_board">
+          {
+            cards.map((card, index) =>
+              <li className="cardApp_board__item" key={index}>
+                <CardContainer
+                  card={card}
+                  index={index}
+                  removeCard={this.props.removeCard}
+                />
+              </li>
+            )
+          }
+        </ul>
+      )
+    } else {
+      return null
+    }
   }
 }
 

@@ -19,15 +19,18 @@ class App extends Component {
 
   render() {
     const cards = this.state.cards
+    const buttonStyle = {
+      marginRight: '1rem'
+    }
 
     if (cards.length > 0) {
       return (
         <div className="container">
           <h1>React Transition Demo</h1>
-          <button onClick={this.addCard}>Add a Card</button>
-          <button onClick={this.removeLastCard}>Remove a Card</button>
+          <button style={buttonStyle} onClick={this.addCard}>Add a Card</button>
+          <button style={buttonStyle} onClick={this.removeLastCard}>Remove a Card</button>
   
-          <Board cards={cards} />
+          <Board cards={cards} removeCard={this.removeCard} />
         </div>
       )
     } else {
@@ -55,21 +58,37 @@ class App extends Component {
     })
   }
 
-  removeCard(id) {
+  removeCard(index) {
     const cards = this.state.cards
+    const nextCard = cards[index + 1]
+    cards.splice(index, 2, nextCard)
+
+    for (let i = index; i < cards.length; i++) {
+      cards[i].id--
+      cards[i].content = `Card ${i + 1}`
+      cards[i].show = false
+    }
 
     this.setState({
-      cards: cards.filter(card => card.id !== id)
+      cards: cards
     })
   }
 
   removeLastCard() {
     const cards = this.state.cards
-    cards.pop()
+    cards[cards.length - 1].show = false
 
     this.setState({
       cards: cards
     })
+
+    setTimeout(() => {
+      cards.pop()
+
+      this.setState({
+        cards: cards
+      })
+    }, 300)
   }
 
   componentDidUpdate() {
