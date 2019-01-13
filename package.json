@@ -15,6 +15,16 @@
     "react-transition-group": "1.x"
   },
   "devDependencies": {
+    "jest": "^23.6.0",
     "webpack-dev-server": "^2.10.1"
+  },
+  "scripts": {
+    "test": "jest",
+    "test-watch": "jest --watch"
+  },
+  "jest": {
+    "roots": [
+      "test/javascript"
+    ]
   }
 }
