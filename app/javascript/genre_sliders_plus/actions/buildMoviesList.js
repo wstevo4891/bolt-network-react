@@ -7,7 +7,9 @@ export function buildMoviesList(props) {
   const slideLength = props.slideLength;
   const last = movies.length - 1;
   const list = new LinkedList();
+  // i tracks slideLength
   let i = 1;
+  // j tracks number of movies
   let j = 1;
   let arr = [];
 
@@ -15,11 +17,11 @@ export function buildMoviesList(props) {
     arr.push(movie);
     j++;
 
-    if (i < slideLength && j < last) {
-      i++;
-
-    } else if (j === last) {
+    if (j === last) {
       list.add(arr);
+
+    } else if (i < slideLength) {
+      i++;
 
     } else {
       list.add(arr);

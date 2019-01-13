@@ -31,21 +31,17 @@ export function buildContainerStyle(props) {
     let translateX = transformations[slideLength];
 
     if (next) {
-      translateX = translateX - 100;
-      return {
-        transform: `translate3d(${translateX}%, 0px, 0px)`
-      }
+      return translate3D(translateX - 100);
 
     } else if (prev) {
-      translateX = translateX + 100;
-      return {
-        transform: `translate3d(${translateX}%, 0px, 0px)`
-      }
+      return translate3D(translateX + 100);
 
     } else {
-      return {
-        transform: `translate3d(${translateX}%, 0px, 0px)`
-      }
+      return translate3D(translateX);
     }
   }
+}
+
+function translate3D(x) {
+  return { transform: `translate3d(${x}%, 0px, 0px)` };
 }

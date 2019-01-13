@@ -6,7 +6,7 @@
 footer { 
   padding-bottom: 2em;
   background-color: $dark-bg;
-  // background-image: url(http://s3.amazonaws.com/codecademy-content/projects/bolt-network/diagmonds_@2X.png);
+  flex-shrink: 0;
 
   .container {
     padding-top: 1rem;

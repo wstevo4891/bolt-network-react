@@ -2,7 +2,7 @@
 
 import Node from './Node';
 
-const LinkedList = class {
+export default class LinkedList {
   constructor() {
     this._length = 0;
     this.head = null;
@@ -103,5 +103,3 @@ const LinkedList = class {
     return message.success;
   }
 }
-
-export default LinkedList;

@@ -1,6 +1,6 @@
 // Doubly linked node for Doubly Linked List
 
-const Node = class {
+export default class Node {
   constructor(data) {
     this.data = data;
     this.previous = null;
@@ -12,5 +12,3 @@ const Node = class {
     return this.data[length - 1];
   }
 }
-
-export default Node;

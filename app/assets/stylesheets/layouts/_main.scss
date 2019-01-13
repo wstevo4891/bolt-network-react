@@ -10,10 +10,10 @@ body {
   font-family: "Roboto";
 }
 
-main {
-  flex: 1 0 auto;
+nav {
+  min-height: 70px;
 }
 
-footer {
-  flex-shrink: 0;
+main {
+  flex: 1 0 auto;
 }

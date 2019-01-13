@@ -1,6 +1,6 @@
 // app/javascript/genre_sliders_plus/components/SliderContainer.jsx
 
-import React, { Component } from 'react';
+import React from 'react';
 
 import * as actions from '../actions/buildSlides';
 // import SliderContent from './SliderContent';

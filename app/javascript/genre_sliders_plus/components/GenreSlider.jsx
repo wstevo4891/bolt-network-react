@@ -1,10 +1,9 @@
 // app/javascript/genre_sliders_plus/components/GenreSlider.jsx
 
 import React, { Component } from 'react';
-import 'babel-polyfill';
+import { Transition } from 'react-transition-group';
 
 import SlideBuilder from './SlideBuilder';
-import * as actions from '../actions/whichTransitionEvent';
 
 class GenreSlider extends Component {
   constructor (props) {
@@ -93,12 +92,20 @@ class GenreSlider extends Component {
     this.setState({
       next: true
     });
+
+    setTimeout(() => {
+      this.handleTransitionEnd();
+    }, 1000);
   }
 
   handlePrev = () => {
     this.setState({
       prev: true
     });
+
+    setTimeout(() => {
+      this.handleTransitionEnd();
+    }, 1000);
   }
 
   handleTransitionEnd = () => {

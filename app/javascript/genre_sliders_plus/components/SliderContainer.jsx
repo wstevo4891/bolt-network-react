@@ -1,13 +1,10 @@
 // app/javascript/genre_sliders/components/SliderContent.jsx
 
 import React, { Component } from 'react';
-// import { CSSTransitionGroup } from 'react-transition-group';
-import { Transition } from 'react-transition-group';
 
 // import SliderContent from './SliderContent';
 import Poster from './Poster';
-import * as Styles from '../actions/buildContainerStyle';
-import * as Events from '../actions/whichTransitionEvent';
+import ContainerStyle from '../services/ContainerStyle';
 
 class SliderContainer extends Component {
   constructor(props) {
@@ -42,45 +39,32 @@ class SliderContainer extends Component {
     const slides = this.state.slides;
 
     if (slides && slides.length > 0) {
-      const slideOver = Styles.buildContainerStyle(this.state);
+      const slideOver = new ContainerStyle(this.state).call();
 
       return (
-        <Transition
-          // in={this.state.next}
-          timeout={1000}
-          unmountOnExit={true}
-          addEndListener={this.onAddEndListener}
-        >
-          <div className="sliderContent" style={slideOver}>
-            {
-              slides.map((slide, index) =>
-                <Poster
-                  key={index}
-                  index={index}
-                  movie={slide}
-                  slideLength={this.state.slideLength}
-                  start={this.state.start}
-                  next={this.state.next}
-                  prev={this.state.prev}
-                  hoverItem={this.state.hoverItem}
-                  mouseOver={this.handleMouseOver}
-                  mouseOut={this.handleMouseOut}
-                />
-              )
-            }
-          </div>
-        </Transition>
+        <div className="sliderContent" style={slideOver}>
+          {
+            slides.map((slide, index) =>
+              <Poster
+                key={index}
+                index={index}
+                movie={slide}
+                slideLength={this.state.slideLength}
+                start={this.state.start}
+                next={this.state.next}
+                prev={this.state.prev}
+                hoverItem={this.state.hoverItem}
+                mouseOver={this.handleMouseOver}
+                mouseOut={this.handleMouseOut}
+              />
+            )
+          }
+        </div>
       );
 
     } else {
       return null;
     }
-  }
-
-  onAddEndListener = (node, done) => {
-    // node.addEventListener('transitionend', done, false);
-
-    done(this.props.transitionEnd);
   }
 
   handleMouseOver = (event) => {
