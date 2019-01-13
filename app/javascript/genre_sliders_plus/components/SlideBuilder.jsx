@@ -2,12 +2,12 @@
 
 import React from 'react';
 
-import * as actions from '../actions/buildSlides';
+import SlidesArray from '../services/SlidesArray';
 // import SliderContent from './SliderContent';
 import SliderContainer from './SliderContainer';
 
 const SlideBuilder = (props) => {
-  const slides = actions.buildSlides(props);
+  const slides = new SlidesArray(props).call();
 
   if (slides) {
     return (

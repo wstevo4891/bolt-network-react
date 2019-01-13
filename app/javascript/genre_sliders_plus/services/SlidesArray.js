@@ -19,15 +19,18 @@ export default class SlidesArray {
   }
 
   startSlides = () => {
-    this.slides.concat(this.list.head.data);
-    this.slides.concat(this.list.head.next.data);
+    const head = this.list.head.data;
+    const headNext = this.list.head.next.data;
+
+    this.slides = this.slides.concat(head, headNext);
+
     this.slides.push(this.list.head.next.next.data[0]);
   }
 
   nextSlides = () => {
     if (this.position === 1) {
       this.slides.push(this.list.tail.previous.last());
-      this.slides.concat(this.list.tail.data);
+      this.slides = this.slides.concat(this.list.tail.data);
       this.startSlides();
 
     } else if (this.position === this.list._length) {
@@ -40,9 +43,13 @@ export default class SlidesArray {
 
   lastPositionSlides = () => {
     this.slides.push(this.list.tail.previous.previous.last());
-    this.slides.concat(this.list.tail.previous.data);
-    this.slides.concat(this.list.tail.data);
-    this.slides.concat(this.list.head.data);
+
+    const tailPrev = this.list.tail.previous.data;
+    const tail = this.list.tail.data;
+    const head = this.list.head.data;
+
+    this.slides = this.slides.concat(tailPrev, tail, head);
+
     this.slides.push(this.list.head.next.data[0]);
   }
 
@@ -50,14 +57,16 @@ export default class SlidesArray {
     const current = this.list.searchNodeAt(this.position);
 
     if (this.position === 2) {
-      this.slides.push(list.tail.last());
+      this.slides.push(this.list.tail.last());
     } else {
       this.slides.push(current.previous.previous.last());
     }
 
-    this.slides.concat(current.previous.data);
-    this.slides.concat(current.data);
-    this.slides.concat(current.next.data);
+    const curPrev = current.previous.data;
+    const cur = current.data;
+    const curNext = current.next.data;
+
+    this.slides = this.slides.concat(curPrev, cur, curNext);
 
     if (this.position === this.list._length - 1) {
       this.slides.push(this.list.head.data[0]);
