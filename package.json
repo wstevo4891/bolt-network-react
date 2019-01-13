@@ -25,6 +25,10 @@
     "test-watch": "jest --watch"
   },
   "jest": {
+    "moduleDirectories": [
+      "node_modules",
+      "app/javascript/packs"
+    ],
     "roots": [
       "test/javascript"
     ]
