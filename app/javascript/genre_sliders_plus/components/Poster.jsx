@@ -2,7 +2,6 @@
 
 import React from 'react';
 
-// import * as actions from '../actions/buildPosterStyle';
 import PosterService from '../services/PosterService';
 
 const Poster = (props) => {
@@ -11,24 +10,16 @@ const Poster = (props) => {
 
   if (typeof movie !== 'object') return null;
 
+  const service = new PosterService(props);
+
+  const containerClass = service.containerClass();
+
+  const posterStyle = service.posterStyle();
+
   const posterImage = {
     backgroundImage: `url(${movie.photo.url})`,
     backgroundSize: '100% 100%'
   }
-
-  const service = new PosterService(props);
-
-  // const containerClass = actions.buildContainerClass(props);
-  const containerClass = service.containerClass();
-
-  // let posterStyle;
-
-  // if (props.start) {
-  //   posterStyle = actions.buildPosterStyle(props);
-  // } else {
-  //   posterStyle = actions.buildNextPosterStyle(props);
-  // }
-  const posterStyle = service.posterStyle();
 
   return (
     <a href={`/movies/${movie.id}`}>

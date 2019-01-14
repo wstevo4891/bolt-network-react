@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { Transition } from 'react-transition-group';
 
 import SlideBuilder from './SlideBuilder';
+import SliderArrow from './SliderArrow';
 
 class GenreSlider extends Component {
   constructor (props) {
@@ -18,14 +19,6 @@ class GenreSlider extends Component {
       next: false,
       prev: false
     };
-
-    this.transformations = {
-      2: -150,
-      3: -133.33333333333334,
-      4: -125,
-      5: -120,
-      6: -116.66666666666667
-    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -51,22 +44,22 @@ class GenreSlider extends Component {
             prev={this.state.prev}
             transitionEnd={this.handleTransitionEnd} />
 
-          <span className='handle handleNext active'>
-            <b className='indicator-icon icon-rightCaret'>
-              <i className='fa fa-angle-right' onClick={this.handleNext}></i>
-            </b>
-          </span>
+          <SliderArrow
+            direction='Next'
+            icon='right'
+            handleClick={this.handleNext}
+          />
         </div>
       );
 
     } else {
       return (
         <div id={`${genre.name}_slider`} className='genre-slider'>
-          <span className='handle handlePrev active'>
-            <b className='indicator-icon icon-rightCaret'>
-              <i className='fa fa-angle-left' onClick={this.handlePrev}></i>
-            </b>
-          </span>
+          <SliderArrow
+            direction='Prev'
+            icon='left'
+            handleClick={this.handlePrev}
+          />
 
           <SlideBuilder
             slideLength={this.state.slideLength}
@@ -78,13 +71,25 @@ class GenreSlider extends Component {
             prev={this.state.prev}
             transitionEnd={this.handleTransitionEnd} />
 
-          <span className='handle handleNext active'>
-            <b className='indicator-icon icon-rightCaret'>
-              <i className='fa fa-angle-right' onClick={this.handleNext}></i>
-            </b>
-          </span>
+          <SliderArrow
+            direction='Next'
+            icon='right'
+            handleClick={this.handleNext}
+          />
         </div>
       );
+    }
+  }
+
+  renderPrevArrow = (start) => {
+    if (start === false) {
+      return (
+        <SliderArrow
+          direction='Prev'
+          icon='left'
+          handleClick={this.handlePrev}
+        />
+      )
     }
   }
 

@@ -1,6 +1,7 @@
 // app/javascript/genre_sliders/components/SliderContent.jsx
 
 import React, { Component } from 'react';
+// import {Motion, spring} from 'react-motion'
 
 // import SliderContent from './SliderContent';
 import Poster from './Poster';
@@ -36,35 +37,30 @@ class SliderContainer extends Component {
   render() {
     console.log('SliderContainer is rendering!');
 
-    const slides = this.state.slides;
+    const { slides, slideLength, start, next, prev, hoverItem } = this.state;
 
-    if (slides && slides.length > 0) {
-      const slideOver = new ContainerStyle(this.state).call();
+    const slideOver = new ContainerStyle(this.state).call();
 
-      return (
-        <div className="sliderContent" style={slideOver}>
-          {
-            slides.map((slide, index) =>
-              <Poster
-                key={index}
-                index={index}
-                movie={slide}
-                slideLength={this.state.slideLength}
-                start={this.state.start}
-                next={this.state.next}
-                prev={this.state.prev}
-                hoverItem={this.state.hoverItem}
-                mouseOver={this.handleMouseOver}
-                mouseOut={this.handleMouseOut}
-              />
-            )
-          }
-        </div>
-      );
-
-    } else {
-      return null;
-    }
+    return (
+      <div className="sliderContent" style={slideOver}>
+        {
+          slides.map((slide, index) =>
+            <Poster
+              key={index}
+              index={index}
+              movie={slide}
+              slideLength={slideLength}
+              start={start}
+              next={next}
+              prev={prev}
+              hoverItem={hoverItem}
+              mouseOver={this.handleMouseOver}
+              mouseOut={this.handleMouseOut}
+            />
+          )
+        }
+      </div>
+    );
   }
 
   handleMouseOver = (event) => {

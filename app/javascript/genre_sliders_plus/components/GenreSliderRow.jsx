@@ -18,43 +18,38 @@ class GenreSliderRow extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.slideLength !== this.state.slideLength) {
-      const moviesList = actions.buildMoviesList(nextProps);
+    if (nextProps.slideLength === this.state.slideLength) return;
 
-      this.setState({
-        slideLength: nextProps.slideLength,
-        moviesList: moviesList
-      });
+    const moviesList = actions.buildMoviesList(nextProps);
 
-    } else {
-      return;
-    }
+    this.setState({
+      slideLength: nextProps.slideLength,
+      moviesList: moviesList
+    });
   }
 
   render() {
     const moviesList = this.state.moviesList;
 
-    if (moviesList) {
-      const genre = this.state.genre;
-      const slideLength = this.state.slideLength;
+    if (moviesList === null) return null;
 
-      return (
-        <div id={`${genre.name}_row`} className='genre-slider-row'>
-          <h2 className='rowHeader'>
-            <a className='rowTitle' href={`/genres/${genre.id}`}>
-              <div className='row-header-title'>{genre.name}</div>
-            </a>
-          </h2>
+    const genre = this.state.genre;
+    const slideLength = this.state.slideLength;
 
-          <GenreSlider
-            genre={genre}
-            moviesList={moviesList}
-            slideLength={slideLength} />
-        </div>
-      );
-    } else {
-      return null;
-    }
+    return (
+      <div id={`${genre.name}_row`} className='genre-slider-row'>
+        <h2 className='rowHeader'>
+          <a className='rowTitle' href={`/genres/${genre.id}`}>
+            <div className='row-header-title'>{genre.name}</div>
+          </a>
+        </h2>
+
+        <GenreSlider
+          genre={genre}
+          moviesList={moviesList}
+          slideLength={slideLength} />
+      </div>
+    );
   }
 
   componentDidMount() {

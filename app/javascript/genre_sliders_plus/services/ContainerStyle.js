@@ -35,7 +35,7 @@ export default class ContainerStyle {
   }
 
   transformStyle = () => {
-    let translateX = this.transformations[this.slideLength];
+    const translateX = this.transformations[this.slideLength];
 
     if (this.next) {
       return this.translate3D(translateX - 100);
