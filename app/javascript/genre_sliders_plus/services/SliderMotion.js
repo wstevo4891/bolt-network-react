@@ -1,7 +1,7 @@
 // Service for building translate3d container style
 // for slides container
 
-export default class ContainerStyle {
+export default class SliderMotion {
   constructor(props) {
     this.slideLength = props.slideLength;
     this.start = props.start;
@@ -16,8 +16,16 @@ export default class ContainerStyle {
     };
   }
 
+  startPosition = () => {
+    if (this.start) {
+      return 0;
+    } else {
+      return this.transformations[this.slideLength];
+    }
+  }
+
   call = () => {
-    console.log('buildContainerStyle start: ' + this.start);
+    console.log('start: ' + this.start);
 
     if (this.start) {
       return this.startStyle();
@@ -28,9 +36,9 @@ export default class ContainerStyle {
 
   startStyle = () => {
     if (this.next) {
-      return this.translate3D(-100);
+      return -100;
     } else {
-      return this.translate3D(0);
+      return 0;
     }
   }
 
@@ -38,17 +46,17 @@ export default class ContainerStyle {
     const translateX = this.transformations[this.slideLength];
 
     if (this.next) {
-      return this.translate3D(translateX - 100);
+      return translateX - 100;
 
     } else if (this.prev) {
-      return this.translate3D(translateX + 100);
+      return translateX + 100;
 
     } else {
-      return this.translate3D(translateX);
+      return translateX;
     }
   }
 
-  translate3D = (x) => {
-    return { transform: `translate3d(${x}%, 0px, 0px)` };
-  }
+  // translate3D = (x) => {
+  //   return { transform: `translate3d(${x}%, 0px, 0px)` };
+  // }
 }

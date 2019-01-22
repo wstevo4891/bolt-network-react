@@ -1,11 +1,10 @@
-// app/javascript/genre_sliders/components/SliderContent.jsx
+// app/javascript/genre_sliders/components/SlidesList.jsx
 
 import React, { Component } from 'react';
 
 import Poster from './Poster';
-import ContainerStyle from '../services/ContainerStyle';
 
-class SliderContainer extends Component {
+class SlidesList extends Component {
   constructor(props) {
     super(props);
 
@@ -20,7 +19,7 @@ class SliderContainer extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('SliderContainer is receiving props');
+    console.log('SlidesList is receiving props');
 
     this.setState({
       slides: nextProps.slides,
@@ -32,17 +31,12 @@ class SliderContainer extends Component {
   }
 
   render() {
-    console.log('SliderContainer is rendering!');
+    console.log('SlidesList is rendering!');
 
-    const { slides, slideLength, start,
-            next, prev, hoverItem } = this.state;
-
-    const slideOver = new ContainerStyle(this.state).call();
-
-    const contClass = this.deterContClass(next, prev);
+    const { slides, slideLength, start, next, prev, hoverItem } = this.state;
 
     return (
-      <div className={contClass} style={slideOver}>
+      <div className="sliderContent" style={this.props.style}>
         {
           slides.map((slide, index) =>
             <Poster
@@ -79,17 +73,9 @@ class SliderContainer extends Component {
   }
 
   componentDidUpdate() {
-    console.log('SliderContainer Updated');
+    console.log('SlidesList Updated');
     console.log(this.state);
-  }
-
-  deterContClass = (next, prev) => {
-    if (next || prev) {
-      return "sliderContent animating";
-    } else {
-      return "sliderContent";
-    }
   }
 }
 
-export default SliderContainer;
+export default SlidesList;

@@ -2,10 +2,10 @@
 
 import React, { Component } from 'react';
 
-import SlideBuilder from './SlideBuilder';
+import SlideBuilderTwo from './SlideBuilderTwo';
 import SliderArrow from './SliderArrow';
 
-class GenreSlider extends Component {
+class GenreSliderTwo extends Component {
   constructor (props) {
     super(props);
 
@@ -34,14 +34,14 @@ class GenreSlider extends Component {
     if (start) {
       return (
         <div id={`${genre.name}_slider`} className='genre-slider'>
-          <SlideBuilder
+          <SlideBuilderTwo
             slideLength={slideLength}
             moviesList={moviesList}
             position={position}
             start={start}
             next={next}
             prev={prev}
-          />
+            transitionEnd={this.handleTransitionEnd} />
 
           <SliderArrow
             direction='Next'
@@ -50,6 +50,7 @@ class GenreSlider extends Component {
           />
         </div>
       );
+
     } else {
       return (
         <div id={`${genre.name}_slider`} className='genre-slider'>
@@ -59,13 +60,14 @@ class GenreSlider extends Component {
             handleClick={this.handlePrev}
           />
 
-          <SlideBuilder
+          <SlideBuilderTwo
             slideLength={slideLength}
             moviesList={moviesList}
             position={position}
             start={start}
             next={next}
             prev={prev}
+            // transitionEnd={this.handleTransitionEnd}
           />
 
           <SliderArrow
@@ -78,6 +80,20 @@ class GenreSlider extends Component {
     }
   }
 
+  // Doesn't work so well. Causes a big jump in the UI
+  // when it renders
+  renderPrevArrow = (start) => {
+    if (start === false) {
+      return (
+        <SliderArrow
+          direction='Prev'
+          icon='left'
+          handleClick={this.handlePrev}
+        />
+      )
+    }
+  }
+
   handleNext = () => {
     this.setState({
       next: true
@@ -85,7 +101,7 @@ class GenreSlider extends Component {
 
     setTimeout(() => {
       this.handleTransitionEnd();
-    }, 1000);
+    }, 2000);
   }
 
   handlePrev = () => {
@@ -95,7 +111,7 @@ class GenreSlider extends Component {
 
     setTimeout(() => {
       this.handleTransitionEnd();
-    }, 1000);
+    }, 2000);
   }
 
   handleTransitionEnd = () => {
@@ -136,4 +152,4 @@ class GenreSlider extends Component {
   }
 }
 
-export default GenreSlider;
+export default GenreSliderTwo;

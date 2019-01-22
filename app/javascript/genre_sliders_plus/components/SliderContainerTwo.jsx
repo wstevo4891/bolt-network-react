@@ -1,11 +1,13 @@
 // app/javascript/genre_sliders/components/SliderContent.jsx
 
 import React, { Component } from 'react';
+// import { Motion, spring } from 'react-motion';
 
+// import SliderContent from './SliderContent';
 import Poster from './Poster';
 import ContainerStyle from '../services/ContainerStyle';
 
-class SliderContainer extends Component {
+class SliderContainerTwo extends Component {
   constructor(props) {
     super(props);
 
@@ -34,12 +36,11 @@ class SliderContainer extends Component {
   render() {
     console.log('SliderContainer is rendering!');
 
-    const { slides, slideLength, start,
-            next, prev, hoverItem } = this.state;
+    const { slides, slideLength, start, next, prev, hoverItem } = this.state;
 
     const slideOver = new ContainerStyle(this.state).call();
 
-    const contClass = this.deterContClass(next, prev);
+    const contClass = this.deterContClass(start, next, prev);
 
     return (
       <div className={contClass} style={slideOver}>
@@ -83,7 +84,7 @@ class SliderContainer extends Component {
     console.log(this.state);
   }
 
-  deterContClass = (next, prev) => {
+  deterContClass = (start, next, prev) => {
     if (next || prev) {
       return "sliderContent animating";
     } else {
@@ -92,4 +93,4 @@ class SliderContainer extends Component {
   }
 }
 
-export default SliderContainer;
+export default SliderContainerTwo;

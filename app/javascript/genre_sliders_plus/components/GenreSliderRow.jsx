@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 
-import * as actions from '../actions/buildMoviesList';
+import MoviesList from '../services/MoviesList';
 import GenreSlider from './GenreSlider';
 
 class GenreSliderRow extends Component {
@@ -20,7 +20,7 @@ class GenreSliderRow extends Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.slideLength === this.state.slideLength) return;
 
-    const moviesList = actions.buildMoviesList(nextProps);
+    const moviesList = new MoviesList(nextProps).call();
 
     this.setState({
       slideLength: nextProps.slideLength,
@@ -47,14 +47,15 @@ class GenreSliderRow extends Component {
         <GenreSlider
           genre={genre}
           moviesList={moviesList}
-          slideLength={slideLength} />
+          slideLength={slideLength}
+        />
       </div>
     );
   }
 
   componentDidMount() {
     if (this.state.moviesList === null) {
-      const moviesList = actions.buildMoviesList(this.state);
+      const moviesList = new MoviesList(this.state).call();
 
       this.setState({
         moviesList: moviesList

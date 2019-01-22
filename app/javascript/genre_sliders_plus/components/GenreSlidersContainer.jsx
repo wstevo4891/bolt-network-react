@@ -27,26 +27,25 @@ class GenreSlidersContainer extends Component {
   render() {
     const slideLength = this.state.slideLength;
 
-    if (slideLength) {
-      const genres = this.state.genres;
-      const moviesIndex = this.state.moviesIndex;
+    if (slideLength === null) return null;
 
-      return(
-        <div className='genre-sliders-container'>
-          {
-            genres.map((genre, index) =>
-              <GenreSliderRow
-                key={index}
-                genre={genre}
-                movies={moviesIndex[genre.name]}
-                slideLength={slideLength} />
-            )
-          }
-        </div>
-      );
-    } else {
-      return null;
-    }
+    const genres = this.state.genres;
+    const moviesIndex = this.state.moviesIndex;
+
+    return(
+      <div className='genre-sliders-container'>
+        {
+          genres.map((genre, index) =>
+            <GenreSliderRow
+              key={index}
+              genre={genre}
+              movies={moviesIndex[genre.name]}
+              slideLength={slideLength}
+            />
+          )
+        }
+      </div>
+    );
   }
 
   componentDidMount() {
