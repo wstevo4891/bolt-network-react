@@ -1,6 +1,6 @@
 // app/javascript/genre_sliders_plus/services/MoviesList.js
 
-import LinkedList from '../structures/doubly_linked_list/LinkedList';
+import LinkedList from '../structures/LinkedList';
 
 // Service for building linked list of movie objects
 export default class MoviesList {
