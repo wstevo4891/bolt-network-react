@@ -10,8 +10,10 @@ class MoviesIndexTest < ActiveSupport::TestCase
   test 'should build index' do
     puts __method__
     index = MoviesIndex.new.call
-    puts index
+    puts JSON.pretty_generate(index)
 
-    assert_not_nil index
+    assert_not_predicate index, :blank?
+    assert_equal index.keys, Genre.pluck(:name)
+    assert_kind_of Enumerable, index['Action']
   end
 end
