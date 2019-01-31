@@ -3,6 +3,8 @@
 import React from 'react';
 
 const SliderArrow = (props) => {
+  if (props.start) return null;
+
   const buttonClass = `handle handle${props.direction} active`;
   const iconClass = `fa fa-angle-${props.icon}`;
 

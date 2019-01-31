@@ -5,30 +5,28 @@
 class MoviesIndex
   attr_reader :genres, :movies
 
+  def self.build
+    new.call
+  end
+
   def initialize
     @genres = Genre.all
     @movies = Movie.all
   end
 
   def call
-    build_movies_index
+    build_index
   end
 
   private
 
-  def build_movies_index
-    index = {}
-
-    @genres.each do |genre|
-      index[genre.name] = []
-
-      @movies.each do |movie|
-        next unless movie.genre_ids.include?(genre.id)
-
-        index[genre.name].push(movie)
-      end
+  def build_index
+    genres.each_with_object({}) do |genre, hash|
+      hash[genre.name] = movies_array(genre.id)
     end
+  end
 
-    index
+  def movies_array(genre_id)
+    movies.select { |movie| movie.genre_ids.include?(genre_id) }
   end
 end

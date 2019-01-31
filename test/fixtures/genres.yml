@@ -1,0 +1,27 @@
+---
+Action:
+  name: Action
+
+Comedy:
+  name: Comedy
+
+Drama:
+  name: Drama
+
+Animation:
+  name: Animation
+
+Family:
+  name: Family
+
+Romance:
+  name: Romance
+
+Fantasy:
+  name: Fantasy
+
+SciFi:
+  name: Sci-Fi
+
+Horror:
+  name: Horror

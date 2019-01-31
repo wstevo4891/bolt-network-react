@@ -1,78 +1,134 @@
-// app/javascript/movies/components/GenreSlidersContainer.jsx
+// app/javascript/genre_sliders_plus/components/GenreSlidersContainer.jsx
 
 import React, { Component } from 'react';
+import axios from 'axios';
 
-import { GenreSliderRow } from './GenreSliderRow';
+import GenreSliderRow from './GenreSliderRow';
 
-export class GenreSlidersContainer extends Component {
-  constructor(props) {
-    super(props);
+class GenreSlidersContainer extends Component {
+  constructor() {
+    super();
     this.state = {
-      genres: this.props.genres,
-      movies: this.props.movies,
-      moviesIndex: null
+      genres: null,
+      moviesIndex: null,
+      slideLength: null
     };
 
-    this.buildMoviesIndex = this.buildMoviesIndex.bind(this);
-  }
+    this.slideLengthIndex = {
+      1400: 6,
+      1100: 5,
+      800: 4,
+      500: 3
+    };
 
-  buildMoviesIndex() {
-    const genres = this.state.genres;
-    const movies = this.state.movies;
-    const moviesIndex = {};
-
-    for (let genre of genres) {
-      moviesIndex[genre.name] = [];
-
-      for (let movie of movies) {
-        if (movie.genre_ids.includes(genre.id)) {
-          moviesIndex[genre.name].push(movie);
-        }
-      }
-    }
-
-    this.setState({
-      moviesIndex: moviesIndex
-    });
-  }
-
-  componentDidMount() {
-    const movies = this.state.movies;
-
-    if (movies && movies.length > 0) {
-      this.buildMoviesIndex();
-    }
-
-    console.log('GenreSlidersContainer mounted');
-    console.log(this.state);
-  }
-
-  componentDidUpdate() {
-    console.log('GenreSlidersContainer updated.');
-    console.log(this.state);
+    this.breakpoints = [1400, 1100, 800, 500];
   }
 
   render() {
+    const slideLength = this.state.slideLength;
+
+    if (slideLength === null) return null;
+
     const genres = this.state.genres;
     const moviesIndex = this.state.moviesIndex;
 
-    if (moviesIndex) {
-      return(
-        <div className='genre-sliders-container'>
-          {
-            genres.map((genre) =>
-              <GenreSliderRow
-                key={genre.id}
-                genre={genre}
-                movies={this.state.moviesIndex[genre.name]} />
-            )
-          }
-        </div>
-      );
+    return(
+      <div className='genre-sliders-container'>
+        {
+          genres.map((genre, index) =>
+            <GenreSliderRow
+              key={index}
+              genre={genre}
+              movies={moviesIndex[genre.name]}
+              slideLength={slideLength}
+            />
+          )
+        }
+      </div>
+    );
+  }
+
+  componentDidMount() {
+    const genresData = localStorage.getItem('Genres');
+    const indexData = localStorage.getItem('MoviesIndex');
+
+    if (genresData) {
+      this.setState({
+        genres: JSON.parse(genresData)
+      });
     } else {
-      return(
-        <div className='genre-sliders-container'></div>
-      );
+      this.fetchGenres();
     }
+
+    if (indexData) {
+      this.setState({
+        moviesIndex: JSON.parse(indexData)
+      });
+    } else {
+      this.fetchMoviesIndex();
+    }
+
+    if (this.state.slideLength === null) {
+      this.updateSlideLength();
+    }
+
+    window.addEventListener("resize", this.updateSlideLength.bind(this));
+  }
+
+  fetchMoviesIndex = () => {
+    axios.get('/api/movies_index')
+      .then(response => {
+        localStorage.setItem('MoviesIndex', JSON.stringify(response.data));
+
+        this.setState({
+          moviesIndex: response.data
+        });
+      })
+      .catch(error => {
+        console.error(error);
+      })
+  }
+
+  fetchGenres() {
+    axios.get('/api/genres')
+      .then(response => {
+        localStorage.setItem('Genres', JSON.stringify(response.data));
+
+        this.setState({
+          genres: response.data
+        });
+      })
+      .catch(error => {
+        console.error(error);
+      })
+  }
+
+  updateSlideLength = () => {
+    console.log('updateSlideLength called!');
+    let width = window.innerWidth;
+    let num = null;
+
+    for (let point of this.breakpoints) {
+      if (width >= point) {
+        num = this.slideLengthIndex[point];
+        break;
+      }
+    }
+
+    if (num == null) {
+      num = 2;
+    }
+
+    console.log('slideLength: ' + num);
+
+    this.setState({
+      slideLength: num
+    });
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateSlideLength.bind(this));
   }
 }
+
+export default GenreSlidersContainer;
