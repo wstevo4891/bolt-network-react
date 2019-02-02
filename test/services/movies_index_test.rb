@@ -9,7 +9,7 @@ class MoviesIndexTest < ActiveSupport::TestCase
 
   test 'should build index' do
     puts __method__
-    index = MoviesIndex.new.call
+    index = MoviesIndex.build
     puts JSON.pretty_generate(index)
 
     assert_not_predicate index, :blank?
