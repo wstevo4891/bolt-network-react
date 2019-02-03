@@ -1,0 +1,107 @@
+// app/assets/stylesheets/modules/home_carousel/_manifest.scss
+
+#carouselMain {
+  .carousel-inner {
+    height: 50vw;
+  }
+
+  .carousel-control-prev, .carousel-control-next {
+    transition: background .4s;
+
+    &:hover {
+      background: rgba(0,0,0,.75);
+    }
+  }
+}
+
+@mixin slide {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+}
+
+.pirates-slide {
+  @include slide;
+  background-image: url('/pirates-slide.jpg');
+}
+
+.avengers-slide {
+  @include slide;
+  background-image: url('/avengers-slide.jpg');
+}
+
+.skyfall-slide {
+  @include slide;
+  background-image: url('/skyfall-slide.jpg');
+}
+
+.slide-info {
+  width: 40%;
+  height: 60%;
+  position: absolute;
+  bottom: 0;
+  left: 60%;
+  color: white;
+  text-align: left;
+  font-weight: 400;
+
+  span {
+    display: inline;
+    // float: left;
+    margin-right: 0.5em;
+    color: $azure-radiance;
+    text-shadow: 2px 2px 4px #333;
+  }
+
+  p {
+    float: left;
+    text-shadow: 2px 2px 4px #333;
+    padding-right: 1rem;
+    margin: 0.5em 0 1em 0;
+  }
+}
+
+.movie-content {
+  position: absolute;
+  bottom: 0;
+  margin-left: 1em;
+}
+
+.movie-logo {
+  position: absolute;
+  top: 0;
+}
+
+.slide-buttons {
+  margin: 0.5em 0;
+
+  a {
+    margin-right: 0.5em;
+  }
+
+  i {
+    margin-right: 6px;
+  }
+}
+
+.slider-arrow {
+  color: white;
+  font-size: 2.5em;
+  z-index: 5;
+  transition: all .3s ease;
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.5);
+  }
+
+  // @media screen and (min-width: 500px) {
+  //   font-size: 2em !important;
+  // }
+
+  // @media screen and (min-width: 1024px) {
+  //   font-size: 3em !important;
+  // }
+}

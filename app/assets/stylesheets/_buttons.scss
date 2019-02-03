@@ -1,0 +1,51 @@
+// app/assets/stylesheets/_buttons.scss
+
+.btn-blue {
+  @extend .btn;
+  color: $azure-radiance;
+  background: rgba(0,0,0,.75);
+  border: solid 1px $azure-radiance;
+  border-radius: 0;
+  padding: 0.5em 1.25em;
+
+  &:hover {
+    color: #d6d6d6;
+    background-color: $azure-radiance;
+    border-color: $azure-radiance;
+  }
+}
+
+.btn-clear {
+  @extend .btn;
+  color: #d6d6d6;
+  background: rgba(0,0,0,.75);
+  border: solid 1px #d6d6d6;
+  border-radius: 0;
+  padding: 0.5em 1.25em;
+  transition: all .4s;
+
+  &:hover {
+    background: #d6d6d6;
+    color: #000;
+    border-color: #d6d6d6;
+  }
+}
+
+.mylist-button {
+  color: white;
+  background-color: rgba(51,51,51,.4);
+  border-width: 0;
+  padding: .75em 2.3em;
+  height: 3.2vw;
+  border-radius: .2vw;
+  box-shadow: none;
+  font-size: 1.1vw;
+  transition: background .4s;
+
+  &:hover {
+    box-shadow: 0 0.6vw 1vw -0.4vw rgba(0,0,0,.35);
+    background-color: #e6e6e6;
+    color: #000;
+    text-decoration: none;
+  }
+}

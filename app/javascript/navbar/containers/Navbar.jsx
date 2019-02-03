@@ -11,9 +11,7 @@ export default class Navbar extends Component {
     this.state = {
       genres: null,
       moviesIndex: null,
-      shadow: false,
-      slideLength: null,
-      scrollLength: 0
+      slideLength: null
     };
 
     this.slideLengthIndex = {
@@ -27,8 +25,6 @@ export default class Navbar extends Component {
   }
 
   render() {
-    const { shadow, scrollLength } = this.state
-
     return (
       <nav className="navbar navbar-expand-md fixed-top">
         <a className="navbar-brand" href="/">
