@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get '/animations' => 'animations#index'
 
+  get '/search/:query' => 'search#show'
+
   resources :movies, only: :show
 
   resources :genres, only: :show
