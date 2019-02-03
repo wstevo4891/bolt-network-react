@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   get '/animations' => 'animations#index'
 
-  get '/search/:query' => 'search#show', defaults: { format: :json }
+  get '/search(/:query)' => 'search#show', defaults: { format: :json }
 
   resources :movies, only: :show
 

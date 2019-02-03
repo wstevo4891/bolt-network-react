@@ -8,7 +8,7 @@ const Dropdown = (props) => {
       <a
         className="nav-link dropdown-toggle"
         href="#"
-        id="navbarDropdown"
+        id={props.id}
         role="button"
         data-toggle="dropdown"
         aria-haspopup="true"
@@ -16,11 +16,22 @@ const Dropdown = (props) => {
       >
         {props.text}
       </a>
-      <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a className="dropdown-item" href="#">Action</a>
+      <div className="dropdown-menu" aria-labelledby={props.id}>
+        {
+          props.links.map((link, index) =>
+            <a
+              key={index}
+              className="dropdown-item"
+              href={link.url}
+            >
+              {link.name}
+            </a>
+          )
+        }
+        {/* <a className="dropdown-item" href="#">Action</a>
         <a className="dropdown-item" href="#">Another action</a>
         <div className="dropdown-divider"></div>
-        <a className="dropdown-item" href="#">Something else here</a>
+        <a className="dropdown-item" href="#">Something else here</a> */}
       </div>
     </li>
   )

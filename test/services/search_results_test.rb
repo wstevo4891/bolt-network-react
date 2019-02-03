@@ -7,15 +7,15 @@ class SearchResultsTest < ActiveSupport::TestCase
     puts ''
   end
 
-  test 'should find genres' do
+  test 'should find movies by genre' do
     puts __method__
     results = SearchResults.create('action')
     puts results
 
-    assert_not_predicate results[:genres], :empty?
+    assert_not_predicate results[:movies], :empty?
   end
 
-  test 'should find movies' do
+  test 'should find movies by title' do
     puts __method__
     results = SearchResults.create('avengers')
     puts results

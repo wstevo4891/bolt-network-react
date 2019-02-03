@@ -1,42 +1,60 @@
 // app/javascript/navbar/containers/NavCollapse.jsx
 
 import React, { Component } from 'react'
+import axios from 'axios'
 
 import NavItem from '../components/NavItem'
 import Dropdown from '../components/Dropdown'
 import SearchBar from '../components/SearchBar'
-import SearchBarTwo from '../components/SearchBarTwo'
 
 export default class NavCollapse extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      links: [],
+      genres: [],
       active: 'home'
     }
   }
 
   render() {
+    const { genres } = this.state
+
     return(
       <div className="collapse navbar-collapse" id="navbarContent">
         <ul className="navbar-nav mr-auto">
           <NavItem active={true} srOnly="(current)" href="/" text="Home" />
 
-          <NavItem active={false} href="/quotes" text="Quotes" />
+          {/* <NavItem active={false} href="/quotes" text="Quotes" /> */}
 
-          <NavItem active={false} href="/blog" text="Blog" />
+          <Dropdown id="genresDropdown" text="Genres" links={genres} />
 
-          <Dropdown text="Dropdown" />
+          <NavItem active={false} href="#" text="Recently Added" />
 
-          <NavItem active={false} disabled={true} href="#" text="Disabled" />
+          <NavItem active={false} href="#" text="My List" />
         </ul>
 
         <ul className="navbar-nav navbar-right">
-          <SearchBarTwo />
+          <SearchBar />
         </ul>
-
-        {/* <SearchBar /> */}
       </div>
     )
+  }
+
+  componentDidMount() {
+    this.fetchGenres()
+  }
+
+  fetchGenres() {
+    axios.get('/api/genres')
+      .then(response => {
+        // localStorage.setItem('Genres', JSON.stringify(response.data));
+
+        this.setState({
+          genres: response.data
+        });
+      })
+      .catch(error => {
+        console.error(error);
+      })
   }
 }
