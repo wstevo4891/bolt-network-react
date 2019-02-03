@@ -11,6 +11,10 @@
     transition: background .4s;
   }
 
+  .navbar-toggler span {
+    color: $azure-radiance;
+  }
+
   .navbar .navbar-collapse .navbar-nav {
     li a {
       color: white;
@@ -22,7 +26,12 @@
     }
 
     li.active {
-      transform: scale(1.1);
+      @include bp-tablet {
+        transform: scale(1.1);
+      }
+      // @media screen and (min-width: 767px) {
+      //   transform: scale(1.1);
+      // }
 
       a:hover {
         color: white;
@@ -51,6 +60,5 @@
 }
 
 .nav-shadow {
-  // background-color: rgba(0, 0, 0, 0.7);
   background: rgb(20, 20, 20);
 }

@@ -7,14 +7,12 @@ const Hamburger = (props) => (
     className="navbar-toggler"
     type="button"
     data-toggle="collapse"
-    // data-target="#navbarContent"
     data-target={`#${props.dataTarget}`}
-    // aria-controls="navbarContent"
     aria-controls={props.dataTarget}
     aria-expanded="false"
     aria-label="Toggle navigation"
   >
-    <span className="navbar-toggler-icon"></span>
+    <span className="fa fa-bars"></span>
   </button>
 )
 

@@ -45,10 +45,10 @@
   color: white;
   text-align: left;
   font-weight: 400;
+  font-size: 1.5vw;
 
   span {
     display: inline;
-    // float: left;
     margin-right: 0.5em;
     color: $azure-radiance;
     text-shadow: 2px 2px 4px #333;
@@ -77,6 +77,8 @@
   margin: 0.5em 0;
 
   a {
+    width: 14vw;
+    font-size: 1.7vw;
     margin-right: 0.5em;
   }
 
