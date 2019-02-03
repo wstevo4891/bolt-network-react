@@ -3,3 +3,45 @@
 .logo {
   width: 150px;
 }
+
+// Set navbar link color to white
+// Gray on hover
+#navbar {
+  .navbar .navbar-collapse .navbar-nav {
+    li a {
+      color: white;
+      transition: color .4s;
+
+      &:hover {
+        color: #b3b3b3;
+      }
+    }
+
+    li.active {
+      transform: scale(1.1)
+    }
+
+    .dropdown .dropdown-menu {
+      width: 400px;
+      max-height: 175px;
+      background: rgba(0,0,0,.75);
+      border-radius: 0;
+      border: 1px solid rgba(255,255,255,.35);
+    }
+
+    .dropdown .dropdown-menu .dropdown-item {
+      display: inline-block;
+      width: 125px;
+
+      &:hover {
+        color: white;
+        background: transparent;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.nav-shadow {
+  background-color: rgba(0,0,0,0.7);
+}
