@@ -11,8 +11,9 @@ export default class Navbar extends Component {
     this.state = {
       genres: null,
       moviesIndex: null,
-      background: 'clear',
-      slideLength: null
+      shadow: false,
+      slideLength: null,
+      scrollLength: 0
     };
 
     this.slideLengthIndex = {
@@ -26,6 +27,8 @@ export default class Navbar extends Component {
   }
 
   render() {
+    const { shadow, scrollLength } = this.state
+
     return (
       <nav className="navbar navbar-expand-md fixed-top">
         <a className="navbar-brand" href="/">
@@ -37,5 +40,27 @@ export default class Navbar extends Component {
         <NavCollapse />
       </nav>
     )
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll)
+  }
+
+  handleScroll = () => {
+    const scrollLength = window.scrollY
+
+    if (scrollLength > 20) {
+      this.addShadow()
+    } else {
+      this.removeShadow()
+    }
+  }
+
+  removeShadow = () => {
+    document.querySelector('.navbar').classList.remove('nav-shadow')
+  }
+
+  addShadow = () => {
+    document.querySelector('.navbar').classList.add('nav-shadow')
   }
 }

@@ -7,6 +7,10 @@
 // Set navbar link color to white
 // Gray on hover
 #navbar {
+  .navbar {
+    transition: background .4s;
+  }
+
   .navbar .navbar-collapse .navbar-nav {
     li a {
       color: white;
@@ -43,5 +47,6 @@
 }
 
 .nav-shadow {
-  background-color: rgba(0,0,0,0.7);
+  // background-color: rgba(0, 0, 0, 0.7);
+  background: rgb(20, 20, 20);
 }
