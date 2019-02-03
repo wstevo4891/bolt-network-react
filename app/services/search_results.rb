@@ -18,6 +18,17 @@ class SearchResults
   private
 
   def retrieve_results
-    Movie.where('title = ?', query)
+    {
+      movies: movie_title_match,
+      genres: genre_name_match
+    }
+  end
+
+  def movie_title_match
+    Movie.where(Movie.arel_table[:title].lower.matches("%#{query}%"))
+  end
+
+  def genre_name_match
+    Genre.where(Genre.arel_table[:name].lower.matches("%#{query}%"))
   end
 end
