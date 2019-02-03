@@ -7,8 +7,8 @@ export default class SearchBar extends Component {
     super(props);
     this.state = {
       text: '',
-      placeHolder = 'Search',
-      query = null
+      placeHolder: 'Titles, people, genres',
+      query: null
     }
   }
 

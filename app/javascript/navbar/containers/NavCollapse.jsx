@@ -4,6 +4,8 @@ import React, { Component } from 'react'
 
 import NavItem from '../components/NavItem'
 import Dropdown from '../components/Dropdown'
+import SearchBar from '../components/SearchBar'
+import SearchBarTwo from '../components/SearchBarTwo'
 
 export default class NavCollapse extends Component {
   constructor(props) {
@@ -15,7 +17,7 @@ export default class NavCollapse extends Component {
   }
 
   render() {
-    return (
+    return(
       <div className="collapse navbar-collapse" id="navbarContent">
         <ul className="navbar-nav mr-auto">
           <NavItem active={true} srOnly="(current)" href="/" text="Home" />
@@ -29,10 +31,11 @@ export default class NavCollapse extends Component {
           <NavItem active={false} disabled={true} href="#" text="Disabled" />
         </ul>
 
-        <form className="form-inline my-2 my-lg-0" action="/search">
-          <input className="form-control mr-sm-2" type="search" name="query" placeholder="Search" aria-label="Search"/>
-          <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <ul className="navbar-nav navbar-right">
+          <SearchBarTwo />
+        </ul>
+
+        {/* <SearchBar /> */}
       </div>
     )
   }
