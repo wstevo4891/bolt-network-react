@@ -7,6 +7,8 @@ import SliderContainer from './SliderContainer';
 
 const SlideBuilder = (props) => {
   if (props.moviesList === null) return null;
+  console.log('Movies List')
+  console.log(props.moviesList)
 
   const slides = new SlidesArray(props).call();
 
