@@ -14,47 +14,96 @@ def load_yaml(file)
   YAML.load_file(Rails.root.join("db/yaml_data/#{file}.yml"))
 end
 
-puts 'Seeding the Database ==================================='
+def load_movie(path)
+  YAML.load_file(Rails.root.join(path))
+end
+
+def genre_ids_map
+  {
+    'Action' => 1,
+    'Adventure' => 2, 
+    'Comedy' => 3,
+    'Drama' => 4,
+    'Animation' => 5,
+    'Family' => 6,
+    'Romance' => 7,
+    'Fantasy' => 8,
+    'Sci-Fi' => 9,
+    'Horror' => 10
+  }
+end
+
+def genre_ids_array(genres)
+  arr = genres.split(', ')
+
+  arr.each_with_object([]) do |name, arr|
+    arr << genre_ids_map[name]
+  end
+end
+
+puts 'Seeding the Database =========================================='
 
 quotes = load_yaml('quotes')
 
-puts 'Delete old quotes ===================================='
+puts 'Delete old quotes ============================================='
 Quote.delete_all
 
 Quote.create!(quotes)
 puts 'Quotes seeded!'
 
-puts 'Delete old Genres ===================================='
+puts 'Delete old Genres ============================================='
 Genre.delete_all
 
-puts 'Loading Genres YAML ==================================='
+puts 'Loading Genres YAML ==========================================='
 genres = load_yaml('genres')
 
-puts 'Creating Genres ==================================='
+puts 'Creating Genres ==============================================='
 genres.each do |genre|
   puts "Creating genre: #{genre}"
 
   Genre.create!(name: genre)
 end
 
-puts 'Delete old Movies ================================='
+puts 'Delete old Movies ============================================='
 Movie.delete_all
 
-puts 'Loading Movies YAML ==================================='
-movies = load_yaml('movies')
-
-puts 'Creating Movies ==================================='
-movies.each do |movie|
-  puts "Creating movie: #{movie['title']}\n"
+puts 'Loading Movies ================================================'
+Dir['db/yaml_data/movies/*.yml'].each do |path|
+  movie = load_movie(path)
+  poster_file = path[/\/[\w-]+\.yml/].slice(1..-1).sub('.yml', '-poster.jpg')
 
   Movie.create!(
-    title: movie['title'],
-    remote_photo_url: seed_image(movie['image']),
-    year: movie['year'],
-    rating: movie['rating'],
-    length: movie['length'],
-    summary: movie['summary'],
-    tomato_meter: movie['tomato_meter'],
-    genre_ids: movie['genre_ids']
+    title: movie['Title'],
+    year: movie['Year'],
+    rated: movie['Rated'],
+    release_date: movie['Released'],
+    run_time: movie['Runtime'],
+    directors: movie['Director'],
+    writers: movie['Writer'],
+    actors: movie['Actor'],
+    plot: movie['Plot'],
+    photo: seed_image(poster_file),
+    poster: movie['Poster'],
+    ratings: { ratings: movie['Ratings'] },
+    genre_ids: genre_ids_array(movie['Genre'])
   )
 end
+
+# puts 'Loading Movies YAML ==================================='
+# movies = load_yaml('movies')
+
+# puts 'Creating Movies ==================================='
+# movies.each do |movie|
+#   puts "Creating movie: #{movie['title']}\n"
+
+#   Movie.create!(
+#     title: movie['title'],
+#     remote_photo_url: seed_image(movie['image']),
+#     year: movie['year'],
+#     rating: movie['rating'],
+#     length: movie['length'],
+#     summary: movie['summary'],
+#     tomato_meter: movie['tomato_meter'],
+#     genre_ids: movie['genre_ids']
+#   )
+# end
