@@ -87,6 +87,8 @@ Dir['db/yaml_data/movies/*.yml'].each do |path|
     ratings: { ratings: movie['Ratings'] },
     genre_ids: genre_ids_array(movie['Genre'])
   )
+
+  puts "Created Movie: #{movie['Title']}"
 end
 
 # puts 'Loading Movies YAML ==================================='
