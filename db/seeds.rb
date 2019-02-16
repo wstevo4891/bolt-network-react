@@ -21,7 +21,7 @@ end
 def genre_ids_map
   {
     'Action' => 1,
-    'Adventure' => 2, 
+    'Adventure' => 2,
     'Comedy' => 3,
     'Drama' => 4,
     'Animation' => 5,
@@ -69,6 +69,7 @@ puts 'Loading Movies ================================================'
 Dir['db/yaml_data/movies/*.yml'].each do |path|
   movie = load_movie(path)
   poster_file = path[/\/[\w-]+\.yml/].slice(1..-1).sub('.yml', '-poster.jpg')
+  puts "poster_file: #{poster_file}"
 
   Movie.create!(
     title: movie['Title'],
@@ -76,11 +77,11 @@ Dir['db/yaml_data/movies/*.yml'].each do |path|
     rated: movie['Rated'],
     release_date: movie['Released'],
     run_time: movie['Runtime'],
-    directors: movie['Director'],
-    writers: movie['Writer'],
-    actors: movie['Actor'],
+    directors: movie['Director'].split(', '),
+    writers: movie['Writer'].split(', '),
+    actors: movie['Actors'].split(', '),
     plot: movie['Plot'],
-    photo: seed_image(poster_file),
+    remote_photo_url: seed_image(poster_file),
     poster: movie['Poster'],
     ratings: { ratings: movie['Ratings'] },
     genre_ids: genre_ids_array(movie['Genre'])

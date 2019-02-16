@@ -52,6 +52,8 @@ class GenreSlidersContainer extends Component {
     const genresData = localStorage.getItem('Genres');
     const indexData = localStorage.getItem('MoviesIndex');
 
+    console.log('MoviesIndex: ' + indexData);
+
     if (genresData) {
       this.setState({
         genres: JSON.parse(genresData)
@@ -79,6 +81,8 @@ class GenreSlidersContainer extends Component {
     axios.get('/api/movies_index')
       .then(response => {
         localStorage.setItem('MoviesIndex', JSON.stringify(response.data));
+
+        console.log('MoviesIndex: ' + JSON.stringify(response.data));
 
         this.setState({
           moviesIndex: response.data

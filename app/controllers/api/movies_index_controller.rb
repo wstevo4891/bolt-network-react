@@ -5,7 +5,7 @@ module Api
   # Route for fetching an object of movies indexed by genre
   class MoviesIndexController < ApplicationController
     def index
-      movies_index = MoviesIndex.new.call
+      movies_index = MoviesIndex.build
 
       render json: movies_index
     end
