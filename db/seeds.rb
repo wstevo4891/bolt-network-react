@@ -69,7 +69,6 @@ puts 'Loading Movies ================================================'
 Dir['db/yaml_data/movies/*.yml'].each do |path|
   movie = load_movie(path)
   poster_file = path[/\/[\w-]+\.yml/].slice(1..-1).sub('.yml', '-poster.jpg')
-  puts "poster_file: #{poster_file}"
 
   Movie.create!(
     title: movie['Title'],
