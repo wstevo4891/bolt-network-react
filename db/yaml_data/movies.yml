@@ -1,7 +1,7 @@
 ---
 -
   title: The Avengers
-  image: avengers-poster.jpeg
+  image: avengers-poster.jpg
   year: 2012
   rating: PG-13
   length: 2h 23min
@@ -258,8 +258,8 @@
     - 2
     - 9
 -
-  title: Forest Gump
-  image: forest-gump-poster.jpg
+  title: Forrest Gump
+  image: forrest-gump-poster.jpg
   year: 1994
   rating: PG-13
   length: 2h 22min

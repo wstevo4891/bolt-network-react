@@ -5,8 +5,10 @@
 namespace :movies do
   # docker-compose run web rake movies:fetch[title]
   desc "Fetch movie data with OMDB API"
-  task :fetch, [:title] => [:environment] do |t, args|
+  task :fetch, [:title, :year] => [:environment] do |t, args|
     params = { t: args[:title] }
+    params[:y] = args[:year] if args[:year]
+      
     client = OmdbApi::Client.new
     data = client.fetch_movie(params)
     puts data.transform_keys(&:to_s)
@@ -41,8 +43,8 @@ namespace :movies do
       count += 1
 
       file_name = title.gsub(/(\s-\s|:\s|\s)/, '-').downcase + '.yml'
-      path = Rails.root.join("db/yaml_data/new_movies/#{file_name}")
-      YAML.dump(data.transform_keys(&:to_s), path)
+      path = Rails.root.join("db/yaml_data/movies/#{file_name}")
+      YAML.dump(data.stringify_keys, path)
     end
 
     puts "Successfully found data for #{count} movies"
