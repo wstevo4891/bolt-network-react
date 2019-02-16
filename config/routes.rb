@@ -26,7 +26,12 @@ Rails.application.routes.draw do
     resources :quotes, only: :show
     resources :movies, only: %i[index show]
     resources :genres, only: %i[index show]
-    resources :movies_index, only: :index
+
+    get '/movies-index', to: 'movies_index#show'
     get '/genres/:id/movie_ids' => 'genres#movie_ids', as: :genres_movie_ids
+
+    namespace :movies do
+      get '/search/:titles', to: 'search#show'
+    end
   end
 end

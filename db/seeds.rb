@@ -39,6 +39,24 @@ def genre_ids_array(genres)
   arr.map { |name| genre_ids_map[name] }
 end
 
+def movie_params(movie, poster_file)
+  {
+    title: movie['Title'],
+    year: movie['Year'],
+    rated: movie['Rated'],
+    release_date: movie['Released'],
+    run_time: movie['Runtime'],
+    directors: movie['Director'].split(', '),
+    writers: movie['Writer'].split(', '),
+    actors: movie['Actors'].split(', '),
+    plot: movie['Plot'],
+    remote_photo_url: seed_image(poster_file),
+    poster: movie['Poster'],
+    ratings: { ratings: movie['Ratings'] },
+    genre_ids: genre_ids_array(movie['Genre'])
+  }
+end
+
 puts 'Seeding the Database =========================================='
 
 quotes = load_yaml('quotes')
@@ -70,21 +88,11 @@ Dir['db/yaml_data/movies/*.yml'].each do |path|
   movie = load_movie(path)
   poster_file = path[/\/[\w-]+\.yml/].slice(1..-1).sub('.yml', '-poster.jpg')
 
-  Movie.create!(
-    title: movie['Title'],
-    year: movie['Year'],
-    rated: movie['Rated'],
-    release_date: movie['Released'],
-    run_time: movie['Runtime'],
-    directors: movie['Director'].split(', '),
-    writers: movie['Writer'].split(', '),
-    actors: movie['Actors'].split(', '),
-    plot: movie['Plot'],
-    remote_photo_url: seed_image(poster_file),
-    poster: movie['Poster'],
-    ratings: { ratings: movie['Ratings'] },
-    genre_ids: genre_ids_array(movie['Genre'])
-  )
+  params = movie_params(movie, poster_file)
+
+  params[:logo] = movie['Logo'] if movie['Logo']
+
+  Movie.create!(params)
 
   puts "Created Movie: #{movie['Title']}"
 end

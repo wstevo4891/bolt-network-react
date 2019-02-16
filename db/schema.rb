@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20180118041414) do
     t.string "actors", default: [], array: true
     t.string "plot"
     t.string "photo"
+    t.string "logo"
     t.string "poster"
     t.json "ratings"
     t.datetime "created_at", null: false

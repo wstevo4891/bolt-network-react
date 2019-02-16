@@ -78,7 +78,7 @@ class GenreSlidersContainer extends Component {
   }
 
   fetchMoviesIndex = () => {
-    axios.get('/api/movies_index')
+    axios.get('/api/movies-index')
       .then(response => {
         localStorage.setItem('MoviesIndex', JSON.stringify(response.data));
 

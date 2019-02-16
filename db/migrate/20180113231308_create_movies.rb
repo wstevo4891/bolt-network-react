@@ -11,6 +11,7 @@ class CreateMovies < ActiveRecord::Migration[5.1]
       t.string   :actors, array: true, default: []
       t.string   :plot
       t.string   :photo
+      t.string   :logo
       t.string   :poster
       t.json     :ratings
 
