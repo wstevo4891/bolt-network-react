@@ -18,12 +18,12 @@ Country: USA
 Awards: Won 2 Oscars. Another 77 wins & 57 nominations.
 Poster: https://m.media-amazon.com/images/M/MV5BMTQ1MjQwMTE5OF5BMl5BanBnXkFtZTgwNjk3MTcyMDE@._V1_SX300.jpg
 Ratings:
-- :Source: Internet Movie Database
-  :Value: 7.5/10
-- :Source: Rotten Tomatoes
-  :Value: 90%
-- :Source: Metacritic
-  :Value: 74/100
+- Source: Internet Movie Database
+  Value: 7.5/10
+- Source: Rotten Tomatoes
+  Value: 90%
+- Source: Metacritic
+  Value: 74/100
 Metascore: '74'
 imdbRating: '7.5'
 imdbVotes: '503,447'
