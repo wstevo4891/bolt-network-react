@@ -36,9 +36,7 @@ end
 def genre_ids_array(genres)
   arr = genres.split(', ')
 
-  arr.each_with_object([]) do |name, arr|
-    arr << genre_ids_map[name]
-  end
+  arr.map { |name| genre_ids_map[name] }
 end
 
 puts 'Seeding the Database =========================================='

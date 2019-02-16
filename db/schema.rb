@@ -30,15 +30,17 @@ ActiveRecord::Schema.define(version: 20180118041414) do
 
   create_table "movies", force: :cascade do |t|
     t.string "title"
+    t.string "year"
+    t.string "rated"
+    t.string "release_date"
+    t.string "run_time"
+    t.string "directors", default: [], array: true
+    t.string "writers", default: [], array: true
+    t.string "actors", default: [], array: true
+    t.string "plot"
     t.string "photo"
-    t.integer "year"
-    t.string "rating"
-    t.string "length"
-    t.string "blurb"
-    t.string "summary"
-    t.integer "tomato_meter"
-    t.string "scenes", default: [], array: true
-    t.string "people", default: [], array: true
+    t.string "poster"
+    t.json "ratings"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

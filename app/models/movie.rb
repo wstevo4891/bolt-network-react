@@ -6,7 +6,7 @@ class Movie < ApplicationRecord
   mount_uploader :photo, PhotoUploader
   # mount_uploaders :scenes, PhotoUploader
 
-  validates :title, :photo, :year, :rated, :run_time, :plot, presence: true
+  validates :title, :year, :rated, :run_time, :plot, presence: true
 
   def self.search(search)
     Movie.where('title ~* :search', search: "(#{search})")
