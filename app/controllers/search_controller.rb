@@ -1,6 +1,6 @@
 # app/controllers/search_controller.rb
 
-class SearchController < ApplicationController
+class SearchController < PublicController
   def show
     @results = SearchResults.create(params[:query])
   end

@@ -1,7 +1,7 @@
 # app/controllers/home_controller.rb
 
 # Home page controller
-class HomeController < ApplicationController
+class HomeController < PublicController
   def index
     @genres = Genre.all
   end

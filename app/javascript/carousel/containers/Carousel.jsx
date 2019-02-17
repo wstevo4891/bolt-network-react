@@ -45,9 +45,9 @@ export default class Carousel extends Component {
   }
 
   fetchMovies = () => {
-    const titles = this.state.titles
+    const titles = { titles: this.state.titles }
 
-    axios.get('/api/movies/search', titles)
+    axios.post('/api/movies/search', titles)
       .then(response => {
         localStorage.setItem('CarouselMovies', JSON.stringify(response.data))
 

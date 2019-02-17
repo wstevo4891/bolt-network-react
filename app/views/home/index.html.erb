@@ -1,6 +1,9 @@
 <!-- app/views/home/index.html.erb -->
 
-<%= render 'carousel' %>
+<%#= render 'carousel' %>
+
+<div id="carousel"></div>
+<%= javascript_pack_tag 'carousel' %>
 
 <div class="container">
   <div class="row justify-content-center">

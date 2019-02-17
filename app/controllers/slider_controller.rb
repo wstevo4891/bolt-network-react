@@ -1,4 +1,4 @@
-class SliderController < ApplicationController
+class SliderController < PublicController
   def index
     render
   end
