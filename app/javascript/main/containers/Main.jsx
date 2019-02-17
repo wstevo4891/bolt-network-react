@@ -54,9 +54,9 @@ export default class Main extends Component {
     const { query, slideLength } = this.state
 
     if (query && query.length > 0) {
-      const movies = this.searchMovies(query)
+      const results = this.searchMovies(query)
 
-      return <SearchResults movies={movies} />
+      return <SearchResults results={results} slideLength={slideLength} />
     } else {
       return(
         <main className="application">

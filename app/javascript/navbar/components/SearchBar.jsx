@@ -106,8 +106,6 @@ export default class SearchBar extends Component {
   handleKeyUp = (event) => {
     const target = event.target
 
-    console.log("Query: " + target.value)
-
     this.props.update(target.value)
   }
 }
