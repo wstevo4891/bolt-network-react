@@ -34,7 +34,7 @@ export default class NavCollapse extends Component {
         </ul>
 
         <ul className="navbar-nav navbar-right">
-          <SearchBar />
+          <SearchBar update={this.props.update} />
         </ul>
       </div>
     )

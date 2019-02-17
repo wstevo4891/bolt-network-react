@@ -6,8 +6,8 @@ import Hamburger from '../components/Hamburger'
 import NavCollapse from './NavCollapse'
 
 export default class Navbar extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       genres: null,
       moviesIndex: null,
@@ -33,7 +33,7 @@ export default class Navbar extends Component {
 
         <Hamburger dataTarget="navbarContent" />
 
-        <NavCollapse />
+        <NavCollapse update={this.props.update} />
       </nav>
     )
   }

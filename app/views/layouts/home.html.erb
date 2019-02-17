@@ -13,8 +13,7 @@
   </head>
 
   <body class="<%= controller_name %> <%= action_name %>" >
-    <div id="main"></div>
-    <%= javascript_pack_tag 'main' %>
+    <%= yield %>
 
     <%= render 'shared/footer' %>
   </body>

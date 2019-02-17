@@ -64,7 +64,7 @@ export default class SearchBar extends Component {
           <div className="searchInput" style={{ width: `${value.x}px` }}>
             <i className="fa fa-search" id="searchIcon" aria-hidden="true"></i>
 
-            <form className="form-inline" action="/search">
+            <form className="form-inline" action="#">
               <input
                 type="text"
                 name="query"
@@ -72,6 +72,7 @@ export default class SearchBar extends Component {
                 className="form-control"
                 placeholder="Titles, people, genres"
                 aria-label="Titles, people, genres"
+                onKeyUp={this.handleKeyUp}
               />
             </form>
 
@@ -100,5 +101,13 @@ export default class SearchBar extends Component {
         })
       }, 400)
     }
+  }
+
+  handleKeyUp = (event) => {
+    const target = event.target
+
+    console.log("Query: " + target.value)
+
+    this.props.update(target.value)
   }
 }
