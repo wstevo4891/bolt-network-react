@@ -5,20 +5,41 @@
 
 .suggestionsLabel {
   color: grey;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 auto;
+  -moz-box-flex: 0;
+  -ms-flex: 0 auto;
   flex: 0 auto;
   margin-right: 5px;
   white-space: nowrap;
 }
 
 .suggestions {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+
   ul {
-    display: inline-flex;
-    padding-left: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
   }
 
   ul li {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 auto;
+    -moz-box-flex: 0;
+    -ms-flex: 0 auto;
     flex: 0 auto;
-    box-flex: 0;
     border-right: 1px solid grey;
     list-style: none;
     padding: 0 .5em;

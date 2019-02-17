@@ -93,6 +93,11 @@ export default class Main extends Component {
   updateQuery = (query) => {
     if (query && query.length > 0) {
       this.fetchSearchResults(query)
+    } else {
+      this.setState({
+        query: null,
+        results: null
+      })
     }
   }
 

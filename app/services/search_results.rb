@@ -26,11 +26,23 @@ class SearchResults
   end
 
   def first_char_match
-    genres_list = genres_by_first_char
+    @genres = genres_by_first_char
     
-    movies_list = movies_by_first_char
+    movies_list = full_movies_search
 
-    { genres: genres_list.to_a, movies: movies_list.to_a }
+    { genres: @genres, movies: movies_list }
+  end
+
+  def full_movies_search
+    first_search = movies_by_first_char.to_a
+
+    if genres.empty?
+      first_search
+    else
+      second_search = concat_movies_by_genre
+
+      first_search.concat(second_search)
+    end
   end
 
   def genres_by_first_char
@@ -44,7 +56,7 @@ class SearchResults
   def full_match_results
     @genres = genre_name_match
 
-    { genres: @genres.to_a, movies: movie_results.to_a }
+    { genres: @genres, movies: movie_results }
   end
 
   def movie_results
@@ -72,7 +84,7 @@ class SearchResults
   end
 
   def genre_ids_list
-    genres.each_with_object([]) { |genre, arr| arr << genre.id }
+    genres.map { |genre| genre.id }
   end
 
   def movies_by_genre(genre_id)

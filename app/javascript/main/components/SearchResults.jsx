@@ -17,6 +17,27 @@ export default class SearchResults extends Component {
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    const { results, slideLength } = nextProps
+
+    const genres = results.genres
+    const movies = results.movies
+
+    const nextSuggestions = new Suggestions(genres, movies).call()
+    console.log('nextSuggestions: ' + JSON.stringify(nextSuggestions))
+
+    const nextSlides = this.buildSlides(movies, slideLength)
+    console.log('nextSlides: ' + JSON.stringify(nextSlides))
+
+    this.setState({
+      genres: nextProps.results.genres,
+      movies: nextProps.results.movies,
+      slideLength: nextProps.slideLength,
+      suggestions: nextSuggestions,
+      slides: nextSlides
+    })
+  }
+
   render() {
     const { slideLength, suggestions, slides } = this.state
 
@@ -29,23 +50,13 @@ export default class SearchResults extends Component {
                 <span className="suggestionsLabel">Explore titles related to:</span>
                 <ul>
                   {this.renderSuggestions(suggestions)}
-                  {/* {suggestions.map((suggestion, index) =>
-                    <li key={index}>
-                      <a href={suggestion.link}>{suggestion.name}</a>
-                    </li>
-                  )} */}
                 </ul>
               </div>
             </div>
           </div>
   
           <div className="row">
-            <div className="col-12 mt-4">
-              {this.renderSlides(slides, slideLength)}
-              {/* {slides.map((slide, index) =>
-                <PosterRow key={index} movies={slide} />
-              )} */}
-            </div>
+            {this.renderSlides(slides, slideLength)}
           </div>
         </div>
       </div>
@@ -66,7 +77,9 @@ export default class SearchResults extends Component {
     if (slides.length === 0) return null
 
     return slides.map((slide, index) =>
-      <PosterRow key={index} movies={slide} slideLength={slideLength} />
+      <div key={index} className="col-12 mt-4">
+        <PosterRow movies={slide} slideLength={slideLength} />
+      </div>
     )
   }
 
