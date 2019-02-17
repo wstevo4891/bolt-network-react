@@ -18,12 +18,36 @@ class SearchResults
   private
 
   def retrieve_results
-    { movies: movies_results }
+    if @query.length == 1
+      first_char_match
+    else
+      full_match_results
+    end
   end
 
-  def movies_results
+  def first_char_match
+    genres_list = genres_by_first_char
+    
+    movies_list = movies_by_first_char
+
+    { genres: genres_list, movies: movies_list }
+  end
+
+  def genres_by_first_char
+    Genre.where('name LIKE :prefix', prefix: "#{query}%")
+  end
+
+  def movies_by_first_char
+    Movie.where('name LIKE :prefix', prefix: "#{query}%")
+  end
+
+  def full_match_results
     @genres = genre_name_match
 
+    { genres: @genres, movies: movie_results }
+  end
+
+  def movie_results
     if genres.empty?
       movie_title_match
     else

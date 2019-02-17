@@ -3,6 +3,8 @@
 import React from 'react'
 
 const SearchResults = (props) => {
+  const movies = props.movies
+
   return(
     <div className="search-results">
       <div className="container">

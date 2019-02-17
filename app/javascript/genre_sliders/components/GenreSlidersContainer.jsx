@@ -6,12 +6,12 @@ import axios from 'axios';
 import GenreSliderRow from './GenreSliderRow';
 
 class GenreSlidersContainer extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       genres: null,
       moviesIndex: null,
-      slideLength: null
+      slideLength: props.slideLength ? props.slideLength : null
     };
 
     this.slideLengthIndex = {
@@ -25,12 +25,9 @@ class GenreSlidersContainer extends Component {
   }
 
   render() {
-    const slideLength = this.state.slideLength;
+    const { slideLength, genres, moviesIndex } = this.state;
 
     if (slideLength === null) return null;
-
-    const genres = this.state.genres;
-    const moviesIndex = this.state.moviesIndex;
 
     return(
       <div className='genre-sliders-container'>
@@ -72,9 +69,8 @@ class GenreSlidersContainer extends Component {
 
     if (this.state.slideLength === null) {
       this.updateSlideLength();
+      window.addEventListener("resize", this.updateSlideLength.bind(this));
     }
-
-    window.addEventListener("resize", this.updateSlideLength.bind(this));
   }
 
   fetchMoviesIndex = () => {

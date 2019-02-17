@@ -12,25 +12,51 @@ export default class Main extends Component {
   constructor() {
     super()
     this.state = {
-      query: null
+      query: null,
+      slideLength: null
     }
+
+    this.slideLengthIndex = {
+      1400: 6,
+      1100: 5,
+      800: 4,
+      500: 3
+    };
+
+    this.breakpoints = [1400, 1100, 800, 500];
   }
 
   render() {
     return (
       <div id="main-container">
-        <Navbar update={this.updateQuery} />
+        <div id="navbar">
+          <Navbar update={this.updateQuery} />
+        </div>
 
         {this.determineRender()}
       </div>
     )
   }
 
-  determineRender = () => {
-    const query = this.state.query
+  componentDidMount() {
+    if (this.state.slideLength === null) {
+      this.updateSlideLength();
+    }
 
-    if (query) {
-      return <SearchResults />
+    window.addEventListener("resize", this.updateSlideLength.bind(this));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateSlideLength.bind(this));
+  }
+
+  determineRender = () => {
+    const { query, slideLength } = this.state
+
+    if (query && query.length > 0) {
+      const movies = this.searchMovies(query)
+
+      return <SearchResults movies={movies} />
     } else {
       return(
         <main className="application">
@@ -45,7 +71,7 @@ export default class Main extends Component {
             </div>
           </div>
 
-          <GenreSlidersContainer />
+          <GenreSlidersContainer slideLength={slideLength} />
 
           <div className="feature">
             <div className="container">
@@ -65,6 +91,37 @@ export default class Main extends Component {
   }
 
   searchMovies = (query) => {
+    axios.get(`/search/${query}`)
+      .then(response => {
+        console.log('Search Results: ' + JSON.stringify(response.data))
 
+        return response.data
+      })
+      .catch(error => {
+        console.error('Error in Main.searchMovies()')
+        console.error(error);
+      })
+  }
+
+  updateSlideLength = () => {
+    let width = window.innerWidth;
+    let num = null;
+
+    for (let point of this.breakpoints) {
+      if (width >= point) {
+        num = this.slideLengthIndex[point];
+        break;
+      }
+    }
+
+    if (num == null) {
+      num = 2;
+    }
+
+    console.log('slideLength: ' + num);
+
+    this.setState({
+      slideLength: num
+    });
   }
 }
