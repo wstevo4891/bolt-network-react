@@ -93,8 +93,9 @@ export default class SearchBar extends Component {
   handleMouseUp = (event) => {
     const targetClass = event.target.className
     const $input = document.querySelector('.searchInput')
+    const searchValue = document.getElementById('search').value
 
-    if ($input && !this.searchClasses.includes(targetClass)) {
+    if ($input && searchValue.length === 0 && !this.searchClasses.includes(targetClass)) {
       this.setState({
         start: 270,
         end: 0
@@ -133,7 +134,7 @@ export default class SearchBar extends Component {
     this.setState({
       queryExists: false
     })
-
+i;ug
     this.props.update(null)
   }
 }
