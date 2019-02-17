@@ -21,6 +21,7 @@
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
+  margin: 10px 0 20px 0;
 
   ul {
     display: -webkit-box;
@@ -49,5 +50,9 @@
       color: white;
     }
   }
+}
+
+.search-results-col {
+  margin-bottom: 5.5vw;
 }
 

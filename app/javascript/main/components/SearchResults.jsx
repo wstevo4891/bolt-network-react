@@ -77,7 +77,7 @@ export default class SearchResults extends Component {
     if (slides.length === 0) return null
 
     return slides.map((slide, index) =>
-      <div key={index} className="col-12 mt-4">
+      <div key={index} className="col-12 search-results-col">
         <PosterRow movies={slide} slideLength={slideLength} />
       </div>
     )
