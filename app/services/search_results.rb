@@ -30,7 +30,7 @@ class SearchResults
     
     movies_list = movies_by_first_char
 
-    { genres: genres_list, movies: movies_list }
+    { genres: genres_list.to_a, movies: movies_list.to_a }
   end
 
   def genres_by_first_char
@@ -44,7 +44,7 @@ class SearchResults
   def full_match_results
     @genres = genre_name_match
 
-    { genres: @genres, movies: movie_results }
+    { genres: @genres.to_a, movies: movie_results.to_a }
   end
 
   def movie_results

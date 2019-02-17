@@ -1,7 +1,15 @@
 # app/views/search/show.json.jbuilder
 
-# json.extract! @movie, :id, :title, :photo, :year, :rating, :length, :summary,
-#               :tomato_meter, :genre_ids
-# json.url movie_url(@movie, format: :json)
+json.genres do
+  json.array! @results[:genres] do |genre|
+    json.extract! genre, :id, :name
+    json.url genre_url(genre.id)
+  end
+end
 
-json.extract! @results, :movies
+json.movies do
+  json.array! @results[:movies] do |movie|
+    json.extract! movie, :id, :title, :photo, :year, :rated, :run_time, :plot
+    json.url movie_url(movie.id)
+  end
+end

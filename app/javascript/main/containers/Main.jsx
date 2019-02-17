@@ -54,9 +54,7 @@ export default class Main extends Component {
     const { query, slideLength } = this.state
 
     if (query && query.length > 0) {
-      const results = this.searchMovies(query)
-
-      return <SearchResults results={results} slideLength={slideLength} />
+      return this.searchMovies(query)
     } else {
       return(
         <main className="application">
@@ -95,7 +93,7 @@ export default class Main extends Component {
       .then(response => {
         console.log('Search Results: ' + JSON.stringify(response.data))
 
-        return response.data
+        return <SearchResults results={response.data} slideLength={this.state.slideLength} />
       })
       .catch(error => {
         console.error('Error in Main.searchMovies()')

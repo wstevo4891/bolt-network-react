@@ -6,7 +6,7 @@ import Suggestions from '../services/Suggestions'
 import PosterRow from './PosterRow'
 
 const SearchResults = (props) => {
-  const genres = props.results.genres
+  const genres = props.results.genres || []
   const movies = props.results.movies
   const suggestions = new Suggestions(genres, movies).call
 
