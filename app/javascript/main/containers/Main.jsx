@@ -13,6 +13,7 @@ export default class Main extends Component {
     super()
     this.state = {
       query: null,
+      results: null,
       slideLength: null
     }
 
@@ -27,6 +28,12 @@ export default class Main extends Component {
   }
 
   render() {
+    const query = this.state.query
+
+    if (query && query.length > 0) {
+      this.searchMovies
+    }
+
     return (
       <div id="main-container">
         <div id="navbar">
@@ -51,10 +58,11 @@ export default class Main extends Component {
   }
 
   determineRender = () => {
-    const { query, slideLength } = this.state
+    const { results, slideLength } = this.state
 
-    if (query && query.length > 0) {
-      return this.searchMovies(query)
+    if (results && (results.genres.length > 0 || results.movies.length > 0)) {
+
+      return <SearchResults results={results} slideLength={slideLength} />
     } else {
       return(
         <main className="application">
@@ -83,20 +91,23 @@ export default class Main extends Component {
   }
 
   updateQuery = (query) => {
-    this.setState({
-      query: query
-    })
+    if (query && query.length > 0) {
+      this.fetchSearchResults(query)
+    }
   }
 
-  searchMovies = (query) => {
+  fetchSearchResults = (query) => {
     axios.get(`/search/${query}`)
       .then(response => {
         console.log('Search Results: ' + JSON.stringify(response.data))
 
-        return <SearchResults results={response.data} slideLength={this.state.slideLength} />
+        this.setState({
+          query: query,
+          results: response.data
+        })
       })
       .catch(error => {
-        console.error('Error in Main.searchMovies()')
+        console.error('Error in Main.search()')
         console.error(error);
       })
   }

@@ -2,6 +2,7 @@
 
 export default class PosterService {
   constructor(props) {
+    this.search = props.search;
     this.start = props.start;
     this.index = props.index;
     this.slideLength = props.slideLength;
@@ -16,6 +17,8 @@ export default class PosterService {
   }
 
   containerClass = () => {
+    if (this.search) return `poster-container slide-item-${this.index}`
+
     if (this.start) {
       if (this.index <= this.slideLength) {
         return `poster-container slide-item-${this.index}`;
@@ -38,9 +41,15 @@ export default class PosterService {
     if (this.hoverItem === null) return this.hoverStyle;
 
     this.translateX = this.calcTranslateX();
-    this.hover = this.start ? this.hoverItem : this.hoverItem + this.slideLength;
-    this.end = this.start ? this.slideLength : this.limit;
-  
+
+    if (this.search) {
+      this.hover = this.hoverItem;
+      this.end = this.slideLength + 1;
+    } else {
+      this.hover = this.start ? this.hoverItem : this.hoverItem + this.slideLength;
+      this.end = this.start ? this.slideLength : this.limit;
+    }
+
     return this.buildPosterStyle();
   }
 

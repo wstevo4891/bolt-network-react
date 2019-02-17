@@ -3,6 +3,11 @@
 /* HOME PAGE STYLES
 ==========================================*/
 
+#main {
+  background-color: $dark-bg;
+  min-height: 80vh;
+}
+
 main.application {
   background-color: $dark-bg;
   font-family: "Oxygen"; 

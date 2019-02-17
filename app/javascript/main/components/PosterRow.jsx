@@ -10,8 +10,8 @@ class PosterRow extends Component {
     super(props);
 
     this.state = {
-      movies: this.props.movies,
-      slideLength: this.props.slideLength,
+      movies: props.movies,
+      slideLength: props.slideLength,
       hoverItem: null
     }
   }
@@ -26,12 +26,15 @@ class PosterRow extends Component {
   render() {
     const { movies, slideLength, hoverItem } = this.state;
 
+    if (movies.length === 0) return null
+
     return (
       <div className="sliderContent">
         {
           movies.map((movie, index) =>
             <Poster
               key={index}
+              search={true}
               index={index}
               movie={movie}
               slideLength={slideLength}

@@ -8,26 +8,26 @@ export default class Suggestions {
 
   call = () => {
     if (this.genres.length > 0) {
-      this.fullSuggestions()
+      return this.fullSuggestions()
     } else {
-      this.movieLinks()
+      return this.movieLinks()
     }
   }
 
   fullSuggestions = () => {
     const genres = this.genreLinks()
 
-    genres.concat(this.movieLinks())
+    return genres.concat(this.movieLinks())
   }
 
   genreLinks = () => {
-    this.genres.map((genre) => {
+    return this.genres.map((genre) => {
       return { name: genre.name, link: genre.url }
     })
   }
 
   movieLinks = () => {
-    this.movies.map(() => {
+    return this.movies.map((movie) => {
       return { name: movie.title, link: movie.url }
     })
   }
