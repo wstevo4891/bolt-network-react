@@ -8,7 +8,7 @@ class SearchResults
   end
 
   def initialize(query)
-    @query = query
+    @query = query.downcase
   end
 
   def call
@@ -34,11 +34,11 @@ class SearchResults
   end
 
   def genres_by_first_char
-    Genre.where('name LIKE :prefix', prefix: "#{query}%")
+    Genre.where('lower(name) LIKE :prefix', prefix: "#{query}%")
   end
 
   def movies_by_first_char
-    Movie.where('name LIKE :prefix', prefix: "#{query}%")
+    Movie.where('lower(title) LIKE :prefix', prefix: "#{query}%")
   end
 
   def full_match_results

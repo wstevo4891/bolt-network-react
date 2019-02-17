@@ -22,4 +22,13 @@ class SearchResultsTest < ActiveSupport::TestCase
 
     assert_not_predicate results[:movies], :empty?
   end
+
+  test 'should return results for one char' do
+    puts __method__
+    results = SearchResults.create('c')
+    puts results
+
+    assert_not_nil results
+    assert_not_predicate results[:movies], :empty?
+  end
 end
