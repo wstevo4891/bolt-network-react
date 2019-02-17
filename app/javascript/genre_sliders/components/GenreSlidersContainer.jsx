@@ -24,10 +24,27 @@ class GenreSlidersContainer extends Component {
     this.breakpoints = [1400, 1100, 800, 500];
   }
 
+  componentWillReceiveProps(nextProps) {
+    const genresData = localStorage.getItem('Genres');
+    const indexData = localStorage.getItem('MoviesIndex');
+
+    if (genresData && indexData) {
+      this.setState({
+        genres: JSON.parse(genresData),
+        moviesIndex: JSON.parse(indexData),
+        slideLength: nextProps.slideLength
+      })
+    } else {
+      this.setState({
+        slideLength: nextProps.slideLength
+      })
+    }
+  }
+
   render() {
     const { slideLength, genres, moviesIndex } = this.state;
 
-    if (slideLength === null) return null;
+    if (slideLength === null || genres === null) return null;
 
     return(
       <div className='genre-sliders-container'>

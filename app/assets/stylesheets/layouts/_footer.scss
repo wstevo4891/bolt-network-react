@@ -3,10 +3,11 @@
 /* FOOTER STYLES 
 ====================================*/
 
-footer { 
+footer {
+  position: relative;
+  flex-shrink: 0;
   padding-bottom: 2em;
   background-color: $dark-bg;
-  flex-shrink: 0;
 
   .container {
     padding-top: 1rem;

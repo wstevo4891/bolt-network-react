@@ -11,7 +11,7 @@ export default class SearchBar extends Component {
       display: false,
       start: 0,
       end: 270,
-      query: null
+      queryExists: false
     }
 
     this.searchClasses = [
@@ -24,7 +24,7 @@ export default class SearchBar extends Component {
   }
 
   render() {
-    const { display, start, end, query } = this.state
+    const display = this.state.display
     const boxClass = display ? 'searchBox d-none' : 'searchBox'
     const wrapperClass = display ? 'searchWrapper' : 'searchWrapper d-none'
 
@@ -54,9 +54,11 @@ export default class SearchBar extends Component {
   // When we click on the hour glass button, we'll hide it,
   // render the searchInput div, and animate its width to 270px.
   displayInput = () => {
-    const { display, start, end } = this.state
+    const { display, start, end, queryExists } = this.state
 
     if (display === false) return null
+
+    const displayClose = queryExists ? '' : 'd-none'
 
     return(
       <Motion defaultStyle={{ x: start }} style={{ x: spring(end) }}>
@@ -76,7 +78,12 @@ export default class SearchBar extends Component {
               />
             </form>
 
-            <i className="fa fa-times" id="closeIcon" aria-hidden="true"></i>
+            <i
+              className={`fa fa-times ${displayClose}`}
+              id="closeIcon"
+              aria-hidden="true"
+              onClick={this.handleClose}
+            ></i>
           </div>
         )}
       </Motion>
@@ -104,8 +111,29 @@ export default class SearchBar extends Component {
   }
 
   handleKeyUp = (event) => {
-    const target = event.target
+    const value = event.target.value
 
-    this.props.update(target.value)
+    if (value && value.length > 0) {
+      this.setState({
+        queryExists: true
+      })
+    } else {
+      this.setState({
+        queryExists: false
+      })
+    }
+
+    this.props.update(value)
+  }
+
+  handleClose = () => {
+    const search = document.getElementById('search')
+    search.value = ''
+
+    this.setState({
+      queryExists: false
+    })
+
+    this.props.update(null)
   }
 }
