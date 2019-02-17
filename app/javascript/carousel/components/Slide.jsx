@@ -3,24 +3,26 @@
 import React from 'react'
 
 const Slide = (props) => {
-  const active = props.key === 0 ? 'active' : ''
+  const active = props.index === 0 ? 'active' : ''
 
-  const slide = props.logo.replace('logo.png', 'slide')
+  const movie = props.movie
+
+  const slide = movie.logo.replace('logo.png', 'slide')
 
   return(
     <div className={`carousel-item ${active} ${slide}`}>
       <div className="slide-info">
-        <img src={props.movie.logo} className="img-fluid movie-logo"/>
+        <img src={movie.logo} className="img-fluid movie-logo"/>
 
         <div className="movie-content">
-          <span className="movie-year">{props.movie.year}</span>
-          <span className="movie-rating">{props.movie.rated}</span>
-          <span className="movie-length">{props.movie.runTime}</span>
+          <span className="movie-year">{movie.year}</span>
+          <span className="movie-rating">{movie.rated}</span>
+          <span className="movie-length">{movie.runTime}</span>
 
-          <p className="blurb">{props.movie.plot}</p>
+          <p className="blurb">{movie.plot}</p>
 
           <div className="slide-buttons">
-            <a href={props.movie.url} className="btn-blue" id="play">
+            <a href={movie.url} className="btn-blue" id="play">
               <i className="fa fa-play"></i>PLAY
             </a>
             <a href="#" className="btn-clear">

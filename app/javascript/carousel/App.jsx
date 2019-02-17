@@ -1,8 +1,8 @@
 // app/javascript/carousel/App.jsx
 
-import React from 'react';
+import React from 'react'
 
-import Carousel from './containers/Carousel';
+import Carousel from './containers/Carousel'
 
 const App = () => (
   <Carousel />

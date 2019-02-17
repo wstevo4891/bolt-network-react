@@ -25,9 +25,21 @@ export default class Carousel extends Component {
       <div id="carouselMain" className="carousel slide carousel-fade" data-ride="false">
         <div className="carousel-inner">
           {movies.map((movie, index) =>
-            <Slide key={index} movie={movie} />
+            <Slide key={index} index={index} movie={movie} />
           )}
         </div>
+
+        <a className="carousel-control-prev" href="#carouselMain" role="button" data-slide="prev">
+          <span className="fa fa-angle-left slider-arrow slider-prev">
+            <p className="sr-only">Go to next slide</p>
+          </span>
+        </a>
+
+        <a className="carousel-control-next" href="#carouselMain" role="button" data-slide="next">
+          <span className="fa fa-angle-right slider-arrow slider-next">
+            <p className="sr-only">Go to previous slide</p>
+          </span>
+        </a>
       </div>
     )
   }
@@ -42,6 +54,16 @@ export default class Carousel extends Component {
     } else {
       this.fetchMovies()
     }
+
+    const $carousel = $('.carousel')
+
+    $('.carousel-control-prev').click(function() {
+      $carousel.carousel('pause')
+    })
+
+    $('.carousel-control-next').click(function() {
+      $carousel.carousel('pause')
+    })
   }
 
   fetchMovies = () => {
