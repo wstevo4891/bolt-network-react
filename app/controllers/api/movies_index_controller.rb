@@ -7,7 +7,7 @@ module Api
     def show
       movies_index = MoviesIndex.build
 
-      render json: movies_index
+      render json: movies_index, status: :ok
     end
   end
 end
