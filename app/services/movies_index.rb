@@ -19,7 +19,7 @@ class MoviesIndex
 
   def build_index
     @genres.each_with_object({}) do |genre, hash|
-      hash[genre.name] = genre.movies
+      hash[genre.name] = genre.movies.take(18)
     end
   end
 end
