@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     get '/genres/:id/movie_ids' => 'genres#movie_ids', as: :genres_movie_ids
 
     namespace :movies do
+      get '/by-genre/:genre_id', to: 'by_genre#show'
       post '/search', to: 'search#show'
     end
   end

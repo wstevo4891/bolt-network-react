@@ -134,7 +134,7 @@ export default class SearchBar extends Component {
     this.setState({
       queryExists: false
     })
-i;ug
+
     this.props.update(null)
   }
 }

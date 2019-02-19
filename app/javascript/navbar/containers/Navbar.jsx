@@ -28,7 +28,7 @@ export default class Navbar extends Component {
     return (
       <nav className="navbar navbar-expand-md fixed-top">
         <a className="navbar-brand" href="/">
-          <img src="bolt-network.svg" alt="Bolt Network logo" className="logo" />
+          <img src="/bolt-network.svg" alt="Bolt Network logo" className="logo" />
         </a>
 
         <Hamburger dataTarget="navbarContent" />

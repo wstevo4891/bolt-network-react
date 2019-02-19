@@ -11,4 +11,8 @@ class Movie < ApplicationRecord
   def self.search(search)
     Movie.where('title ~* :search', search: "(#{search})")
   end
+
+  def self.find_by_genre(genre_id)
+    Movie.joins(:genres_movies).where(genres_movies: {genre_id: genre_id})
+  end
 end
