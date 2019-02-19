@@ -1,20 +1,18 @@
 // app/javascript/movies/components/Poster.jsx
 
-import React from 'react';
-
-import PosterService from '../services/PosterService';
+import React from 'react'
 
 const Poster = (props) => {
-  const movie = props.movie;
-  console.log(`hoverItem: ${props.hoverItem}`);
+  const movie = props.movie
+  console.log(`hoverItem: ${props.hoverItem}`)
 
-  if (typeof movie !== 'object') return null;
+  if (typeof movie !== 'object') return null
 
-  const service = new PosterService(props);
+  const service = new props.service(props)
 
-  const containerClass = service.containerClass();
+  const containerClass = service.containerClass()
 
-  const posterStyle = service.posterStyle();
+  const posterStyle = service.posterStyle()
 
   const posterImage = {
     backgroundImage: `url(${movie.photo.url})`,
@@ -32,7 +30,7 @@ const Poster = (props) => {
         <div className='poster' style={posterImage}></div>
       </div>
     </a>
-  );
+  )
 }
 
 export default Poster;

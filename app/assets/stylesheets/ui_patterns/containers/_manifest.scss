@@ -1,0 +1,7 @@
+// app/assets/stylesheets/ui_patterns/containers/_manifest.scss
+
+.display-container {
+  @extend .container-fluid;
+  padding: 0 4%;
+  margin-top: 5rem;
+}

@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 
 import Poster from './Poster';
 import ContainerStyle from '../services/ContainerStyle';
+import SliderPosterService from '../services/SliderPosterService';
 
 class SliderContainer extends Component {
   constructor(props) {
@@ -56,6 +57,7 @@ class SliderContainer extends Component {
               hoverItem={hoverItem}
               mouseOver={this.handleMouseOver}
               mouseOut={this.handleMouseOut}
+              service={SliderPosterService}
             />
           )
         }

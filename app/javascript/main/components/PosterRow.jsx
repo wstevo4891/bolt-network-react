@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 
 import Poster from '../../genre_sliders/components/Poster';
 import ContainerStyle from '../../genre_sliders/services/ContainerStyle';
+import StaticPosterService from '../services/StaticPosterService'
 
 class PosterRow extends Component {
   constructor(props) {
@@ -34,13 +35,13 @@ class PosterRow extends Component {
           movies.map((movie, index) =>
             <Poster
               key={index}
-              search={true}
               index={index}
               movie={movie}
               slideLength={slideLength}
               hoverItem={hoverItem}
               mouseOver={this.handleMouseOver}
               mouseOut={this.handleMouseOut}
+              service={StaticPosterService}
             />
           )
         }

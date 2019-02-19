@@ -43,7 +43,7 @@ export default class SearchResults extends Component {
 
     return(
       <div className="search-results">
-        <div className="container">
+        <div className="display-container">
           <div className="row">
             <div className="col-12">
               <div className="suggestions">
