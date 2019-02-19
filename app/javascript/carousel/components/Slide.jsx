@@ -11,7 +11,7 @@ const Slide = (props) => {
 
   return(
     <div className={`carousel-item ${active} ${slide}`}>
-      <div className="slide-info">
+      <div className="slide-info d-none d-sm-block">
         <img src={movie.logo} className="img-fluid movie-logo"/>
 
         <div className="movie-content">

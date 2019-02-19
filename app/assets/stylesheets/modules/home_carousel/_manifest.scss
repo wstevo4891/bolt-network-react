@@ -38,7 +38,7 @@
 
 .slide-info {
   width: 40%;
-  height: 65%;
+  height: auto;
   position: absolute;
   bottom: 0;
   left: 60%;
@@ -62,15 +62,15 @@
   }
 }
 
-.movie-content {
-  position: absolute;
-  bottom: 0;
-  margin-left: 1em;
+.movie-logo {
+  position: relative;
+  top: 0;
 }
 
-.movie-logo {
-  position: absolute;
-  top: 0;
+.movie-content {
+  position: relative;
+  bottom: 0;
+  margin-left: 1em;
 }
 
 .slide-buttons {
