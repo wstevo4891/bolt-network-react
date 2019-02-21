@@ -1,6 +1,10 @@
 // app/javascript/navbar/containers/Navbar.jsx
 
 import React, { Component } from 'react'
+import {  
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom';
 
 import Hamburger from '../components/Hamburger'
 import NavCollapse from './NavCollapse'
