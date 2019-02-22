@@ -9,50 +9,45 @@ export default class GenreDisplay extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      genreId: this.props.genreId,
-      slideLength: null,
+      slideLength: this.props.slideLength,
+      genre: null,
       movies: null
     }
+  }
 
-    this.slideLengthIndex = {
-      1400: 6,
-      1100: 5,
-      800: 4,
-      500: 3
-    };
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps)
+    const genreId = nextProps.match.params.genreId
 
-    this.breakpoints = [1400, 1100, 800, 500];
+    this.fetchGenre(genreId)
   }
 
   render() {
-    const { slideLength, movies } = this.state
+    const { slideLength, genre, movies } = this.state
 
-    if (slideLength === null || movies === null) return null
+    if (genre === null) return null
 
     const slides = this.buildSlides(movies, slideLength)
 
     return(
-      <div id="genres-row" className="row">
-        {this.renderSlides(slides, slideLength)}
+      <div className="display-container">
+        <div className="row">
+          <div className="col-12 mb-4">
+            <h1 style={{ color: 'white' }}>{genre.name}</h1>
+          </div>
+        </div>
+
+        <div id="genres-row" className="row">
+          {this.renderSlides(slides, slideLength)}
+        </div>
       </div>
     )
   }
 
   componentDidMount() {
-    console.log('GenreDisplay Mounted')
-    console.log(this.state)
+    const genreId = this.props.match.params.genreId
 
-    const { genreId, movies, slideLength } = this.state
-
-    if (slideLength === null) {
-      this.updateSlideLength();
-    }
-
-    if (movies === null) {
-      this.fetchMovies(genreId)
-    }
-
-    window.addEventListener("resize", this.updateSlideLength.bind(this));
+    this.fetchGenre(genreId)
   }
 
   renderSlides = (slides, slideLength) => {
@@ -63,13 +58,14 @@ export default class GenreDisplay extends Component {
     )
   }
 
-  fetchMovies = (genreId) => {
-    axios.get(`/api/movies/by-genre/${genreId}`)
+  fetchGenre = (genreId) => {
+    axios.get(`/api/genres/${genreId}`)
       .then(response => {
-        // localStorage.setItem(`Movies_For_Genre_${genreId}`, JSON.stringify(response.data))
+        // localStorage.setItem(`Genre_${genreId}`, JSON.stringify(response.data))
 
         this.setState({
-          movies: response.data
+          genre: response.data.genre,
+          movies: response.data.movies
         })
       })
       .catch(error => {
@@ -106,28 +102,6 @@ export default class GenreDisplay extends Component {
     }
 
     return slides
-  }
-
-  updateSlideLength = () => {
-    let width = window.innerWidth;
-    let num = null;
-
-    for (let point of this.breakpoints) {
-      if (width >= point) {
-        num = this.slideLengthIndex[point];
-        break;
-      }
-    }
-
-    if (num == null) {
-      num = 2;
-    }
-
-    console.log('slideLength: ' + num);
-
-    this.setState({
-      slideLength: num
-    });
   }
 }
 

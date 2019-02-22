@@ -1,7 +1,6 @@
 // app/javascript/navbar/components/Dropdown.jsx
 
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 const Dropdown = (props) => {
   return(
@@ -20,15 +19,19 @@ const Dropdown = (props) => {
       <div className="dropdown-menu" aria-labelledby={props.id}>
         {
           props.links.map((link, index) =>
-            <Link
+            <a
               key={index}
               className="dropdown-item"
-              to={link.url}
+              href={link.url}
             >
               {link.name}
-            </Link>
+            </a>
           )
         }
+        {/* <a className="dropdown-item" href="#">Action</a>
+        <a className="dropdown-item" href="#">Another action</a>
+        <div className="dropdown-divider"></div>
+        <a className="dropdown-item" href="#">Something else here</a> */}
       </div>
     </li>
   )

@@ -1,22 +1,35 @@
 // app/javascript/navbar/containers/Navbar.jsx
 
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 
 import Hamburger from '../components/Hamburger'
 import NavCollapse from './NavCollapse'
 
 export default class Navbar extends Component {
   constructor(props) {
-    super(props)
+    super(props);
+    this.state = {
+      genres: null,
+      moviesIndex: null,
+      slideLength: null
+    };
+
+    this.slideLengthIndex = {
+      1400: 6,
+      1100: 5,
+      800: 4,
+      500: 3
+    };
+
+    this.breakpoints = [1400, 1100, 800, 500];
   }
 
   render() {
     return (
       <nav className="navbar navbar-expand-md fixed-top">
-        <Link className="navbar-brand" to="/">
+        <a className="navbar-brand" href="/">
           <img src="/bolt-network.svg" alt="Bolt Network logo" className="logo" />
-        </Link>
+        </a>
 
         <Hamburger dataTarget="navbarContent" />
 

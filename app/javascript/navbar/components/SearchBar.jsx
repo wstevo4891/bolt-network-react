@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react'
 import { Motion, spring } from 'react-motion'
+import queryString from 'query-string';
 
 export default class SearchBar extends Component {
   constructor(props) {
@@ -93,6 +94,9 @@ export default class SearchBar extends Component {
   handleMouseUp = (event) => {
     const targetClass = event.target.className
     const $input = document.querySelector('.searchInput')
+
+    if ($input === null) return
+
     const searchValue = document.getElementById('search').value
 
     if ($input && searchValue.length === 0 && !this.searchClasses.includes(targetClass)) {
@@ -112,6 +116,8 @@ export default class SearchBar extends Component {
   }
 
   handleKeyUp = (event) => {
+    console.log(history)
+    console.log(window.location)
     const value = event.target.value
 
     if (value && value.length > 0) {
@@ -123,6 +129,11 @@ export default class SearchBar extends Component {
         queryExists: false
       })
     }
+
+    // this.setQueryFromQueryString(this.props.location.search);
+
+    // window.location.pathname = `/search?q=${value}`
+    history.pushState({ q: value }, '',  `/search?q=${value}`)
 
     this.props.update(value)
   }
@@ -136,5 +147,22 @@ export default class SearchBar extends Component {
     })
 
     this.props.update(null)
+  }
+
+  setQueryFromQueryString (qs) {
+    console.log('running function setQueryFromQueryString')
+    console.log('qs argument: ' + qs)
+    this.qsParams = queryString.parse(qs)
+    console.log('this.qsParams: ' + JSON.stringify(this.qsParams))
+    if (this.qsParams.search) {
+      // assign query from the URL's query string
+      this.query = this.qsParams.search
+    } else {
+      this.query = this.props.query
+      // update URL in browser to reflect current quote in query string
+      this.props.history.push(`/search?q=${this.query}`)
+    }
+    console.log('this.props.query: ' + this.props.query)
+    console.log('this.query: ' + this.query)
   }
 }

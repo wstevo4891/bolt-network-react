@@ -1,7 +1,6 @@
 // app/javascript/navbar/components/NavItem.jsx
 
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 const NavItem = (props) => {
   const itemClass = props.active ? 'nav-item active' : 'nav-item'
@@ -10,17 +9,17 @@ const NavItem = (props) => {
   if (props.srOnly) {
     return (
       <li className={itemClass} >
-        <Link className={linkClass} to={props.href}>
+        <a className={linkClass} href={props.href}>
           {props.text} <span className="sr-only">{props.srOnly}</span>
-        </Link>
+        </a>
       </li>
     )
   } else {
     return (
       <li className={itemClass} >
-        <Link className={linkClass} to={props.href} >
+        <a className={linkClass} href={props.href} >
           {props.text}
-        </Link>
+        </a>
       </li>
     )
   }

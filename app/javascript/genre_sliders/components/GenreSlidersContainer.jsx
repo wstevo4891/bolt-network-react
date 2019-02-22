@@ -5,33 +5,22 @@ import axios from 'axios';
 
 import GenreSliderRow from './GenreSliderRow';
 
-class GenreSlidersContainer extends Component {
+export default class GenreSlidersContainer extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       genres: null,
       moviesIndex: null,
-      slideLength: props.slideLength ? props.slideLength : null
-    };
-
-    this.slideLengthIndex = {
-      1400: 6,
-      1100: 5,
-      800: 4,
-      500: 3
-    };
-
-    this.breakpoints = [1400, 1100, 800, 500];
+      slideLength: props.slideLength
+    }
   }
 
   componentWillReceiveProps(nextProps) {
-    const genresData = localStorage.getItem('Genres');
-    const indexData = localStorage.getItem('MoviesIndex');
+    const genresData = localStorage.getItem('Genres')
 
-    if (genresData && indexData) {
+    if (genresData) {
       this.setState({
         genres: JSON.parse(genresData),
-        moviesIndex: JSON.parse(indexData),
         slideLength: nextProps.slideLength
       })
     } else {
@@ -39,12 +28,14 @@ class GenreSlidersContainer extends Component {
         slideLength: nextProps.slideLength
       })
     }
+
+    this.fetchMoviesIndex(nextProps.slideLength)
   }
 
   render() {
     const { slideLength, genres, moviesIndex } = this.state;
 
-    if (slideLength === null || genres === null) return null;
+    if (genres === null) return null;
 
     return(
       <div className='genre-sliders-container'>
@@ -63,45 +54,31 @@ class GenreSlidersContainer extends Component {
   }
 
   componentDidMount() {
-    const genresData = localStorage.getItem('Genres');
-    const indexData = localStorage.getItem('MoviesIndex');
-
-    console.log('MoviesIndex: ' + indexData);
+    const { slideLength, moviesIndex } = this.state
+    const genresData = localStorage.getItem('Genres')
 
     if (genresData) {
       this.setState({
         genres: JSON.parse(genresData)
       });
     } else {
-      this.fetchGenres();
+      this.fetchGenres()
     }
 
-    if (indexData) {
-      this.setState({
-        moviesIndex: JSON.parse(indexData)
-      });
-    } else {
-      this.fetchMoviesIndex();
-    }
-
-    if (this.state.slideLength === null) {
-      this.updateSlideLength();
-      window.addEventListener("resize", this.updateSlideLength.bind(this));
+    if (moviesIndex === null) {
+      this.fetchMoviesIndex(slideLength)
     }
   }
 
-  fetchMoviesIndex = () => {
-    axios.get('/api/movies-index')
+  fetchMoviesIndex = (slideLength) => {
+    axios.get(`/api/movies-index/${slideLength}`)
       .then(response => {
-        localStorage.setItem('MoviesIndex', JSON.stringify(response.data));
-
-        console.log('MoviesIndex: ' + JSON.stringify(response.data));
-
         this.setState({
           moviesIndex: response.data
         });
       })
       .catch(error => {
+        console.error('Error in GenreSlidersContainer.fetchMoviesIndex()')
         console.error(error);
       })
   }
@@ -119,33 +96,4 @@ class GenreSlidersContainer extends Component {
         console.error(error);
       })
   }
-
-  updateSlideLength = () => {
-    console.log('updateSlideLength called!');
-    let width = window.innerWidth;
-    let num = null;
-
-    for (let point of this.breakpoints) {
-      if (width >= point) {
-        num = this.slideLengthIndex[point];
-        break;
-      }
-    }
-
-    if (num == null) {
-      num = 2;
-    }
-
-    console.log('slideLength: ' + num);
-
-    this.setState({
-      slideLength: num
-    });
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.updateSlideLength.bind(this));
-  }
 }
-
-export default GenreSlidersContainer;

@@ -9,11 +9,21 @@ module Api
     end
 
     def show
-      @genre = Genre.find(params[:id])
+      @results = genre_results
+
+      render json: @results, status: :ok
     end
 
     def movie_ids
       @movie_ids = Genre.find(params[:id]).movie_ids
+    end
+
+    private
+
+    def genre_results
+      genre = Genre.find(params[:id])
+
+      { genre: genre, movies: genre.movies }
     end
   end
 end

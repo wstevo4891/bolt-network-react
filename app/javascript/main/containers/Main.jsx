@@ -30,10 +30,6 @@ export default class Main extends Component {
   render() {
     const query = this.state.query
 
-    if (query && query.length > 0) {
-      this.searchMovies
-    }
-
     return (
       <div id="main-container">
         <div id="navbar">

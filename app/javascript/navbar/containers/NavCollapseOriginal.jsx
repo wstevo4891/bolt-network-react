@@ -24,11 +24,13 @@ export default class NavCollapse extends Component {
         <ul className="navbar-nav mr-auto">
           <NavItem active={true} srOnly="(current)" href="/" text="Home" />
 
+          {/* <NavItem active={false} href="/quotes" text="Quotes" /> */}
+
           <Dropdown id="genresDropdown" text="Genres" links={genres} />
 
-          <NavItem active={false} href="/recent" text="Recently Added" />
+          <NavItem active={false} href="#" text="Recently Added" />
 
-          <NavItem active={false} href="/my-list" text="My List" />
+          <NavItem active={false} href="#" text="My List" />
         </ul>
 
         <ul className="navbar-nav navbar-right">
