@@ -2,6 +2,9 @@
 Action:
   name: Action
 
+Adventure:
+  name: Adventure
+
 Comedy:
   name: Comedy
 

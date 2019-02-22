@@ -35,7 +35,7 @@ export default class GenreSlidersContainer extends Component {
   render() {
     const { slideLength, genres, moviesIndex } = this.state;
 
-    if (genres === null) return null;
+    if (moviesIndex === null) return null;
 
     return(
       <div className='genre-sliders-container'>

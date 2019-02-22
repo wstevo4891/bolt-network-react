@@ -1,17 +1,17 @@
 ---
 one:
   title: The Avengers
-  photo: avengers-poster.jpeg
-  year: 2012
+  photo: avengers-poster.jpg
+  year: '2012'
   rated: PG-13
   run_time: 2h 23min
   plot: Earth's mightiest heroes must come together and learn to fight as a team if they are to stop the mischievous Loki and his alien army from enslaving humanity.
-  genres: Action
+  genres: Action, Adventure
 
 two:
   title: Harry Potter & The Deathly Hallows Part II
   photo: hp7-poster.jpg
-  year: 2011
+  year: '2011'
   rated: PG-13
   run_time: 2h 10min
   plot: Harry, Ron and Hermione search for Voldemort's remaining Horcruxes in their effort to destroy the Dark Lord as the final battle rages on at Hogwarts.
@@ -20,7 +20,7 @@ two:
 three:
   title: Frozen
   photo: frozen-poster.png
-  year: 2013
+  year: '2013'
   rated: PG
   run_time: 1h 42min
   plot: When the newly crowned Queen Elsa accidentally uses her power to turn things into ice to curse her home in infinite winter, her sister, Anna, teams up with a mountain man, his playful reindeer, and a snowman to change the weather condition.
@@ -29,7 +29,7 @@ three:
 four:
   title: Iron Man 3
   photo: iron-man-3-poster.jpg
-  year: 2013
+  year: '2013'
   rated: PG-13
   run_time: 2h 10min
   plot: When Tony Stark's world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution.
@@ -38,7 +38,7 @@ four:
 five:
   title: 'Transformers: Age of Extinction'
   photo: transformers-4-poster.jpg
-  year: 2014
+  year: '2014'
   rated: PG-13
   run_time: 2h 45min
   plot: 'Autobots must escape sight from a bounty hunter who has taken control of the human serendipity: Unexpectedly, Optimus Prime and his remaining gang turn to a mechanic, his daughter, and her back street racing boyfriend for help.'
@@ -47,7 +47,7 @@ five:
 six:
   title: 'The Lord of the Rings: The Return of the King'
   photo: return-of-the-king-poster.jpg
-  year: 2003
+  year: '2003'
   rated: PG-13
   run_time: 3h 21min
   plot: Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.
@@ -56,7 +56,7 @@ six:
 seven:
   title: Skyfall
   photo: skyfall-poster.jpg
-  year: 2012
+  year: '2012'
   rated: PG-13
   run_time: 2h 23min
   plot: Bond's loyalty to M is tested when her past comes back to haunt her. Whilst MI6 comes under attack, 007 must track down and destroy the threat, no matter how personal the cost.
@@ -65,7 +65,7 @@ seven:
 eight:
   title: The Dark Knight
   photo: the-dark-knight-poster.jpg
-  year: 2008
+  year: '2008'
   rated: PG-13
   run_time: 2h 32min
   plot: When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.
@@ -74,7 +74,7 @@ eight:
 nine:
   title: 'Pirates of the Caribbean: The Curse of the Black Pearl'
   photo: pirates-curse-of-the-black-pearl-poster.jpg
-  year: 2003
+  year: '2003'
   rated: PG-13
   run_time: 2h 23min
   plot: Blacksmith Will Turner teams up with eccentric pirate "Captain" Jack Sparrow to save his love, the governor's daughter, from Jack's former pirate allies, who are now undead.
@@ -83,7 +83,7 @@ nine:
 ten:
   title: Toy Story 3
   photo: toy-story-3-poster.jpg
-  year: 2010
+  year: '2010'
   rated: G
   run_time: 1h 43min
   plot: The toys are mistakenly delivered to a day-care center instead of the attic right before Andy leaves for college, and it's up to Woody to convince the other toys that they weren't abandoned and to return home.
@@ -92,7 +92,7 @@ ten:
 eleven:
   title: Conan the Barbarian
   photo: conan-the-barbarian-poster.jpg
-  year: 1982
+  year: '1982'
   rated: R
   run_time: 2h 9min
   plot: A vengeful barbarian warrior sets off to avenge his tribe and his parents whom were slain by an evil sorcerer and his warriors when he was a boy.
@@ -101,7 +101,7 @@ eleven:
 twelve:
   title: Braveheart
   photo: braveheart-poster.jpg
-  year: 1995
+  year: '1995'
   rated: R
   run_time: 2h 58min
   plot: When his secret bride is executed for assaulting an English soldier who tried to rape her, William Wallace begins a revolt against King Edward I of England.
@@ -110,7 +110,7 @@ twelve:
 thirteen:
   title: Die Hard
   photo: die-hard-poster.jpg
-  year: 1988
+  year: '1988'
   rated: R
   run_time: 2h 11min
   plot: John McClane, officer of the NYPD, tries to save his wife Holly Gennaro and several others that were taken hostage by German terrorist Hans Gruber during a Christmas party at the Nakatomi Plaza in Los Angeles.
@@ -119,7 +119,7 @@ thirteen:
 fourteen:
   title: The 40 Year-Old Virgin
   photo: 40-year-old-virgin-poster.jpg
-  year: 2005
+  year: '2005'
   rated: R
   run_time: 1h 56min
   plot: Goaded by his buddies, a nerdy guy who's never "done the deed" only finds the pressure mounting when he meets a single mother.
@@ -128,7 +128,7 @@ fourteen:
 fifteen:
   title: Superbad
   photo: superbad-poster.jpg
-  year: 2007
+  year: '2007'
   rated: R
   run_time: 1h 53min
   plot: Two co-dependent high school seniors are forced to deal with separation anxiety after their plan to stage a booze-soaked party goes awry.
@@ -137,7 +137,7 @@ fifteen:
 sixteen:
   title: The Interview
   photo: the-interview-poster.jpg
-  year: 2014
+  year: '2014'
   rated: R
   run_time: 1h 52min
   plot: Dave Skylark and producer Aaron Rapoport run the celebrity tabloid show "Skylark Tonight." When they land an interview with a surprise fan, North Korean dictator Kim Jong-un, they are recruited by the CIA to turn their trip to Pyongyang into an assassination mission.
@@ -146,7 +146,7 @@ sixteen:
 seventeen:
   title: Deadpool
   photo: deadpool-poster.jpg
-  year: 2016
+  year: '2016'
   rated: R
   run_time: 1h 48min
   plot: A former Special Forces operative turned mercenary is subjected to a rogue experiment that leaves him with accelerated healing powers, adopting the alter ego Deadpool.
@@ -155,7 +155,7 @@ seventeen:
 eighteen:
   title: Wedding Crashers
   photo: wedding-crashers-poster.jpg
-  year: 2005
+  year: '2005'
   rated: R
   run_time: 1h 59min
   plot: John Beckwith and Jeremy Grey, a pair of committed womanizers who sneak into weddings to take advantage of the romantic tinge in the air, find themselves at odds with one another when John meets and falls for Claire Cleary.
@@ -164,7 +164,7 @@ eighteen:
 nineteen:
   title: Bridesmaids
   photo: bridesmaids-poster.jpg
-  year: 2011
+  year: '2011'
   rated: R
   run_time: 2h 5min
   plot: Competition between the maid of honor and a bridesmaid, over who is the bride's best friend, threatens to upend the life of an out-of-work pastry chef.
@@ -173,7 +173,7 @@ nineteen:
 twenty:
   title: Shaun of the Dead
   photo: shaun-of-the-dead-poster.jpg
-  year: 2004
+  year: '2004'
   rated: R
   run_time: 1h 39min
   plot: A man decides to turn his moribund life around by winning back his ex-girlfriend, reconciling his relationship with his mother, and dealing with an entire community that has returned from the dead to eat the living.
@@ -182,7 +182,7 @@ twenty:
 twenty_one:
   title: Borat
   photo: borat-poster.jpg
-  year: 2006
+  year: '2006'
   rated: R
   run_time: 1h 24min
   plot: Kazakh TV talking head Borat is dispatched to the United States to report on the greatest country in the world. With a documentary crew in tow, Borat becomes more interested in locating and marrying Pamela Anderson.
@@ -191,7 +191,7 @@ twenty_one:
 twenty_two:
   title: The Hangover
   photo: the-hangover-poster.jpg
-  year: 2009
+  year: '2009'
   rated: R
   run_time: 1h 40min
   plot: Three buddies wake up from a bachelor party in Las Vegas, with no memory of the previous night and the bachelor missing. They make their way around the city in order to find their friend before his wedding.
@@ -200,7 +200,7 @@ twenty_two:
 twenty_three:
   title: Ghostbusters
   photo: ghostbusters-poster.jpg
-  year: 1984
+  year: '1984'
   rated: PG
   run_time: 1h 45min
   plot: Three former parapsychology professors set up shop as a unique ghost removal service.
@@ -209,7 +209,7 @@ twenty_three:
 twenty_four:
   title: Maverick
   photo: maverick-poster.jpg
-  year: 1994
+  year: '1994'
   rated: PG
   run_time: 2h 7min
   plot: Bret Maverick, needing money for a poker tournament, faces various comic mishaps and challenges, including a charming woman thief.
@@ -218,7 +218,7 @@ twenty_four:
 twenty_five:
   title: The Princess Bride
   photo: the-princess-bride-poster.jpg
-  year: 1987
+  year: '1987'
   rated: PG
   run_time: 1h 38min
   plot: This cult classic comedy-romance follows a peasant farmhand as he battles bumbling outlaws and an evil prince to win the hand of his one true love.
@@ -227,7 +227,7 @@ twenty_five:
 twenty_six:
   title: American Psycho
   photo: american-psycho-poster.jpg
-  year: 2000
+  year: '2000'
   rated: R
   run_time: 1h 42min
   plot: A wealthy New York investment banking executive hides his alternate psychopathic ego from his co-workers and friends as he delves deeper into his violent, hedonistic fantasies.
@@ -236,7 +236,7 @@ twenty_six:
 twenty_seven:
   title: Forest Gump
   photo: forest-gump-poster.jpg
-  year: 1994
+  year: '1994'
   rated: PG-13
   run_time: 2h 22min
   plot: Forrest Gump, while not intelligent, has accidentally been present at many historic moments, but his true love, Jenny Curran, eludes him.
@@ -245,7 +245,7 @@ twenty_seven:
 twenty_eight:
   title: The Shawshank Redemption
   photo: shawshank-poster.jpg
-  year: 1994
+  year: '1994'
   rated: R
   run_time: 2h 22min
   plot: Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.
@@ -254,7 +254,7 @@ twenty_eight:
 twenty_nine:
   title: The Godfather
   photo: the-godfather-poster.png
-  year: 1972
+  year: '1972'
   rated: R
   run_time: 2h 55min
   plot: The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.
@@ -263,7 +263,7 @@ twenty_nine:
 thirty:
   title: Schindler's List
   photo: schindlers-list-poster.png
-  year: 1993
+  year: '1993'
   rated: R
   run_time: 3h 15min
   plot: In Poland during World War II, Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.
@@ -272,7 +272,7 @@ thirty:
 thirty_one:
   title: Slumdog Millionaire
   photo: slumdog-millionaire-poster.jpg
-  year: 2008
+  year: '2008'
   rated: R
   run_time: 2h
   plot: A Mumbai teen reflects on his upbringing in the slums when he is accused of cheating on the Indian Version of "Who Wants to be a Millionaire?"
@@ -281,7 +281,7 @@ thirty_one:
 thirty_two:
   title: Good Will Hunting
   photo: good-will-hunting-poster.jpg
-  year: 1997
+  year: '1997'
   rated: R
   run_time: 2h 6min
   plot: Will Hunting, a janitor at M.I.T., has a gift for mathematics, but needs help from a psychologist to find direction in his life.
@@ -290,7 +290,7 @@ thirty_two:
 thirty_three:
   title: 12 Angry Men
   photo: 12-angry-men-poster.jpg
-  year: 1957
+  year: '1957'
   rated: NR
   run_time: 1h 36min
   plot: A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.
@@ -299,7 +299,7 @@ thirty_three:
 thirty_four:
   title: Inherit the Wind
   photo: inherit-the-wind-poster.png
-  year: 1960
+  year: '1960'
   rated: NR
   run_time: 2h 8min
   plot: Based on a real-life case in 1925, two great lawyers argue the case for and against a science teacher accused of the crime of teaching evolution.
@@ -308,7 +308,7 @@ thirty_four:
 thirty_five:
   title: Casablanca
   photo: casablanca-poster.jpg
-  year: 1942
+  year: '1942'
   rated: PG
   run_time: 1h 42min
   plot: In Casablanca, Morocco during the early days of World War II, an American expatriate meets a former lover, with unforeseen complications.
@@ -317,7 +317,7 @@ thirty_five:
 thirty_six:
   title: Fight Club
   photo: fight-club-poster.jpg
-  year: 1999
+  year: '1999'
   rated: R
   run_time: 2h 19min
   plot: An insomniac office worker, looking for a way to change his life, crosses paths with a devil-may-care soap maker, forming an underground fight club that evolves into something much, much more...
@@ -326,7 +326,7 @@ thirty_six:
 thirty_seven:
   title: The Lion King
   photo: the-lion-king-poster.jpg
-  year: 1994
+  year: '1994'
   rated: G
   run_time: 1h 29min
   plot: Lion cub and future king Simba searches for his identity. His eagerness to please others and penchant for testing his boundaries sometimes gets him into trouble.
@@ -335,7 +335,7 @@ thirty_seven:
 thirty_eight:
   title: Ratatouille
   photo: ratatouille-poster.jpg
-  year: 2007
+  year: '2007'
   rated: G
   run_time: 1h 51min
   plot: A rat who can cook makes an unusual alliance with a young kitchen worker at a famous restaurant.
@@ -344,7 +344,7 @@ thirty_eight:
 thirty_nine:
   title: Finding Nemo
   photo: finding-nemo-poster.jpg
-  year: 2003
+  year: '2003'
   rated: G
   run_time: 1h 40min
   plot: After his son is captured in the Great Barrier Reef and taken to Sydney, a timid clownfish sets out on a journey to bring him home.
@@ -353,7 +353,7 @@ thirty_nine:
 forty:
   title: Spirited Away
   photo: spirited-away-poster.jpg
-  year: 2001
+  year: '2001'
   rated: PG
   run_time: 2h 5min
   plot: During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.
@@ -362,7 +362,7 @@ forty:
 forty_one:
   title: Shrek 2
   photo: shrek-2-poster.jpg
-  year: 2004
+  year: '2004'
   rated: PG
   run_time: 1h 33min
   plot: Princess Fiona's parents invite her and Shrek to dinner to celebrate her marriage. If only they knew the newlyweds were both ogres.
@@ -371,7 +371,7 @@ forty_one:
 forty_two:
   title: The Incredibles
   photo: the-incredibles-poster.jpg
-  year: 2004
+  year: '2004'
   rated: PG
   run_time: 1h 55min
   plot: A family of undercover superheroes, while trying to live the quiet suburban life, are forced into action to save the world.
@@ -380,7 +380,7 @@ forty_two:
 forty_three:
   title: Aladdin
   photo: aladdin-poster.jpg
-  year: 1992
+  year: '1992'
   rated: G
   run_time: 1h 30min
   plot: When a street urchin vies for the love of a beautiful princess, he uses a genie's magic power to make himself off as a prince in order to marry her.
@@ -389,7 +389,7 @@ forty_three:
 forty_four:
   title: The Nightmare Before Christmas
   photo: nightmare-before-christmas-poster.jpg
-  year: 1993
+  year: '1993'
   rated: PG
   run_time: 1h 16min
   plot: Jack Skellington, king of Halloween Town, discovers Christmas Town, but doesn't quite understand the concept.
@@ -398,7 +398,7 @@ forty_four:
 forty_five:
   title: E.T.
   photo: ET-poster.jpg
-  year: 1982
+  year: '1982'
   rated: PG
   run_time: 1h 55min
   plot: A troubled child summons the courage to help a friendly alien escape Earth and return to his home-world.
@@ -407,7 +407,7 @@ forty_five:
 forty_six:
   title: Explorers
   photo: explorers-poster.jpg
-  year: 1985
+  year: '1985'
   rated: PG
   run_time: 1h 49min
   plot: A boy obsessed with 50s sci-fi movies about aliens has a recurring dream about a blueprint of some kind, which he draws for his inventor friend. With the help of a third kid, they follow it and build themselves a spaceship.
@@ -416,7 +416,7 @@ forty_six:
 forty_seven:
   title: The Sandlot
   photo: sandlot-poster.jpg
-  year: 1993
+  year: '1993'
   rated: PG
   run_time: 1h 41min
   plot: A new kid in town is taken under the wing of a young baseball prodigy and his team in this coming of age movie set in the summer of 1962. Together, they get themselves into many adventures involving rival teams, lifeguards, and a vicious dog.
@@ -425,7 +425,7 @@ forty_seven:
 forty_eight:
   title: The Goonies
   photo: goonies-poster.jpg
-  year: 1985
+  year: '1985'
   rated: PG
   run_time: 1h 54min
   plot: In order to save their home from foreclosure, a group of misfits set out to find a pirate's ancient treasure.
@@ -434,7 +434,7 @@ forty_eight:
 forty_nine:
   title: Love Actually
   photo: love-actually-poster.png
-  year: 2003
+  year: '2003'
   rated: R
   run_time: 2h 15min
   plot: Follows the lives of eight very different couples in dealing with their love lives in various loosely interrelated tales all set during a frantic month before Christmas in London, England.
@@ -443,7 +443,7 @@ forty_nine:
 fifty:
   title: When Harry Met Sally
   photo: when-harry-met-sally-poster.jpg
-  year: 1989
+  year: '1989'
   rated: R
   run_time: 1h 36min
   plot: Harry and Sally have known each other for years, and are very good friends, but they fear sex would ruin the friendship.
@@ -452,7 +452,7 @@ fifty:
 fifty_one:
   title: Gone with the Wind
   photo: gone-with-the-wind-poster.jpg
-  year: 1939
+  year: '1939'
   rated: G
   run_time: 3h 58min
   plot: A manipulative Southern belle carries on a turbulent affair with a blockade runner during the American Civil War.
@@ -461,7 +461,7 @@ fifty_one:
 fifty_two:
   title: Dirty Dancing
   photo: dirty-dancing-poster.jpg
-  year: 1987
+  year: '1987'
   rated: PG-13
   run_time: 1h 40min
   plot: Spending the summer at a Catskills resort with her family, Frances "Baby" Houseman falls in love with the camp's dance instructor, Johnny Castle.
@@ -470,7 +470,7 @@ fifty_two:
 fifty_three:
   title: Titanic
   photo: titanic-poster.jpg
-  year: 1997
+  year: '1997'
   rated: PG-13
   run_time: 3h 14min
   plot: A seventeen-year-old aristocrat falls in love with a kind, but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.
@@ -479,7 +479,7 @@ fifty_three:
 fifty_four:
   title: Amelie
   photo: amelie-poster.jpg
-  year: 2001
+  year: '2001'
   rated: R
   run_time: 2h 2min
   plot: Amelie is an innocent and naive girl in Paris with her own sense of justice. She decides to help those around her and, along the way, discovers love.
@@ -488,7 +488,7 @@ fifty_four:
 fifty_five:
   title: Before Sunrise
   photo: before-sunrise-poster.jpg
-  year: 1995
+  year: '1995'
   rated: R
   run_time: 1h 45min
   plot: A young man and woman meet on a train in Europe, and wind up spending one evening together in Vienna. Unfortunately, both know that this will probably be their only night together.
@@ -497,7 +497,7 @@ fifty_five:
 fifty_six:
   title: Breakfast at Tiffany's
   photo: breakfast-at-tiffanys-poster.jpg
-  year: 1961
+  year: '1961'
   rated: NR
   run_time: 1h 55min
   plot: A young New York socialite becomes interested in a young man who has moved into her apartment building.
@@ -506,7 +506,7 @@ fifty_six:
 fifty_seven:
   title: Willow
   photo: willow-poster.jpg
-  year: 1988
+  year: '1988'
   rated: PG
   run_time: 2h 6min
   plot: A reluctant dwarf must play a critical role in protecting a special baby from an evil queen.
@@ -515,7 +515,7 @@ fifty_seven:
 fifty_eight:
   title: Time Bandits
   photo: time-bandits-poster.jpg
-  year: 1981
+  year: '1981'
   rated: PG
   run_time: 1h 50min
   plot: A young boy accidentally joins a band of dwarves as they jump from era to era looking for treasure to steal.
@@ -524,7 +524,7 @@ fifty_eight:
 fifty_nine:
   title: The Wizard of Oz
   photo: wizard-of-oz-poster.jpg
-  year: 1939
+  year: '1939'
   rated: G
   run_time: 1h 42min
   plot: Dorothy Gale is swept away to a magical land in a tornado and embarks on a quest to see the Wizard who can help her return home.
@@ -533,7 +533,7 @@ fifty_nine:
 sixty:
   title: The NeverEnding Story
   photo: neverending-story-poster.jpg
-  year: 1984
+  year: '1984'
   rated: PG
   run_time: 1h 42min
   plot: A troubled boy dives into a wonderous fantasy world through the pages of a mysterious book.
@@ -542,7 +542,7 @@ sixty:
 sixty_one:
   title: Star Wars
   photo: star-wars-poster.jpg
-  year: 1977
+  year: '1977'
   rated: PG
   run_time: 2h 1min
   plot: Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a wookiee and two droids to save the galaxy from the Empire's world-destroying battle-station, while also attempting to rescue Princess Leia from the evil Darth Vader.
@@ -551,7 +551,7 @@ sixty_one:
 sixty_two:
   title: Alien
   photo: alien-poster.jpg
-  year: 1979
+  year: '1979'
   rated: R
   run_time: 1h 57min
   plot: After a space merchant vessel perceives an unknown transmission as distress call, their landing on the source planet finds one of the crew attacked by a mysterious lifeform. Continuing their journey back to Earth with the attacked crew having recovered and the critter deceased, they soon realize that its life cycle has merely begun.
@@ -560,7 +560,7 @@ sixty_two:
 sixty_three:
   title: Blade Runner
   photo: blade-runner-poster.jpg
-  year: 1982
+  year: '1982'
   rated: R
   run_time: 1h 57min
   plot: A blade runner must pursue and try to terminate four replicants who stole a ship in space and have returned to Earth to find their creator.
@@ -569,7 +569,7 @@ sixty_three:
 sixty_four:
   title: The Terminator
   photo: the-terminator-poster.jpg
-  year: 1984
+  year: '1984'
   rated: R
   run_time: 1h 47min
   plot: A human-looking indestructible cyborg is sent from 2029 to 1984 to assassinate a waitress, whose unborn son will lead humanity in a war against the machines, while a soldier from that war is sent to protect her at all costs.
@@ -578,7 +578,7 @@ sixty_four:
 sixty_five:
   title: The Matrix
   photo: the-matrix-poster.jpg
-  year: 1999
+  year: '1999'
   rated: R
   run_time: 2h 16min
   plot: A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.
@@ -587,7 +587,7 @@ sixty_five:
 sixty_six:
   title: '2001: A Space Odyssey'
   photo: 2001-poster.jpg
-  year: 1968
+  year: '1968'
   rated: G
   run_time: 2h 29min
   plot: Humanity finds a mysterious, obviously artificial object buried beneath the Lunar surface and, with the intelligent computer H.A.L. 9000, sets off on a quest.
@@ -596,7 +596,7 @@ sixty_six:
 sixty_seven:
   title: District 9
   photo: district-9-poster.jpg
-  year: 2009
+  year: '2009'
   rated: R
   run_time: 1h 52min
   plot: An extraterrestrial race forced to live in slum-like conditions on Earth suddenly finds a kindred spirit in a government agent who is exposed to their biotechnology.
@@ -605,7 +605,7 @@ sixty_seven:
 sixty_eight:
   title: Serenity
   photo: serenity-poster.jpg
-  year: 2005
+  year: '2005'
   rated: PG-13
   run_time: 1h 59min
   plot: The crew of the ship Serenity tries to evade an assassin sent to recapture one of their number who is telepathic.
@@ -614,7 +614,7 @@ sixty_eight:
 sixty_nine:
   title: Inception
   photo: inception-poster.jpg
-  year: 2010
+  year: '2010'
   rated: PG-13
   run_time: 2h 28min
   plot: A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.
@@ -623,7 +623,7 @@ sixty_nine:
 seventy:
   title: 'Star Trek II: The Wrath of Khan'
   photo: star-trek-2-poster.jpg
-  year: 1982
+  year: '1982'
   rated: PG
   run_time: 1h 53min
   plot: With the assistance of the Enterprise crew, Admiral Kirk must stop an old nemesis, Khan Noonien Singh, from using the life-generated Genesis Device as the ultimate weapon.
@@ -632,7 +632,7 @@ seventy:
 seventy_one:
   title: The Shining
   photo: the-shining-poster.jpg
-  year: 1980
+  year: '1980'
   rated: R
   run_time: 2h 26min
   plot: A family heads to an isolated hotel for the winter where an evil and spiritual presence influences the father into violence, while his psychic son sees horrific forebodings from the past and of the future.
@@ -641,7 +641,7 @@ seventy_one:
 seventy_two:
   title: Halloween
   photo: halloween-poster.jpg
-  year: 1978
+  year: '1978'
   rated: R
   run_time: 1h 31min
   plot: On Halloween night of 1963, six-year-old Michael Myers stabbed his sister to death. After sitting in a mental hospital for 15 years, Myers escapes and returns to Haddonfield to kill.
@@ -650,7 +650,7 @@ seventy_two:
 seventy_three:
   title: The Silence of the Lambs
   photo: silence-of-the-lambs-poster.jpg
-  year: 1991
+  year: '1991'
   rated: R
   run_time: 1h 58min
   plot: A young F.B.I. cadet must confide in an incarcerated and manipulative killer to receive his help on catching another serial killer who skins his victims.
@@ -659,7 +659,7 @@ seventy_three:
 seventy_four:
   title: Psycho
   photo: psycho-poster.jpg
-  year: 1960
+  year: '1960'
   rated: R
   run_time: 1h 49min
   plot: A Phoenix secretary steals $40,000 from her employer's client, goes on the run and checks into a remote motel run by a young man under the domination of his mother.
@@ -668,7 +668,7 @@ seventy_four:
 seventy_five:
   title: The Babadook
   photo: the-babadook-poster.jpg
-  year: 2014
+  year: '2014'
   rated: NR
   run_time: 1h 33min
   plot: A single mother, plagued by the violent death of her husband, battles with her son's fear of a monster lurking in the house, but soon discovers a sinister presence all around her.
@@ -677,7 +677,7 @@ seventy_five:
 seventy_six:
   title: The Exorcist
   photo: the-exorcist-poster.jpg
-  year: 1973
+  year: '1973'
   rated: R
   run_time: 2h 2min
   plot: When a teenage girl is possessed by a mysterious entity, her mother seeks the help of two priests to save her daughter.
@@ -686,7 +686,7 @@ seventy_six:
 seventy_seven:
   title: The Ring
   photo: the-ring-poster.jpg
-  year: 2002
+  year: '2002'
   rated: PG-13
   run_time: 1h 55min
   plot: A journalist must investigate a mysterious videotape which seems to cause the death of anyone in a week of viewing it.
@@ -695,7 +695,7 @@ seventy_seven:
 seventy_eight:
   title: The Thing
   photo: the-thing-poster.jpg
-  year: 1982
+  year: '1982'
   rated: R
   run_time: 1h 49min
   plot: It's the first week of winter in 1982. An American Research Base is greeted by an alien force, that can assimilate anything it touches. It's up to the members to stay alive, and be sure of who is human, and who has become one of the Things.
@@ -704,7 +704,7 @@ seventy_eight:
 seventy_nine:
   title: The Orphanage
   photo: the-orphanage-poster.jpg
-  year: 2007
+  year: '2007'
   rated: R
   run_time: 1h 45min
   plot: A woman brings her family back to her childhood home, which used to be an orphanage for handicapped children. Before long, her son starts to communicate with an invisible new friend.
@@ -713,7 +713,7 @@ seventy_nine:
 eighty:
   title: Poltergeist
   photo: poltergeist-poster.jpg
-  year: 1982
+  year: '1982'
   rated: PG
   run_time: 1h 54min
   plot: A family's home is haunted by a host of ghosts. When their daughter is taken over to the other side, they hire a medium to bring her back.
