@@ -1,0 +1,17 @@
+// app/assets/stylesheets/ui_patterns/movie/_manifest.scss
+
+.movie-info {
+  p {
+    color: white;
+
+    span {
+      color: $azure-radiance;
+    }
+
+    span.movie-plot {
+      position: absolute;
+      left: 3rem;
+      color: white;
+    }
+  }
+}

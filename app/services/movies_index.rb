@@ -20,19 +20,32 @@ class MoviesIndex
 
   def build_index
     @genres.each_with_object({}) do |genre, hash|
-      hash[genre.name] = genre_movies(genre)
+      hash[genre.name] = genre.movies
     end
   end
 
   def genre_movies(genre)
-    # genre.movies.take(18)
-    case @slide_length
-    when 6
-      genre.movies.take(18)
-    when 5 || 3
-      genre.movies.take(15)
-    else
-      genre.movies.take(16)
-    end
+    genre.movies.take(length_map[@slide_length])
+  end
+
+  def length_map
+    {
+      6 => 24,
+      5 => 20,
+      4 => 20,
+      3 => 18,
+      2 => 12
+    }
+  end
+
+  # Netflix's slide number per slide_length
+  def true_length_map
+    {
+      6 => 42,
+      5 => 40,
+      4 => 40,
+      3 => 39,
+      2 => 38
+    }
   end
 end

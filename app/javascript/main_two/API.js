@@ -21,5 +21,9 @@ export default {
 
   moviesIndex: {
     get: (slideLength) => axios.get(`/api/movies-index/${slideLength}`)
+  },
+
+  search: {
+    show: (query) => axios.get(`/api/search?query=${query}`)
   }
 }

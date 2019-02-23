@@ -1,6 +1,7 @@
 // app/javascript/movies/components/Poster.jsx
 
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Poster = (props) => {
   const movie = props.movie
@@ -20,16 +21,16 @@ const Poster = (props) => {
   }
 
   return (
-    <a href={`/movies/${movie.id}`}>
-      <div
-        className={containerClass}
-        style={posterStyle}
-        onMouseOver={props.mouseOver}
-        onMouseOut={props.mouseOut}
-      >
+    <div
+      className={containerClass}
+      style={posterStyle}
+      onMouseOver={props.mouseOver}
+      onMouseOut={props.mouseOut}
+    >
+      <Link to={`/movies/${movie.id}`}>
         <div className='poster' style={posterImage}></div>
-      </div>
-    </a>
+      </Link>
+    </div>
   )
 }
 

@@ -44,7 +44,7 @@ class MoviesIndexTest < ActiveSupport::TestCase
 
   def movies_length_test(len)
     @index.each_value do |value|
-      assert_equal value.length, len
+      assert_equal len, value.length
     end
   end
 end

@@ -5,6 +5,7 @@ import { Switch, Route } from 'react-router-dom'
 
 import Home from './Home'
 import GenreDisplay from '../../genre/containers/GenreDisplay'
+import MovieDisplay from '../../movies/containers/MovieDisplay'
 import SearchResults from '../../main/components/SearchResults'
 
 const Routes = (props) => (
@@ -15,6 +16,10 @@ const Routes = (props) => (
     <Route
       path={`/genres/:genreId`}
       render={(routeProps) => <GenreDisplay {...props} {...routeProps} />}
+    />
+    <Route
+      path={`/movies/:movieId`}
+      render={(routeProps) => <MovieDisplay {...props} {...routeProps} />}
     />
     <Route path="/recent">
       <Home slideLength={props.slideLength} />

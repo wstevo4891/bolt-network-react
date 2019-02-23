@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   root to: 'home#index'
 
+  get '/genres/:id', to: 'home#index'
+
+  get '/movies/:id', to: 'home#index'
+
+  get '/search(/:query)' => 'search#show', defaults: { format: :json }
+
   get '/quotes' => 'quotes#index'
 
   get '/slider' => 'slider#index'
@@ -8,8 +14,6 @@ Rails.application.routes.draw do
   get '/cards' => 'cards#index'
 
   get '/animations' => 'animations#index'
-
-  get '/search(/:query)' => 'search#show', defaults: { format: :json }
 
   resources :movies, only: :show
 
@@ -27,7 +31,10 @@ Rails.application.routes.draw do
     resources :movies, only: %i[index show]
     resources :genres, only: %i[index show]
 
+    get '/search(/:query)', to: 'search#show'
+
     get '/movies-index/:slide_length', to: 'movies_index#show'
+
     get '/genres/:id/movie_ids' => 'genres#movie_ids', as: :genres_movie_ids
 
     namespace :movies do
