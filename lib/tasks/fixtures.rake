@@ -27,10 +27,11 @@ namespace :fixtures do
     puts "file: #{file}"
 
     puts 'Loading movies =================================='
+    rejects = ['id', 'created_at', 'updated_at']
     movies = Movie.all.map do |movie|
       genres = Genre.find(movie.genre_ids).map(&:name).join(', ')
-      h = { 'genres' => genres }
-      movie.attributes.merge(h)
+      g = { 'genres' => genres }
+      movie.attributes.reject { |k,v| rejects.include?(k) }.merge(g)
     end
 
     puts 'Building Hash for YAML =========================='
@@ -43,6 +44,6 @@ namespace :fixtures do
     end
 
     puts 'Writing Fixtures ================================'
-    YAML.dump(data, file)
+    File.open(file, 'w') { |f| f.write data.to_yaml }
   end
 end

@@ -1,720 +1,3684 @@
 ---
 one:
-  title: The Avengers
-  photo: avengers-poster.jpg
-  year: '2012'
-  rated: PG-13
-  run_time: 2h 23min
-  plot: Earth's mightiest heroes must come together and learn to fight as a team if they are to stop the mischievous Loki and his alien army from enslaving humanity.
-  genres: Action, Adventure
-
-two:
-  title: Harry Potter & The Deathly Hallows Part II
-  photo: hp7-poster.jpg
-  year: '2011'
-  rated: PG-13
-  run_time: 2h 10min
-  plot: Harry, Ron and Hermione search for Voldemort's remaining Horcruxes in their effort to destroy the Dark Lord as the final battle rages on at Hogwarts.
-  genres: Action, Fantasy
-
-three:
-  title: Frozen
-  photo: frozen-poster.png
-  year: '2013'
-  rated: PG
-  run_time: 1h 42min
-  plot: When the newly crowned Queen Elsa accidentally uses her power to turn things into ice to curse her home in infinite winter, her sister, Anna, teams up with a mountain man, his playful reindeer, and a snowman to change the weather condition.
-  genres: Animation, Family
-
-four:
-  title: Iron Man 3
-  photo: iron-man-3-poster.jpg
-  year: '2013'
-  rated: PG-13
-  run_time: 2h 10min
-  plot: When Tony Stark's world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution.
-  genres: Action
-
-five:
-  title: 'Transformers: Age of Extinction'
-  photo: transformers-4-poster.jpg
-  year: '2014'
-  rated: PG-13
-  run_time: 2h 45min
-  plot: 'Autobots must escape sight from a bounty hunter who has taken control of the human serendipity: Unexpectedly, Optimus Prime and his remaining gang turn to a mechanic, his daughter, and her back street racing boyfriend for help.'
-  genres: Action
-
-six:
-  title: 'The Lord of the Rings: The Return of the King'
-  photo: return-of-the-king-poster.jpg
-  year: '2003'
-  rated: PG-13
-  run_time: 3h 21min
-  plot: Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.
-  genres: Action, Fantasy
-
-seven:
-  title: Skyfall
-  photo: skyfall-poster.jpg
-  year: '2012'
-  rated: PG-13
-  run_time: 2h 23min
-  plot: Bond's loyalty to M is tested when her past comes back to haunt her. Whilst MI6 comes under attack, 007 must track down and destroy the threat, no matter how personal the cost.
-  genres: Action
-
-eight:
-  title: The Dark Knight
-  photo: the-dark-knight-poster.jpg
-  year: '2008'
-  rated: PG-13
-  run_time: 2h 32min
-  plot: When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.
-  genres: Action
-
-nine:
-  title: 'Pirates of the Caribbean: The Curse of the Black Pearl'
-  photo: pirates-curse-of-the-black-pearl-poster.jpg
-  year: '2003'
-  rated: PG-13
-  run_time: 2h 23min
-  plot: Blacksmith Will Turner teams up with eccentric pirate "Captain" Jack Sparrow to save his love, the governor's daughter, from Jack's former pirate allies, who are now undead.
-  genres: Action
-
-ten:
-  title: Toy Story 3
-  photo: toy-story-3-poster.jpg
-  year: '2010'
-  rated: G
-  run_time: 1h 43min
-  plot: The toys are mistakenly delivered to a day-care center instead of the attic right before Andy leaves for college, and it's up to Woody to convince the other toys that they weren't abandoned and to return home.
-  genres: Animation, Family
-
-eleven:
-  title: Conan the Barbarian
-  photo: conan-the-barbarian-poster.jpg
-  year: '1982'
-  rated: R
-  run_time: 2h 9min
-  plot: A vengeful barbarian warrior sets off to avenge his tribe and his parents whom were slain by an evil sorcerer and his warriors when he was a boy.
-  genres: Action, Fantasy
-
-twelve:
-  title: Braveheart
-  photo: braveheart-poster.jpg
-  year: '1995'
-  rated: R
-  run_time: 2h 58min
-  plot: When his secret bride is executed for assaulting an English soldier who tried to rape her, William Wallace begins a revolt against King Edward I of England.
-  genres: Action, Drama
-
-thirteen:
-  title: Die Hard
-  photo: die-hard-poster.jpg
-  year: '1988'
-  rated: R
-  run_time: 2h 11min
-  plot: John McClane, officer of the NYPD, tries to save his wife Holly Gennaro and several others that were taken hostage by German terrorist Hans Gruber during a Christmas party at the Nakatomi Plaza in Los Angeles.
-  genres: Action
-
-fourteen:
-  title: The 40 Year-Old Virgin
-  photo: 40-year-old-virgin-poster.jpg
-  year: '2005'
-  rated: R
-  run_time: 1h 56min
-  plot: Goaded by his buddies, a nerdy guy who's never "done the deed" only finds the pressure mounting when he meets a single mother.
-  genres: Comedy
-
-fifteen:
-  title: Superbad
-  photo: superbad-poster.jpg
-  year: '2007'
-  rated: R
-  run_time: 1h 53min
-  plot: Two co-dependent high school seniors are forced to deal with separation anxiety after their plan to stage a booze-soaked party goes awry.
-  genres: Comedy
-
-sixteen:
-  title: The Interview
-  photo: the-interview-poster.jpg
-  year: '2014'
-  rated: R
-  run_time: 1h 52min
-  plot: Dave Skylark and producer Aaron Rapoport run the celebrity tabloid show "Skylark Tonight." When they land an interview with a surprise fan, North Korean dictator Kim Jong-un, they are recruited by the CIA to turn their trip to Pyongyang into an assassination mission.
-  genres: Comedy
-
-seventeen:
-  title: Deadpool
-  photo: deadpool-poster.jpg
-  year: '2016'
-  rated: R
-  run_time: 1h 48min
-  plot: A former Special Forces operative turned mercenary is subjected to a rogue experiment that leaves him with accelerated healing powers, adopting the alter ego Deadpool.
-  genres: Action, Comedy
-
-eighteen:
-  title: Wedding Crashers
-  photo: wedding-crashers-poster.jpg
-  year: '2005'
-  rated: R
-  run_time: 1h 59min
-  plot: John Beckwith and Jeremy Grey, a pair of committed womanizers who sneak into weddings to take advantage of the romantic tinge in the air, find themselves at odds with one another when John meets and falls for Claire Cleary.
-  genres: Comedy
-
-nineteen:
-  title: Bridesmaids
-  photo: bridesmaids-poster.jpg
-  year: '2011'
-  rated: R
-  run_time: 2h 5min
-  plot: Competition between the maid of honor and a bridesmaid, over who is the bride's best friend, threatens to upend the life of an out-of-work pastry chef.
-  genres: Comedy
-
-twenty:
-  title: Shaun of the Dead
-  photo: shaun-of-the-dead-poster.jpg
-  year: '2004'
-  rated: R
-  run_time: 1h 39min
-  plot: A man decides to turn his moribund life around by winning back his ex-girlfriend, reconciling his relationship with his mother, and dealing with an entire community that has returned from the dead to eat the living.
-  genres: Comedy, Horror
-
-twenty_one:
-  title: Borat
-  photo: borat-poster.jpg
-  year: '2006'
-  rated: R
-  run_time: 1h 24min
-  plot: Kazakh TV talking head Borat is dispatched to the United States to report on the greatest country in the world. With a documentary crew in tow, Borat becomes more interested in locating and marrying Pamela Anderson.
-  genres: Comedy
-
-twenty_two:
-  title: The Hangover
-  photo: the-hangover-poster.jpg
-  year: '2009'
-  rated: R
-  run_time: 1h 40min
-  plot: Three buddies wake up from a bachelor party in Las Vegas, with no memory of the previous night and the bachelor missing. They make their way around the city in order to find their friend before his wedding.
-  genres: Comedy
-
-twenty_three:
-  title: Ghostbusters
-  photo: ghostbusters-poster.jpg
-  year: '1984'
-  rated: PG
-  run_time: 1h 45min
-  plot: Three former parapsychology professors set up shop as a unique ghost removal service.
-  genres: Action, Comedy, Fantasy
-
-twenty_four:
-  title: Maverick
-  photo: maverick-poster.jpg
-  year: '1994'
-  rated: PG
-  run_time: 2h 7min
-  plot: Bret Maverick, needing money for a poker tournament, faces various comic mishaps and challenges, including a charming woman thief.
-  genres: Action, Comedy
-
-twenty_five:
-  title: The Princess Bride
-  photo: the-princess-bride-poster.jpg
-  year: '1987'
-  rated: PG
-  run_time: 1h 38min
-  plot: This cult classic comedy-romance follows a peasant farmhand as he battles bumbling outlaws and an evil prince to win the hand of his one true love.
-  genres: Action, Comedy, Family
-
-twenty_six:
-  title: American Psycho
-  photo: american-psycho-poster.jpg
-  year: '2000'
-  rated: R
-  run_time: 1h 42min
-  plot: A wealthy New York investment banking executive hides his alternate psychopathic ego from his co-workers and friends as he delves deeper into his violent, hedonistic fantasies.
-  genres: Comedy, Horror
-
-twenty_seven:
-  title: Forest Gump
-  photo: forest-gump-poster.jpg
-  year: '1994'
-  rated: PG-13
-  run_time: 2h 22min
-  plot: Forrest Gump, while not intelligent, has accidentally been present at many historic moments, but his true love, Jenny Curran, eludes him.
-  genres: Drama
-
-twenty_eight:
-  title: The Shawshank Redemption
-  photo: shawshank-poster.jpg
-  year: '1994'
-  rated: R
-  run_time: 2h 22min
-  plot: Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.
-  genres: Drama
-
-twenty_nine:
-  title: The Godfather
-  photo: the-godfather-poster.png
-  year: '1972'
-  rated: R
-  run_time: 2h 55min
-  plot: The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.
-  genres: Drama
-
-thirty:
-  title: Schindler's List
-  photo: schindlers-list-poster.png
-  year: '1993'
-  rated: R
-  run_time: 3h 15min
-  plot: In Poland during World War II, Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.
-  genres: Drama
-
-thirty_one:
-  title: Slumdog Millionaire
-  photo: slumdog-millionaire-poster.jpg
-  year: '2008'
-  rated: R
-  run_time: 2h
-  plot: A Mumbai teen reflects on his upbringing in the slums when he is accused of cheating on the Indian Version of "Who Wants to be a Millionaire?"
-  genres: Drama
-
-thirty_two:
-  title: Good Will Hunting
-  photo: good-will-hunting-poster.jpg
-  year: '1997'
-  rated: R
-  run_time: 2h 6min
-  plot: Will Hunting, a janitor at M.I.T., has a gift for mathematics, but needs help from a psychologist to find direction in his life.
-  genres: Drama
-
-thirty_three:
   title: 12 Angry Men
-  photo: 12-angry-men-poster.jpg
   year: '1957'
-  rated: NR
-  run_time: 1h 36min
-  plot: A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.
+  rated: Not Rated
+  release_date: 10 Apr 1957
+  run_time: 96 min
+  directors:
+  - Sidney Lumet
+  writers:
+  - Reginald Rose (story)
+  - Reginald Rose (screenplay)
+  actors:
+  - Martin Balsam
+  - John Fiedler
+  - Lee J. Cobb
+  - E.G. Marshall
+  plot: A jury holdout attempts to prevent a miscarriage of justice by forcing his
+    colleagues to reconsider the evidence.
+  photo: 12-angry-men-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMWU4N2FjNzYtNTVkNC00NzQ0LTg0MjAtYTJlMjFhNGUxZDFmXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.9/10
+    - Source: Rotten Tomatoes
+      Value: 100%
+    - Source: Metacritic
+      Value: 96/100
   genres: Drama
-
-thirty_four:
-  title: Inherit the Wind
-  photo: inherit-the-wind-poster.png
-  year: '1960'
-  rated: NR
-  run_time: 2h 8min
-  plot: Based on a real-life case in 1925, two great lawyers argue the case for and against a science teacher accused of the crime of teaching evolution.
-  genres: Drama
-
-thirty_five:
-  title: Casablanca
-  photo: casablanca-poster.jpg
-  year: '1942'
-  rated: PG
-  run_time: 1h 42min
-  plot: In Casablanca, Morocco during the early days of World War II, an American expatriate meets a former lover, with unforeseen complications.
-  genres: Drama, Romance
-
-thirty_six:
-  title: Fight Club
-  photo: fight-club-poster.jpg
-  year: '1999'
-  rated: R
-  run_time: 2h 19min
-  plot: An insomniac office worker, looking for a way to change his life, crosses paths with a devil-may-care soap maker, forming an underground fight club that evolves into something much, much more...
-  genres: Drama
-
-thirty_seven:
-  title: The Lion King
-  photo: the-lion-king-poster.jpg
-  year: '1994'
-  rated: G
-  run_time: 1h 29min
-  plot: Lion cub and future king Simba searches for his identity. His eagerness to please others and penchant for testing his boundaries sometimes gets him into trouble.
-  genres: Animation
-
-thirty_eight:
-  title: Ratatouille
-  photo: ratatouille-poster.jpg
-  year: '2007'
-  rated: G
-  run_time: 1h 51min
-  plot: A rat who can cook makes an unusual alliance with a young kitchen worker at a famous restaurant.
-  genres: Comedy, Animation, Family
-
-thirty_nine:
-  title: Finding Nemo
-  photo: finding-nemo-poster.jpg
-  year: '2003'
-  rated: G
-  run_time: 1h 40min
-  plot: After his son is captured in the Great Barrier Reef and taken to Sydney, a timid clownfish sets out on a journey to bring him home.
-  genres: Animation, Family
-
-forty:
-  title: Spirited Away
-  photo: spirited-away-poster.jpg
-  year: '2001'
-  rated: PG
-  run_time: 2h 5min
-  plot: During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.
-  genres: Animation, Family
-
-forty_one:
-  title: Shrek 2
-  photo: shrek-2-poster.jpg
-  year: '2004'
-  rated: PG
-  run_time: 1h 33min
-  plot: Princess Fiona's parents invite her and Shrek to dinner to celebrate her marriage. If only they knew the newlyweds were both ogres.
-  genres: Comedy, Animation, Family
-
-forty_two:
-  title: The Incredibles
-  photo: the-incredibles-poster.jpg
-  year: '2004'
-  rated: PG
-  run_time: 1h 55min
-  plot: A family of undercover superheroes, while trying to live the quiet suburban life, are forced into action to save the world.
-  genres: Action, Animation, Family
-
-forty_three:
-  title: Aladdin
-  photo: aladdin-poster.jpg
-  year: '1992'
-  rated: G
-  run_time: 1h 30min
-  plot: When a street urchin vies for the love of a beautiful princess, he uses a genie's magic power to make himself off as a prince in order to marry her.
-  genres: Comedy, Animation, Family
-
-forty_four:
-  title: The Nightmare Before Christmas
-  photo: nightmare-before-christmas-poster.jpg
-  year: '1993'
-  rated: PG
-  run_time: 1h 16min
-  plot: Jack Skellington, king of Halloween Town, discovers Christmas Town, but doesn't quite understand the concept.
-  genres: Animation, Family, Fantasy
-
-forty_five:
-  title: E.T.
-  photo: ET-poster.jpg
-  year: '1982'
-  rated: PG
-  run_time: 1h 55min
-  plot: A troubled child summons the courage to help a friendly alien escape Earth and return to his home-world.
-  genres: Family
-
-forty_six:
-  title: Explorers
-  photo: explorers-poster.jpg
-  year: '1985'
-  rated: PG
-  run_time: 1h 49min
-  plot: A boy obsessed with 50s sci-fi movies about aliens has a recurring dream about a blueprint of some kind, which he draws for his inventor friend. With the help of a third kid, they follow it and build themselves a spaceship.
-  genres: Action, Family
-
-forty_seven:
-  title: The Sandlot
-  photo: sandlot-poster.jpg
-  year: '1993'
-  rated: PG
-  run_time: 1h 41min
-  plot: A new kid in town is taken under the wing of a young baseball prodigy and his team in this coming of age movie set in the summer of 1962. Together, they get themselves into many adventures involving rival teams, lifeguards, and a vicious dog.
-  genres: Comedy, Family
-
-forty_eight:
-  title: The Goonies
-  photo: goonies-poster.jpg
-  year: '1985'
-  rated: PG
-  run_time: 1h 54min
-  plot: In order to save their home from foreclosure, a group of misfits set out to find a pirate's ancient treasure.
-  genres: Action, Comedy, Family
-
-forty_nine:
-  title: Love Actually
-  photo: love-actually-poster.png
-  year: '2003'
-  rated: R
-  run_time: 2h 15min
-  plot: Follows the lives of eight very different couples in dealing with their love lives in various loosely interrelated tales all set during a frantic month before Christmas in London, England.
-  genres: Comedy, Drama, Romance
-
-fifty:
-  title: When Harry Met Sally
-  photo: when-harry-met-sally-poster.jpg
-  year: '1989'
-  rated: R
-  run_time: 1h 36min
-  plot: Harry and Sally have known each other for years, and are very good friends, but they fear sex would ruin the friendship.
-  genres: Comedy, Drama, Romance
-
-fifty_one:
-  title: Gone with the Wind
-  photo: gone-with-the-wind-poster.jpg
-  year: '1939'
-  rated: G
-  run_time: 3h 58min
-  plot: A manipulative Southern belle carries on a turbulent affair with a blockade runner during the American Civil War.
-  genres: Drama, Romance
-
-fifty_two:
-  title: Dirty Dancing
-  photo: dirty-dancing-poster.jpg
-  year: '1987'
-  rated: PG-13
-  run_time: 1h 40min
-  plot: Spending the summer at a Catskills resort with her family, Frances "Baby" Houseman falls in love with the camp's dance instructor, Johnny Castle.
-  genres: Drama, Romance
-
-fifty_three:
-  title: Titanic
-  photo: titanic-poster.jpg
-  year: '1997'
-  rated: PG-13
-  run_time: 3h 14min
-  plot: A seventeen-year-old aristocrat falls in love with a kind, but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.
-  genres: Drama, Romance
-
-fifty_four:
-  title: Amelie
-  photo: amelie-poster.jpg
-  year: '2001'
-  rated: R
-  run_time: 2h 2min
-  plot: Amelie is an innocent and naive girl in Paris with her own sense of justice. She decides to help those around her and, along the way, discovers love.
-  genres: Comedy, Romance
-
-fifty_five:
-  title: Before Sunrise
-  photo: before-sunrise-poster.jpg
-  year: '1995'
-  rated: R
-  run_time: 1h 45min
-  plot: A young man and woman meet on a train in Europe, and wind up spending one evening together in Vienna. Unfortunately, both know that this will probably be their only night together.
-  genres: Drama, Romance
-
-fifty_six:
-  title: Breakfast at Tiffany's
-  photo: breakfast-at-tiffanys-poster.jpg
-  year: '1961'
-  rated: NR
-  run_time: 1h 55min
-  plot: A young New York socialite becomes interested in a young man who has moved into her apartment building.
-  genres: Comedy, Drama, Romance
-
-fifty_seven:
-  title: Willow
-  photo: willow-poster.jpg
-  year: '1988'
-  rated: PG
-  run_time: 2h 6min
-  plot: A reluctant dwarf must play a critical role in protecting a special baby from an evil queen.
-  genres: Action, Fantasy
-
-fifty_eight:
-  title: Time Bandits
-  photo: time-bandits-poster.jpg
-  year: '1981'
-  rated: PG
-  run_time: 1h 50min
-  plot: A young boy accidentally joins a band of dwarves as they jump from era to era looking for treasure to steal.
-  genres: Action, Comedy, Fantasy
-
-fifty_nine:
-  title: The Wizard of Oz
-  photo: wizard-of-oz-poster.jpg
-  year: '1939'
-  rated: G
-  run_time: 1h 42min
-  plot: Dorothy Gale is swept away to a magical land in a tornado and embarks on a quest to see the Wizard who can help her return home.
-  genres: Family, Fantasy
-
-sixty:
-  title: The NeverEnding Story
-  photo: neverending-story-poster.jpg
-  year: '1984'
-  rated: PG
-  run_time: 1h 42min
-  plot: A troubled boy dives into a wonderous fantasy world through the pages of a mysterious book.
-  genres: Family, Fantasy
-
-sixty_one:
-  title: Star Wars
-  photo: star-wars-poster.jpg
-  year: '1977'
-  rated: PG
-  run_time: 2h 1min
-  plot: Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a wookiee and two droids to save the galaxy from the Empire's world-destroying battle-station, while also attempting to rescue Princess Leia from the evil Darth Vader.
-  genres: Action, Fantasy, SciFi
-
-sixty_two:
-  title: Alien
-  photo: alien-poster.jpg
-  year: '1979'
-  rated: R
-  run_time: 1h 57min
-  plot: After a space merchant vessel perceives an unknown transmission as distress call, their landing on the source planet finds one of the crew attacked by a mysterious lifeform. Continuing their journey back to Earth with the attacked crew having recovered and the critter deceased, they soon realize that its life cycle has merely begun.
-  genres: SciFi, Horror
-
-sixty_three:
-  title: Blade Runner
-  photo: blade-runner-poster.jpg
-  year: '1982'
-  rated: R
-  run_time: 1h 57min
-  plot: A blade runner must pursue and try to terminate four replicants who stole a ship in space and have returned to Earth to find their creator.
-  genres: Action, SciFi
-
-sixty_four:
-  title: The Terminator
-  photo: the-terminator-poster.jpg
-  year: '1984'
-  rated: R
-  run_time: 1h 47min
-  plot: A human-looking indestructible cyborg is sent from 2029 to 1984 to assassinate a waitress, whose unborn son will lead humanity in a war against the machines, while a soldier from that war is sent to protect her at all costs.
-  genres: Action, SciFi
-
-sixty_five:
-  title: The Matrix
-  photo: the-matrix-poster.jpg
-  year: '1999'
-  rated: R
-  run_time: 2h 16min
-  plot: A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.
-  genres: Action, SciFi
-
-sixty_six:
+two:
   title: '2001: A Space Odyssey'
-  photo: 2001-poster.jpg
   year: '1968'
   rated: G
-  run_time: 2h 29min
-  plot: Humanity finds a mysterious, obviously artificial object buried beneath the Lunar surface and, with the intelligent computer H.A.L. 9000, sets off on a quest.
-  genres: Action, SciFi
-
-sixty_seven:
+  release_date: 12 May 1968
+  run_time: 149 min
+  directors:
+  - Stanley Kubrick
+  writers:
+  - Stanley Kubrick (screenplay)
+  - Arthur C. Clarke (screenplay)
+  actors:
+  - Keir Dullea
+  - Gary Lockwood
+  - William Sylvester
+  - Daniel Richter
+  plot: After discovering a mysterious artifact buried beneath the lunar surface,
+    mankind sets off on a quest to find its origins with help from intelligent supercomputer
+    HAL 9000.
+  photo: 2001-a-space-odyssey-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMmNlYzRiNDctZWNhMi00MzI4LThkZTctMTUzMmZkMmFmNThmXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.3/10
+    - Source: Rotten Tomatoes
+      Value: 93%
+    - Source: Metacritic
+      Value: 82/100
+  genres: Adventure, Sci-Fi
+three:
+  title: Aladdin
+  year: '1992'
+  rated: G
+  release_date: 25 Nov 1992
+  run_time: 90 min
+  directors:
+  - Ron Clements
+  - John Musker
+  writers:
+  - Ron Clements (screenplay by)
+  - John Musker (screenplay by)
+  - Ted Elliott (screenplay by)
+  - Terry Rossio (screenplay by)
+  - Burny Mattinson (story)
+  - Roger Allers (story)
+  - Daan Jippes (story)
+  - Kevin Harkey (story)
+  - Sue C. Nichols (story)
+  - Francis Glebas (story)
+  - Darrell Rooney (story)
+  - Larry Leker (story)
+  - James Fujii (story)
+  - Kirk Hanson (story)
+  - Kevin Lima (story)
+  - Rebecca Rees (story)
+  - David S. Smith (story)
+  - Chris Sanders (story)
+  - Brian Pimental (story)
+  - Patrick A. Ventura (story)
+  actors:
+  - Scott Weinger
+  - Robin Williams
+  - Linda Larkin
+  - Jonathan Freeman
+  plot: When a street urchin vies for the love of a beautiful princess, he uses a
+    genie's magic power to make himself off as a prince in order to marry her.
+  photo: aladdin-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BY2Q2NDI1MjUtM2Q5ZS00MTFlLWJiYWEtNTZmNjQ3OGJkZDgxXkEyXkFqcGdeQXVyNTI4MjkwNjA@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.0/10
+    - Source: Rotten Tomatoes
+      Value: 94%
+    - Source: Metacritic
+      Value: 86/100
+  genres: Animation, Adventure, Comedy, Family, Fantasy
+four:
+  title: Alien
+  year: '1979'
+  rated: R
+  release_date: 22 Jun 1979
+  run_time: 116 min
+  directors:
+  - Ridley Scott
+  writers:
+  - Dan O'Bannon (story)
+  - Ronald Shusett (story)
+  - Dan O'Bannon (screenplay)
+  actors:
+  - Tom Skerritt
+  - Sigourney Weaver
+  - Veronica Cartwright
+  - Harry Dean Stanton
+  plot: After a space merchant vessel perceives an unknown transmission as a distress
+    call, its landing on the source moon finds one of the crew attacked by a mysterious
+    lifeform, and they soon realize that its life cycle has merely begun.
+  photo: alien-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMmQ2MmU3NzktZjAxOC00ZDZhLTk4YzEtMDMyMzcxY2IwMDAyXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.5/10
+    - Source: Rotten Tomatoes
+      Value: 97%
+    - Source: Metacritic
+      Value: 83/100
+  genres: Horror, Sci-Fi
+five:
+  title: Amélie
+  year: '2001'
+  rated: R
+  release_date: '08 Feb 2002'
+  run_time: 122 min
+  directors:
+  - Jean-Pierre Jeunet
+  writers:
+  - Guillaume Laurant (scenario)
+  - Jean-Pierre Jeunet (scenario)
+  - Guillaume Laurant (dialogue)
+  actors:
+  - Audrey Tautou
+  - Mathieu Kassovitz
+  - Rufus
+  - Lorella Cravotta
+  plot: Amélie is an innocent and naive girl in Paris with her own sense of justice.
+    She decides to help those around her and, along the way, discovers love.
+  photo: amelie-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BNDg4NjM1YjMtYmNhZC00MjM0LWFiZmYtNGY1YjA3MzZmODc5XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.3/10
+    - Source: Rotten Tomatoes
+      Value: 89%
+    - Source: Metacritic
+      Value: 69/100
+  genres: Comedy, Romance
+six:
+  title: American Psycho
+  year: '2000'
+  rated: R
+  release_date: 14 Apr 2000
+  run_time: 101 min
+  directors:
+  - Mary Harron
+  writers:
+  - Bret Easton Ellis (novel)
+  - Mary Harron (screenplay)
+  - Guinevere Turner (screenplay)
+  actors:
+  - Christian Bale
+  - Justin Theroux
+  - Josh Lucas
+  - Bill Sage
+  plot: A wealthy New York City investment banking executive, Patrick Bateman, hides
+    his alternate psychopathic ego from his co-workers and friends as he delves deeper
+    into his violent, hedonistic fantasies.
+  photo: american-psycho-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BZTM2ZGJmNjQtN2UyOS00NjcxLWFjMDktMDE2NzMyNTZlZTBiXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.6/10
+    - Source: Rotten Tomatoes
+      Value: 68%
+    - Source: Metacritic
+      Value: 64/100
+  genres: Drama
+seven:
+  title: Avatar
+  year: '2009'
+  rated: PG-13
+  release_date: 18 Dec 2009
+  run_time: 162 min
+  directors:
+  - James Cameron
+  writers:
+  - James Cameron
+  actors:
+  - Sam Worthington
+  - Zoe Saldana
+  - Sigourney Weaver
+  - Stephen Lang
+  plot: A paraplegic marine dispatched to the moon Pandora on a unique mission becomes
+    torn between following his orders and protecting the world he feels is his home.
+  photo: avatar-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.8/10
+    - Source: Rotten Tomatoes
+      Value: 82%
+    - Source: Metacritic
+      Value: 83/100
+  genres: Action, Adventure, Fantasy, Sci-Fi
+eight:
+  title: Before Sunrise
+  year: '1995'
+  rated: R
+  release_date: 27 Jan 1995
+  run_time: 101 min
+  directors:
+  - Richard Linklater
+  writers:
+  - Richard Linklater
+  - Kim Krizan
+  actors:
+  - Ethan Hawke
+  - Julie Delpy
+  - Andrea Eckert
+  - Hanno Pöschl
+  plot: A young man and woman meet on a train in Europe, and wind up spending one
+    evening together in Vienna. Unfortunately, both know that this will probably be
+    their only night together.
+  photo: before-sunrise-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BZDdiZTAwYzAtMDI3Ni00OTRjLTkzN2UtMGE3MDMyZmU4NTU4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.1/10
+    - Source: Rotten Tomatoes
+      Value: 100%
+    - Source: Metacritic
+      Value: 77/100
+  genres: Drama, Romance
+nine:
+  title: Big Hero 6
+  year: '2014'
+  rated: PG
+  release_date: 07 Nov 2014
+  run_time: 102 min
+  directors:
+  - Don Hall
+  - Chris Williams
+  writers:
+  - Jordan Roberts (screenplay by)
+  - Robert L. Baird (screenplay by)
+  - Daniel Gerson (screenplay by)
+  - Man of Action (Big Hero 6 team and characters created by)
+  - Steven T. Seagle (characters)
+  - Duncan Rouleau (characters)
+  actors:
+  - Scott Adsit
+  - Ryan Potter
+  - Daniel Henney
+  - T.J. Miller
+  plot: The special bond that develops between plus-sized inflatable robot Baymax,
+    and prodigy Hiro Hamada, who team up with a group of friends to form a band of
+    high-tech heroes.
+  photo: big-hero-6-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMDliOTIzNmUtOTllOC00NDU3LWFiNjYtMGM0NDc1YTMxNjYxXkEyXkFqcGdeQXVyNTM3NzExMDQ@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.8/10
+    - Source: Rotten Tomatoes
+      Value: 89%
+    - Source: Metacritic
+      Value: 74/100
+  genres: Animation, Action, Adventure, Comedy, Drama, Family, Sci-Fi
+ten:
+  title: Blade Runner 2049
+  year: '2017'
+  rated: R
+  release_date: 06 Oct 2017
+  run_time: 164 min
+  directors:
+  - Denis Villeneuve
+  writers:
+  - Hampton Fancher (screenplay by)
+  - Michael Green (screenplay by)
+  - Hampton Fancher (story by)
+  - Philip K. Dick (based on characters from the novel "Do Androids Dream of Electric
+    Sheep?" by)
+  actors:
+  - Ryan Gosling
+  - Dave Bautista
+  - Robin Wright
+  - Mark Arnold
+  plot: A young blade runner's discovery of a long-buried secret leads him to track
+    down former blade runner Rick Deckard, who's been missing for thirty years.
+  photo: blade-runner-2049-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BNzA1Njg4NzYxOV5BMl5BanBnXkFtZTgwODk5NjU3MzI@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.0/10
+    - Source: Rotten Tomatoes
+      Value: 87%
+    - Source: Metacritic
+      Value: 81/100
+  genres: Drama, Sci-Fi
+eleven:
+  title: Blade Runner
+  year: '1982'
+  rated: R
+  release_date: 25 Jun 1982
+  run_time: 117 min
+  directors:
+  - Ridley Scott
+  writers:
+  - Hampton Fancher (screenplay)
+  - David Webb Peoples (screenplay)
+  - Philip K. Dick (novel)
+  actors:
+  - Harrison Ford
+  - Rutger Hauer
+  - Sean Young
+  - Edward James Olmos
+  plot: A blade runner must pursue and terminate four replicants who stole a ship
+    in space, and have returned to Earth to find their creator.
+  photo: blade-runner-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BNzQzMzJhZTEtOWM4NS00MTdhLTg0YjgtMjM4MDRkZjUwZDBlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.2/10
+    - Source: Rotten Tomatoes
+      Value: 90%
+    - Source: Metacritic
+      Value: 89/100
+  genres: Sci-Fi
+twelve:
+  title: Borat
+  year: '2006'
+  rated: R
+  release_date: 03 Nov 2006
+  run_time: 84 min
+  directors:
+  - Larry Charles
+  writers:
+  - Sacha Baron Cohen (screenplay)
+  - Anthony Hines (screenplay)
+  - Peter Baynham (screenplay)
+  - Dan Mazer (screenplay)
+  - Sacha Baron Cohen (story)
+  - Peter Baynham (story)
+  - Anthony Hines (story)
+  - Todd Phillips (story)
+  - Sacha Baron Cohen (based on a character created by)
+  actors:
+  - Sacha Baron Cohen
+  - Ken Davitian
+  - Luenell
+  - Chester
+  plot: Kazakh TV talking head Borat is dispatched to the United States to report
+    on the greatest country in the world. With a documentary crew in tow, Borat becomes
+    more interested in locating and marrying Pamela Anderson.
+  photo: borat-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTk0MTQ3NDQ4Ml5BMl5BanBnXkFtZTcwOTQ3OTQzMw@@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.3/10
+    - Source: Rotten Tomatoes
+      Value: 91%
+    - Source: Metacritic
+      Value: 89/100
+  genres: Comedy
+thirteen:
+  title: Braveheart
+  year: '1995'
+  rated: R
+  release_date: 24 May 1995
+  run_time: 178 min
+  directors:
+  - Mel Gibson
+  writers:
+  - Randall Wallace
+  actors:
+  - James Robinson
+  - Sean Lawlor
+  - Sandy Nelson
+  - James Cosmo
+  plot: When his secret bride is executed for assaulting an English soldier who tried
+    to rape her, William Wallace begins a revolt against King Edward I of England.
+  photo: braveheart-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMzkzMmU0YTYtOWM3My00YzBmLWI0YzctOGYyNTkwMWE5MTJkXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.4/10
+    - Source: Rotten Tomatoes
+      Value: 76%
+    - Source: Metacritic
+      Value: 68/100
+  genres: Drama
+fourteen:
+  title: Breakfast at Tiffany's
+  year: '1961'
+  rated: Not Rated
+  release_date: 04 Nov 1961
+  run_time: 115 min
+  directors:
+  - Blake Edwards
+  writers:
+  - Truman Capote (based on the novel by)
+  - George Axelrod (screenplay)
+  actors:
+  - Audrey Hepburn
+  - George Peppard
+  - Patricia Neal
+  - Buddy Ebsen
+  plot: A young New York socialite becomes interested in a young man who has moved
+    into her apartment building, but her past threatens to get in the way.
+  photo: breakfast-at-tiffanys-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BNGEwMTRmZTQtMDY4Ni00MTliLTk5ZmMtOWMxYWMyMTllMDg0L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.7/10
+    - Source: Rotten Tomatoes
+      Value: 88%
+    - Source: Metacritic
+      Value: 76/100
+  genres: Comedy, Drama, Romance
+fifteen:
+  title: Bridesmaids
+  year: '2011'
+  rated: R
+  release_date: 13 May 2011
+  run_time: 125 min
+  directors:
+  - Paul Feig
+  writers:
+  - Kristen Wiig
+  - Annie Mumolo
+  actors:
+  - Kristen Wiig
+  - Terry Crews
+  - Maya Rudolph
+  - Tom Yi
+  plot: Competition between the maid of honor and a bridesmaid, over who is the bride's
+    best friend, threatens to upend the life of an out-of-work pastry chef.
+  photo: bridesmaids-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMjAyOTMyMzUxNl5BMl5BanBnXkFtZTcwODI4MzE0NA@@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 6.8/10
+    - Source: Rotten Tomatoes
+      Value: 90%
+    - Source: Metacritic
+      Value: 75/100
+  genres: Comedy, Romance
+sixteen:
+  title: Bridget Jones's Baby
+  year: '2016'
+  rated: R
+  release_date: 16 Sep 2016
+  run_time: 123 min
+  directors:
+  - Sharon Maguire
+  writers:
+  - Helen Fielding (screenplay)
+  - Dan Mazer (screenplay)
+  - Emma Thompson (screenplay)
+  - Helen Fielding (based on the characters and story created by)
+  actors:
+  - Renée Zellweger
+  - Gemma Jones
+  - Jim Broadbent
+  - Sally Phillips
+  plot: Bridget's focus on single life and her career is interrupted when she finds
+    herself pregnant, but with one hitch ... she can only be fifty percent sure of
+    the identity of her baby's father.
+  photo: bridget-jones-baby-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMjQyMTI0MjIyOV5BMl5BanBnXkFtZTgwMzEyMjQ1ODE@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 6.5/10
+    - Source: Rotten Tomatoes
+      Value: 78%
+    - Source: Metacritic
+      Value: 59/100
+  genres: Comedy, Drama, Romance
+seventeen:
+  title: Casablanca
+  year: '1942'
+  rated: PG
+  release_date: 23 Jan 1943
+  run_time: 102 min
+  directors:
+  - Michael Curtiz
+  writers:
+  - Julius J. Epstein (screenplay)
+  - Philip G. Epstein (screenplay)
+  - Howard Koch (screenplay)
+  - Murray Burnett (play)
+  - Joan Alison (play)
+  actors:
+  - Humphrey Bogart
+  - Ingrid Bergman
+  - Paul Henreid
+  - Claude Rains
+  plot: A cynical nightclub owner protects an old flame and her husband from Nazis
+    in Morocco.
+  photo: casablanca-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BY2IzZGY2YmEtYzljNS00NTM5LTgwMzUtMzM1NjQ4NGI0OTk0XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.5/10
+    - Source: Rotten Tomatoes
+      Value: 97%
+    - Source: Metacritic
+      Value: 100/100
+  genres: Drama, Romance
+eighteen:
+  title: Coco
+  year: '2017'
+  rated: PG
+  release_date: 22 Nov 2017
+  run_time: 105 min
+  directors:
+  - Lee Unkrich
+  - Adrian Molina(co-director)
+  writers:
+  - Lee Unkrich (original story by)
+  - Jason Katz (original story by)
+  - Matthew Aldrich (original story by)
+  - Adrian Molina (original story by)
+  - Adrian Molina (screenplay by)
+  - Matthew Aldrich (screenplay by)
+  actors:
+  - Anthony Gonzalez
+  - Gael García Bernal
+  - Benjamin Bratt
+  - Alanna Ubach
+  plot: Aspiring musician Miguel, confronted with his family's ancestral ban on music,
+    enters the Land of the Dead to find his great-great-grandfather, a legendary singer.
+  photo: coco-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BYjQ5NjM0Y2YtNjZkNC00ZDhkLWJjMWItN2QyNzFkMDE3ZjAxXkEyXkFqcGdeQXVyODIxMzk5NjA@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.4/10
+    - Source: Rotten Tomatoes
+      Value: 97%
+    - Source: Metacritic
+      Value: 81/100
+  genres: Animation, Adventure, Comedy, Family, Fantasy
+nineteen:
+  title: Conan the Barbarian
+  year: '1982'
+  rated: R
+  release_date: 14 May 1982
+  run_time: 129 min
+  directors:
+  - John Milius
+  writers:
+  - Robert E. Howard (based on the character created by)
+  - John Milius
+  - Oliver Stone
+  actors:
+  - Arnold Schwarzenegger
+  - James Earl Jones
+  - Max von Sydow
+  - Sandahl Bergman
+  plot: A young boy, Conan, becomes a slave after his parents are killed and tribe
+    destroyed by a savage warlord and sorcerer, Thulsa Doom. When he grows up he becomes
+    a fearless, invincible fighter. Set free, he plots revenge against Thulsa Doom.
+  photo: conan-the-barbarian-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMWIxMzQxZjAtMGFkNC00NzYwLWFiMGEtNzZhZjE5MmFiMmMyL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 6.9/10
+    - Source: Rotten Tomatoes
+      Value: 70%
+    - Source: Metacritic
+      Value: 43/100
+  genres: Adventure, Fantasy
+twenty:
+  title: Deadpool
+  year: '2016'
+  rated: R
+  release_date: 12 Feb 2016
+  run_time: 108 min
+  directors:
+  - Tim Miller
+  writers:
+  - Rhett Reese
+  - Paul Wernick
+  actors:
+  - Ryan Reynolds
+  - Karan Soni
+  - Ed Skrein
+  - Michael Benyaer
+  plot: A wisecracking mercenary gets experimented on and becomes immortal but ugly,
+    and sets out to track down the man who ruined his looks.
+  photo: deadpool-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BYzE5MjY1ZDgtMTkyNC00MTMyLThhMjAtZGI5OTE1NzFlZGJjXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.0/10
+    - Source: Rotten Tomatoes
+      Value: 84%
+    - Source: Metacritic
+      Value: 65/100
+  genres: Action, Adventure, Comedy, Sci-Fi
+twenty-one:
+  title: Die Hard
+  year: '1988'
+  rated: R
+  release_date: 20 Jul 1988
+  run_time: 132 min
+  directors:
+  - John McTiernan
+  writers:
+  - Roderick Thorp (novel)
+  - Jeb Stuart (screenplay)
+  - Steven E. de Souza (screenplay)
+  actors:
+  - Bruce Willis
+  - Bonnie Bedelia
+  - Reginald VelJohnson
+  - Paul Gleason
+  plot: An NYPD officer tries to save his wife and several others taken hostage by
+    German terrorists during a Christmas party at the Nakatomi Plaza in Los Angeles.
+  photo: die-hard-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BZjRlNDUxZjAtOGQ4OC00OTNlLTgxNmQtYTBmMDgwZmNmNjkxXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.2/10
+    - Source: Rotten Tomatoes
+      Value: 93%
+    - Source: Metacritic
+      Value: 72/100
+  genres: Action
+twenty-two:
+  title: Dirty Dancing
+  year: '1987'
+  rated: PG-13
+  release_date: 21 Aug 1987
+  run_time: 100 min
+  directors:
+  - Emile Ardolino
+  writers:
+  - Eleanor Bergstein
+  actors:
+  - Jennifer Grey
+  - Patrick Swayze
+  - Jerry Orbach
+  - Cynthia Rhodes
+  plot: Spending the summer at a Catskills resort with her family, Frances "Baby"
+    Houseman falls in love with the camp's dance instructor, Johnny Castle.
+  photo: dirty-dancing-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTc3MDY3ODQ2OV5BMl5BanBnXkFtZTgwOTQ2NTYxMTE@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 6.9/10
+    - Source: Rotten Tomatoes
+      Value: 70%
+    - Source: Metacritic
+      Value: 65/100
+  genres: Drama, Romance
+twenty-three:
   title: District 9
-  photo: district-9-poster.jpg
   year: '2009'
   rated: R
-  run_time: 1h 52min
-  plot: An extraterrestrial race forced to live in slum-like conditions on Earth suddenly finds a kindred spirit in a government agent who is exposed to their biotechnology.
-  genres: Action, SciFi
-
-sixty_eight:
-  title: Serenity
-  photo: serenity-poster.jpg
-  year: '2005'
-  rated: PG-13
-  run_time: 1h 59min
-  plot: The crew of the ship Serenity tries to evade an assassin sent to recapture one of their number who is telepathic.
-  genres: Action, SciFi
-
-sixty_nine:
-  title: Inception
-  photo: inception-poster.jpg
-  year: '2010'
-  rated: PG-13
-  run_time: 2h 28min
-  plot: A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.
-  genres: Action, SciFi
-
-seventy:
-  title: 'Star Trek II: The Wrath of Khan'
-  photo: star-trek-2-poster.jpg
+  release_date: 14 Aug 2009
+  run_time: 112 min
+  directors:
+  - Neill Blomkamp
+  writers:
+  - Neill Blomkamp
+  - Terri Tatchell
+  actors:
+  - Sharlto Copley
+  - Jason Cope
+  - Nathalie Boltt
+  - Sylvaine Strike
+  plot: An extraterrestrial race forced to live in slum-like conditions on Earth suddenly
+    finds a kindred spirit in a government agent who is exposed to their biotechnology.
+  photo: district-9-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BYmQ5MzFjYWMtMTMwNC00ZGU5LWI3YTQtYzhkMGExNGFlY2Q0XkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.9/10
+    - Source: Rotten Tomatoes
+      Value: 90%
+    - Source: Metacritic
+      Value: 81/100
+  genres: Action, Sci-Fi
+twenty-four:
+  title: E.T. The Extra-Terrestrial
   year: '1982'
   rated: PG
-  run_time: 1h 53min
-  plot: With the assistance of the Enterprise crew, Admiral Kirk must stop an old nemesis, Khan Noonien Singh, from using the life-generated Genesis Device as the ultimate weapon.
-  genres: Action, SciFi
-
-seventy_one:
-  title: The Shining
-  photo: the-shining-poster.jpg
+  release_date: 11 Jun 1982
+  run_time: 115 min
+  directors:
+  - Steven Spielberg
+  writers:
+  - Melissa Mathison
+  actors:
+  - Dee Wallace
+  - Henry Thomas
+  - Peter Coyote
+  - Robert MacNaughton
+  plot: A troubled child summons the courage to help a friendly alien escape Earth
+    and return to his home world.
+  photo: e-t-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTQ2ODFlMDAtNzdhOC00ZDYzLWE3YTMtNDU4ZGFmZmJmYTczXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.9/10
+    - Source: Rotten Tomatoes
+      Value: 98%
+    - Source: Metacritic
+      Value: 91/100
+  genres: Family, Sci-Fi
+twenty-five:
+  title: Everybody Loves Somebody
+  year: '2017'
+  rated: PG-13
+  release_date: 17 Feb 2017
+  run_time: 102 min
+  directors:
+  - Catalina Aguilar Mastretta
+  writers:
+  - Catalina Aguilar Mastretta
+  actors:
+  - Karla Souza
+  - José María Yazpik
+  - Ben O'Toole
+  - Alejandro Camacho
+  plot: A successful and single career woman asks her co-worker to pose as her boyfriend
+    at a family wedding back home in Mexico. Her situation gets complicated when her
+    ex shows up at the ceremony.
+  photo: everybody-loves-somebody-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTc0MzM3MjY5NF5BMl5BanBnXkFtZTgwMjU5NDg4MDI@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 6.5/10
+    - Source: Rotten Tomatoes
+      Value: 93%
+    - Source: Metacritic
+      Value: 74/100
+  genres: Comedy, Romance
+twenty-six:
+  title: Explorers
+  year: '1985'
+  rated: PG
+  release_date: 12 Jul 1985
+  run_time: 109 min
+  directors:
+  - Joe Dante
+  writers:
+  - Eric Luke
+  actors:
+  - Ethan Hawke
+  - River Phoenix
+  - Jason Presson
+  - Bradley Gregg
+  plot: A boy obsessed with 50s sci-fi movies about aliens has a recurring dream about
+    a blueprint of some kind, which he draws for his inventor friend. With the help
+    of a third kid, they follow it and build themselves a spaceship. Now what?
+  photo: explorers-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BNDY0MjJhMmYtNzlkYy00MjQwLWE2Y2UtMjg1MjI2ZjhhMDRiL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 6.6/10
+    - Source: Metacritic
+      Value: 58/100
+  genres: Adventure, Comedy, Family, Romance, Sci-Fi
+twenty-seven:
+  title: Fight Club
+  year: '1999'
+  rated: R
+  release_date: 15 Oct 1999
+  run_time: 139 min
+  directors:
+  - David Fincher
+  writers:
+  - Chuck Palahniuk (novel)
+  - Jim Uhls (screenplay)
+  actors:
+  - Edward Norton
+  - Brad Pitt
+  - Meat Loaf
+  - Zach Grenier
+  plot: An insomniac office worker and a devil-may-care soapmaker form an underground
+    fight club that evolves into something much, much more.
+  photo: fight-club-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMjJmYTNkNmItYjYyZC00MGUxLWJhNWMtZDY4Nzc1MDAwMzU5XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.8/10
+    - Source: Rotten Tomatoes
+      Value: 79%
+    - Source: Metacritic
+      Value: 66/100
+  genres: Drama
+twenty-eight:
+  title: Finding Nemo
+  year: '2003'
+  rated: G
+  release_date: 30 May 2003
+  run_time: 100 min
+  directors:
+  - Andrew Stanton
+  - Lee Unkrich(co-director)
+  writers:
+  - Andrew Stanton (original story by)
+  - Andrew Stanton (screenplay by)
+  - Bob Peterson (screenplay by)
+  - David Reynolds (screenplay by)
+  actors:
+  - Albert Brooks
+  - Ellen DeGeneres
+  - Alexander Gould
+  - Willem Dafoe
+  plot: After his son is captured in the Great Barrier Reef and taken to Sydney, a
+    timid clownfish sets out on a journey to bring him home.
+  photo: finding-nemo-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BZjMxYzBiNjUtZDliNC00MDAyLTg3N2QtOWNjNmNhZGQzNDg5XkEyXkFqcGdeQXVyNjE2MjQwNjc@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.1/10
+    - Source: Rotten Tomatoes
+      Value: 99%
+    - Source: Metacritic
+      Value: 90/100
+  genres: Animation, Adventure, Comedy, Family
+twenty-nine:
+  title: Forrest Gump
+  year: '1994'
+  rated: PG-13
+  release_date: 06 Jul 1994
+  run_time: 142 min
+  directors:
+  - Robert Zemeckis
+  writers:
+  - Winston Groom (novel)
+  - Eric Roth (screenplay)
+  actors:
+  - Tom Hanks
+  - Rebecca Williams
+  - Sally Field
+  - Michael Conner Humphreys
+  plot: The presidencies of Kennedy and Johnson, Vietnam, Watergate, and other history
+    unfold through the perspective of an Alabama man with an IQ of 75.
+  photo: forrest-gump-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.8/10
+    - Source: Rotten Tomatoes
+      Value: 72%
+    - Source: Metacritic
+      Value: 82/100
+  genres: Drama, Romance
+thirty:
+  title: Friday the 13th
   year: '1980'
   rated: R
-  run_time: 2h 26min
-  plot: A family heads to an isolated hotel for the winter where an evil and spiritual presence influences the father into violence, while his psychic son sees horrific forebodings from the past and of the future.
-  genres: Drama, Horror
-
-seventy_two:
+  release_date: '09 May 1980'
+  run_time: 95 min
+  directors:
+  - Sean S. Cunningham
+  writers:
+  - Victor Miller
+  actors:
+  - Betsy Palmer
+  - Adrienne King
+  - Jeannine Taylor
+  - Robbi Morgan
+  plot: A group of camp counselors are stalked and murdered by an unknown assailant
+    while trying to reopen a summer camp which, years before, was the site of a child's
+    drowning.
+  photo: friday-the-13th-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 6.5/10
+    - Source: Rotten Tomatoes
+      Value: 63%
+    - Source: Metacritic
+      Value: 22/100
+  genres: Horror
+thirty-one:
+  title: Frozen
+  year: '2013'
+  rated: PG
+  release_date: 27 Nov 2013
+  run_time: 102 min
+  directors:
+  - Chris Buck
+  - Jennifer Lee
+  writers:
+  - Jennifer Lee (screenplay by)
+  - Hans Christian Andersen (story inspired by "The Snow Queen" by)
+  - Chris Buck (story by)
+  - Jennifer Lee (story by)
+  - Shane Morris (story by)
+  actors:
+  - Kristen Bell
+  - Idina Menzel
+  - Jonathan Groff
+  - Josh Gad
+  plot: When the newly-crowned Queen Elsa accidentally uses her power to turn things
+    into ice to curse her home in infinite winter, her sister Anna teams up with a
+    mountain man, his playful reindeer, and a snowman to change the weather condition.
+  photo: frozen-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTQ1MjQwMTE5OF5BMl5BanBnXkFtZTgwNjk3MTcyMDE@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.5/10
+    - Source: Rotten Tomatoes
+      Value: 90%
+    - Source: Metacritic
+      Value: 74/100
+  genres: Animation, Adventure, Comedy, Family, Fantasy
+thirty-two:
+  title: Get Out
+  year: '2017'
+  rated: R
+  release_date: 24 Feb 2017
+  run_time: 104 min
+  directors:
+  - Jordan Peele
+  writers:
+  - Jordan Peele
+  actors:
+  - Daniel Kaluuya
+  - Allison Williams
+  - Catherine Keener
+  - Bradley Whitford
+  plot: A young African-American visits his white girlfriend's parents for the weekend,
+    where his simmering uneasiness about their reception of him eventually reaches
+    a boiling point.
+  photo: get-out-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMjUxMDQwNjcyNl5BMl5BanBnXkFtZTgwNzcwMzc0MTI@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.7/10
+    - Source: Rotten Tomatoes
+      Value: 98%
+    - Source: Metacritic
+      Value: 84/100
+  genres: Horror
+thirty-three:
+  title: Ghostbusters
+  year: '1984'
+  rated: PG
+  release_date: '08 Jun 1984'
+  run_time: 105 min
+  directors:
+  - Ivan Reitman
+  writers:
+  - Dan Aykroyd
+  - Harold Ramis
+  actors:
+  - Bill Murray
+  - Dan Aykroyd
+  - Sigourney Weaver
+  - Harold Ramis
+  plot: Three former parapsychology professors set up shop as a unique ghost removal
+    service.
+  photo: ghostbusters-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTkxMjYyNzgwMl5BMl5BanBnXkFtZTgwMTE3MjYyMTE@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.8/10
+    - Source: Rotten Tomatoes
+      Value: 97%
+    - Source: Metacritic
+      Value: 71/100
+  genres: Action, Comedy, Fantasy
+thirty-four:
+  title: Gone with the Wind
+  year: '1939'
+  rated: G
+  release_date: 17 Jan 1940
+  run_time: 238 min
+  directors:
+  - Victor Fleming
+  - George Cukor
+  - Sam Wood
+  writers:
+  - Margaret Mitchell (story of the old south "Gone with the Wind")
+  - Sidney Howard (screenplay)
+  actors:
+  - Thomas Mitchell
+  - Barbara O'Neil
+  - Vivien Leigh
+  - Evelyn Keyes
+  plot: A manipulative woman and a roguish man conduct a turbulent romance during
+    the American Civil War and Reconstruction periods.
+  photo: gone-with-the-wind-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BYjUyZWZkM2UtMzYxYy00ZmQ3LWFmZTQtOGE2YjBkNjA3YWZlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.2/10
+    - Source: Rotten Tomatoes
+      Value: 92%
+    - Source: Metacritic
+      Value: 97/100
+  genres: Drama, Romance
+thirty-five:
+  title: Good Will Hunting
+  year: '1997'
+  rated: R
+  release_date: '09 Jan 1998'
+  run_time: 126 min
+  directors:
+  - Gus Van Sant
+  writers:
+  - Matt Damon
+  - Ben Affleck
+  actors:
+  - Matt Damon
+  - Ben Affleck
+  - Stellan Skarsgård
+  - John Mighton
+  plot: Will Hunting, a janitor at M.I.T., has a gift for mathematics, but needs help
+    from a psychologist to find direction in his life.
+  photo: good-will-hunting-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BOTI0MzcxMTYtZDVkMy00NjY1LTgyMTYtZmUxN2M3NmQ2NWJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.3/10
+    - Source: Rotten Tomatoes
+      Value: 97%
+    - Source: Metacritic
+      Value: 70/100
+  genres: Drama, Romance
+thirty-six:
+  title: Guardians of the Galaxy Vol. 2
+  year: '2017'
+  rated: PG-13
+  release_date: 05 May 2017
+  run_time: 136 min
+  directors:
+  - James Gunn
+  writers:
+  - James Gunn
+  - Dan Abnett (based on the Marvel comics by)
+  - Andy Lanning (based on the Marvel comics by)
+  - Steve Englehart (Star-Lord created by)
+  - Steve Gan (Star-Lord created by)
+  - Jim Starlin (Gamora and Drax created by)
+  - Stan Lee (Groot created by)
+  - Larry Lieber (Groot created by)
+  - Jack Kirby (Groot created by)
+  - Bill Mantlo (Rocket Raccoon created by)
+  - Keith Giffen (Rocket Raccoon created by)
+  - Steve Gerber (Howard the Duck created by)
+  - Val Mayerik (Howard the Duck created by)
+  actors:
+  - Chris Pratt
+  - Zoe Saldana
+  - Dave Bautista
+  - Vin Diesel
+  plot: The Guardians struggle to keep together as a team while dealing with their
+    personal family issues, notably Star-Lord's encounter with his father the ambitious
+    celestial being Ego.
+  photo: guardians-of-the-galaxy-vol-2-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTg2MzI1MTg3OF5BMl5BanBnXkFtZTgwNTU3NDA2MTI@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.7/10
+    - Source: Rotten Tomatoes
+      Value: 83%
+    - Source: Metacritic
+      Value: 67/100
+  genres: Action, Adventure, Comedy, Sci-Fi
+thirty-seven:
   title: Halloween
-  photo: halloween-poster.jpg
   year: '1978'
   rated: R
-  run_time: 1h 31min
-  plot: On Halloween night of 1963, six-year-old Michael Myers stabbed his sister to death. After sitting in a mental hospital for 15 years, Myers escapes and returns to Haddonfield to kill.
+  release_date: 27 Oct 1978
+  run_time: 91 min
+  directors:
+  - John Carpenter
+  writers:
+  - John Carpenter (screenplay)
+  - Debra Hill (screenplay)
+  actors:
+  - Donald Pleasence
+  - Jamie Lee Curtis
+  - Nancy Kyes
+  - P.J. Soles
+  plot: Fifteen years after murdering his sister on Halloween night 1963, Michael
+    Myers escapes from a mental hospital and returns to the small town of Haddonfield,
+    Illinois to kill again.
+  photo: halloween-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BNzk1OGU2NmMtNTdhZC00NjdlLWE5YTMtZTQ0MGExZTQzOGQyXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.8/10
+    - Source: Rotten Tomatoes
+      Value: 95%
+    - Source: Metacritic
+      Value: 81/100
   genres: Horror
-
-seventy_three:
-  title: The Silence of the Lambs
-  photo: silence-of-the-lambs-poster.jpg
-  year: '1991'
-  rated: R
-  run_time: 1h 58min
-  plot: A young F.B.I. cadet must confide in an incarcerated and manipulative killer to receive his help on catching another serial killer who skins his victims.
-  genres: Drama, Horror
-
-seventy_four:
-  title: Psycho
-  photo: psycho-poster.jpg
-  year: '1960'
-  rated: R
-  run_time: 1h 49min
-  plot: A Phoenix secretary steals $40,000 from her employer's client, goes on the run and checks into a remote motel run by a young man under the domination of his mother.
-  genres: Horror
-
-seventy_five:
-  title: The Babadook
-  photo: the-babadook-poster.jpg
-  year: '2014'
-  rated: NR
-  run_time: 1h 33min
-  plot: A single mother, plagued by the violent death of her husband, battles with her son's fear of a monster lurking in the house, but soon discovers a sinister presence all around her.
-  genres: Horror
-
-seventy_six:
-  title: The Exorcist
-  photo: the-exorcist-poster.jpg
-  year: '1973'
-  rated: R
-  run_time: 2h 2min
-  plot: When a teenage girl is possessed by a mysterious entity, her mother seeks the help of two priests to save her daughter.
-  genres: Horror
-
-seventy_seven:
-  title: The Ring
-  photo: the-ring-poster.jpg
-  year: '2002'
+thirty-eight:
+  title: 'Harry Potter and the Deathly Hallows: Part 2'
+  year: '2011'
   rated: PG-13
-  run_time: 1h 55min
-  plot: A journalist must investigate a mysterious videotape which seems to cause the death of anyone in a week of viewing it.
-  genres: Horror
-
-seventy_eight:
-  title: The Thing
-  photo: the-thing-poster.jpg
-  year: '1982'
+  release_date: 15 Jul 2011
+  run_time: 130 min
+  directors:
+  - David Yates
+  writers:
+  - Steve Kloves (screenplay)
+  - J.K. Rowling (novel)
+  actors:
+  - Ralph Fiennes
+  - Michael Gambon
+  - Alan Rickman
+  - Daniel Radcliffe
+  plot: Harry, Ron, and Hermione search for Voldemort's remaining Horcruxes in their
+    effort to destroy the Dark Lord as the final battle rages on at Hogwarts.
+  photo: harry-potter-and-the-deathly-hallows-part-ii-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMjIyZGU4YzUtNDkzYi00ZDRhLTljYzctYTMxMDQ4M2E0Y2YxXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.1/10
+    - Source: Rotten Tomatoes
+      Value: 96%
+    - Source: Metacritic
+      Value: 87/100
+  genres: Adventure, Drama, Fantasy
+thirty-nine:
+  title: How to Be Single
+  year: '2016'
   rated: R
-  run_time: 1h 49min
-  plot: It's the first week of winter in 1982. An American Research Base is greeted by an alien force, that can assimilate anything it touches. It's up to the members to stay alive, and be sure of who is human, and who has become one of the Things.
-  genres: SciFi, Horror
-
-seventy_nine:
-  title: The Orphanage
-  photo: the-orphanage-poster.jpg
-  year: '2007'
+  release_date: 12 Feb 2016
+  run_time: 110 min
+  directors:
+  - Christian Ditter
+  writers:
+  - Abby Kohn (screenplay)
+  - Marc Silverstein (screenplay)
+  - Dana Fox (screenplay)
+  - Abby Kohn (screen story)
+  - Marc Silverstein (screen story)
+  - Liz Tuccillo (book)
+  actors:
+  - Dakota Johnson
+  - Rebel Wilson
+  - Leslie Mann
+  - Damon Wayans Jr.
+  plot: A group of young adults navigate love and relationships in New York City.
+  photo: how-to-be-single-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BNzI4MDMwMzUwNF5BMl5BanBnXkFtZTgwMDgyNzkyNzE@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 6.1/10
+    - Source: Rotten Tomatoes
+      Value: 47%
+    - Source: Metacritic
+      Value: 51/100
+  genres: Comedy, Drama, Romance
+forty:
+  title: Inception
+  year: '2010'
+  rated: PG-13
+  release_date: 16 Jul 2010
+  run_time: 148 min
+  directors:
+  - Christopher Nolan
+  writers:
+  - Christopher Nolan
+  actors:
+  - Leonardo DiCaprio
+  - Joseph Gordon-Levitt
+  - Ellen Page
+  - Tom Hardy
+  plot: A thief who steals corporate secrets through the use of dream-sharing technology
+    is given the inverse task of planting an idea into the mind of a CEO.
+  photo: inception-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.8/10
+    - Source: Rotten Tomatoes
+      Value: 86%
+    - Source: Metacritic
+      Value: 74/100
+  genres: Action, Adventure, Sci-Fi
+forty-one:
+  title: Inherit the Wind
+  year: '1960'
+  rated: NOT RATED
+  release_date: 30 Aug 1960
+  run_time: 128 min
+  directors:
+  - Stanley Kramer
+  writers:
+  - Nedrick Young (screenplay)
+  - Harold Jacob Smith (screenplay)
+  - Jerome Lawrence (play)
+  - Robert E. Lee (play)
+  actors:
+  - Spencer Tracy
+  - Fredric March
+  - Gene Kelly
+  - Dick York
+  plot: Based on a real-life case in 1925, two great lawyers argue the case for and
+    against a science teacher accused of the crime of teaching evolution.
+  photo: inherit-the-wind-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMGQ5ODNkNWYtYTgxZS00YjJkLThhODAtYzUwNGNiYjRmNjdkXkEyXkFqcGdeQXVyMTg2NTc4MzA@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.2/10
+    - Source: Rotten Tomatoes
+      Value: 92%
+  genres: Drama
+forty-two:
+  title: Inside Out
+  year: '2015'
+  rated: PG
+  release_date: 19 Jun 2015
+  run_time: 95 min
+  directors:
+  - Pete Docter
+  - Ronnie Del Carmen(co-director)
+  writers:
+  - Pete Docter (original story by)
+  - Ronnie Del Carmen (original story by)
+  - Pete Docter (screenplay by)
+  - Meg LeFauve (screenplay by)
+  - Josh Cooley (screenplay by)
+  - Michael Arndt (additional story material by)
+  - Simon Rich (additional story material by)
+  - Bill Hader (additional dialogue by)
+  - Amy Poehler (additional dialogue by)
+  actors:
+  - Amy Poehler
+  - Phyllis Smith
+  - Richard Kind
+  - Bill Hader
+  plot: After young Riley is uprooted from her Midwest life and moved to San Francisco,
+    her emotions - Joy, Fear, Anger, Disgust and Sadness - conflict on how best to
+    navigate a new city, house, and school.
+  photo: inside-out-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BOTgxMDQwMDk0OF5BMl5BanBnXkFtZTgwNjU5OTg2NDE@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.2/10
+    - Source: Rotten Tomatoes
+      Value: 98%
+    - Source: Metacritic
+      Value: 94/100
+  genres: Animation, Adventure, Comedy, Drama, Family, Fantasy
+forty-three:
+  title: Iron Man 3
+  year: '2013'
+  rated: PG-13
+  release_date: 03 May 2013
+  run_time: 130 min
+  directors:
+  - Shane Black
+  writers:
+  - Drew Pearce (screenplay by)
+  - Shane Black (screenplay by)
+  - Stan Lee (based on the Marvel comic book by)
+  - Don Heck (based on the Marvel comic book by)
+  - Larry Lieber (based on the Marvel comic book by)
+  - Jack Kirby (based on the Marvel comic book by)
+  - Warren Ellis (based on the "Extremis" mini-series written by)
+  - Adi Granov (based on the "Extremis" mini-series illustrated by)
+  actors:
+  - Robert Downey Jr.
+  - Gwyneth Paltrow
+  - Don Cheadle
+  - Guy Pearce
+  plot: When Tony Stark's world is torn apart by a formidable terrorist called the
+    Mandarin, he starts an odyssey of rebuilding and retribution.
+  photo: iron-man-3-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMjE5MzcyNjk1M15BMl5BanBnXkFtZTcwMjQ4MjcxOQ@@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.2/10
+    - Source: Rotten Tomatoes
+      Value: 80%
+    - Source: Metacritic
+      Value: 62/100
+  genres: Action, Adventure, Sci-Fi
+forty-four:
+  title: It
+  year: '2017'
   rated: R
-  run_time: 1h 45min
-  plot: A woman brings her family back to her childhood home, which used to be an orphanage for handicapped children. Before long, her son starts to communicate with an invisible new friend.
+  release_date: '08 Sep 2017'
+  run_time: 135 min
+  directors:
+  - Andy Muschietti
+  writers:
+  - Chase Palmer (screenplay by)
+  - Cary Joji Fukunaga (screenplay by)
+  - Gary Dauberman (screenplay by)
+  - Stephen King (based on the novel by)
+  actors:
+  - Jaeden Lieberher
+  - Jeremy Ray Taylor
+  - Sophia Lillis
+  - Finn Wolfhard
+  plot: In the summer of 1989, a group of bullied kids band together to destroy a
+    shape-shifting monster, which disguises itself as a clown and preys on the children
+    of Derry, their small Maine town.
+  photo: it-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BZDVkZmI0YzAtNzdjYi00ZjhhLWE1ODEtMWMzMWMzNDA0NmQ4XkEyXkFqcGdeQXVyNzYzODM3Mzg@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.4/10
+    - Source: Rotten Tomatoes
+      Value: 85%
+    - Source: Metacritic
+      Value: 69/100
   genres: Horror
-
-eighty:
+forty-five:
+  title: Jigsaw
+  year: '2017'
+  rated: R
+  release_date: 27 Oct 2017
+  run_time: 92 min
+  directors:
+  - Michael Spierig
+  - Peter Spierig
+  writers:
+  - Josh Stolberg
+  - Pete Goldfinger
+  actors:
+  - Matt Passmore
+  - Tobin Bell
+  - Callum Keith Rennie
+  - Hannah Emily Anderson
+  plot: 'Bodies are turning up around the city, each having met a uniquely gruesome
+    demise. As the investigation proceeds, evidence points to one suspect: John Kramer,
+    the man known as Jigsaw, who has been dead for over 10 years.'
+  photo: jigsaw-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BNmRiZDM4ZmMtOTVjMi00YTNlLTkyNjMtMjI2OTAxNjgwMWM1XkEyXkFqcGdeQXVyMjMxOTE0ODA@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 5.8/10
+    - Source: Rotten Tomatoes
+      Value: 35%
+    - Source: Metacritic
+      Value: 39/100
+  genres: Horror
+forty-six:
+  title: La La Land
+  year: '2016'
+  rated: PG-13
+  release_date: 25 Dec 2016
+  run_time: 128 min
+  directors:
+  - Damien Chazelle
+  writers:
+  - Damien Chazelle
+  actors:
+  - Ryan Gosling
+  - Emma Stone
+  - Amiée Conn
+  - Terry Walters
+  plot: While navigating their careers in Los Angeles, a pianist and an actress fall
+    in love while attempting to reconcile their aspirations for the future.
+  photo: la-la-land-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMzUzNDM2NzM2MV5BMl5BanBnXkFtZTgwNTM3NTg4OTE@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.0/10
+    - Source: Rotten Tomatoes
+      Value: 91%
+    - Source: Metacritic
+      Value: 93/100
+  genres: Comedy, Drama, Romance
+forty-seven:
+  title: Labyrinth
+  year: '1986'
+  rated: PG
+  release_date: 27 Jun 1986
+  run_time: 101 min
+  directors:
+  - Jim Henson
+  writers:
+  - Dennis Lee (story)
+  - Jim Henson (story)
+  - Terry Jones (screenplay)
+  actors:
+  - David Bowie
+  - Jennifer Connelly
+  - Toby Froud
+  - Shelley Thompson
+  plot: A 16-year-old girl is given 13 hours to solve a labyrinth and rescue her baby
+    brother when her wish for him to be taken away is granted by the Goblin King.
+  photo: labyrinth-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMjM2MDE4OTQwOV5BMl5BanBnXkFtZTgwNjgxMTg2NzE@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.4/10
+    - Source: Rotten Tomatoes
+      Value: 69%
+    - Source: Metacritic
+      Value: 50/100
+  genres: Adventure, Family, Fantasy
+forty-eight:
+  title: Love Actually
+  year: '2003'
+  rated: R
+  release_date: 14 Nov 2003
+  run_time: 135 min
+  directors:
+  - Richard Curtis
+  writers:
+  - Richard Curtis
+  actors:
+  - Bill Nighy
+  - Gregor Fisher
+  - Rory MacGregor
+  - Colin Firth
+  plot: Follows the lives of eight very different couples in dealing with their love
+    lives in various loosely interrelated tales all set during a frantic month before
+    Christmas in London, England.
+  photo: love-actually-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTY4NjQ5NDc0Nl5BMl5BanBnXkFtZTYwNjk5NDM3._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.6/10
+    - Source: Rotten Tomatoes
+      Value: 63%
+    - Source: Metacritic
+      Value: 55/100
+  genres: Comedy, Drama, Romance
+forty-nine:
+  title: Maverick
+  year: '1994'
+  rated: PG
+  release_date: 20 May 1994
+  run_time: 127 min
+  directors:
+  - Richard Donner
+  writers:
+  - Roy Huggins (television series Maverick)
+  - William Goldman
+  actors:
+  - Mel Gibson
+  - Jodie Foster
+  - James Garner
+  - Graham Greene
+  plot: Bret Maverick, needing money for a poker tournament, faces various comic mishaps
+    and challenges, including a charming woman thief.
+  photo: maverick-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BY2I1OTY2NmUtMGVlZi00NjNmLThkNTgtMjExMzRhOTM2MDJiXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.0/10
+    - Source: Rotten Tomatoes
+      Value: 66%
+    - Source: Metacritic
+      Value: 62/100
+  genres: Action, Adventure, Comedy
+fifty:
+  title: Minions
+  year: '2015'
+  rated: PG
+  release_date: 10 Jul 2015
+  run_time: 91 min
+  directors:
+  - Kyle Balda
+  - Pierre Coffin
+  writers:
+  - Brian Lynch
+  actors:
+  - Sandra Bullock
+  - Jon Hamm
+  - Michael Keaton
+  - Allison Janney
+  plot: Minions Stuart, Kevin, and Bob are recruited by Scarlet Overkill, a supervillain
+    who, alongside her inventor husband Herb, hatches a plot to take over the world.
+  photo: minions-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTg2MTMyMzU0M15BMl5BanBnXkFtZTgwOTU3ODk4NTE@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 6.4/10
+    - Source: Rotten Tomatoes
+      Value: 56%
+    - Source: Metacritic
+      Value: 56/100
+  genres: Animation, Action, Adventure, Comedy, Family
+fifty-one:
+  title: 'Pirates of the Caribbean: The Curse of the Black Pearl'
+  year: '2003'
+  rated: PG-13
+  release_date: '09 Jul 2003'
+  run_time: 143 min
+  directors:
+  - Gore Verbinski
+  writers:
+  - Ted Elliott (screen story)
+  - Terry Rossio (screen story)
+  - Stuart Beattie (screen story)
+  - Jay Wolpert (screen story)
+  - Ted Elliott (screenplay)
+  - Terry Rossio (screenplay)
+  actors:
+  - Johnny Depp
+  - Geoffrey Rush
+  - Orlando Bloom
+  - Keira Knightley
+  plot: Blacksmith Will Turner teams up with eccentric pirate "Captain" Jack Sparrow
+    to save his love, the governor's daughter, from Jack's former pirate allies, who
+    are now undead.
+  photo: pirates-of-the-caribbean-the-curse-of-the-black-pearl-poster.jpg
+  logo: pirates-logo.png
+  poster: https://m.media-amazon.com/images/M/MV5BNGYyZGM5MGMtYTY2Ni00M2Y1LWIzNjQtYWUzM2VlNGVhMDNhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.0/10
+    - Source: Rotten Tomatoes
+      Value: 79%
+    - Source: Metacritic
+      Value: 63/100
+  genres: Action, Adventure, Fantasy
+fifty-two:
   title: Poltergeist
-  photo: poltergeist-poster.jpg
   year: '1982'
   rated: PG
-  run_time: 1h 54min
-  plot: A family's home is haunted by a host of ghosts. When their daughter is taken over to the other side, they hire a medium to bring her back.
-  genres: Fantasy, Horror
+  release_date: 04 Jun 1982
+  run_time: 114 min
+  directors:
+  - Tobe Hooper
+  writers:
+  - Steven Spielberg (screenplay)
+  - Michael Grais (screenplay)
+  - Mark Victor (screenplay)
+  - Steven Spielberg (story)
+  actors:
+  - Craig T. Nelson
+  - JoBeth Williams
+  - Beatrice Straight
+  - Dominique Dunne
+  plot: A family's home is haunted by a host of demonic ghosts.
+  photo: poltergeist-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BNzliZmRlYTctYmNkYS00NzE5LWI1OWQtMTRiODY5MDMwMTVkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.4/10
+    - Source: Rotten Tomatoes
+      Value: 86%
+    - Source: Metacritic
+      Value: 79/100
+  genres: Horror
+fifty-three:
+  title: Pride and Prejudice and Zombies
+  year: '2016'
+  rated: PG-13
+  release_date: 05 Feb 2016
+  run_time: 108 min
+  directors:
+  - Burr Steers
+  writers:
+  - Burr Steers (screenplay)
+  - Jane Austen (Quirk Books novel)
+  - Seth Grahame-Smith (Quirk Books novel)
+  actors:
+  - Lily James
+  - Sam Riley
+  - Bella Heathcote
+  - Ellie Bamber
+  plot: Five sisters in 19th century England must cope with the pressures to marry
+    while protecting themselves from a growing population of zombies.
+  photo: pride-and-prejudice-and-zombies-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMjE1MzA3NzYxMl5BMl5BanBnXkFtZTgwMzQ0NDA5NzE@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 5.8/10
+    - Source: Rotten Tomatoes
+      Value: 45%
+    - Source: Metacritic
+      Value: 45/100
+  genres: Action, Horror, Romance
+fifty-four:
+  title: Pride & Prejudice
+  year: '2005'
+  rated: PG
+  release_date: 23 Nov 2005
+  run_time: 129 min
+  directors:
+  - Joe Wright
+  writers:
+  - Jane Austen (novel)
+  - Deborah Moggach (screenplay)
+  actors:
+  - Keira Knightley
+  - Talulah Riley
+  - Rosamund Pike
+  - Jena Malone
+  plot: Sparks fly when spirited Elizabeth Bennet meets single, rich, and proud Mr.
+    Darcy. But Mr. Darcy reluctantly finds himself falling in love with a woman beneath
+    his class. Can each overcome their own pride and prejudice?
+  photo: pride-and-prejudice-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTA1NDQ3NTcyOTNeQTJeQWpwZ15BbWU3MDA0MzA4MzE@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.8/10
+    - Source: Rotten Tomatoes
+      Value: 86%
+    - Source: Metacritic
+      Value: 82/100
+  genres: Drama, Romance
+fifty-five:
+  title: Prometheus
+  year: '2012'
+  rated: R
+  release_date: '08 Jun 2012'
+  run_time: 124 min
+  directors:
+  - Ridley Scott
+  writers:
+  - Jon Spaihts
+  - Damon Lindelof
+  - Dan O'Bannon (based on elements created by)
+  - Ronald Shusett (based on elements created by)
+  actors:
+  - Noomi Rapace
+  - Michael Fassbender
+  - Charlize Theron
+  - Idris Elba
+  plot: Following clues to the origin of mankind, a team finds a structure on a distant
+    moon, but they soon realize they are not alone.
+  photo: prometheus-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTY3NzIyNTA2NV5BMl5BanBnXkFtZTcwNzE2NjI4Nw@@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.0/10
+    - Source: Rotten Tomatoes
+      Value: 73%
+    - Source: Metacritic
+      Value: 64/100
+  genres: Adventure, Sci-Fi
+fifty-six:
+  title: Psycho
+  year: '1960'
+  rated: R
+  release_date: '08 Sep 1960'
+  run_time: 109 min
+  directors:
+  - Alfred Hitchcock
+  writers:
+  - Joseph Stefano (screenplay by)
+  - Robert Bloch (based on the novel by)
+  actors:
+  - Anthony Perkins
+  - Vera Miles
+  - John Gavin
+  - Janet Leigh
+  plot: A Phoenix secretary embezzles forty thousand dollars from her employer's client,
+    goes on the run, and checks into a remote motel run by a young man under the domination
+    of his mother.
+  photo: psycho-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BNTQwNDM1YzItNDAxZC00NWY2LTk0M2UtNDIwNWI5OGUyNWUxXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.5/10
+    - Source: Rotten Tomatoes
+      Value: 97%
+    - Source: Metacritic
+      Value: 97/100
+  genres: Horror
+fifty-seven:
+  title: Ratatouille
+  year: '2007'
+  rated: G
+  release_date: 29 Jun 2007
+  run_time: 111 min
+  directors:
+  - Brad Bird
+  - Jan Pinkava(co-director)
+  writers:
+  - Brad Bird (screenplay)
+  - Jan Pinkava (original story by)
+  - Jim Capobianco (original story by)
+  - Brad Bird (original story by)
+  - Emily Cook (additional story material)
+  - Kathy Greenberg (additional story material)
+  - Bob Peterson (additional story material)
+  actors:
+  - Patton Oswalt
+  - Ian Holm
+  - Lou Romano
+  - Brian Dennehy
+  plot: A rat who can cook makes an unusual alliance with a young kitchen worker at
+    a famous restaurant.
+  photo: ratatouille-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTMzODU0NTkxMF5BMl5BanBnXkFtZTcwMjQ4MzMzMw@@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.0/10
+    - Source: Rotten Tomatoes
+      Value: 96%
+    - Source: Metacritic
+      Value: 96/100
+  genres: Animation, Adventure, Comedy, Drama, Family, Fantasy
+fifty-eight:
+  title: Schindler's List
+  year: '1993'
+  rated: R
+  release_date: 04 Feb 1994
+  run_time: 195 min
+  directors:
+  - Steven Spielberg
+  writers:
+  - Thomas Keneally (book)
+  - Steven Zaillian (screenplay)
+  actors:
+  - Liam Neeson
+  - Ben Kingsley
+  - Ralph Fiennes
+  - Caroline Goodall
+  plot: In German-occupied Poland during World War II, Oskar Schindler gradually becomes
+    concerned for his Jewish workforce after witnessing their persecution by the Nazi
+    Germans.
+  photo: schindlers-list-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BNDE4OTMxMTctNmRhYy00NWE2LTg3YzItYTk3M2UwOTU5Njg4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.9/10
+    - Source: Rotten Tomatoes
+      Value: 97%
+    - Source: Metacritic
+      Value: 93/100
+  genres: Drama
+fifty-nine:
+  title: Serenity
+  year: '2005'
+  rated: PG-13
+  release_date: 30 Sep 2005
+  run_time: 119 min
+  directors:
+  - Joss Whedon
+  writers:
+  - Joss Whedon
+  actors:
+  - Nathan Fillion
+  - Gina Torres
+  - Alan Tudyk
+  - Morena Baccarin
+  plot: The crew of the ship Serenity try to evade an assassin sent to recapture one
+    of their members who is telepathic.
+  photo: serenity-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BOWE2MDAwZjEtODEyOS00ZjYyLTgzNDUtYmNiY2VmNWRiMTQxXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.9/10
+    - Source: Rotten Tomatoes
+      Value: 83%
+    - Source: Metacritic
+      Value: 74/100
+  genres: Action, Adventure, Sci-Fi
+sixty:
+  title: Shaun of the Dead
+  year: '2004'
+  rated: R
+  release_date: 24 Sep 2004
+  run_time: 99 min
+  directors:
+  - Edgar Wright
+  writers:
+  - Simon Pegg
+  - Edgar Wright
+  actors:
+  - Simon Pegg
+  - Kate Ashfield
+  - Nick Frost
+  - Lucy Davis
+  plot: A man's uneventful life is disrupted by the zombie apocalypse.
+  photo: shaun-of-the-dead-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTg5Mjk2NDMtZTk0Ny00YTQ0LWIzYWEtMWI5MGQ0Mjg1OTNkXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.9/10
+    - Source: Rotten Tomatoes
+      Value: 92%
+    - Source: Metacritic
+      Value: 76/100
+  genres: Comedy, Horror
+sixty-one:
+  title: Shrek 2
+  year: '2004'
+  rated: PG
+  release_date: 19 May 2004
+  run_time: 93 min
+  directors:
+  - Andrew Adamson
+  - Kelly Asbury
+  - Conrad Vernon
+  writers:
+  - William Steig (based upon the book by)
+  - Andrew Adamson (story by)
+  - Andrew Adamson (screenplay by)
+  - Joe Stillman (screenplay by)
+  - J. David Stem (screenplay by)
+  - David N. Weiss (screenplay by)
+  - Cody Cameron (additional dialogue)
+  - Walt Dohrn (additional dialogue)
+  - Chris Miller (additional dialogue)
+  - David P. Smith (additional dialogue)
+  - Conrad Vernon (additional dialogue)
+  actors:
+  - Mike Myers
+  - Eddie Murphy
+  - Cameron Diaz
+  - Julie Andrews
+  plot: Princess Fiona's parents invite her and Shrek to dinner to celebrate her marriage.
+    If only they knew the newlyweds were both ogres.
+  photo: shrek-2-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMDJhMGRjN2QtNDUxYy00NGM3LThjNGQtMmZiZTRhNjM4YzUxL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.2/10
+    - Source: Rotten Tomatoes
+      Value: 89%
+    - Source: Metacritic
+      Value: 75/100
+  genres: Animation, Adventure, Comedy, Family, Fantasy, Romance
+sixty-two:
+  title: Shrek
+  year: '2001'
+  rated: PG
+  release_date: 18 May 2001
+  run_time: 90 min
+  directors:
+  - Andrew Adamson
+  - Vicky Jenson
+  writers:
+  - William Steig (based upon the book by)
+  - Ted Elliott
+  - Terry Rossio
+  - Joe Stillman
+  - Roger S.H. Schulman
+  - Cody Cameron (additional dialogue)
+  - Chris Miller (additional dialogue)
+  - Conrad Vernon (additional dialogue)
+  actors:
+  - Mike Myers
+  - Eddie Murphy
+  - Cameron Diaz
+  - John Lithgow
+  plot: A mean lord exiles fairytale creatures to the swamp of a grumpy ogre, who
+    must go on a quest and rescue a princess for the lord in order to get his land
+    back.
+  photo: shrek-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BOGZhM2FhNTItODAzNi00YjA0LWEyN2UtNjJlYWQzYzU1MDg5L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.9/10
+    - Source: Rotten Tomatoes
+      Value: 88%
+    - Source: Metacritic
+      Value: 84/100
+  genres: Animation, Adventure, Comedy, Family, Fantasy
+sixty-three:
+  title: Skyfall
+  year: '2012'
+  rated: PG-13
+  release_date: '09 Nov 2012'
+  run_time: 143 min
+  directors:
+  - Sam Mendes
+  writers:
+  - Neal Purvis
+  - Robert Wade
+  - John Logan
+  - Ian Fleming (characters)
+  actors:
+  - Daniel Craig
+  - Judi Dench
+  - Javier Bardem
+  - Ralph Fiennes
+  plot: Bond's loyalty to M is tested when her past comes back to haunt her. When
+    MI6 comes under attack, 007 must track down and destroy the threat, no matter
+    how personal the cost.
+  photo: skyfall-poster.jpg
+  logo: skyfall-logo.png
+  poster: https://m.media-amazon.com/images/M/MV5BNDVhZmJiYWMtNmIzMC00ZWNiLTkzZDYtNGNlZmViMGM4OGExXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.8/10
+    - Source: Rotten Tomatoes
+      Value: 92%
+    - Source: Metacritic
+      Value: 81/100
+  genres: Action, Adventure
+sixty-four:
+  title: Slumdog Millionaire
+  year: '2008'
+  rated: R
+  release_date: 25 Dec 2008
+  run_time: 120 min
+  directors:
+  - Danny Boyle
+  - Loveleen Tandan(co-director)
+  writers:
+  - Simon Beaufoy (screenplay)
+  - Vikas Swarup (novel)
+  actors:
+  - Dev Patel
+  - Saurabh Shukla
+  - Anil Kapoor
+  - Raj Zutshi
+  plot: A Mumbai teen reflects on his upbringing in the slums when he is accused of
+    cheating on the Indian Version of "Who Wants to be a Millionaire?"
+  photo: slumdog-millionaire-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BZmNjZWI3NzktYWI1Mi00OTAyLWJkNTYtMzUwYTFlZDA0Y2UwXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.0/10
+    - Source: Rotten Tomatoes
+      Value: 91%
+    - Source: Metacritic
+      Value: 86/100
+  genres: Drama, Romance
+sixty-five:
+  title: Spirited Away
+  year: '2001'
+  rated: PG
+  release_date: 28 Mar 2003
+  run_time: 125 min
+  directors:
+  - Hayao Miyazaki
+  - Kirk Wise
+  writers:
+  - Hayao Miyazaki
+  actors:
+  - Rumi Hiiragi
+  - Miyu Irino
+  - Mari Natsuki
+  - Takashi Naitô
+  plot: During her family's move to the suburbs, a sullen 10-year-old girl wanders
+    into a world ruled by gods, witches, and spirits, and where humans are changed
+    into beasts.
+  photo: spirited-away-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BOGJjNzZmMmUtMjljNC00ZjU5LWJiODQtZmEzZTU0MjBlNzgxL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.6/10
+    - Source: Rotten Tomatoes
+      Value: 97%
+    - Source: Metacritic
+      Value: 96/100
+  genres: Animation, Adventure, Family, Fantasy
+sixty-six:
+  title: 'Star Trek II: The Wrath of Khan'
+  year: '1982'
+  rated: PG
+  release_date: 04 Jun 1982
+  run_time: 113 min
+  directors:
+  - Nicholas Meyer
+  writers:
+  - Gene Roddenberry (television series Star Trek)
+  - Harve Bennett (story)
+  - Jack B. Sowards (story)
+  - Jack B. Sowards (screenplay)
+  actors:
+  - William Shatner
+  - Leonard Nimoy
+  - DeForest Kelley
+  - James Doohan
+  plot: With the assistance of the Enterprise crew, Admiral Kirk must stop an old
+    nemesis, Khan Noonien Singh, from using the life-generating Genesis Device as
+    the ultimate weapon.
+  photo: star-trek-ii-the-wrath-of-khan-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMzcyYWE5YmQtNDE1Yi00ZjlmLWFlZTAtMzRjODBiYjM3OTA3XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.7/10
+    - Source: Rotten Tomatoes
+      Value: 88%
+    - Source: Metacritic
+      Value: 67/100
+  genres: Action, Adventure, Sci-Fi
+sixty-seven:
+  title: 'Star Wars: Episode VI - Return of the Jedi'
+  year: '1983'
+  rated: PG
+  release_date: 25 May 1983
+  run_time: 131 min
+  directors:
+  - Richard Marquand
+  writers:
+  - Lawrence Kasdan (screenplay by)
+  - George Lucas (screenplay by)
+  - George Lucas (story by)
+  actors:
+  - Mark Hamill
+  - Harrison Ford
+  - Carrie Fisher
+  - Billy Dee Williams
+  plot: After a daring mission to rescue Han Solo from Jabba the Hutt, the rebels
+    dispatch to Endor to destroy a more powerful Death Star. Meanwhile, Luke struggles
+    to help Darth Vader back from the dark side without falling into the Emperor's
+    trap.
+  photo: star-wars-return-of-the-jedi-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BOWZlMjFiYzgtMTUzNC00Y2IzLTk1NTMtZmNhMTczNTk0ODk1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.3/10
+    - Source: Rotten Tomatoes
+      Value: 81%
+    - Source: Metacritic
+      Value: 58/100
+  genres: Action, Adventure, Fantasy, Sci-Fi
+sixty-eight:
+  title: 'Star Wars: Episode V - The Empire Strikes Back'
+  year: '1980'
+  rated: PG
+  release_date: 20 Jun 1980
+  run_time: 124 min
+  directors:
+  - Irvin Kershner
+  writers:
+  - Leigh Brackett (screenplay by)
+  - Lawrence Kasdan (screenplay by)
+  - George Lucas (story by)
+  actors:
+  - Mark Hamill
+  - Harrison Ford
+  - Carrie Fisher
+  - Billy Dee Williams
+  plot: After the rebels are brutally overpowered by the Empire on the ice planet
+    Hoth, Luke Skywalker begins Jedi training with Yoda, while his friends are pursued
+    by Darth Vader.
+  photo: star-wars-the-empire-strikes-back-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.8/10
+    - Source: Rotten Tomatoes
+      Value: 95%
+    - Source: Metacritic
+      Value: 82/100
+  genres: Action, Adventure, Fantasy, Sci-Fi
+sixty-nine:
+  title: 'Star Wars: Episode IV - A New Hope'
+  year: '1977'
+  rated: PG
+  release_date: 25 May 1977
+  run_time: 121 min
+  directors:
+  - George Lucas
+  writers:
+  - George Lucas
+  actors:
+  - Mark Hamill
+  - Harrison Ford
+  - Carrie Fisher
+  - Peter Cushing
+  plot: Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and
+    two droids to save the galaxy from the Empire's world-destroying battle station,
+    while also attempting to rescue Princess Leia from the mysterious Darth Vader.
+  photo: star-wars-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.6/10
+    - Source: Rotten Tomatoes
+      Value: 93%
+    - Source: Metacritic
+      Value: 90/100
+  genres: Action, Adventure, Fantasy, Sci-Fi
+seventy:
+  title: Superbad
+  year: '2007'
+  rated: R
+  release_date: 17 Aug 2007
+  run_time: 113 min
+  directors:
+  - Greg Mottola
+  writers:
+  - Seth Rogen
+  - Evan Goldberg
+  actors:
+  - Jonah Hill
+  - Michael Cera
+  - Christopher Mintz-Plasse
+  - Bill Hader
+  plot: Two co-dependent high school seniors are forced to deal with separation anxiety
+    after their plan to stage a booze-soaked party goes awry.
+  photo: superbad-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTc0NjIyMjA2OF5BMl5BanBnXkFtZTcwMzIxNDE1MQ@@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.6/10
+    - Source: Rotten Tomatoes
+      Value: 87%
+    - Source: Metacritic
+      Value: 76/100
+  genres: Comedy
+seventy-one:
+  title: Tangled
+  year: '2010'
+  rated: PG
+  release_date: 24 Nov 2010
+  run_time: 100 min
+  directors:
+  - Nathan Greno
+  - Byron Howard
+  writers:
+  - Dan Fogelman (screenplay by)
+  - Jacob Grimm (based upon the fairy tale "Rapunzel" by)
+  - Wilhelm Grimm (based upon the fairy tale "Rapunzel" by)
+  actors:
+  - Mandy Moore
+  - Zachary Levi
+  - Donna Murphy
+  - Ron Perlman
+  plot: The magically long-haired Rapunzel has spent her entire life in a tower, but
+    now that a runaway thief has stumbled upon her, she is about to discover the world
+    for the first time, and who she really is.
+  photo: tangled-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTAxNDYxMjg0MjNeQTJeQWpwZ15BbWU3MDcyNTk2OTM@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.8/10
+    - Source: Rotten Tomatoes
+      Value: 89%
+    - Source: Metacritic
+      Value: 71/100
+  genres: Animation, Adventure, Comedy, Family, Fantasy, Romance
+seventy-two:
+  title: The 40-Year-Old Virgin
+  year: '2005'
+  rated: R
+  release_date: 19 Aug 2005
+  run_time: 116 min
+  directors:
+  - Judd Apatow
+  writers:
+  - Judd Apatow
+  - Steve Carell
+  actors:
+  - Steve Carell
+  - Catherine Keener
+  - Paul Rudd
+  - Romany Malco
+  plot: Goaded by his buddies, a nerdy guy who's never "done the deed" only finds
+    the pressure mounting when he meets a single mother.
+  photo: the-40-year-old-virgin-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTNjYTA1NDMtZGZmZi00MTdiLThjZTMtZWU1MGYyZjZkNzgxXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.1/10
+    - Source: Rotten Tomatoes
+      Value: 85%
+    - Source: Metacritic
+      Value: 73/100
+  genres: Comedy, Romance
+seventy-three:
+  title: 'Avengers: Age of Ultron'
+  year: '2015'
+  rated: PG-13
+  release_date: 01 May 2015
+  run_time: 141 min
+  directors:
+  - Joss Whedon
+  writers:
+  - Joss Whedon
+  - Stan Lee (based on the Marvel comics by)
+  - Jack Kirby (based on the Marvel comics by)
+  - 'Joe Simon (character created by: Captain America)'
+  - 'Jack Kirby (character created by: Captain America)'
+  - 'Jim Starlin (character created by: Thanos)'
+  actors:
+  - Robert Downey Jr.
+  - Chris Hemsworth
+  - Mark Ruffalo
+  - Chris Evans
+  plot: When Tony Stark and Bruce Banner try to jump-start a dormant peacekeeping
+    program called Ultron, things go horribly wrong and it's up to Earth's mightiest
+    heroes to stop the villainous Ultron from enacting his terrible plan.
+  photo: the-avengers-age-of-ultron-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTM4OGJmNWMtOTM4Ni00NTE3LTg3MDItZmQxYjc4N2JhNmUxXkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.4/10
+    - Source: Rotten Tomatoes
+      Value: 75%
+    - Source: Metacritic
+      Value: 66/100
+  genres: Action, Adventure, Sci-Fi
+seventy-four:
+  title: The Avengers
+  year: '2012'
+  rated: PG-13
+  release_date: 04 May 2012
+  run_time: 143 min
+  directors:
+  - Joss Whedon
+  writers:
+  - Joss Whedon (screenplay)
+  - Zak Penn (story)
+  - Joss Whedon (story)
+  actors:
+  - Robert Downey Jr.
+  - Chris Evans
+  - Mark Ruffalo
+  - Chris Hemsworth
+  plot: Earth's mightiest heroes must come together and learn to fight as a team if
+    they are going to stop the mischievous Loki and his alien army from enslaving
+    humanity.
+  photo: the-avengers-poster.jpg
+  logo: avengers-logo.png
+  poster: https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.1/10
+    - Source: Rotten Tomatoes
+      Value: 92%
+    - Source: Metacritic
+      Value: 69/100
+  genres: Action, Adventure, Sci-Fi
+seventy-five:
+  title: The Babadook
+  year: '2014'
+  rated: Not Rated
+  release_date: 28 Nov 2014
+  run_time: 94 min
+  directors:
+  - Jennifer Kent
+  writers:
+  - Jennifer Kent
+  actors:
+  - Essie Davis
+  - Noah Wiseman
+  - Hayley McElhinney
+  - Daniel Henshall
+  plot: A widowed mother, plagued by the violent death of her husband, battles with
+    her son's fear of a monster lurking in the house, but soon discovers a sinister
+    presence all around her.
+  photo: the-babadook-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTk0NzMzODc2NF5BMl5BanBnXkFtZTgwOTYzNTM1MzE@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 6.8/10
+    - Source: Rotten Tomatoes
+      Value: 98%
+    - Source: Metacritic
+      Value: 86/100
+  genres: Drama, Horror
+seventy-six:
+  title: The Big Sick
+  year: '2017'
+  rated: R
+  release_date: 14 Jul 2017
+  run_time: 120 min
+  directors:
+  - Michael Showalter
+  writers:
+  - Emily V. Gordon
+  - Kumail Nanjiani
+  actors:
+  - Kumail Nanjiani
+  - Zoe Kazan
+  - Holly Hunter
+  - Ray Romano
+  plot: Pakistan-born comedian Kumail Nanjiani and grad student Emily Gardner fall
+    in love but struggle as their cultures clash. When Emily contracts a mysterious
+    illness, Kumail finds himself forced to face her feisty parents, his family's
+    expectations, and his true feelings.
+  photo: the-big-sick-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BZWM4YzZjOTEtZmU5ZS00ZTRkLWFiNjAtZTEwNzIzMDM5MjdmXkEyXkFqcGdeQXVyNDg2MjUxNjM@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.6/10
+    - Source: Rotten Tomatoes
+      Value: 98%
+    - Source: Metacritic
+      Value: 86/100
+  genres: Comedy, Drama, Romance
+seventy-seven:
+  title: 'The Chronicles of Narnia: The Lion, the Witch and the Wardrobe'
+  year: '2005'
+  rated: PG
+  release_date: '09 Dec 2005'
+  run_time: 143 min
+  directors:
+  - Andrew Adamson
+  writers:
+  - Ann Peacock (screenplay)
+  - Andrew Adamson (screenplay)
+  - Christopher Markus (screenplay)
+  - Stephen McFeely (screenplay)
+  - C.S. Lewis (book)
+  actors:
+  - Georgie Henley
+  - Skandar Keynes
+  - William Moseley
+  - Anna Popplewell
+  plot: Four kids travel through a wardrobe to the land of Narnia and learn of their
+    destiny to free it with the guidance of a mystical lion.
+  photo: the-chronicles-of-narnia-the-lion-the-witch-and-the-wardrobe-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTc0NTUwMTU5OV5BMl5BanBnXkFtZTcwNjAwNzQzMw@@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 6.9/10
+    - Source: Rotten Tomatoes
+      Value: 76%
+    - Source: Metacritic
+      Value: 75/100
+  genres: Adventure, Family, Fantasy
+seventy-eight:
+  title: The Conjuring
+  year: '2013'
+  rated: R
+  release_date: 19 Jul 2013
+  run_time: 112 min
+  directors:
+  - James Wan
+  writers:
+  - Chad Hayes
+  - Carey W. Hayes
+  actors:
+  - Vera Farmiga
+  - Patrick Wilson
+  - Lili Taylor
+  - Ron Livingston
+  plot: Paranormal investigators Ed and Lorraine Warren work to help a family terrorized
+    by a dark presence in their farmhouse.
+  photo: the-conjuring-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTM3NjA1NDMyMV5BMl5BanBnXkFtZTcwMDQzNDMzOQ@@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.5/10
+    - Source: Rotten Tomatoes
+      Value: 86%
+    - Source: Metacritic
+      Value: 68/100
+  genres: Horror
+seventy-nine:
+  title: The Dark Knight
+  year: '2008'
+  rated: PG-13
+  release_date: 18 Jul 2008
+  run_time: 152 min
+  directors:
+  - Christopher Nolan
+  writers:
+  - Jonathan Nolan (screenplay)
+  - Christopher Nolan (screenplay)
+  - Christopher Nolan (story)
+  - David S. Goyer (story)
+  - Bob Kane (characters)
+  actors:
+  - Christian Bale
+  - Heath Ledger
+  - Aaron Eckhart
+  - Michael Caine
+  plot: When the menace known as the Joker emerges from his mysterious past, he wreaks
+    havoc and chaos on the people of Gotham. The Dark Knight must accept one of the
+    greatest psychological and physical tests of his ability to fight injustice.
+  photo: the-dark-knight-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 9.0/10
+    - Source: Rotten Tomatoes
+      Value: 94%
+    - Source: Metacritic
+      Value: 84/100
+  genres: Action, Drama
+eighty:
+  title: The English Patient
+  year: '1996'
+  rated: R
+  release_date: 06 Dec 1996
+  run_time: 162 min
+  directors:
+  - Anthony Minghella
+  writers:
+  - Michael Ondaatje (novel)
+  - Anthony Minghella (screenplay)
+  actors:
+  - Ralph Fiennes
+  - Juliette Binoche
+  - Willem Dafoe
+  - Kristin Scott Thomas
+  plot: At the close of WWII, a young nurse tends to a badly-burned plane crash victim.
+    His past is shown in flashbacks, revealing an involvement in a fateful love affair.
+  photo: the-english-patient-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BOTkxZTdkNTQtM2QwOS00NzRlLWEyMGItYTcxOTE4NTgyNGVhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.4/10
+    - Source: Rotten Tomatoes
+      Value: 84%
+    - Source: Metacritic
+      Value: 87/100
+  genres: Drama, Romance
+eighty-one:
+  title: The Exorcist
+  year: '1973'
+  rated: R
+  release_date: 26 Dec 1973
+  run_time: 122 min
+  directors:
+  - William Friedkin
+  writers:
+  - William Peter Blatty (written for the screen by)
+  - William Peter Blatty (novel)
+  actors:
+  - Ellen Burstyn
+  - Max von Sydow
+  - Lee J. Cobb
+  - Kitty Winn
+  plot: When a teenage girl is possessed by a mysterious entity, her mother seeks
+    the help of two priests to save her daughter.
+  photo: the-exorcist-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BYjhmMGMxZDYtMTkyNy00YWVmLTgyYmUtYTU3ZjcwNTBjN2I1XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.0/10
+    - Source: Rotten Tomatoes
+      Value: 85%
+    - Source: Metacritic
+      Value: 82/100
+  genres: Horror
+eighty-two:
+  title: The Godfather
+  year: '1972'
+  rated: R
+  release_date: 24 Mar 1972
+  run_time: 175 min
+  directors:
+  - Francis Ford Coppola
+  writers:
+  - Mario Puzo (screenplay by)
+  - Francis Ford Coppola (screenplay by)
+  - Mario Puzo (based on the novel by)
+  actors:
+  - Marlon Brando
+  - Al Pacino
+  - James Caan
+  - Richard S. Castellano
+  plot: The aging patriarch of an organized crime dynasty transfers control of his
+    clandestine empire to his reluctant son.
+  photo: the-godfather-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 9.2/10
+    - Source: Rotten Tomatoes
+      Value: 98%
+    - Source: Metacritic
+      Value: 100/100
+  genres: Drama
+eighty-three:
+  title: The Goonies
+  year: '1985'
+  rated: PG
+  release_date: 07 Jun 1985
+  run_time: 114 min
+  directors:
+  - Richard Donner
+  writers:
+  - Steven Spielberg (story)
+  - Chris Columbus (screenplay)
+  actors:
+  - Sean Astin
+  - Josh Brolin
+  - Jeff Cohen
+  - Corey Feldman
+  plot: In order to save their home from foreclosure, a group of misfits set out to
+    find a pirate's ancient valuable treasure.
+  photo: the-goonies-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BNGViMjJjNTUtY2IzNi00YzcyLWFjODUtMjc0NTI3YWNhNjgzXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.8/10
+    - Source: Rotten Tomatoes
+      Value: 70%
+    - Source: Metacritic
+      Value: 60/100
+  genres: Adventure, Comedy, Family
+eighty-four:
+  title: The Hangover
+  year: '2009'
+  rated: R
+  release_date: 05 Jun 2009
+  run_time: 100 min
+  directors:
+  - Todd Phillips
+  writers:
+  - Jon Lucas
+  - Scott Moore
+  actors:
+  - Bradley Cooper
+  - Ed Helms
+  - Zach Galifianakis
+  - Justin Bartha
+  plot: Three buddies wake up from a bachelor party in Las Vegas, with no memory of
+    the previous night and the bachelor missing. They make their way around the city
+    in order to find their friend before his wedding.
+  photo: the-hangover-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BNGQwZjg5YmYtY2VkNC00NzliLTljYTctNzI5NmU3MjE2ODQzXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.7/10
+    - Source: Rotten Tomatoes
+      Value: 78%
+    - Source: Metacritic
+      Value: 73/100
+  genres: Comedy
+eighty-five:
+  title: The Incredibles
+  year: '2004'
+  rated: PG
+  release_date: 05 Nov 2004
+  run_time: 115 min
+  directors:
+  - Brad Bird
+  writers:
+  - Brad Bird
+  actors:
+  - Craig T. Nelson
+  - Holly Hunter
+  - Samuel L. Jackson
+  - Jason Lee
+  plot: A family of undercover superheroes, while trying to live the quiet suburban
+    life, are forced into action to save the world.
+  photo: the-incredibles-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTY5OTU0OTc2NV5BMl5BanBnXkFtZTcwMzU4MDcyMQ@@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.0/10
+    - Source: Metacritic
+      Value: 90/100
+  genres: Animation, Action, Adventure, Family
+eighty-six:
+  title: The Interview
+  year: '2014'
+  rated: R
+  release_date: 24 Dec 2014
+  run_time: 112 min
+  directors:
+  - Evan Goldberg
+  - Seth Rogen
+  writers:
+  - Dan Sterling (screenplay)
+  - Seth Rogen (story)
+  - Evan Goldberg (story)
+  - Dan Sterling (story)
+  actors:
+  - James Franco
+  - Seth Rogen
+  - Lizzy Caplan
+  - Randall Park
+  plot: Dave Skylark and his producer Aaron Rapaport run the celebrity tabloid show
+    "Skylark Tonight". When they land an interview with a surprise fan, North Korean
+    dictator Kim Jong-un, they are recruited by the CIA to assassinate him.
+  photo: the-interview-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTQzMTcwMzgyMV5BMl5BanBnXkFtZTgwMzAyMzQ2MzE@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 6.5/10
+    - Source: Rotten Tomatoes
+      Value: 51%
+    - Source: Metacritic
+      Value: 52/100
+  genres: Comedy
+eighty-seven:
+  title: The Lion King
+  year: '1994'
+  rated: G
+  release_date: 24 Jun 1994
+  run_time: 88 min
+  directors:
+  - Roger Allers
+  - Rob Minkoff
+  writers:
+  - Irene Mecchi (screenplay by)
+  - Jonathan Roberts (screenplay by)
+  - Linda Woolverton (screenplay by)
+  - Burny Mattinson (story)
+  - Barry Johnson (story)
+  - Lorna Cook (story)
+  - Thom Enriquez (story)
+  - Andy Gaskill (story)
+  - Gary Trousdale (story)
+  - Jim Capobianco (story)
+  - Kevin Harkey (story)
+  - Jorgen Klubien (story)
+  - Chris Sanders (story)
+  - Tom Sito (story)
+  - Larry Leker (story)
+  - Joe Ranft (story)
+  - Rick Maki (story)
+  - Ed Gombert (story)
+  - Francis Glebas (story)
+  - Mark Kausler (story)
+  - J.T. Allen (additional story material)
+  - George Scribner (additional story material)
+  - Miguel Tejada-Flores (additional story material)
+  - Jenny Tripp (additional story material)
+  - Bob Tzudiker (additional story material)
+  - Christopher Vogler (additional story material)
+  - Kirk Wise (additional story material)
+  - Noni White (additional story material)
+  - Brenda Chapman (story supervisor)
+  actors:
+  - Rowan Atkinson
+  - Matthew Broderick
+  - Niketa Calame-Harris
+  - Jim Cummings
+  plot: A Lion cub crown prince is tricked by a treacherous uncle into thinking he
+    caused his father's death and flees into exile in despair, only to learn in adulthood
+    his identity and his responsibilities.
+  photo: the-lion-king-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.5/10
+    - Source: Rotten Tomatoes
+      Value: 93%
+    - Source: Metacritic
+      Value: 83/100
+  genres: Animation, Adventure, Drama, Family
+eighty-eight:
+  title: 'The Lord of the Rings: The Fellowship of the Ring'
+  year: '2001'
+  rated: PG-13
+  release_date: 19 Dec 2001
+  run_time: 178 min
+  directors:
+  - Peter Jackson
+  writers:
+  - J.R.R. Tolkien (novel)
+  - Fran Walsh (screenplay)
+  - Philippa Boyens (screenplay)
+  - Peter Jackson (screenplay)
+  actors:
+  - Alan Howard
+  - Noel Appleby
+  - Sean Astin
+  - Sala Baker
+  plot: A meek Hobbit from the Shire and eight companions set out on a journey to
+    destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.
+  photo: the-lord-of-the-rings-the-fellowship-of-the-ring-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.8/10
+    - Source: Rotten Tomatoes
+      Value: 91%
+    - Source: Metacritic
+      Value: 92/100
+  genres: Adventure, Drama, Fantasy
+eighty-nine:
+  title: 'The Lord of the Rings: The Return of the King'
+  year: '2003'
+  rated: PG-13
+  release_date: 17 Dec 2003
+  run_time: 201 min
+  directors:
+  - Peter Jackson
+  writers:
+  - J.R.R. Tolkien (novel)
+  - Fran Walsh (screenplay)
+  - Philippa Boyens (screenplay)
+  - Peter Jackson (screenplay)
+  actors:
+  - Noel Appleby
+  - Ali Astin
+  - Sean Astin
+  - David Aston
+  plot: Gandalf and Aragorn lead the World of Men against Sauron's army to draw his
+    gaze from Frodo and Sam as they approach Mount Doom with the One Ring.
+  photo: the-lord-of-the-rings-the-return-of-the-king-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.9/10
+    - Source: Rotten Tomatoes
+      Value: 93%
+    - Source: Metacritic
+      Value: 94/100
+  genres: Adventure, Drama, Fantasy
+ninety:
+  title: 'The Lord of the Rings: The Two Towers'
+  year: '2002'
+  rated: PG-13
+  release_date: 18 Dec 2002
+  run_time: 179 min
+  directors:
+  - Peter Jackson
+  writers:
+  - J.R.R. Tolkien (novel)
+  - Fran Walsh (screenplay)
+  - Philippa Boyens (screenplay)
+  - Stephen Sinclair (screenplay)
+  - Peter Jackson (screenplay)
+  actors:
+  - Bruce Allpress
+  - Sean Astin
+  - John Bach
+  - Sala Baker
+  plot: While Frodo and Sam edge closer to Mordor with the help of the shifty Gollum,
+    the divided fellowship makes a stand against Sauron's new ally, Saruman, and his
+    hordes of Isengard.
+  photo: the-lord-of-the-rings-the-two-towers-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BNGE5MzIyNTAtNWFlMC00NDA2LWJiMjItMjc4Yjg1OWM5NzhhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.7/10
+    - Source: Rotten Tomatoes
+      Value: 95%
+    - Source: Metacritic
+      Value: 87/100
+  genres: Adventure, Drama, Fantasy
+ninety-one:
+  title: The Matrix
+  year: '1999'
+  rated: R
+  release_date: 31 Mar 1999
+  run_time: 136 min
+  directors:
+  - Lana Wachowski
+  - Lilly Wachowski
+  writers:
+  - Lilly Wachowski
+  - Lana Wachowski
+  actors:
+  - Keanu Reeves
+  - Laurence Fishburne
+  - Carrie-Anne Moss
+  - Hugo Weaving
+  plot: A computer hacker learns from mysterious rebels about the true nature of his
+    reality and his role in the war against its controllers.
+  photo: the-matrix-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.7/10
+    - Source: Rotten Tomatoes
+      Value: 88%
+    - Source: Metacritic
+      Value: 73/100
+  genres: Action, Sci-Fi
+ninety-two:
+  title: The NeverEnding Story
+  year: '1984'
+  rated: PG
+  release_date: 20 Jul 1984
+  run_time: 102 min
+  directors:
+  - Wolfgang Petersen
+  writers:
+  - Wolfgang Petersen (screenplay by)
+  - Herman Weigel (screenplay by)
+  - Michael Ende (novel)
+  - Robert Easton (additional dialogue)
+  actors:
+  - Barret Oliver
+  - Gerald McRaney
+  - Chris Eastman
+  - Darryl Cooksey
+  plot: A troubled boy dives into a wondrous fantasy world through the pages of a
+    mysterious book.
+  photo: the-neverending-story-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BM2YwNWExYjItODZmOC00MTRjLWFlYmEtODFmNGI5M2E5NzYxXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.4/10
+    - Source: Rotten Tomatoes
+      Value: 82%
+    - Source: Metacritic
+      Value: 46/100
+  genres: Adventure, Drama, Family, Fantasy
+ninety-three:
+  title: The Nightmare Before Christmas
+  year: '1993'
+  rated: PG
+  release_date: 29 Oct 1993
+  run_time: 76 min
+  directors:
+  - Henry Selick
+  writers:
+  - Tim Burton (story and characters)
+  - Michael McDowell (adaptation)
+  - Caroline Thompson (screenplay)
+  actors:
+  - Danny Elfman
+  - Chris Sarandon
+  - Catherine O'Hara
+  - William Hickey
+  plot: Jack Skellington, king of Halloween Town, discovers Christmas Town, but his
+    attempts to bring Christmas to his home causes confusion.
+  photo: the-nightmare-before-christmas-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BNWE4OTNiM2ItMjY4Ni00ZTViLWFiZmEtZGEyNGY2ZmNlMzIyXkEyXkFqcGdeQXVyMDU5NDcxNw@@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.0/10
+    - Source: Rotten Tomatoes
+      Value: 95%
+    - Source: Metacritic
+      Value: 82/100
+  genres: Animation, Family, Fantasy
+ninety-four:
+  title: The Orphanage
+  year: '2007'
+  rated: R
+  release_date: 11 Jan 2008
+  run_time: 105 min
+  directors:
+  - J.A. Bayona
+  writers:
+  - Sergio G. Sánchez (screenplay)
+  actors:
+  - Belén Rueda
+  - Fernando Cayo
+  - Roger Príncep
+  - Mabel Rivera
+  plot: A woman brings her family back to her childhood home, which used to be an
+    orphanage for handicapped children. Before long, her son starts to communicate
+    with an invisible new friend.
+  photo: the-orphanage-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BNTRjZjUzMDEtMjM5MC00NTMzLWJlYzItNzYzNjIwZjc0YjIzXkEyXkFqcGdeQXVyMjgyNjk3MzE@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.5/10
+    - Source: Rotten Tomatoes
+      Value: 87%
+    - Source: Metacritic
+      Value: 74/100
+  genres: Drama, Horror
+ninety-five:
+  title: The Princess Bride
+  year: '1987'
+  rated: PG
+  release_date: '09 Oct 1987'
+  run_time: 98 min
+  directors:
+  - Rob Reiner
+  writers:
+  - William Goldman (book)
+  - William Goldman (screenplay)
+  actors:
+  - Cary Elwes
+  - Mandy Patinkin
+  - Chris Sarandon
+  - Christopher Guest
+  plot: While home sick in bed, a young boy's grandfather reads him the story of a
+    farmboy-turned-pirate who encounters numerous obstacles, enemies and allies in
+    his quest to be reunited with his true love.
+  photo: the-princess-bride-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMGM4M2Q5N2MtNThkZS00NTc1LTk1NTItNWEyZjJjNDRmNDk5XkEyXkFqcGdeQXVyMjA0MDQ0Mjc@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.1/10
+    - Source: Rotten Tomatoes
+      Value: 97%
+    - Source: Metacritic
+      Value: 77/100
+  genres: Adventure, Family, Fantasy, Romance
+ninety-six:
+  title: The Ring
+  year: '2002'
+  rated: PG-13
+  release_date: 18 Oct 2002
+  run_time: 115 min
+  directors:
+  - Gore Verbinski
+  writers:
+  - Ehren Kruger (screenplay)
+  - Kôji Suzuki (novel)
+  actors:
+  - Naomi Watts
+  - Martin Henderson
+  - David Dorfman
+  - Brian Cox
+  plot: A journalist must investigate a mysterious videotape which seems to cause
+    the death of anyone one week to the day after they view it.
+  photo: the-ring-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BNDA2NTg2NjE4Ml5BMl5BanBnXkFtZTYwMjYxMDg5._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.1/10
+    - Source: Rotten Tomatoes
+      Value: 71%
+    - Source: Metacritic
+      Value: 57/100
+  genres: Horror
+ninety-seven:
+  title: The Sandlot
+  year: '1993'
+  rated: PG
+  release_date: 07 Apr 1993
+  run_time: 101 min
+  directors:
+  - David Mickey Evans
+  writers:
+  - David Mickey Evans
+  - Robert Gunter
+  actors:
+  - Art LaFleur
+  - Tom Guiry
+  - Mike Vitar
+  - Patrick Renna
+  plot: In the summer of 1962, a new kid in town is taken under the wing of a young
+    baseball prodigy and his rowdy team, resulting in many adventures.
+  photo: the-sandlot-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BODllYjM1ODItYjBmOC00MzkwLWJmM2YtMjMyZDU3MGJhNjc4L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.8/10
+    - Source: Rotten Tomatoes
+      Value: 57%
+  genres: Comedy, Drama, Family
+ninety-eight:
+  title: The Shawshank Redemption
+  year: '1994'
+  rated: R
+  release_date: 14 Oct 1994
+  run_time: 142 min
+  directors:
+  - Frank Darabont
+  writers:
+  - Stephen King (short story "Rita Hayworth and Shawshank Redemption")
+  - Frank Darabont (screenplay)
+  actors:
+  - Tim Robbins
+  - Morgan Freeman
+  - Bob Gunton
+  - William Sadler
+  plot: Two imprisoned men bond over a number of years, finding solace and eventual
+    redemption through acts of common decency.
+  photo: the-shawshank-redemption-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 9.3/10
+    - Source: Rotten Tomatoes
+      Value: 91%
+    - Source: Metacritic
+      Value: 80/100
+  genres: Drama
+ninety-nine:
+  title: The Shining
+  year: '1980'
+  rated: R
+  release_date: 13 Jun 1980
+  run_time: 146 min
+  directors:
+  - Stanley Kubrick
+  writers:
+  - Stephen King (novel)
+  - Stanley Kubrick (screenplay)
+  - Diane Johnson (screenplay)
+  actors:
+  - Jack Nicholson
+  - Shelley Duvall
+  - Danny Lloyd
+  - Scatman Crothers
+  plot: A family heads to an isolated hotel for the winter where an evil spiritual
+    presence influences the father into violence, while his psychic son sees horrific
+    forebodings from both past and future.
+  photo: the-shining-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BZWFlYmY2MGEtZjVkYS00YzU4LTg0YjQtYzY1ZGE3NTA5NGQxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.4/10
+    - Source: Rotten Tomatoes
+      Value: 86%
+    - Source: Metacritic
+      Value: 63/100
+  genres: Drama, Horror
+one hundred:
+  title: The Silence of the Lambs
+  year: '1991'
+  rated: R
+  release_date: 14 Feb 1991
+  run_time: 118 min
+  directors:
+  - Jonathan Demme
+  writers:
+  - Thomas Harris (novel)
+  - Ted Tally (screenplay)
+  actors:
+  - Jodie Foster
+  - Lawrence A. Bonney
+  - Kasi Lemmons
+  - Lawrence T. Wrentz
+  plot: A young FBI cadet must receive the help of an incarcerated and manipulative
+    cannibal killer to help catch another serial killer, a madman who skins his victims.
+  photo: the-silence-of-the-lambs-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BNjNhZTk0ZmEtNjJhMi00YzFlLWE1MmEtYzM1M2ZmMGMwMTU4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.6/10
+    - Source: Rotten Tomatoes
+      Value: 96%
+    - Source: Metacritic
+      Value: 85/100
+  genres: Drama
+one hundred and one:
+  title: The Terminator
+  year: '1984'
+  rated: R
+  release_date: 26 Oct 1984
+  run_time: 107 min
+  directors:
+  - James Cameron
+  writers:
+  - James Cameron
+  - Gale Anne Hurd
+  - William Wisher (additional dialogue)
+  actors:
+  - Arnold Schwarzenegger
+  - Michael Biehn
+  - Linda Hamilton
+  - Paul Winfield
+  plot: A seemingly indestructible android is sent from 2029 to 1984 to assassinate
+    a waitress, whose unborn son will lead humanity in a war against the machines,
+    while a soldier from that war is sent to protect her at all costs.
+  photo: the-terminator-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BYTViNzMxZjEtZGEwNy00MDNiLWIzNGQtZDY2MjQ1OWViZjFmXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.0/10
+    - Source: Rotten Tomatoes
+      Value: 100%
+    - Source: Metacritic
+      Value: 84/100
+  genres: Action, Sci-Fi
+one hundred and two:
+  title: The Thing
+  year: '1982'
+  rated: R
+  release_date: 25 Jun 1982
+  run_time: 109 min
+  directors:
+  - John Carpenter
+  writers:
+  - Bill Lancaster (screenplay)
+  - John W. Campbell Jr. (story)
+  actors:
+  - Kurt Russell
+  - Wilford Brimley
+  - T.K. Carter
+  - David Clennon
+  plot: A research team in Antarctica is hunted by a shape-shifting alien that assumes
+    the appearance of its victims.
+  photo: the-thing-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BNDcyZmFjY2YtN2I1OC00MzU3LWIzZGEtZDA5N2VlNDJjYWI3L2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.1/10
+    - Source: Rotten Tomatoes
+      Value: 84%
+    - Source: Metacritic
+      Value: 57/100
+  genres: Horror, Sci-Fi
+one hundred and three:
+  title: The Witch
+  year: '2015'
+  rated: R
+  release_date: 19 Feb 2016
+  run_time: 92 min
+  directors:
+  - Robert Eggers
+  writers:
+  - Robert Eggers
+  actors:
+  - Anya Taylor-Joy
+  - Ralph Ineson
+  - Kate Dickie
+  - Harvey Scrimshaw
+  plot: A family in 1630s New England is torn apart by the forces of witchcraft, black
+    magic and possession.
+  photo: the-witch-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTUyNzkwMzAxOF5BMl5BanBnXkFtZTgwMzc1OTk1NjE@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 6.8/10
+    - Source: Rotten Tomatoes
+      Value: 91%
+    - Source: Metacritic
+      Value: 83/100
+  genres: Horror
+one hundred and four:
+  title: The Wizard of Oz
+  year: '1939'
+  rated: PG
+  release_date: 25 Aug 1939
+  run_time: 102 min
+  directors:
+  - Victor Fleming
+  - George Cukor
+  - Mervyn LeRoy
+  - Norman Taurog
+  - King Vidor
+  writers:
+  - Noel Langley (screenplay)
+  - Florence Ryerson (screenplay)
+  - Edgar Allan Woolf (screenplay)
+  - Noel Langley (adaptation)
+  - L. Frank Baum (from the book by)
+  actors:
+  - Judy Garland
+  - Frank Morgan
+  - Ray Bolger
+  - Bert Lahr
+  plot: Dorothy Gale is swept away from a farm in Kansas to a magical land of Oz in
+    a tornado and embarks on a quest with her new friends to see the Wizard who can
+    help her return home to Kansas and help her friends as well.
+  photo: the-wizard-of-oz-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BNjUyMTc4MDExMV5BMl5BanBnXkFtZTgwNDg0NDIwMjE@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.0/10
+    - Source: Rotten Tomatoes
+      Value: 98%
+    - Source: Metacritic
+      Value: 100/100
+  genres: Adventure, Family, Fantasy
+one hundred and five:
+  title: 'Thor: Ragnarok'
+  year: '2017'
+  rated: PG-13
+  release_date: 03 Nov 2017
+  run_time: 130 min
+  directors:
+  - Taika Waititi
+  writers:
+  - Eric Pearson
+  - Craig Kyle
+  - Christopher L. Yost
+  - Stan Lee (based on the Marvel comics by)
+  - Larry Lieber (based on the Marvel comics by)
+  - Jack Kirby (based on the Marvel comics by)
+  actors:
+  - Chris Hemsworth
+  - Tom Hiddleston
+  - Cate Blanchett
+  - Idris Elba
+  plot: Thor is imprisoned on the planet Sakaar, and must race against time to return
+    to Asgard and stop Ragnarök, the destruction of his world, at the hands of the
+    powerful and ruthless villain Hela.
+  photo: thor-ragnarok-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMjMyNDkzMzI1OF5BMl5BanBnXkFtZTgwODcxODg5MjI@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.9/10
+    - Source: Rotten Tomatoes
+      Value: 92%
+    - Source: Metacritic
+      Value: 74/100
+  genres: Action, Adventure, Comedy, Fantasy, Sci-Fi
+one hundred and six:
+  title: Time Bandits
+  year: '1981'
+  rated: PG
+  release_date: 06 Nov 1981
+  run_time: 110 min
+  directors:
+  - Terry Gilliam
+  writers:
+  - Michael Palin
+  - Terry Gilliam
+  actors:
+  - John Cleese
+  - Sean Connery
+  - Shelley Duvall
+  - Katherine Helmond
+  plot: A young boy accidentally joins a band of time travelling dwarves, as they
+    jump from era to era looking for treasure to steal.
+  photo: time-bandits-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTg2MDYwMzM0NF5BMl5BanBnXkFtZTcwODI3MTQ5OQ@@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.0/10
+    - Source: Rotten Tomatoes
+      Value: 89%
+    - Source: Metacritic
+      Value: 79/100
+  genres: Adventure, Comedy, Fantasy, Sci-Fi
+one hundred and seven:
+  title: Titanic
+  year: '1997'
+  rated: PG-13
+  release_date: 19 Dec 1997
+  run_time: 194 min
+  directors:
+  - James Cameron
+  writers:
+  - James Cameron
+  actors:
+  - Leonardo DiCaprio
+  - Kate Winslet
+  - Billy Zane
+  - Kathy Bates
+  plot: A seventeen-year-old aristocrat falls in love with a kind but poor artist
+    aboard the luxurious, ill-fated R.M.S. Titanic.
+  photo: titanic-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMDdmZGU3NDQtY2E5My00ZTliLWIzOTUtMTY4ZGI1YjdiNjk3XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.8/10
+    - Source: Rotten Tomatoes
+      Value: 89%
+    - Source: Metacritic
+      Value: 75/100
+  genres: Drama, Romance
+one hundred and eight:
+  title: Toy Story 3
+  year: '2010'
+  rated: G
+  release_date: 18 Jun 2010
+  run_time: 103 min
+  directors:
+  - Lee Unkrich
+  writers:
+  - John Lasseter (story by)
+  - Andrew Stanton (story by)
+  - Lee Unkrich (story by)
+  - Michael Arndt (screenplay by)
+  actors:
+  - Tom Hanks
+  - Tim Allen
+  - Joan Cusack
+  - Ned Beatty
+  plot: The toys are mistakenly delivered to a day-care center instead of the attic
+    right before Andy leaves for college, and it's up to Woody to convince the other
+    toys that they weren't abandoned and to return home.
+  photo: toy-story-3-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTgxOTY4Mjc0MF5BMl5BanBnXkFtZTcwNTA4MDQyMw@@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.3/10
+    - Source: Rotten Tomatoes
+      Value: 98%
+    - Source: Metacritic
+      Value: 92/100
+  genres: Animation, Adventure, Comedy, Family, Fantasy
+one hundred and nine:
+  title: Trainwreck
+  year: '2015'
+  rated: R
+  release_date: 17 Jul 2015
+  run_time: 125 min
+  directors:
+  - Judd Apatow
+  writers:
+  - Amy Schumer
+  actors:
+  - Colin Quinn
+  - Devin Fabry
+  - Carla Oudin
+  - Amy Schumer
+  plot: Having thought that monogamy was never possible, a commitment-phobic career
+    woman may have to face her fears when she meets a good guy.
+  photo: trainwreck-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTQ4MjgwNTMyOV5BMl5BanBnXkFtZTgwMTc1MjI0NDE@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 6.2/10
+    - Source: Rotten Tomatoes
+      Value: 85%
+    - Source: Metacritic
+      Value: 75/100
+  genres: Comedy, Drama, Romance
+one hundred and ten:
+  title: 'Transformers: Age of Extinction'
+  year: '2014'
+  rated: PG-13
+  release_date: 27 Jun 2014
+  run_time: 165 min
+  directors:
+  - Michael Bay
+  writers:
+  - Ehren Kruger
+  actors:
+  - Mark Wahlberg
+  - Stanley Tucci
+  - Kelsey Grammer
+  - Nicola Peltz
+  plot: When humanity allies with a bounty hunter in pursuit of Optimus Prime, the
+    Autobots turn to a mechanic and his family for help.
+  photo: transformers-age-of-extinction-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMjE1OTMyODA5M15BMl5BanBnXkFtZTgwMjc2MDk3MTE@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 5.7/10
+    - Source: Rotten Tomatoes
+      Value: 18%
+    - Source: Metacritic
+      Value: 32/100
+  genres: Action, Adventure, Sci-Fi
+one hundred and eleven:
+  title: Up
+  year: '2009'
+  rated: PG
+  release_date: 29 May 2009
+  run_time: 96 min
+  directors:
+  - Pete Docter
+  - Bob Peterson(co-director)
+  writers:
+  - Pete Docter (story by)
+  - Bob Peterson (story by)
+  - Tom McCarthy (story by)
+  - Bob Peterson (screenplay by)
+  - Pete Docter (screenplay by)
+  actors:
+  - Edward Asner
+  - Christopher Plummer
+  - Jordan Nagai
+  - Bob Peterson
+  plot: Seventy-eight year old Carl Fredricksen travels to Paradise Falls in his home
+    equipped with balloons, inadvertently taking a young stowaway.
+  photo: up-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTk3NDE2NzI4NF5BMl5BanBnXkFtZTgwNzE1MzEyMTE@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.3/10
+    - Source: Rotten Tomatoes
+      Value: 98%
+    - Source: Metacritic
+      Value: 88/100
+  genres: Animation, Adventure, Comedy, Family
+one hundred and twelve:
+  title: Wedding Crashers
+  year: '2005'
+  rated: R
+  release_date: 15 Jul 2005
+  run_time: 119 min
+  directors:
+  - David Dobkin
+  writers:
+  - Steve Faber
+  - Bob Fisher
+  actors:
+  - Owen Wilson
+  - Vince Vaughn
+  - Christopher Walken
+  - Rachel McAdams
+  plot: John Beckwith and Jeremy Grey, a pair of committed womanizers who sneak into
+    weddings to take advantage of the romantic tinge in the air, find themselves at
+    odds with one another when John meets and falls for Claire Cleary.
+  photo: wedding-crashers-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BZmJkNzViYjYtZWZlNy00OGE4LWI2MzUtYTcwNjY3Y2MyODIwXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.0/10
+    - Source: Rotten Tomatoes
+      Value: 76%
+    - Source: Metacritic
+      Value: 64/100
+  genres: Comedy, Romance
+one hundred and thirteen:
+  title: When Harry Met Sally
+  year: '1989'
+  rated: R
+  release_date: 21 Jul 1989
+  run_time: 95 min
+  directors:
+  - Rob Reiner
+  writers:
+  - Nora Ephron
+  actors:
+  - Billy Crystal
+  - Meg Ryan
+  - Carrie Fisher
+  - Bruno Kirby
+  plot: Harry and Sally have known each other for years, and are very good friends,
+    but they fear sex would ruin the friendship.
+  photo: when-harry-met-sally-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMjE0ODEwNjM2NF5BMl5BanBnXkFtZTcwMjU2Mzg3NA@@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.6/10
+    - Source: Rotten Tomatoes
+      Value: 90%
+    - Source: Metacritic
+      Value: 76/100
+  genres: Comedy, Drama, Romance
+one hundred and fourteen:
+  title: Willow
+  year: '1988'
+  rated: PG
+  release_date: 20 May 1988
+  run_time: 126 min
+  directors:
+  - Ron Howard
+  writers:
+  - George Lucas (story by)
+  - Bob Dolman (screenplay by)
+  actors:
+  - Val Kilmer
+  - Joanne Whalley
+  - Warwick Davis
+  - Jean Marsh
+  plot: A reluctant dwarf must play a critical role in protecting a special baby from
+    an evil queen.
+  photo: willow-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BZWIyMTA2M2ItOGI5MC00OTY0LWFmZTItN2NkOWQ0MGQ5NDkyL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.3/10
+    - Source: Rotten Tomatoes
+      Value: 50%
+    - Source: Metacritic
+      Value: 47/100
+  genres: Action, Adventure, Drama, Fantasy, Romance
+one hundred and fifteen:
+  title: Wreck-It Ralph
+  year: '2012'
+  rated: PG
+  release_date: 02 Nov 2012
+  run_time: 101 min
+  directors:
+  - Rich Moore
+  writers:
+  - Rich Moore (story by)
+  - Phil Johnston (story by)
+  - Jim Reardon (story by)
+  - Phil Johnston (screenplay by)
+  - Jennifer Lee (screenplay by)
+  - John C. Reilly (additional story material by)
+  - Sam Levine (additional story material by)
+  - Jared Stern (additional story material by)
+  actors:
+  - John C. Reilly
+  - Sarah Silverman
+  - Jack McBrayer
+  - Jane Lynch
+  plot: A video game villain wants to be a hero and sets out to fulfill his dream,
+    but his quest brings havoc to the whole arcade where he lives.
+  photo: wreck-it-ralph-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BNzMxNTExOTkyMF5BMl5BanBnXkFtZTcwMzEyNDc0OA@@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.7/10
+    - Source: Rotten Tomatoes
+      Value: 87%
+    - Source: Metacritic
+      Value: 72/100
+  genres: Animation, Adventure, Comedy, Family, Fantasy
