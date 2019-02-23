@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import MoviesList from '../services/MoviesList';
 import GenreSlider from './GenreSlider';
 
-class GenreSliderRow extends Component {
+export default class GenreSliderRow extends Component {
   constructor (props) {
     super(props);
 
@@ -29,12 +29,9 @@ class GenreSliderRow extends Component {
   }
 
   render() {
-    const moviesList = this.state.moviesList;
+    const { genre, slideLength, moviesList } = this.state
 
-    if (moviesList === null) return null;
-
-    const genre = this.state.genre;
-    const slideLength = this.state.slideLength;
+    if (moviesList === null) return null
 
     return (
       <div id={`${genre.name}_row`} className='genre-slider-row'>
@@ -63,5 +60,3 @@ class GenreSliderRow extends Component {
     }
   }
 }
-
-export default GenreSliderRow;

@@ -103,6 +103,7 @@ GEM
     haml (5.0.4)
       temple (>= 0.8.0)
       tilt
+    humanize (2.1.0)
     i18n (0.9.1)
       concurrent-ruby (~> 1.0)
     ipaddress (0.8.3)
@@ -246,6 +247,7 @@ DEPENDENCIES
   fog-aws
   font-awesome-rails
   haml
+  humanize
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)

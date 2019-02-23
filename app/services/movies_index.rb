@@ -25,14 +25,14 @@ class MoviesIndex
   end
 
   def genre_movies(genre)
-    genre.movies.take(18)
-    # case @slide_length
-    # when 6
-    #   genre.movies.take(18)
-    # when 5
-    #   genre.movies.take(15)
-    # else
-    #   genre.movies.take(16)
-    # end
+    # genre.movies.take(18)
+    case @slide_length
+    when 6
+      genre.movies.take(18)
+    when 5 || 3
+      genre.movies.take(15)
+    else
+      genre.movies.take(16)
+    end
   end
 end

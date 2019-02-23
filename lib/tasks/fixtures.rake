@@ -5,7 +5,12 @@ namespace :fixtures do
   desc "Write JSON fixture for movies by genre"
   task :create, [:genre] => [:environment] do |t, args|
     file = Rails.root.join('test/javascript/fixtures', "#{args[:genre].downcase}.json")
-    movies = Genre.where(name: args[:genre]).movies
+    puts "file: #{file}"
+
+    puts 'Loading movies =================================='
+    movies = Genre.where(name: args[:genre]).first.movies
+    puts movies.first.inspect
+
     h = JSON.parse(movies.to_json)
 
     File.open(file, 'w+') do |f|

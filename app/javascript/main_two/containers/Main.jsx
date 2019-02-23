@@ -18,7 +18,7 @@ export default class Main extends Component {
   }
 
   render() {
-    const { query, results, slideLength } = this.state
+    const { results, slideLength } = this.state
 
     return (
       <div id="main-container">
@@ -26,22 +26,18 @@ export default class Main extends Component {
           <Navbar slideLength={slideLength} update={this.updateQuery} />
         </div>
 
-        {this.determineRender()}
+        {this.determineRender(results, slideLength)}
       </div>
     )
   }
 
-  determineRender = () => {
-    const { results, slideLength } = this.state
-
+  determineRender = (results, slideLength) => {
     if (results && (results.genres.length > 0 || results.movies.length > 0)) {
 
       return <SearchResults results={results} slideLength={slideLength} />
     } else {
       return <Routes results={results} slideLength={slideLength} />
     }
-
-    // return <Routes results={results} slideLength={slideLength} />
   }
 
   updateQuery = (query) => {

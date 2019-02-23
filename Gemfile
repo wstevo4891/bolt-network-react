@@ -63,6 +63,8 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'awesome_print'
   gem 'lograge'
+  # Convert integers to words for building fixtures
+  gem 'humanize'
 end
 
 group :development do

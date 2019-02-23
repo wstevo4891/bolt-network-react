@@ -11,7 +11,7 @@ export default class GenreSlidersContainer extends Component {
     this.state = {
       genres: null,
       moviesIndex: null,
-      slideLength: props.slideLength
+      slideLength: this.props.slideLength
     }
   }
 

@@ -1,19 +1,21 @@
 // test/javascript/services/react_jsx.test.js
 
-import * as API from 'main_two/API'
+import * as data from '../fixtures/comedy.json'
 import MoviesList from 'genre_sliders/services/MoviesList'
 
 test('can use MoviesList', () => {
-  const props = { movies: API.movies.byGenre('Action'), slideLength: 5 }
-  console.log(props)
+  const moviesData = Array.from(data)
+  const props = { movies: moviesData, slideLength: 5 }
 
   const list = new MoviesList(props).call()
-  console.log(list.head)
+  console.log(list.head.data)
+  expect(list.head.data).toHaveLength(5)
+  expect(typeof list.head.data).toBe('object')
 
   let slide = list.head
 
   while (slide !== null) {
-    expect(slide.length).toEqual(props.slideLength)
+    expect(slide.data.length).toEqual(props.slideLength)
     slide = slide.next
   }
 })
