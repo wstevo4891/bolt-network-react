@@ -6,13 +6,16 @@ const Movie = (props) => {
   const movie = props.movie
   const actors = movie.actors.join(', ')
 
-  let directors = movie.directors
-
-  if (directors.length === 1) {
-    directors = directors.join('')
-  } else {
-    directors = directors.join(', ')
+  const deterDisplay = (arr) => {
+    if (arr.length === 1) {
+      return arr.join('')
+    } else {
+      return arr.join(', ')
+    }
   }
+
+  const directors = deterDisplay(movie.directors)
+  const genres = deterDisplay(movie.genres)
 
   return(
     <div className="row">
@@ -25,6 +28,7 @@ const Movie = (props) => {
         <p><span>Rated: </span>{movie.rated}</p>
         <p><span>Runtime: </span>{movie.run_time}</p>
         <p><span>Release Date: </span>{movie.release_date}</p>
+        <p><span>Genres: </span>{genres}</p>
         <p><span>Director: </span>{directors}</p>
         <p><span>Actors: </span>{actors}</p>
         <p>

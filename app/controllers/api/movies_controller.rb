@@ -9,7 +9,7 @@ module Api
     end
 
     def show
-      @movie = Movie.find(params[:id])
+      @movie = Movie.lookup(params[:id])
     end
   end
 end

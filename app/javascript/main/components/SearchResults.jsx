@@ -1,6 +1,7 @@
 // app/javascript/main/components/SearchResults
 
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 import Suggestions from '../services/Suggestions'
 import PosterRow from './PosterRow'
@@ -68,7 +69,7 @@ export default class SearchResults extends Component {
 
     return suggestions.map((suggestion, index) =>
       <li key={index}>
-        <a href={suggestion.link}>{suggestion.name}</a>
+        <Link to={suggestion.link}>{suggestion.name}</Link>
       </li>
     )
   }
