@@ -1,12 +1,12 @@
 // app/javascript/genre_sliders_plus/components/SliderArrow.jsx
 
-import React from 'react';
+import React from 'react'
 
 const SliderArrow = (props) => {
-  if (props.start) return null;
+  if (props.start) return null
 
-  const buttonClass = `handle handle${props.direction} active`;
-  const iconClass = `fa fa-angle-${props.icon}`;
+  const buttonClass = `handle handle${props.direction} active`
+  const iconClass = `fa fa-angle-${props.icon}`
 
   return (
     <span className={buttonClass}>
@@ -17,4 +17,4 @@ const SliderArrow = (props) => {
   )
 }
 
-export default SliderArrow;
+export default SliderArrow

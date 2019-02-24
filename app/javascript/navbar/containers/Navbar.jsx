@@ -20,7 +20,7 @@ export default class Navbar extends Component {
 
         <Hamburger dataTarget="navbarContent" />
 
-        <NavCollapse {...this.props} />
+        <NavCollapse genres={this.props.genres} />
       </nav>
     )
   }

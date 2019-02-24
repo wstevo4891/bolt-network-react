@@ -1,13 +1,13 @@
 // app/javascript/genre_sliders_plus/components/GenreSlider.jsx
 
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-import SlideBuilder from './SlideBuilder';
-import SliderArrow from './SliderArrow';
+import SlideBuilder from './SlideBuilder'
+import SliderArrow from './SliderArrow'
 
-class GenreSlider extends Component {
+export default class GenreSlider extends Component {
   constructor (props) {
-    super(props);
+    super(props)
 
     this.state = {
       genre: this.props.genre,
@@ -29,7 +29,7 @@ class GenreSlider extends Component {
 
   render() {
     const { genre, moviesList, slideLength,
-            position, start, next, prev } = this.state;
+            position, start, next, prev } = this.state
 
     return (
       <div id={`${genre.name}_slider`} className='genre-slider'>
@@ -64,56 +64,54 @@ class GenreSlider extends Component {
     });
 
     setTimeout(() => {
-      this.handleTransitionEnd();
-    }, 1000);
+      this.handleTransitionEnd()
+    }, 1000)
   }
 
   handlePrev = () => {
     this.setState({
       prev: true
-    });
+    })
 
     setTimeout(() => {
-      this.handleTransitionEnd();
-    }, 1000);
+      this.handleTransitionEnd()
+    }, 1000)
   }
 
   handleTransitionEnd = () => {
-    console.log('Slider transition is over');
+    console.log('Slider transition is over')
 
-    const position = this.determinePosition();
+    const position = this.determinePosition()
 
     this.setState({
       position: position,
       start: false,
       next: false,
       prev: false
-    });
+    })
   }
 
   determinePosition = () => {
-    const listLength = this.state.moviesList._length;
-    const { next, prev, position } = this.state;
+    const listLength = this.state.moviesList._length
+    const { next, prev, position } = this.state
 
     if (next) {
       if (position === listLength) {
-        return 1;
+        return 1
       } else {
-        return position + 1;
+        return position + 1
       }
     } else if (prev) {
       if (position === 1) {
-        return listLength;
+        return listLength
       } else {
-        return position - 1;
+        return position - 1
       }
     }
   }
 
   componentDidUpdate() {
-    console.log('GenreSlider updated');
-    console.log(this.state);
+    console.log('GenreSlider updated')
+    console.log(this.state)
   }
 }
-
-export default GenreSlider;

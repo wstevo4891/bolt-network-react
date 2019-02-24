@@ -1,14 +1,14 @@
 // app/javascript/genre_sliders/components/SliderContent.jsx
 
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 import Poster from './Poster';
-import ContainerStyle from '../services/ContainerStyle';
-import SliderPosterService from '../services/SliderPosterService';
+import ContainerStyle from '../services/ContainerStyle'
+import SliderPosterService from '../services/SliderPosterService'
 
-class SliderContainer extends Component {
+export default class SliderContainer extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       slides: this.props.slides,
@@ -21,7 +21,7 @@ class SliderContainer extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('SliderContainer is receiving props');
+    console.log('SliderContainer is receiving props')
 
     this.setState({
       slides: nextProps.slides,
@@ -29,20 +29,20 @@ class SliderContainer extends Component {
       start: nextProps.start,
       next: nextProps.next,
       prev: nextProps.prev
-    });
+    })
   }
 
   render() {
-    console.log('SliderContainer is rendering!');
+    console.log('SliderContainer is rendering!')
 
     const { slides, slideLength, start,
-            next, prev, hoverItem } = this.state;
+            next, prev, hoverItem } = this.state
 
-    const slideOver = new ContainerStyle(this.state).call();
+    const slideOver = new ContainerStyle(this.state).call()
 
-    const contClass = this.deterContClass(next, prev);
+    const contClass = this.deterContClass(next, prev)
 
-    return (
+    return(
       <div className={contClass} style={slideOver}>
         {
           slides.map((slide, index) =>
@@ -62,36 +62,34 @@ class SliderContainer extends Component {
           )
         }
       </div>
-    );
+    )
   }
 
   handleMouseOver = (event) => {
-    const target = event.target.closest('.poster-container');
-    const slideIndex = parseInt(target.classList[1].slice(-1), 10);
+    const target = event.target.closest('.poster-container')
+    const slideIndex = parseInt(target.classList[1].slice(-1), 10)
     
     this.setState({
       hoverItem: slideIndex
-    });
+    })
   }
 
   handleMouseOut = () => {
     this.setState({
       hoverItem: null
-    });
+    })
   }
 
   componentDidUpdate() {
-    console.log('SliderContainer Updated');
-    console.log(this.state);
+    console.log('SliderContainer Updated')
+    console.log(this.state)
   }
 
   deterContClass = (next, prev) => {
     if (next || prev) {
-      return "sliderContent animating";
+      return "sliderContent animating"
     } else {
-      return "sliderContent";
+      return "sliderContent"
     }
   }
 }
-
-export default SliderContainer;

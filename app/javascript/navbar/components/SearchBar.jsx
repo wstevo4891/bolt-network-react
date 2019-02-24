@@ -11,7 +11,7 @@ export default class SearchBar extends Component {
     super(props);
 
     this.state = {
-      location: window.location.pathname,
+      location: this.props.location,
       display: false,
       start: 0,
       end: 270,
@@ -27,8 +27,8 @@ export default class SearchBar extends Component {
     ]
   }
 
-  componentWillReceiveProps() {
-    const location = window.location.pathname
+  componentWillReceiveProps(nextProps) {
+    const location = nextProps.location
 
     if (location.match(/search/)) return
 

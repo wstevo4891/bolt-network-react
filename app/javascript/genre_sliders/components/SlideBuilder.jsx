@@ -1,16 +1,17 @@
 // app/javascript/genre_sliders_plus/components/SlideBuilder.jsx
 
-import React from 'react';
+import React from 'react'
 
-import SlidesArray from '../services/SlidesArray';
-import SliderContainer from './SliderContainer';
+import SlidesArray from '../services/SlidesArray'
+import SliderContainer from './SliderContainer'
 
 const SlideBuilder = (props) => {
-  if (props.moviesList === null) return null;
+  if (props.moviesList === null) return null
+
   console.log('Movies List')
   console.log(props.moviesList)
 
-  const slides = new SlidesArray(props).call();
+  const slides = new SlidesArray(props).call()
 
   return (
     <div className="slider-container">
@@ -22,7 +23,7 @@ const SlideBuilder = (props) => {
         start={props.start}
       />
     </div>
-  );
+  )
 }
 
-export default SlideBuilder;
+export default SlideBuilder

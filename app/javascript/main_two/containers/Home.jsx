@@ -18,7 +18,7 @@ const Home = (props) => (
       </div>
     </div>
 
-    <GenreSlidersContainer slideLength={props.slideLength} />
+    <GenreSlidersContainer {...props} />
 
     <div className="feature">
       <div className="container">
