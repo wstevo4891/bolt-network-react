@@ -1,9 +1,9 @@
-// app/javascript/carousel/containers/Carousel.jsx
+// app/javascript/main/scenes/Home/Carousel/components/Carousel.jsx
 
 import React, { Component } from 'react'
 
-import API from '../../main/services/API'
-import Slide from '../components/Slide'
+import API from '../../../../services/API'
+import Slide from './Slide'
 
 export default class Carousel extends Component {
   constructor() {
@@ -55,6 +55,7 @@ export default class Carousel extends Component {
       this.fetchMovies()
     }
 
+    // Turn off carousel's auto-sliding
     const $carousel = $('.carousel')
 
     $('.carousel-control-prev').click(function() {

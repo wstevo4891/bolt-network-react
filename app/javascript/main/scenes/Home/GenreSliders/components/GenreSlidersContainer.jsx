@@ -1,8 +1,8 @@
-// app/javascript/genre_sliders_plus/components/GenreSlidersContainer.jsx
+// app/javascript/main/scenes/Home/GenreSliders/components/GenreSlidersContainer.jsx
 
 import React, { Component } from 'react'
 
-import API from '../../main/services/API'
+import API from '../../../../services/API'
 import GenreSliderRow from './GenreSliderRow'
 
 export default class GenreSlidersContainer extends Component {
