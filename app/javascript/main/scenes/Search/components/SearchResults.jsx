@@ -6,7 +6,7 @@ import queryString from 'query-string'
 
 import API from '../../../services/API'
 import SuggestionsList from './SuggestionsList'
-import PosterRow from '../../components/PosterRow'
+import Results from '../../components/Results'
 
 export default class SearchResults extends Component {
   constructor(props) {
@@ -39,12 +39,9 @@ export default class SearchResults extends Component {
   }
 
   render() {
-    const { slideLength, genres, movies } = this.state
+    const { slideLength, query, genres, movies } = this.state
 
     if (genres === null && movies === null) return null
-
-    const slides = this.buildSlides(movies, slideLength)
-    console.log('slides: ' + JSON.stringify(slides))
 
     return(
       <div className="search-results">
@@ -58,10 +55,8 @@ export default class SearchResults extends Component {
               </div>
             </div>
           </div>
-  
-          <div className="row">
-            {this.renderSlides(slides, slideLength)}
-          </div>
+
+          <Results movies={movies} slideLength={slideLength} />
         </div>
       </div>
     )
@@ -84,46 +79,6 @@ export default class SearchResults extends Component {
   componentDidUpdate() {
     console.log('SearchResults Updated')
     console.log(this.state)
-  }
-
-  renderSlides = (slides, slideLength) => {
-    if (slides.length === 0) return null
-
-    return slides.map((slide, index) =>
-      <div key={index} className="col-12 search-results-col">
-        <PosterRow movies={slide} slideLength={slideLength} />
-      </div>
-    )
-  }
-
-  buildSlides = (items, limit) => {
-    let slides = []
-    let counter = 0
-    let itemCount = 0
-    let arr = []
-
-    for (let item of items) {
-      itemCount++
-
-      if (counter < limit && itemCount < items.length) {
-        arr.push(item)
-        counter++
-      } else if (itemCount === items.length) {
-        if (arr.length === limit) {
-          slides.push(arr)
-          slides.push([item])
-        } else {
-          arr.push(item)
-          slides.push(arr)
-        }
-      } else {
-        slides.push(arr)
-        counter = 0
-        arr = []
-      }
-    }
-
-    return slides
   }
 
   fetchResults = (query, slideLength) => {

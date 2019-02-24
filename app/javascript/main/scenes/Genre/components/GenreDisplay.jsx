@@ -3,7 +3,7 @@
 import React, { Component } from 'react'
 import API from '../../../services/API'
 
-import PosterRow from '../../components/PosterRow'
+import Results from '../../components/Results'
 
 export default class GenreDisplay extends Component {
   constructor(props) {
@@ -27,8 +27,6 @@ export default class GenreDisplay extends Component {
 
     if (genre === null) return null
 
-    const slides = this.buildSlides(movies, slideLength)
-
     return(
       <div className="display-container">
         <div className="row">
@@ -37,9 +35,7 @@ export default class GenreDisplay extends Component {
           </div>
         </div>
 
-        <div id="genres-row" className="row">
-          {this.renderSlides(slides, slideLength)}
-        </div>
+        <Results movies={movies} slideLength={slideLength} />
       </div>
     )
   }
@@ -48,14 +44,6 @@ export default class GenreDisplay extends Component {
     const genreId = this.props.match.params.genreId
 
     this.fetchGenre(genreId)
-  }
-
-  renderSlides = (slides, slideLength) => {
-    return slides.map((slide, index) =>
-      <div key={index} className="col-12 search-results-col">
-        <PosterRow movies={slide} slideLength={slideLength} />
-      </div>
-    )
   }
 
   fetchGenre = (genreId) => {
@@ -72,36 +60,6 @@ export default class GenreDisplay extends Component {
         console.error('Error in GenreDisplay.fetchMovies()')
         console.error(error)
       })
-  }
-
-  buildSlides = (items, limit) => {
-    let slides = []
-    let counter = 0
-    let itemCount = 0
-    let arr = []
-
-    for (let item of items) {
-      itemCount++
-
-      if (counter < limit && itemCount < items.length) {
-        arr.push(item)
-        counter++
-      } else if (itemCount === items.length) {
-        if (arr.length === limit) {
-          slides.push(arr)
-          slides.push([item])
-        } else {
-          arr.push(item)
-          slides.push(arr)
-        }
-      } else {
-        slides.push(arr)
-        counter = 0
-        arr = []
-      }
-    }
-
-    return slides
   }
 }
 
