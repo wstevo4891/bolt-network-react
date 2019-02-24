@@ -1,6 +1,7 @@
 // app/javascript/carousel/components/Slide.jsx
 
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Slide = (props) => {
   const active = props.index === 0 ? 'active' : ''
@@ -17,14 +18,15 @@ const Slide = (props) => {
         <div className="movie-content">
           <span className="movie-year">{movie.year}</span>
           <span className="movie-rating">{movie.rated}</span>
-          <span className="movie-length">{movie.runTime}</span>
+          <span className="movie-length">{movie.run_time}</span>
 
           <p className="blurb">{movie.plot}</p>
 
           <div className="slide-buttons">
-            <a href={movie.url} className="btn-blue" id="play">
+            <Link to={movie.url} className="btn-blue" id="play">
               <i className="fa fa-play"></i>PLAY
-            </a>
+            </Link>
+
             <a href="#" className="btn-clear">
               <i className="fa fa-plus"></i>MY LIST
             </a>

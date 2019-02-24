@@ -24,6 +24,6 @@ export default {
   },
 
   search: {
-    show: (query) => axios.get(`/api/search?query=${query}`)
+    get: (query) => axios.get(`/api/search/${query}`)
   }
 }

@@ -27,9 +27,10 @@ const Routes = (props) => (
     <Route path="/my-list">
       <Home slideLength={props.slideLength} />
     </Route>
-    <Route path="/search">
-      <SearchResults results={props.results} slideLength={props.slideLength} />
-    </Route>
+    <Route
+      path="/search"
+      render={(routeProps) => <SearchResults {...props} {...routeProps} />}
+    />
   </Switch>
 )
 

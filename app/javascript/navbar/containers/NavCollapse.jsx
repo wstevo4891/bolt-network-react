@@ -1,7 +1,7 @@
 // app/javascript/navbar/containers/NavCollapse.jsx
 
 import React, { Component } from 'react'
-import axios from 'axios'
+import API from '../../main_two/API'
 
 import NavItem from '../components/NavItem'
 import Dropdown from '../components/Dropdown'
@@ -32,7 +32,7 @@ export default class NavCollapse extends Component {
         </ul>
 
         <ul className="navbar-nav navbar-right">
-          <SearchBar update={this.props.update} />
+          <SearchBar {...this.props} />
         </ul>
       </div>
     )
@@ -43,7 +43,7 @@ export default class NavCollapse extends Component {
   }
 
   fetchGenres() {
-    axios.get('/api/genres')
+    API.genres.index()
       .then(response => {
         // localStorage.setItem('Genres', JSON.stringify(response.data));
 

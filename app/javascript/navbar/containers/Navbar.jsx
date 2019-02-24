@@ -20,7 +20,7 @@ export default class Navbar extends Component {
 
         <Hamburger dataTarget="navbarContent" />
 
-        <NavCollapse update={this.props.update} />
+        <NavCollapse {...this.props} />
       </nav>
     )
   }

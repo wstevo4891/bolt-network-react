@@ -1,7 +1,7 @@
 // app/javascript/main_two/App.jsx
 
 import React, { Component } from 'react'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 import Main from './containers/Main'
 
@@ -28,9 +28,9 @@ export default class App extends Component {
     if (slideLength === null) return null
 
     return (
-      <BrowserRouter>
+      <Router>
         <Main slideLength={slideLength} />
-      </BrowserRouter>
+      </Router>
     )
   }
 

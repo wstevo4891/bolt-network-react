@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   root to: 'home#index'
 
-  get '/genres/:id', to: 'home#index'
+  get '/genres/:id', to: 'home#index', as: :genre
 
-  get '/movies/:id', to: 'home#index'
+  get '/movies/:id', to: 'home#index', as: :movie
 
-  get '/search(/:query)' => 'search#show', defaults: { format: :json }
+  get '/search(/:q)' => 'home#index'
 
   get '/quotes' => 'quotes#index'
 
@@ -15,23 +15,23 @@ Rails.application.routes.draw do
 
   get '/animations' => 'animations#index'
 
-  resources :movies, only: :show
+  # resources :movies, only: :show
 
-  resources :genres, only: :show
+  # resources :genres, only: :show
 
-  namespace :admin do
-    resources :quotes
-    resources :genres
-    resources :movies
-    resources :subgenres
-  end
+  # namespace :admin do
+  #   resources :quotes
+  #   resources :genres
+  #   resources :movies
+  #   resources :subgenres
+  # end
 
   namespace :api, defaults: { format: :json } do
     resources :quotes, only: :show
     resources :movies, only: %i[index show]
     resources :genres, only: %i[index show]
 
-    get '/search(/:query)', to: 'search#show'
+    get '/search/:query', to: 'search#show'
 
     get '/movies-index/:slide_length', to: 'movies_index#show'
 

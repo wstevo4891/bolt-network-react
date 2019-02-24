@@ -2,7 +2,9 @@
 
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import queryString from 'query-string'
 
+import API from '../../main_two/API'
 import Suggestions from '../services/Suggestions'
 import PosterRow from './PosterRow'
 
@@ -10,37 +12,53 @@ export default class SearchResults extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      genres: props.results.genres,
-      movies: props.results.movies,
-      slideLength: props.slideLength,
-      suggestions: [],
-      slides: []
+      slideLength: this.props.slideLength,
+      query: null,
+      genres: null,
+      movies: null
     }
   }
 
   componentWillReceiveProps(nextProps) {
-    const { results, slideLength } = nextProps
+    // const { results, slideLength } = nextProps
 
-    const genres = results.genres
-    const movies = results.movies
+    // const genres = results.genres
+    // const movies = results.movies
 
-    const nextSuggestions = new Suggestions(genres, movies).call()
-    console.log('nextSuggestions: ' + JSON.stringify(nextSuggestions))
+    // const nextSuggestions = new Suggestions(genres, movies).call()
+    // console.log('nextSuggestions: ' + JSON.stringify(nextSuggestions))
 
-    const nextSlides = this.buildSlides(movies, slideLength)
-    console.log('nextSlides: ' + JSON.stringify(nextSlides))
+    // const nextSlides = this.buildSlides(movies, slideLength)
+    // console.log('nextSlides: ' + JSON.stringify(nextSlides))
 
-    this.setState({
-      genres: nextProps.results.genres,
-      movies: nextProps.results.movies,
-      slideLength: nextProps.slideLength,
-      suggestions: nextSuggestions,
-      slides: nextSlides
-    })
+    // this.setState({
+    //   genres: nextProps.results.genres,
+    //   movies: nextProps.results.movies,
+    //   slideLength: nextProps.slideLength,
+    //   suggestions: nextSuggestions,
+    //   slides: nextSlides
+    // })
+
+    console.log('Search Results Will Receive Props')
+    console.log('===============================================')
+    console.log(nextProps)
+
+    const slideLength = nextProps.slideLength
+    const query = queryString.parse(nextProps.location.search).q
+
+    this.fetchResults(query, slideLength)
   }
 
   render() {
-    const { slideLength, suggestions, slides } = this.state
+    const { slideLength, genres, movies } = this.state
+
+    if (genres === null && movies === null) return null
+
+    const suggestions = new Suggestions(genres, movies).call()
+    console.log('suggestions: ' + JSON.stringify(suggestions))
+
+    const slides = this.buildSlides(movies, slideLength)
+    console.log('slides: ' + JSON.stringify(slides))
 
     return(
       <div className="search-results">
@@ -48,7 +66,7 @@ export default class SearchResults extends Component {
           <div className="row">
             <div className="col-12">
               <div className="suggestions">
-                <span className="suggestionsLabel">Explore titles related to:</span>
+                <span className="suggestionsLabel">Explore titles related to: </span>
                 <ul>
                   {this.renderSuggestions(suggestions)}
                 </ul>
@@ -62,6 +80,38 @@ export default class SearchResults extends Component {
         </div>
       </div>
     )
+  }
+
+  componentDidMount() {
+    console.log('SearchResults Mounted')
+    console.log(this.state)
+    console.log(this.props.location)
+
+    const { slideLength, query } = this.state
+
+    if (query === null) {
+      const query = queryString.parse(this.props.location.search).q
+
+      this.fetchResults(query, slideLength)
+    }
+
+    // if (suggestions.length === 0 && slides.length === 0) {
+    //   const nextSuggestions = new Suggestions(genres, movies).call()
+    //   console.log('nextSuggestions: ' + JSON.stringify(nextSuggestions))
+
+    //   const nextSlides = this.buildSlides(movies, slideLength)
+    //   console.log('nextSlides: ' + JSON.stringify(nextSlides))
+
+    //   this.setState({
+    //     suggestions: nextSuggestions,
+    //     slides: nextSlides
+    //   })
+    // }
+  }
+
+  componentDidUpdate() {
+    console.log('SearchResults Updated')
+    console.log(this.state)
   }
 
   renderSuggestions = (suggestions) => {
@@ -82,26 +132,6 @@ export default class SearchResults extends Component {
         <PosterRow movies={slide} slideLength={slideLength} />
       </div>
     )
-  }
-
-  componentDidMount() {
-    console.log('SearchResults Mounted')
-    console.log(this.state)
-
-    const { genres, movies, slideLength, suggestions, slides } = this.state
-
-    if (suggestions.length === 0 && slides.length === 0) {
-      const nextSuggestions = new Suggestions(genres, movies).call()
-      console.log('nextSuggestions: ' + JSON.stringify(nextSuggestions))
-
-      const nextSlides = this.buildSlides(movies, slideLength)
-      console.log('nextSlides: ' + JSON.stringify(nextSlides))
-
-      this.setState({
-        suggestions: nextSuggestions,
-        slides: nextSlides
-      })
-    }
   }
 
   buildSlides = (items, limit) => {
@@ -134,8 +164,21 @@ export default class SearchResults extends Component {
     return slides
   }
 
-  componentDidUpdate() {
-    console.log('SearchResults Updated')
-    console.log(this.state)
+  fetchResults = (query, slideLength) => {
+    API.search.get(query)
+      .then(response => {
+        console.log('Search Results: ' + JSON.stringify(response.data))
+
+        this.setState({
+          slideLength: slideLength,
+          query: query,
+          genres: response.data.genres,
+          movies: response.data.movies
+        })
+      })
+      .catch(error => {
+        console.error('Error in SearchResults.fetchResults()')
+        console.error(error);
+      })
   }
 }

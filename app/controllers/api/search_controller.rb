@@ -2,7 +2,7 @@
 
 module Api
   # Controller for /api/search route
-  class SearchController < PublicController
+  class SearchController < ApiController
     def show
       @results = SearchResults.create(params[:query])
     end

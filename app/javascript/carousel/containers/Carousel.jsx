@@ -1,8 +1,8 @@
 // app/javascript/carousel/containers/Carousel.jsx
 
 import React, { Component } from 'react'
-import axios from 'axios'
 
+import API from '../../main_two/API'
 import Slide from '../components/Slide'
 
 export default class Carousel extends Component {
@@ -67,9 +67,7 @@ export default class Carousel extends Component {
   }
 
   fetchMovies = () => {
-    const titles = { titles: this.state.titles }
-
-    axios.post('/api/movies/search', titles)
+    API.movies.search(this.state.titles)
       .then(response => {
         localStorage.setItem('CarouselMovies', JSON.stringify(response.data))
 

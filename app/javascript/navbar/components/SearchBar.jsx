@@ -2,13 +2,16 @@
 
 import React, { Component } from 'react'
 import { Motion, spring } from 'react-motion'
-import queryString from 'query-string';
+
+import SearchInput from './SearchInput'
+import SearchClose from './SearchClose'
 
 export default class SearchBar extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      location: window.location.pathname,
       display: false,
       start: 0,
       end: 270,
@@ -24,7 +27,22 @@ export default class SearchBar extends Component {
     ]
   }
 
+  componentWillReceiveProps() {
+    const location = window.location.pathname
+
+    if (location.match(/search/)) return
+
+    this.setState({
+      location: location
+    })
+  }
+
   render() {
+    console.log('SearchBar Rendering')
+    console.log(this.state.location)
+    console.log('###########################################')
+    console.log(this.props)
+
     const display = this.state.display
     const boxClass = display ? 'searchBox d-none' : 'searchBox'
     const wrapperClass = display ? 'searchWrapper' : 'searchWrapper d-none'
@@ -34,6 +52,7 @@ export default class SearchBar extends Component {
         <button className={boxClass} id="nav-item" onClick={this.handleClick}>
           <i className="fa fa-search" aria-hidden="true"></i>
         </button>
+
         <div className={wrapperClass}>
           {this.displayInput()}
         </div>
@@ -55,7 +74,7 @@ export default class SearchBar extends Component {
   // When we click on the hour glass button, we'll hide it,
   // render the searchInput div, and animate its width to 270px.
   displayInput = () => {
-    const { display, start, end, queryExists } = this.state
+    const { location, display, start, end, queryExists } = this.state
 
     if (display === false) return null
 
@@ -68,23 +87,14 @@ export default class SearchBar extends Component {
             <i className="fa fa-search" id="searchIcon" aria-hidden="true"></i>
 
             <form className="form-inline" action="#">
-              <input
-                type="text"
-                name="query"
-                id="search"
-                className="form-control"
-                placeholder="Titles, people, genres"
-                aria-label="Titles, people, genres"
-                onKeyUp={this.handleKeyUp}
-              />
+              <SearchInput update={this.updateQuery} />
             </form>
 
-            <i
-              className={`fa fa-times ${displayClose}`}
-              id="closeIcon"
-              aria-hidden="true"
-              onClick={this.handleClose}
-            ></i>
+            <SearchClose
+              update={this.updateQuery}
+              display={displayClose}
+              location={location}
+            />
           </div>
         )}
       </Motion>
@@ -115,12 +125,8 @@ export default class SearchBar extends Component {
     }
   }
 
-  handleKeyUp = (event) => {
-    console.log(history)
-    console.log(window.location)
-    const value = event.target.value
-
-    if (value && value.length > 0) {
+  updateQuery = (query) => {
+    if (query && query.length > 0) {
       this.setState({
         queryExists: true
       })
@@ -129,40 +135,5 @@ export default class SearchBar extends Component {
         queryExists: false
       })
     }
-
-    // this.setQueryFromQueryString(this.props.location.search);
-
-    // window.location.pathname = `/search?q=${value}`
-    history.pushState({ q: value }, '',  `/search?q=${value}`)
-
-    this.props.update(value)
-  }
-
-  handleClose = () => {
-    const search = document.getElementById('search')
-    search.value = ''
-
-    this.setState({
-      queryExists: false
-    })
-
-    this.props.update(null)
-  }
-
-  setQueryFromQueryString (qs) {
-    console.log('running function setQueryFromQueryString')
-    console.log('qs argument: ' + qs)
-    this.qsParams = queryString.parse(qs)
-    console.log('this.qsParams: ' + JSON.stringify(this.qsParams))
-    if (this.qsParams.search) {
-      // assign query from the URL's query string
-      this.query = this.qsParams.search
-    } else {
-      this.query = this.props.query
-      // update URL in browser to reflect current quote in query string
-      this.props.history.push(`/search?q=${this.query}`)
-    }
-    console.log('this.props.query: ' + this.props.query)
-    console.log('this.query: ' + this.query)
   }
 }
