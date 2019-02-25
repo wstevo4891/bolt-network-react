@@ -52,7 +52,7 @@ class SearchResults
   end
 
   def movies_by_first_char
-    Movie.where('lower(title) LIKE :prefix', prefix: "#{query}%")
+    Movie.where('lower(title) LIKE :prefix', prefix: "#{query}%").limit(15)
   rescue ActiveRecord::RecordNotFound
     []
   end
@@ -78,14 +78,14 @@ class SearchResults
   end
 
   def movie_title_match
-    Movie.where(Movie.arel_table[:title].lower.matches("%#{query}%"))
+    Movie.where(Movie.arel_table[:title].lower.matches("%#{query}%")).limit(15)
   rescue ActiveRecord::RecordNotFound
     []
   end
 
   def concat_movies_by_genre
     genres.each_with_object([]) do |genre, arr|
-      arr.concat(genre.movies)
+      arr.concat(genre.movies.limit(5))
     end
   end
 end

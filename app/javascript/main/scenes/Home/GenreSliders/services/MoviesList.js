@@ -15,31 +15,27 @@ export default class MoviesList {
   }
 
   call = () => {
-    this.buildList()
+    console.log('Movies List')
+    console.log(this.movies)
 
-    return this.list
-  }
+    if (this.movies === null || this.movies.length <= 1) return []
 
-  buildList = () => {
     for (let movie of this.movies) {
       this.arr.push(movie)
       this.movieIndex++
   
-      this.determineAction()
-    }
-  }
-
-  determineAction = () => {
-    if (this.movieIndex === this.last) {
-      this.list.add(this.arr)
-
-    } else if (this.slideIndex < this.slideLength) {
-      this.slideIndex++
-
-    } else {
-      this.list.add(this.arr)
-      this.arr = []
-      this.slideIndex = 1
+      if (this.movieIndex === this.last) {
+        this.list.add(this.arr)
+        return this.list
+  
+      } else if (this.slideIndex < this.slideLength) {
+        this.slideIndex++
+  
+      } else {
+        this.list.add(this.arr)
+        this.arr = []
+        this.slideIndex = 1
+      }
     }
   }
 }

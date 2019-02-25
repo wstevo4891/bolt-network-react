@@ -17,7 +17,8 @@ const SearchInput = (props) => (
         const query = event.target.value
 
         if (query && query !== '') {
-          history.push(`/search?q=${query}`)
+          const escaped_query = encodeURIComponent(query)
+          history.push(`/search?q=${escaped_query}`)
         } else {
           history.push(props.location)
         }

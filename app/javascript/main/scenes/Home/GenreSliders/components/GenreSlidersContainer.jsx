@@ -18,7 +18,7 @@ export default class GenreSlidersContainer extends Component {
   componentWillReceiveProps(nextProps) {
     const { slideLength } = this.state
 
-    if (nexProps.slideLength === slideLength) return
+    if (nextProps.slideLength === slideLength) return
 
     this.fetchMoviesIndex(nextProps.slideLength)
   }
@@ -55,6 +55,9 @@ export default class GenreSlidersContainer extends Component {
   fetchMoviesIndex = (slideLength) => {
     API.moviesIndex.get(slideLength)
       .then(response => {
+        console.log('Movies Index')
+        console.log(JSON.stringify(response.data))
+
         this.setState({
           slideLength: slideLength,
           moviesIndex: response.data

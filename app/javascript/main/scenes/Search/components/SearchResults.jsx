@@ -1,14 +1,11 @@
 // app/javascript/main/scenes/Search/components/SearchResults.jsx
 
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import queryString from 'query-string'
 
 import API from '../../../services/API'
 import ResultsDisplay from './ResultsDisplay'
 import NotFound from './NotFound'
-// import SuggestionsList from './SuggestionsList'
-// import Results from '../../components/Results'
 
 export default class SearchResults extends Component {
   constructor(props) {
@@ -27,7 +24,7 @@ export default class SearchResults extends Component {
     console.log(nextProps)
 
     const slideLength = nextProps.slideLength
-    const query = queryString.parse(nextProps.location.search).q
+    const query = this.parseQuery()
 
     if (query && query !== '') {
       this.fetchResults(query, slideLength)
@@ -43,8 +40,11 @@ export default class SearchResults extends Component {
   render() {
     const { slideLength, query, genres, movies } = this.state
 
-    if (this.resultsNotFound(genres, movies)) {
-      return <NotFound query={query} />
+    if (genres === null && movies === null) {
+      return null
+
+    } else if (genres.length === 0 && movies.length === 0) {
+      return <NotFound search={this.props.location.search} />
 
     } else {
       return(
@@ -65,7 +65,7 @@ export default class SearchResults extends Component {
     const { slideLength, query } = this.state
 
     if (query === null) {
-      const query = queryString.parse(this.props.location.search).q
+      const query = this.parseQuery()
 
       this.fetchResults(query, slideLength)
     }
@@ -74,6 +74,11 @@ export default class SearchResults extends Component {
   componentDidUpdate() {
     console.log('SearchResults Updated')
     console.log(this.state)
+  }
+
+  parseQuery = () => {
+    const q = queryString.parse(this.props.location.search).q
+    return decodeURIComponent(q)
   }
 
   resultsNotFound = (genres, movies) => {

@@ -8,7 +8,7 @@ class MoviesIndex
   end
 
   def initialize(slide_length)
-    @slide_length = slide_length
+    @slide_length = slide_length.to_i
     @genres = Genre.all
   end
 
@@ -19,13 +19,11 @@ class MoviesIndex
   private
 
   def build_index
-    @genres.each_with_object({}) do |genre, hash|
-      hash[genre.name] = genre_movies(genre)
-    end
-  end
+    num = length_map[@slide_length]
 
-  def genre_movies(genre)
-    genre.movies.take(length_map[@slide_length])
+    @genres.each_with_object({}) do |genre, hash|
+      hash[genre.name] = genre.movies.limit(num)
+    end
   end
 
   def length_map
@@ -39,13 +37,14 @@ class MoviesIndex
   end
 
   # Netflix's slide number per slide_length
-  def true_length_map
-    {
-      6 => 42,
-      5 => 40,
-      4 => 40,
-      3 => 39,
-      2 => 38
-    }
-  end
+  # =======================================
+  # def true_length_map
+  #   {
+  #     6 => 42,
+  #     5 => 40,
+  #     4 => 40,
+  #     3 => 39,
+  #     2 => 38
+  #   }
+  # end
 end

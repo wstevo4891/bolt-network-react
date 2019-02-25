@@ -5,6 +5,10 @@ Rails.application.routes.draw do
 
   get '/movies/:id', to: 'home#index', as: :movie
 
+  get '/recent', to: 'home#index'
+
+  get '/my-list', to: 'home#index'
+
   get '/search(/:q)' => 'home#index'
 
   get '/quotes' => 'quotes#index'

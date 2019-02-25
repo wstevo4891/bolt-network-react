@@ -61,6 +61,36 @@ two:
       Value: 82/100
   genres: Adventure, Sci-Fi
 three:
+  title: Akira
+  year: '1988'
+  rated: R
+  release_date: 16 Jul 1988
+  run_time: 124 min
+  directors:
+  - Katsuhiro Ôtomo
+  writers:
+  - Katsuhiro Ôtomo (screenplay)
+  - Izô Hashimoto (screenplay)
+  - Katsuhiro Ôtomo (manga)
+  actors:
+  - Mitsuo Iwata
+  - Nozomu Sasaki
+  - Mami Koyama
+  - Tesshô Genda
+  plot: A secret military project endangers Neo-Tokyo when it turns a biker gang member
+    into a rampaging psychic psychopath that only two teenagers and a group of psychics
+    can stop.
+  photo: akira-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BM2ZiZTk1ODgtMTZkNS00NTYxLWIxZTUtNWExZGYwZTRjODViXkEyXkFqcGdeQXVyMTE2MzA3MDM@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.1/10
+    - Source: Rotten Tomatoes
+      Value: 88%
+  genres: Animation, Drama, Sci-Fi
+four:
   title: Aladdin
   year: '1992'
   rated: G
@@ -109,7 +139,7 @@ three:
     - Source: Metacritic
       Value: 86/100
   genres: Animation, Adventure, Comedy, Family, Fantasy
-four:
+five:
   title: Alien
   year: '1979'
   rated: R
@@ -141,7 +171,7 @@ four:
     - Source: Metacritic
       Value: 83/100
   genres: Horror, Sci-Fi
-five:
+six:
   title: Amélie
   year: '2001'
   rated: R
@@ -172,7 +202,7 @@ five:
     - Source: Metacritic
       Value: 69/100
   genres: Comedy, Romance
-six:
+seven:
   title: American Psycho
   year: '2000'
   rated: R
@@ -204,7 +234,37 @@ six:
     - Source: Metacritic
       Value: 64/100
   genres: Drama
-seven:
+eight:
+  title: Army of Darkness
+  year: '1992'
+  rated: R
+  release_date: 19 Feb 1993
+  run_time: 81 min
+  directors:
+  - Sam Raimi
+  writers:
+  - Sam Raimi
+  - Ivan Raimi
+  actors:
+  - Bruce Campbell
+  - Embeth Davidtz
+  - Marcus Gilbert
+  - Ian Abercrombie
+  plot: A man is accidentally transported to 1300 A.D., where he must battle an army
+    of the dead and retrieve the Necronomicon so he can return home.
+  photo: army-of-darkness-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BODcyYzM4YTAtNGM5MS00NjU4LTk2Y2ItZjI5NjkzZTk0MmQ1XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.6/10
+    - Source: Rotten Tomatoes
+      Value: 72%
+    - Source: Metacritic
+      Value: 57/100
+  genres: Comedy, Horror
+nine:
   title: Avatar
   year: '2009'
   rated: PG-13
@@ -233,7 +293,7 @@ seven:
     - Source: Metacritic
       Value: 83/100
   genres: Action, Adventure, Fantasy, Sci-Fi
-eight:
+ten:
   title: Before Sunrise
   year: '1995'
   rated: R
@@ -264,7 +324,7 @@ eight:
     - Source: Metacritic
       Value: 77/100
   genres: Drama, Romance
-nine:
+eleven:
   title: Big Hero 6
   year: '2014'
   rated: PG
@@ -300,7 +360,7 @@ nine:
     - Source: Metacritic
       Value: 74/100
   genres: Animation, Action, Adventure, Comedy, Drama, Family, Sci-Fi
-ten:
+twelve:
   title: Blade Runner 2049
   year: '2017'
   rated: R
@@ -333,7 +393,7 @@ ten:
     - Source: Metacritic
       Value: 81/100
   genres: Drama, Sci-Fi
-eleven:
+thirteen:
   title: Blade Runner
   year: '1982'
   rated: R
@@ -364,7 +424,7 @@ eleven:
     - Source: Metacritic
       Value: 89/100
   genres: Sci-Fi
-twelve:
+fourteen:
   title: Borat
   year: '2006'
   rated: R
@@ -402,7 +462,7 @@ twelve:
     - Source: Metacritic
       Value: 89/100
   genres: Comedy
-thirteen:
+fifteen:
   title: Braveheart
   year: '1995'
   rated: R
@@ -431,7 +491,7 @@ thirteen:
     - Source: Metacritic
       Value: 68/100
   genres: Drama
-fourteen:
+sixteen:
   title: Breakfast at Tiffany's
   year: '1961'
   rated: Not Rated
@@ -461,7 +521,7 @@ fourteen:
     - Source: Metacritic
       Value: 76/100
   genres: Comedy, Drama, Romance
-fifteen:
+seventeen:
   title: Bridesmaids
   year: '2011'
   rated: R
@@ -491,7 +551,7 @@ fifteen:
     - Source: Metacritic
       Value: 75/100
   genres: Comedy, Romance
-sixteen:
+eighteen:
   title: Bridget Jones's Baby
   year: '2016'
   rated: R
@@ -524,7 +584,7 @@ sixteen:
     - Source: Metacritic
       Value: 59/100
   genres: Comedy, Drama, Romance
-seventeen:
+nineteen:
   title: Casablanca
   year: '1942'
   rated: PG
@@ -557,7 +617,7 @@ seventeen:
     - Source: Metacritic
       Value: 100/100
   genres: Drama, Romance
-eighteen:
+twenty:
   title: Coco
   year: '2017'
   rated: PG
@@ -592,7 +652,7 @@ eighteen:
     - Source: Metacritic
       Value: 81/100
   genres: Animation, Adventure, Comedy, Family, Fantasy
-nineteen:
+twenty-one:
   title: Conan the Barbarian
   year: '1982'
   rated: R
@@ -624,7 +684,37 @@ nineteen:
     - Source: Metacritic
       Value: 43/100
   genres: Adventure, Fantasy
-twenty:
+twenty-two:
+  title: Coraline
+  year: '2009'
+  rated: PG
+  release_date: 06 Feb 2009
+  run_time: 100 min
+  directors:
+  - Henry Selick
+  writers:
+  - Henry Selick (screenplay)
+  - Neil Gaiman (book)
+  actors:
+  - Dakota Fanning
+  - Teri Hatcher
+  - Jennifer Saunders
+  - Dawn French
+  plot: An adventurous 11-year-old girl finds another world that is a strangely idealized
+    version of her frustrating home, but it has sinister secrets.
+  photo: coraline-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMzQxNjM5NzkxNV5BMl5BanBnXkFtZTcwMzg5NDMwMg@@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.7/10
+    - Source: Rotten Tomatoes
+      Value: 90%
+    - Source: Metacritic
+      Value: 80/100
+  genres: Animation, Drama, Fantasy
+twenty-three:
   title: Deadpool
   year: '2016'
   rated: R
@@ -654,7 +744,7 @@ twenty:
     - Source: Metacritic
       Value: 65/100
   genres: Action, Adventure, Comedy, Sci-Fi
-twenty-one:
+twenty-four:
   title: Die Hard
   year: '1988'
   rated: R
@@ -685,7 +775,7 @@ twenty-one:
     - Source: Metacritic
       Value: 72/100
   genres: Action
-twenty-two:
+twenty-five:
   title: Dirty Dancing
   year: '1987'
   rated: PG-13
@@ -714,7 +804,7 @@ twenty-two:
     - Source: Metacritic
       Value: 65/100
   genres: Drama, Romance
-twenty-three:
+twenty-six:
   title: District 9
   year: '2009'
   rated: R
@@ -744,7 +834,7 @@ twenty-three:
     - Source: Metacritic
       Value: 81/100
   genres: Action, Sci-Fi
-twenty-four:
+twenty-seven:
   title: E.T. The Extra-Terrestrial
   year: '1982'
   rated: PG
@@ -773,7 +863,7 @@ twenty-four:
     - Source: Metacritic
       Value: 91/100
   genres: Family, Sci-Fi
-twenty-five:
+twenty-eight:
   title: Everybody Loves Somebody
   year: '2017'
   rated: PG-13
@@ -803,7 +893,7 @@ twenty-five:
     - Source: Metacritic
       Value: 74/100
   genres: Comedy, Romance
-twenty-six:
+twenty-nine:
   title: Explorers
   year: '1985'
   rated: PG
@@ -831,7 +921,7 @@ twenty-six:
     - Source: Metacritic
       Value: 58/100
   genres: Adventure, Comedy, Family, Romance, Sci-Fi
-twenty-seven:
+thirty:
   title: Fight Club
   year: '1999'
   rated: R
@@ -861,7 +951,7 @@ twenty-seven:
     - Source: Metacritic
       Value: 66/100
   genres: Drama
-twenty-eight:
+thirty-one:
   title: Finding Nemo
   year: '2003'
   rated: G
@@ -894,7 +984,7 @@ twenty-eight:
     - Source: Metacritic
       Value: 90/100
   genres: Animation, Adventure, Comedy, Family
-twenty-nine:
+thirty-two:
   title: Forrest Gump
   year: '1994'
   rated: PG-13
@@ -924,7 +1014,39 @@ twenty-nine:
     - Source: Metacritic
       Value: 82/100
   genres: Drama, Romance
-thirty:
+thirty-three:
+  title: 'Freddy''s Dead: The Final Nightmare'
+  year: '1991'
+  rated: R
+  release_date: 13 Sep 1991
+  run_time: 89 min
+  directors:
+  - Rachel Talalay
+  writers:
+  - Wes Craven (characters)
+  - Rachel Talalay (story)
+  - Michael De Luca (screenplay)
+  actors:
+  - Robert Englund
+  - Lisa Zane
+  - Shon Greenblatt
+  - Lezlie Deane
+  plot: Dream-haunting Freddy Krueger returns once again to prowl the nightmares of
+    Springwood's last surviving teenager, and of a woman whose personal connection
+    to Krueger may mean his doom.
+  photo: freddys-dead-the-final-nightmare-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BOGQ3MTdiYjQtZmU1NC00NmQ5LTg2YTMtYWI0NjA5MzUwZTFkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 4.9/10
+    - Source: Rotten Tomatoes
+      Value: 20%
+    - Source: Metacritic
+      Value: 39/100
+  genres: Fantasy, Horror
+thirty-four:
   title: Friday the 13th
   year: '1980'
   rated: R
@@ -954,7 +1076,7 @@ thirty:
     - Source: Metacritic
       Value: 22/100
   genres: Horror
-thirty-one:
+thirty-five:
   title: Frozen
   year: '2013'
   rated: PG
@@ -989,7 +1111,7 @@ thirty-one:
     - Source: Metacritic
       Value: 74/100
   genres: Animation, Adventure, Comedy, Family, Fantasy
-thirty-two:
+thirty-six:
   title: Get Out
   year: '2017'
   rated: R
@@ -1019,7 +1141,7 @@ thirty-two:
     - Source: Metacritic
       Value: 84/100
   genres: Horror
-thirty-three:
+thirty-seven:
   title: Ghostbusters
   year: '1984'
   rated: PG
@@ -1049,7 +1171,7 @@ thirty-three:
     - Source: Metacritic
       Value: 71/100
   genres: Action, Comedy, Fantasy
-thirty-four:
+thirty-eight:
   title: Gone with the Wind
   year: '1939'
   rated: G
@@ -1081,7 +1203,7 @@ thirty-four:
     - Source: Metacritic
       Value: 97/100
   genres: Drama, Romance
-thirty-five:
+thirty-nine:
   title: Good Will Hunting
   year: '1997'
   rated: R
@@ -1111,7 +1233,7 @@ thirty-five:
     - Source: Metacritic
       Value: 70/100
   genres: Drama, Romance
-thirty-six:
+forty:
   title: Guardians of the Galaxy Vol. 2
   year: '2017'
   rated: PG-13
@@ -1153,7 +1275,7 @@ thirty-six:
     - Source: Metacritic
       Value: 67/100
   genres: Action, Adventure, Comedy, Sci-Fi
-thirty-seven:
+forty-one:
   title: Halloween
   year: '1978'
   rated: R
@@ -1184,7 +1306,7 @@ thirty-seven:
     - Source: Metacritic
       Value: 81/100
   genres: Horror
-thirty-eight:
+forty-two:
   title: 'Harry Potter and the Deathly Hallows: Part 2'
   year: '2011'
   rated: PG-13
@@ -1214,7 +1336,65 @@ thirty-eight:
     - Source: Metacritic
       Value: 87/100
   genres: Adventure, Drama, Fantasy
-thirty-nine:
+forty-three:
+  title: Hellraiser
+  year: '1987'
+  rated: R
+  release_date: 18 Sep 1987
+  run_time: 94 min
+  directors:
+  - Clive Barker
+  writers:
+  - Clive Barker
+  actors:
+  - Andrew Robinson
+  - Clare Higgins
+  - Ashley Laurence
+  - Sean Chapman
+  plot: An unfaithful wife encounters the zombie of her dead lover; the demonic cenobites
+    are pursuing him after he escaped their sadomasochistic underworld.
+  photo: hellraiser-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTkyNzc4NjkwNV5BMl5BanBnXkFtZTgwNzI2Mjc1MDE@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.0/10
+    - Source: Rotten Tomatoes
+      Value: 68%
+    - Source: Metacritic
+      Value: 57/100
+  genres: Horror
+forty-four:
+  title: Hereditary
+  year: '2018'
+  rated: R
+  release_date: '08 Jun 2018'
+  run_time: 127 min
+  directors:
+  - Ari Aster
+  writers:
+  - Ari Aster
+  actors:
+  - Alex Wolff
+  - Gabriel Byrne
+  - Toni Collette
+  - Milly Shapiro
+  plot: After the family matriarch passes away, a grieving family is haunted by tragic
+    and disturbing occurrences, and begin to unravel dark secrets.
+  photo: hereditary-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BOTU5MDg3OGItZWQ1Ny00ZGVmLTg2YTUtMzBkYzQ1YWIwZjlhXkEyXkFqcGdeQXVyNTAzMTY4MDA@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.3/10
+    - Source: Rotten Tomatoes
+      Value: 89%
+    - Source: Metacritic
+      Value: 87/100
+  genres: Drama, Horror
+forty-five:
   title: How to Be Single
   year: '2016'
   rated: R
@@ -1247,7 +1427,7 @@ thirty-nine:
     - Source: Metacritic
       Value: 51/100
   genres: Comedy, Drama, Romance
-forty:
+forty-six:
   title: Inception
   year: '2010'
   rated: PG-13
@@ -1276,7 +1456,7 @@ forty:
     - Source: Metacritic
       Value: 74/100
   genres: Action, Adventure, Sci-Fi
-forty-one:
+forty-seven:
   title: Inherit the Wind
   year: '1960'
   rated: NOT RATED
@@ -1306,7 +1486,7 @@ forty-one:
     - Source: Rotten Tomatoes
       Value: 92%
   genres: Drama
-forty-two:
+forty-eight:
   title: Inside Out
   year: '2015'
   rated: PG
@@ -1345,7 +1525,7 @@ forty-two:
     - Source: Metacritic
       Value: 94/100
   genres: Animation, Adventure, Comedy, Drama, Family, Fantasy
-forty-three:
+forty-nine:
   title: Iron Man 3
   year: '2013'
   rated: PG-13
@@ -1381,7 +1561,7 @@ forty-three:
     - Source: Metacritic
       Value: 62/100
   genres: Action, Adventure, Sci-Fi
-forty-four:
+fifty:
   title: It
   year: '2017'
   rated: R
@@ -1414,7 +1594,7 @@ forty-four:
     - Source: Metacritic
       Value: 69/100
   genres: Horror
-forty-five:
+fifty-one:
   title: Jigsaw
   year: '2017'
   rated: R
@@ -1446,7 +1626,41 @@ forty-five:
     - Source: Metacritic
       Value: 39/100
   genres: Horror
-forty-six:
+fifty-two:
+  title: Kung Fu Panda
+  year: '2008'
+  rated: PG
+  release_date: 06 Jun 2008
+  run_time: 92 min
+  directors:
+  - Mark Osborne
+  - John Stevenson
+  writers:
+  - Jonathan Aibel (screenplay)
+  - Glenn Berger (screenplay)
+  - Ethan Reiff (story)
+  - Cyrus Voris (story)
+  actors:
+  - Jack Black
+  - Dustin Hoffman
+  - Angelina Jolie
+  - Ian McShane
+  plot: The Dragon Warrior has to clash against the savage Tai Lung as China's fate
+    hangs in the balance. However, the Dragon Warrior mantle is supposedly mistaken
+    to be bestowed upon an obese panda who is a novice in martial arts.
+  photo: kung-fu-panda-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BODJkZTZhMWItMDI3Yy00ZWZlLTk4NjQtOTI1ZjU5NjBjZTVjXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.6/10
+    - Source: Rotten Tomatoes
+      Value: 87%
+    - Source: Metacritic
+      Value: 73/100
+  genres: Animation, Action, Adventure, Comedy, Family
+fifty-three:
   title: La La Land
   year: '2016'
   rated: PG-13
@@ -1475,7 +1689,7 @@ forty-six:
     - Source: Metacritic
       Value: 93/100
   genres: Comedy, Drama, Romance
-forty-seven:
+fifty-four:
   title: Labyrinth
   year: '1986'
   rated: PG
@@ -1506,7 +1720,7 @@ forty-seven:
     - Source: Metacritic
       Value: 50/100
   genres: Adventure, Family, Fantasy
-forty-eight:
+fifty-five:
   title: Love Actually
   year: '2003'
   rated: R
@@ -1536,7 +1750,7 @@ forty-eight:
     - Source: Metacritic
       Value: 55/100
   genres: Comedy, Drama, Romance
-forty-nine:
+fifty-six:
   title: Maverick
   year: '1994'
   rated: PG
@@ -1566,7 +1780,7 @@ forty-nine:
     - Source: Metacritic
       Value: 62/100
   genres: Action, Adventure, Comedy
-fifty:
+fifty-seven:
   title: Minions
   year: '2015'
   rated: PG
@@ -1596,7 +1810,100 @@ fifty:
     - Source: Metacritic
       Value: 56/100
   genres: Animation, Action, Adventure, Comedy, Family
-fifty-one:
+fifty-eight:
+  title: Next Gen
+  year: '2018'
+  rated: TV-PG
+  release_date: 07 Sep 2018
+  run_time: 106 min
+  directors:
+  - Kevin R. Adams
+  - Joe Ksander
+  - Ricardo Curtis
+  writers:
+  - Kevin R. Adams
+  - Joe Ksander
+  - Wang Nima (story by)
+  - Ryan W. Smith (additional screenplay material by)
+  actors:
+  - John Krasinski
+  - Charlyne Yi
+  - Jason Sudeikis
+  - Michael Peña
+  plot: A friendship with a top-secret robot turns a lonely girl's life into a thrilling
+    adventure as they take on bullies, evil bots and a scheming madman.
+  photo: next-gen-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTU0MjAwMDkxNV5BMl5BanBnXkFtZTgwMTA4ODIxNjM@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 6.6/10
+    - Source: Rotten Tomatoes
+      Value: 80%
+  genres: Animation, Action, Adventure, Comedy, Family, Sci-Fi
+fifty-nine:
+  title: Night of the Living Dead
+  year: '1968'
+  rated: Not Rated
+  release_date: 04 Oct 1968
+  run_time: 96 min
+  directors:
+  - George A. Romero
+  writers:
+  - John A. Russo (screenplay)
+  - George A. Romero (screenplay)
+  actors:
+  - Duane Jones
+  - Judith O'Dea
+  - Karl Hardman
+  - Marilyn Eastman
+  plot: There is panic throughout the nation as the dead suddenly come back to life.
+    The film follows a group of characters who barricade themselves in an old farmhouse
+    in an attempt to remain safe from these bloodthirsty, flesh-eating monsters.
+  photo: night-of-the-living-dead-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMjRjZjE3OGUtYzIyYy00NGRkLTliYTUtYmI1ZjQ3YmZjYTZiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.9/10
+    - Source: Rotten Tomatoes
+      Value: 97%
+    - Source: Metacritic
+      Value: 89/100
+  genres: Horror
+sixty:
+  title: Persepolis
+  year: '2007'
+  rated: PG-13
+  release_date: 22 Feb 2008
+  run_time: 96 min
+  directors:
+  - Vincent Paronnaud
+  - Marjane Satrapi
+  writers:
+  - Marjane Satrapi (comic)
+  - Vincent Paronnaud (scenario)
+  actors:
+  - Chiara Mastroianni
+  - Danielle Darrieux
+  - Catherine Deneuve
+  - Simon Abkarian
+  plot: A precocious and outspoken Iranian girl grows up during the Islamic Revolution.
+  photo: persepolis-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMGRkZThmYzEtYjQxZC00OWEzLThjYjAtYzFkMjY0NGZkZWI4XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.1/10
+    - Source: Rotten Tomatoes
+      Value: 96%
+    - Source: Metacritic
+      Value: 90/100
+  genres: Animation, Drama
+sixty-one:
   title: 'Pirates of the Caribbean: The Curse of the Black Pearl'
   year: '2003'
   rated: PG-13
@@ -1631,7 +1938,7 @@ fifty-one:
     - Source: Metacritic
       Value: 63/100
   genres: Action, Adventure, Fantasy
-fifty-two:
+sixty-two:
   title: Poltergeist
   year: '1982'
   rated: PG
@@ -1662,7 +1969,7 @@ fifty-two:
     - Source: Metacritic
       Value: 79/100
   genres: Horror
-fifty-three:
+sixty-three:
   title: Pride and Prejudice and Zombies
   year: '2016'
   rated: PG-13
@@ -1693,7 +2000,7 @@ fifty-three:
     - Source: Metacritic
       Value: 45/100
   genres: Action, Horror, Romance
-fifty-four:
+sixty-four:
   title: Pride & Prejudice
   year: '2005'
   rated: PG
@@ -1724,7 +2031,38 @@ fifty-four:
     - Source: Metacritic
       Value: 82/100
   genres: Drama, Romance
-fifty-five:
+sixty-five:
+  title: Princess Mononoke
+  year: '1997'
+  rated: PG-13
+  release_date: 19 Dec 1997
+  run_time: 134 min
+  directors:
+  - Hayao Miyazaki
+  writers:
+  - Hayao Miyazaki
+  - 'Neil Gaiman (adapted by: English version)'
+  actors:
+  - Billy Crudup
+  - Billy Bob Thornton
+  - Minnie Driver
+  - John DiMaggio
+  plot: On a journey to find the cure for a Tatarigami's curse, Ashitaka finds himself
+    in the middle of a war between the forest gods and Tatara, a mining colony. In
+    this quest he also meets San, the Mononoke Hime.
+  photo: princess-mononoke-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTVlNWM4NTAtNDQxYi00YWU5LWIwM2MtZmVjYWFmODZiODE5XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.4/10
+    - Source: Rotten Tomatoes
+      Value: 92%
+    - Source: Metacritic
+      Value: 76/100
+  genres: Animation, Adventure, Fantasy
+sixty-six:
   title: Prometheus
   year: '2012'
   rated: R
@@ -1756,7 +2094,7 @@ fifty-five:
     - Source: Metacritic
       Value: 64/100
   genres: Adventure, Sci-Fi
-fifty-six:
+sixty-seven:
   title: Psycho
   year: '1960'
   rated: R
@@ -1787,7 +2125,7 @@ fifty-six:
     - Source: Metacritic
       Value: 97/100
   genres: Horror
-fifty-seven:
+sixty-eight:
   title: Ratatouille
   year: '2007'
   rated: G
@@ -1823,7 +2161,7 @@ fifty-seven:
     - Source: Metacritic
       Value: 96/100
   genres: Animation, Adventure, Comedy, Drama, Family, Fantasy
-fifty-eight:
+sixty-nine:
   title: Schindler's List
   year: '1993'
   rated: R
@@ -1854,7 +2192,7 @@ fifty-eight:
     - Source: Metacritic
       Value: 93/100
   genres: Drama
-fifty-nine:
+seventy:
   title: Serenity
   year: '2005'
   rated: PG-13
@@ -1883,7 +2221,7 @@ fifty-nine:
     - Source: Metacritic
       Value: 74/100
   genres: Action, Adventure, Sci-Fi
-sixty:
+seventy-one:
   title: Shaun of the Dead
   year: '2004'
   rated: R
@@ -1912,7 +2250,7 @@ sixty:
     - Source: Metacritic
       Value: 76/100
   genres: Comedy, Horror
-sixty-one:
+seventy-two:
   title: Shrek 2
   year: '2004'
   rated: PG
@@ -1953,7 +2291,7 @@ sixty-one:
     - Source: Metacritic
       Value: 75/100
   genres: Animation, Adventure, Comedy, Family, Fantasy, Romance
-sixty-two:
+seventy-three:
   title: Shrek
   year: '2001'
   rated: PG
@@ -1991,7 +2329,7 @@ sixty-two:
     - Source: Metacritic
       Value: 84/100
   genres: Animation, Adventure, Comedy, Family, Fantasy
-sixty-three:
+seventy-four:
   title: Skyfall
   year: '2012'
   rated: PG-13
@@ -2024,7 +2362,7 @@ sixty-three:
     - Source: Metacritic
       Value: 81/100
   genres: Action, Adventure
-sixty-four:
+seventy-five:
   title: Slumdog Millionaire
   year: '2008'
   rated: R
@@ -2055,7 +2393,7 @@ sixty-four:
     - Source: Metacritic
       Value: 86/100
   genres: Drama, Romance
-sixty-five:
+seventy-six:
   title: Spirited Away
   year: '2001'
   rated: PG
@@ -2086,7 +2424,7 @@ sixty-five:
     - Source: Metacritic
       Value: 96/100
   genres: Animation, Adventure, Family, Fantasy
-sixty-six:
+seventy-seven:
   title: 'Star Trek II: The Wrath of Khan'
   year: '1982'
   rated: PG
@@ -2119,7 +2457,7 @@ sixty-six:
     - Source: Metacritic
       Value: 67/100
   genres: Action, Adventure, Sci-Fi
-sixty-seven:
+seventy-eight:
   title: 'Star Wars: Episode VI - Return of the Jedi'
   year: '1983'
   rated: PG
@@ -2152,7 +2490,7 @@ sixty-seven:
     - Source: Metacritic
       Value: 58/100
   genres: Action, Adventure, Fantasy, Sci-Fi
-sixty-eight:
+seventy-nine:
   title: 'Star Wars: Episode V - The Empire Strikes Back'
   year: '1980'
   rated: PG
@@ -2184,7 +2522,7 @@ sixty-eight:
     - Source: Metacritic
       Value: 82/100
   genres: Action, Adventure, Fantasy, Sci-Fi
-sixty-nine:
+eighty:
   title: 'Star Wars: Episode IV - A New Hope'
   year: '1977'
   rated: PG
@@ -2214,7 +2552,7 @@ sixty-nine:
     - Source: Metacritic
       Value: 90/100
   genres: Action, Adventure, Fantasy, Sci-Fi
-seventy:
+eighty-one:
   title: Superbad
   year: '2007'
   rated: R
@@ -2244,7 +2582,7 @@ seventy:
     - Source: Metacritic
       Value: 76/100
   genres: Comedy
-seventy-one:
+eighty-two:
   title: Tangled
   year: '2010'
   rated: PG
@@ -2277,7 +2615,7 @@ seventy-one:
     - Source: Metacritic
       Value: 71/100
   genres: Animation, Adventure, Comedy, Family, Fantasy, Romance
-seventy-two:
+eighty-three:
   title: The 40-Year-Old Virgin
   year: '2005'
   rated: R
@@ -2307,7 +2645,7 @@ seventy-two:
     - Source: Metacritic
       Value: 73/100
   genres: Comedy, Romance
-seventy-three:
+eighty-four:
   title: 'Avengers: Age of Ultron'
   year: '2015'
   rated: PG-13
@@ -2342,7 +2680,7 @@ seventy-three:
     - Source: Metacritic
       Value: 66/100
   genres: Action, Adventure, Sci-Fi
-seventy-four:
+eighty-five:
   title: The Avengers
   year: '2012'
   rated: PG-13
@@ -2374,7 +2712,7 @@ seventy-four:
     - Source: Metacritic
       Value: 69/100
   genres: Action, Adventure, Sci-Fi
-seventy-five:
+eighty-six:
   title: The Babadook
   year: '2014'
   rated: Not Rated
@@ -2404,7 +2742,7 @@ seventy-five:
     - Source: Metacritic
       Value: 86/100
   genres: Drama, Horror
-seventy-six:
+eighty-seven:
   title: The Big Sick
   year: '2017'
   rated: R
@@ -2436,7 +2774,38 @@ seventy-six:
     - Source: Metacritic
       Value: 86/100
   genres: Comedy, Drama, Romance
-seventy-seven:
+eighty-eight:
+  title: The Blair Witch Project
+  year: '1999'
+  rated: R
+  release_date: 30 Jul 1999
+  run_time: 81 min
+  directors:
+  - Daniel Myrick
+  - Eduardo Sánchez
+  writers:
+  - Daniel Myrick
+  - Eduardo Sánchez
+  actors:
+  - Heather Donahue
+  - Joshua Leonard
+  - Michael C. Williams
+  - Bob Griffin
+  plot: Three film students vanish after traveling into a Maryland forest to film
+    a documentary on the local Blair Witch legend, leaving only their footage behind.
+  photo: the-blair-witch-project-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BNzQ1NDBlNDItMDAyYS00YTI2LTgwMmYtMzAwMzg4NDFlM2ZmXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 6.4/10
+    - Source: Rotten Tomatoes
+      Value: 87%
+    - Source: Metacritic
+      Value: 81/100
+  genres: Horror
+eighty-nine:
   title: 'The Chronicles of Narnia: The Lion, the Witch and the Wardrobe'
   year: '2005'
   rated: PG
@@ -2469,7 +2838,7 @@ seventy-seven:
     - Source: Metacritic
       Value: 75/100
   genres: Adventure, Family, Fantasy
-seventy-eight:
+ninety:
   title: The Conjuring
   year: '2013'
   rated: R
@@ -2499,7 +2868,7 @@ seventy-eight:
     - Source: Metacritic
       Value: 68/100
   genres: Horror
-seventy-nine:
+ninety-one:
   title: The Dark Knight
   year: '2008'
   rated: PG-13
@@ -2533,7 +2902,7 @@ seventy-nine:
     - Source: Metacritic
       Value: 84/100
   genres: Action, Drama
-eighty:
+ninety-two:
   title: The English Patient
   year: '1996'
   rated: R
@@ -2563,7 +2932,7 @@ eighty:
     - Source: Metacritic
       Value: 87/100
   genres: Drama, Romance
-eighty-one:
+ninety-three:
   title: The Exorcist
   year: '1973'
   rated: R
@@ -2593,7 +2962,7 @@ eighty-one:
     - Source: Metacritic
       Value: 82/100
   genres: Horror
-eighty-two:
+ninety-four:
   title: The Godfather
   year: '1972'
   rated: R
@@ -2624,7 +2993,7 @@ eighty-two:
     - Source: Metacritic
       Value: 100/100
   genres: Drama
-eighty-three:
+ninety-five:
   title: The Goonies
   year: '1985'
   rated: PG
@@ -2654,7 +3023,7 @@ eighty-three:
     - Source: Metacritic
       Value: 60/100
   genres: Adventure, Comedy, Family
-eighty-four:
+ninety-six:
   title: The Hangover
   year: '2009'
   rated: R
@@ -2685,7 +3054,7 @@ eighty-four:
     - Source: Metacritic
       Value: 73/100
   genres: Comedy
-eighty-five:
+ninety-seven:
   title: The Incredibles
   year: '2004'
   rated: PG
@@ -2712,7 +3081,7 @@ eighty-five:
     - Source: Metacritic
       Value: 90/100
   genres: Animation, Action, Adventure, Family
-eighty-six:
+ninety-eight:
   title: The Interview
   year: '2014'
   rated: R
@@ -2746,7 +3115,108 @@ eighty-six:
     - Source: Metacritic
       Value: 52/100
   genres: Comedy
-eighty-seven:
+ninety-nine:
+  title: The Iron Giant
+  year: '1999'
+  rated: PG
+  release_date: 06 Aug 1999
+  run_time: 86 min
+  directors:
+  - Brad Bird
+  writers:
+  - Tim McCanlies (screenplay by)
+  - Brad Bird (screen story by)
+  - Ted Hughes (based on the book "The Iron Man" by)
+  actors:
+  - Jennifer Aniston
+  - Harry Connick Jr.
+  - Vin Diesel
+  - James Gammon
+  plot: A young boy befriends a giant robot from outer space that a paranoid government
+    agent wants to destroy.
+  photo: the-iron-giant-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMjIxNDU2Njk0OV5BMl5BanBnXkFtZTgwODc3Njc3NjE@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.0/10
+    - Source: Rotten Tomatoes
+      Value: 96%
+    - Source: Metacritic
+      Value: 85/100
+  genres: Animation, Action, Adventure, Comedy, Drama, Family, Sci-Fi
+one hundred:
+  title: The Lego Movie
+  year: '2014'
+  rated: PG
+  release_date: 07 Feb 2014
+  run_time: 100 min
+  directors:
+  - Phil Lord
+  - Christopher Miller
+  writers:
+  - Phil Lord (screenplay)
+  - Christopher Miller (screenplay)
+  - Dan Hageman (story)
+  - Kevin Hageman (story)
+  - Phil Lord (story)
+  - Christopher Miller (story)
+  - Ole Kirk Christiansen (based on LEGO Construction Toys created by)
+  - Godtfred Kirk Christiansen (based on LEGO Construction Toys created by)
+  - Jens Nygaard Knudsen (based on LEGO Construction Toys created by)
+  - 'Peter Laird (characters created by: Teenage Mutant Ninja Turtles)'
+  - 'Kevin Eastman (characters created by: Teenage Mutant Ninja Turtles)'
+  actors:
+  - Will Arnett
+  - Elizabeth Banks
+  - Craig Berry
+  - Alison Brie
+  plot: An ordinary LEGO construction worker, thought to be the prophesied as "special",
+    is recruited to join a quest to stop an evil tyrant from gluing the LEGO universe
+    into eternal stasis.
+  photo: the-lego-movie-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTg4MDk1ODExN15BMl5BanBnXkFtZTgwNzIyNjg3MDE@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.8/10
+    - Source: Rotten Tomatoes
+      Value: 95%
+    - Source: Metacritic
+      Value: 83/100
+  genres: Animation, Action, Adventure, Comedy, Family, Fantasy
+one hundred and one:
+  title: The Others
+  year: '2001'
+  rated: PG-13
+  release_date: 10 Aug 2001
+  run_time: 104 min
+  directors:
+  - Alejandro Amenábar
+  writers:
+  - Alejandro Amenábar
+  actors:
+  - Nicole Kidman
+  - Fionnula Flanagan
+  - Christopher Eccleston
+  - Alakina Mann
+  plot: A woman who lives in her darkened old family house with her two photosensitive
+    children becomes convinced that the home is haunted.
+  photo: the-others-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTAxMDE4Mzc3ODNeQTJeQWpwZ15BbWU4MDY2Mjg4MDcx._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.6/10
+    - Source: Rotten Tomatoes
+      Value: 84%
+    - Source: Metacritic
+      Value: 74/100
+  genres: Horror
+one hundred and two:
   title: The Lion King
   year: '1994'
   rated: G
@@ -2805,7 +3275,7 @@ eighty-seven:
     - Source: Metacritic
       Value: 83/100
   genres: Animation, Adventure, Drama, Family
-eighty-eight:
+one hundred and three:
   title: 'The Lord of the Rings: The Fellowship of the Ring'
   year: '2001'
   rated: PG-13
@@ -2837,7 +3307,7 @@ eighty-eight:
     - Source: Metacritic
       Value: 92/100
   genres: Adventure, Drama, Fantasy
-eighty-nine:
+one hundred and four:
   title: 'The Lord of the Rings: The Return of the King'
   year: '2003'
   rated: PG-13
@@ -2869,7 +3339,7 @@ eighty-nine:
     - Source: Metacritic
       Value: 94/100
   genres: Adventure, Drama, Fantasy
-ninety:
+one hundred and five:
   title: 'The Lord of the Rings: The Two Towers'
   year: '2002'
   rated: PG-13
@@ -2903,7 +3373,7 @@ ninety:
     - Source: Metacritic
       Value: 87/100
   genres: Adventure, Drama, Fantasy
-ninety-one:
+one hundred and six:
   title: The Matrix
   year: '1999'
   rated: R
@@ -2934,7 +3404,7 @@ ninety-one:
     - Source: Metacritic
       Value: 73/100
   genres: Action, Sci-Fi
-ninety-two:
+one hundred and seven:
   title: The NeverEnding Story
   year: '1984'
   rated: PG
@@ -2966,7 +3436,7 @@ ninety-two:
     - Source: Metacritic
       Value: 46/100
   genres: Adventure, Drama, Family, Fantasy
-ninety-three:
+one hundred and eight:
   title: The Nightmare Before Christmas
   year: '1993'
   rated: PG
@@ -2997,7 +3467,7 @@ ninety-three:
     - Source: Metacritic
       Value: 82/100
   genres: Animation, Family, Fantasy
-ninety-four:
+one hundred and nine:
   title: The Orphanage
   year: '2007'
   rated: R
@@ -3027,7 +3497,7 @@ ninety-four:
     - Source: Metacritic
       Value: 74/100
   genres: Drama, Horror
-ninety-five:
+one hundred and ten:
   title: The Princess Bride
   year: '1987'
   rated: PG
@@ -3058,7 +3528,7 @@ ninety-five:
     - Source: Metacritic
       Value: 77/100
   genres: Adventure, Family, Fantasy, Romance
-ninety-six:
+one hundred and eleven:
   title: The Ring
   year: '2002'
   rated: PG-13
@@ -3088,7 +3558,7 @@ ninety-six:
     - Source: Metacritic
       Value: 57/100
   genres: Horror
-ninety-seven:
+one hundred and twelve:
   title: The Sandlot
   year: '1993'
   rated: PG
@@ -3116,7 +3586,7 @@ ninety-seven:
     - Source: Rotten Tomatoes
       Value: 57%
   genres: Comedy, Drama, Family
-ninety-eight:
+one hundred and thirteen:
   title: The Shawshank Redemption
   year: '1994'
   rated: R
@@ -3146,7 +3616,7 @@ ninety-eight:
     - Source: Metacritic
       Value: 80/100
   genres: Drama
-ninety-nine:
+one hundred and fourteen:
   title: The Shining
   year: '1980'
   rated: R
@@ -3178,7 +3648,7 @@ ninety-nine:
     - Source: Metacritic
       Value: 63/100
   genres: Drama, Horror
-one hundred:
+one hundred and fifteen:
   title: The Silence of the Lambs
   year: '1991'
   rated: R
@@ -3208,7 +3678,36 @@ one hundred:
     - Source: Metacritic
       Value: 85/100
   genres: Drama
-one hundred and one:
+one hundred and sixteen:
+  title: The Sixth Sense
+  year: '1999'
+  rated: PG-13
+  release_date: 06 Aug 1999
+  run_time: 107 min
+  directors:
+  - M. Night Shyamalan
+  writers:
+  - M. Night Shyamalan
+  actors:
+  - Bruce Willis
+  - Haley Joel Osment
+  - Toni Collette
+  - Olivia Williams
+  plot: A boy who communicates with spirits seeks the help of a disheartened child
+    psychologist.
+  photo: the-sixth-sense-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMWM4NTFhYjctNzUyNi00NGMwLTk3NTYtMDIyNTZmMzRlYmQyXkEyXkFqcGdeQXVyMTAwMzUyOTc@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 8.1/10
+    - Source: Rotten Tomatoes
+      Value: 85%
+    - Source: Metacritic
+      Value: 64/100
+  genres: Drama
+one hundred and seventeen:
   title: The Terminator
   year: '1984'
   rated: R
@@ -3240,7 +3739,7 @@ one hundred and one:
     - Source: Metacritic
       Value: 84/100
   genres: Action, Sci-Fi
-one hundred and two:
+one hundred and eighteen:
   title: The Thing
   year: '1982'
   rated: R
@@ -3270,7 +3769,7 @@ one hundred and two:
     - Source: Metacritic
       Value: 57/100
   genres: Horror, Sci-Fi
-one hundred and three:
+one hundred and nineteen:
   title: The Witch
   year: '2015'
   rated: R
@@ -3299,7 +3798,7 @@ one hundred and three:
     - Source: Metacritic
       Value: 83/100
   genres: Horror
-one hundred and four:
+one hundred and twenty:
   title: The Wizard of Oz
   year: '1939'
   rated: PG
@@ -3337,7 +3836,7 @@ one hundred and four:
     - Source: Metacritic
       Value: 100/100
   genres: Adventure, Family, Fantasy
-one hundred and five:
+one hundred and twenty-one:
   title: 'Thor: Ragnarok'
   year: '2017'
   rated: PG-13
@@ -3372,7 +3871,7 @@ one hundred and five:
     - Source: Metacritic
       Value: 74/100
   genres: Action, Adventure, Comedy, Fantasy, Sci-Fi
-one hundred and six:
+one hundred and twenty-two:
   title: Time Bandits
   year: '1981'
   rated: PG
@@ -3402,7 +3901,7 @@ one hundred and six:
     - Source: Metacritic
       Value: 79/100
   genres: Adventure, Comedy, Fantasy, Sci-Fi
-one hundred and seven:
+one hundred and twenty-three:
   title: Titanic
   year: '1997'
   rated: PG-13
@@ -3431,7 +3930,7 @@ one hundred and seven:
     - Source: Metacritic
       Value: 75/100
   genres: Drama, Romance
-one hundred and eight:
+one hundred and twenty-four:
   title: Toy Story 3
   year: '2010'
   rated: G
@@ -3464,7 +3963,37 @@ one hundred and eight:
     - Source: Metacritic
       Value: 92/100
   genres: Animation, Adventure, Comedy, Family, Fantasy
-one hundred and nine:
+one hundred and twenty-five:
+  title: Train to Busan
+  year: '2016'
+  rated: Not Rated
+  release_date: 20 Jul 2016
+  run_time: 118 min
+  directors:
+  - Sang-ho Yeon
+  writers:
+  - Joo-Suk Park
+  - Sang-ho Yeon (screenplay)
+  actors:
+  - Yoo Gong
+  - Yu-mi Jung
+  - Dong-seok Ma
+  - Su-an Kim
+  plot: While a zombie virus breaks out in South Korea, passengers struggle to survive
+    on the train from Seoul to Busan.
+  photo: train-to-busan-poster.jpg
+  logo: 
+  poster: https://m.media-amazon.com/images/M/MV5BMTkwOTQ4OTg0OV5BMl5BanBnXkFtZTgwMzQyOTM0OTE@._V1_SX300.jpg
+  ratings:
+    ratings:
+    - Source: Internet Movie Database
+      Value: 7.5/10
+    - Source: Rotten Tomatoes
+      Value: 95%
+    - Source: Metacritic
+      Value: 72/100
+  genres: Action, Horror
+one hundred and twenty-six:
   title: Trainwreck
   year: '2015'
   rated: R
@@ -3493,7 +4022,7 @@ one hundred and nine:
     - Source: Metacritic
       Value: 75/100
   genres: Comedy, Drama, Romance
-one hundred and ten:
+one hundred and twenty-seven:
   title: 'Transformers: Age of Extinction'
   year: '2014'
   rated: PG-13
@@ -3522,7 +4051,7 @@ one hundred and ten:
     - Source: Metacritic
       Value: 32/100
   genres: Action, Adventure, Sci-Fi
-one hundred and eleven:
+one hundred and twenty-eight:
   title: Up
   year: '2009'
   rated: PG
@@ -3556,7 +4085,7 @@ one hundred and eleven:
     - Source: Metacritic
       Value: 88/100
   genres: Animation, Adventure, Comedy, Family
-one hundred and twelve:
+one hundred and twenty-nine:
   title: Wedding Crashers
   year: '2005'
   rated: R
@@ -3587,7 +4116,7 @@ one hundred and twelve:
     - Source: Metacritic
       Value: 64/100
   genres: Comedy, Romance
-one hundred and thirteen:
+one hundred and thirty:
   title: When Harry Met Sally
   year: '1989'
   rated: R
@@ -3616,7 +4145,7 @@ one hundred and thirteen:
     - Source: Metacritic
       Value: 76/100
   genres: Comedy, Drama, Romance
-one hundred and fourteen:
+one hundred and thirty-one:
   title: Willow
   year: '1988'
   rated: PG
@@ -3646,7 +4175,7 @@ one hundred and fourteen:
     - Source: Metacritic
       Value: 47/100
   genres: Action, Adventure, Drama, Fantasy, Romance
-one hundred and fifteen:
+one hundred and thirty-two:
   title: Wreck-It Ralph
   year: '2012'
   rated: PG

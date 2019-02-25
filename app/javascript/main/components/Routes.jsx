@@ -11,7 +11,7 @@ import SearchResults from '../scenes/Search/components/SearchResults'
 const Routes = (props) => (
   <Switch>
     <Route exact path="/">
-      <Home {...props} />
+      <Home slideLength={props.slideLength} genres={props.genres} />
     </Route>
     <Route
       path={`/genres/:genreId`}
@@ -22,10 +22,10 @@ const Routes = (props) => (
       render={(routeProps) => <MovieDisplay {...props} {...routeProps} />}
     />
     <Route path="/recent">
-      <Home {...props} />
+      <Home slideLength={props.slideLength} genres={props.genres} />
     </Route>
     <Route path="/my-list">
-      <Home {...props} />
+      <Home slideLength={props.slideLength} genres={props.genres} />
     </Route>
     <Route
       path="/search"
