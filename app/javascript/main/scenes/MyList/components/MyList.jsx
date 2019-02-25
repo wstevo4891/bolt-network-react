@@ -29,11 +29,14 @@ export default class MyList extends Component {
 
     if (movies === null) return null
 
+    console.log('MyList Movies')
+    console.log(JSON.stringify(movies))
+
     return(
       <div className="display-container">
         <div className="row">
           <div className="col-12 mb-4">
-            <h1 style={{ color: 'white' }}>Recently Added</h1>
+            <h1 style={{ color: 'white' }}>My List</h1>
           </div>
         </div>
 
@@ -59,7 +62,7 @@ export default class MyList extends Component {
   }
 
   fetchMyList = () => {
-    let list = localStorage.getItem('MyList')
+    let list = JSON.parse(localStorage.getItem('MyList'))
 
     if (list === null) {
       list = []

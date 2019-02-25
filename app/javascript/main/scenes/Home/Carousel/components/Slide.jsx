@@ -27,7 +27,11 @@ const Slide = (props) => {
               <i className="fa fa-play"></i>PLAY
             </Link>
 
-            <a href="#" className="btn-clear">
+            <a
+              href="#"
+              className="btn-clear"
+              onClick={(event) => props.addToList(event, movie.id)}
+            >
               <i className="fa fa-plus"></i>MY LIST
             </a>
           </div>

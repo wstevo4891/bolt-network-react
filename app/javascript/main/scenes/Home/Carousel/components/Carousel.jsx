@@ -3,6 +3,7 @@
 import React, { Component } from 'react'
 
 import API from '../../../../services/API'
+import MyListService from '../../../services/MyListService'
 import Slide from './Slide'
 
 export default class Carousel extends Component {
@@ -25,7 +26,12 @@ export default class Carousel extends Component {
       <div id="carouselMain" className="carousel slide carousel-fade" data-ride="false">
         <div className="carousel-inner">
           {movies.map((movie, index) =>
-            <Slide key={index} index={index} movie={movie} />
+            <Slide
+              key={index}
+              index={index}
+              movie={movie}
+              addToList={this.addToList}
+            />
           )}
         </div>
 
@@ -80,5 +86,12 @@ export default class Carousel extends Component {
         console.error('Error in Carousel.fetchMovies')
         console.error(error)
       })
+  }
+
+  addToList = (event, movieId) => {
+    event.preventDefault()
+    event.stopPropagation()
+
+    return new MyListService(movieId).add()
   }
 }
