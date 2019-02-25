@@ -7,6 +7,7 @@ import Home from '../scenes/Home/components/Home'
 import GenreDisplay from '../scenes/Genre/components/GenreDisplay'
 import MovieDisplay from '../scenes/Movie/components/MovieDisplay'
 import RecentlyAdded from '../scenes/Recent/components/RecentlyAdded'
+import MyList from '../scenes/MyList/components/MyList'
 import SearchResults from '../scenes/Search/components/SearchResults'
 
 const Routes = (props) => (
@@ -30,7 +31,7 @@ const Routes = (props) => (
     </Route>
 
     <Route path="/my-list">
-      <Home slideLength={props.slideLength} genres={props.genres} />
+      <MyList slideLength={props.slideLength} />
     </Route>
 
     <Route
