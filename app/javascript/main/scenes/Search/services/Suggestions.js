@@ -7,7 +7,7 @@ export default class Suggestions {
   }
 
   call = () => {
-    if (this.genres.length > 0) {
+    if (this.genres && this.genres.length > 0) {
       return this.fullSuggestions()
     } else {
       return this.movieLinks()
@@ -27,8 +27,10 @@ export default class Suggestions {
   }
 
   movieLinks = () => {
-    return this.movies.map((movie) => {
-      return { name: movie.title, link: movie.url }
-    })
+    if (this.movies && this.movies.length > 0) {
+      return this.movies.map((movie) => {
+        return { name: movie.title, link: movie.url }
+      })
+    } else return []
   }
 }

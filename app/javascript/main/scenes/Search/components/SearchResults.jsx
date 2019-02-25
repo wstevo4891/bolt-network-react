@@ -5,8 +5,10 @@ import { Link } from 'react-router-dom'
 import queryString from 'query-string'
 
 import API from '../../../services/API'
-import SuggestionsList from './SuggestionsList'
-import Results from '../../components/Results'
+import ResultsDisplay from './ResultsDisplay'
+import NotFound from './NotFound'
+// import SuggestionsList from './SuggestionsList'
+// import Results from '../../components/Results'
 
 export default class SearchResults extends Component {
   constructor(props) {
@@ -41,25 +43,18 @@ export default class SearchResults extends Component {
   render() {
     const { slideLength, query, genres, movies } = this.state
 
-    if (genres === null && movies === null) return null
+    if (this.resultsNotFound(genres, movies)) {
+      return <NotFound query={query} />
 
-    return(
-      <div className="search-results">
-        <div className="display-container">
-          <div className="row">
-            <div className="col-12">
-              <div className="suggestions">
-                <span className="suggestionsLabel">Explore titles related to: </span>
-
-                <SuggestionsList genres={genres} movies={movies} />
-              </div>
-            </div>
-          </div>
-
-          <Results movies={movies} slideLength={slideLength} />
-        </div>
-      </div>
-    )
+    } else {
+      return(
+        <ResultsDisplay
+          genres={genres}
+          movies={movies}
+          slideLength={slideLength}
+        />
+      )
+    }
   }
 
   componentDidMount() {
@@ -79,6 +74,11 @@ export default class SearchResults extends Component {
   componentDidUpdate() {
     console.log('SearchResults Updated')
     console.log(this.state)
+  }
+
+  resultsNotFound = (genres, movies) => {
+    return genres === null || genres.length === 0 &&
+      movies === null || movies.length === 0
   }
 
   fetchResults = (query, slideLength) => {

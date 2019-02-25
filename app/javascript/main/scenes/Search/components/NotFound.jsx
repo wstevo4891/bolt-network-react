@@ -7,8 +7,8 @@ import StaticSlides from '../../services/StaticSlides'
 
 const NotFound = (props) => (
   <div className="row justify-content-center">
-    <div className="col-6 col-sm-4 mt-5">
-      <p>Your search for {props.query} did not have any matches.</p>
+    <div className="col-6 col-sm-4 not-found">
+      <p>Your search for "{props.query}" did not have any matches.</p>
 
       <p>Suggestions:</p>
       <ul>

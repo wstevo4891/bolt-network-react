@@ -30,7 +30,7 @@ class SearchResults
     
     movies_list = full_movies_search
 
-    { genres: @genres, movies: movies_list }
+    { genres: @genres.to_a, movies: movies_list }
   end
 
   def full_movies_search
@@ -47,16 +47,20 @@ class SearchResults
 
   def genres_by_first_char
     Genre.where('lower(name) LIKE :prefix', prefix: "#{query}%")
+  rescue ActiveRecord::RecordNotFound
+    []
   end
 
   def movies_by_first_char
     Movie.where('lower(title) LIKE :prefix', prefix: "#{query}%")
+  rescue ActiveRecord::RecordNotFound
+    []
   end
 
   def full_match_results
     @genres = genre_name_match
 
-    { genres: @genres, movies: movie_results }
+    { genres: @genres.to_a, movies: movie_results }
   end
 
   def movie_results
@@ -69,25 +73,19 @@ class SearchResults
 
   def genre_name_match
     Genre.where(Genre.arel_table[:name].lower.matches("%#{query}%"))
+  rescue ActiveRecord::RecordNotFound
+    []
   end
 
   def movie_title_match
     Movie.where(Movie.arel_table[:title].lower.matches("%#{query}%"))
+  rescue ActiveRecord::RecordNotFound
+    []
   end
 
   def concat_movies_by_genre
-    @movies = Movie.all
-
-    genre_ids_list.each_with_object([]) do |genre_id, arr|
-      arr.concat(movies_by_genre(genre_id))
+    genres.each_with_object([]) do |genre, arr|
+      arr.concat(genre.movies)
     end
-  end
-
-  def genre_ids_list
-    genres.map { |genre| genre.id }
-  end
-
-  def movies_by_genre(genre_id)
-    movies.select { |movie| movie.genre_ids.include?(genre_id) }
   end
 end

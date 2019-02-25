@@ -8,6 +8,8 @@ export default class StaticSlides {
   }
 
   call = () => {
+    if (this.items === null || this.items.length === 0) return []
+
     let counter = 0
     let itemCount = 0
     let arr = []

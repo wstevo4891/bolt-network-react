@@ -31,4 +31,12 @@ class SearchResultsTest < ActiveSupport::TestCase
     assert_not_nil results
     assert_not_predicate results[:movies], :empty?
   end
+
+  test 'should handle results not found' do
+    puts __method__
+    results = SearchResults.create('&')
+    puts results
+
+    assert_not_nil results
+  end
 end
