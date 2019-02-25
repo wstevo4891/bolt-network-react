@@ -16,6 +16,8 @@ export default {
 
     byGenre: (genreId) => axios.get(`/api/movies/by-genre/${genreId}`),
 
+    recent: () => axios.get('/api/movies/recent'),
+
     search: (titles) => axios.post('/api/movies/search', { titles: titles })
   },
 

@@ -31,6 +31,8 @@ Rails.application.routes.draw do
   # end
 
   namespace :api, defaults: { format: :json } do
+    get '/movies/recent', to: 'movies/recent#show'
+
     resources :quotes, only: :show
     resources :movies, only: %i[index show]
     resources :genres, only: %i[index show]
@@ -43,6 +45,7 @@ Rails.application.routes.draw do
 
     namespace :movies do
       get '/by-genre/:genre_id', to: 'by_genre#show'
+
       post '/search', to: 'search#show'
     end
   end
