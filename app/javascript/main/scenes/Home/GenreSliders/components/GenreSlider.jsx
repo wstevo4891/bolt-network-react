@@ -79,7 +79,7 @@ export default class GenreSlider extends Component {
   }
 
   handleTransitionEnd = () => {
-    console.log('Slider transition is over')
+    // console.log('Slider transition is over')
 
     const position = this.determinePosition()
 
@@ -110,8 +110,8 @@ export default class GenreSlider extends Component {
     }
   }
 
-  componentDidUpdate() {
-    console.log('GenreSlider updated')
-    console.log(this.state)
-  }
+  // componentDidUpdate() {
+  //   console.log('GenreSlider updated')
+  //   console.log(this.state)
+  // }
 }

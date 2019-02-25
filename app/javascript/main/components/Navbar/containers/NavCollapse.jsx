@@ -12,24 +12,50 @@ export default class NavCollapse extends Component {
     super(props);
     this.state = {
       genres: this.props.genres,
-      active: 'home'
+      active: 'home-link'
     }
   }
 
   render() {
-    const { genres } = this.state
+    const { genres, active } = this.state
     const location = window.location.pathname
 
     return(
       <div className="collapse navbar-collapse" id="navbarContent">
         <ul className="navbar-nav mr-auto">
-          <NavItem active={true} srOnly="(current)" href="/" text="Home" />
+          <NavItem
+            id="home-link"
+            active={active}
+            srOnly="(current)"
+            href="/"
+            text="Home"
+            handleClick={this.handleClick}
+          />
 
-          <Dropdown id="genresDropdown" text="Genres" links={genres} />
+          <Dropdown
+            id="genre-link"
+            active={active}
+            dropdownId="genresDropdown"
+            text="Genres"
+            links={genres}
+            handleClick={this.handleClick}
+          />
 
-          <NavItem active={false} href="/recent" text="Recently Added" />
+          <NavItem
+            id="recent-link"
+            active={active}
+            href="/recent"
+            text="Recently Added"
+            handleClick={this.handleClick}
+          />
 
-          <NavItem active={false} href="/my-list" text="My List" />
+          <NavItem
+            id="my-list-link"
+            active={active}
+            href="/my-list"
+            text="My List"
+            handleClick={this.handleClick}
+          />
         </ul>
 
         <ul className="navbar-nav navbar-right">
@@ -37,5 +63,19 @@ export default class NavCollapse extends Component {
         </ul>
       </div>
     )
+  }
+
+  handleClick = (event) => {
+    const targetId = event.target.id
+
+    if (targetId.match(/genre-link/)) {
+      this.setState({
+        active: 'genre-link'
+      })
+    } else {
+      this.setState({
+        active: targetId
+      })
+    }
   }
 }

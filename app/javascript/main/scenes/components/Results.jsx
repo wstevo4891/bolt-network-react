@@ -9,7 +9,7 @@ const Results = (props) => {
   const { movies, slideLength } = props
 
   const slides = new StaticSlides(movies, slideLength).call()
-  console.log('slides: ' + JSON.stringify(slides))
+  // console.log('slides: ' + JSON.stringify(slides))
 
   return(
     <div className="row">

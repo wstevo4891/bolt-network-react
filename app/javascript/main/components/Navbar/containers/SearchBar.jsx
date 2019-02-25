@@ -38,10 +38,10 @@ export default class SearchBar extends Component {
   }
 
   render() {
-    console.log('SearchBar Rendering')
-    console.log(this.state.location)
-    console.log('###########################################')
-    console.log(this.props)
+    // console.log('SearchBar Rendering')
+    // console.log(this.state.location)
+    // console.log('###########################################')
+    // console.log(this.props)
 
     const display = this.state.display
     const boxClass = display ? 'searchBox d-none' : 'searchBox'
@@ -126,8 +126,8 @@ export default class SearchBar extends Component {
   }
 
   updateQuery = (query) => {
-    console.log('Update Query')
-    console.log(query)
+    // console.log('Update Query')
+    // console.log(query)
 
     if (query && query !== '') {
       this.setState({

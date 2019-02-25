@@ -21,7 +21,7 @@ export default class SliderContainer extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('SliderContainer is receiving props')
+    // console.log('SliderContainer is receiving props')
 
     this.setState({
       slides: nextProps.slides,
@@ -33,7 +33,7 @@ export default class SliderContainer extends Component {
   }
 
   render() {
-    console.log('SliderContainer is rendering!')
+    // console.log('SliderContainer is rendering!')
 
     const { slides, slideLength, start,
             next, prev, hoverItem } = this.state
@@ -80,10 +80,10 @@ export default class SliderContainer extends Component {
     })
   }
 
-  componentDidUpdate() {
-    console.log('SliderContainer Updated')
-    console.log(this.state)
-  }
+  // componentDidUpdate() {
+  //   console.log('SliderContainer Updated')
+  //   console.log(this.state)
+  // }
 
   deterContClass = (next, prev) => {
     if (next || prev) {

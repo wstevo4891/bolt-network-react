@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Poster = (props) => {
   const movie = props.movie
-  console.log(`hoverItem: ${props.hoverItem}`)
+  // console.log(`hoverItem: ${props.hoverItem}`)
 
   if (typeof movie !== 'object') return null
 

@@ -15,8 +15,8 @@ export default class MoviesList {
   }
 
   call = () => {
-    console.log('Movies List')
-    console.log(this.movies)
+    // console.log('Movies List')
+    // console.log(this.movies)
 
     if (this.movies === null || this.movies.length <= 1) return []
 
