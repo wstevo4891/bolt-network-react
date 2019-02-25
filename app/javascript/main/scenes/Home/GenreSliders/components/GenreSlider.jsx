@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react'
 
+import PaginationList from './PaginationList'
 import SlideBuilder from './SlideBuilder'
 import SliderArrow from './SliderArrow'
 
@@ -33,6 +34,11 @@ export default class GenreSlider extends Component {
 
     return (
       <div id={`${genre.name}_slider`} className='genre-slider'>
+        <PaginationList
+          position={position}
+          listLength={moviesList._length}
+        />
+
         <SliderArrow
           start={start}
           direction='Prev'
@@ -79,8 +85,6 @@ export default class GenreSlider extends Component {
   }
 
   handleTransitionEnd = () => {
-    // console.log('Slider transition is over')
-
     const position = this.determinePosition()
 
     this.setState({
@@ -109,9 +113,4 @@ export default class GenreSlider extends Component {
       }
     }
   }
-
-  // componentDidUpdate() {
-  //   console.log('GenreSlider updated')
-  //   console.log(this.state)
-  // }
 }

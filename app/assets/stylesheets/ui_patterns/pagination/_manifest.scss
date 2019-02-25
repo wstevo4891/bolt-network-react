@@ -1,0 +1,29 @@
+// app/stylesheets/ui_patterns/pagination/_manifest.scss
+
+.genre-slider:hover {
+  .pagination-indicator {
+    display: block;
+  }
+}
+
+.pagination-indicator {
+  margin: -24px 0 12px 0;
+  padding: 0;
+  list-style-type: none;
+  position: absolute;
+  top: 0;
+  right: 4%;
+  display: none;
+
+  .active {
+    background-color: #aaa;
+  }
+
+  li {
+    display: inline-block;
+    width: 12px;
+    height: 2px;
+    background-color: #4d4d4d;
+    margin-left: 1px;
+  }
+}
