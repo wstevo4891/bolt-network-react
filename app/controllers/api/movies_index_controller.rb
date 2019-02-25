@@ -6,8 +6,6 @@ module Api
   class MoviesIndexController < ApiController
     def show
       @movies_index = MoviesIndex.build(params[:slide_length])
-
-      render json: @movies_index, status: :ok
     end
   end
 end

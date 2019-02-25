@@ -36,14 +36,12 @@ export default class MyListService {
   addMovie = () => {
     API.movies.show(this.movieId)
       .then(response => {
-        console.log('MyList Movie')
-        console.log(response.data)
+        // console.log('MyList Movie')
+        // console.log(response.data)
 
         const movie = response.data
 
         const found = this.findMovie(movie.id)
-        console.log('found')
-        console.log(found)
 
         if (found === false) {
           this.list.push(response.data)

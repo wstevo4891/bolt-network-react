@@ -5,6 +5,9 @@
 .poster-container {
   @include bp-poster-width;
   @include poster-container;
+  @include bp-tablet {
+    height: 8.13868em;
+  }
 
   .poster {
     margin: 0 2px;
@@ -17,10 +20,18 @@
 
     .poster {
       margin: 0;
+
+      span .movie-info {
+        display: block;
+      }
     }
   }
+}
 
-  @include bp-tablet {
-    height: 8.13868em;
+.poster {
+  span .movie-info {
+    display: none;
+    color: white;
+    transition: display .4s;
   }
 }

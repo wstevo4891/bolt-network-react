@@ -3,6 +3,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import MovieInfo from './MovieInfo'
+
 const Poster = (props) => {
   const movie = props.movie
   // console.log(`hoverItem: ${props.hoverItem}`)
@@ -28,7 +30,9 @@ const Poster = (props) => {
       onMouseOut={props.mouseOut}
     >
       <Link to={`/movies/${movie.id}`}>
-        <div className='poster' style={posterImage}></div>
+        <div className='poster' style={posterImage}>
+          {/* <MovieInfo movie={movie} hoverItem={props.hoverItem} index={props.index} /> */}
+        </div>
       </Link>
     </div>
   )
