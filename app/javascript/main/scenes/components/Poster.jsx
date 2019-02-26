@@ -3,7 +3,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import MovieInfo from './MovieInfo'
+// import MovieInfo from './MovieInfo'
+import PosterControls from './PosterControls'
 
 const Poster = (props) => {
   const movie = props.movie
@@ -31,7 +32,7 @@ const Poster = (props) => {
     >
       <Link to={`/movies/${movie.id}`}>
         <div className='poster' style={posterImage}>
-          <MovieInfo movie={movie} hoverItem={props.hoverItem} index={props.index} />
+          <PosterControls movie={movie} hoverItem={props.hoverItem} index={props.index} />
         </div>
       </Link>
     </div>

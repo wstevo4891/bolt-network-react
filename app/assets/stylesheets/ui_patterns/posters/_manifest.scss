@@ -28,38 +28,80 @@
   }
 }
 
+.poster-controls {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.poster-buttons {
+  position: absolute;
+  right: 4%;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+
+  li {
+    display: block;
+    margin-bottom: 15%;
+  }
+}
+
+.poster-btn {
+  button {
+    display: block;
+    width: 1em;
+    height: 1em;
+    padding: 0;
+    border: solid 1px gray;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    transition: all .4s ease;
+  }
+
+  i {
+    display: block;
+    color: white;
+    font-size: 50%;
+  }
+
+  &:hover button {
+    border-color: white;
+    transform: scale(1.2);
+  }
+}
 
 .poster span .movie-info {
-  display: none;
+  // display: none;
   position: absolute;
   bottom: 0;
+  width: 100%;
   padding-bottom: 5%;
   padding-left: 3%;
   color: white;
   text-shadow: black 1px 1px 1px;
   line-height: 1.2;
-  transition: display .4s;
+  transition: all .4s;
+  pointer-events: none;
 
-  span.play-icon {
-    position: relative;
-    top: 1px;
-    width: 14px;
-    height: 14px;
+  div {
+    margin: 1% 0;
+    line-height: 0.8;
+  }
+
+  i {
+    padding: 1.5% 1.5% 1.5% 2%;
     border: solid 1px white;
     border-radius: 50%;
+    color: red;
     background: rgba(0, 0, 0, 0.6);
-
-    i {
-      position: relative;
-      top: 2px;
-      left: 4px;
-      color: red;
-      text-shadow: none;
-    }
+    font-size: 8px;
+    text-shadow: none;
   }
 
   h3 {
-    margin: 1% 0;
+    margin: 0;
     font-size: 55%;
     font-weight: bold;
   }
@@ -67,7 +109,7 @@
   span {
     display: inline-block;
     position: relative;
-    top: -7px;
+    top: -3px;
     padding: 1%;
     margin-right: 2%;
     font-size: 50%;
@@ -77,12 +119,12 @@
     padding: 1px 2px;
     border: solid 1px hsla(247, 15%, 96%, 0.7);
     background: rgba(0, 0, 0, 0.6);
-    line-height: 1.5;
+    line-height: 1;
   }
 
   p {
     position: relative;
-    top: -3px;
+    top: -1px;
     margin: 0;
     font-size: 45%;
   }
