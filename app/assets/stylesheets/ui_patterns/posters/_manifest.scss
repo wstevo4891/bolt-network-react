@@ -21,17 +21,69 @@
     .poster {
       margin: 0;
 
-      span .movie-info {
-        display: block;
-      }
+      // span .movie-info {
+      //   display: block;
+      // }
     }
   }
 }
 
-.poster {
-  span .movie-info {
-    display: none;
-    color: white;
-    transition: display .4s;
+
+.poster span .movie-info {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 5%;
+  padding-left: 3%;
+  color: white;
+  text-shadow: black 1px 1px 1px;
+  line-height: 1.2;
+  transition: display .4s;
+
+  span.play-icon {
+    position: relative;
+    top: 1px;
+    width: 14px;
+    height: 14px;
+    border: solid 1px white;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+
+    i {
+      position: relative;
+      top: 2px;
+      left: 4px;
+      color: red;
+      text-shadow: none;
+    }
+  }
+
+  h3 {
+    margin: 1% 0;
+    font-size: 55%;
+    font-weight: bold;
+  }
+
+  span {
+    display: inline-block;
+    position: relative;
+    top: -7px;
+    padding: 1%;
+    margin-right: 2%;
+    font-size: 50%;
+  }
+
+  span.rating {
+    padding: 1px 2px;
+    border: solid 1px hsla(247, 15%, 96%, 0.7);
+    background: rgba(0, 0, 0, 0.6);
+    line-height: 1.5;
+  }
+
+  p {
+    position: relative;
+    top: -3px;
+    margin: 0;
+    font-size: 45%;
   }
 }

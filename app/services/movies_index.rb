@@ -38,7 +38,7 @@ class MoviesIndex
     movies = genre.movies.limit(@limit)
 
     movies.each do |movie|
-      movie.genres_list = movie.genres.map(&:name)
+      movie.genres_list = movie.genres.map(&:name).take(3)
     end
 
     movies

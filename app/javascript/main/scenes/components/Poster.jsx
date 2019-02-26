@@ -7,7 +7,7 @@ import MovieInfo from './MovieInfo'
 
 const Poster = (props) => {
   const movie = props.movie
-  // console.log(`hoverItem: ${props.hoverItem}`)
+  console.log(`hoverItem: ${props.hoverItem}`)
 
   if (typeof movie !== 'object') return null
 
@@ -31,7 +31,7 @@ const Poster = (props) => {
     >
       <Link to={`/movies/${movie.id}`}>
         <div className='poster' style={posterImage}>
-          {/* <MovieInfo movie={movie} hoverItem={props.hoverItem} index={props.index} /> */}
+          <MovieInfo movie={movie} hoverItem={props.hoverItem} index={props.index} />
         </div>
       </Link>
     </div>

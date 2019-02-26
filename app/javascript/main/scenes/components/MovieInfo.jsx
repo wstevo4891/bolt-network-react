@@ -3,30 +3,28 @@
 import React from 'react'
 
 const MovieInfo = (props) => {
-  if (props.hoverItem !== props.index) {
-    return <span></span>
+  const movie = props.movie
+  let genres = movie.genres
 
+  if (genres.length > 1) {
+    genres = genres.join(', ')
   } else {
-    // let genres
-
-    // if (props.movie.genres.length > 1) {
-    //   genres = props.movie.genres.join(', ')
-    // } else {
-    //   genres = props.movie.genres.join('')
-    // }
-
-    return(
-      <span>
-        <div className="movie-info">
-          <i className="fa fa-play-circle"></i>
-          <h3>{props.movie.title}</h3>
-          <span>{props.movie.rated}</span>
-          <span>{props.movie.run_time}</span>
-          {/* <p>{props.movie.genres}</p> */}
-        </div>
-      </span>
-    )
+    genres = genres.join('')
   }
+
+  return(
+    <span>
+      <div className="movie-info">
+        <span className="play-icon">
+          <i className="fa fa-play"></i>
+        </span>
+        <h3>{movie.title}</h3>
+        <span className="rating">{movie.rated}</span>
+        <span>{movie.run_time}</span>
+        <p>{genres}</p>
+      </div>
+    </span>
+  )
 }
 
 export default MovieInfo
