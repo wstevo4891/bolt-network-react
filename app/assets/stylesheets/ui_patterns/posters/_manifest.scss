@@ -2,6 +2,10 @@
 
 @import "ui_patterns/posters/mixins";
 
+#bob-open {
+  transform: scale(1.75) translate3d(-54px, 0px, 0px) !important;
+}
+
 .poster-container {
   @include bp-poster-width;
   @include poster-container;
@@ -21,7 +25,7 @@
     .poster {
       margin: 0;
 
-      // span .movie-info {
+      // span .poster-controls {
       //   display: block;
       // }
     }
@@ -29,80 +33,101 @@
 }
 
 .poster-controls {
-  position: relative;
-  bottom: 0;
+  position: absolute;
+  top: 0;
   width: 100%;
   height: 100%;
+  // padding: 0 3% 5% 3%;
+  pointer-events: none;
 }
 
 .poster-buttons {
   position: absolute;
   right: 4%;
-  bottom: 0;
+  bottom: 8%;
   padding: 0;
   margin: 0;
 
   li {
     display: block;
-    margin-bottom: 15%;
+    font-size: .5rem;
+    line-height: 1;
+    margin: .1rem 0;
   }
 }
 
 .poster-btn {
   button {
-    display: block;
+    border: .1em solid rgba(255,255,255,.5);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    padding: .3em;
+    margin: .25em;
+    background: rgba(0,0,0,.5);
+    transition: all .2s;
+    pointer-events: all;
+
+    &:hover {
+      transform: scale(1.1);
+      outline: 0;
+      border-color: #fff;
+      background: rgba(0,0,0,.7);
+    }
+  }
+
+  button i {
     width: 1em;
     height: 1em;
-    padding: 0;
-    border: solid 1px gray;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.6);
-    transition: all .4s ease;
-  }
-
-  i {
-    display: block;
     color: white;
-    font-size: 50%;
-  }
-
-  &:hover button {
-    border-color: white;
-    transform: scale(1.2);
   }
 }
 
-.poster span .movie-info {
-  // display: none;
+.poster-btn.poster-btn-my-list {
+  margin-top: -3px;
+}
+
+.poster-btn.hidden {
+  visibility: hidden;
+}
+
+.movie-info {
   position: absolute;
   bottom: 0;
   width: 100%;
   padding-bottom: 5%;
-  padding-left: 3%;
+  padding-left: 4%;
   color: white;
-  text-shadow: black 1px 1px 1px;
-  line-height: 1.2;
+  text-shadow: black 1px 1px 1px,
+               black 1px 1px 1px,
+               black 0px 0px 0px,
+               black 0px 0px 0px;
+  line-height: 0.9;
   transition: all .4s;
   pointer-events: none;
 
   div {
     margin: 1% 0;
-    line-height: 0.8;
   }
 
-  i {
-    padding: 1.5% 1.5% 1.5% 2%;
+  span.play-icon {
+    padding: .5em;
     border: solid 1px white;
     border-radius: 50%;
     color: red;
     background: rgba(0, 0, 0, 0.6);
-    font-size: 8px;
     text-shadow: none;
+
+    i {
+      width: 1em;
+      height: 1em;
+      padding-left: .25em;
+    }
   }
 
   h3 {
     margin: 0;
-    font-size: 55%;
+    font-size: .7em;
     font-weight: bold;
   }
 

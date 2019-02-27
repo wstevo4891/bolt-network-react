@@ -21,8 +21,6 @@ export default class SliderContainer extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    // console.log('SliderContainer is receiving props')
-
     this.setState({
       slides: nextProps.slides,
       slideLength: nextProps.slideLength,
@@ -56,7 +54,7 @@ export default class SliderContainer extends Component {
               prev={prev}
               hoverItem={hoverItem}
               mouseOver={this.handleMouseOver}
-              mouseOut={this.handleMouseOut}
+              mouseLeave={this.handleMouseLeave}
               service={SliderPosterService}
             />
           )
@@ -74,16 +72,11 @@ export default class SliderContainer extends Component {
     })
   }
 
-  handleMouseOut = () => {
+  handleMouseLeave = () => {
     this.setState({
       hoverItem: null
     })
   }
-
-  // componentDidUpdate() {
-  //   console.log('SliderContainer Updated')
-  //   console.log(this.state)
-  // }
 
   deterContClass = (next, prev) => {
     if (next || prev) {

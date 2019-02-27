@@ -46,7 +46,7 @@ export default class SliderPosterService {
 
   calcTranslateX = () => {
     const width = document.getElementsByClassName('poster-container')[0].clientWidth
-    return Math.round(width * 0.47)
+    return Math.round(width * 0.38)
   }
 
   buildPosterStyle = () => {
@@ -100,7 +100,7 @@ export default class SliderPosterService {
 
   translate3D = (x, scale = false) => {
     if (scale) {
-      return `scale(2) translate3d(${x}px, 0px, 0px)`
+      return `scale(1.75) translate3d(${x}px, 0px, 0px)`
     } else {
       return `translate3d(${x}px, 0px, 0px)`
     }

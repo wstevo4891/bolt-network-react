@@ -30,18 +30,8 @@ class MoviesIndex
 
   def build_index
     @genres.each_with_object({}) do |genre, hash|
-      hash[genre.name] = genre_movies(genre)
+      hash[genre.name] = genre.movies.limit(@limit)
     end
-  end
-
-  def genre_movies(genre)
-    movies = genre.movies.limit(@limit)
-
-    movies.each do |movie|
-      movie.genres_list = movie.genres.map(&:name).take(3)
-    end
-
-    movies
   end
 
   # Netflix's slide number per slide_length

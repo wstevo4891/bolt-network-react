@@ -3,15 +3,13 @@
 module Api
   # Genres API
   # Get Genre data as json
-  class GenresController < ApplicationController
+  class GenresController < ApiController
     def index
       @genres = Genre.all
     end
 
     def show
       @results = genre_results
-
-      render json: @results, status: :ok
     end
 
     def movie_ids

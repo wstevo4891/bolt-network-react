@@ -3,8 +3,6 @@
 import React from 'react'
 
 const MovieInfo = (props) => {
-  if (props.hoverItem !== props.index) return <span></span>
-
   const movie = props.movie
   let genres = movie.genres
 
@@ -17,7 +15,9 @@ const MovieInfo = (props) => {
   return(
     <div className="movie-info">
       <div>
-        <i className="fa fa-play"></i>
+        <span className="play-icon">
+          <i className="fa fa-play"></i>
+        </span>
       </div>
 
       <div>

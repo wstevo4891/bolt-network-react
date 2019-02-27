@@ -10,6 +10,10 @@ class Movie < ApplicationRecord
 
   validates :title, :year, :rated, :run_time, :plot, presence: true
 
+  after_initialize do |movie|
+    movie.genres_list = movie.three_genres
+  end
+
   def self.search(search)
     Movie.where('title ~* :search', search: "(#{search})")
   end
@@ -22,5 +26,9 @@ class Movie < ApplicationRecord
     movie = Movie.find(movie_id)
     movie.genres_list = movie.genres.map(&:name)
     movie
+  end
+
+  def three_genres
+    genres.limit(3).map(&:name)
   end
 end

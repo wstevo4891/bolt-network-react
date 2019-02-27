@@ -9,11 +9,16 @@ export default class MyListService {
   }
 
   add = () => {
-    if (this.list === null) {
-      this.list = []
-    }
+    if (this.list === null) this.list = []
 
-    return this.addMovie()
+    const found = this.findMovie()
+
+    if (found === false) {
+      return this.addToList()
+    } else {
+      console.log('This movie is already in your list')
+      return true
+    }
   }
 
   remove = () => {
@@ -33,46 +38,36 @@ export default class MyListService {
     return true
   }
 
-  addMovie = () => {
+  findMovie = () => {
+    if (this.list === null || this.list.length === 0) return false
+
+    let found = false
+
+    for (let item of this.list) {
+      if (item.id === this.movieId) {
+        found = true
+      }
+    }
+
+    return found
+  }
+
+  addToList = () => {
     API.movies.show(this.movieId)
       .then(response => {
-        // console.log('MyList Movie')
-        // console.log(response.data)
+        this.list.push(response.data)
 
-        const movie = response.data
+        localStorage.setItem('MyList', JSON.stringify(this.list))
 
-        const found = this.findMovie(movie.id)
-
-        if (found === false) {
-          this.list.push(response.data)
-
-          localStorage.setItem('MyList', JSON.stringify(this.list))
-
-          console.log('Movie added to your list')
-        } else {
-          console.log('This movie is already in your list')
-        }
+        console.log('Movie added to your list')
 
         return true
       })
       .catch(error => {
         console.error('Error in MyListService.addMovie')
         console.error(error)
+        return false
       })
-  }
-
-  findMovie = (movieId) => {
-    if (this.list.length === 0) return false
-
-    let found = false
-
-    for (let item of this.list) {
-      if (item.id === movieId) {
-        found = true
-      }
-    }
-
-    return found
   }
 }
 

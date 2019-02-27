@@ -8,6 +8,7 @@ end
 json.movies do
   json.array! @results[:movies] do |movie|
     json.extract! movie, :id, :title, :photo, :year, :rated, :run_time, :plot
-    json.url "/movies#{movie.id}"
+    json.url "/movies/#{movie.id}"
+    json.genres movie.genres_list
   end
 end

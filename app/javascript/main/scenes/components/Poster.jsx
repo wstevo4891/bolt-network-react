@@ -8,7 +8,6 @@ import PosterControls from './PosterControls'
 
 const Poster = (props) => {
   const movie = props.movie
-  console.log(`hoverItem: ${props.hoverItem}`)
 
   if (typeof movie !== 'object') return null
 
@@ -28,13 +27,12 @@ const Poster = (props) => {
       className={containerClass}
       style={posterStyle}
       onMouseOver={props.mouseOver}
-      onMouseOut={props.mouseOut}
+      onMouseLeave={props.mouseLeave}
     >
       <Link to={`/movies/${movie.id}`}>
-        <div className='poster' style={posterImage}>
-          <PosterControls movie={movie} hoverItem={props.hoverItem} index={props.index} />
-        </div>
+        <div className='poster' style={posterImage}></div>
       </Link>
+      <PosterControls movie={movie} hoverItem={props.hoverItem} index={props.index} />
     </div>
   )
 }

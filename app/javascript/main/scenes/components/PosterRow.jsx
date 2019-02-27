@@ -39,7 +39,7 @@ export default class PosterRow extends Component {
               slideLength={slideLength}
               hoverItem={hoverItem}
               mouseOver={this.handleMouseOver}
-              mouseOut={this.handleMouseOut}
+              mouseLeave={this.handleMouseLeave}
               service={StaticPosterService}
             />
           )
@@ -57,7 +57,7 @@ export default class PosterRow extends Component {
     })
   }
 
-  handleMouseOut = () => {
+  handleMouseLeave = () => {
     this.setState({
       hoverItem: null
     })

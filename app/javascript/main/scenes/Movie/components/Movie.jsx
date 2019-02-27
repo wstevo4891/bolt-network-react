@@ -23,7 +23,7 @@ const Movie = (props) => {
         <img src={movie.poster} className="img-fluid" />
       </div>
 
-      <div className="col-8 movie-info">
+      <div className="col-8 movie-display">
         <p><span>Year: </span>{movie.year}</p>
         <p><span>Rated: </span>{movie.rated}</p>
         <p><span>Runtime: </span>{movie.run_time}</p>
