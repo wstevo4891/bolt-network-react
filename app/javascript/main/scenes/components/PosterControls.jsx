@@ -2,10 +2,17 @@
 
 import React, { Component } from 'react'
 
+// Services
 import MyListService from '../services/MyListService'
-import LikeButtonsService from '../services/LikeButtonsService'
+
+// Components
 import MovieInfo from './MovieInfo'
-import PosterButtons from './PosterButtons'
+
+// Poster Buttons
+import VolumeButton from './VolumeButton'
+import LikeButton from './LikeButton'
+import UnlikeButton from './UnlikeButton'
+import MyListButton from './MyListButton'
 
 export default class PosterControls extends Component {
   constructor(props) {
@@ -40,127 +47,53 @@ export default class PosterControls extends Component {
         <div className="poster-controls">
           <MovieInfo movie={movie} hoverItem={hoverItem} index={index} />
 
-          <PosterButtons
-            inList={inList}
-            movieId={movie.id}
-            liked={liked}
-            toggleVolume={this.toggleVolume}
-            likeMovie={this.likeMovie}
-            unlikeMovie={this.unlikeMovie}
-            toggleMyList={this.toggleMyList}
-          />
+          <ul className="poster-buttons">
+            <VolumeButton liked={liked} />
+
+            <LikeButton
+              liked={liked}
+              movie={movie}
+              toggleLike={this.toggleLike}
+            />
+
+            <UnlikeButton
+              liked={liked}
+              movie={movie}
+              toggleUnlike={this.toggleUnlike}
+            />
+
+            <MyListButton movieId={movie.id} />
+          </ul>
         </div>
       </span>
     )
   }
 
-  toggleVolume = (event) => {
-    const list = event.target.classList
-
-    if (list.contains('fa-volume-up')) {
-      list.remove('fa-volume-up')
-      list.add('fa-times')
-    } else {
-      list.remove('fa-times')
-      list.add('fa-volume-up')
-    }
-  }
-
-  likeMovie = (event) => {
-    const target = event.target
-
-    if (!target.classList.contains('fa')) return
-
-    const parent = target.parentNode.parentNode
-    const volume = parent.previousSibling
-    const unlike = parent.nextSibling
+  toggleLike = () => {
     const liked = this.state.liked
 
-    if (liked === null) {
+    if (liked) {
+      this.setState({
+        liked: null
+      })
+    } else {
       this.setState({
         liked: true
       })
-
-      target.classList.remove('fa-thumbs-o-up')
-      target.classList.add('fa-thumbs-up')
-
-      volume.classList.add('move-down')
-      parent.classList.add('move-down')
-      
-    } else {  
-      target.classList.remove('fa-thumbs-up')
-      target.classList.add('fa-thumbs-o-up')
-
-      volume.classList.remove('move-down')
-      volume.classList.add('move-up')
-
-      parent.classList.remove('move-down')
-      parent.classList.add('move-up')
-
-      setTimeout(() => {
-        this.setState({
-          liked: null
-        })
-      }, 900)
-
-      setTimeout(() => {
-        volume.classList.remove('move-up')
-        parent.classList.remove('move-up')
-      }, 1500)
     }
   }
 
-  unlikeMovie = (event) => {
-    const target = event.target
-
-    if (!target.classList.contains('fa')) return
-
-    const parent = target.parentNode.parentNode
-    const likeBtn = parent.previousSibling
-    const volume = likeBtn.previousSibling
+  toggleUnlike = () => {
     const liked = this.state.liked
 
     if (liked === null) {
       this.setState({
         liked: false
       })
-
-      target.classList.remove('fa-thumbs-o-down')
-      target.classList.add('fa-thumbs-down')
-
-      volume.classList.add('move-down')
-    
-    } else {
-      target.classList.remove('fa-thumbs-down')
-      target.classList.add('fa-thumbs-o-down')
-
-      volume.classList.remove('move-down')
-      volume.classList.add('move-up')
-
-      setTimeout(() => {
-        this.setState({
-          liked: null
-        })
-      }, 900)
-
-      setTimeout(() => {
-        volume.classList.remove('move-up')
-      }, 1500)
-    }
-  }
-
-  toggleMyList = (event, movieId) => {
-    const list = event.target.classList
-
-    if (list.contains('fa-plus')) {
-      list.remove('fa-plus')
-      list.add('fa-check')
-      return new MyListService(movieId).add()
-
-    } else {
-      list.remove('fa-check')
-      list.add('fa-plus')
-      return new MyListService(movieId).remove()
+    } else if (liked === false) {
+      this.setState({
+        liked: null
+      })
     }
   }
 }

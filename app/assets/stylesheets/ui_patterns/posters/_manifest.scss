@@ -67,6 +67,7 @@
     backface-visibility: hidden;
     transition: all .2s;
     pointer-events: all;
+    cursor: pointer;
 
     &:hover {
       transform: scale(1.1);
@@ -94,13 +95,31 @@
 }
 
 .poster-btn.selected {
-  transform: scale(1.1) !important;
+  button {
+    transform: scale(1.1);
+    outline: 0;
+    border-color: #fff;
+    background: rgba(0, 0, 0, 0.7);
+  }
 }
 
 .poster-btn.move-down {
   transition: all .3s;
   transition-delay: .8s;
   transform: scale(1.048) translateY(20px) translateZ(0);
+}
+
+.poster-btn.move-down-selected {
+  transition: all .3s;
+  transition-delay: .8s;
+  transform: scale(1.048) translateY(18px) translateZ(0);
+
+  button {
+    transform: scale(1.1);
+    outline: 0;
+    border-color: #fff;
+    background: rgba(0, 0, 0, 0.7);
+  }
 }
 
 .poster-btn.move-up {

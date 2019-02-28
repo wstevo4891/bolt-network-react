@@ -19,10 +19,12 @@ export default class VolumeButton extends Component {
 
   render() {
     const { liked, volume } = this.state
+
+    const itemClass = this.deterItemClass(liked)
     const iconClass = this.deterIconClass(volume)
 
     return(
-      <li className="poster-btn poster-btn-volume">
+      <li className={`poster-btn poster-btn-volume ${itemClass}`}>
         <button onClick={() => this.toggleVolume(volume)}>
           <i className={iconClass}></i>
         </button>

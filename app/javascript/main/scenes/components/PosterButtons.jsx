@@ -2,33 +2,18 @@
 
 import React from 'react'
 
+import VolumeButton from './VolumeButton'
+import LikeButton from './LikeButton'
+import UnlikeButton from './UnlikeButton'
 import MyListButton from './MyListButton'
 
 const PosterButtons = (props) => (
   <ul className="poster-buttons">
-    <li className="poster-btn poster-btn-volume">
-      <button onClick={(event) => props.toggleVolume(event)}>
-        <i className="fa fa-volume-up"></i>
-      </button>
-    </li>
+    <VolumeButton liked={props.liked} />
 
-    <li className={`poster-btn poster-btn-like ${props.liked === false ? 'hidden' : ''}`}>
-      <button onClick={(event) => props.likeMovie(event)}>
-        <i className="fa fa-thumbs-o-up"></i>
-      </button>
-    </li>
+    <LikeButton liked={props.liked} toggleLike={props.toggleLike} />
 
-    <li className={`poster-btn poster-btn-unlike ${props.liked === true ? 'hidden' : ''}`}>
-      <button onClick={(event) => props.unlikeMovie(event)}>
-        <i className="fa fa-thumbs-o-down"></i>
-      </button>
-    </li>
-
-    {/* <li className="poster-btn poster-btn-my-list">
-      <button onClick={(event) => props.toggleMyList(event, props.movieId)}>
-        <i className={props.inList ? 'fa fa-check' : 'fa fa-plus'}></i>
-      </button>
-    </li> */}
+    <UnlikeButton liked={props.liked} toggleUnlike={props.toggleUnlike} />
 
     <MyListButton movieId={props.movieId} />
   </ul>
