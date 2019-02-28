@@ -29,9 +29,6 @@ export default class MyList extends Component {
 
     if (movies === null) return null
 
-    console.log('MyList Movies')
-    console.log(JSON.stringify(movies))
-
     return(
       <div className="display-container">
         <div className="row">

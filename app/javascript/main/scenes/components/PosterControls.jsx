@@ -3,6 +3,7 @@
 import React, { Component } from 'react'
 
 import MyListService from '../services/MyListService'
+import LikeButtonsService from '../services/LikeButtonsService'
 import MovieInfo from './MovieInfo'
 import PosterButtons from './PosterButtons'
 
@@ -75,9 +76,6 @@ export default class PosterControls extends Component {
     const unlike = parent.nextSibling
     const liked = this.state.liked
 
-    target.style.transform = 'scale(1.1)'
-    unlike.style.transform = ''
-
     if (liked === null) {
       this.setState({
         liked: true
@@ -120,11 +118,7 @@ export default class PosterControls extends Component {
     const parent = target.parentNode.parentNode
     const likeBtn = parent.previousSibling
     const volume = likeBtn.previousSibling
-    
     const liked = this.state.liked
-
-    target.style.transform = 'scale(1.1)'
-    likeBtn.style.transform = ''
 
     if (liked === null) {
       this.setState({
@@ -168,13 +162,5 @@ export default class PosterControls extends Component {
       list.add('fa-plus')
       return new MyListService(movieId).remove()
     }
-  }
-
-  addToList = (movieId) => {
-    return new MyListService(movieId).add()
-  }
-
-  removeFromList = (movieId) => {
-    return new MyListService(movieId).remove()
   }
 }

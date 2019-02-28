@@ -93,6 +93,10 @@
   visibility: hidden;
 }
 
+.poster-btn.selected {
+  transform: scale(1.1) !important;
+}
+
 .poster-btn.move-down {
   transition: all .3s;
   transition-delay: .8s;
@@ -100,6 +104,12 @@
 }
 
 .poster-btn.move-up {
+  transition: all .3s;
+  transition-delay: .8s;
+  transform: scale(1.048) translateY(0px) translateZ(0);
+}
+
+.poster-btn.static {
   transition: all .3s;
   transition-delay: .8s;
   transform: scale(1.048) translateY(0px) translateZ(0);

@@ -55,9 +55,6 @@ export default class GenreSlidersContainer extends Component {
   fetchMoviesIndex = (slideLength) => {
     API.moviesIndex.get(slideLength)
       .then(response => {
-        console.log('Movies Index')
-        console.log(JSON.stringify(response.data))
-
         this.setState({
           slideLength: slideLength,
           moviesIndex: response.data

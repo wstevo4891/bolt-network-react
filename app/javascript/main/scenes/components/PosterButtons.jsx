@@ -2,6 +2,8 @@
 
 import React from 'react'
 
+import MyListButton from './MyListButton'
+
 const PosterButtons = (props) => (
   <ul className="poster-buttons">
     <li className="poster-btn poster-btn-volume">
@@ -22,11 +24,13 @@ const PosterButtons = (props) => (
       </button>
     </li>
 
-    <li className="poster-btn poster-btn-my-list">
+    {/* <li className="poster-btn poster-btn-my-list">
       <button onClick={(event) => props.toggleMyList(event, props.movieId)}>
         <i className={props.inList ? 'fa fa-check' : 'fa fa-plus'}></i>
       </button>
-    </li>
+    </li> */}
+
+    <MyListButton movieId={props.movieId} />
   </ul>
 )
 
