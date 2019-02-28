@@ -10,13 +10,13 @@ const PosterButtons = (props) => (
       </button>
     </li>
 
-    <li className="poster-btn poster-btn-like">
+    <li className={`poster-btn poster-btn-like ${props.liked === false ? 'hidden' : ''}`}>
       <button onClick={(event) => props.likeMovie(event)}>
         <i className="fa fa-thumbs-o-up"></i>
       </button>
     </li>
 
-    <li className="poster-btn poster-btn-unlike">
+    <li className={`poster-btn poster-btn-unlike ${props.liked === true ? 'hidden' : ''}`}>
       <button onClick={(event) => props.unlikeMovie(event)}>
         <i className="fa fa-thumbs-o-down"></i>
       </button>

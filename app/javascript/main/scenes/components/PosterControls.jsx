@@ -30,7 +30,7 @@ export default class PosterControls extends Component {
   render() {
     const { index, hoverItem, movie, liked } = this.state
 
-    const inList = this.findMovie(movie.id)
+    const inList = new MyListService(movie.id).findMovie()
 
     // if (hoverItem !== index) return <span></span>
 
@@ -42,6 +42,7 @@ export default class PosterControls extends Component {
           <PosterButtons
             inList={inList}
             movieId={movie.id}
+            liked={liked}
             toggleVolume={this.toggleVolume}
             likeMovie={this.likeMovie}
             unlikeMovie={this.unlikeMovie}
@@ -50,10 +51,6 @@ export default class PosterControls extends Component {
         </div>
       </span>
     )
-  }
-
-  componentDidMount() {
-
   }
 
   toggleVolume = (event) => {
@@ -69,33 +66,93 @@ export default class PosterControls extends Component {
   }
 
   likeMovie = (event) => {
-    const list = event.target.classList
-    list.remove('fa-thumbs-o-up')
-    list.add('fa-thumbs-up')
+    const target = event.target
 
-    const unlikeBtn = event.target.parentNode.parentNode.nextSibling
-    unlikeBtn.classList.add('hidden')
+    if (!target.classList.contains('fa')) return
 
-    this.setState({
-      liked: true
-    })
+    const parent = target.parentNode.parentNode
+    const volume = parent.previousSibling
+    const unlike = parent.nextSibling
+    const liked = this.state.liked
+
+    target.style.transform = 'scale(1.1)'
+    unlike.style.transform = ''
+
+    if (liked === null) {
+      this.setState({
+        liked: true
+      })
+
+      target.classList.remove('fa-thumbs-o-up')
+      target.classList.add('fa-thumbs-up')
+
+      volume.classList.add('move-down')
+      parent.classList.add('move-down')
+      
+    } else {  
+      target.classList.remove('fa-thumbs-up')
+      target.classList.add('fa-thumbs-o-up')
+
+      volume.classList.remove('move-down')
+      volume.classList.add('move-up')
+
+      parent.classList.remove('move-down')
+      parent.classList.add('move-up')
+
+      setTimeout(() => {
+        this.setState({
+          liked: null
+        })
+      }, 900)
+
+      setTimeout(() => {
+        volume.classList.remove('move-up')
+        parent.classList.remove('move-up')
+      }, 1500)
+    }
   }
 
   unlikeMovie = (event) => {
-    const list = event.target.classList
-    list.remove('fa-thumbs-o-down')
-    list.add('fa-thumbs-down')
+    const target = event.target
 
-    const likeBtn = event.target.parentNode.parentNode.previousSibling
-    likeBtn.classList.add('hidden')
+    if (!target.classList.contains('fa')) return
 
-    this.setState({
-      liked: false
-    })
-  }
+    const parent = target.parentNode.parentNode
+    const likeBtn = parent.previousSibling
+    const volume = likeBtn.previousSibling
+    
+    const liked = this.state.liked
 
-  findMovie = (movieId) => {
-    return new MyListService(movieId).findMovie()
+    target.style.transform = 'scale(1.1)'
+    likeBtn.style.transform = ''
+
+    if (liked === null) {
+      this.setState({
+        liked: false
+      })
+
+      target.classList.remove('fa-thumbs-o-down')
+      target.classList.add('fa-thumbs-down')
+
+      volume.classList.add('move-down')
+    
+    } else {
+      target.classList.remove('fa-thumbs-down')
+      target.classList.add('fa-thumbs-o-down')
+
+      volume.classList.remove('move-down')
+      volume.classList.add('move-up')
+
+      setTimeout(() => {
+        this.setState({
+          liked: null
+        })
+      }, 900)
+
+      setTimeout(() => {
+        volume.classList.remove('move-up')
+      }, 1500)
+    }
   }
 
   toggleMyList = (event, movieId) => {
@@ -104,12 +161,12 @@ export default class PosterControls extends Component {
     if (list.contains('fa-plus')) {
       list.remove('fa-plus')
       list.add('fa-check')
-      this.addToList(movieId)
+      return new MyListService(movieId).add()
 
     } else {
       list.remove('fa-check')
       list.add('fa-plus')
-      this.removeFromList(movieId)
+      return new MyListService(movieId).remove()
     }
   }
 

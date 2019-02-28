@@ -31,8 +31,6 @@ export default class SliderContainer extends Component {
   }
 
   render() {
-    console.log('SliderContainer is rendering!')
-
     const { slides, slideLength, start,
             next, prev, hoverItem } = this.state
 

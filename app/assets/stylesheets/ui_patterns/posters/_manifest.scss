@@ -37,7 +37,6 @@
   top: 0;
   width: 100%;
   height: 100%;
-  // padding: 0 3% 5% 3%;
   pointer-events: none;
 }
 
@@ -47,6 +46,7 @@
   bottom: 8%;
   padding: 0;
   margin: 0;
+  transition: all .6s;
 
   li {
     display: block;
@@ -59,12 +59,12 @@
 .poster-btn {
   button {
     border: .1em solid rgba(255,255,255,.5);
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
     border-radius: 50%;
     padding: .3em;
     margin: .25em;
     background: rgba(0,0,0,.5);
+    -webkit-font-smoothing: subpixel-antialiased;
+    backface-visibility: hidden;
     transition: all .2s;
     pointer-events: all;
 
@@ -80,6 +80,8 @@
     width: 1em;
     height: 1em;
     color: white;
+    -webkit-font-smoothing: subpixel-antialiased;
+    backface-visibility: hidden;
   }
 }
 
@@ -89,6 +91,18 @@
 
 .poster-btn.hidden {
   visibility: hidden;
+}
+
+.poster-btn.move-down {
+  transition: all .3s;
+  transition-delay: .8s;
+  transform: scale(1.048) translateY(20px) translateZ(0);
+}
+
+.poster-btn.move-up {
+  transition: all .3s;
+  transition-delay: .8s;
+  transform: scale(1.048) translateY(0px) translateZ(0);
 }
 
 .movie-info {
