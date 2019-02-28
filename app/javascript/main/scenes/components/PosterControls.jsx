@@ -3,7 +3,8 @@
 import React, { Component } from 'react'
 
 // Services
-import MyListService from '../services/MyListService'
+import LikeButtonService from '../services/LikeButtonService'
+import UnlikeButtonService from '../services/UnlikeButtonService'
 
 // Components
 import MovieInfo from './MovieInfo'
@@ -21,7 +22,7 @@ export default class PosterControls extends Component {
       index: this.props.index,
       hoverItem: this.props.hoverItem,
       movie: this.props.movie,
-      liked: null
+      liked: undefined
     }
   }
 
@@ -38,9 +39,9 @@ export default class PosterControls extends Component {
   render() {
     const { index, hoverItem, movie, liked } = this.state
 
-    const inList = new MyListService(movie.id).findMovie()
+    if (hoverItem !== index) return <span></span>
 
-    // if (hoverItem !== index) return <span></span>
+    if (liked === undefined) return null
 
     return(
       <span>
@@ -67,6 +68,27 @@ export default class PosterControls extends Component {
         </div>
       </span>
     )
+  }
+
+  componentDidMount() {
+    const movie = this.state.movie
+
+    const foundLike = new LikeButtonService(movie).findMovie()
+    const foundUnlike = new UnlikeButtonService(movie).findMovie()
+
+    if (foundLike === false && foundUnlike === false) {
+      this.setState({
+        liked: null
+      })
+    } else if (foundLike === true) {
+      this.setState({
+        liked: true
+      })
+    } else if (foundUnlike === true) {
+      this.setState({
+        liked: false
+      })
+    }
   }
 
   toggleLike = () => {
