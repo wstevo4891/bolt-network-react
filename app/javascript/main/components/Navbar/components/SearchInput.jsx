@@ -10,6 +10,7 @@ const SearchInput = (props) => (
       name="query"
       id="search"
       className="form-control"
+      maxlength="80"
       placeholder="Titles, people, genres"
       aria-label="Titles, people, genres"
       onKeyUp={(event) => {

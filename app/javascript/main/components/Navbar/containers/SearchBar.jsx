@@ -86,9 +86,9 @@ export default class SearchBar extends Component {
           <div className="searchInput" style={{ width: `${value.x}px` }}>
             <i className="fa fa-search" id="searchIcon" aria-hidden="true"></i>
 
-            <form className="form-inline" action="#">
+            <div className="form-inline">
               <SearchInput update={this.updateQuery} location={location} />
-            </form>
+            </div>
 
             <SearchClose
               update={this.updateQuery}
