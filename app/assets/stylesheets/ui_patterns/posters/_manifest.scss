@@ -22,8 +22,8 @@
     height: 100%;
   }
 
-  &:hover {
-    box-shadow: 2px 2px 40px $azure-radiance;
+  &.mouseOver {
+    // box-shadow: 2px 2px 40px $azure-radiance;
     z-index: 2;
 
     .poster {
@@ -31,7 +31,13 @@
     }
 
     .poster-overlay {
-      background: rgba(0, 0, 0, .2);
+      background: rgba(0, 0, 0, .1);
+    }
+  }
+
+  &:hover {
+    span .movie-info span.play-icon {
+      color: red;
     }
   }
 }
@@ -161,7 +167,7 @@
     padding: .5em;
     border: solid 1px $white;
     border-radius: 50%;
-    color: red;
+    color: $white;
     background: rgba(0, 0, 0, 0.6);
     text-shadow: none;
 

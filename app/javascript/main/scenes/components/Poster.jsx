@@ -13,9 +13,13 @@ const Poster = (props) => {
 
   const service = new props.service(props)
 
-  const containerClass = service.containerClass()
+  let containerClass = service.containerClass()
 
   const slideItem = parseInt(containerClass.slice(-1), 10)
+
+  if (slideItem === props.hoverItem) {
+    containerClass += ' mouseOver'
+  }
 
   const posterStyle = service.posterStyle()
 

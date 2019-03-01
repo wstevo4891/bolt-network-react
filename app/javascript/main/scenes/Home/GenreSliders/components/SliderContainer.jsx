@@ -62,12 +62,21 @@ export default class SliderContainer extends Component {
   }
 
   handleMouseOver = (event) => {
+    let mouseOut = false
     const target = event.target.closest('.poster-container')
     const slideIndex = parseInt(target.classList[1].slice(-1), 10)
+
+    target.onmouseout = () => {
+      mouseOut = true
+    }
     
-    this.setState({
-      hoverItem: slideIndex
-    })
+    setTimeout(() => {
+      if (mouseOut) return
+
+      this.setState({
+        hoverItem: slideIndex
+      })
+    }, 500)
   }
 
   handleMouseLeave = () => {
