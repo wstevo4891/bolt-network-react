@@ -13,7 +13,6 @@ const SearchInput = (props) => (
       placeholder="Titles, people, genres"
       aria-label="Titles, people, genres"
       onKeyUp={(event) => {
-        console.log(history)
         const query = event.target.value
 
         if (query && query !== '') {

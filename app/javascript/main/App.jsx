@@ -61,8 +61,6 @@ export default class App extends Component {
       num = 2
     }
 
-    console.log('slideLength: ' + num)
-
     this.setState({
       slideLength: num
     })

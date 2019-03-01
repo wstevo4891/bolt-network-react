@@ -25,13 +25,15 @@
       }
     }
 
+    li {
+      transition: all .4s;
+    }
+
     li.active {
       @include bp-tablet {
+        font-weight: bold;
         transform: scale(1.1);
       }
-      // @media screen and (min-width: 767px) {
-      //   transform: scale(1.1);
-      // }
 
       a:hover {
         color: white;

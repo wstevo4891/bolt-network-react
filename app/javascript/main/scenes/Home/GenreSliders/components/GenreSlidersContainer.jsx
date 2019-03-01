@@ -2,7 +2,10 @@
 
 import React, { Component } from 'react'
 
+// Services
 import API from '../../../../services/API'
+
+// Components
 import GenreSliderRow from './GenreSliderRow'
 
 export default class GenreSlidersContainer extends Component {

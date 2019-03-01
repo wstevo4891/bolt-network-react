@@ -3,7 +3,10 @@
 import React, { Component } from 'react'
 import queryString from 'query-string'
 
+// Services
 import API from '../../../services/API'
+
+// Components
 import ResultsDisplay from './ResultsDisplay'
 import NotFound from './NotFound'
 
@@ -19,10 +22,6 @@ export default class SearchResults extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('Search Results Will Receive Props')
-    console.log('===============================================')
-    console.log(nextProps)
-
     const slideLength = nextProps.slideLength
     const query = this.parseQuery()
 
@@ -58,10 +57,6 @@ export default class SearchResults extends Component {
   }
 
   componentDidMount() {
-    console.log('SearchResults Mounted')
-    console.log(this.state)
-    console.log(this.props.location)
-
     const { slideLength, query } = this.state
 
     if (query === null) {
@@ -69,11 +64,6 @@ export default class SearchResults extends Component {
 
       this.fetchResults(query, slideLength)
     }
-  }
-
-  componentDidUpdate() {
-    console.log('SearchResults Updated')
-    console.log(this.state)
   }
 
   parseQuery = () => {
@@ -89,8 +79,6 @@ export default class SearchResults extends Component {
   fetchResults = (query, slideLength) => {
     API.search.get(query)
       .then(response => {
-        console.log('Search Results: ' + JSON.stringify(response.data))
-
         this.setState({
           slideLength: slideLength,
           query: query,

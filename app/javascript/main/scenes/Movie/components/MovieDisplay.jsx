@@ -15,7 +15,6 @@ export default class MovieDisplay extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps)
     const movieId = nextProps.match.params.movieId
 
     this.fetchMovie(movieId)
@@ -52,7 +51,6 @@ export default class MovieDisplay extends Component {
   fetchMovie = (movieId) => {
     API.movies.show(movieId)
       .then(response => {
-        console.log(response.data)
         // localStorage.setItem(`Movie_${movieId}`, JSON.stringify(response.data))
 
         this.setState({
