@@ -19,7 +19,7 @@ export default class PosterControls extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      index: this.props.index,
+      slideItem: this.props.slideItem,
       hoverItem: this.props.hoverItem,
       movie: this.props.movie,
       liked: undefined
@@ -32,7 +32,7 @@ export default class PosterControls extends Component {
     const likeState = this.determineLike(nextProps.movie)
 
     this.setState({
-      index: nextProps.index,
+      slideItem: nextProps.slideItem,
       hoverItem: nextProps.hoverItem,
       movie: nextProps.movie,
       liked: likeState
@@ -40,16 +40,16 @@ export default class PosterControls extends Component {
   }
 
   render() {
-    const { index, hoverItem, movie, liked } = this.state
+    const { slideItem, hoverItem, movie, liked } = this.state
 
-    if (hoverItem !== index) return <span></span>
+    if (hoverItem !== slideItem) return <span></span>
 
     if (liked === undefined) return null
 
     return(
       <span>
         <div className="poster-controls">
-          <MovieInfo movie={movie} hoverItem={hoverItem} index={index} />
+          <MovieInfo movie={movie} hoverItem={hoverItem} />
 
           <ul className="poster-buttons">
             <VolumeButton liked={liked} />

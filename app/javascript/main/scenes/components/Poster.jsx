@@ -15,6 +15,8 @@ const Poster = (props) => {
 
   const containerClass = service.containerClass()
 
+  const slideItem = parseInt(containerClass.slice(-1), 10)
+
   const posterStyle = service.posterStyle()
 
   const posterImage = {
@@ -30,9 +32,10 @@ const Poster = (props) => {
       onMouseLeave={props.mouseLeave}
     >
       <Link to={`/movies/${movie.id}`}>
-        <div className='poster' style={posterImage}></div>
+        <div className="poster" style={posterImage}></div>
+        <div className="poster-overlay"></div>
       </Link>
-      <PosterControls movie={movie} hoverItem={props.hoverItem} index={props.index} />
+      <PosterControls movie={movie} hoverItem={props.hoverItem} slideItem={slideItem} />
     </div>
   )
 }

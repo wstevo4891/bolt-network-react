@@ -10,7 +10,7 @@
 
   i {
     margin-right: 0.5em;
-    color: white;
+    color: $white;
   }
 }
 
@@ -43,7 +43,7 @@
 }
 
 #searchIcon, #closeIcon, #closeIcon-mobile {
-  color: white;
+  color: $white;
   padding: 8px;
 }
 
@@ -64,7 +64,7 @@
   margin-left: 1em;
 
   span {
-    color: white;
+    color: $white;
     font-weight: 600;
     font-size: 18px;
     margin-right: 0.5em;
@@ -73,7 +73,7 @@
   .searchMobile {
     display: inline-block;
     width: 50%;
-    border: solid 1px white;
+    border: solid 1px $white;
   }
 }
 
@@ -85,7 +85,7 @@
   margin: 0;
   font-size: 14px;
   line-height: 1.42857143;
-  color: white;
+  color: $white;
   background: transparent;
   border: 0px;
   border-radius: 0;
