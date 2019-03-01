@@ -3,6 +3,10 @@
 .not-found {
   margin-top: 8rem;
   color: white;
+
+  .not-found-query {
+    white-space: nowrap;
+  }
 }
 
 .search-results {

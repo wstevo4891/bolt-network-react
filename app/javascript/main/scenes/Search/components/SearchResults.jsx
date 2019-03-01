@@ -15,24 +15,36 @@ export default class SearchResults extends Component {
     super(props)
     this.state = {
       slideLength: this.props.slideLength,
+      search: this.props.location.search,
       query: null,
       genres: null,
       movies: null
     }
+
+    this._mounted = false
   }
 
   componentWillReceiveProps(nextProps) {
+    console.log('nextProps.location.search')
+    console.log(nextProps.location.search)
+
     const slideLength = nextProps.slideLength
-    const query = this.parseQuery()
+    const query = this.parseQuery(nextProps.location.search)
+    console.log('query: ' + query)
 
     if (query && query !== '') {
-      this.fetchResults(query, slideLength)
-    } else {
-      this.setState({
-        query: null,
-        genres: null,
-        movies: null
-      })
+      const cancelablePromise = this.makeCancelable(
+        this.fetchResults(query, slideLength)
+      )
+
+      cancelablePromise
+        .promise
+        .then(() => console.log('resolved'))
+        .catch((reason) => console.log('isCanceled', reason.isCanceled))
+      
+      if (this._mounted === false) {
+        cancelablePromise.cancel()
+      }
     }
   }
 
@@ -43,7 +55,7 @@ export default class SearchResults extends Component {
       return null
 
     } else if (genres.length === 0 && movies.length === 0) {
-      return <NotFound search={this.props.location.search} />
+      return <NotFound query={query} />
 
     } else {
       return(
@@ -57,23 +69,24 @@ export default class SearchResults extends Component {
   }
 
   componentDidMount() {
-    const { slideLength, query } = this.state
+    this._mounted = true
+
+    const { slideLength, search, query } = this.state
 
     if (query === null) {
-      const query = this.parseQuery()
+      const query = this.parseQuery(search)
 
       this.fetchResults(query, slideLength)
     }
   }
 
-  parseQuery = () => {
-    const q = queryString.parse(this.props.location.search).q
-    return decodeURIComponent(q)
+  componentWillUnMount() {
+    this._mounted = false
   }
 
-  resultsNotFound = (genres, movies) => {
-    return genres === null || genres.length === 0 &&
-      movies === null || movies.length === 0
+  parseQuery = (search) => {
+    const q = queryString.parse(search).q
+    return decodeURIComponent(q)
   }
 
   fetchResults = (query, slideLength) => {
@@ -90,5 +103,23 @@ export default class SearchResults extends Component {
         console.error('Error in SearchResults.fetchResults()')
         console.error(error);
       })
+  }
+
+  makeCancelable = (promise) => {
+    let hasCanceled_ = false
+
+    const wrappedPromise = new Promise((resolve, reject) => {
+      promise.then(
+        val => hasCanceled_ ? reject({isCanceled: true}) : resolve(val),
+        error => hasCanceled_ ? reject({isCanceled: true}) : reject(error)
+      )
+    })
+
+    return {
+      promise: wrappedPromise,
+      cancel() {
+        hasCanceled_ = true
+      }
+    }
   }
 }
