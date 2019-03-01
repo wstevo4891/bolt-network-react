@@ -29,10 +29,13 @@ export default class PosterControls extends Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.hoverItem === this.state.hoverItem) return
 
+    const likeState = this.determineLike(nextProps.movie)
+
     this.setState({
       index: nextProps.index,
       hoverItem: nextProps.hoverItem,
-      movie: nextProps.movie
+      movie: nextProps.movie,
+      liked: likeState
     })
   }
 
@@ -72,22 +75,25 @@ export default class PosterControls extends Component {
 
   componentDidMount() {
     const movie = this.state.movie
+    const likeState = this.determineLike(movie)
 
+    this.setState({
+      liked: likeState
+    })
+  }
+
+  determineLike = (movie) => {
     const foundLike = new LikeButtonService(movie).findMovie()
     const foundUnlike = new UnlikeButtonService(movie).findMovie()
 
     if (foundLike === false && foundUnlike === false) {
-      this.setState({
-        liked: null
-      })
+      return null
+
     } else if (foundLike === true) {
-      this.setState({
-        liked: true
-      })
+      return true
+
     } else if (foundUnlike === true) {
-      this.setState({
-        liked: false
-      })
+      return false
     }
   }
 
