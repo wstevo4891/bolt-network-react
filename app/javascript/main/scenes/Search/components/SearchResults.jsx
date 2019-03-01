@@ -25,26 +25,11 @@ export default class SearchResults extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('nextProps.location.search')
-    console.log(nextProps.location.search)
-
     const slideLength = nextProps.slideLength
     const query = this.parseQuery(nextProps.location.search)
-    console.log('query: ' + query)
 
     if (query && query !== '') {
-      const cancelablePromise = this.makeCancelable(
-        this.fetchResults(query, slideLength)
-      )
-
-      cancelablePromise
-        .promise
-        .then(() => console.log('resolved'))
-        .catch((reason) => console.log('isCanceled', reason.isCanceled))
-      
-      if (this._mounted === false) {
-        cancelablePromise.cancel()
-      }
+      this.fetchResults(query, slideLength)
     }
   }
 
@@ -80,7 +65,7 @@ export default class SearchResults extends Component {
     }
   }
 
-  componentWillUnMount() {
+  componentWillUnmount() {
     this._mounted = false
   }
 
@@ -92,6 +77,11 @@ export default class SearchResults extends Component {
   fetchResults = (query, slideLength) => {
     API.search.get(query)
       .then(response => {
+        // =====================================================
+        // Prevent this.setState() if component is unmounted
+        // =====================================================
+        if (this._mounted === false) return
+
         this.setState({
           slideLength: slideLength,
           query: query,
@@ -103,23 +93,5 @@ export default class SearchResults extends Component {
         console.error('Error in SearchResults.fetchResults()')
         console.error(error);
       })
-  }
-
-  makeCancelable = (promise) => {
-    let hasCanceled_ = false
-
-    const wrappedPromise = new Promise((resolve, reject) => {
-      promise.then(
-        val => hasCanceled_ ? reject({isCanceled: true}) : resolve(val),
-        error => hasCanceled_ ? reject({isCanceled: true}) : reject(error)
-      )
-    })
-
-    return {
-      promise: wrappedPromise,
-      cancel() {
-        hasCanceled_ = true
-      }
-    }
   }
 }
