@@ -1,7 +1,7 @@
 // app/javascript/main/components/Navbar/containers/Navbar.jsx
 
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
 
 import Hamburger from '../components/Hamburger'
 import NavCollapse from './NavCollapse'
@@ -13,15 +13,19 @@ export default class Navbar extends Component {
 
   render() {
     return (
-      <nav className="navbar navbar-expand-md fixed-top">
-        <Link className="navbar-brand" to="/">
-          <img src="/bolt-network.svg" alt="Bolt Network logo" className="logo" />
-        </Link>
+      <div id="navbar">
+        <nav className="navbar navbar-expand-md fixed-top">
+          <Link className="navbar-brand" to="/">
+            <img src="/bolt-network.svg" alt="Bolt Network logo" className="logo" />
+          </Link>
 
-        <Hamburger dataTarget="navbarContent" />
+          <Hamburger dataTarget="navbarContent" />
 
-        <NavCollapse genres={this.props.genres} />
-      </nav>
+          <Route
+            render={(routeProps) => <NavCollapse {...this.props} {...routeProps} />}
+          />
+        </nav>
+      </div>
     )
   }
 

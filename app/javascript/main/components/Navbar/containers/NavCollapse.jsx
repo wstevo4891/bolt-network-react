@@ -2,7 +2,10 @@
 
 import React, { Component } from 'react'
 
+// Services
 import API from '../../../services/API'
+
+// Components
 import NavItem from '../components/NavItem'
 import Dropdown from '../components/Dropdown'
 import SearchBar from './SearchBar'
@@ -12,12 +15,19 @@ export default class NavCollapse extends Component {
     super(props);
     this.state = {
       genres: this.props.genres,
-      active: 'home-link'
+      path: this.props.location.pathname,
+      dropdownShow: false
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      path: nextProps.location.pathname
+    })
+  }
+
   render() {
-    const { genres, active } = this.state
+    const { genres, path, dropdownShow } = this.state
     const location = window.location.pathname
 
     return(
@@ -25,7 +35,7 @@ export default class NavCollapse extends Component {
         <ul className="navbar-nav mr-auto">
           <NavItem
             id="home-link"
-            active={active}
+            path={path}
             srOnly="(current)"
             href="/"
             text="Home"
@@ -34,16 +44,17 @@ export default class NavCollapse extends Component {
 
           <Dropdown
             id="genre-link"
-            active={active}
             dropdownId="genresDropdown"
+            path={path}
             text="Genres"
             links={genres}
+            dropdownShow={dropdownShow}
             handleClick={this.handleClick}
           />
 
           <NavItem
             id="recent-link"
-            active={active}
+            path={path}
             href="/recent"
             text="Recently Added"
             handleClick={this.handleClick}
@@ -51,7 +62,7 @@ export default class NavCollapse extends Component {
 
           <NavItem
             id="my-list-link"
-            active={active}
+            path={path}
             href="/my-list"
             text="My List"
             handleClick={this.handleClick}
@@ -65,17 +76,9 @@ export default class NavCollapse extends Component {
     )
   }
 
-  handleClick = (event) => {
-    const targetId = event.target.id
-
-    if (targetId.match(/genre-link/)) {
-      this.setState({
-        active: 'genre-link'
-      })
-    } else {
-      this.setState({
-        active: targetId
-      })
-    }
+  handleClick = (targetId) => {
+    this.setState({
+      dropdownShow: false
+    })
   }
 }

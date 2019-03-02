@@ -28,9 +28,7 @@ export default class Main extends Component {
 
     return (
       <div id="main-container">
-        <div id="navbar">
-          <Navbar genres={genres} />
-        </div>
+        <Navbar genres={genres} />
 
         <Routes slideLength={slideLength} genres={genres} />
       </div>
