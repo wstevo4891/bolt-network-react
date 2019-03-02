@@ -90,9 +90,6 @@ export default class Dropdown extends Component {
   handleMouseUp = (event) => {
     const targetId = event.target.id
 
-    console.log('handleMouseUp')
-    console.log(targetId)
-
     if (targetId === this.state.dropdownId) {
       this.toggleShow()
     } else {

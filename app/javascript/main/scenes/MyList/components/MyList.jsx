@@ -15,9 +15,7 @@ export default class MyList extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const slideLength = this.state.slideLength
-
-    if (nextProps.slideLength === slideLength) return
+    if (nextProps.slideLength === this.state.slideLength) return
 
     this.setState({
       slideLength: nextProps.slideLength

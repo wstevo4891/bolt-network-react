@@ -15,11 +15,19 @@ export default class GenreDisplay extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    console.log(nextProps)
+  componentWillReceiveProps(nextProps) {    
     const genreId = nextProps.match.params.genreId
 
-    this.fetchGenre(genreId)
+    if (genreId === this.state.genre.id.toString()) {
+      if (this.state.slideLength === nextProps.slideLength) return
+      
+      this.setState({
+        slideLength: nextProps.slideLength
+      })
+
+    } else {
+      this.fetchGenre(genreId, nextProps.slideLength)
+    }
   }
 
   render() {
@@ -43,15 +51,16 @@ export default class GenreDisplay extends Component {
   componentDidMount() {
     const genreId = this.props.match.params.genreId
 
-    this.fetchGenre(genreId)
+    this.fetchGenre(genreId, this.state.slideLength)
   }
 
-  fetchGenre = (genreId) => {
+  fetchGenre = (genreId, slideLength) => {
     API.genres.show(genreId)
       .then(response => {
         // localStorage.setItem(`Genre_${genreId}`, JSON.stringify(response.data))
 
         this.setState({
+          slideLength: slideLength,
           genre: response.data.genre,
           movies: response.data.movies
         })

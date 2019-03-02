@@ -39,7 +39,12 @@ const Poster = (props) => {
         <div className="poster" style={posterImage}></div>
         <div className="poster-overlay"></div>
       </Link>
-      <PosterControls movie={movie} hoverItem={props.hoverItem} slideItem={slideItem} />
+
+      <PosterControls
+        movie={movie}
+        hoverItem={props.hoverItem}
+        slideItem={slideItem}
+      />
     </div>
   )
 }

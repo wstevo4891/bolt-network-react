@@ -9,19 +9,14 @@ import API from '../../../../services/API'
 import GenreSliderRow from './GenreSliderRow'
 
 export default class GenreSlidersContainer extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      slideLength: this.props.slideLength,
-      genres: this.props.genres,
-      moviesIndex: null
-    }
+  state = {
+    slideLength: this.props.slideLength,
+    genres: this.props.genres,
+    moviesIndex: null
   }
 
   componentWillReceiveProps(nextProps) {
-    const { slideLength } = this.state
-
-    if (nextProps.slideLength === slideLength) return
+    if (nextProps.slideLength === this.state.slideLength) return
 
     this.fetchMoviesIndex(nextProps.slideLength)
   }
@@ -51,13 +46,23 @@ export default class GenreSlidersContainer extends Component {
     const { slideLength, moviesIndex } = this.state
 
     if (moviesIndex === null) {
-      this.fetchMoviesIndex(slideLength)
+      const index = localStorage.getItem('MoviesIndex')
+
+      if (index === null) {
+        this.fetchMoviesIndex(slideLength)
+      } else {
+        this.setState({
+          moviesIndex: JSON.parse(index)
+        })
+      }
     }
   }
 
   fetchMoviesIndex = (slideLength) => {
     API.moviesIndex.get(slideLength)
       .then(response => {
+        localStorage.setItem('MoviesIndex', JSON.stringify(response.data))
+
         this.setState({
           slideLength: slideLength,
           moviesIndex: response.data

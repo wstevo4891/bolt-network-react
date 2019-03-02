@@ -28,8 +28,17 @@ export default class SearchResults extends Component {
     const slideLength = nextProps.slideLength
     const query = this.parseQuery(nextProps.location.search)
 
-    if (query && query !== '') {
-      this.fetchResults(query, slideLength)
+    if (query === this.state.query) {
+      if (this.state.slideLength === slideLength) return
+
+      this.setState({
+        slideLength: slideLength
+      })
+
+    } else {
+      if (query && query !== '') {
+        this.fetchResults(query, slideLength)
+      }
     }
   }
 
