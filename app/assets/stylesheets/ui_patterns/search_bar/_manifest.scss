@@ -23,7 +23,7 @@
   z-index: 1;
 }
 
-.searchInput {
+#searchInput {
   height: 36px;
   overflow: hidden;
   position: absolute;
@@ -32,14 +32,14 @@
   background: rgba(0,0,0,.75);
   border: 1px solid rgba(255,255,255,.85);
 
+  &.is-visible {
+    display: flex;
+    width: auto;
+  }
+
   input:focus, textarea:focus {
     outline: none;
   }
-}
-
-.searchInput.is-visible {
-  display: flex;
-  width: auto;
 }
 
 #searchIcon, #closeIcon, #closeIcon-mobile {

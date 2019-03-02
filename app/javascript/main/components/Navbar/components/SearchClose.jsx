@@ -4,7 +4,7 @@ import React from 'react'
 
 const SearchClose = (props) => (
   <i
-    className={`fa fa-times ${props.display}`}
+    className={`fa fa-times${props.query ? '' : ' d-none'}`}
     id="closeIcon"
     aria-hidden="true"
     onClick={() => {

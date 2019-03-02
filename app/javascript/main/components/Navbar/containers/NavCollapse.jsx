@@ -16,8 +16,7 @@ export default class NavCollapse extends Component {
     this.state = {
       genres: this.props.genres,
       path: this.props.location.pathname,
-      history: this.props.history,
-      dropdownShow: false
+      history: this.props.history
     }
   }
 
@@ -29,7 +28,7 @@ export default class NavCollapse extends Component {
   }
 
   render() {
-    const { genres, path, history, dropdownShow } = this.state
+    const { genres, path, history } = this.state
 
     return(
       <div className="collapse navbar-collapse" id="navbarContent">

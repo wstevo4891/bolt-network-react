@@ -4,8 +4,7 @@ import React, { Component } from 'react'
 import { Motion, spring } from 'react-motion'
 
 // Components
-import SearchInput from '../components/SearchInput'
-import SearchClose from '../components/SearchClose'
+import InputDisplay from '../components/InputDisplay'
 
 export default class SearchBar extends Component {
   constructor(props) {
@@ -14,19 +13,8 @@ export default class SearchBar extends Component {
     this.state = {
       location: this.props.location,
       history: this.props.history,
-      display: false,
-      start: 0,
-      end: 270,
-      queryExists: false
+      display: false
     }
-
-    this.searchClasses = [
-      'searchWrapper',
-      'searchInput',
-      'fa',
-      'form-inline',
-      'form-control'
-    ]
   }
 
   componentWillReceiveProps(nextProps) {
@@ -42,13 +30,11 @@ export default class SearchBar extends Component {
     }
   }
 
+  // When we click on the hour glass button, we'll hide it,
+  // render the searchInput div, and animate its width to 270px.
   render() {
-    // console.log('SearchBar Rendering')
-    // console.log(this.state.location)
-    // console.log('###########################################')
-    // console.log(this.props)
+    const { location, history, display } = this.state
 
-    const display = this.state.display
     const boxClass = display ? 'searchBox d-none' : 'searchBox'
     const wrapperClass = display ? 'searchWrapper' : 'searchWrapper d-none'
 
@@ -59,20 +45,15 @@ export default class SearchBar extends Component {
         </button>
 
         <div className={wrapperClass}>
-          {this.displayInput()}
+          <InputDisplay
+            location={location}
+            history={history}
+            display={display}
+            closeDisplay={this.closeDisplay}
+          />
         </div>
       </li>
     )
-  }
-
-  componentDidMount() {
-    // Add the event listener that hides the search bar
-    document.addEventListener('mouseup', this.handleMouseUp)
-  }
-
-  componentWillUnmount() {
-    // Remove the mouseUp event listener
-    window.removeEventListener('mouseup', this.handleMouseUp)
   }
 
   handleClick = () => {
@@ -81,73 +62,9 @@ export default class SearchBar extends Component {
     })
   }
 
-  // When we click on the hour glass button, we'll hide it,
-  // render the searchInput div, and animate its width to 270px.
-  displayInput = () => {
-    const { location, history, display, start, end, queryExists } = this.state
-
-    if (display === false) return null
-
-    const displayClose = queryExists ? '' : 'd-none'
-
-    return(
-      <Motion defaultStyle={{ x: start }} style={{ x: spring(end) }}>
-        {value => (
-          <div className="searchInput" style={{ width: `${value.x}px` }}>
-            <i className="fa fa-search" id="searchIcon" aria-hidden="true"></i>
-
-            <div className="form-inline">
-              <SearchInput update={this.updateQuery} location={location} history={history} />
-            </div>
-
-            <SearchClose
-              update={this.updateQuery}
-              display={displayClose}
-              location={location}
-              history={history}
-            />
-          </div>
-        )}
-      </Motion>
-    )
-  }
-
-  handleMouseUp = (event) => {
-    const targetClass = event.target.className
-    const $input = document.querySelector('.searchInput')
-
-    if ($input === null) return
-
-    const searchValue = document.getElementById('search').value
-
-    if ($input && searchValue.length === 0 && !this.searchClasses.includes(targetClass)) {
-      this.setState({
-        start: 270,
-        end: 0
-      })
-
-      setTimeout(() => {
-        this.setState({
-          display: false,
-          start: 0,
-          end: 270
-        })
-      }, 400)
-    }
-  }
-
-  updateQuery = (query) => {
-    // console.log('Update Query')
-    // console.log(query)
-
-    if (query && query !== '') {
-      this.setState({
-        queryExists: true
-      })
-    } else {
-      this.setState({
-        queryExists: false
-      })
-    }
+  closeDisplay = () => {
+    this.setState({
+      display: false
+    })
   }
 }

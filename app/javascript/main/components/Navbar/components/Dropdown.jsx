@@ -20,9 +20,6 @@ export default class Dropdown extends Component {
   }
 
   render() {
-    console.log('Dropdown Rendering')
-    console.log(this.state)
-
     const { id, dropdownId, path, text, links, show } = this.state
 
     let itemClass
