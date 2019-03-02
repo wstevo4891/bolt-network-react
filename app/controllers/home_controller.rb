@@ -2,8 +2,6 @@
 
 # Home page controller
 class HomeController < PublicController
-  layout 'home'
-
   def index
     render
   end
