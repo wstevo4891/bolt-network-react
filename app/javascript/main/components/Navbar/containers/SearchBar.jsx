@@ -3,6 +3,7 @@
 import React, { Component } from 'react'
 import { Motion, spring } from 'react-motion'
 
+// Components
 import SearchInput from '../components/SearchInput'
 import SearchClose from '../components/SearchClose'
 
@@ -12,6 +13,7 @@ export default class SearchBar extends Component {
 
     this.state = {
       location: this.props.location,
+      history: this.props.history,
       display: false,
       start: 0,
       end: 270,
@@ -28,13 +30,16 @@ export default class SearchBar extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const location = nextProps.location
-
-    if (location.match(/search/)) return
-
-    this.setState({
-      location: location
-    })
+    if (nextProps.location === '/search') {
+      this.setState({
+        history: nextProps.history
+      })
+    } else {
+      this.setState({
+        location: nextProps.location,
+        history: nextProps.history
+      })
+    }
   }
 
   render() {
@@ -65,6 +70,11 @@ export default class SearchBar extends Component {
     document.addEventListener('mouseup', this.handleMouseUp)
   }
 
+  componentWillUnmount() {
+    // Remove the mouseUp event listener
+    window.removeEventListener('mouseup', this.handleMouseUp)
+  }
+
   handleClick = () => {
     this.setState({
       display: true
@@ -74,7 +84,7 @@ export default class SearchBar extends Component {
   // When we click on the hour glass button, we'll hide it,
   // render the searchInput div, and animate its width to 270px.
   displayInput = () => {
-    const { location, display, start, end, queryExists } = this.state
+    const { location, history, display, start, end, queryExists } = this.state
 
     if (display === false) return null
 
@@ -87,13 +97,14 @@ export default class SearchBar extends Component {
             <i className="fa fa-search" id="searchIcon" aria-hidden="true"></i>
 
             <div className="form-inline">
-              <SearchInput update={this.updateQuery} location={location} />
+              <SearchInput update={this.updateQuery} location={location} history={history} />
             </div>
 
             <SearchClose
               update={this.updateQuery}
               display={displayClose}
               location={location}
+              history={history}
             />
           </div>
         )}

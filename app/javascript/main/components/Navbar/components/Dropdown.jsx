@@ -10,7 +10,7 @@ export default class Dropdown extends Component {
     path: this.props.path,
     text: this.props.text,
     links: this.props.links,
-    show: this.props.dropdownShow
+    show: false
   }
 
   componentWillReceiveProps(nextProps) {
@@ -20,6 +20,9 @@ export default class Dropdown extends Component {
   }
 
   render() {
+    console.log('Dropdown Rendering')
+    console.log(this.state)
+
     const { id, dropdownId, path, text, links, show } = this.state
 
     let itemClass
@@ -45,7 +48,7 @@ export default class Dropdown extends Component {
           role="button"
           aria-haspopup="true"
           aria-expanded="false"
-          onClick={(event) => this.toggleShow(event, show)}
+          onClick={(event) => this.handleClick(event)}
         >
           {text}
           <i className="fa fa-angle-down"></i>
@@ -54,7 +57,6 @@ export default class Dropdown extends Component {
           id={id}
           className={menuClass}
           aria-labelledby={dropdownId}
-          onClick={this.handleLinkClick}
         >
           {
             links.map((link, index) =>
@@ -73,11 +75,38 @@ export default class Dropdown extends Component {
     )
   }
 
-  toggleShow = (event, show) => {
+  componentDidMount() {
+    // Add the event listener that toggles the menu
+    document.addEventListener('mouseup', this.handleMouseUp)
+  }
+
+  componentWillUnmount() {
+    // Remove the mouseUp event listener
+    window.removeEventListener('mouseup', this.handleMouseUp)
+  }
+
+  handleClick = (event) => {
     event.preventDefault()
     event.stopPropagation()
+  }
 
-    if (show) {
+  handleMouseUp = (event) => {
+    const targetId = event.target.id
+
+    console.log('handleMouseUp')
+    console.log(targetId)
+
+    if (targetId === this.state.dropdownId) {
+      this.toggleShow()
+    } else {
+      this.setState({
+        show: false
+      })
+    }
+  }
+
+  toggleShow = () => {
+    if (this.state.show) {
       this.setState({
         show: false
       })
@@ -86,11 +115,5 @@ export default class Dropdown extends Component {
         show: true
       })
     }
-  }
-
-  handleLinkClick = () => {
-    this.setState({
-      show: false
-    })
   }
 }

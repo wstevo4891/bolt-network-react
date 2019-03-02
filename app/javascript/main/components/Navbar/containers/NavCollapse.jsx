@@ -16,19 +16,20 @@ export default class NavCollapse extends Component {
     this.state = {
       genres: this.props.genres,
       path: this.props.location.pathname,
+      history: this.props.history,
       dropdownShow: false
     }
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      path: nextProps.location.pathname
+      path: nextProps.location.pathname,
+      history: nextProps.history
     })
   }
 
   render() {
-    const { genres, path, dropdownShow } = this.state
-    const location = window.location.pathname
+    const { genres, path, history, dropdownShow } = this.state
 
     return(
       <div className="collapse navbar-collapse" id="navbarContent">
@@ -36,10 +37,8 @@ export default class NavCollapse extends Component {
           <NavItem
             id="home-link"
             path={path}
-            srOnly="(current)"
             href="/"
             text="Home"
-            handleClick={this.handleClick}
           />
 
           <Dropdown
@@ -48,8 +47,6 @@ export default class NavCollapse extends Component {
             path={path}
             text="Genres"
             links={genres}
-            dropdownShow={dropdownShow}
-            handleClick={this.handleClick}
           />
 
           <NavItem
@@ -57,7 +54,6 @@ export default class NavCollapse extends Component {
             path={path}
             href="/recent"
             text="Recently Added"
-            handleClick={this.handleClick}
           />
 
           <NavItem
@@ -65,20 +61,13 @@ export default class NavCollapse extends Component {
             path={path}
             href="/my-list"
             text="My List"
-            handleClick={this.handleClick}
           />
         </ul>
 
         <ul className="navbar-nav navbar-right">
-          <SearchBar location={location} />
+          <SearchBar location={path} history={history} />
         </ul>
       </div>
     )
-  }
-
-  handleClick = (targetId) => {
-    this.setState({
-      dropdownShow: false
-    })
   }
 }

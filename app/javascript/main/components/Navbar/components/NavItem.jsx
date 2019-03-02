@@ -21,7 +21,6 @@ const NavItem = (props) => {
         id={props.id}
         className={linkClass}
         to={props.href}
-        onClick={props.handleClick}
       >
         {props.text}&nbsp;
         <span className="sr-only">

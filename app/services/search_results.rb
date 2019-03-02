@@ -84,8 +84,10 @@ class SearchResults
   end
 
   def concat_movies_by_genre
+    limit = genres.length > 1 ? 5 : 20
+
     genres.each_with_object([]) do |genre, arr|
-      arr.concat(genre.movies.limit(5))
+      arr.concat genre.movies.limit(limit)
     end
   end
 end
