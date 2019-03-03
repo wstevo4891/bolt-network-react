@@ -1,7 +1,7 @@
 // app/assets/stylesheets/modules/home_page/_manifest.scss
 
-/* HOME PAGE STYLES
-==========================================*/
+// HOME PAGE STYLES
+// ==============================================
 
 #main-container {
   min-height: 60vh;
@@ -22,7 +22,35 @@ main.application {
   h2, h4 {
     color: $azure-radiance;
   }
+
+  // SUPPORTING DIV
+  // ==================================
+  .supporting h1, .feature h2 {
+    color: $azure-radiance;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-size: 32px;
+    font-weight: 300;
+  }
   
+  .supporting p {
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+
+  // FEATURE DIV
+  // ==================================
+  .feature {
+    background: url(http://s3.amazonaws.com/codecademy-content/projects/bolt-network/feature.jpg) no-repeat center center;
+    background-size: cover;
+    height: 380px;
+    padding: 100px 0 0 0;
+
+    p {
+      font-size: 16px;
+    }
+  }
+
   @media (min-width: 1200px) {
     .container {
       width: 970px;
@@ -30,9 +58,7 @@ main.application {
   }
 }
 
-/* SUPPORTING DIV
-=================================*/
-// .supporting { width: 100%; }
+
 
 .main,
 .supporting h2,
@@ -42,29 +68,15 @@ main.application {
   color:#fff;
 }
 
-.supporting h2, .feature h1 {
-  color:$azure-radiance;
-  margin-top:40px;
-  margin-bottom: 10px;
-  font-size: 32px;
-  font-weight:300;
-}
+// .supporting h2, .feature h1 {
+//   color: $azure-radiance;
+//   margin-top: 40px;
+//   margin-bottom: 10px;
+//   font-size: 32px;
+//   font-weight: 300;
+// }
 
-.supporting p {
-  margin-bottom: 5px;
-  font-size: 16px;
-}
-
-
-/* FEATURE DIV
-============================*/
-.feature {
-  background: url(http://s3.amazonaws.com/codecademy-content/projects/bolt-network/feature.jpg) no-repeat center center;
-  background-size: cover;
-  height: 380px;
-  padding: 100px 0 0 0;
-
-  p {
-    font-size:18px;
-  }
-}
+// .supporting p {
+//   margin-bottom: 5px;
+//   font-size: 16px;
+// }
