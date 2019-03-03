@@ -6,22 +6,25 @@ import API from '../../../services/API'
 import Results from '../../components/Results'
 
 export default class RecentlyAdded extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      slideLength: this.props.slideLength,
-      movies: null
-    }
+  state = {
+    slideLength: this.props.slideLength,
+    movies: null
   }
 
   componentWillReceiveProps(nextProps) {
-    const slideLength = this.state.slideLength
+    if (nextProps.slideLength === this.state.slideLength) return
 
-    if (nextProps.slideLength === slideLength) return
+    const movies = localStorage.getItem('RecentlyAdded')
 
-    this.setState({
-      slideLength: nextProps.slideLength
-    })
+    if (movies === null) {
+      this.fetchMovies(nextProps.slideLength)
+
+    } else {
+      this.setState({
+        slideLength: nextProps.slideLength,
+        movies: JSON.parse(movies)
+      })
+    }
   }
 
   render() {
@@ -43,19 +46,29 @@ export default class RecentlyAdded extends Component {
   }
 
   componentDidMount() {
-    const movies = this.state.movies
+    let { slideLength, movies } = this.state
 
     if (movies !== null) return
 
-    this.fetchMovies()
+    movies = localStorage.getItem('RecentlyAdded')
+
+    if (movies === null) {
+      this.fetchMovies(slideLength)
+
+    } else {
+      this.setState({
+        movies: JSON.parse(movies)
+      })
+    }
   }
 
-  fetchMovies = () => {
+  fetchMovies = (slideLength) => {
     API.movies.recent()
       .then(response => {
-        // localStorage.setItem('RecentlyAdded', JSON.stringify(response.data))
+        localStorage.setItem('RecentlyAdded', JSON.stringify(response.data))
 
         this.setState({
+          slideLength: slideLength,
           movies: response.data
         })
       })

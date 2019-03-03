@@ -2,19 +2,18 @@
 
 import React, { Component } from 'react'
 
+// Services
 import MoviesList from '../services/MoviesList'
+
+// Components
 import GenreSlider from './GenreSlider'
 
 export default class GenreSliderRow extends Component {
-  constructor (props) {
-    super(props)
-
-    this.state = {
-      genre: this.props.genre,
-      movies: this.props.movies,
-      slideLength: this.props.slideLength,
-      moviesList: null
-    }
+  state = {
+    genre: this.props.genre,
+    movies: this.props.movies,
+    slideLength: this.props.slideLength,
+    moviesList: null
   }
 
   componentWillReceiveProps(nextProps) {
@@ -51,12 +50,14 @@ export default class GenreSliderRow extends Component {
   }
 
   componentDidMount() {
-    if (this.state.moviesList === null) {
-      const moviesList = new MoviesList(this.state).call()
+    let moviesList = this.state.moviesList
 
-      this.setState({
-        moviesList: moviesList
-      })
-    }
+    if (moviesList !== null) return
+
+    moviesList = new MoviesList(this.state).call()
+
+    this.setState({
+      moviesList: moviesList
+    })
   }
 }

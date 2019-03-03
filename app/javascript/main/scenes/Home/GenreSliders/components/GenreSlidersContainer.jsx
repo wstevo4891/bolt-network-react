@@ -16,9 +16,23 @@ export default class GenreSlidersContainer extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.slideLength === this.state.slideLength) return
+    let slideLength = this.state.slideLength
 
-    this.fetchMoviesIndex(nextProps.slideLength)
+    if (nextProps.slideLength === slideLength) return
+
+    slideLength = nextProps.slideLength
+
+    let moviesIndex = localStorage.getItem(`MoviesIndex_${slideLength}`)
+
+    if (moviesIndex === null) {
+      this.fetchMoviesIndex(slideLength)
+
+    } else {
+      this.setState({
+        slideLength: slideLength,
+        moviesIndex: JSON.parse(moviesIndex)
+      })
+    }
   }
 
   render() {
@@ -43,25 +57,26 @@ export default class GenreSlidersContainer extends Component {
   }
 
   componentDidMount() {
-    const { slideLength, moviesIndex } = this.state
+    let { slideLength, moviesIndex } = this.state
+
+    if (moviesIndex !== null) return
+
+    moviesIndex = localStorage.getItem(`MoviesIndex_${slideLength}`)
 
     if (moviesIndex === null) {
-      const index = localStorage.getItem('MoviesIndex')
+      this.fetchMoviesIndex(slideLength)
 
-      if (index === null) {
-        this.fetchMoviesIndex(slideLength)
-      } else {
-        this.setState({
-          moviesIndex: JSON.parse(index)
-        })
-      }
+    } else {
+      this.setState({
+        moviesIndex: JSON.parse(moviesIndex)
+      })
     }
   }
 
   fetchMoviesIndex = (slideLength) => {
     API.moviesIndex.get(slideLength)
       .then(response => {
-        localStorage.setItem('MoviesIndex', JSON.stringify(response.data))
+        localStorage.setItem(`MoviesIndex_${slideLength}`, JSON.stringify(response.data))
 
         this.setState({
           slideLength: slideLength,

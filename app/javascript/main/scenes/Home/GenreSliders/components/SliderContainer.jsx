@@ -2,22 +2,21 @@
 
 import React, { Component } from 'react'
 
-import Poster from '../../../components/Poster'
+// Services
 import ContainerStyle from '../services/ContainerStyle'
 import SliderPosterService from '../services/SliderPosterService'
 
-export default class SliderContainer extends Component {
-  constructor(props) {
-    super(props)
+// Components
+import Poster from '../../../components/Poster'
 
-    this.state = {
-      slides: this.props.slides,
-      slideLength: this.props.slideLength,
-      start: this.props.start,
-      next: this.props.next,
-      prev: this.props.prev,
-      hoverItem: null
-    }
+export default class SliderContainer extends Component {
+  state = {
+    slides: this.props.slides,
+    slideLength: this.props.slideLength,
+    start: this.props.start,
+    next: this.props.next,
+    prev: this.props.prev,
+    hoverItem: null
   }
 
   componentWillReceiveProps(nextProps) {
