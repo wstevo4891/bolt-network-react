@@ -1,4 +1,4 @@
-// app/javascript/main/scenes/Home/Carousel/components/Carousel.jsx
+// app/javascript/main/scenes/Home/Carousel/components/CarouselApp.jsx
 
 import React, { Component } from 'react'
 import { Carousel, CarouselItem } from 'reactstrap'
@@ -8,10 +8,10 @@ import API from '../../../../services/API'
 import MyListService from '../../../services/MyListService'
 
 // Components
-import SlideES from './SlideES'
+import Slide from './Slide'
 import ControlButton from './ControlButton'
 
-export default class CarouselES extends Component {
+export default class CarouselApp extends Component {
   state = {
     activeIndex: 0,
     titles: [
@@ -61,7 +61,7 @@ export default class CarouselES extends Component {
           onExiting={this.onExiting}
           onExited={this.onExited}
         >
-          <SlideES
+          <Slide
             movie={movie}
             addToList={this.addToList}
           />
