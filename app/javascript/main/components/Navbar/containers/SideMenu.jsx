@@ -13,8 +13,14 @@ export default class SideMenu extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    if (nextProps.location.pathname !== this.state.path) {
+      setTimeout(() => {
+        this.props.toggleDisplay()
+      }, 1000)
+    }
+
     this.setState({
-      path: nextProps.path,
+      path: nextProps.location.pathname,
       display: nextProps.display
     })
   }

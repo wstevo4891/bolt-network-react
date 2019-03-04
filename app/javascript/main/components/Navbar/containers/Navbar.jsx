@@ -21,14 +21,17 @@ export default class Navbar extends Component {
     if (width < 768) {
       this.addShadow()
       window.removeEventListener('scroll', this.handleScroll)
+      this.setState({ displayMobile: true })
+
     } else {
       this.removeShadow()
       window.addEventListener('scroll', this.handleScroll)
+      this.setState({ displayMobile: false })
     }
   }
 
   render() {
-    const { displayMobile, displayMenu } = this.state
+    const { displayMenu } = this.state
 
     return (
       <div id="navbar">
@@ -63,6 +66,7 @@ export default class Navbar extends Component {
                 genres={this.props.genres}
                 display={displayMenu}
                 {...routeProps}
+                toggleDisplay={this.toggleDisplay}
               />
             )}
           />
@@ -91,10 +95,12 @@ export default class Navbar extends Component {
     if (width < 768) {
       this.addShadow()
       window.removeEventListener('scroll', this.handleScroll)
+      this.setState({ displayMobile: true })
 
     } else {
       this.removeShadow()
       window.addEventListener('scroll', this.handleScroll)
+      this.setState({ displayMobile: false })
     }
   }
 
