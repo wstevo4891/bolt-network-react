@@ -1,50 +1,101 @@
 // app/javascript/main/scenes/Home/Carousel/components/Carousel.jsx
 
 import React, { Component } from 'react'
+import { Carousel, CarouselItem } from 'reactstrap'
 
+// Services
 import API from '../../../../services/API'
 import MyListService from '../../../services/MyListService'
-import Slide from './Slide'
+
+// Components
+import SlideES from './SlideES'
+import ControlButton from './ControlButton'
 
 export default class CarouselES extends Component {
   state = {
+    activeIndex: 0,
     titles: [
       'Pirates of the Caribbean: The Curse of the Black Pearl',
       'The Avengers',
       'Skyfall'
     ],
-    movies: []
+    movies: null
   }
 
   render() {
-    const movies = this.state.movies
+    const { activeIndex, movies } = this.state
+
+    if (movies === null) return null
+
+    const slides = this.buildSlides(movies)
 
     return(
-      <div id="carouselMain" className="carousel slide carousel-fade" data-ride="false">
-        <div className="carousel-inner">
-          {movies.map((movie, index) =>
-            <Slide
-              key={index}
-              index={index}
-              movie={movie}
-              addToList={this.addToList}
-            />
-          )}
-        </div>
+      <Carousel
+        activeIndex={activeIndex}
+        next={this.next}
+        previous={this.previous}
+        interval={false}
+      >
+        {slides}
 
-        <a className="carousel-control-prev" href="#carouselMain" role="button" data-slide="prev">
-          <span className="fa fa-angle-left slider-arrow slider-prev">
-            <p className="sr-only">Go to next slide</p>
-          </span>
-        </a>
+        <ControlButton
+          direction="prev"
+          directionText="Previous"
+          onClickHandler={this.previous}
+        />
 
-        <a className="carousel-control-next" href="#carouselMain" role="button" data-slide="next">
-          <span className="fa fa-angle-right slider-arrow slider-next">
-            <p className="sr-only">Go to previous slide</p>
-          </span>
-        </a>
-      </div>
+        <ControlButton
+          direction="next"
+          directionText="Next"
+          onClickHandler={this.next}
+        />
+      </Carousel>
     )
+  }
+
+  buildSlides = (movies) => {
+    return movies.map((movie) => {
+      return(
+        <CarouselItem
+          key={movie.logo}
+          onExiting={this.onExiting}
+          onExited={this.onExited}
+        >
+          <SlideES
+            movie={movie}
+            addToList={this.addToList}
+          />
+        </CarouselItem>
+      )
+    })
+  }
+
+  onExiting = () => {
+    this.animating = true
+  }
+
+  onExited = () => {
+    this.animating = false
+  }
+
+  next = () => {
+    if (this.animating) return
+
+    const { activeIndex, movies } = this.state
+
+    const nextIndex = activeIndex === movies.length - 1 ? 0 : activeIndex + 1
+
+    this.setState({ activeIndex: nextIndex })
+  }
+
+  previous = () => {
+    if (this.animating) return
+
+    const { activeIndex, movies } = this.state
+
+    const nextIndex = activeIndex === 0 ? movies.length - 1 : activeIndex - 1
+
+    this.setState({ activeIndex: nextIndex })
   }
 
   componentDidMount() {
@@ -57,17 +108,6 @@ export default class CarouselES extends Component {
     } else {
       this.fetchMovies()
     }
-
-    // Turn off carousel's auto-sliding
-    const $carousel = $('.carousel')
-
-    $('.carousel-control-prev').click(function() {
-      $carousel.carousel('pause')
-    })
-
-    $('.carousel-control-next').click(function() {
-      $carousel.carousel('pause')
-    })
   }
 
   fetchMovies = () => {

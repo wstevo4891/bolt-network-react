@@ -2,12 +2,12 @@
 
 import React from 'react'
 
-import Carousel from '../Carousel/components/Carousel'
+import CarouselES from '../Carousel/components/CarouselES'
 import GenreSlidersContainer from '../GenreSliders/components/GenreSlidersContainer'
 
 const Home = (props) => (
   <main className="application">
-    <Carousel />
+    <CarouselES />
 
     <div className="container">
       <div className="row justify-content-center">
