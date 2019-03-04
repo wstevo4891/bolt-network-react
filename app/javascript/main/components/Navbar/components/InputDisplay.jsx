@@ -50,6 +50,7 @@ export default class InputDisplay extends Component {
                 update={this.updateQuery}
                 location={location}
                 history={history}
+                placeholder="Titles, people, genres"
               />
             </div>
 

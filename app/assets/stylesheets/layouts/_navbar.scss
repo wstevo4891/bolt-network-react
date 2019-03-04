@@ -4,15 +4,32 @@
   width: 150px;
 }
 
-// Set navbar link color to white
-// Gray on hover
 #navbar {
   .navbar {
     transition: background .4s;
   }
 
-  .navbar-toggler span {
-    color: $azure-radiance;
+  .navbar-toggler {
+    padding: 0;
+
+    &:focus {
+      outline: none;
+    }
+
+    span {
+      color: $white;
+      font-size: 2rem;
+    }
+  }
+
+  .navbar-brand {
+    margin-left: 1rem;
+    margin-right: auto;
+
+    @media screen and (min-width: 768px) {
+      margin-left: unset;
+      margin-right: 1rem;
+    }
   }
 
   .navbar .navbar-collapse .navbar-nav {
@@ -67,4 +84,29 @@
 
 .nav-shadow {
   background: rgb(20, 20, 20);
+}
+
+#side-menu {
+  position: absolute;
+  top: 4rem;
+  left: 0;
+  padding: 0 1rem 1rem;
+  background: #141414;
+  transition: all .2s;
+
+  .navbar-nav {
+    li a {
+      color: #b3b3b3;
+      font-weight: bold;
+      transition: color .4s;
+
+      &:hover, &:focus {
+        color: $white;
+      }
+    }
+
+    li.nav-item.active a {
+      color: $white;
+    }
+  }
 }

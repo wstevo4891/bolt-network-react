@@ -48,7 +48,7 @@ export default class App extends Component {
   }
 
   updateSlideLength = () => {
-    let width = window.innerWidth
+    const width = window.innerWidth
     let num = null
 
     for (let point of this.breakpoints) {

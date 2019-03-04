@@ -42,6 +42,17 @@
   }
 }
 
+#mobileSearchInput {
+  @extend #searchInput;
+  display: block;
+  width: 30vw;
+  margin-right: 1rem;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
 #searchIcon, #closeIcon, #closeIcon-mobile {
   color: $white;
   padding: 8px;

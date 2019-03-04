@@ -17,16 +17,18 @@
 
 .btn-clear {
   @extend .btn;
-  color: #d6d6d6;
-  background: rgba(0,0,0,.75);
+  padding: 0.5em 1.25em;
   border: solid 1px #d6d6d6;
   border-radius: 0;
-  padding: 0.5em 1.25em;
+  color: #d6d6d6;
+  background: rgba(0,0,0,.75);
+  font-family: "Roboto";
+  font-weight: 200;
   transition: all .4s;
 
   &:hover {
     background: #d6d6d6;
-    color: #000;
+    color: rgba(0,0,0,.75) !important;
     border-color: #d6d6d6;
   }
 }

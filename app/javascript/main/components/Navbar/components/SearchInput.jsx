@@ -9,8 +9,8 @@ const SearchInput = (props) => (
     id="search"
     className="form-control"
     maxLength="80"
-    placeholder="Titles, people, genres"
-    aria-label="Titles, people, genres"
+    placeholder={props.placeholder}
+    aria-label={props.placeholder}
     onKeyUp={(event) => {
       const query = event.target.value
 
@@ -26,7 +26,7 @@ const SearchInput = (props) => (
         }
       }
 
-      props.update(query)
+      if (props.update) props.update(query)
     }}
   />
 )

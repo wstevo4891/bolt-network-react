@@ -12,6 +12,8 @@ a {
 }
 
 main.application {
+  position: relative;
+  top: 4rem;
   background-color: $dark-bg;
   font-family: "Oxygen"; 
   font-weight: 300;
@@ -33,13 +35,17 @@ main.application {
     color: $azure-radiance;
     margin-top: 40px;
     margin-bottom: 10px;
-    font-size: 32px;
+    font-size: 20px;
     font-weight: 300;
+    text-align: center;
+
+    @include bp-sm {
+      font-size: 32px;
+    }
   }
   
   .supporting p {
     margin-bottom: 5px;
-    font-size: 16px;
   }
 
   // FEATURE DIV
@@ -53,6 +59,10 @@ main.application {
     p {
       font-size: 16px;
     }
+  }
+
+  @media screen and (min-width: 768px) {
+    top: 0;
   }
 
   @media (min-width: 1200px) {

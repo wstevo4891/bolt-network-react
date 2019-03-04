@@ -11,7 +11,7 @@ const NavItem = (props) => {
     if (props.path === props.href) {
       return "(current)"
     } else {
-      return props.id
+      return props.text
     }
   }
 
