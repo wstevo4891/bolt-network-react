@@ -125,10 +125,7 @@ export default class CarouselApp extends Component {
       })
   }
 
-  addToList = (event, movieId) => {
-    event.preventDefault()
-    event.stopPropagation()
-
-    return new MyListService(movieId).add()
+  addToList = (movie) => {
+    return new MyListService(movie).add()
   }
 }

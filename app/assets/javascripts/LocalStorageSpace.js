@@ -1,6 +1,6 @@
-// app/javascript/main/services/LocalStorageSpace.js
+// app/assets/javascripts/LocalStorageSpace.js
 
-export default class LocalStorageSpace {
+class LocalStorageSpace {
   constructor() {
     this._lsTotal = 0
   }
@@ -19,3 +19,4 @@ export default class LocalStorageSpace {
     console.log("Total = " + (this._lsTotal / 1024).toFixed(2) + " KB")
   }
 }
+

@@ -66,7 +66,7 @@ export default class PosterControls extends Component {
               toggleUnlike={this.toggleUnlike}
             />
 
-            <MyListButton movieId={movie.id} />
+            <MyListButton movie={movie} />
           </ul>
         </div>
       </span>

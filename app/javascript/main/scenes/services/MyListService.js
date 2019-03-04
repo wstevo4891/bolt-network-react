@@ -3,8 +3,8 @@
 import API from '../../services/API'
 
 export default class MyListService {
-  constructor(movieId) {
-    this.movieId = movieId
+  constructor(movie) {
+    this.movie = movie
     this.list = JSON.parse(localStorage.getItem('MyList'))
   }
 
@@ -23,7 +23,7 @@ export default class MyListService {
 
   remove = () => {
     for (let item of this.list) {
-      if (item.id === this.movieId) {
+      if (item.id === this.movie.id) {
         const index = this.list.indexOf(item)
 
         this.list.splice(index, 1)
@@ -44,7 +44,7 @@ export default class MyListService {
     let found = false
 
     for (let item of this.list) {
-      if (item.id === this.movieId) {
+      if (item.id === this.movie.id) {
         found = true
       }
     }
@@ -53,21 +53,13 @@ export default class MyListService {
   }
 
   addToList = () => {
-    API.movies.show(this.movieId)
-      .then(response => {
-        this.list.push(response.data)
+    this.list.push(this.movie)
 
-        localStorage.setItem('MyList', JSON.stringify(this.list))
+    localStorage.setItem('MyList', JSON.stringify(this.list))
 
-        console.log('Movie added to your list')
+    console.log('Movie added to your list')
 
-        return true
-      })
-      .catch(error => {
-        console.error('Error in MyListService.addMovie')
-        console.error(error)
-        return false
-      })
+    return true
   }
 }
 

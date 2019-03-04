@@ -3,6 +3,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 
+// Components
 import Main from './components/Main'
 
 export default class App extends Component {
