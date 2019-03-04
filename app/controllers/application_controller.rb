@@ -1,8 +1,4 @@
-class ApplicationController < ActionController::Base
-  # protect_from_forgery with: :exception
-  # skip_before_action :verify_authenticity_token, if: :json_request?
+# app/controllers/application_controller.rb
 
-  # def json_request?
-  #   request.format.json?
-  # end
+class ApplicationController < ActionController::Base
 end

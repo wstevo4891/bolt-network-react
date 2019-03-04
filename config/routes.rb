@@ -11,25 +11,6 @@ Rails.application.routes.draw do
 
   get '/search(/:q)' => 'home#index'
 
-  get '/quotes' => 'quotes#index'
-
-  get '/slider' => 'slider#index'
-
-  get '/cards' => 'cards#index'
-
-  get '/animations' => 'animations#index'
-
-  # resources :movies, only: :show
-
-  # resources :genres, only: :show
-
-  # namespace :admin do
-  #   resources :quotes
-  #   resources :genres
-  #   resources :movies
-  #   resources :subgenres
-  # end
-
   namespace :api, defaults: { format: :json } do
     get '/movies/recent', to: 'movies/recent#show'
 
