@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const ListEmpty = () => (
   <div className="row justify-content-center">
-    <div className="col-6 col-sm-4 mt-5" style={{ color: 'white' }}>
+    <div className="col-10 col-sm-8 col-md-6 col-lg-4 mt-5" style={{ color: 'white' }}>
       <h2>Your List is Empty</h2>
 
       <p>
