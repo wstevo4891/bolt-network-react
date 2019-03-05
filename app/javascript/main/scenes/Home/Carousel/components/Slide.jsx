@@ -34,6 +34,7 @@ const Slide = (props) => {
           </div>
         </div>
       </div>
+      <div className="poster-overlay"></div>
     </div>
   )
 }

@@ -16,6 +16,8 @@ export default class Main extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    if (nextProps.slideLength === this.state.slideLength) return
+
     this.setState({
       slideLength: nextProps.slideLength
     })
