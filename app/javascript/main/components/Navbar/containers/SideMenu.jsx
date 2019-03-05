@@ -13,9 +13,11 @@ export default class SideMenu extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    const { path, display } = this.state
+    const pathname = nextProps.location.pathname
     const width = window.innerWidth
 
-    if (width < 768 && nextProps.location.pathname !== this.state.path) {
+    if (width < 768 && pathname !== path && display === true) {
       setTimeout(() => {
         this.props.toggleDisplay()
       }, 1000)
