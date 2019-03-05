@@ -2,6 +2,7 @@
 
 import React from 'react'
 
+// Components
 import SuggestionsList from './SuggestionsList'
 import Results from '../../components/Results'
 

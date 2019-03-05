@@ -7,6 +7,10 @@
 #navbar {
   .navbar {
     transition: background .4s;
+
+    @include bp-mobile {
+      width: 100%;
+    }
   }
 
   .navbar-toggler {

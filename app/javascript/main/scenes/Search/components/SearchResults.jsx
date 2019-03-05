@@ -7,6 +7,7 @@ import queryString from 'query-string'
 import API from '../../../services/API'
 
 // Components
+import MobileResults from './MobileResults'
 import ResultsDisplay from './ResultsDisplay'
 import NotFound from './NotFound'
 
@@ -44,12 +45,23 @@ export default class SearchResults extends Component {
 
   render() {
     const { slideLength, query, genres, movies } = this.state
+    const width = window.innerWidth
 
     if (genres === null && movies === null) {
       return null
 
     } else if (genres.length === 0 && movies.length === 0) {
       return <NotFound query={query} />
+    
+    } else if (width < 768) {
+      return(
+        <MobileResults
+          query={query}
+          genres={genres}
+          movies={movies}
+          slideLength={slideLength}
+        />
+      )
 
     } else {
       return(

@@ -1,11 +1,13 @@
 // app/assets/stylesheets/modules/search_results/_manifest.scss
 
 .not-found {
-  margin-top: 8rem;
+  margin-top: 5rem;
   color: white;
 
   .not-found-query {
-    white-space: nowrap;
+    @include bp-tablet {
+      white-space: nowrap;
+    }
   }
 }
 
@@ -15,46 +17,68 @@
 }
 
 .suggestionsLabel {
-  color: grey;
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 auto;
-  -moz-box-flex: 0;
-  -ms-flex: 0 auto;
-  flex: 0 auto;
-  margin-right: 5px;
-  white-space: nowrap;
+  display: block;
+  padding-left: 1.5rem;
+  margin: 0 -5% .5rem;
+  color: $white;
+  background-color: #444343;
+  font-weight: bold;
+  letter-spacing: .03rem;
+  line-height: 1.5;
+
+  @media (min-width: 768px) {
+    color: grey;
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+    flex: 0 auto;
+    margin-right: 5px;
+    white-space: nowrap;
+  }
 }
 
 .suggestions {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
   margin: 10px 0 20px 0;
 
-  ul {
+  @media (min-width: 768px) {
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
+  }
+
+  ul {
+    display: block;
+
+    @media (min-width: 768px) {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+    }
   }
 
   ul li {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 auto;
-    -moz-box-flex: 0;
-    -ms-flex: 0 auto;
-    flex: 0 auto;
-    border-right: 1px solid grey;
+    padding: 0 .5rem;
+    margin: .8rem 0;
     list-style: none;
-    padding: 0 .5em;
+
+    @media (min-width: 768px) {
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 auto;
+      -moz-box-flex: 0;
+      -ms-flex: 0 auto;
+      flex: 0 auto;
+      border-right: 1px solid grey;
+      padding: 0 .5em;
+    }
 
     a {
       color: white;

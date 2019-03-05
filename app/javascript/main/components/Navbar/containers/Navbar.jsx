@@ -51,7 +51,7 @@ export default class Navbar extends Component {
               <div id="mobileSearchInput">
                 <div className="form-inline">
                   <SearchInput
-                    location={routeProps.location}
+                    location={routeProps.location.pathname}
                     history={routeProps.history}
                     placeholder="Search"
                   />
