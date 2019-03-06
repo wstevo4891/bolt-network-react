@@ -59,14 +59,6 @@ end
 
 puts 'Seeding the Database =========================================='
 
-quotes = load_yaml('quotes')
-
-puts 'Delete old quotes ============================================='
-Quote.delete_all
-
-Quote.create!(quotes)
-puts 'Quotes seeded!'
-
 puts 'Delete old Genres ============================================='
 Genre.delete_all
 
@@ -75,9 +67,9 @@ genres = load_yaml('genres')
 
 puts 'Creating Genres ==============================================='
 genres.each do |genre|
-  puts "Creating genre: #{genre}"
+  puts "Creating genre: #{genre['name']}"
 
-  Genre.create!(name: genre)
+  Genre.create!(genre)
 end
 
 puts 'Delete old Movies ============================================='
