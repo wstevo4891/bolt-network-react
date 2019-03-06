@@ -2,18 +2,31 @@
 
 # Model for movies table
 class Movie < ApplicationRecord
-  attr_accessor :genres_list
+  # == Constants ============================================================
 
-  has_and_belongs_to_many :genres
+  # == Attributes ===========================================================
+  attr_accessor :genres_list
   mount_uploader :photo, PhotoUploader
   # mount_uploaders :scenes, PhotoUploader
 
+  # == Extensions ===========================================================
+  include PgSearch
+
+  # == Relationships ========================================================
+  has_and_belongs_to_many :genres
+
+  # == Validations ==========================================================
   validates :title, :year, :rated, :run_time, :plot, presence: true
 
+  # == Scopes ===============================================================
+  pg_search_scope :search_by_title, against: :title, using: [:tsearch]
+
+  # == Callbacks ============================================================
   after_initialize do |movie|
     movie.genres_list = movie.three_genres
   end
 
+  # == Class Methods ========================================================
   def self.search(search)
     Movie.where('title ~* :search', search: "(#{search})")
   end
@@ -28,6 +41,7 @@ class Movie < ApplicationRecord
     movie
   end
 
+  # == Instance Methods =====================================================
   def three_genres
     genres.limit(3).map(&:name)
   end
