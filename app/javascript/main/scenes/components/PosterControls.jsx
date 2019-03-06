@@ -42,7 +42,7 @@ export default class PosterControls extends Component {
   render() {
     const { slideItem, hoverItem, movie, liked } = this.state
 
-    if (hoverItem !== slideItem) return <span></span>
+    // if (hoverItem !== slideItem) return <span></span>
 
     if (liked === undefined) return null
 

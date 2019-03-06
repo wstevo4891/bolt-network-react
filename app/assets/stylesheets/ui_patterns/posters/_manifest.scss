@@ -165,18 +165,20 @@
 
   span.play-icon {
     top: 0;
-    padding: .5em;
-    border: solid 1px $white;
-    border-radius: 50%;
-    color: $white;
-    background: rgba(0, 0, 0, 0.6);
+    box-sizing: border-box;
+    display: block;
+    width: 1rem;
+    height: 1rem;
     font-size: .5rem;
     text-shadow: none;
-
-    i {
-      padding: .1em;
-      line-height: .8;
-    }
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    border: solid 1px white;
+    border-radius: 50%;
+    padding-top: .17rem;
+    padding-left: .25rem;
+    text-align: center;
+    text-decoration: none;
   }
 
   h3 {
