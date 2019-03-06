@@ -10,7 +10,7 @@ class SearchResultsTest < ActiveSupport::TestCase
   test 'should find movies by genre' do
     puts __method__
     results = SearchResults.create('action')
-    puts results
+    puts results[:movies].count
 
     assert_not_predicate results[:movies], :empty?
   end
@@ -18,7 +18,7 @@ class SearchResultsTest < ActiveSupport::TestCase
   test 'should find movies by title' do
     puts __method__
     results = SearchResults.create('avengers')
-    puts results
+    puts results[:movies].count
 
     assert_not_predicate results[:movies], :empty?
   end
@@ -26,7 +26,16 @@ class SearchResultsTest < ActiveSupport::TestCase
   test 'should return results for one char' do
     puts __method__
     results = SearchResults.create('c')
-    puts results
+    puts results[:movies].count
+
+    assert_not_nil results
+    assert_not_predicate results[:movies], :empty?
+  end
+
+  test 'should find results for plural genre' do
+    puts __method__
+    results = SearchResults.create('comedies')
+    puts results[:movies].count
 
     assert_not_nil results
     assert_not_predicate results[:movies], :empty?
@@ -38,5 +47,7 @@ class SearchResultsTest < ActiveSupport::TestCase
     puts results
 
     assert_not_nil results
+    assert_predicate results[:genres], :empty?
+    assert_predicate results[:movies], :empty?
   end
 end
