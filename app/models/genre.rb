@@ -20,13 +20,17 @@ class Genre < ApplicationRecord
   validates :name, :plural, :category, presence: true
 
   # == Scopes ===============================================================
-  pg_search_scope :full_text, against: %i[name plural category], using: [:tsearch]
+  pg_search_scope :full_text_search, against: %i[name plural category], using: [:tsearch]
 
   # == Callbacks ============================================================
 
   # == Class Methods ========================================================
   def self.by_first_char(query)
     where('lower(name) LIKE :prefix', prefix: "#{query}%")
+  end
+
+  def self.lower_case_match(query)
+    where(Genre.arel_table[:name].lower.matches("%#{query}%"))
   end
 
   # == Instance Methods =====================================================

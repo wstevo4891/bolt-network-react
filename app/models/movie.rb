@@ -41,6 +41,14 @@ class Movie < ApplicationRecord
     movie
   end
 
+  def self.by_first_char(query)
+    where('lower(title) LIKE :prefix', prefix: "#{query}%")
+  end
+
+  def self.lower_case_match(query)
+    where(Movie.arel_table[:title].lower.matches("%#{query}%"))
+  end
+
   # == Instance Methods =====================================================
   def three_genres
     genres.limit(3).map(&:name)

@@ -46,13 +46,13 @@ class SearchResults
   end
 
   def genres_by_first_char
-    Genre.where('lower(name) LIKE :prefix', prefix: "#{query}%")
+    Genre.by_first_char(query)
   rescue ActiveRecord::RecordNotFound
     []
   end
 
   def movies_by_first_char
-    Movie.where('lower(title) LIKE :prefix', prefix: "#{query}%").limit(15)
+    Movie.by_first_char(query).limit(15)
   rescue ActiveRecord::RecordNotFound
     []
   end
@@ -63,6 +63,16 @@ class SearchResults
     { genres: @genres.to_a, movies: movie_results }
   end
 
+  def genre_name_match
+    genres = Genre.lower_case_match(query)
+
+    return genres unless genres.empty?
+
+    Genre.full_text_search(query)
+  rescue ActiveRecord::RecordNotFound
+    []
+  end
+
   def movie_results
     if genres.empty?
       movie_title_match
@@ -71,14 +81,8 @@ class SearchResults
     end
   end
 
-  def genre_name_match
-    Genre.where(Genre.arel_table[:name].lower.matches("%#{query}%"))
-  rescue ActiveRecord::RecordNotFound
-    []
-  end
-
   def movie_title_match
-    Movie.where(Movie.arel_table[:title].lower.matches("%#{query}%")).limit(15)
+    Movie.lower_case_match(query).limit(15)
   rescue ActiveRecord::RecordNotFound
     []
   end
