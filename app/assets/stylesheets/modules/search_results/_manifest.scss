@@ -17,14 +17,16 @@
 }
 
 .suggestionsLabel {
-  display: block;
-  padding-left: 1.5rem;
-  margin: 0 -5% .5rem;
-  color: $white;
-  background-color: #444343;
-  font-weight: bold;
-  letter-spacing: .03rem;
-  line-height: 1.5;
+  @media (max-width: 767px) {
+    display: block;
+    padding-left: 1.5rem;
+    margin: 0 -5% .5rem;
+    color: $white;
+    background-color: #444343;
+    font-weight: bold;
+    letter-spacing: .03rem;
+    line-height: 1.5;
+  }
 
   @media (min-width: 768px) {
     color: grey;
@@ -78,6 +80,7 @@
       flex: 0 auto;
       border-right: 1px solid grey;
       padding: 0 .5em;
+      margin: 0;
     }
 
     a {
