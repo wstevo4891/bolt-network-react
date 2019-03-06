@@ -12,6 +12,14 @@ const MovieInfo = (props) => {
     genres = genres.join('')
   }
 
+  const renderTitle = (title) => {
+    if (title.length > 40) {
+      return title.substring(0, 40) + '...'
+    } else {
+      return title
+    }
+  }
+
   return(
     <div className="movie-info">
       <div>
@@ -21,7 +29,7 @@ const MovieInfo = (props) => {
       </div>
 
       <div>
-        <h3>{movie.title}</h3>
+        <h3>{renderTitle(movie.title)}</h3>
       </div>
 
       <div>
