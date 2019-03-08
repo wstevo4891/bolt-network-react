@@ -9,6 +9,7 @@
     "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.3.1",
     "@rails/webpacker": "^3.2.0",
+    "babel-loader": "^8.0.5",
     "axios": "^0.17.1",
     "coffeescript": "1.12.7",
     "enzyme": "^3.8.0",
@@ -28,7 +29,6 @@
     "@babel/plugin-proposal-class-properties": "^7.3.3",
     "@babel/preset-react": "^7.0.0",
     "babel-jest": "^24.1.0",
-    "babel-loader": "^8.0.5",
     "jest": "^23.6.0",
     "regenerator-runtime": "^0.13.1",
     "webpack-dev-server": "^2.10.1"
