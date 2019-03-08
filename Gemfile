@@ -26,7 +26,7 @@ gem 'webpacker'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery for BootstrapJS and plugin dependencies
-gem 'jquery-rails'
+# gem 'jquery-rails'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -41,12 +41,6 @@ gem 'jbuilder', '~> 2.5'
 
 # Use FontAwesome icons
 gem 'font-awesome-rails'
-# Use HAML for quickly building views
-gem 'haml'
-# Use simple_form for quickly building forms
-gem 'simple_form'
-# Use Cocoon for nested form objects
-gem 'cocoon'
 
 # User carrierwave and rmagick for image uploads
 gem 'carrierwave'
