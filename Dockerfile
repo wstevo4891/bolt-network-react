@@ -21,3 +21,4 @@ ADD Gemfile.lock /bolt-network-react/Gemfile.lock
 RUN bundle install
 
 ADD . /bolt-network-react
+CMD ["puma"]
