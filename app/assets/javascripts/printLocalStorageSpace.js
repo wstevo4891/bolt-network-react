@@ -2,8 +2,13 @@
 
 function printLocalStorageSpace() {
   var _lsTotal = 0;
+  var keys = Object.keys(localStorage);
+  var limit = keys.length;
+  var _x;
 
-  for (var _x in localStorage) {
+  for (var i = 0; i < limit; i++) {
+    _x = keys[i];
+
     if (!localStorage.hasOwnProperty(_x)) continue;
 
     var _xLen = ((localStorage[_x].length + _x.length) * 2);
