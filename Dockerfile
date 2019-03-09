@@ -32,7 +32,7 @@ ENV RACK_ENV production
 
 ADD . /bolt-network-react
 
-RUN yarn install webpack
+RUN yarn install
 
 RUN bundle exec rake assets:precompile
 # =========================================================
