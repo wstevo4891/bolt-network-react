@@ -20,5 +20,19 @@ ADD Gemfile.lock /bolt-network-react/Gemfile.lock
 
 RUN bundle install
 
+# Development
+# =========================================================
+# ADD . /bolt-network-react
+# =========================================================
+
+# Production
+# =========================================================
+ENV RAILS_ENV production
+ENV RACK_ENV production
+
 ADD . /bolt-network-react
+
+RUN bundle exec rake assets:precompile
+# =========================================================
+
 CMD ["puma"]
