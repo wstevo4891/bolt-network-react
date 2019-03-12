@@ -11,8 +11,8 @@
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
     "@rails/webpacker": "^3.2.0",
-    "babel-loader": "^8.0.5",
     "axios": "^0.17.1",
+    "babel-loader": "^8.0.5",
     "coffeescript": "1.12.7",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
@@ -26,7 +26,7 @@
     "react-slick": "^0.16.0",
     "react-transition-group": "1.x",
     "reactstrap": "^7.1.0",
-    "webpack": "3.10.0",
+    "webpack": "^4.29.6",
     "webpack-dev-server": "^2.10.1"
   },
   "devDependencies": {
