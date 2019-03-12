@@ -43,7 +43,7 @@ export default class GenreSlider extends Component {
           start={start}
           direction='Prev'
           icon='left'
-          handleClick={this.handlePrev}
+          handleClick={this.handleArrowClick}
         />
 
         <SlideBuilder
@@ -58,29 +58,25 @@ export default class GenreSlider extends Component {
         <SliderArrow
           direction='Next'
           icon='right'
-          handleClick={this.handleNext}
+          handleClick={this.handleArrowClick}
         />
       </div>
     )
   }
 
-  handleNext = () => {
+  handleArrowClick = (direction) => {
+    const key = direction.toLowerCase()
+    const main = document.getElementById('main')
+
+    main.style['pointer-events'] = 'none'
+
     this.setState({
-      next: true
+      [key]: true
     })
 
     setTimeout(() => {
       this.handleTransitionEnd()
-    }, 1000)
-  }
-
-  handlePrev = () => {
-    this.setState({
-      prev: true
-    })
-
-    setTimeout(() => {
-      this.handleTransitionEnd()
+      main.style['pointer-events'] = 'auto'
     }, 1000)
   }
 
