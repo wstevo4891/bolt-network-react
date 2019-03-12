@@ -3,6 +3,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+// Components
+import MyListButton from './MyListButton'
+
 const Slide = (props) => {
   const movie = props.movie
 
@@ -25,12 +28,7 @@ const Slide = (props) => {
               <i className="fa fa-play"></i>PLAY
             </Link>
 
-            <a
-              className="btn-clear"
-              onClick={() => props.addToList(movie)}
-            >
-              <i className="fa fa-plus"></i>MY LIST
-            </a>
+            <MyListButton movie={movie} />
           </div>
         </div>
       </div>

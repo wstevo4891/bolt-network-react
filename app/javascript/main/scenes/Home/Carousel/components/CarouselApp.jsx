@@ -5,7 +5,6 @@ import { Carousel, CarouselItem } from 'reactstrap'
 
 // Services
 import API from '../../../../services/API'
-import MyListService from '../../../services/MyListService'
 
 // Components
 import Slide from './Slide'
@@ -61,10 +60,7 @@ export default class CarouselApp extends Component {
           onExiting={this.onExiting}
           onExited={this.onExited}
         >
-          <Slide
-            movie={movie}
-            addToList={this.addToList}
-          />
+          <Slide movie={movie} />
         </CarouselItem>
       )
     })
@@ -123,9 +119,5 @@ export default class CarouselApp extends Component {
         console.error('Error in Carousel.fetchMovies')
         console.error(error)
       })
-  }
-
-  addToList = (movie) => {
-    return new MyListService(movie).add()
   }
 }
