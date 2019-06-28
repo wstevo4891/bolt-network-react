@@ -36,7 +36,7 @@ class SearchResults
   def full_movies_search
     first_search = movies_by_first_char.to_a
 
-    if genres.empty?
+    if @genres.empty?
       first_search
     else
       second_search = concat_movies_by_genre
@@ -74,7 +74,7 @@ class SearchResults
   end
 
   def movie_results
-    if genres.empty?
+    if @genres.empty?
       movie_title_match
     else
       concat_movies_by_genre

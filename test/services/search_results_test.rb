@@ -28,8 +28,7 @@ class SearchResultsTest < ActiveSupport::TestCase
     results = SearchResults.create('c')
     puts results[:movies].count
 
-    assert_not_nil results
-    assert_not_predicate results[:movies], :empty?
+    assert_not_predicate results[:movies], :blank?
   end
 
   test 'should find results for plural genre' do
@@ -37,8 +36,7 @@ class SearchResultsTest < ActiveSupport::TestCase
     results = SearchResults.create('comedies')
     puts results[:movies].count
 
-    assert_not_nil results
-    assert_not_predicate results[:movies], :empty?
+    assert_not_predicate results[:movies], :blank?
   end
 
   test 'should handle results not found' do
@@ -46,8 +44,6 @@ class SearchResultsTest < ActiveSupport::TestCase
     results = SearchResults.create('&')
     puts results
 
-    assert_not_nil results
-    assert_predicate results[:genres], :empty?
-    assert_predicate results[:movies], :empty?
+    assert_equal results, { genres: [], movies: [] }
   end
 end
