@@ -2,8 +2,6 @@
 
 # Class for movie genres
 class Genre < ApplicationRecord
-  # == Constants ============================================================
-
   # == Attributes ===========================================================
   # +name+:: String
   # +plural:: String
@@ -22,8 +20,6 @@ class Genre < ApplicationRecord
   # == Scopes ===============================================================
   pg_search_scope :full_text_search, against: %i[name plural category], using: [:tsearch]
 
-  # == Callbacks ============================================================
-
   # == Class Methods ========================================================
   def self.by_first_char(query)
     where('lower(name) LIKE :prefix', prefix: "#{query}%")
@@ -32,6 +28,4 @@ class Genre < ApplicationRecord
   def self.lower_case_match(query)
     where(Genre.arel_table[:name].lower.matches("%#{query}%"))
   end
-
-  # == Instance Methods =====================================================
 end

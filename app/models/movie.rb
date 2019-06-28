@@ -2,12 +2,9 @@
 
 # Model for movies table
 class Movie < ApplicationRecord
-  # == Constants ============================================================
-
   # == Attributes ===========================================================
   attr_accessor :genres_list
   mount_uploader :photo, PhotoUploader
-  # mount_uploaders :scenes, PhotoUploader
 
   # == Extensions ===========================================================
   include PgSearch
@@ -22,23 +19,17 @@ class Movie < ApplicationRecord
   pg_search_scope :search_by_title, against: :title, using: [:tsearch]
 
   # == Callbacks ============================================================
-  after_initialize do |movie|
-    movie.genres_list = movie.three_genres
+  after_initialize do
+    @genres_list = three_genres
   end
 
   # == Class Methods ========================================================
   def self.search(search)
-    Movie.where('title ~* :search', search: "(#{search})")
+    where('title ~* :search', search: "(#{search})")
   end
 
   def self.find_by_genre(genre_id)
     Genre.find(genre_id).movies
-  end
-
-  def self.lookup(movie_id)
-    movie = Movie.find(movie_id)
-    movie.genres_list = movie.genres.map(&:name)
-    movie
   end
 
   def self.by_first_char(query)
@@ -46,11 +37,11 @@ class Movie < ApplicationRecord
   end
 
   def self.lower_case_match(query)
-    where(Movie.arel_table[:title].lower.matches("%#{query}%"))
+    where(arel_table[:title].lower.matches("%#{query}%"))
   end
 
   # == Instance Methods =====================================================
   def three_genres
-    genres.limit(3).map(&:name)
+    genres.limit(3).pluck(:name)
   end
 end
