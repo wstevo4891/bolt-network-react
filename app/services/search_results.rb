@@ -1,5 +1,6 @@
 # app/services/search_results.rb
 
+# Service for search feature
 class SearchResults
   attr_reader :query, :genres, :movies
 
