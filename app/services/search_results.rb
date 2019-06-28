@@ -46,13 +46,13 @@ class SearchResults
   end
 
   def genres_by_first_char
-    Genre.by_first_char(query)
+    Genre.by_first_char(@query)
   rescue ActiveRecord::RecordNotFound
     []
   end
 
   def movies_by_first_char
-    Movie.by_first_char(query).limit(15)
+    Movie.by_first_char(@query).limit(15)
   rescue ActiveRecord::RecordNotFound
     []
   end
@@ -64,11 +64,11 @@ class SearchResults
   end
 
   def genre_name_match
-    genres = Genre.lower_case_match(query)
+    genres = Genre.lower_case_match(@query)
 
     return genres unless genres.empty?
 
-    Genre.full_text_search(query)
+    Genre.full_text_search(@query)
   rescue ActiveRecord::RecordNotFound
     []
   end
@@ -82,7 +82,7 @@ class SearchResults
   end
 
   def movie_title_match
-    Movie.lower_case_match(query).limit(15)
+    Movie.lower_case_match(@query).limit(15)
   rescue ActiveRecord::RecordNotFound
     []
   end

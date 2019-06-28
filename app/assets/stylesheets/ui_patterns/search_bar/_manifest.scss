@@ -64,7 +64,8 @@
 }
 
 #closeIcon-mobile, #closeIcon {
-  float: right;
+  position: absolute;
+  right: 0;
   margin-top: -37px;
   font-size: 23px;
   cursor: pointer;

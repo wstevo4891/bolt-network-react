@@ -34,6 +34,28 @@ class MovieTest < ActiveSupport::TestCase
     assert_equal 'Harry Potter and the Deathly Hallows: Part 2', result.title
   end
 
+  test 'can find by genre' do
+    puts __method__
+    genre = Genre.take
+    puts genre.name
+
+    result = Movie.find_by_genre(genre.id)
+    puts result.first.inspect
+
+    assert_not_predicate result, :blank?
+  end
+
+  test 'find by genre is accurate' do
+    puts __method__
+    genre = Genre.take
+    puts genre.name
+
+    result = Movie.find_by_genre(genre.id)
+    accuracies = result.select { |m| m.genres_list.include?(genre.name) }
+
+    assert_equal result.length, accuracies.length
+  end
+
   ##
   # Test after_initialize callback
   #
@@ -50,10 +72,24 @@ class MovieTest < ActiveSupport::TestCase
   test 'benchmark by first char' do
     puts __method__
 
-    10.times do
-      Benchmark.bmbm do |x|
-        x.report('time') { Movie.by_first_char('a') }
-      end
+    Benchmark.bmbm do |x|
+      x.report('time') { Movie.by_first_char('a') }
+    end
+  end
+
+  test 'benchmark lower case match' do
+    puts __method__
+
+    Benchmark.bmbm do |x|
+      x.report('time')  { Movie.lower_case_match('avengers') }
+    end
+  end
+
+  test 'benchmark search by title' do
+    puts __method__
+
+    Benchmark.bmbm do |x|
+      x.report('time')  { Movie.search_by_title('avengers') }
     end
   end
 end
