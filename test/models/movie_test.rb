@@ -34,16 +34,6 @@ class MovieTest < ActiveSupport::TestCase
     assert_equal 'Harry Potter and the Deathly Hallows: Part 2', result.title
   end
 
-  # test 'benchmark by first char' do
-  #   puts __method__
-
-  #   10.times do
-  #     Benchmark.bmbm do |x|
-  #       x.report('time') { Movie.by_first_char('a') }
-  #     end
-  #   end
-  # end
-
   ##
   # Test after_initialize callback
   #
@@ -55,5 +45,15 @@ class MovieTest < ActiveSupport::TestCase
     puts ''
 
     assert_not_predicate movie.genres_list, :blank?
+  end
+
+  test 'benchmark by first char' do
+    puts __method__
+
+    10.times do
+      Benchmark.bmbm do |x|
+        x.report('time') { Movie.by_first_char('a') }
+      end
+    end
   end
 end
