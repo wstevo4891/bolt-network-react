@@ -1,8 +1,13 @@
 # app/services/omdb_api/api_request.rb
 
 module OmdbApi
+  ##
+  # Service for processing API requests to OMDB
+  #
   class ApiRequest
-    JSON_CONTENT_TYPE = 'application/json'.freeze
+    HEADERS = {
+      'Content-Type' => 'application/json'
+    }.freeze
 
     def initialize(client: nil)
       @client = client
@@ -45,14 +50,12 @@ module OmdbApi
     private
 
     def get_request(url)
-      req = Net::HTTP::Get.new(url, 'Content-Type' => JSON_CONTENT_TYPE)
-      # req.basic_auth(api_user, api_pwd)
+      req = Net::HTTP::Get.new(url, HEADERS)
       req
     end
 
     def post_request(data)
-      req = Net::HTTP::Post.new(api_path, 'Content-Type' => JSON_CONTENT_TYPE)
-      # req.basic_auth(api_user, api_pwd)
+      req = Net::HTTP::Post.new(api_path, HEADERS)
       req.body = JSON.generate(data)
       req
     end
@@ -64,10 +67,10 @@ module OmdbApi
       Net::HTTP.start(hostname, port) do |http|
         http.request(request)
       end
-    rescue StandardError => ex
+    rescue StandardError => e
       puts 'An error occurred while sending this request'
       Rails.logger.error 'An error occurred while sending this request'
-      handle_error(ex)
+      handle_error(e)
     end
 
     # Eval and parse http response
@@ -75,17 +78,17 @@ module OmdbApi
       return response unless response.respond_to?(:body)
 
       JSON.parse(response.body, symbolize_names: true)
-    rescue StandardError => ex
+    rescue StandardError => e
       puts "Error parsing response from #{api_path}"
       Rails.logger.error "Error parsing response from #{api_path}"
-      handle_error(ex)
+      handle_error(e)
     end
 
-    def handle_error(error)
-      puts error.message
-      puts error.backtrace.join("\n")
-      Rails.logger.error "#{error.message}\n#{error.backtrace.join("\n")}"
-      { error: error.message }
+    def handle_error(err)
+      puts err.message
+      puts err.backtrace.join("\n")
+      Rails.logger.error "#{err.message}\n#{err.backtrace.join("\n")}"
+      { error: err.message }
     end
   end
 end

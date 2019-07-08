@@ -20,5 +20,9 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
+  1. heroku login
+  2. heroku container:login
+  3. heroku container:push web
+  4. heroku container:release web
 
 * ...

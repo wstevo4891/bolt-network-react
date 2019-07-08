@@ -28,7 +28,7 @@ class SearchResults
 
   def first_char_match
     @genres = genres_by_first_char
-    
+
     movies_list = full_movies_search
 
     { genres: @genres.to_a, movies: movies_list }
