@@ -22,19 +22,19 @@ RUN bundle install
 
 # Development
 # =========================================================
-# ADD . /bolt-network-react
+ADD . /bolt-network-react
 # =========================================================
 
 # Production
 # =========================================================
-ENV RAILS_ENV production
-ENV RACK_ENV production
+# ENV RAILS_ENV production
+# ENV RACK_ENV production
 
-ADD . /bolt-network-react
+# ADD . /bolt-network-react
 
-RUN yarn add webpack
+# RUN yarn add webpack
 
-RUN bundle exec rake assets:precompile
-# =========================================================
+# RUN bundle exec rake assets:precompile
+# # =========================================================
 
-CMD ["puma"]
+# CMD ["puma"]
