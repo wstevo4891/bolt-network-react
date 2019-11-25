@@ -42,13 +42,6 @@ const NavCollapse = (props) => {
           href="/my-list"
           text="My List"
         />
-
-        <NavItem
-          id="counter-link"
-          path={path}
-          href="/counter"
-          text="Counter"
-        />
       </ul>
 
       <ul className="navbar-nav navbar-right">

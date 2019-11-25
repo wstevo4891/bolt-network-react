@@ -11,9 +11,6 @@ import Recent from './Recent'
 import MyList from './MyList'
 import Search from './Search'
 
-// Labs
-import Counter from './Counter'
-
 const Routes = (props) => (
   <Switch>
     <Route exact path="/">
@@ -47,10 +44,6 @@ const Routes = (props) => (
 
     <Route path="/my-list">
       <MyList slideLength={props.slideLength} />
-    </Route>
-
-    <Route path="/counter">
-      <Counter />
     </Route>
 
     <Route
