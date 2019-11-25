@@ -1,8 +1,8 @@
-// app/javascript/main/scenes/Movie/components/Movie.jsx
+// MoviePage View Component
 
 import React from 'react'
 
-const Movie = (props) => {
+const MoviePage = (props) => {
   const movie = props.movie
   const actors = movie.actors.join(', ')
 
@@ -20,7 +20,11 @@ const Movie = (props) => {
   return(
     <div className="row">
       <div className="col-4">
-        <img src={movie.poster} className="img-fluid" />
+        <img
+          src={movie.poster}
+          className="img-fluid"
+          alt={`Poster for ${movie.title}`}
+        />
       </div>
 
       <div className="col-8 movie-display">
@@ -40,4 +44,4 @@ const Movie = (props) => {
   )
 }
 
-export default Movie
+export default MoviePage
