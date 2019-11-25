@@ -1,16 +1,22 @@
 version: '3'
 services:
-  postgres:
-    image: postgres:9.4
+  db:
+    image: postgres:11-alpine
     ports:
-      - "5432"
-  webpacker:
-    build: .
-    command: bundle exec bin/webpack-dev-server
-    volumes:
-      - .:/bolt-network-react
-    ports:
-      - "8080:8080"
+      - 5432:5432
+    # volumes:
+    #   - /usr/data/volumes/pgdata/etc:/etc/postgresql
+    #   - /usr/data/volumes/pgdata/log:/var/log/postgresql
+    #   - /usr/data/volumes/pgdata/data:/var/lib/postgresql/data
+
+  # webpacker:
+  #   build: .
+  #   command: bundle exec bin/webpack-dev-server
+  #   volumes:
+  #     - .:/bolt-network-react
+  #   ports:
+  #     - "8080:8080"
+
   web:
     build: .
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
@@ -19,4 +25,4 @@ services:
     ports:
       - "3000:3000"
     depends_on:
-      - postgres
+      - db

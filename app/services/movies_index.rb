@@ -3,13 +3,20 @@
 # Service for building an object of movies
 # indexed by genre name
 class MoviesIndex
+  LENGTH_MAP = {
+    '6' => 24,
+    '5' => 20,
+    '4' => 20,
+    '3' => 18,
+    '2' => 12
+  }.freeze
+
   def self.build(slide_length)
     new(slide_length).call
   end
 
   def initialize(slide_length)
-    @limit = length_map[slide_length]
-    @genres = Genre.all
+    @limit = LENGTH_MAP[slide_length]
   end
 
   def call
@@ -18,18 +25,8 @@ class MoviesIndex
 
   private
 
-  def length_map
-    {
-      '6' => 24,
-      '5' => 20,
-      '4' => 20,
-      '3' => 18,
-      '2' => 12
-    }
-  end
-
   def build_index
-    @genres.each_with_object({}) do |genre, hash|
+    Genre.all.each_with_object({}) do |genre, hash|
       hash[genre.name] = genre.movies.limit(@limit)
     end
   end

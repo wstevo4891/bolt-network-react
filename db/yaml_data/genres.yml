@@ -1,40 +1,50 @@
 ---
-  - name: Action
-    plural: Actions
-    category: Action Movies
+- title: Action
+  slug: action
+  plural: Actions
+  category: Action Movies
 
-  - name: Adventure
-    plural: Adventures
-    category: Adventure Movies
+- title: Adventure
+  slug: adventure
+  plural: Adventures
+  category: Adventure Movies
 
-  - name: Comedy
-    plural: Comedies
-    category: Comedy Movies
+- title: Comedy
+  slug: comedy
+  plural: Comedies
+  category: Comedy Movies
 
-  - name: Drama
-    plural: Dramas
-    category: Drama Movies
+- title: Drama
+  slug: drama
+  plural: Dramas
+  category: Drama Movies
 
-  - name: Animation
-    plural: Animations
-    category: Animation Movies
+- title: Animation
+  slug: animation
+  plural: Animations
+  category: Animation Movies
 
-  - name: Family
-    plural: Families
-    category: Family Movies
+- title: Family
+  slug: family
+  plural: Families
+  category: Family Movies
 
-  - name: Romance
-    plural: Romances
-    category: Romance Movies
+- title: Romance
+  slug: romance
+  plural: Romances
+  category: Romance Movies
 
-  - name: Fantasy
-    plural: Fantasies
-    category: Fantasy Movies
+- title: Fantasy
+  slug: fantasy
+  plural: Fantasies
+  category: Fantasy Movies
 
-  - name: Sci-Fi
-    plural: Sci-Fis
-    category: Sci-Fi Movies
+- title: Sci-Fi
+  slug: sci-fi
+  plural: Sci-Fis
+  category: Sci-Fi Movies
 
-  - name: Horror
-    plural: Horrors
-    category: Horror Movies
+- title: Horror
+  slug: horror
+  plural: Horrors
+  category: Horror Movies

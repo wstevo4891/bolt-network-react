@@ -2,13 +2,13 @@
 
 # Class for movie genres
 class Genre < ApplicationRecord
-  # == Attributes ===========================================================
-  # +name+:: String
-  # +plural:: String
-  # +category+:: String
-
   # == Extensions ===========================================================
   include PgSearch
+
+  # == Attributes ===========================================================
+  # name      {String}
+  # plural    {String}
+  # category  {String}
 
   # == Relationships ========================================================
   has_and_belongs_to_many :movies
@@ -18,15 +18,28 @@ class Genre < ApplicationRecord
   validates :name, :plural, :category, presence: true
 
   # == Scopes ===============================================================
-  pg_search_scope :full_text_search, against: %i[name plural category],
-                                     using: [:tsearch]
+  pg_search_scope :full_text_search,
+                  against: %i[name plural category],
+                  using: [:tsearch]
 
   # == Class Methods ========================================================
   def self.by_first_char(query)
     where('lower(name) LIKE :prefix', prefix: "#{query}%")
+  rescue ActiveRecord::RecordNotFound
+    []
   end
 
   def self.lower_case_match(query)
     where(arel_table[:name].lower.matches("%#{query}%"))
+  end
+
+  def self.name_math(query)
+    genres = lower_case_match(query)
+
+    return genres unless genres.empty?
+
+    full_text_search(query)
+  rescue ActiveRecord::RecordNotFound
+    []
   end
 end
