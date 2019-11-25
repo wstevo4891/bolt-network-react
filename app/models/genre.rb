@@ -6,7 +6,8 @@ class Genre < ApplicationRecord
   include PgSearch
 
   # == Attributes ===========================================================
-  # name      {String}
+  # title     {String}
+  # slug      {String}
   # plural    {String}
   # category  {String}
 
@@ -15,7 +16,7 @@ class Genre < ApplicationRecord
   has_many :subgenres
 
   # == Validations ==========================================================
-  validates :name, :plural, :category, presence: true
+  validates :title, :plural, :category, presence: true
 
   # == Scopes ===============================================================
   pg_search_scope :full_text_search,

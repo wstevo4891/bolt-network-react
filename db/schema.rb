@@ -16,7 +16,8 @@ ActiveRecord::Schema.define(version: 20180118041414) do
   enable_extension "plpgsql"
 
   create_table "genres", force: :cascade do |t|
-    t.string "name"
+    t.string "title"
+    t.string "slug"
     t.string "plural"
     t.string "category"
     t.datetime "created_at", null: false
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(version: 20180118041414) do
 
   create_table "movies", force: :cascade do |t|
     t.string "title"
+    t.string "slug"
     t.string "year"
     t.string "rated"
     t.string "release_date"
@@ -41,9 +43,11 @@ ActiveRecord::Schema.define(version: 20180118041414) do
     t.string "actors", default: [], array: true
     t.string "plot"
     t.string "photo"
+    t.string "banner"
     t.string "logo"
     t.string "poster"
     t.json "ratings"
+    t.string "genres_list", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

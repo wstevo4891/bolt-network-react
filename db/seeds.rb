@@ -81,7 +81,7 @@ genres = load_yaml('genres')
 
 puts 'Creating Genres...'
 genres.each do |genre|
-  puts "Creating genre: #{genre['name']}"
+  puts "Creating genre: #{genre['title']}"
 
   Genre.create!(genre)
 end

@@ -11,11 +11,11 @@ class MoviesIndex
     '2' => 12
   }.freeze
 
-  def self.build(slide_length)
+  def self.build(slide_length = '6')
     new(slide_length).call
   end
 
-  def initialize(slide_length)
+  def initialize(slide_length = '6')
     @limit = LENGTH_MAP[slide_length]
   end
 

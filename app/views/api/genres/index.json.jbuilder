@@ -1,6 +1,6 @@
 # app/views/api/genres/index.json.jbuilder
 
 json.array!(@genres) do |genre|
-  json.extract! genre, :id, :name
-  json.url "/genres/#{genre.id}"
+  json.extract! genre, :id, :title, :slug
+  json.url "/genres/#{genre.slug}"
 end

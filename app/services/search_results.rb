@@ -19,80 +19,55 @@ class SearchResults
   private
 
   def retrieve_results
+    @genres = search_genres
+    @movies = search_movies
+
+    { genres: @genres, movies: @movies }
+  end
+
+  def search_genres
     if @query.length == 1
-      first_char_match
+      Genre.by_first_char(@query).to_a
     else
-      full_match_results
+      Genre.name_match(@query).to_a
     end
   end
 
-  def first_char_match
-    @genres = genres_by_first_char
-
-    movies_list = full_movies_search
-
-    { genres: @genres.to_a, movies: movies_list }
+  def search_movies
+    if @query.length == 1
+      full_movies_search
+    else
+      movie_titles_search
+    end
   end
 
   def full_movies_search
-    first_search = movies_by_first_char.to_a
+    first_search = movies_by_first_char
 
     if @genres.empty?
       first_search
     else
-      second_search = concat_movies_by_genre
-
-      first_search.concat(second_search)
+      first_search.concat(concat_movies_by_genre)
     end
-  end
-
-  def genres_by_first_char
-    Genre.by_first_char(@query)
-  rescue ActiveRecord::RecordNotFound
-    []
   end
 
   def movies_by_first_char
-    Movie.by_first_char(@query).limit(15)
-  rescue ActiveRecord::RecordNotFound
-    []
-  end
-
-  def full_match_results
-    @genres = genre_name_match
-
-    { genres: @genres.to_a, movies: movie_results }
-  end
-
-  def genre_name_match
-    genres = Genre.lower_case_match(@query)
-
-    return genres unless genres.empty?
-
-    Genre.full_text_search(@query)
-  rescue ActiveRecord::RecordNotFound
-    []
-  end
-
-  def movie_results
-    if @genres.empty?
-      movie_title_match
-    else
-      concat_movies_by_genre
-    end
-  end
-
-  def movie_title_match
-    Movie.lower_case_match(@query).limit(15)
-  rescue ActiveRecord::RecordNotFound
-    []
+    Movie.by_first_char(@query).limit(15).to_a
   end
 
   def concat_movies_by_genre
-    limit = genres.length > 1 ? 5 : 20
+    limit = @genres.length > 1 ? 5 : 20
 
-    genres.each_with_object([]) do |genre, arr|
-      arr.concat genre.movies.limit(limit)
+    @genres.each_with_object([]) do |genre, arr|
+      arr.concat(genre.movies.limit(limit))
+    end
+  end
+
+  def movie_titles_search
+    if @genres.empty?
+      Movie.title_match(@query, 15)
+    else
+      concat_movies_by_genre
     end
   end
 end
