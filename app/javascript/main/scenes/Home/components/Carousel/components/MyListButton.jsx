@@ -2,35 +2,35 @@
 
 import React, { Component } from 'react'
 
-import MyListService from '../../../services/MyListService'
+import MyListService from '../services/MyListService'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus, faCheck } from '@fortawesome/free-solid-svg-icons'
 
 export default class MyListButton extends Component {
   state = {
-    movie: this.props.movie,
     inList: null
   }
 
   render() {
-    const { movie, inList } = this.state
+    const movie = this.props.movie
+    const inList = this.state.inList
 
     return(
-      <a
+      <button
         className="btn-clear"
         onClick={() => this.toggleMyList(inList, movie)}
       >
-        <i className={inList ? 'fa fa-check' : 'fa fa-plus'}></i>MY LIST
-      </a>
+        <FontAwesomeIcon icon={inList ? faCheck : faPlus} />MY LIST
+      </button>
     )
   }
 
   componentDidMount() {
-    let { movie, inList } = this.state
-
-    if (inList === null) {
-      inList = new MyListService(movie).findMovie()
+    if (this.state.inList === null) {
 
       this.setState({
-        inList: inList
+        inList: new MyListService(this.props.movie).findMovie()
       })
     }
   }
@@ -38,18 +38,13 @@ export default class MyListButton extends Component {
   toggleMyList = (inList, movie) => {
     if (inList === true) {
       new MyListService(movie).remove()
-
-      this.setState({
-        inList: false
-      })
-
     } else {
       new MyListService(movie).add()
-
-      this.setState({
-        inList: true
-      })
     }
+
+    this.setState({
+      inList: !inList
+    })
   }
 }
 

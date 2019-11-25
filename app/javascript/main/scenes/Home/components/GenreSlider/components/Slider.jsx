@@ -6,34 +6,20 @@ import PaginationList from './PaginationList'
 import SlideBuilder from './SlideBuilder'
 import SliderArrow from './SliderArrow'
 
-export default class GenreSlider extends Component {
-  constructor (props) {
-    super(props)
-
-    this.state = {
-      genre: this.props.genre,
-      moviesList: this.props.moviesList,
-      slideLength: this.props.slideLength,
-      position: 1,
-      start: true,
-      next: false,
-      prev: false
-    };
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      slideLength: nextProps.slideLength,
-      moviesList: nextProps.moviesList
-    })
+export default class Slider extends Component {
+  state = {
+    position: 1,
+    start: true,
+    next: false,
+    prev: false
   }
 
   render() {
-    const { genre, moviesList, slideLength,
-            position, start, next, prev } = this.state
+    const { genre, moviesList, slideLength } = this.props
+    const { position, start, next, prev } = this.state
 
     return (
-      <div id={`${genre.name}_slider`} className='genre-slider'>
+      <div id={`${genre.title}_slider`} className='genre-slider'>
         <PaginationList
           position={position}
           listLength={moviesList._length}
@@ -66,9 +52,9 @@ export default class GenreSlider extends Component {
 
   handleArrowClick = (direction) => {
     const key = direction.toLowerCase()
-    const main = document.getElementById('main')
+    const root = document.getElementById('root')
 
-    main.style['pointer-events'] = 'none'
+    root.style['pointer-events'] = 'none'
 
     this.setState({
       [key]: true
@@ -76,7 +62,7 @@ export default class GenreSlider extends Component {
 
     setTimeout(() => {
       this.handleTransitionEnd()
-      main.style['pointer-events'] = 'auto'
+      root.style['pointer-events'] = 'auto'
     }, 1000)
   }
 
@@ -92,21 +78,32 @@ export default class GenreSlider extends Component {
   }
 
   determinePosition = () => {
-    const listLength = this.state.moviesList._length
     const { next, prev, position } = this.state
 
     if (next) {
-      if (position === listLength) {
-        return 1
-      } else {
-        return position + 1
-      }
+      return this.nextPosition(position)
     } else if (prev) {
-      if (position === 1) {
-        return listLength
-      } else {
-        return position - 1
-      }
+      return this.prevPosition(position)
+    }
+  }
+
+  nextPosition = (position) => {
+    const listLength = this.props.moviesList._length
+
+    if (position === listLength) {
+      return 1
+    } else {
+      return position + 1
+    }
+  }
+
+  prevPosition = (position) => {
+    const listLength = this.props.moviesList._length
+
+    if (position === 1) {
+      return listLength
+    } else {
+      return position - 1
     }
   }
 }

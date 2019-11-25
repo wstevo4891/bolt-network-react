@@ -17,8 +17,6 @@ export default class ContainerStyle {
   }
 
   call = () => {
-    // console.log('buildContainerStyle start: ' + this.start);
-
     if (this.start) {
       return this.startStyle()
     } else {
