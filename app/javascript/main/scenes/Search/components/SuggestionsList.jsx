@@ -14,7 +14,9 @@ const SuggestionsList = (props) => {
     <ul>
       {suggestions.map((suggestion, index) =>
         <li key={index}>
-          <Link to={suggestion.link}>{suggestion.name}</Link>
+          <Link to={suggestion.link}>
+            {suggestion.name}
+          </Link>
         </li>
       )}
     </ul>

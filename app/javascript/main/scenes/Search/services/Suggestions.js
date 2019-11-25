@@ -28,9 +28,11 @@ export default class Suggestions {
 
   movieLinks = () => {
     if (this.movies && this.movies.length > 0) {
-      return this.movies.map((movie) => {
+      return this.movies.map(movie => {
         return { name: movie.title, link: movie.url }
       })
-    } else return []
+    }
+
+    return []
   }
 }

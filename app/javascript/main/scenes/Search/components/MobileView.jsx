@@ -1,12 +1,12 @@
-// app/javascript/main/scenes/Search/components/MobileResults.jsx
+// MovileDisplay.jsx
 
 import React from 'react'
 
 // Components
 import SuggestionsList from './SuggestionsList'
-import Results from '../../components/Results'
+import Results from '../../../components/Results'
 
-const MobileResults = (props) => (
+const MobileView = (props) => (
   <div className="search-results">
     <div className="display-container">
       <div className="row">
@@ -32,4 +32,4 @@ const MobileResults = (props) => (
   </div>
 )
 
-export default MobileResults
+export default MobileView
