@@ -31,6 +31,7 @@
   right: 0;
   background: rgba(0,0,0,.75);
   border: 1px solid rgba(255,255,255,.85);
+  transition: .4s;
 
   &.is-visible {
     display: flex;
