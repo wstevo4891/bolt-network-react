@@ -51,7 +51,7 @@
       "\\.(css|less)$": "<rootDir>/test/javascript/__mocks__/styleMock.js"
     },
     "roots": [
-      "app/javascript/packs",
+      "app/javascript/main",
       "test/javascript"
     ],
     "moduleDirectories": [
