@@ -2,9 +2,6 @@
 
 import React, { Component } from 'react'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
-
 // Components
 import SearchInput from './SearchInput'
 import SearchClose from './SearchClose'
@@ -25,11 +22,7 @@ class InputDisplayPlus extends Component {
 
     return(
       <div id="searchInput" style={{ width: 0 }}>
-        <FontAwesomeIcon
-          icon={faSearch}
-          id="searchIcon"
-          aria-hidden="true"
-        />
+        <i className="fa fa-search" id="searchIcon" aria-hidden="true"></i>
 
         <div className="form-inline">
           <SearchInput

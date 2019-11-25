@@ -3,9 +3,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlay } from '@fortawesome/free-solid-svg-icons'
-
 // Components
 import MyListButton from './MyListButton'
 
@@ -40,7 +37,7 @@ const Slide = (props) => {
 
           <div className="slide-buttons">
             <Link to={movie.url} className="btn-blue" id="play">
-              <FontAwesomeIcon icon={faPlay} />PLAY
+              <i className="fa fa-play"></i>PLAY
             </Link>
 
             <MyListButton movie={movie} />

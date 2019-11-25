@@ -3,8 +3,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import './styles/HomePage.scss'
-
 import Carousel from './components/Carousel'
 import GenreSlider from './components/GenreSlider'
 

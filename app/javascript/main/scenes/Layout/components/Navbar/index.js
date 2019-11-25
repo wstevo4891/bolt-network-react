@@ -13,8 +13,6 @@ import SearchInput from './components/SearchBar/components/SearchInput'
 
 import logo from './images/bolt-network.svg'
 
-import './styles/main.scss'
-
 import { fetchSearchResults } from './components/SearchBar/actions/searchActions'
 
 class Navbar extends Component {

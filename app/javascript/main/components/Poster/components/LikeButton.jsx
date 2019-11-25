@@ -1,13 +1,21 @@
 // app/javascript/main/scenes/components/LikeButton.jsx
 
-import React from 'react'
+import React, { Component } from 'react'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faThumbsUp  } from '@fortawesome/free-solid-svg-icons'
+class LikeButton extends Component {
+  render() {
+    const { liked, movie, toggleLike } = this.props
 
-const LikeButton = ({ liked, movie, toggleLike }) => {
+    return(
+      <li className={this.buttonClass(liked)}>
+        <button onClick={() => toggleLike(liked, movie)}>
+          <i className={this.iconClass(liked)}></i>
+        </button>
+      </li>
+    )
+  }
 
-  const buttonClass = () => {
+  buttonClass = (liked) => {
     if (liked === null) {
       return 'poster-btn poster-btn-like static'
     
@@ -19,13 +27,13 @@ const LikeButton = ({ liked, movie, toggleLike }) => {
     }
   }
 
-  return(
-    <li className={buttonClass()}>
-      <button onClick={() => toggleLike(liked, movie)}>
-        <FontAwesomeIcon icon={faThumbsUp} />
-      </button>
-    </li>
-  )
+  iconClass = (liked) => {
+    if (liked) {
+      return 'fa fa-thumbs-up'
+    } else {
+      return 'fa fa-thumbs-o-up'
+    }
+  }
 }
 
 export default LikeButton

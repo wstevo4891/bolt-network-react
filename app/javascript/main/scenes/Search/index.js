@@ -3,9 +3,6 @@
 import React, { Component } from 'react'
 import queryString from 'query-string'
 
-// Styles
-import './styles/index.scss'
-
 // Components
 import SearchResults from './components/SearchResults'
 

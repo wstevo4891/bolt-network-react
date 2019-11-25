@@ -29,7 +29,7 @@ export const fetchRecentMoviesFailure = error => ({
 // API Action
 // ==================================================================
 
-export const URI = 'http://localhost:3001/api/v1/recent-movies'
+export const URI = '/api/recent-movies'
 
 export function fetchRecentMovies() {
   return async dispatch => {

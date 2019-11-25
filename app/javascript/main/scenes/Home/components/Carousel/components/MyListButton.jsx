@@ -4,9 +4,6 @@ import React, { Component } from 'react'
 
 import MyListService from '../services/MyListService'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faCheck } from '@fortawesome/free-solid-svg-icons'
-
 export default class MyListButton extends Component {
   state = {
     inList: null
@@ -21,7 +18,7 @@ export default class MyListButton extends Component {
         className="btn-clear"
         onClick={() => this.toggleMyList(inList, movie)}
       >
-        <FontAwesomeIcon icon={inList ? faCheck : faPlus} />MY LIST
+        <i className={inList ? 'fa fa-check' : 'fa fa-plus'}></i>MY LIST
       </button>
     )
   }

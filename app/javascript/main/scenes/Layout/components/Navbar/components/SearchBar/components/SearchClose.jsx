@@ -2,16 +2,32 @@
 
 import React from 'react'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
+const SearchClose = (props) => {
 
-const SearchClose = (props) => (
-  <FontAwesomeIcon
-    icon={faTimes}
-    id="closeIcon"
-    className={props.query ? '' : 'd-none'}
-    onClick={() => props.handleClick()}
-  />
-)
+  const iconClass = () => {
+    if (props.query) {
+      return 'fa fa-times'
+    } else {
+      return 'fa fa-time d-none'
+    }
+  }
+
+  // const iconClass = function() {
+  //   if (props.query) {
+  //     return 'fa fa-times'
+  //   } else {
+  //     return 'fa fa-time d-none'
+  //   }
+  // }()
+
+  return(
+    <i
+      id="closeIcon"
+      aria-hidden="true"
+      className={iconClass()}
+      onClick={() => props.handleClick()}
+    ></i>
+  )
+}
 
 export default SearchClose

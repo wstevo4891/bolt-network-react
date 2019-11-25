@@ -5,8 +5,6 @@ import { connect } from 'react-redux'
 
 import { Carousel, CarouselItem } from 'reactstrap'
 
-import './styles/App.scss'
-
 // Components
 import Slide from './components/Slide'
 import ControlButton from './components/ControlButton'
@@ -48,13 +46,13 @@ class CarouselApp extends Component {
         <ControlButton
           direction="prev"
           directionText="Previous"
-          onClickHandler={this.previous}
+          handleClick={this.previous}
         />
 
         <ControlButton
           direction="next"
           directionText="Next"
-          onClickHandler={this.next}
+          handleClick={this.next}
         />
       </Carousel>
     )

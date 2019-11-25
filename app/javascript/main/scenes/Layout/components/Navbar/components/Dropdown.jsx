@@ -3,9 +3,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
-
 export default class Dropdown extends Component {
   state = {
     show: false
@@ -23,7 +20,7 @@ export default class Dropdown extends Component {
           aria-expanded="false"
         >
           {text}
-          <FontAwesomeIcon icon={faAngleDown} />
+          <i className="fa fa-angle-down"></i>
         </button>
 
         <div

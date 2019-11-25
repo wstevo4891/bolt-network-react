@@ -2,9 +2,6 @@
 
 import React from 'react'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlay } from '@fortawesome/free-solid-svg-icons'
-
 const MovieInfo = (props) => {
   const movie = props.movie
   let genres = movie.genres
@@ -27,7 +24,7 @@ const MovieInfo = (props) => {
     <div className="movie-info">
       <div>
         <span className="play-icon">
-          <FontAwesomeIcon icon={faPlay} />
+          <i className="fa fa-play"></i>
         </span>
       </div>
 

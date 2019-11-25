@@ -12,8 +12,6 @@ import MainContainer from './components/MainContainer'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 
-import './styles/index.scss'
-
 function Layout() {
   return(
     <Router>

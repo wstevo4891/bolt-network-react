@@ -2,10 +2,7 @@
 
 import React, { Component } from 'react'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faVolumeUp, faVolumeMute  } from '@fortawesome/free-solid-svg-icons'
-
-export default class VolumeButton extends Component {
+class VolumeButton extends Component {
   state = {
     volume: true
   }
@@ -17,7 +14,7 @@ export default class VolumeButton extends Component {
     return(
       <li className={this.buttonClass(liked)}>
         <button onClick={this.toggleVolume}>
-          <FontAwesomeIcon icon={this.buttonIcon(volume)} />
+          <i className={this.iconClass(volume)}></i>
         </button>
       </li>
     )
@@ -31,11 +28,11 @@ export default class VolumeButton extends Component {
     }
   }
 
-  buttonIcon = (volume) => {
+  iconClass = (volume) => {
     if (volume) {
-      return faVolumeUp
+      return 'fa fa-volume-up'
     } else {
-      return faVolumeMute
+      return 'fa fa-volume-mute'
     }
   }
 
@@ -45,3 +42,5 @@ export default class VolumeButton extends Component {
     })
   }
 }
+
+export default VolumeButton

@@ -3,11 +3,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import './styles/index.scss'
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
-
 // Components
 import InputDisplay from './components/InputDisplay'
 
@@ -36,7 +31,7 @@ class SearchBar extends Component {
           id="nav-item"
           onClick={this.handleClick}
         >
-          <FontAwesomeIcon icon={faSearch} />
+          <i className="fa fa-search" aria-hidden="true"></i>
         </button>
 
         <div className={wrapperClass}>

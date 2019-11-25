@@ -2,25 +2,18 @@
 
 import React from 'react'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
-
 const ControlButton = (props) => {
-  const buttonIcon = props.direction === 'prev' ? faAngleLeft : faAngleRight
+  const iconClass = props.direction === 'prev' ? 'fa-angle-left' : 'fa-angle-right'
 
   return(
     <button
       className={`carousel-control-${props.direction}`}
       tabIndex="0"
-      onClick={props.onClickHandler}
+      onClick={props.handleClick}
     >
-      {/* <span className={`fa ${iconClass} slider-arrow slider-${props.direction}`}>
+      <span className={`fa ${iconClass} slider-arrow slider-${props.direction}`}>
         <span className="sr-only">{props.directonText}</span>
-      </span> */}
-      <FontAwesomeIcon
-        icon={buttonIcon}
-        className={`slider-arrow slider-${props.direction}`}
-      />
+      </span>
     </button>
   )
 }

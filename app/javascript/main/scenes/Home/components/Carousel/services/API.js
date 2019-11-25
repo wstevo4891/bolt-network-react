@@ -2,12 +2,10 @@
 
 // Carousel Movies API
 
-const URI = 'http://localhost:3001/api/v1/movies/search'
-
 export default {
   movies: {
     search: (titles) => {
-      return fetch(URI, {
+      return fetch('/api/movies/search', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

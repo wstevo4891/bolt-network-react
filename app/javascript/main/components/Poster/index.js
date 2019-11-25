@@ -3,8 +3,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import './styles/App.scss'
-
 // Components
 import PosterControls from './components/PosterControls'
 

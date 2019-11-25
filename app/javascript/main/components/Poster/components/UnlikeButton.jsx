@@ -1,13 +1,21 @@
 // src/components/Poster/components/UnlikeButton.jsx
 
-import React from 'react'
+import React, { Component } from 'react'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faThumbsDown  } from '@fortawesome/free-solid-svg-icons'
+class UnlikeButton extends Component {
+  render() {
+    const {liked, movie, toggleUnlike } = this.props
 
-const UnlikeButton = ({liked, movie, toggleUnlike }) => {
+    return(
+      <li className={this.buttonClass(liked)}>
+        <button onClick={() => toggleUnlike(liked, movie)}>
+          <i className={this.iconClass(liked)}></i>
+        </button>
+      </li>
+    )
+  }
 
-  const buttonClass = () => {
+  buttonClass = (liked) => {
     if (liked === false) {
       return 'poster-btn poster-btn-unlike selected'
     
@@ -19,13 +27,13 @@ const UnlikeButton = ({liked, movie, toggleUnlike }) => {
     }
   }
 
-  return(
-    <li className={buttonClass()}>
-      <button onClick={() => toggleUnlike(liked, movie)}>
-        <FontAwesomeIcon icon={faThumbsDown} />
-      </button>
-    </li>
-  )
+  iconClass = (liked) => {
+    if (liked === false) {
+      return 'fa fa-thumbs-down'
+    } else {
+      return 'fa fa-thumbs-o-down'
+    }
+  }
 }
 
 export default UnlikeButton

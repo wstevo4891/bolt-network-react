@@ -2,8 +2,6 @@
 
 import React, { Component } from 'react'
 
-import './styles/index.scss'
-
 import MoviePage from './components/MoviePage'
 
 export default class Movie extends Component {
@@ -35,9 +33,7 @@ export default class Movie extends Component {
 
   fetchMovie = async (movieID) => {
     try {
-      const URI = 'http://localhost:3001/api/v1/movies'
-
-      const response = await fetch(`${URI}/${movieID}`)
+      const response = await fetch(`/api/movies/${movieID}`)
 
       const data = await response.json()
 

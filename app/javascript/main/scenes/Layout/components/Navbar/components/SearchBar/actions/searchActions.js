@@ -28,8 +28,6 @@ export const fetchSearchResultsFailure = error => ({
 
 // API Action
 // ========================================================
-export const URI = 'http://localhost:3001/api/v1'
-
 export function fetchSearchResults(query) {
   return async dispatch => {
     try {
@@ -37,7 +35,7 @@ export function fetchSearchResults(query) {
 
       dispatch(fetchSearchResultsBegin())
 
-      const response = await fetch(`${URI}/search/${query}`)
+      const response = await fetch(`/api/search/${query}`)
 
       const data = await response.json()
 
