@@ -1,0 +1,48 @@
+// Poster Styles
+
+@import "PosterControls.scss";
+@import "MovieInfo.scss";
+@import "mixins.scss";
+
+#bob-open {
+  transform: scale(1.75) translate3d(-54px, 0px, 0px) !important;
+}
+
+.poster-overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.poster-container {
+  @include bp-poster-dimensions;
+  @include poster-container;
+
+  .poster {
+    margin: 0 2px;
+    height: 100%;
+  }
+
+  &.mouseOver {
+    z-index: 2;
+
+    .poster {
+      margin: 0;
+    }
+
+    .poster-overlay {
+      background: rgba(0, 0, 0, .1);
+    }
+
+    .poster-controls:hover {
+      .movie-info span.play-icon {
+        color: white;
+      }
+    }
+
+    .movie-info span.play-icon {
+      color: red;
+    }
+  }
+}
