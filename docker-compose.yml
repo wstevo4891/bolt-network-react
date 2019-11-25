@@ -4,10 +4,10 @@ services:
     image: postgres:11-alpine
     ports:
       - 5432:5432
-    # volumes:
-    #   - /usr/data/volumes/pgdata/etc:/etc/postgresql
-    #   - /usr/data/volumes/pgdata/log:/var/log/postgresql
-    #   - /usr/data/volumes/pgdata/data:/var/lib/postgresql/data
+    volumes:
+      - /usr/data/volumes/pgdata/etc:/etc/postgresql
+      - /usr/data/volumes/pgdata/log:/var/log/postgresql
+      - /usr/data/volumes/pgdata/data:/var/lib/postgresql/data
 
   # webpacker:
   #   build: .
