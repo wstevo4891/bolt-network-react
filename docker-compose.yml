@@ -4,7 +4,8 @@ services:
     image: postgres:11
     ports:
       - 5432:5432
-    # volumes:
+    volumes:
+      - /var/lib/postgresql/data
     #   - /usr/data/volumes/pgdata/etc:/etc/postgresql
     #   - /usr/data/volumes/pgdata/log:/var/log/postgresql
     #   - /usr/data/volumes/pgdata/data:/var/lib/postgresql/data
