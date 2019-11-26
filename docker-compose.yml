@@ -1,21 +1,21 @@
 version: '3'
 services:
   db:
-    image: postgres:11-alpine
+    image: postgres:11
     ports:
       - 5432:5432
-    volumes:
-      - /usr/data/volumes/pgdata/etc:/etc/postgresql
-      - /usr/data/volumes/pgdata/log:/var/log/postgresql
-      - /usr/data/volumes/pgdata/data:/var/lib/postgresql/data
+    # volumes:
+    #   - /usr/data/volumes/pgdata/etc:/etc/postgresql
+    #   - /usr/data/volumes/pgdata/log:/var/log/postgresql
+    #   - /usr/data/volumes/pgdata/data:/var/lib/postgresql/data
 
-  # webpacker:
-  #   build: .
-  #   command: bundle exec bin/webpack-dev-server
-  #   volumes:
-  #     - .:/bolt-network-react
-  #   ports:
-  #     - "8080:8080"
+  webpacker:
+    build: .
+    command: bundle exec bin/webpack-dev-server
+    volumes:
+      - .:/bolt-network-react
+    ports:
+      - "8080:8080"
 
   web:
     build: .

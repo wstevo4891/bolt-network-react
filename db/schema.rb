@@ -52,13 +52,6 @@ ActiveRecord::Schema.define(version: 20180118041414) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "quotes", force: :cascade do |t|
-    t.string "text"
-    t.string "author"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "subgenres", force: :cascade do |t|
     t.string "name"
     t.bigint "genre_id"

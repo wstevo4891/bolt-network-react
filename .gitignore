@@ -26,3 +26,6 @@
 
 # Ignore docker_data
 /docker_data
+
+# Ignore dev_notes
+/dev_notes

@@ -3,7 +3,7 @@
 # Model for movies table
 class Movie < ApplicationRecord
   # == Extensions ===========================================================
-  include PgSearch
+  include PgSearch::Model
 
   # == Attributes ===========================================================
   # attr_accessor :genres_list

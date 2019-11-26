@@ -24,6 +24,8 @@ class CarouselApp extends Component {
   render() {
     const movies = this.props.movies
 
+    console.log(movies)
+
     if (movies === null) return null
 
     return(

@@ -3,7 +3,7 @@
 # Class for movie genres
 class Genre < ApplicationRecord
   # == Extensions ===========================================================
-  include PgSearch
+  include PgSearch::Model
 
   # == Attributes ===========================================================
   # title     {String}

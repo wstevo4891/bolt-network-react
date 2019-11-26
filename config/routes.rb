@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   get '/search(/:q)' => 'home#index'
 
   namespace :api, defaults: { format: :json } do
+    get '/genres', to: 'genres#index'
+
+    get '/genres/:id', to: 'genres#show'
+
     get '/movies/recent', to: 'movies/recent#show'
 
     get '/movies/:id', to: 'movies#show'

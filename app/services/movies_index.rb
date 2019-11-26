@@ -27,7 +27,7 @@ class MoviesIndex
 
   def build_index
     Genre.all.each_with_object({}) do |genre, hash|
-      hash[genre.name] = genre.movies.limit(@limit)
+      hash[genre.title] = genre.movies.limit(@limit)
     end
   end
 
