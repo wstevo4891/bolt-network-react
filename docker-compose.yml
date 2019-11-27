@@ -5,10 +5,10 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - /var/lib/postgresql/data
-    #   - /usr/data/volumes/pgdata/etc:/etc/postgresql
-    #   - /usr/data/volumes/pgdata/log:/var/log/postgresql
-    #   - /usr/data/volumes/pgdata/data:/var/lib/postgresql/data
+      # - /usr/data/volumes/pgdata/etc:/etc/postgresql
+      # - /usr/data/volumes/pgdata/log:/var/log/postgresql
+      # - /usr/data/volumes/pgdata/data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
 
   webpacker:
     build: .
@@ -16,7 +16,7 @@ services:
     volumes:
       - .:/bolt-network-react
     ports:
-      - "8080:8080"
+      - 3035:3035
 
   web:
     build: .
@@ -27,3 +27,7 @@ services:
       - "3000:3000"
     depends_on:
       - db
+
+volumes:
+  postgres_data:
+    external: true

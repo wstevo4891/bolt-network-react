@@ -14,6 +14,8 @@
   }
 
   .carousel-control-prev, .carousel-control-next {
+    background: transparent;
+    border: none;
     transition: background .4s;
 
     &:hover {
@@ -86,7 +88,7 @@
 .slide-buttons {
   margin: 0.5em 0;
 
-  a {
+  a, button {
     width: 14vw;
     font-size: 1.7vw;
     margin-right: 0.5em;

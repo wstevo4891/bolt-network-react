@@ -5,9 +5,6 @@ import React from 'react'
 // Services
 import MoviesList from './services/MoviesList'
 
-// Styles
-import './styles/index.scss'
-
 // Components
 import Slider from './components/Slider'
 

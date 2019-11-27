@@ -14,7 +14,7 @@ gem 'pg_search'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
-gem 'sassc'
+gem 'sass-rails'
 # Use Bootstrap V4 for CSS Framework
 gem 'bootstrap', '~> 4.0.0.beta3'
 # Use Uglifier as compressor for JavaScript assets

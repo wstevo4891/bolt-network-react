@@ -37,13 +37,20 @@
   }
 
   .navbar .navbar-collapse .navbar-nav {
-    li a {
+    li a, li button {
       color: white;
       transition: color .4s;
 
       &:hover {
         color: #b3b3b3;
       }
+    }
+
+    li button {
+      background: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
     }
 
     li {
@@ -113,5 +120,9 @@
     li.nav-item.active a {
       color: $white;
     }
+  }
+
+  @media screen and (min-width: 768px) {
+    display: none;
   }
 }

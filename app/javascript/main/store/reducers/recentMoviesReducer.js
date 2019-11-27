@@ -6,7 +6,7 @@ import {
   FETCH_RECENT_MOVIES_BEGIN,
   FETCH_RECENT_MOVIES_SUCCESS,
   FETCH_RECENT_MOVIES_FAILURE
-} from '../actions/recentMoviesActions'
+} from '../types/recentMoviesTypes'
 
 const initialState = {
   movies: [],

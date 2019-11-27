@@ -29,3 +29,10 @@
 
 # Ignore dev_notes
 /dev_notes
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity

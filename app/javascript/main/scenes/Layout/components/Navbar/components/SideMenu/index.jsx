@@ -5,8 +5,6 @@ import React from 'react'
 // Components
 import MenuItem from './components/MenuItem'
 
-import './styles/index.scss'
-
 const SideMenu = (props) => {
 
   const path = props.location.pathname
