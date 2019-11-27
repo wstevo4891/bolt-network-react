@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
     get '/genres/:id', to: 'genres#show'
 
-    get '/movies/recent', to: 'movies/recent#show'
+    get '/recent-movies', to: 'recent_movies#index'
 
     get '/movies/:id', to: 'movies#show'
 
