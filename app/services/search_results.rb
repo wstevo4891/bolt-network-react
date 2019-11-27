@@ -29,7 +29,7 @@ class SearchResults
     if @query.length == 1
       Genre.by_first_char(@query).to_a
     else
-      Genre.name_match(@query).to_a
+      Genre.title_match(@query).to_a
     end
   end
 

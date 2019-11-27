@@ -32,7 +32,7 @@ class VolumeButton extends Component {
     if (volume) {
       return 'fa fa-volume-up'
     } else {
-      return 'fa fa-volume-mute'
+      return 'fa fa-volume-off'
     }
   }
 

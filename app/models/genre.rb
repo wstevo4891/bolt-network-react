@@ -20,21 +20,21 @@ class Genre < ApplicationRecord
 
   # == Scopes ===============================================================
   pg_search_scope :full_text_search,
-                  against: %i[name plural category],
+                  against: %i[title plural category],
                   using: [:tsearch]
 
   # == Class Methods ========================================================
   def self.by_first_char(query)
-    where('lower(name) LIKE :prefix', prefix: "#{query}%")
+    where('lower(title) LIKE :prefix', prefix: "#{query}%")
   rescue ActiveRecord::RecordNotFound
     []
   end
 
   def self.lower_case_match(query)
-    where(arel_table[:name].lower.matches("%#{query}%"))
+    where(arel_table[:title].lower.matches("%#{query}%"))
   end
 
-  def self.name_math(query)
+  def self.title_match(query)
     genres = lower_case_match(query)
 
     return genres unless genres.empty?
