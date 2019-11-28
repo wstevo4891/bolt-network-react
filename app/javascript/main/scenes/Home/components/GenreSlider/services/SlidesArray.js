@@ -1,5 +1,13 @@
 // app/javascript/genre_sliders_plus/services/SlidesArray.js
 
+/**
+ * @param {Object} props
+ * 
+ * @property {Boolean} start
+ * @property {LinkedList} list
+ * @property {Number} position
+ * @property {Array} slides
+ */
 export default class SlidesArray {
   constructor(props) {
     this.start = props.start

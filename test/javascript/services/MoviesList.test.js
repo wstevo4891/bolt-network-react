@@ -1,21 +1,36 @@
 // test/javascript/services/react_jsx.test.js
 
-import * as data from '../fixtures/comedy.json'
-import MoviesList from 'genre_sliders/services/MoviesList'
+import comedyMovies from '../__fixtures__/comedyMovies'
+import MoviesList from 'main/scenes/Home/components/GenreSlider/services/MoviesList'
+import LinkedList from 'main/scenes/Home/components/GenreSlider/structures/LinkedList'
 
-test('can use MoviesList', () => {
-  const moviesData = Array.from(data)
-  const props = { movies: moviesData, slideLength: 5 }
-
-  const list = new MoviesList(props).call()
-  console.log(list.head.data)
-  expect(list.head.data).toHaveLength(5)
-  expect(typeof list.head.data).toBe('object')
-
-  let slide = list.head
-
-  while (slide !== null) {
-    expect(slide.data.length).toEqual(props.slideLength)
-    slide = slide.next
+describe('MoviesList', () => {
+  const props = {
+    slideLength: 5,
+    movies: comedyMovies
   }
+
+  it('will initialize', () => {
+    const moviesList = new MoviesList(props)
+
+    expect(moviesList.slideLength).toEqual(props.slideLength)
+  })
+
+  it('will slice the movies param', () => {
+    const moviesList = new MoviesList(props)
+
+    expect(moviesList.movies.length).toEqual(20)
+  })
+
+  it('will return a linked list', () => {
+    const moviesList = new MoviesList(props).call()
+
+    expect(moviesList).toBeInstanceOf(LinkedList)
+  })
+
+  it('will build arrays with length equal to slideLength', () => {
+    const moviesList = new MoviesList(props).call()
+
+    expect(moviesList.head.data).toHaveLength(props.slideLength)
+  })
 })

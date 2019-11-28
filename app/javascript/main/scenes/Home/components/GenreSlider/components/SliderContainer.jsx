@@ -24,24 +24,26 @@ export default class SliderContainer extends Component {
     const container = this.containerClass(next, prev)
 
     return(
-      <div className={container} style={slideOver}>
-        {
-          slides.map((slide, index) =>
-            <Poster
-              key={index}
-              index={index}
-              movie={slide}
-              slideLength={slideLength}
-              start={start}
-              next={next}
-              prev={prev}
-              hoverItem={this.state.hoverItem}
-              mouseOver={this.handleMouseOver}
-              mouseLeave={this.handleMouseLeave}
-              service={SliderPosterService}
-            />
-          )
-        }
+      <div className="slider-container">
+        <div className={container} style={slideOver}>
+          {
+            slides.map((slide, index) =>
+              <Poster
+                key={index}
+                index={index}
+                movie={slide}
+                slideLength={slideLength}
+                start={start}
+                next={next}
+                prev={prev}
+                hoverItem={this.state.hoverItem}
+                mouseOver={this.handleMouseOver}
+                mouseLeave={this.handleMouseLeave}
+                service={SliderPosterService}
+              />
+            )
+          }
+        </div>
       </div>
     )
   }

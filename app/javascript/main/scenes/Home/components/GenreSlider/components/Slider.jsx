@@ -2,9 +2,11 @@
 
 import React, { Component } from 'react'
 
+import SlidesArray from '../services/SlidesArray'
+
 import PaginationList from './PaginationList'
-import SlideBuilder from './SlideBuilder'
 import SliderArrow from './SliderArrow'
+import SliderContainer from './SliderContainer'
 
 export default class Slider extends Component {
   state = {
@@ -17,6 +19,8 @@ export default class Slider extends Component {
   render() {
     const { genre, moviesList, slideLength } = this.props
     const { position, start, next, prev } = this.state
+
+    const slides = new SlidesArray({ start, moviesList, position }).call()
 
     return (
       <div id={`${genre.title}_slider`} className='genre-slider'>
@@ -32,13 +36,12 @@ export default class Slider extends Component {
           handleClick={this.handleArrowClick}
         />
 
-        <SlideBuilder
+        <SliderContainer
+          slides={slides}
           slideLength={slideLength}
-          moviesList={moviesList}
-          position={position}
-          start={start}
           next={next}
           prev={prev}
+          start={start}
         />
 
         <SliderArrow
