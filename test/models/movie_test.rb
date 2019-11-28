@@ -37,7 +37,7 @@ class MovieTest < ActiveSupport::TestCase
   test 'can find by genre' do
     puts __method__
     genre = Genre.take
-    puts genre.name
+    puts genre.title
 
     result = Movie.find_by_genre(genre.id)
     puts result.first.inspect
@@ -48,25 +48,12 @@ class MovieTest < ActiveSupport::TestCase
   test 'find by genre is accurate' do
     puts __method__
     genre = Genre.take
-    puts genre.name
+    puts genre.title
 
     result = Movie.find_by_genre(genre.id)
-    accuracies = result.select { |m| m.genres_list.include?(genre.name) }
+    accuracies = result.select { |m| m.genres_list.include?(genre.title) }
 
     assert_equal result.length, accuracies.length
-  end
-
-  ##
-  # Test after_initialize callback
-  #
-  test 'should assign genres list' do
-    puts __method__
-    movie = Movie.take
-    puts movie.title
-    print movie.genres_list
-    puts ''
-
-    assert_not_predicate movie.genres_list, :blank?
   end
 
   test 'benchmark by first char' do

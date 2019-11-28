@@ -13,16 +13,16 @@ class GenreTest < ActiveSupport::TestCase
     puts result.inspect
 
     assert_not_nil result
-    assert_equal 'Comedy', result.name
+    assert_equal 'Comedy', result.title
   end
 
-  test 'should match lower case name' do
+  test 'should match lower case title' do
     puts __method__
     result = Genre.lower_case_match('comedy').first
     puts result.inspect
 
     assert_not_nil result
-    assert_equal 'Comedy', result.name
+    assert_equal 'Comedy', result.title
   end
 
   test 'should match plural' do
@@ -31,6 +31,6 @@ class GenreTest < ActiveSupport::TestCase
     puts result.inspect
 
     assert_not_nil result
-    assert_equal 'Comedy', result.name
+    assert_equal 'Comedy', result.title
   end
 end

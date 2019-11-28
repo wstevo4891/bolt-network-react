@@ -24,9 +24,6 @@ class Movie < ApplicationRecord
   pg_search_scope :search_by_title, against: :title, using: [:tsearch]
 
   # == Callbacks ============================================================
-  # after_initialize do
-  #   @genres_list = three_genres
-  # end
 
   # == Class Methods ========================================================
   def self.search(search)
@@ -57,8 +54,11 @@ class Movie < ApplicationRecord
     joins(:genres).where(genres: { title: genre }).pluck(:title)
   end
 
-  # == Instance Methods =====================================================
-  # def three_genres
-  #   genres.limit(3).pluck(:name)
-  # end
+  def self.index_by_genre
+    Genre.all.each_with_object({}) do |genre, hash|
+      hash[genre.title] = genre.movies.limit(24)
+    end
+  end
+
+  # == Instance Methods =======================================================
 end

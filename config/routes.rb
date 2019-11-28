@@ -9,7 +9,9 @@ Rails.application.routes.draw do
 
   get '/my-list', to: 'home#index'
 
-  get '/search(/:q)' => 'home#index'
+  get '/search(/:q)', to: 'home#index'
+
+  get '/query-labs', to: 'query_labs#show'
 
   namespace :api, defaults: { format: :json } do
     get '/genres', to: 'genres#index'
@@ -23,8 +25,6 @@ Rails.application.routes.draw do
     get '/search/:query', to: 'search#show'
 
     get '/movies-index', to: 'movies_index#index'
-
-    get '/movies-index/:slide_length', to: 'movies_index#show'
 
     get '/genres/:id/movie_ids' => 'genres#movie_ids', as: :genres_movie_ids
 

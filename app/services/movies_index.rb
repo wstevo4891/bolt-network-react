@@ -30,16 +30,14 @@ class MoviesIndex
       hash[genre.title] = genre.movies.limit(@limit)
     end
   end
-
-  # Netflix's slide number per slide_length
-  # =======================================
-  # def true_length_map
-  #   {
-  #     6 => 42,
-  #     5 => 40,
-  #     4 => 40,
-  #     3 => 39,
-  #     2 => 38
-  #   }
-  # end
 end
+
+# Netflix's slide number per slide_length
+# =======================================
+# LENGTH_MAP = {
+#   6 => 42,
+#   5 => 40,
+#   4 => 40,
+#   3 => 39,
+#   2 => 38
+# }.freeze

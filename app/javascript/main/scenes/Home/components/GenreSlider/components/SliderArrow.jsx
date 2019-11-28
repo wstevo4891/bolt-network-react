@@ -11,7 +11,10 @@ const SliderArrow = (props) => {
   return (
     <span className={buttonClass}>
       <b className='indicator-icon icon-rightCaret'>
-        <i className={iconClass} onClick={() => props.handleClick(dir)}></i>
+        <i
+          className={iconClass}
+          onClick={() => props.handleClick(props.direction)}
+        ></i>
       </b>
     </span>
   )
