@@ -70,32 +70,26 @@ describe('moviesIndexActions', () => {
       })
     })
 
-    // it('creates FETCH_MOVIES_INDEX_FAILURE when fetch throws an error', () => {
-    //   fetchMock.getOnce(actions.URI, {
-    //     status: 400,
-    //     body: JSON.stringify(moviesIndexError)
-    //   })
+    it('creates FETCH_MOVIES_INDEX_FAILURE when fetch throws an error', () => {
+      fetchMock.getOnce(actions.URI, { throws: moviesIndexError })
 
-    //   const expectedActions = [
-    //     { type: types.FETCH_MOVIES_INDEX_BEGIN },
-    //     {
-    //       type: types.FETCH_MOVIES_INDEX_FAILURE,
-    //       payload: { error: moviesIndexError }
-    //     }
-    //   ]
+      const expectedActions = [
+        beginAction,
+        failureAction
+      ]
 
-    //   const store = mockStore({
-    //     moviesIndex: {
-    //       moviesIndex: {},
-    //       genres: [],
-    //       genresIndex: {}
-    //     }
-    //   })
+      const store = mockStore({
+        moviesIndex: {
+          moviesIndex: {},
+          genres: [],
+          genresIndex: {}
+        }
+      })
 
-    //   return store.dispatch(actions.fetchMoviesIndex()).then(() => {
-    //     expect(store.getActions()).toEqual(expectedActions)
-    //   })
-    // })
+      return store.dispatch(actions.fetchMoviesIndex()).then(() => {
+        expect(store.getActions()).toEqual(expectedActions)
+      })
+    })
   })
 })
 
