@@ -2,11 +2,11 @@
 
 // Types
 // ========================================================
-export const FETCH_CAROUSEL_MOVIES_BEGIN = 'FETCH_CAROUSEL_MOVIES_BEGIN'
-
-export const FETCH_CAROUSEL_MOVIES_SUCCESS = 'FETCH_CAROUSEL_MOVIES_SUCCESS'
-
-export const FETCH_CAROUSEL_MOVIES_FAILURE = 'FETCH_CAROUSEL_MOVIES_FAILURE'
+import {
+  FETCH_CAROUSEL_MOVIES_BEGIN,
+  FETCH_CAROUSEL_MOVIES_SUCCESS,
+  FETCH_CAROUSEL_MOVIES_FAILURE
+} from '../types/carouselMoviesTypes'
 
 
 // Dispatch Actions

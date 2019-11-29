@@ -9,7 +9,7 @@ import { Carousel, CarouselItem } from 'reactstrap'
 import Slide from './components/Slide'
 import ControlButton from './components/ControlButton'
 
-import { fetchCarouselMovies } from './actions/carouselMoviesActions'
+import { fetchCarouselMovies } from '../../store/actions/carouselMoviesActions'
 
 class CarouselApp extends Component {
   state = {
