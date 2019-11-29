@@ -42,17 +42,13 @@ class SearchResults
   end
 
   def full_movies_search
-    first_search = movies_by_first_char
+    first_search = Movie.by_first_char(@query).limit(15).to_a
 
     if @genres.empty?
       first_search
     else
       first_search + Movie.find_by_genres(@genres)
     end
-  end
-
-  def movies_by_first_char
-    Movie.by_first_char(@query).limit(15).to_a
   end
 
   def movie_titles_search
