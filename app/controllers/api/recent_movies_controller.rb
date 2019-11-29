@@ -4,7 +4,7 @@ module Api
   # Controller for /api/movies/recent route
   class RecentMoviesController < ApiController
     def index
-      @movies = RecentMovies.create
+      @movies = Movie.recent
     end
   end
 end

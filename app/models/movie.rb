@@ -54,6 +54,10 @@ class Movie < ApplicationRecord
     joins(:genres).where(genres: { title: genre }).pluck(:title)
   end
 
+  def self.recent
+    select { |movie| movie.year.to_i > 5.years.ago.year }
+  end
+
   def self.index_by_genre
     Genre.all.each_with_object({}) do |genre, hash|
       hash[genre.title] = genre.movies.limit(24)
