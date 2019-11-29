@@ -47,7 +47,7 @@ class SearchResults
     if @genres.empty?
       first_search
     else
-      first_search.concat(concat_movies_by_genre)
+      first_search + Movie.find_by_genres(@genres)
     end
   end
 
@@ -55,19 +55,11 @@ class SearchResults
     Movie.by_first_char(@query).limit(15).to_a
   end
 
-  def concat_movies_by_genre
-    limit = @genres.length > 1 ? 5 : 20
-
-    @genres.each_with_object([]) do |genre, arr|
-      arr.concat(genre.movies.limit(limit))
-    end
-  end
-
   def movie_titles_search
     if @genres.empty?
       Movie.title_match(@query, 15)
     else
-      concat_movies_by_genre
+      Movie.find_by_genres(@genres)
     end
   end
 end

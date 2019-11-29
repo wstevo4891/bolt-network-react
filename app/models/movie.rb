@@ -50,6 +50,14 @@ class Movie < ApplicationRecord
     []
   end
 
+  def self.find_by_genres(genres)
+    limit = genres.length > 1 ? 5 : 20
+
+    genres.each_with_object([]) do |genre, arr|
+      arr.concat(genre.movies.limit(limit))
+    end
+  end
+
   def self.titles(genre)
     joins(:genres).where(genres: { title: genre }).pluck(:title)
   end
