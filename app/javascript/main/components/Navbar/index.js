@@ -17,7 +17,7 @@ import { fetchSearchResults } from '../../store/actions/searchActions'
 
 class Navbar extends Component {
   state = {
-    location: this.props.history.location,
+    location: this.props.location.pathname,
     displayMenu: false
   }
 
@@ -91,7 +91,7 @@ class Navbar extends Component {
 
   componentDidUpdate() {
     const stateLocation = this.state.location
-    const propsLocation = this.props.history.location
+    const propsLocation = this.props.location.pathname
 
     if (
       propsLocation === '/search' ||
