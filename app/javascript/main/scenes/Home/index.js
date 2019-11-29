@@ -3,8 +3,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import Carousel from './components/Carousel'
-import GenreSlider from './components/GenreSlider'
+import Carousel from '../../components/Carousel'
+import GenreSlider from '../../components/GenreSlider'
 
 const Home = (props) => (
   <main className="application">

@@ -7,7 +7,7 @@ import ContainerStyle from '../services/ContainerStyle'
 import SliderPosterService from '../services/SliderPosterService'
 
 // Components
-import Poster from '../../../../../components/Poster'
+import Poster from '../../Poster'
 
 export default class SliderContainer extends Component {
   state = {

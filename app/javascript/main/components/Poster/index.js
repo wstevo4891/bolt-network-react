@@ -3,47 +3,32 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import PosterData from './services/PosterData'
+
 // Components
 import PosterControls from './components/PosterControls'
 
 const Poster = (props) => {
-  const movie = props.movie
+  if (typeof props.movie !== 'object') return null
 
-  if (typeof movie !== 'object') return null
-
-  const service = new props.service(props)
-
-  let containerClass = service.containerClass()
-
-  const slideItem = parseInt(containerClass.slice(-1), 10)
-
-  if (slideItem === props.hoverItem) {
-    containerClass += ' mouseOver'
-  }
-
-  const posterStyle = service.posterStyle()
-
-  const posterImage = {
-    backgroundImage: `url(${movie.photo.url})`,
-    backgroundSize: '100% 100%'
-  }
+  const data = new PosterData(props).call()
 
   return (
     <div
-      className={containerClass}
-      style={posterStyle}
+      className={data.containerClass}
+      style={data.containerStyle}
       onMouseOver={props.mouseOver}
       onMouseLeave={props.mouseLeave}
     >
-      <Link to={`/movies/${movie.id}`}>
-        <div className="poster" style={posterImage}></div>
+      <Link to={`/movies/${props.movie.id}`}>
+        <div className="poster" style={data.posterImage}></div>
         <div className="poster-overlay"></div>
       </Link>
 
       <PosterControls
-        movie={movie}
+        movie={props.movie}
         hoverItem={props.hoverItem}
-        slideItem={slideItem}
+        slideItem={data.slideItem}
       />
     </div>
   )
