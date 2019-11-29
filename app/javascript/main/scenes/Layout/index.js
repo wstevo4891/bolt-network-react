@@ -6,10 +6,10 @@ import {
   Route
 } from 'react-router-dom'
 
+import Navbar from '../../components/Navbar'
 import Routes from '../Routes'
 
 import MainContainer from './components/MainContainer'
-import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 
 function Layout() {

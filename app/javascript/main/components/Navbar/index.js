@@ -13,7 +13,7 @@ import SearchInput from './components/SearchBar/components/SearchInput'
 
 import logo from './images/bolt-network.svg'
 
-import { fetchSearchResults } from './components/SearchBar/actions/searchActions'
+import { fetchSearchResults } from '../../store/actions/searchActions'
 
 class Navbar extends Component {
   state = {
@@ -38,6 +38,7 @@ class Navbar extends Component {
         <NavCollapse
           {...this.props}
           genreLinks={genreLinks}
+          fetchSearchResults={fetchSearchResults}
         />
 
         <div id="mobileSearchInput">

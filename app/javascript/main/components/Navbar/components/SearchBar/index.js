@@ -6,8 +6,6 @@ import { connect } from 'react-redux'
 // Components
 import InputDisplay from './components/InputDisplay'
 
-import { fetchSearchResults } from './actions/searchActions'
-
 class SearchBar extends Component {
   state = {
     display: false,
@@ -68,7 +66,7 @@ class SearchBar extends Component {
 
     this.updateQueryState(query)
 
-    this.props.dispatch(fetchSearchResults(query))
+    this.props.dispatch(this.props.fetchSearchResults(query))
   }
 
   updateLocation = (query) => {
