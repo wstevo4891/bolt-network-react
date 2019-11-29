@@ -10,7 +10,6 @@ class MovieTest < ActiveSupport::TestCase
   test 'should match first char' do
     puts __method__
     result = Movie.by_first_char('a')
-    puts result.first.inspect
 
     assert_not_predicate result, :blank?
   end
@@ -18,7 +17,6 @@ class MovieTest < ActiveSupport::TestCase
   test 'should match lower case name' do
     puts __method__
     result = Movie.lower_case_match('avengers').first
-    puts result.inspect
 
     assert_equal 'The Avengers', result.title
   end
@@ -29,54 +27,41 @@ class MovieTest < ActiveSupport::TestCase
   test 'should match partial title' do
     puts __method__
     result = Movie.search_by_title('potter').first
-    puts result.inspect
 
-    assert_equal 'Harry Potter and the Deathly Hallows: Part 2', result.title
+    assert_equal(
+      'Harry Potter and the Deathly Hallows: Part 2',
+      result.title
+    )
   end
 
-  test 'can find by genre' do
+  test 'can find by genres' do
     puts __method__
-    genre = Genre.take
-    puts genre.title
+    genres = Genre.take(3)
 
-    result = Movie.find_by_genre(genre.id)
-    puts result.first.inspect
+    result = Movie.find_by_genres(genres)
 
     assert_not_predicate result, :blank?
   end
 
-  test 'find by genre is accurate' do
+  test 'should return recent movies' do
     puts __method__
-    genre = Genre.take
-    puts genre.title
+    movies = Movie.recent
 
-    result = Movie.find_by_genre(genre.id)
-    accuracies = result.select { |m| m.genres_list.include?(genre.title) }
-
-    assert_equal result.length, accuracies.length
+    assert_not_predicate movies, :blank?
   end
 
-  test 'benchmark by first char' do
+  test 'should build movies index' do
     puts __method__
+    index = Movie.index_by_genre
 
-    Benchmark.bmbm do |x|
-      x.report('time') { Movie.by_first_char('a') }
-    end
+    assert_not_predicate index, :blank?
   end
 
-  test 'benchmark lower case match' do
+  test 'should index movies by genre' do
     puts __method__
+    genres = Genre.pluck(:title)
+    index = Movie.index_by_genre
 
-    Benchmark.bmbm do |x|
-      x.report('time')  { Movie.lower_case_match('avengers') }
-    end
-  end
-
-  test 'benchmark search by title' do
-    puts __method__
-
-    Benchmark.bmbm do |x|
-      x.report('time')  { Movie.search_by_title('avengers') }
-    end
+    assert_equal genres, index.keys
   end
 end

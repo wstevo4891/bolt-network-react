@@ -42,8 +42,8 @@ class SearchResultsTest < ActiveSupport::TestCase
   test 'should handle results not found' do
     puts __method__
     results = SearchResults.create('&')
-    puts results
+    empty_results = { genres: [], movies: [] }
 
-    assert_equal results, { genres: [], movies: [] }
+    assert_equal results, empty_results
   end
 end
