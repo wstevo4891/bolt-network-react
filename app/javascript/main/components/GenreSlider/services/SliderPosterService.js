@@ -45,7 +45,10 @@ export default class SliderPosterService {
   }
 
   calcTranslateX = () => {
-    const width = document.getElementsByClassName('poster-container')[0].clientWidth
+    const width = document
+                    .getElementsByClassName('poster-container')[0]
+                    .clientWidth
+
     return Math.round(width * 0.38)
   }
 

@@ -1,41 +1,49 @@
 // Carousel Movies Actions
 
-import API from '../services/API'
-
-// Constants
+// Types
 // ========================================================
-const FETCH_CAROUSEL_MOVIES_BEGIN = 'FETCH_CAROUSEL_MOVIES_BEGIN'
+export const FETCH_CAROUSEL_MOVIES_BEGIN = 'FETCH_CAROUSEL_MOVIES_BEGIN'
 
-const FETCH_CAROUSEL_MOVIES_SUCCESS = 'FETCH_CAROUSEL_MOVIES_SUCCESS'
+export const FETCH_CAROUSEL_MOVIES_SUCCESS = 'FETCH_CAROUSEL_MOVIES_SUCCESS'
 
-const FETCH_CAROUSEL_MOVIES_FAILURE = 'FETCH_CAROUSEL_MOVIES_FAILURE'
+export const FETCH_CAROUSEL_MOVIES_FAILURE = 'FETCH_CAROUSEL_MOVIES_FAILURE'
 
 
-// Dispatch Functions
+// Dispatch Actions
 // ========================================================
-const fetchCarouselMoviesBegin = () => ({
+export const fetchCarouselMoviesBegin = () => ({
   type: FETCH_CAROUSEL_MOVIES_BEGIN
 })
 
-const fetchCarouselMoviesSuccess = movies => ({
+export const fetchCarouselMoviesSuccess = movies => ({
   type: FETCH_CAROUSEL_MOVIES_SUCCESS,
   payload: { movies }
 })
 
-const fetchCarouselMoviesFailure = error => ({
+export const fetchCarouselMoviesFailure = error => ({
   type: FETCH_CAROUSEL_MOVIES_FAILURE,
   payload: { error }
 })
 
 
-// Export Function
+// API Actions
 // ========================================================
+function fetchResponse(titles) {
+  return fetch('/api/movies/search', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ titles: titles })
+  })
+}
+
 export function fetchCarouselMovies(titles) {
   return async dispatch => {
     try {
       dispatch(fetchCarouselMoviesBegin())
 
-      const response = await API.movies.search(titles)
+      const response = await fetchResponse(titles)
 
       const data = await response.json()
 

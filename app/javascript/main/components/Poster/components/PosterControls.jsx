@@ -13,7 +13,7 @@ import MovieInfo from './MovieInfo'
 import VolumeButton from './VolumeButton'
 import LikeButton from './LikeButton'
 import UnlikeButton from './UnlikeButton'
-import MyListButton from './MyListButton'
+import MyListButton from '../../MyListButton'
 
 export default class PosterControls extends Component {
   state = {
@@ -48,7 +48,7 @@ export default class PosterControls extends Component {
               toggleUnlike={this.toggleUnlike}
             />
 
-            <MyListButton movie={movie} />
+            <MyListButton movie={movie} type="icon" />
           </ul>
         </div>
       </span>

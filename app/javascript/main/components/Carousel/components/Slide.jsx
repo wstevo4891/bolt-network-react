@@ -4,7 +4,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 // Components
-import MyListButton from './MyListButton'
+import MyListButton from '../../MyListButton'
 
 const Slide = (props) => {
   const movie = props.movie
@@ -40,7 +40,7 @@ const Slide = (props) => {
               <i className="fa fa-play"></i>PLAY
             </Link>
 
-            <MyListButton movie={movie} />
+            <MyListButton movie={movie} type="banner" />
           </div>
         </div>
       </div>
