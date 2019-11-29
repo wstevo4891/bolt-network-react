@@ -1,28 +1,13 @@
-# README
+# Bolt Network React
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An app for searching and viewing movie data from IMDB with an
+interface that mimics the UI and features of Netflix.
 
-Things you may want to cover:
+[Live Site Link](https://lit-anchorage-35230.herokuapp.com/)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-  1. heroku login
-  2. heroku container:login
-  3. heroku container:push web
-  4. heroku container:release web
-
-* ...
+Built with:
+* Ruby 2.5.0
+* Ruby on Rails 5.2.1
+* Webpacker 4.2.0
+* PostgreSQL 11
+* React.js 16.12.0
