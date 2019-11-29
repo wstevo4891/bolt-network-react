@@ -4,6 +4,7 @@ module Api
   # Movies Index API
   # Route for fetching an object of movies indexed by genre
   class MoviesIndexController < ApiController
+    # GET /api/movies-index
     def index
       @movies_index = Movie.index_by_genre
     end
