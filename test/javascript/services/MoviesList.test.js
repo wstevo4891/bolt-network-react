@@ -1,8 +1,8 @@
 // test/javascript/services/react_jsx.test.js
 
 import comedyMovies from '../__fixtures__/comedyMovies'
-import MoviesList from 'main/scenes/Home/components/GenreSlider/services/MoviesList'
-import LinkedList from 'main/scenes/Home/components/GenreSlider/structures/LinkedList'
+import MoviesList from 'main/components/GenreSlider/services/MoviesList'
+import LinkedList from 'main/components/GenreSlider/structures/LinkedList'
 
 describe('MoviesList', () => {
   const props = {
