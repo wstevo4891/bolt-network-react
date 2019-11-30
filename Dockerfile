@@ -25,11 +25,10 @@ RUN bundle install
 # ADD . /bolt-network-react
 # =========================================================
 
-# Production
+# Staging
 # =========================================================
-ENV RAILS_ENV production
+ENV RAILS_ENV staging
 ENV RACK_ENV production
-ENV NODE_ENV production
 ENV RAILS_SERVE_STATIC_FILES true
 
 COPY package.json yarn.lock ./
@@ -41,6 +40,24 @@ ADD . /bolt-network-react
 
 RUN bundle exec rake assets:precompile
 RUN yarn cache clean
+# # =========================================================
+
+# Production
+# =========================================================
+# ENV RAILS_ENV production
+# ENV RACK_ENV production
+# ENV NODE_ENV production
+# ENV RAILS_SERVE_STATIC_FILES true
+
+# COPY package.json yarn.lock ./
+# RUN yarn install
+
+# ADD . /bolt-network-react
+
+# # RUN yarn add webpack
+
+# RUN bundle exec rake assets:precompile
+# RUN yarn cache clean
 # # =========================================================
 
 CMD ["puma"]
