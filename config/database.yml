@@ -86,3 +86,9 @@ production:
   database: bolt-network-react_production
   username: bolt-network-react
   password: <%= ENV['BOLT_NETWORK_REACT_DATABASE_PASSWORD'] %>
+
+staging:
+  <<: *default
+  database: bolt-network-react_staging
+  username: bolt-network-react
+  password: <%= ENV['BOLT_NETWORK_REACT_DATABASE_PASSWORD'] %>

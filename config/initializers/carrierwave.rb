@@ -6,6 +6,7 @@ if Rails.env.test?
 
   CarrierWave::Uploader::Base.descendants.each do |klass|
     next if klass.anonymous?
+
     klass.class_eval do
       def cache_dir
         "#{Rails.root}/spec/support/uploads/tmp"
@@ -16,12 +17,8 @@ if Rails.env.test?
       end
     end
   end
-end
-
-if Rails.env.development? || Rails.env.production?
+else
   CarrierWave.configure do |config|
-    # config.storage = :file
-    # config.enable_processing = false
     config.fog_provider = 'fog/aws'
     config.fog_credentials = {
       provider: 'AWS',
