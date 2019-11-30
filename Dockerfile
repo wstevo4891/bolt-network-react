@@ -37,4 +37,4 @@ ADD . /bolt-network-react
 # RUN bundle exec rake assets:precompile
 # # =========================================================
 
-# CMD ["puma"]
+CMD ["puma"]

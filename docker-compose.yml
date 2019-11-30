@@ -5,14 +5,13 @@ services:
     ports:
       - 5432:5432
     volumes:
-      # - /usr/data/volumes/pgdata/etc:/etc/postgresql
-      # - /usr/data/volumes/pgdata/log:/var/log/postgresql
-      # - /usr/data/volumes/pgdata/data:/var/lib/postgresql/data
       - postgres_data:/var/lib/postgresql/data
 
   webpacker:
     build: .
-    command: bundle exec bin/webpack-dev-server
+    environment:
+      - WEBPACKER_DEV_SERVER_HOST=0.0.0.0
+    command: ./bin/webpack-dev-server
     volumes:
       - .:/bolt-network-react
     ports:
@@ -27,6 +26,7 @@ services:
       - "3000:3000"
     depends_on:
       - db
+      - webpacker
 
 volumes:
   postgres_data:
