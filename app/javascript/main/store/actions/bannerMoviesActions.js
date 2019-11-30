@@ -1,27 +1,27 @@
-// Carousel Movies Actions
+// Banner Movies Actions
 
 // Types
 // ========================================================
 import {
-  FETCH_CAROUSEL_MOVIES_BEGIN,
-  FETCH_CAROUSEL_MOVIES_SUCCESS,
-  FETCH_CAROUSEL_MOVIES_FAILURE
-} from '../types/carouselMoviesTypes'
+  FETCH_BANNER_MOVIES_BEGIN,
+  FETCH_BANNER_MOVIES_SUCCESS,
+  FETCH_BANNER_MOVIES_FAILURE
+} from '../types/bannerMoviesTypes'
 
 
 // Dispatch Actions
 // ========================================================
-export const fetchCarouselMoviesBegin = () => ({
-  type: FETCH_CAROUSEL_MOVIES_BEGIN
+export const fetchBannerMoviesBegin = () => ({
+  type: FETCH_BANNER_MOVIES_BEGIN
 })
 
-export const fetchCarouselMoviesSuccess = movies => ({
-  type: FETCH_CAROUSEL_MOVIES_SUCCESS,
+export const fetchBannerMoviesSuccess = movies => ({
+  type: FETCH_BANNER_MOVIES_SUCCESS,
   payload: { movies }
 })
 
-export const fetchCarouselMoviesFailure = error => ({
-  type: FETCH_CAROUSEL_MOVIES_FAILURE,
+export const fetchBannerMoviesFailure = error => ({
+  type: FETCH_BANNER_MOVIES_FAILURE,
   payload: { error }
 })
 
@@ -38,21 +38,21 @@ function fetchResponse(titles) {
   })
 }
 
-export function fetchCarouselMovies(titles) {
+export function fetchBannerMovies(titles) {
   return async dispatch => {
     try {
-      dispatch(fetchCarouselMoviesBegin())
+      dispatch(fetchBannerMoviesBegin())
 
       const response = await fetchResponse(titles)
 
       const data = await response.json()
 
-      dispatch(fetchCarouselMoviesSuccess(data))
+      dispatch(fetchBannerMoviesSuccess(data))
 
       return data
     
     } catch(error) {
-      dispatch(fetchCarouselMoviesFailure(error))
+      dispatch(fetchBannerMoviesFailure(error))
     }
   }
 }

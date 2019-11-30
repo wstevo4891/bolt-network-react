@@ -1,4 +1,4 @@
-// app/javascript/main/scenes/Home/Carousel/components/CarouselApp.jsx
+// Banner Component
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 // Components
 import MovieBanner from './components/MovieBanner'
 
-import { fetchCarouselMovies } from '../../store/actions/carouselMoviesActions'
+import { fetchBannerMovies } from '../../store/actions/bannerMoviesActions'
 
 class Banner extends Component {
   state = {
@@ -30,7 +30,7 @@ class Banner extends Component {
 
   componentDidMount() {
     if (this.props.movies.length === 0) {
-      this.props.dispatch(fetchCarouselMovies(this.state.titles))
+      this.props.dispatch(fetchBannerMovies(this.state.titles))
 
     } else {
       this.setState({
@@ -46,7 +46,7 @@ class Banner extends Component {
 
 function mapStateToProps(state) {
   return {
-    movies: state.carouselMovies.movies
+    movies: state.bannerMovies.movies
   }
 }
 

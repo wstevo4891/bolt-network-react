@@ -1,4 +1,4 @@
-// app/javascript/carousel/components/Slide.jsx
+// MovieBanner UI Component
 
 import React from 'react'
 import { Link } from 'react-router-dom'

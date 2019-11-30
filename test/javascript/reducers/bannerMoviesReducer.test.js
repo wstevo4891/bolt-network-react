@@ -1,7 +1,7 @@
-import * as types from 'main/store/types/carouselMoviesTypes'
-import reducer from 'main/store/reducers/carouselMoviesReducer'
+import * as types from 'main/store/types/bannerMoviesTypes'
+import reducer from 'main/store/reducers/bannerMoviesReducer'
 
-describe('carouselMoviesReducer', () => {
+describe('bannerMoviesReducer', () => {
   const initialState = {
     movies: [],
     loading: false,
@@ -14,19 +14,19 @@ describe('carouselMoviesReducer', () => {
     { title: 'Skyfall' }
   ]
 
-  const REDUCER_ERROR = new Error('Failure in carouselMoviesReducer')
+  const REDUCER_ERROR = new Error('Failure in bannerMoviesReducer')
 
   const beginAction = {
-    type: types.FETCH_CAROUSEL_MOVIES_BEGIN
+    type: types.FETCH_BANNER_MOVIES_BEGIN
   }
 
   const successAction = {
-    type: types.FETCH_CAROUSEL_MOVIES_SUCCESS,
+    type: types.FETCH_BANNER_MOVIES_SUCCESS,
     payload: { movies: PAYLOAD }
   }
 
   const failureAction = {
-    type: types.FETCH_CAROUSEL_MOVIES_FAILURE,
+    type: types.FETCH_BANNER_MOVIES_FAILURE,
     payload: { error: REDUCER_ERROR }
   }
 
