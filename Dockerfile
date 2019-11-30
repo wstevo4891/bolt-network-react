@@ -30,6 +30,7 @@ RUN bundle install
 ENV RAILS_ENV staging
 ENV RACK_ENV production
 ENV RAILS_SERVE_STATIC_FILES true
+ENV BOLT_NETWORK_REACT_DATABASE_PASSWORD ChunkyBac0n
 
 COPY package.json yarn.lock ./
 RUN yarn install
@@ -40,6 +41,8 @@ ADD . /bolt-network-react
 
 RUN bundle exec rake assets:precompile
 RUN yarn cache clean
+
+RUN rails db:create db:migrate db:seed
 # # =========================================================
 
 # Production
