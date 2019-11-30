@@ -9,8 +9,6 @@ import MyListButton from '../../MyListButton'
 const Slide = (props) => {
   const movie = props.movie
 
-  // const slide = movie.logo.replace('logo.png', 'slide')
-
   const slideImage = {
     backgroundImage: `url(${movie.banner.url})`,
     backgroundRepeat: 'no-repeat',

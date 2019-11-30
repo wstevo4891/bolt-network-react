@@ -3,12 +3,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import Carousel from '../../components/Carousel'
+import Banner from '../../components/Banner'
 import GenreSlider from '../../components/GenreSlider'
 
 const Home = (props) => (
   <main className="application">
-    <Carousel />
+    <Banner />
 
     <div className="container">
       <div className="row justify-content-center">

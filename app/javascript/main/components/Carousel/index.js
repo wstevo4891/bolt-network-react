@@ -33,9 +33,9 @@ class CarouselApp extends Component {
         previous={this.previous}
         interval={false}
       >
-        {movies.map(movie =>
+        {movies.map((movie, index) =>
           <CarouselItem
-            key={movie.id}
+            key={index}
             onExiting={this.onExiting}
             onExited={this.onExited}
           >
