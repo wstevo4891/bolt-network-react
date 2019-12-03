@@ -43,4 +43,12 @@ class Genre < ApplicationRecord
   rescue ActiveRecord::RecordNotFound
     []
   end
+
+  # Single query to find genres with the most movies
+  def self.with_most_movies
+    joins(:genres_movies)
+      .group('genres.id')
+      .having('count(genre_id) > ?', 28)
+      .pluck(:title)
+  end
 end

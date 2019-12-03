@@ -1,0 +1,15 @@
+{
+  "entrypoints": {
+    "main": {
+      "js": [
+        "/packs-staging/js/main-57e7a8b181a367b43f0f.js"
+      ],
+      "js.map": [
+        "/packs-staging/js/main-57e7a8b181a367b43f0f.js.map"
+      ]
+    }
+  },
+  "main.js": "/packs-staging/js/main-57e7a8b181a367b43f0f.js",
+  "main.js.map": "/packs-staging/js/main-57e7a8b181a367b43f0f.js.map",
+  "media/main/components/Navbar/images/bolt-network.svg": "/packs-staging/media/main/components/Navbar/images/bolt-network-e053c643d3f0d25d5709dd9260a28a9d.svg"
+}

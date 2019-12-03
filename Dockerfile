@@ -22,27 +22,27 @@ RUN bundle install
 
 # Development
 # =========================================================
-# ADD . /bolt-network-react
+ADD . /bolt-network-react
 # =========================================================
 
 # Staging
 # =========================================================
-ENV RAILS_ENV staging
-ENV RACK_ENV production
-ENV RAILS_SERVE_STATIC_FILES true
-ENV BOLT_NETWORK_REACT_DATABASE_PASSWORD ChunkyBac0n
+# ENV RAILS_ENV staging
+# ENV RACK_ENV production
+# ENV RAILS_SERVE_STATIC_FILES true
+# ENV BOLT_NETWORK_REACT_DATABASE_PASSWORD ChunkyBac0n
 
-COPY package.json yarn.lock ./
-RUN yarn install
+# COPY package.json yarn.lock ./
+# RUN yarn install --check-files
 
-ADD . /bolt-network-react
+# ADD . /bolt-network-react
 
-# RUN yarn add webpack
+# # RUN yarn add webpack
 
-RUN bundle exec rake assets:precompile
-RUN yarn cache clean
+# RUN bundle exec rails assets:precompile
 
-RUN rails db:create db:migrate db:seed
+# RUN yarn cache clean
+# RUN bundle exec rake webpacker:compile
 # # =========================================================
 
 # Production
