@@ -44,11 +44,19 @@ class Genre < ApplicationRecord
     []
   end
 
+  ##
   # Single query to find genres with the most movies
+  #
+  # This method is significantly faster than the one below.
+  #
   def self.with_most_movies
     joins(:genres_movies)
       .group('genres.id')
       .having('count(genre_id) > ?', 28)
       .pluck(:title)
+  end
+
+  def self.with_most_movies_index
+    select { |genre| genre.movies.size > 28 }.pluck(:title)
   end
 end

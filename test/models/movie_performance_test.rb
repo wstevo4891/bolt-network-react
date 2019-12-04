@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MoviePerfTest < ActiveSupport::TestCase
+class MoviePerformanceTest < ActiveSupport::TestCase
   def teardown
     puts ''
   end
@@ -17,7 +17,7 @@ class MoviePerfTest < ActiveSupport::TestCase
     puts __method__
 
     Benchmark.bmbm do |x|
-      x.report('time')  { Movie.lower_case_match('avengers') }
+      x.report('time') { Movie.lower_case_match('avengers') }
     end
   end
 
@@ -25,7 +25,11 @@ class MoviePerfTest < ActiveSupport::TestCase
     puts __method__
 
     Benchmark.bmbm do |x|
-      x.report('time')  { Movie.search_by_title('avengers') }
+      x.report('Movie.search_by_title') { Movie.search_by_title('potter') }
+
+      x.report('Movie.search') { Movie.search('potter') }
+
+      x.report('Movie.lower_case_match') { Movie.lower_case_match('potter') }
     end
   end
 end

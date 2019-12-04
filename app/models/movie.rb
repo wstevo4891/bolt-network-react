@@ -3,6 +3,7 @@
 # Model for movies table
 class Movie < ApplicationRecord
   # == Extensions ===========================================================
+  include ActiveRecord::Integration
   include PgSearch::Model
 
   # == Attributes ===========================================================
@@ -23,13 +24,25 @@ class Movie < ApplicationRecord
   # == Scopes ===============================================================
   pg_search_scope :search_by_title, against: :title, using: [:tsearch]
 
-  # scope :recent, -> { where('year > ?', 5.years.ago.year) }
+  scope :recent, -> { where('year > ?', 5.years.ago.year) }
 
   # == Callbacks ============================================================
 
   # == Class Methods ========================================================
-  def self.search(search)
-    where('title ~* :search', search: "(#{search})")
+  ##
+  # self.index_by_genre()
+  #   Create a hash with Genre titles as keys and arrays of
+  #   movie records as values.
+  #
+  # @returns {Hash<Array>}
+  #
+  def self.index_by_genre
+    # Cache this expensive lookup to improve performance
+    Rails.cache.fetch('movies_index_by_genre', expires_in: 12.hours) do
+      Genre.all.each_with_object({}) do |genre, hash|
+        hash[genre.title] = genre.movies.limit(24)
+      end
+    end
   end
 
   def self.find_by_genre(genre_id)
@@ -40,6 +53,10 @@ class Movie < ApplicationRecord
     where('lower(title) LIKE :prefix', prefix: "#{query}%")
   rescue ActiveRecord::RecordNotFound
     []
+  end
+
+  def self.search(search)
+    where('title ~* :search', search: "(#{search})")
   end
 
   def self.lower_case_match(query)
@@ -55,23 +72,13 @@ class Movie < ApplicationRecord
   def self.find_by_genres(genres)
     limit = genres.length > 1 ? 5 : 20
 
-    genres.each_with_object([]) do |genre, arr|
-      arr.concat(genre.movies.limit(limit))
+    genres.each_with_object([]) do |genre, array|
+      array.concat(genre.movies.limit(limit))
     end
   end
 
   def self.titles(genre)
     joins(:genres).where(genres: { title: genre }).pluck(:title)
-  end
-
-  def self.recent
-    select { |movie| movie.year.to_i > 5.years.ago.year }
-  end
-
-  def self.index_by_genre
-    Genre.all.each_with_object({}) do |genre, hash|
-      hash[genre.title] = genre.movies.limit(24)
-    end
   end
 
   # == Instance Methods =======================================================

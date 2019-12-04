@@ -3,27 +3,33 @@
 # YAML.dump(hash, file_path)
 
 namespace :movies do
-  # docker-compose run web rake movies:fetch[title]
-  desc "Fetch movie data with OMDB API"
+  ##
+  # Run this task with docker-compose:
+  # > docker-compose run web rake movies:fetch[title]
+  #
+  desc 'Fetch movie data with OMDB API'
   task :fetch, [:title, :year] => [:environment] do |t, args|
     params = { t: args[:title] }
     params[:y] = args[:year] if args[:year]
-      
+
     client = OmdbApi::Client.new
     data = client.fetch_movie(params)
     puts data.transform_keys(&:to_s)
   end
 
-  # docker-compose run web rake movies:fetch_all
-  desc "Generate yaml data with OMDB API"
+  ##
+  # Run this task with docker-compose:
+  # > docker-compose run web rake movies:fetch_all
+  #
+  desc 'Generate yaml data with OMDB API'
   task fetch_all: [:environment] do
     # Load list of movie titles
-    puts 'Loading movies list ============================='
+    puts 'Loading movies list...'
     list_file = Rails.root.join('db/yaml_data/new_movies_list.yml')
     list = YAML.load_file(list_file)
 
     # Initialize API client
-    puts 'Initializing client ============================='
+    puts 'Initializing client...'
     client = OmdbApi::Client.new
 
     count = 0
