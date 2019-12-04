@@ -8,10 +8,8 @@ class QueryLab
   end
 
   def self.movies_index
-    movies = Movie.all
-
-    Genre.pluck(:title).each_with_object({}) do |genre, hash|
-      hash[genre] = movies.select { |movie| movie.genres_list.include? genre }
+    Genre.all.each_with_object({}) do |genre, hash|
+      hash[genre.title] = genre.movies
     end
   end
 
