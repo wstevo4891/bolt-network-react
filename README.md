@@ -11,3 +11,4 @@ Built with:
 * Webpacker 4.2.0
 * PostgreSQL 11
 * React.js 16.12.0
+* Redux 4.0.4
