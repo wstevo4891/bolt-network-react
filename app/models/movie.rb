@@ -3,7 +3,6 @@
 # Model for movies table
 class Movie < ApplicationRecord
   # == Extensions ===========================================================
-  include ActiveRecord::Integration
   include PgSearch::Model
 
   # == Attributes ===========================================================
