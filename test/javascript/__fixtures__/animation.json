@@ -1,0 +1,1516 @@
+[
+  {
+    "id": 3,
+    "title": "Akira",
+    "slug": "akira",
+    "year": 1988,
+    "rated": "R",
+    "release_date": "16 Jul 1988",
+    "run_time": "124 min",
+    "directors": [
+      "Katsuhiro Ôtomo"
+    ],
+    "writers": [
+      "Katsuhiro Ôtomo (screenplay)",
+      "Izô Hashimoto (screenplay)",
+      "Katsuhiro Ôtomo (manga)"
+    ],
+    "actors": [
+      "Mitsuo Iwata",
+      "Nozomu Sasaki",
+      "Mami Koyama",
+      "Tesshô Genda"
+    ],
+    "plot": "A secret military project endangers Neo-Tokyo when it turns a biker gang member into a rampaging psychic psychopath that only two teenagers and a group of psychics can stop.",
+    "photo": {
+      "url": "https://bolt-network.s3.amazonaws.com/movies/akira/photo.jpg"
+    },
+    "banner": {
+      "url": null
+    },
+    "logo": {
+      "url": null
+    },
+    "poster": "https://m.media-amazon.com/images/M/MV5BM2ZiZTk1ODgtMTZkNS00NTYxLWIxZTUtNWExZGYwZTRjODViXkEyXkFqcGdeQXVyMTE2MzA3MDM@._V1_SX300.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.1/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "88%"
+      }
+    ],
+    "genres_list": [
+      "Animation",
+      "Sci-Fi",
+      "Thriller"
+    ],
+    "created_at": "2019-12-05T02:54:49.682Z",
+    "updated_at": "2019-12-05T02:54:49.682Z"
+  },
+  {
+    "id": 4,
+    "title": "Aladdin",
+    "slug": "aladdin",
+    "year": 1992,
+    "rated": "G",
+    "release_date": "25 Nov 1992",
+    "run_time": "90 min",
+    "directors": [
+      "Ron Clements",
+      "John Musker"
+    ],
+    "writers": [
+      "Ron Clements (screenplay by)",
+      "John Musker (screenplay by)",
+      "Ted Elliott (screenplay by)",
+      "Terry Rossio (screenplay by)",
+      "Burny Mattinson (story)",
+      "Roger Allers (story)",
+      "Daan Jippes (story)",
+      "Kevin Harkey (story)",
+      "Sue C. Nichols (story)",
+      "Francis Glebas (story)",
+      "Darrell Rooney (story)",
+      "Larry Leker (story)",
+      "James Fujii (story)",
+      "Kirk Hanson (story)",
+      "Kevin Lima (story)",
+      "Rebecca Rees (story)",
+      "David S. Smith (story)",
+      "Chris Sanders (story)",
+      "Brian Pimental (story)",
+      "Patrick A. Ventura (story)"
+    ],
+    "actors": [
+      "Scott Weinger",
+      "Robin Williams",
+      "Linda Larkin",
+      "Jonathan Freeman"
+    ],
+    "plot": "When a street urchin vies for the love of a beautiful princess, he uses a genie's magic power to make himself off as a prince in order to marry her.",
+    "photo": {
+      "url": "https://bolt-network.s3.amazonaws.com/movies/aladdin/photo.jpg"
+    },
+    "banner": {
+      "url": null
+    },
+    "logo": {
+      "url": null
+    },
+    "poster": "https://m.media-amazon.com/images/M/MV5BY2Q2NDI1MjUtM2Q5ZS00MTFlLWJiYWEtNTZmNjQ3OGJkZDgxXkEyXkFqcGdeQXVyNTI4MjkwNjA@._V1_SX300.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.0/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "94%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "86/100"
+      }
+    ],
+    "genres_list": [
+      "Animation",
+      "Family",
+      "Musical"
+    ],
+    "created_at": "2019-12-05T02:54:50.560Z",
+    "updated_at": "2019-12-05T02:54:50.560Z"
+  },
+  {
+    "id": 11,
+    "title": "Big Hero 6",
+    "slug": "big-hero-6",
+    "year": 2014,
+    "rated": "PG",
+    "release_date": "07 Nov 2014",
+    "run_time": "102 min",
+    "directors": [
+      "Don Hall",
+      "Chris Williams"
+    ],
+    "writers": [
+      "Jordan Roberts (screenplay by)",
+      "Robert L. Baird (screenplay by)",
+      "Daniel Gerson (screenplay by)",
+      "Man of Action (Big Hero 6 team and characters created by)",
+      "Steven T. Seagle (characters)",
+      "Duncan Rouleau (characters)"
+    ],
+    "actors": [
+      "Scott Adsit",
+      "Ryan Potter",
+      "Daniel Henney",
+      "T.J. Miller"
+    ],
+    "plot": "The special bond that develops between plus-sized inflatable robot Baymax, and prodigy Hiro Hamada, who team up with a group of friends to form a band of high-tech heroes.",
+    "photo": {
+      "url": "https://bolt-network.s3.amazonaws.com/movies/big-hero-6/photo.jpg"
+    },
+    "banner": {
+      "url": null
+    },
+    "logo": {
+      "url": null
+    },
+    "poster": "https://m.media-amazon.com/images/M/MV5BMDliOTIzNmUtOTllOC00NDU3LWFiNjYtMGM0NDc1YTMxNjYxXkEyXkFqcGdeQXVyNTM3NzExMDQ@._V1_SX300.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.8/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "89%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "74/100"
+      }
+    ],
+    "genres_list": [
+      "Animation",
+      "Family",
+      "Sci-Fi"
+    ],
+    "created_at": "2019-12-05T02:55:00.147Z",
+    "updated_at": "2019-12-05T02:55:00.147Z"
+  },
+  {
+    "id": 20,
+    "title": "Coco",
+    "slug": "coco",
+    "year": 2017,
+    "rated": "PG",
+    "release_date": "22 Nov 2017",
+    "run_time": "105 min",
+    "directors": [
+      "Lee Unkrich",
+      "Adrian Molina(co-director)"
+    ],
+    "writers": [
+      "Lee Unkrich (original story by)",
+      "Jason Katz (original story by)",
+      "Matthew Aldrich (original story by)",
+      "Adrian Molina (original story by)",
+      "Adrian Molina (screenplay by)",
+      "Matthew Aldrich (screenplay by)"
+    ],
+    "actors": [
+      "Anthony Gonzalez",
+      "Gael García Bernal",
+      "Benjamin Bratt",
+      "Alanna Ubach"
+    ],
+    "plot": "Aspiring musician Miguel, confronted with his family's ancestral ban on music, enters the Land of the Dead to find his great-great-grandfather, a legendary singer.",
+    "photo": {
+      "url": "https://bolt-network.s3.amazonaws.com/movies/coco/photo.jpg"
+    },
+    "banner": {
+      "url": null
+    },
+    "logo": {
+      "url": null
+    },
+    "poster": "https://m.media-amazon.com/images/M/MV5BYjQ5NjM0Y2YtNjZkNC00ZDhkLWJjMWItN2QyNzFkMDE3ZjAxXkEyXkFqcGdeQXVyODIxMzk5NjA@._V1_SX300.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.4/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "97%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "81/100"
+      }
+    ],
+    "genres_list": [
+      "Animation",
+      "Family",
+      "Music"
+    ],
+    "created_at": "2019-12-05T02:55:20.873Z",
+    "updated_at": "2019-12-05T02:55:20.873Z"
+  },
+  {
+    "id": 22,
+    "title": "Coraline",
+    "slug": "coraline",
+    "year": 2009,
+    "rated": "PG",
+    "release_date": "06 Feb 2009",
+    "run_time": "100 min",
+    "directors": [
+      "Henry Selick"
+    ],
+    "writers": [
+      "Henry Selick (screenplay)",
+      "Neil Gaiman (book)"
+    ],
+    "actors": [
+      "Dakota Fanning",
+      "Teri Hatcher",
+      "Jennifer Saunders",
+      "Dawn French"
+    ],
+    "plot": "An adventurous 11-year-old girl finds another world that is a strangely idealized version of her frustrating home, but it has sinister secrets.",
+    "photo": {
+      "url": "https://bolt-network.s3.amazonaws.com/movies/coraline/photo.jpg"
+    },
+    "banner": {
+      "url": null
+    },
+    "logo": {
+      "url": null
+    },
+    "poster": "https://m.media-amazon.com/images/M/MV5BMzQxNjM5NzkxNV5BMl5BanBnXkFtZTcwMzg5NDMwMg@@._V1_SX300.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.7/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "90%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "80/100"
+      }
+    ],
+    "genres_list": [
+      "Animation",
+      "Fantasy",
+      "Thriller"
+    ],
+    "created_at": "2019-12-05T02:55:27.221Z",
+    "updated_at": "2019-12-05T02:55:27.221Z"
+  },
+  {
+    "id": 31,
+    "title": "Finding Nemo",
+    "slug": "finding-nemo",
+    "year": 2003,
+    "rated": "G",
+    "release_date": "30 May 2003",
+    "run_time": "100 min",
+    "directors": [
+      "Andrew Stanton",
+      "Lee Unkrich(co-director)"
+    ],
+    "writers": [
+      "Andrew Stanton (original story by)",
+      "Andrew Stanton (screenplay by)",
+      "Bob Peterson (screenplay by)",
+      "David Reynolds (screenplay by)"
+    ],
+    "actors": [
+      "Albert Brooks",
+      "Ellen DeGeneres",
+      "Alexander Gould",
+      "Willem Dafoe"
+    ],
+    "plot": "After his son is captured in the Great Barrier Reef and taken to Sydney, a timid clownfish sets out on a journey to bring him home.",
+    "photo": {
+      "url": "https://bolt-network.s3.amazonaws.com/movies/finding-nemo/photo.jpg"
+    },
+    "banner": {
+      "url": null
+    },
+    "logo": {
+      "url": null
+    },
+    "poster": "https://m.media-amazon.com/images/M/MV5BZjMxYzBiNjUtZDliNC00MDAyLTg3N2QtOWNjNmNhZGQzNDg5XkEyXkFqcGdeQXVyNjE2MjQwNjc@._V1_SX300.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.1/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "99%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "90/100"
+      }
+    ],
+    "genres_list": [
+      "Animation",
+      "Family"
+    ],
+    "created_at": "2019-12-05T02:55:55.393Z",
+    "updated_at": "2019-12-05T02:55:55.393Z"
+  },
+  {
+    "id": 35,
+    "title": "Frozen",
+    "slug": "frozen",
+    "year": 2013,
+    "rated": "PG",
+    "release_date": "27 Nov 2013",
+    "run_time": "102 min",
+    "directors": [
+      "Chris Buck",
+      "Jennifer Lee"
+    ],
+    "writers": [
+      "Jennifer Lee (screenplay by)",
+      "Hans Christian Andersen (story inspired by \"The Snow Queen\" by)",
+      "Chris Buck (story by)",
+      "Jennifer Lee (story by)",
+      "Shane Morris (story by)"
+    ],
+    "actors": [
+      "Kristen Bell",
+      "Idina Menzel",
+      "Jonathan Groff",
+      "Josh Gad"
+    ],
+    "plot": "When the newly-crowned Queen Elsa accidentally uses her power to turn things into ice to curse her home in infinite winter, her sister Anna teams up with a mountain man, his playful reindeer, and a snowman to change the weather condition.",
+    "photo": {
+      "url": "https://bolt-network.s3.amazonaws.com/movies/frozen/photo.jpg"
+    },
+    "banner": {
+      "url": null
+    },
+    "logo": {
+      "url": null
+    },
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTQ1MjQwMTE5OF5BMl5BanBnXkFtZTgwNjk3MTcyMDE@._V1_SX300.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.5/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "90%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "74/100"
+      }
+    ],
+    "genres_list": [
+      "Animation",
+      "Family",
+      "Fantasy"
+    ],
+    "created_at": "2019-12-05T02:56:03.264Z",
+    "updated_at": "2019-12-05T02:56:03.264Z"
+  },
+  {
+    "id": 48,
+    "title": "Inside Out",
+    "slug": "inside-out",
+    "year": 2015,
+    "rated": "PG",
+    "release_date": "19 Jun 2015",
+    "run_time": "95 min",
+    "directors": [
+      "Pete Docter",
+      "Ronnie Del Carmen(co-director)"
+    ],
+    "writers": [
+      "Pete Docter (original story by)",
+      "Ronnie Del Carmen (original story by)",
+      "Pete Docter (screenplay by)",
+      "Meg LeFauve (screenplay by)",
+      "Josh Cooley (screenplay by)",
+      "Michael Arndt (additional story material by)",
+      "Simon Rich (additional story material by)",
+      "Bill Hader (additional dialogue by)",
+      "Amy Poehler (additional dialogue by)"
+    ],
+    "actors": [
+      "Amy Poehler",
+      "Phyllis Smith",
+      "Richard Kind",
+      "Bill Hader"
+    ],
+    "plot": "After young Riley is uprooted from her Midwest life and moved to San Francisco, her emotions - Joy, Fear, Anger, Disgust and Sadness - conflict on how best to navigate a new city, house, and school.",
+    "photo": {
+      "url": "https://bolt-network.s3.amazonaws.com/movies/inside-out/photo.jpg"
+    },
+    "banner": {
+      "url": null
+    },
+    "logo": {
+      "url": null
+    },
+    "poster": "https://m.media-amazon.com/images/M/MV5BOTgxMDQwMDk0OF5BMl5BanBnXkFtZTgwNjU5OTg2NDE@._V1_SX300.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.2/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "98%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "94/100"
+      }
+    ],
+    "genres_list": [
+      "Animation",
+      "Family",
+      "Fantasy"
+    ],
+    "created_at": "2019-12-05T02:56:19.138Z",
+    "updated_at": "2019-12-05T02:56:19.138Z"
+  },
+  {
+    "id": 54,
+    "title": "Kung Fu Panda",
+    "slug": "kung-fu-panda",
+    "year": 2008,
+    "rated": "PG",
+    "release_date": "06 Jun 2008",
+    "run_time": "92 min",
+    "directors": [
+      "Mark Osborne",
+      "John Stevenson"
+    ],
+    "writers": [
+      "Jonathan Aibel (screenplay)",
+      "Glenn Berger (screenplay)",
+      "Ethan Reiff (story)",
+      "Cyrus Voris (story)"
+    ],
+    "actors": [
+      "Jack Black",
+      "Dustin Hoffman",
+      "Angelina Jolie",
+      "Ian McShane"
+    ],
+    "plot": "The Dragon Warrior has to clash against the savage Tai Lung as China's fate hangs in the balance. However, the Dragon Warrior mantle is supposedly mistaken to be bestowed upon an obese panda who is a novice in martial arts.",
+    "photo": {
+      "url": "https://bolt-network.s3.amazonaws.com/movies/kung-fu-panda/photo.jpg"
+    },
+    "banner": {
+      "url": null
+    },
+    "logo": {
+      "url": null
+    },
+    "poster": "https://m.media-amazon.com/images/M/MV5BODJkZTZhMWItMDI3Yy00ZWZlLTk4NjQtOTI1ZjU5NjBjZTVjXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.6/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "87%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "73/100"
+      }
+    ],
+    "genres_list": [
+      "Animation",
+      "Family"
+    ],
+    "created_at": "2019-12-05T02:56:25.019Z",
+    "updated_at": "2019-12-05T02:56:25.019Z"
+  },
+  {
+    "id": 59,
+    "title": "Minions",
+    "slug": "minions",
+    "year": 2015,
+    "rated": "PG",
+    "release_date": "10 Jul 2015",
+    "run_time": "91 min",
+    "directors": [
+      "Kyle Balda",
+      "Pierre Coffin"
+    ],
+    "writers": [
+      "Brian Lynch"
+    ],
+    "actors": [
+      "Sandra Bullock",
+      "Jon Hamm",
+      "Michael Keaton",
+      "Allison Janney"
+    ],
+    "plot": "Minions Stuart, Kevin, and Bob are recruited by Scarlet Overkill, a supervillain who, alongside her inventor husband Herb, hatches a plot to take over the world.",
+    "photo": {
+      "url": "https://bolt-network.s3.amazonaws.com/movies/minions/photo.jpg"
+    },
+    "banner": {
+      "url": null
+    },
+    "logo": {
+      "url": null
+    },
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTg2MTMyMzU0M15BMl5BanBnXkFtZTgwOTU3ODk4NTE@._V1_SX300.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "6.4/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "56%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "56/100"
+      }
+    ],
+    "genres_list": [
+      "Animation",
+      "Family"
+    ],
+    "created_at": "2019-12-05T02:56:32.593Z",
+    "updated_at": "2019-12-05T02:56:32.593Z"
+  },
+  {
+    "id": 60,
+    "title": "Next Gen",
+    "slug": "next-gen",
+    "year": 2018,
+    "rated": "TV-PG",
+    "release_date": "07 Sep 2018",
+    "run_time": "106 min",
+    "directors": [
+      "Kevin R. Adams",
+      "Joe Ksander",
+      "Ricardo Curtis"
+    ],
+    "writers": [
+      "Kevin R. Adams",
+      "Joe Ksander",
+      "Wang Nima (story by)",
+      "Ryan W. Smith (additional screenplay material by)"
+    ],
+    "actors": [
+      "John Krasinski",
+      "Charlyne Yi",
+      "Jason Sudeikis",
+      "Michael Peña"
+    ],
+    "plot": "A friendship with a top-secret robot turns a lonely girl's life into a thrilling adventure as they take on bullies, evil bots and a scheming madman.",
+    "photo": {
+      "url": "https://bolt-network.s3.amazonaws.com/movies/next-gen/photo.jpg"
+    },
+    "banner": {
+      "url": null
+    },
+    "logo": {
+      "url": null
+    },
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTU0MjAwMDkxNV5BMl5BanBnXkFtZTgwMTA4ODIxNjM@._V1_SX300.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "6.6/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "80%"
+      }
+    ],
+    "genres_list": [
+      "Animation",
+      "Family",
+      "Sci-Fi"
+    ],
+    "created_at": "2019-12-05T02:56:34.077Z",
+    "updated_at": "2019-12-05T02:56:34.077Z"
+  },
+  {
+    "id": 63,
+    "title": "Persepolis",
+    "slug": "persepolis",
+    "year": 2007,
+    "rated": "PG-13",
+    "release_date": "22 Feb 2008",
+    "run_time": "96 min",
+    "directors": [
+      "Vincent Paronnaud",
+      "Marjane Satrapi"
+    ],
+    "writers": [
+      "Marjane Satrapi (comic)",
+      "Vincent Paronnaud (scenario)"
+    ],
+    "actors": [
+      "Chiara Mastroianni",
+      "Danielle Darrieux",
+      "Catherine Deneuve",
+      "Simon Abkarian"
+    ],
+    "plot": "A precocious and outspoken Iranian girl grows up during the Islamic Revolution.",
+    "photo": {
+      "url": "https://bolt-network.s3.amazonaws.com/movies/persepolis/photo.jpg"
+    },
+    "banner": {
+      "url": null
+    },
+    "logo": {
+      "url": null
+    },
+    "poster": "https://m.media-amazon.com/images/M/MV5BMGRkZThmYzEtYjQxZC00OWEzLThjYjAtYzFkMjY0NGZkZWI4XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.1/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "96%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "90/100"
+      }
+    ],
+    "genres_list": [
+      "Animation",
+      "Biography",
+      "Drama"
+    ],
+    "created_at": "2019-12-05T02:56:36.895Z",
+    "updated_at": "2019-12-05T02:56:36.895Z"
+  },
+  {
+    "id": 69,
+    "title": "Princess Mononoke",
+    "slug": "princess-mononoke",
+    "year": 1997,
+    "rated": "PG-13",
+    "release_date": "19 Dec 1997",
+    "run_time": "134 min",
+    "directors": [
+      "Hayao Miyazaki"
+    ],
+    "writers": [
+      "Hayao Miyazaki",
+      "Neil Gaiman (adapted by: English version)"
+    ],
+    "actors": [
+      "Billy Crudup",
+      "Billy Bob Thornton",
+      "Minnie Driver",
+      "John DiMaggio"
+    ],
+    "plot": "On a journey to find the cure for a Tatarigami's curse, Ashitaka finds himself in the middle of a war between the forest gods and Tatara, a mining colony. In this quest he also meets San, the Mononoke Hime.",
+    "photo": {
+      "url": "https://bolt-network.s3.amazonaws.com/movies/princess-mononoke/photo.jpg"
+    },
+    "banner": {
+      "url": null
+    },
+    "logo": {
+      "url": null
+    },
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTVlNWM4NTAtNDQxYi00YWU5LWIwM2MtZmVjYWFmODZiODE5XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.4/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "92%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "76/100"
+      }
+    ],
+    "genres_list": [
+      "Animation",
+      "Adventure",
+      "Fantasy"
+    ],
+    "created_at": "2019-12-05T02:56:48.819Z",
+    "updated_at": "2019-12-05T02:56:48.819Z"
+  },
+  {
+    "id": 72,
+    "title": "Ratatouille",
+    "slug": "ratatouille",
+    "year": 2007,
+    "rated": "G",
+    "release_date": "29 Jun 2007",
+    "run_time": "111 min",
+    "directors": [
+      "Brad Bird",
+      "Jan Pinkava(co-director)"
+    ],
+    "writers": [
+      "Brad Bird (screenplay)",
+      "Jan Pinkava (original story by)",
+      "Jim Capobianco (original story by)",
+      "Brad Bird (original story by)",
+      "Emily Cook (additional story material)",
+      "Kathy Greenberg (additional story material)",
+      "Bob Peterson (additional story material)"
+    ],
+    "actors": [
+      "Patton Oswalt",
+      "Ian Holm",
+      "Lou Romano",
+      "Brian Dennehy"
+    ],
+    "plot": "A rat who can cook makes an unusual alliance with a young kitchen worker at a famous restaurant.",
+    "photo": {
+      "url": "https://bolt-network.s3.amazonaws.com/movies/ratatouille/photo.jpg"
+    },
+    "banner": {
+      "url": null
+    },
+    "logo": {
+      "url": null
+    },
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTMzODU0NTkxMF5BMl5BanBnXkFtZTcwMjQ4MzMzMw@@._V1_SX300.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.0/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "96%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "96/100"
+      }
+    ],
+    "genres_list": [
+      "Animation",
+      "Family"
+    ],
+    "created_at": "2019-12-05T02:56:51.422Z",
+    "updated_at": "2019-12-05T02:56:51.422Z"
+  },
+  {
+    "id": 76,
+    "title": "Shrek 2",
+    "slug": "shrek-2",
+    "year": 2004,
+    "rated": "PG",
+    "release_date": "19 May 2004",
+    "run_time": "93 min",
+    "directors": [
+      "Andrew Adamson",
+      "Kelly Asbury",
+      "Conrad Vernon"
+    ],
+    "writers": [
+      "William Steig (based upon the book by)",
+      "Andrew Adamson (story by)",
+      "Andrew Adamson (screenplay by)",
+      "Joe Stillman (screenplay by)",
+      "J. David Stem (screenplay by)",
+      "David N. Weiss (screenplay by)",
+      "Cody Cameron (additional dialogue)",
+      "Walt Dohrn (additional dialogue)",
+      "Chris Miller (additional dialogue)",
+      "David P. Smith (additional dialogue)",
+      "Conrad Vernon (additional dialogue)"
+    ],
+    "actors": [
+      "Mike Myers",
+      "Eddie Murphy",
+      "Cameron Diaz",
+      "Julie Andrews"
+    ],
+    "plot": "Princess Fiona's parents invite her and Shrek to dinner to celebrate her marriage. If only they knew the newlyweds were both ogres.",
+    "photo": {
+      "url": "https://bolt-network.s3.amazonaws.com/movies/shrek-2/photo.jpg"
+    },
+    "banner": {
+      "url": null
+    },
+    "logo": {
+      "url": null
+    },
+    "poster": "https://m.media-amazon.com/images/M/MV5BMDJhMGRjN2QtNDUxYy00NGM3LThjNGQtMmZiZTRhNjM4YzUxL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.2/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "89%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "75/100"
+      }
+    ],
+    "genres_list": [
+      "Animation",
+      "Family",
+      "Fantasy"
+    ],
+    "created_at": "2019-12-05T02:56:55.849Z",
+    "updated_at": "2019-12-05T02:56:55.849Z"
+  },
+  {
+    "id": 77,
+    "title": "Shrek",
+    "slug": "shrek",
+    "year": 2001,
+    "rated": "PG",
+    "release_date": "18 May 2001",
+    "run_time": "90 min",
+    "directors": [
+      "Andrew Adamson",
+      "Vicky Jenson"
+    ],
+    "writers": [
+      "William Steig (based upon the book by)",
+      "Ted Elliott",
+      "Terry Rossio",
+      "Joe Stillman",
+      "Roger S.H. Schulman",
+      "Cody Cameron (additional dialogue)",
+      "Chris Miller (additional dialogue)",
+      "Conrad Vernon (additional dialogue)"
+    ],
+    "actors": [
+      "Mike Myers",
+      "Eddie Murphy",
+      "Cameron Diaz",
+      "John Lithgow"
+    ],
+    "plot": "A mean lord exiles fairytale creatures to the swamp of a grumpy ogre, who must go on a quest and rescue a princess for the lord in order to get his land back.",
+    "photo": {
+      "url": "https://bolt-network.s3.amazonaws.com/movies/shrek/photo.jpg"
+    },
+    "banner": {
+      "url": null
+    },
+    "logo": {
+      "url": null
+    },
+    "poster": "https://m.media-amazon.com/images/M/MV5BOGZhM2FhNTItODAzNi00YjA0LWEyN2UtNjJlYWQzYzU1MDg5L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.9/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "88%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "84/100"
+      }
+    ],
+    "genres_list": [
+      "Animation",
+      "Family",
+      "Fantasy"
+    ],
+    "created_at": "2019-12-05T02:56:58.787Z",
+    "updated_at": "2019-12-05T02:56:58.787Z"
+  },
+  {
+    "id": 82,
+    "title": "Spirited Away",
+    "slug": "spirited-away",
+    "year": 2001,
+    "rated": "PG",
+    "release_date": "28 Mar 2003",
+    "run_time": "125 min",
+    "directors": [
+      "Hayao Miyazaki",
+      "Kirk Wise"
+    ],
+    "writers": [
+      "Hayao Miyazaki"
+    ],
+    "actors": [
+      "Rumi Hiiragi",
+      "Miyu Irino",
+      "Mari Natsuki",
+      "Takashi Naitô"
+    ],
+    "plot": "During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.",
+    "photo": {
+      "url": "https://bolt-network.s3.amazonaws.com/movies/spirited-away/photo.jpg"
+    },
+    "banner": {
+      "url": null
+    },
+    "logo": {
+      "url": null
+    },
+    "poster": "https://m.media-amazon.com/images/M/MV5BOGJjNzZmMmUtMjljNC00ZjU5LWJiODQtZmEzZTU0MjBlNzgxL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.6/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "97%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "96/100"
+      }
+    ],
+    "genres_list": [
+      "Animation",
+      "Adventure",
+      "Family"
+    ],
+    "created_at": "2019-12-05T02:57:05.866Z",
+    "updated_at": "2019-12-05T02:57:05.866Z"
+  },
+  {
+    "id": 88,
+    "title": "Tangled",
+    "slug": "tangled",
+    "year": 2010,
+    "rated": "PG",
+    "release_date": "24 Nov 2010",
+    "run_time": "100 min",
+    "directors": [
+      "Nathan Greno",
+      "Byron Howard"
+    ],
+    "writers": [
+      "Dan Fogelman (screenplay by)",
+      "Jacob Grimm (based upon the fairy tale \"Rapunzel\" by)",
+      "Wilhelm Grimm (based upon the fairy tale \"Rapunzel\" by)"
+    ],
+    "actors": [
+      "Mandy Moore",
+      "Zachary Levi",
+      "Donna Murphy",
+      "Ron Perlman"
+    ],
+    "plot": "The magically long-haired Rapunzel has spent her entire life in a tower, but now that a runaway thief has stumbled upon her, she is about to discover the world for the first time, and who she really is.",
+    "photo": {
+      "url": "https://bolt-network.s3.amazonaws.com/movies/tangled/photo.jpg"
+    },
+    "banner": {
+      "url": null
+    },
+    "logo": {
+      "url": null
+    },
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTAxNDYxMjg0MjNeQTJeQWpwZ15BbWU3MDcyNTk2OTM@._V1_SX300.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.8/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "89%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "71/100"
+      }
+    ],
+    "genres_list": [
+      "Animation",
+      "Family",
+      "Fantasy"
+    ],
+    "created_at": "2019-12-05T02:57:18.998Z",
+    "updated_at": "2019-12-05T02:57:18.998Z"
+  },
+  {
+    "id": 103,
+    "title": "The Incredibles",
+    "slug": "the-incredibles",
+    "year": 2004,
+    "rated": "PG",
+    "release_date": "05 Nov 2004",
+    "run_time": "115 min",
+    "directors": [
+      "Brad Bird"
+    ],
+    "writers": [
+      "Brad Bird"
+    ],
+    "actors": [
+      "Craig T. Nelson",
+      "Holly Hunter",
+      "Samuel L. Jackson",
+      "Jason Lee"
+    ],
+    "plot": "A family of undercover superheroes, while trying to live the quiet suburban life, are forced into action to save the world.",
+    "photo": {
+      "url": "https://bolt-network.s3.amazonaws.com/movies/the-incredibles/photo.jpg"
+    },
+    "banner": {
+      "url": null
+    },
+    "logo": {
+      "url": null
+    },
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTY5OTU0OTc2NV5BMl5BanBnXkFtZTcwMzU4MDcyMQ@@._V1_SX300.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.0/10"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "90/100"
+      }
+    ],
+    "genres_list": [
+      "Animation",
+      "Family"
+    ],
+    "created_at": "2019-12-05T02:57:43.493Z",
+    "updated_at": "2019-12-05T02:57:43.493Z"
+  },
+  {
+    "id": 105,
+    "title": "The Iron Giant",
+    "slug": "the-iron-giant",
+    "year": 1999,
+    "rated": "PG",
+    "release_date": "06 Aug 1999",
+    "run_time": "86 min",
+    "directors": [
+      "Brad Bird"
+    ],
+    "writers": [
+      "Tim McCanlies (screenplay by)",
+      "Brad Bird (screen story by)",
+      "Ted Hughes (based on the book \"The Iron Man\" by)"
+    ],
+    "actors": [
+      "Jennifer Aniston",
+      "Harry Connick Jr.",
+      "Vin Diesel",
+      "James Gammon"
+    ],
+    "plot": "A young boy befriends a giant robot from outer space that a paranoid government agent wants to destroy.",
+    "photo": {
+      "url": "https://bolt-network.s3.amazonaws.com/movies/the-iron-giant/photo.jpg"
+    },
+    "banner": {
+      "url": null
+    },
+    "logo": {
+      "url": null
+    },
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjIxNDU2Njk0OV5BMl5BanBnXkFtZTgwODc3Njc3NjE@._V1_SX300.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.0/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "96%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "85/100"
+      }
+    ],
+    "genres_list": [
+      "Animation",
+      "Family",
+      "Sci-Fi"
+    ],
+    "created_at": "2019-12-05T02:57:48.383Z",
+    "updated_at": "2019-12-05T02:57:48.383Z"
+  },
+  {
+    "id": 106,
+    "title": "The Lego Movie",
+    "slug": "the-lego-movie",
+    "year": 2014,
+    "rated": "PG",
+    "release_date": "07 Feb 2014",
+    "run_time": "100 min",
+    "directors": [
+      "Phil Lord",
+      "Christopher Miller"
+    ],
+    "writers": [
+      "Phil Lord (screenplay)",
+      "Christopher Miller (screenplay)",
+      "Dan Hageman (story)",
+      "Kevin Hageman (story)",
+      "Phil Lord (story)",
+      "Christopher Miller (story)",
+      "Ole Kirk Christiansen (based on LEGO Construction Toys created by)",
+      "Godtfred Kirk Christiansen (based on LEGO Construction Toys created by)",
+      "Jens Nygaard Knudsen (based on LEGO Construction Toys created by)",
+      "Peter Laird (characters created by: Teenage Mutant Ninja Turtles)",
+      "Kevin Eastman (characters created by: Teenage Mutant Ninja Turtles)"
+    ],
+    "actors": [
+      "Will Arnett",
+      "Elizabeth Banks",
+      "Craig Berry",
+      "Alison Brie"
+    ],
+    "plot": "An ordinary LEGO construction worker, thought to be the prophesied as \"special\", is recruited to join a quest to stop an evil tyrant from gluing the LEGO universe into eternal stasis.",
+    "photo": {
+      "url": "https://bolt-network.s3.amazonaws.com/movies/the-lego-movie/photo.jpg"
+    },
+    "banner": {
+      "url": null
+    },
+    "logo": {
+      "url": null
+    },
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTg4MDk1ODExN15BMl5BanBnXkFtZTgwNzIyNjg3MDE@._V1_SX300.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.8/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "95%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "83/100"
+      }
+    ],
+    "genres_list": [
+      "Animation",
+      "Family",
+      "Fantasy"
+    ],
+    "created_at": "2019-12-05T02:57:49.349Z",
+    "updated_at": "2019-12-05T02:57:49.349Z"
+  },
+  {
+    "id": 107,
+    "title": "The Lion King",
+    "slug": "the-lion-king",
+    "year": 1994,
+    "rated": "G",
+    "release_date": "24 Jun 1994",
+    "run_time": "88 min",
+    "directors": [
+      "Roger Allers",
+      "Rob Minkoff"
+    ],
+    "writers": [
+      "Irene Mecchi (screenplay by)",
+      "Jonathan Roberts (screenplay by)",
+      "Linda Woolverton (screenplay by)",
+      "Burny Mattinson (story)",
+      "Barry Johnson (story)",
+      "Lorna Cook (story)",
+      "Thom Enriquez (story)",
+      "Andy Gaskill (story)",
+      "Gary Trousdale (story)",
+      "Jim Capobianco (story)",
+      "Kevin Harkey (story)",
+      "Jorgen Klubien (story)",
+      "Chris Sanders (story)",
+      "Tom Sito (story)",
+      "Larry Leker (story)",
+      "Joe Ranft (story)",
+      "Rick Maki (story)",
+      "Ed Gombert (story)",
+      "Francis Glebas (story)",
+      "Mark Kausler (story)",
+      "J.T. Allen (additional story material)",
+      "George Scribner (additional story material)",
+      "Miguel Tejada-Flores (additional story material)",
+      "Jenny Tripp (additional story material)",
+      "Bob Tzudiker (additional story material)",
+      "Christopher Vogler (additional story material)",
+      "Kirk Wise (additional story material)",
+      "Noni White (additional story material)",
+      "Brenda Chapman (story supervisor)"
+    ],
+    "actors": [
+      "Rowan Atkinson",
+      "Matthew Broderick",
+      "Niketa Calame-Harris",
+      "Jim Cummings"
+    ],
+    "plot": "A Lion cub crown prince is tricked by a treacherous uncle into thinking he caused his father's death and flees into exile in despair, only to learn in adulthood his identity and his responsibilities.",
+    "photo": {
+      "url": "https://bolt-network.s3.amazonaws.com/movies/the-lion-king/photo.jpg"
+    },
+    "banner": {
+      "url": null
+    },
+    "logo": {
+      "url": null
+    },
+    "poster": "https://m.media-amazon.com/images/M/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_SX300.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.5/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "93%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "83/100"
+      }
+    ],
+    "genres_list": [
+      "Animation",
+      "Family",
+      "Musical"
+    ],
+    "created_at": "2019-12-05T02:57:53.795Z",
+    "updated_at": "2019-12-05T02:57:53.795Z"
+  },
+  {
+    "id": 113,
+    "title": "The Nightmare Before Christmas",
+    "slug": "the-nightmare-before-christmas",
+    "year": 1993,
+    "rated": "PG",
+    "release_date": "29 Oct 1993",
+    "run_time": "76 min",
+    "directors": [
+      "Henry Selick"
+    ],
+    "writers": [
+      "Tim Burton (story and characters)",
+      "Michael McDowell (adaptation)",
+      "Caroline Thompson (screenplay)"
+    ],
+    "actors": [
+      "Danny Elfman",
+      "Chris Sarandon",
+      "Catherine O'Hara",
+      "William Hickey"
+    ],
+    "plot": "Jack Skellington, king of Halloween Town, discovers Christmas Town, but his attempts to bring Christmas to his home causes confusion.",
+    "photo": {
+      "url": "https://bolt-network.s3.amazonaws.com/movies/the-nightmare-before-christmas/photo.jpg"
+    },
+    "banner": {
+      "url": null
+    },
+    "logo": {
+      "url": null
+    },
+    "poster": "https://m.media-amazon.com/images/M/MV5BNWE4OTNiM2ItMjY4Ni00ZTViLWFiZmEtZGEyNGY2ZmNlMzIyXkEyXkFqcGdeQXVyMDU5NDcxNw@@._V1_SX300.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.0/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "95%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "82/100"
+      }
+    ],
+    "genres_list": [
+      "Animation",
+      "Family",
+      "Fantasy"
+    ],
+    "created_at": "2019-12-05T02:58:00.375Z",
+    "updated_at": "2019-12-05T02:58:00.375Z"
+  },
+  {
+    "id": 130,
+    "title": "Toy Story 3",
+    "slug": "toy-story-3",
+    "year": 2010,
+    "rated": "G",
+    "release_date": "18 Jun 2010",
+    "run_time": "103 min",
+    "directors": [
+      "Lee Unkrich"
+    ],
+    "writers": [
+      "John Lasseter (story by)",
+      "Andrew Stanton (story by)",
+      "Lee Unkrich (story by)",
+      "Michael Arndt (screenplay by)"
+    ],
+    "actors": [
+      "Tom Hanks",
+      "Tim Allen",
+      "Joan Cusack",
+      "Ned Beatty"
+    ],
+    "plot": "The toys are mistakenly delivered to a day-care center instead of the attic right before Andy leaves for college, and it's up to Woody to convince the other toys that they weren't abandoned and to return home.",
+    "photo": {
+      "url": "https://bolt-network.s3.amazonaws.com/movies/toy-story-3/photo.jpg"
+    },
+    "banner": {
+      "url": null
+    },
+    "logo": {
+      "url": null
+    },
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTgxOTY4Mjc0MF5BMl5BanBnXkFtZTcwNTA4MDQyMw@@._V1_SX300.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.3/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "98%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "92/100"
+      }
+    ],
+    "genres_list": [
+      "Animation",
+      "Family"
+    ],
+    "created_at": "2019-12-05T02:58:29.141Z",
+    "updated_at": "2019-12-05T02:58:29.141Z"
+  },
+  {
+    "id": 134,
+    "title": "Up",
+    "slug": "up",
+    "year": 2009,
+    "rated": "PG",
+    "release_date": "29 May 2009",
+    "run_time": "96 min",
+    "directors": [
+      "Pete Docter",
+      "Bob Peterson(co-director)"
+    ],
+    "writers": [
+      "Pete Docter (story by)",
+      "Bob Peterson (story by)",
+      "Tom McCarthy (story by)",
+      "Bob Peterson (screenplay by)",
+      "Pete Docter (screenplay by)"
+    ],
+    "actors": [
+      "Edward Asner",
+      "Christopher Plummer",
+      "Jordan Nagai",
+      "Bob Peterson"
+    ],
+    "plot": "Seventy-eight year old Carl Fredricksen travels to Paradise Falls in his home equipped with balloons, inadvertently taking a young stowaway.",
+    "photo": {
+      "url": "https://bolt-network.s3.amazonaws.com/movies/up/photo.jpg"
+    },
+    "banner": {
+      "url": null
+    },
+    "logo": {
+      "url": null
+    },
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTk3NDE2NzI4NF5BMl5BanBnXkFtZTgwNzE1MzEyMTE@._V1_SX300.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.3/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "98%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "88/100"
+      }
+    ],
+    "genres_list": [
+      "Animation",
+      "Family"
+    ],
+    "created_at": "2019-12-05T02:58:33.687Z",
+    "updated_at": "2019-12-05T02:58:33.687Z"
+  },
+  {
+    "id": 139,
+    "title": "Wreck-It Ralph",
+    "slug": "wreck-it-ralph",
+    "year": 2012,
+    "rated": "PG",
+    "release_date": "02 Nov 2012",
+    "run_time": "101 min",
+    "directors": [
+      "Rich Moore"
+    ],
+    "writers": [
+      "Rich Moore (story by)",
+      "Phil Johnston (story by)",
+      "Jim Reardon (story by)",
+      "Phil Johnston (screenplay by)",
+      "Jennifer Lee (screenplay by)",
+      "John C. Reilly (additional story material by)",
+      "Sam Levine (additional story material by)",
+      "Jared Stern (additional story material by)"
+    ],
+    "actors": [
+      "John C. Reilly",
+      "Sarah Silverman",
+      "Jack McBrayer",
+      "Jane Lynch"
+    ],
+    "plot": "A video game villain wants to be a hero and sets out to fulfill his dream, but his quest brings havoc to the whole arcade where he lives.",
+    "photo": {
+      "url": "https://bolt-network.s3.amazonaws.com/movies/wreck-it-ralph/photo.jpg"
+    },
+    "banner": {
+      "url": null
+    },
+    "logo": {
+      "url": null
+    },
+    "poster": "https://m.media-amazon.com/images/M/MV5BNzMxNTExOTkyMF5BMl5BanBnXkFtZTcwMzEyNDc0OA@@._V1_SX300.jpg",
+    "ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.7/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "87%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "72/100"
+      }
+    ],
+    "genres_list": [
+      "Animation",
+      "Family"
+    ],
+    "created_at": "2019-12-05T02:58:49.020Z",
+    "updated_at": "2019-12-05T02:58:49.020Z"
+  }
+]

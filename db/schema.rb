@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_01_18_041414) do
+ActiveRecord::Schema.define(version: 2019_12_06_211513) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,18 @@ ActiveRecord::Schema.define(version: 2018_01_18_041414) do
     t.string "genres_list", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "people", force: :cascade do |t|
+    t.string "name"
+    t.string "role"
+  end
+
+  create_table "people_movies", id: false, force: :cascade do |t|
+    t.bigint "person_id"
+    t.bigint "movie_id"
+    t.index ["movie_id"], name: "index_people_movies_on_movie_id"
+    t.index ["person_id"], name: "index_people_movies_on_person_id"
   end
 
   create_table "subgenres", force: :cascade do |t|
