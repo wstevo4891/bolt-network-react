@@ -12,7 +12,7 @@ gem 'pg', '~> 0.18'
 # Use pg_search for full text search
 gem 'pg_search'
 # Use Puma as the app server
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 3.12'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Bootstrap V4 for CSS Framework

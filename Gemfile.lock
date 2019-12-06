@@ -153,7 +153,7 @@ GEM
       activesupport (>= 4.2)
     popper_js (1.14.5)
     public_suffix (4.0.1)
-    puma (3.12.1)
+    puma (3.12.2)
     rack (2.0.7)
     rack-proxy (0.6.5)
       rack
@@ -265,7 +265,7 @@ DEPENDENCIES
   lograge
   pg (~> 0.18)
   pg_search
-  puma (~> 3.7)
+  puma (~> 3.12)
   rails (~> 5.2.1)
   rmagick
   sass-rails
