@@ -2,15 +2,43 @@
 class QueryLab
   def self.call
     # genres_list
-    movies_index
+    # movies_index
     # action_movie_titles
     # all_indicies
+    # search_results
+    search_people
+  end
+
+  def self.search_results
+    SearchResults.create('comedy')
   end
 
   def self.movies_index
     Genre.all.each_with_object({}) do |genre, hash|
       hash[genre.title] = genre.movies
     end
+  end
+
+  def self.find_people
+    likes = <<-SQL
+      array_to_string(directors, '||') LIKE :match
+        OR array_to_string(writers, '||') LIKE :match
+        OR array_to_string(actors, '||') LIKE :match
+    SQL
+
+    select(:directors, :writers, :actors).where(likes, match: '%Stanley%')
+  end
+
+  def self.search_people
+    ActiveRecord::Base.connection.execute(
+      <<-SQL
+        SELECT directors, writers, actors
+        FROM movies
+        WHERE array_to_string(directors, '||') LIKE '%Stanley%'
+          OR array_to_string(writers, '||') LIKE '%Stanley%'
+          OR array_to_string(actors, '||') LIKE '%Stanley%'
+      SQL
+    ).values.flatten.uniq
   end
 
   # Movie.joins(:genres).where(genres: { title: genre.title })

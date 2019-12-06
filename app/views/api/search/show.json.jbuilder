@@ -16,3 +16,5 @@ json.movies do
     json.genres movie.genres_list
   end
 end
+
+json.people @results[:people]

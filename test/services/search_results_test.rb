@@ -39,10 +39,18 @@ class SearchResultsTest < ActiveSupport::TestCase
     assert_not_predicate results[:movies], :blank?
   end
 
+  test 'should find people' do
+    puts __method__
+    results = SearchResults.create('comedy')
+    puts results[:people]
+
+    assert_not_predicate results[:people], :blank?
+  end
+
   test 'should handle results not found' do
     puts __method__
     results = SearchResults.create('&')
-    empty_results = { genres: [], movies: [] }
+    empty_results = { genres: [], movies: [], people: [] }
 
     assert_equal results, empty_results
   end

@@ -6,7 +6,22 @@ class Movie < ApplicationRecord
   include PgSearch::Model
 
   # == Attributes ===========================================================
-  # attr_accessor :genres_list
+  # t.string   :title
+  # t.string   :slug
+  # t.integer  :year
+  # t.string   :rated
+  # t.string   :release_date
+  # t.string   :run_time
+  # t.string   :directors, array: true, default: []
+  # t.string   :writers, array: true, default: []
+  # t.string   :actors, array: true, default: []
+  # t.string   :plot
+  # t.string   :photo
+  # t.string   :banner
+  # t.string   :logo
+  # t.string   :poster
+  # t.json     :ratings
+  # t.string   :genres_list, array: true, default: []
 
   mount_uploader :photo, PhotoUploader
 
@@ -54,6 +69,16 @@ class Movie < ApplicationRecord
     []
   end
 
+  def self.find_people(query)
+    likes = <<-SQL
+      array_to_string(directors, '||') LIKE :match
+        OR array_to_string(writers, '||') LIKE :match
+        OR array_to_string(actors, '||') LIKE :match
+    SQL
+
+    select(:directors, :writers, :actors).where(likes, match: "%#{query}%")
+  end
+
   def self.search(search)
     where('title ~* :search', search: "(#{search})")
   end
@@ -81,4 +106,15 @@ class Movie < ApplicationRecord
   end
 
   # == Instance Methods =======================================================
+  def people
+    [directors, writers, actors].each_with_object([]) do |attr, arr|
+      next if attr.nil?
+
+      arr.concat(clean_strings(attr))
+    end
+  end
+
+  def clean_strings(attribute)
+    attribute.map { |attr| attr.sub(/\(.+\)/, '').strip }
+  end
 end

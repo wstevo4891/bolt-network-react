@@ -21,8 +21,11 @@ class SearchResults
   def retrieve_results
     @genres = search_genres
     @movies = search_movies
+    @people = people_list
 
-    { genres: @genres, movies: @movies }
+    puts @people
+
+    { genres: @genres, movies: @movies, people: @people }
   end
 
   def search_genres
@@ -38,6 +41,16 @@ class SearchResults
       full_movies_search
     else
       movie_titles_search
+    end
+  end
+
+  def people_list
+    if @movies.empty?
+      Movie.find_people(@query)
+    else
+      @movies.each_with_object([]) do |movie, arr|
+        arr.concat(movie.people)
+      end.uniq
     end
   end
 
