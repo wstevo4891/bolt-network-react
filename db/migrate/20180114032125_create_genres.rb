@@ -3,8 +3,7 @@ class CreateGenres < ActiveRecord::Migration[5.1]
     create_table :genres do |t|
       t.string :title
       t.string :slug
-      t.string :plural
-      t.string :category
+      t.string :alias
 
       t.timestamps null: false
     end

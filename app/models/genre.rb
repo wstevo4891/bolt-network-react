@@ -8,19 +8,18 @@ class Genre < ApplicationRecord
   # == Attributes ===========================================================
   # title     {String}
   # slug      {String}
-  # plural    {String}
-  # category  {String}
+  # alias     {String}
 
   # == Relationships ========================================================
   has_and_belongs_to_many :movies
   has_many :subgenres
 
   # == Validations ==========================================================
-  validates :title, :plural, :category, presence: true
+  validates :title, :slug, :alias, presence: true
 
   # == Scopes ===============================================================
   pg_search_scope :full_text_search,
-                  against: %i[title plural category],
+                  against: %i[title alias],
                   using: [:tsearch]
 
   # == Class Methods ========================================================
@@ -45,7 +44,7 @@ class Genre < ApplicationRecord
   end
 
   def self.search(query)
-    select(:id, :title, :slug).match_title(query).limit(10)
+    select(:id, :title, :slug, :alias).match_title(query).limit(10)
   rescue ActiveRecord::RecordNotFound
     []
   end

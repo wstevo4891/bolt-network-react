@@ -109,7 +109,11 @@ class Movie < ApplicationRecord
   end
 
   def self.search(query)
-    match_title(query)
+    select(
+      :id, :title, :slug, :photo, :year, :rated,
+      :run_time, :plot, :genres_list
+    )
+      .match_title(query)
       .or(match_genre(query))
       .or(match_people(query))
       .limit(30)
