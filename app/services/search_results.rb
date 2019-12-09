@@ -2,7 +2,7 @@
 
 # Service for search feature
 class SearchResults
-  attr_reader :query, :genres, :movies
+  attr_reader :movies, :genres, :people
 
   def self.create(query)
     new(query).call
@@ -10,6 +10,9 @@ class SearchResults
 
   def initialize(query)
     @query = query.downcase
+    @movies = []
+    @genres = []
+    @people = []
   end
 
   def call
@@ -20,12 +23,10 @@ class SearchResults
 
   def retrieve_results
     @genres = search_genres
+    @people = Person.search(@query).to_a
     @movies = search_movies
-    @people = people_list
 
-    puts @people
-
-    { genres: @genres, movies: @movies, people: @people }
+    self
   end
 
   def search_genres
@@ -41,16 +42,6 @@ class SearchResults
       full_movies_search
     else
       movie_titles_search
-    end
-  end
-
-  def people_list
-    if @movies.empty?
-      Movie.find_people(@query)
-    else
-      @movies.each_with_object([]) do |movie, arr|
-        arr.concat(movie.people)
-      end.uniq
     end
   end
 

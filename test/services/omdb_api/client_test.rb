@@ -8,14 +8,16 @@ module OmdbApi
       puts ''
     end
 
-    test 'should fetch movie with get' do
-      puts __method__
-      params = { t: 'Avengers: Age of Ultron' }
-      client = Client.new
-      results = client.fetch_movie(params)
-      puts results
+    # TODO: Mock this call
+    #
+    # test 'should fetch movie with get' do
+    #   puts __method__
+    #   params = { t: 'Avengers: Age of Ultron' }
+    #   client = Client.new
+    #   results = client.fetch_movie(params)
+    #   puts results
 
-      assert_not_nil results
-    end
+    #   assert_not_nil results
+    # end
   end
 end

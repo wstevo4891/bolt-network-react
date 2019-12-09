@@ -10,48 +10,63 @@ class SearchResultsTest < ActiveSupport::TestCase
   test 'should find movies by genre' do
     puts __method__
     results = SearchResults.create('action')
-    puts results[:movies].count
+    puts results.movies.size
 
-    assert_not_predicate results[:movies], :empty?
+    assert_not_predicate results.movies, :empty?
   end
 
   test 'should find movies by title' do
     puts __method__
     results = SearchResults.create('avengers')
-    puts results[:movies].count
+    puts results.movies.size
 
-    assert_not_predicate results[:movies], :empty?
+    assert_not_predicate results.movies, :empty?
   end
 
   test 'should return results for one char' do
     puts __method__
     results = SearchResults.create('c')
-    puts results[:movies].count
+    puts results.movies.size
 
-    assert_not_predicate results[:movies], :blank?
+    assert_not_predicate results.movies, :blank?
   end
 
   test 'should find results for plural genre' do
     puts __method__
     results = SearchResults.create('comedies')
-    puts results[:movies].count
+    puts results.movies.size
 
-    assert_not_predicate results[:movies], :blank?
+    assert_not_predicate results.movies, :blank?
   end
 
   test 'should find people' do
     puts __method__
-    results = SearchResults.create('comedy')
-    puts results[:people]
+    results = SearchResults.create('Spielberg')
 
-    assert_not_predicate results[:people], :blank?
+    assert_not_predicate results.people, :blank?
   end
 
-  test 'should handle results not found' do
+  test 'should handle movies not found' do
     puts __method__
     results = SearchResults.create('&')
-    empty_results = { genres: [], movies: [], people: [] }
 
-    assert_equal results, empty_results
+    assert_predicate results.movies, :empty?
   end
+
+  # private
+
+  # def search_all_models
+  #   Movie
+  #     .includes(:genres, :people)
+  #     .where('lower(genres.title) like ?', '%spielberg%')
+  #     .references(:genres)
+  #     .or(
+  #       Movie.includes(:genres, :people)
+  #             .where('lower(people.name) like ?', '%spielberg%')
+  #             .references(:people)
+  #     ).or(
+  #       Movie.includes(:genres, :people)
+  #             .where('lower(movies.title) like ?', '%spielberg%')
+  #     ).to_a
+  # end
 end

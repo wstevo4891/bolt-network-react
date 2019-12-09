@@ -1,0 +1,15 @@
+---
+Steven_Spielberg:
+  name: Steven Spielberg
+  role: director
+  movies: twenty-seven, sixty-five, seventy-three, one hundred and one
+
+David_Fincher:
+  name: David Fincher
+  role: director
+  movies: thirty
+
+Chuck_Palahniuk:
+  name: Chuck Palahniuk
+  role: writer
+  movies: thirty

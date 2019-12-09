@@ -26,7 +26,7 @@ class MovieTest < ActiveSupport::TestCase
   #
   test 'should match partial title' do
     puts __method__
-    result = Movie.search_by_title('potter').first
+    result = Movie.search_full_text('potter').first
 
     assert_equal(
       'Harry Potter and the Deathly Hallows: Part 2',

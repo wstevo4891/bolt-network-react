@@ -62,7 +62,7 @@ def movie_params(movie, poster_file)
     plot: movie['Plot'],
     remote_photo_url: image_url(poster_file),
     poster: movie['Poster'],
-    ratings: { ratings: movie['Ratings'] },
+    ratings: movie['Ratings'],
     genres_list: genres_short_list(movie['Genre']),
     genre_ids: genre_ids_array(movie['Genre'])
   }
@@ -111,5 +111,22 @@ Dir['db/yaml_data/movies/*.yml'].each do |path|
 end
 
 puts 'Movies Created!'
+
+# People
+# =============================================================================
+
+puts 'Deleting old People...lul'
+Person.delete_all
+
+puts 'Loading all the peeps...'
+people = load_yaml('people')
+
+puts 'Let there be people...'
+people.each do |data|
+  puts "Creating person: #{data['name']}"
+  Person.create!(data)
+end
+
+puts 'Created people like God!'
 
 puts 'Seeding Database Complete!'

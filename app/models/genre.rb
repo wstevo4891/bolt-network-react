@@ -44,6 +44,16 @@ class Genre < ApplicationRecord
     []
   end
 
+  def self.search(query)
+    select(:id, :title, :slug).match_title(query).limit(10)
+  rescue ActiveRecord::RecordNotFound
+    []
+  end
+
+  def self.match_title(query)
+    where('LOWER(title) LIKE ?', "#{query}%")
+  end
+
   ##
   # Single query to find genres with the most movies
   #

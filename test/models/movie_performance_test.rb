@@ -32,12 +32,4 @@ class MoviePerformanceTest < ActiveSupport::TestCase
       x.report('Movie.lower_case_match') { Movie.lower_case_match('potter') }
     end
   end
-
-  test 'benchmark index by genre' do
-    puts __method__
-
-    Benchmark.bmbm do |x|
-      x.report('Movie.index_by_genre') { Movie.index_by_genre }
-    end
-  end
 end

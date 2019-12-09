@@ -52,16 +52,16 @@ ActiveRecord::Schema.define(version: 2019_12_06_211513) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "movies_people", id: false, force: :cascade do |t|
+    t.bigint "movie_id"
+    t.bigint "person_id"
+    t.index ["movie_id"], name: "index_movies_people_on_movie_id"
+    t.index ["person_id"], name: "index_movies_people_on_person_id"
+  end
+
   create_table "people", force: :cascade do |t|
     t.string "name"
     t.string "role"
-  end
-
-  create_table "people_movies", id: false, force: :cascade do |t|
-    t.bigint "person_id"
-    t.bigint "movie_id"
-    t.index ["movie_id"], name: "index_people_movies_on_movie_id"
-    t.index ["person_id"], name: "index_people_movies_on_person_id"
   end
 
   create_table "subgenres", force: :cascade do |t|

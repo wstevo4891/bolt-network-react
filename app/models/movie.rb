@@ -31,12 +31,15 @@ class Movie < ApplicationRecord
 
   # == Relationships ========================================================
   has_and_belongs_to_many :genres
+  has_and_belongs_to_many :people
 
   # == Validations ==========================================================
   validates :title, :year, :rated, :run_time, :plot, presence: true
 
   # == Scopes ===============================================================
-  pg_search_scope :search_by_title, against: :title, using: [:tsearch]
+  pg_search_scope :search_full_text,
+                  against: %i[title genres_list directors writers actors],
+                  using: %i[tsearch]
 
   scope :recent, -> { where('year > ?', 5.years.ago.year) }
 
@@ -79,9 +82,9 @@ class Movie < ApplicationRecord
     select(:directors, :writers, :actors).where(likes, match: "%#{query}%")
   end
 
-  def self.search(search)
-    where('title ~* :search', search: "(#{search})")
-  end
+  # def self.search(search)
+  #   where('title ~* :search', search: "(#{search})")
+  # end
 
   def self.lower_case_match(query)
     where(arel_table[:title].lower.matches("%#{query}%"))
@@ -105,16 +108,71 @@ class Movie < ApplicationRecord
     joins(:genres).where(genres: { title: genre }).pluck(:title)
   end
 
+  def self.search(query)
+    match_title(query)
+      .or(match_genre(query))
+      .or(match_people(query))
+      .limit(30)
+  rescue ActiveRecord::RecordNotFound
+    []
+  end
+
+  def self.match_title(query)
+    where('LOWER(title) LIKE ?', "#{query}%")
+      .or(where('LOWER(title) LIKE ?', "%#{query}%"))
+  end
+
+  def self.match_genre(query)
+    where("lower(array_to_string(genres_list, '||')) like ?", "#{query}%")
+  end
+
+  def self.match_people(query)
+    match_array_column(query, 'directors')
+      .or(match_array_column(query, 'writers'))
+      .or(match_array_column(query, 'actors'))
+  end
+
+  def self.match_array_column(query, column)
+    where("lower(array_to_string(#{column}, '||')) like ?", "%#{query}%")
+  end
+
+  def self.search_all_models(query)
+    match = query.length > 1 ? "%#{query}%" : "#{query}%"
+
+    search_by_title(match)
+      .or(search_by_genre(match))
+      .or(search_by_people(match))
+      .limit(30)
+      .to_a
+  end
+
+  def self.search_by_title(match)
+    includes(:genres, :people)
+      .where('LOWER(movies.title) LIKE ?', match)
+  end
+
+  def self.search_by_genre(match)
+    includes(:genres, :people)
+      .where('LOWER(genres.title) LIKE ?', match)
+      .references(:genres)
+  end
+
+  def self.search_by_people(match)
+    includes(:genres, :people)
+      .where('LOWER(people.name) LIKE ?', match)
+      .references(:people)
+  end
+
   # == Instance Methods =======================================================
-  def people
-    [directors, writers, actors].each_with_object([]) do |attr, arr|
-      next if attr.nil?
+  # def people
+  #   [directors, writers, actors].each_with_object([]) do |attr, arr|
+  #     next if attr.nil?
 
-      arr.concat(clean_strings(attr))
-    end
-  end
+  #     arr.concat(clean_strings(attr))
+  #   end
+  # end
 
-  def clean_strings(attribute)
-    attribute.map { |attr| attr.sub(/\(.+\)/, '').strip }
-  end
+  # def clean_strings(attribute)
+  #   attribute.map { |attr| attr.sub(/\(.+\)/, '').strip }
+  # end
 end
