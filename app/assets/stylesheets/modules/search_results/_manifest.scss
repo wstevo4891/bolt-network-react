@@ -87,6 +87,10 @@
       color: white;
     }
   }
+
+  ul li:last-child {
+    border: none;
+  }
 }
 
 .search-results-col {

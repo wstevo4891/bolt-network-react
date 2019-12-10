@@ -5,7 +5,7 @@ module Api
   class SearchController < ApiController
     # GET /api/search/:query
     def show
-      @results = SearchResults.create(params[:query])
+      @results = SearchResultsThree.create(params[:query])
     end
   end
 end

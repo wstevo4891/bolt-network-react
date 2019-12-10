@@ -22,15 +22,24 @@ class SearchResultsThree
   private
 
   def fetch_results
-    @movies = search_movies(@query)
     @genres = Genre.search(@query).to_a
     @people = Person.search(@query).to_a
+    @movies = search_movies
+    # add_movies_with_genres_and_people
     self
   end
 
-  def search_movies(query)
-    Movie.search(query).sort_by do |movie|
-      movie.title.downcase =~ /#{query}/ || 100
+  def search_movies
+    Movie.search(@query).sort_by do |movie|
+      movie.title.downcase =~ /#{@query}/ || 100
     end
+  end
+
+  def add_movies_with_genres_and_people
+    return if @movies.size >= 30
+
+    records = @genres + @people
+
+    @movies.concat(Movie.find_by_association(records))
   end
 end

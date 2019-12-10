@@ -16,7 +16,12 @@ const DesktopView = (props) => (
               Explore titles related to:&nbsp;
             </span>
 
-            <SuggestionsList genres={props.genres} movies={props.movies} />
+            <SuggestionsList
+              query={props.query}
+              genres={props.genres}
+              movies={props.movies}
+              people={props.people}
+            />
           </div>
         </div>
       </div>

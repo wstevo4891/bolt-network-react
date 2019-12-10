@@ -1,38 +1,49 @@
 // app/javascript/main/scenes/Search/services/Suggestions.js
 
 export default class Suggestions {
-  constructor(genres, movies) {
-    this.genres = genres
-    this.movies = movies
+  constructor(props) {
+    this.query = props.query
+    this.genres = props.genres
+    this.people = props.people
+    this.movies = props.movies.slice(0, 6)
   }
 
   call = () => {
-    if (this.genres && this.genres.length > 0) {
-      return this.fullSuggestions()
-    } else {
-      return this.movieLinks()
-    }
-  }
-
-  fullSuggestions = () => {
-    const genres = this.genreLinks()
-
-    return genres.concat(this.movieLinks())
+    return this.genreLinks()
+      .concat(this.peopleLinks())
+      .concat(this.movieLinks())
   }
 
   genreLinks = () => {
-    return this.genres.map((genre) => {
-      return { name: genre.name, link: genre.url }
+    if (this.genres.length === 0) return []
+
+    return this.genres.map(genre => {
+      return {
+        name: genre.alias,
+        link: `/search?q=${this.query}&suggestionId=${genre.suggestionId}`
+      }
+    })
+  }
+
+  peopleLinks = () => {
+    if (this.people.length === 0) return []
+
+    return this.people.map(person => {
+      return {
+        name: person.name,
+        link: `/search?q=${this.query}&suggestionId=${person.suggestionId}`
+      }
     })
   }
 
   movieLinks = () => {
-    if (this.movies && this.movies.length > 0) {
-      return this.movies.map(movie => {
-        return { name: movie.title, link: movie.url }
-      })
-    }
+    if (this.movies.length === 0) return []
 
-    return []
+    return this.movies.map(movie => {
+      return {
+        name: movie.title,
+        link: `/search?q=${this.query}&suggestionId=${movie.suggestionId}`
+      }
+    })
   }
 }

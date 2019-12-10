@@ -19,7 +19,9 @@ class Person < ApplicationRecord
 
   # == Class Methods ==========================================================
   def self.search(query)
-    select(:id, :name).match_name(query).limit(10)
+    return [] unless query.length > 3
+
+    select(:id, :name).match_name(query).limit(5)
   rescue ActiveRecord::RecordNotFound
     []
   end

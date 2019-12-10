@@ -10,12 +10,17 @@ class Search extends Component {
   render() {
     const query = this.parseQuery()
 
-    const { genres, movies } = this.props.search
+    // console.log(this.props.location.search)
+
+    console.log(this.props.search)
+
+    const { genres, movies, people } = this.props.search
 
     return(
       <SearchResults
         genres={genres}
         movies={movies}
+        people={people}
         query={query}
         slideLength={this.props.slideLength}
       />

@@ -24,6 +24,8 @@ Rails.application.routes.draw do
 
     get '/search/:query', to: 'search#show'
 
+    get '/search/:query/:suggestion_id', to: 'suggestions#show'
+
     namespace :movies do
       post '/search', to: 'search#show'
     end

@@ -6,7 +6,7 @@ import MobileView from './MobileView'
 import DesktopView from './DesktopView'
 
 const SearchResults = (props) => {
-  const { genres, movies, query, slideLength } = props
+  const { genres, movies, people, query, slideLength } = props
 
   if (genres.length === 0 && movies.length === 0) {
     return <NotFound query={query} />
@@ -17,6 +17,7 @@ const SearchResults = (props) => {
         query={query}
         genres={genres}
         movies={movies}
+        people={people}
         slideLength={slideLength}
       />
     )
@@ -24,8 +25,10 @@ const SearchResults = (props) => {
   } else {
     return(
       <DesktopView
+        query={query}
         genres={genres}
         movies={movies}
+        people={people}
         slideLength={slideLength}
       />
     )

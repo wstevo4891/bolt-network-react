@@ -44,7 +44,7 @@ class Genre < ApplicationRecord
   end
 
   def self.search(query)
-    select(:id, :title, :slug, :alias).match_title(query).limit(10)
+    select(:id, :alias).match_title(query).limit(10)
   rescue ActiveRecord::RecordNotFound
     []
   end

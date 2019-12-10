@@ -97,10 +97,20 @@ class Movie < ApplicationRecord
   end
 
   def self.find_by_genres(genres)
-    limit = genres.length > 1 ? 5 : 20
+    limit = genres.length > 1 ? 10 : 30
 
     genres.each_with_object([]) do |genre, array|
       array.concat(genre.movies.limit(limit))
+    end
+  end
+
+  def self.find_by_association(records)
+    return [] if records.empty?
+
+    limit = records.length > 1 ? 10 : 30
+
+    records.each_with_object([]) do |record, array|
+      array.concat(record.movies.limit(limit))
     end
   end
 
@@ -109,14 +119,13 @@ class Movie < ApplicationRecord
   end
 
   def self.search(query)
-    select(
-      :id, :title, :slug, :photo, :year, :rated,
-      :run_time, :plot, :genres_list
-    )
-      .match_title(query)
+    match_title(query)
       .or(match_genre(query))
       .or(match_people(query))
-      .limit(30)
+      .select(
+        :id, :title, :slug, :photo, :year, :rated,
+        :run_time, :plot, :genres_list
+      ).limit(30)
   rescue ActiveRecord::RecordNotFound
     []
   end
@@ -127,7 +136,7 @@ class Movie < ApplicationRecord
   end
 
   def self.match_genre(query)
-    where("lower(array_to_string(genres_list, '||')) like ?", "#{query}%")
+    where("LOWER(array_to_string(genres_list, '||')) LIKE ?", "#{query}%")
   end
 
   def self.match_people(query)
@@ -137,7 +146,7 @@ class Movie < ApplicationRecord
   end
 
   def self.match_array_column(query, column)
-    where("lower(array_to_string(#{column}, '||')) like ?", "%#{query}%")
+    where("LOWER(array_to_string(#{column}, '||')) LIKE ?", "%#{query}%")
   end
 
   def self.search_all_models(query)
@@ -165,6 +174,10 @@ class Movie < ApplicationRecord
     includes(:genres, :people)
       .where('LOWER(people.name) LIKE ?', match)
       .references(:people)
+  end
+
+  def self.with_related_titles(id)
+    includes(genres: [:movies]).find(id)
   end
 
   # == Instance Methods =======================================================

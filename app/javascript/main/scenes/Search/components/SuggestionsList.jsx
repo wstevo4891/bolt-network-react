@@ -6,9 +6,8 @@ import { Link } from 'react-router-dom'
 import Suggestions from '../services/Suggestions'
 
 const SuggestionsList = (props) => {
-  const { genres, movies } = props
 
-  const suggestions = new Suggestions(genres, movies).call()
+  const suggestions = new Suggestions(props).call()
 
   return(
     <ul>
