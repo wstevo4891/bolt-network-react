@@ -32,5 +32,9 @@ class Person < ApplicationRecord
     where('LOWER(name) LIKE ?', match)
   end
 
+  def self.lookup_with_movies(id)
+    includes(:movies).find(id)
+  end
+
   # == Instance Methods =======================================================
 end

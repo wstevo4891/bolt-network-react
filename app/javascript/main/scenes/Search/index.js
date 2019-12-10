@@ -1,18 +1,24 @@
 // Search Scene
 
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import queryString from 'query-string'
+
+// Actions
+import { fetchSuggestions } from '../../store/actions/suggestionsActions'
 
 // Components
 import SearchResults from './components/SearchResults'
 
 class Search extends Component {
+  state = {
+    suggestion: null
+  }
+
   render() {
-    const query = this.parseQuery()
+    const params = this.parseParams()
 
-    // console.log(this.props.location.search)
-
-    console.log(this.props.search)
+    console.log(this.props.suggestions)
 
     const { genres, movies, people } = this.props.search
 
@@ -21,8 +27,10 @@ class Search extends Component {
         genres={genres}
         movies={movies}
         people={people}
-        query={query}
+        params={params}
+        suggestion={this.state.suggestion}
         slideLength={this.props.slideLength}
+        handleClick={this.handleClick}
       />
     )
   }
@@ -32,6 +40,47 @@ class Search extends Component {
     const query = queryString.parse(search).q
     return decodeURIComponent(query)
   }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.location.search === prevProps.location.search) return
+
+    const params = this.parseParams()
+
+    console.log(params.suggestionId)
+
+    if (params.suggestionId) {
+      this.props.dispatch(fetchSuggestions(params))
+    }
+  }
+
+  parseParams = () => {
+    const params = {}
+    const search = this.props.location.search
+    params.query = decodeURIComponent(queryString.parse(search).q)
+    params.suggestionId = queryString.parse(search).suggestionId
+    return params
+  }
+
+  handleClick = (event) => {
+    this.setState({
+      suggestion: event.target.text
+    })
+  }
+
+  // fetchSuggestionData = async ({ query, suggestionId }) => {
+  //   try {
+  //     const response = await fetchSuggestions(query, suggestionId)
+
+  //     const data = await response.json()
+
+  //     this.setState({
+  //       suggestionId: suggestionId,
+  //       suggestions: data
+  //     })
+  //   } catch(error) {
+  //     console.error(error)
+  //   }
+  // }
 }
 
-export default Search
+export default connect()(Search)

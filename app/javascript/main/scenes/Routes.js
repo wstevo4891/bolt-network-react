@@ -63,7 +63,8 @@ function mapStateToProps(state) {
     genres: state.moviesIndex.genres,
     genresIndex: state.moviesIndex.genresIndex,
     moviesIndex: state.moviesIndex.moviesIndex,
-    search: state.search
+    search: state.search,
+    suggestions: state.suggestions
   }
 }
 

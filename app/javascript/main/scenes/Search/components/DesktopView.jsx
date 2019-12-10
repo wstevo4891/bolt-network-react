@@ -4,6 +4,7 @@ import React from 'react'
 
 // Components
 import SuggestionsList from './SuggestionsList'
+import SuggestionHeader from './SuggestionHeader'
 import Results from '../../../components/Results'
 
 const DesktopView = (props) => (
@@ -17,13 +18,19 @@ const DesktopView = (props) => (
             </span>
 
             <SuggestionsList
-              query={props.query}
+              query={props.params.query}
               genres={props.genres}
               movies={props.movies}
               people={props.people}
+              handleClick={props.handleClick}
             />
           </div>
         </div>
+
+        <SuggestionHeader
+          suggestionId={props.params.suggestionId}
+          suggestion={props.suggestion}
+        />
       </div>
 
       <Results movies={props.movies} slideLength={props.slideLength} />

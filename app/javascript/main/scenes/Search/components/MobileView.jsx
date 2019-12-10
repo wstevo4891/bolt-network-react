@@ -12,7 +12,7 @@ const MobileView = (props) => (
       <div className="row">
         <div className="col-12 mb-2">
           <span className="suggestionsLabel">
-            Results for "{props.query}"
+            Results for "{props.params.query}"
           </span>
         </div>
       </div>
@@ -25,7 +25,7 @@ const MobileView = (props) => (
             <span className="suggestionsLabel">Explore titles related to</span>
 
             <SuggestionsList
-              query={props.query}
+              query={props.params.query}
               genres={props.genres}
               movies={props.movies}
               people={props.people}

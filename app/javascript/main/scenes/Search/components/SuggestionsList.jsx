@@ -12,7 +12,7 @@ const SuggestionsList = (props) => {
   return(
     <ul>
       {suggestions.map((suggestion, index) =>
-        <li key={index}>
+        <li key={index} onClick={(event) => props.handleClick(event)}>
           <Link to={suggestion.link}>
             {suggestion.name}
           </Link>

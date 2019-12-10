@@ -12,6 +12,10 @@ class SuggestionResults
 
   attr_reader :movies, :genres, :people, :header
 
+  def self.create(suggestion_id)
+    new(suggestion_id).call
+  end
+
   def initialize(suggestion_id)
     @id, @klass = suggestion_id.split('_')
     @movies = []
@@ -40,31 +44,15 @@ class SuggestionResults
   end
 
   def suggest_genre
-    genre = Genre.includes(:movies).find(@id)
-
-    @header = "Titles in: #{genre.alias}"
-
-    @genres.push(genre)
-
-    @movies.concat(genre.movies)
+    @movies = Genre.includes(:movies).find(@id).movies
   end
 
   def suggest_person
-    person = Person.includes(:movies).select(:id, :name).find(@id)
-
-    @header = "Results for #{person.name} and more fan favorites"
-
-    @people.push(person)
-
-    @movies.concat(person.movies)
+    @movies = Person.includes(:movies).find(@id).movies
   end
 
   def suggest_movie
     movie = Movie.includes(genres: [:movies]).find(@id)
-
-    @header = "Titles related to #{movie.title}"
-
-    @genres = movie.genres.select(:id, :alias)
 
     @movies = [movie].concat(movie.genres.map(&:movies).flatten.uniq)
   end
