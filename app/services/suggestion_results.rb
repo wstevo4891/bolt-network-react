@@ -24,7 +24,7 @@ class SuggestionResults
   end
 
   def call
-    fetch_results
+    @movies = fetch_results
     self
   end
 
@@ -44,16 +44,16 @@ class SuggestionResults
   end
 
   def suggest_genre
-    @movies = Genre.includes(:movies).find(@id).movies
+    Genre.includes(:movies).find(@id).movies
   end
 
   def suggest_person
-    @movies = Person.includes(:movies).find(@id).movies
+    Person.includes(:movies).find(@id).movies
   end
 
   def suggest_movie
     movie = Movie.includes(genres: [:movies]).find(@id)
 
-    @movies = [movie].concat(movie.genres.map(&:movies).flatten.uniq)
+    [movie].concat(movie.genres.map(&:movies).flatten).uniq
   end
 end

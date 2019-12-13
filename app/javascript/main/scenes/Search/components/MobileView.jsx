@@ -17,7 +17,7 @@ const MobileView = (props) => (
         </div>
       </div>
 
-      <Results movies={props.movies} slideLength={props.slideLength} />
+      <Results movies={props.results} slideLength={props.slideLength} />
 
       <div className="row">
         <div className="col-12">

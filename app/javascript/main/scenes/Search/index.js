@@ -16,11 +16,11 @@ class Search extends Component {
   }
 
   render() {
+    const { genres, movies, people } = this.props.search
+    
     const params = this.parseParams()
 
-    console.log(params)
-
-    const { genres, movies, people } = this.props.search
+    const results = this.setResults(params)
 
     return(
       <SearchResults
@@ -28,7 +28,9 @@ class Search extends Component {
         movies={movies}
         people={people}
         params={params}
+        results={results}
         suggestion={this.state.suggestion}
+        suggestionMovies={this.props.suggestions.movies}
         slideLength={this.props.slideLength}
         handleClick={this.handleClick}
       />
@@ -42,6 +44,14 @@ class Search extends Component {
       query: decodeURIComponent(queryString.parse(search).q),
 
       suggestionId: queryString.parse(search).suggestionId
+    }
+  }
+
+  setResults = (params) => {
+    if (params.suggestionId && this.state.suggestion) {
+      return this.props.suggestions.movies
+    } else {
+      return this.props.search.movies
     }
   }
 
@@ -60,6 +70,8 @@ class Search extends Component {
 
     if (params.suggestionId) {
       this.props.dispatch(fetchSuggestions(params))
+    } else {
+      this.setState({ suggestion: null })
     }
   }
 }

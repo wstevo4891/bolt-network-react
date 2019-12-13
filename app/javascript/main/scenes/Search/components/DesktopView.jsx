@@ -29,7 +29,10 @@ const DesktopView = (props) => (
         </div>
       </div>
 
-      <Results movies={props.movies} slideLength={props.slideLength} />
+      <Results
+        movies={props.results}
+        slideLength={props.slideLength}
+      />
     </div>
   </div>
 )
