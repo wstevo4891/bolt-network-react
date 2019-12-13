@@ -18,7 +18,7 @@ class Search extends Component {
   render() {
     const params = this.parseParams()
 
-    console.log(this.props.suggestions)
+    console.log(params)
 
     const { genres, movies, people } = this.props.search
 
@@ -35,10 +35,20 @@ class Search extends Component {
     )
   }
 
-  parseQuery = () => {
+  parseParams = () => {
     const search = this.props.location.search
-    const query = queryString.parse(search).q
-    return decodeURIComponent(query)
+
+    return {
+      query: decodeURIComponent(queryString.parse(search).q),
+
+      suggestionId: queryString.parse(search).suggestionId
+    }
+  }
+
+  handleClick = (event) => {
+    this.setState({
+      suggestion: event.target.text
+    })
   }
 
   componentDidUpdate(prevProps) {
@@ -52,35 +62,6 @@ class Search extends Component {
       this.props.dispatch(fetchSuggestions(params))
     }
   }
-
-  parseParams = () => {
-    const params = {}
-    const search = this.props.location.search
-    params.query = decodeURIComponent(queryString.parse(search).q)
-    params.suggestionId = queryString.parse(search).suggestionId
-    return params
-  }
-
-  handleClick = (event) => {
-    this.setState({
-      suggestion: event.target.text
-    })
-  }
-
-  // fetchSuggestionData = async ({ query, suggestionId }) => {
-  //   try {
-  //     const response = await fetchSuggestions(query, suggestionId)
-
-  //     const data = await response.json()
-
-  //     this.setState({
-  //       suggestionId: suggestionId,
-  //       suggestions: data
-  //     })
-  //   } catch(error) {
-  //     console.error(error)
-  //   }
-  // }
 }
 
 export default connect()(Search)

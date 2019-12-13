@@ -18,11 +18,9 @@ const SuggestionHeader = ({ suggestionId, suggestion }) => {
   const type = suggestionId.split('_')[1]
 
   return(
-    <div className="col-12">
-      <div className="suggestionHeader">
-        <div className="title">
-          {headerText(type, suggestion)}
-        </div>
+    <div className="suggestionHeader">
+      <div className="title">
+        {headerText(type, suggestion)}
       </div>
     </div>
   )

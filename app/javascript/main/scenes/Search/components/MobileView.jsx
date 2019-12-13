@@ -21,16 +21,12 @@ const MobileView = (props) => (
 
       <div className="row">
         <div className="col-12">
-          <div className="suggestions">
-            <span className="suggestionsLabel">Explore titles related to</span>
-
-            <SuggestionsList
-              query={props.params.query}
-              genres={props.genres}
-              movies={props.movies}
-              people={props.people}
-            />
-          </div>
+          <SuggestionsList
+            query={props.params.query}
+            genres={props.genres}
+            movies={props.movies}
+            people={props.people}
+          />
         </div>
       </div>
     </div>
