@@ -10,9 +10,7 @@ import {
 
 // Initial Store State
 const initialState = {
-  genres: [],
   movies: [],
-  people: [],
   loading: false,
   error: null
 }
@@ -35,9 +33,7 @@ export default function suggestionsReducer(state = initialState, action) {
 
       return {
         ...state,
-        genres: genres,
         movies: movies,
-        people: people,
         loading: false
       }
 
@@ -51,9 +47,7 @@ export default function suggestionsReducer(state = initialState, action) {
       // Do whatever seems right for your use case.
       return {
         ...state,
-        genres: [],
         movies: [],
-        people: [],
         loading: false,
         error: action.payload.error
       }

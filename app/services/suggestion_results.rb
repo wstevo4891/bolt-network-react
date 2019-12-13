@@ -10,7 +10,7 @@ class SuggestionResults
     end
   end
 
-  attr_reader :movies, :genres, :people, :header
+  attr_reader :movies
 
   def self.create(suggestion_id)
     new(suggestion_id).call
@@ -19,8 +19,6 @@ class SuggestionResults
   def initialize(suggestion_id)
     @id, @klass = suggestion_id.split('_')
     @movies = []
-    @genres = []
-    @people = []
   end
 
   def call
