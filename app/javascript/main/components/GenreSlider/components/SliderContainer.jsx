@@ -4,10 +4,10 @@ import React, { Component } from 'react'
 
 // Services
 import ContainerStyle from '../services/ContainerStyle'
-import SliderPosterService from '../services/SliderPosterService'
+// import SliderPosterService from '../services/SliderPosterService'
 
 // Components
-import Poster from '../../Poster'
+import PosterFactory from '../../PosterFactory'
 
 export default class SliderContainer extends Component {
   state = {
@@ -19,30 +19,22 @@ export default class SliderContainer extends Component {
   render() {
     const { slides, slideLength, start, next, prev } = this.props
 
-    const slideOver = new ContainerStyle(this.props).call()
-
-    const container = this.containerClass(next, prev)
+    const containerClass = this.containerClass(next, prev)
+    
+    const containerStyle = new ContainerStyle(this.props).call()
 
     return(
       <div className="slider-container">
-        <div className={container} style={slideOver}>
-          {
-            slides.map((slide, index) =>
-              <Poster
-                key={index}
-                index={index}
-                movie={slide}
-                slideLength={slideLength}
-                start={start}
-                next={next}
-                prev={prev}
-                hoverItem={this.state.hoverItem}
-                mouseOver={this.handleMouseOver}
-                mouseLeave={this.handleMouseLeave}
-                service={SliderPosterService}
-              />
-            )
-          }
+        <div className={containerClass} style={containerStyle}>
+          <PosterFactory
+            type="slider"
+            movies={slides}
+            slideLength={slideLength}
+            start={start}
+            hoverItem={this.state.hoverItem}
+            mouseOver={this.handleMouseOver}
+            mouseLeave={this.handleMouseLeave}
+          />
         </div>
       </div>
     )

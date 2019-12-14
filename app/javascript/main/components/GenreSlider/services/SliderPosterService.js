@@ -1,4 +1,11 @@
-// app/javascript/main/scenes/Home/GenreSliders/services/SliderPosterService.js
+// Slider Poster Service
+
+function HoverStyle(value) {
+  this.transform = value || 'translate3d(0px, 0px, 0px)'
+  this.transitionDuration = '400ms'
+  this.transitionTimingFunction = 'cubic-bezier(0.5, 0, 0.1, 1)'
+  this.transitionDelay = '0ms'
+}
 
 export default class SliderPosterService {
   constructor(props) {
@@ -7,90 +14,111 @@ export default class SliderPosterService {
     this.slideLength = props.slideLength
     this.limit = (props.slideLength * 2) + 1
     this.hoverItem = props.hoverItem
-    this.hoverStyle = {
-      transform: 'translate3d(0px, 0px, 0px)',
-      transitionDuration: '400ms',
-      transitionTimingFunction: 'cubic-bezier(0.5, 0, 0.1, 1)',
-      transitionDelay: '0ms'
-    }
   }
 
   containerClass = () => {
-    if (this.start) {
-      if (this.index <= this.slideLength) {
-        return `poster-container slide-item-${this.index}`
-      } else {
-        return 'poster-container slider-item-'
-      }
+    if (this.start && this.index <= this.slideLength) {
 
-    } else {
-      if (this.index >= this.slideLength && this.index <= this.limit) {
-        const diff = this.index - this.slideLength
-        return `poster-container slide-item-${diff}`
+      return `poster-container slide-item-${this.index}`
 
-      } else {
-        return 'poster-container slider-item-'
-      }
-    }
+    } else if (
+      this.index >= this.slideLength &&
+      this.index <= this.limit
+    ) {
+
+      const diff = this.index - this.slideLength
+      return `poster-container slide-item-${diff}`
+
+    } else return 'poster-container slider-item-'
   }
 
+  // containerClass = () => {
+  //   if (this.start) {
+  //     if (this.index <= this.slideLength) {
+  //       return `poster-container slide-item-${this.index}`
+  //     } else {
+  //       return 'poster-container slider-item-'
+  //     }
+
+  //   } else {
+  //     if (this.index >= this.slideLength && this.index <= this.limit) {
+  //       const diff = this.index - this.slideLength
+  //       return `poster-container slide-item-${diff}`
+
+  //     } else {
+  //       return 'poster-container slider-item-'
+  //     }
+  //   }
+  // }
+
   posterStyle = () => {
-    if (this.hoverItem === null) return this.hoverStyle
+    if (this.hoverItem === null) return new HoverStyle()
 
     this.translateX = this.calcTranslateX()
+
     this.hover = this.start ? this.hoverItem : this.hoverItem + this.slideLength
+
     this.end = this.start ? this.slideLength : this.limit
 
-    return this.buildPosterStyle()
+    const transformValue = this.posterTransform()
+
+    return new HoverStyle(transformValue)
   }
 
   calcTranslateX = () => {
-    const width = document
-                    .getElementsByClassName('poster-container')[0]
-                    .clientWidth
+    const posters = document.getElementsByClassName('poster-container')
+
+    const width = posters[0].clientWidth
 
     return Math.round(width * 0.38)
   }
 
-  buildPosterStyle = () => {
+  posterTransform = () => {
     if (this.index < this.hover) {
-      if (this.start === false && this.hover === this.slideLength + 1) return this.hoverStyle
+      if (
+        this.start === false &&
+        this.hover === this.slideLength + 1
+      ) return null
   
-      this.hoverStyle.transform = this.negativeTranslate()
+      return this.negativeTranslate()
   
     } else if (this.index === this.hover) {
-      this.currentPositionStyle()
+      return this.currentPositionStyle()
   
     } else if (this.index > this.hover) {
-      if (this.hover === this.end - 1) return this.hoverStyle
+      if (this.hover === this.end - 1) return null
   
-      this.afterHoverStyle()
+      return this.afterHoverStyle()
     }
-  
-    return this.hoverStyle
   }
   
   currentPositionStyle = () => {
-    if ((this.start && this.index === 0) || this.index === this.slideLength + 1) {
+    if (
+      (this.start && this.index === 0) ||
+      this.index === this.slideLength + 1
+    ) {
       const translateHalf = Math.floor((this.translateX / 2) + 5)
-      this.hoverStyle.transform = this.translate3D(translateHalf, true)
+
+      return this.translate3D(translateHalf, true)
   
     } else if (this.index === this.end - 1) {
+
       const translateHalf = Math.floor((this.translateX / 2) + 8)
-      this.hoverStyle.transform = this.translate3D(-translateHalf, true)
+
+      return this.translate3D(-translateHalf, true)
   
     } else {
-      this.hoverStyle.transform = this.translate3D(0, true)
+      return this.translate3D(0, true)
     }
   }
   
   afterHoverStyle = () => {
-    if ((this.start && this.hover === 0) || this.hover === this.slideLength + 1) {
-      this.hoverStyle.transform = this.translate3D(this.translateX * 2)
+    if (
+      (this.start && this.hover === 0) ||
+      this.hover === this.slideLength + 1
+    ) return this.translate3D(this.translateX * 2)
   
-    } else {
-      this.hoverStyle.transform = this.translate3D(this.translateX)
-    }
+    return this.translate3D(this.translateX)
   }
 
   negativeTranslate = () => {

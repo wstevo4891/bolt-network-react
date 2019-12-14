@@ -6,16 +6,17 @@ import PosterRow from './components/PosterRow'
 import StaticSlides from './services/StaticSlides'
 
 const Results = ({ movies, slideLength }) => {
-  const slides = new StaticSlides(movies, slideLength).call()
 
-  const resultsCol = {
-    marginBottom: '5.5vw'
-  }
+  const slides = new StaticSlides(movies, slideLength).call()
 
   return(
     <div className="row">
       {slides.map((slide, index) =>
-        <div key={index} className="col-12" style={resultsCol}>
+        <div
+          key={index}
+          className="col-12"
+          style={{ marginBottom: '5.5vw' }}
+        >
           <PosterRow movies={slide} slideLength={slideLength} />
         </div>
       )}

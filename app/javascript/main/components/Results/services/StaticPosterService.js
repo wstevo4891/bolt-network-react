@@ -1,17 +1,18 @@
-// app/javascript/main/scenes/services/StaticPosterService.js
+// Static Poster Service
+
+function HoverStyle(value) {
+  this.transform = value || 'translate3d(0px, 0px, 0px)'
+  this.transitionDuration = '400ms'
+  this.transitionTimingFunction = 'cubic-bezier(0.5, 0, 0.1, 1)'
+  this.transitionDelay = '0ms'
+}
 
 export default class StaticPosterService {
   constructor(props) {
-    this.index = props.index;
-    this.slideLength = props.slideLength;
-    this.end = props.slideLength - 1;
-    this.hoverItem = props.hoverItem;
-    this.hoverStyle = {
-      transform: 'translate3d(0px, 0px, 0px)',
-      transitionDuration: '400ms',
-      transitionTimingFunction: 'cubic-bezier(0.5, 0, 0.1, 1)',
-      transitionDelay: '0ms'
-    };
+    this.index = props.index
+    this.slideLength = props.slideLength
+    this.end = props.slideLength - 1
+    this.hoverItem = props.hoverItem
   }
 
   containerClass = () => {
@@ -19,68 +20,69 @@ export default class StaticPosterService {
   }
 
   posterStyle = () => {
-    if (this.hoverItem === null) return this.hoverStyle;
+    if (this.hoverItem === null) return new HoverStyle()
 
-    this.translateX = this.calcTranslateX();
+    this.translateX = this.calcTranslateX()
 
-    return this.buildPosterStyle();
+    const transformValue = this.posterTransform()
+
+    return new HoverStyle(transformValue)
   }
 
   calcTranslateX = () => {
-    const width = document.getElementsByClassName('poster-container')[0].clientWidth;
-    return Math.round(width * 0.38);
+    const posters = document.getElementsByClassName('poster-container')
+    const width = posters[0].clientWidth
+    return Math.round(width * 0.38)
   }
 
-  buildPosterStyle = () => {
+  posterTransform = () => {
     if (this.index < this.hoverItem) {  
-      this.hoverStyle.transform = this.negativeTranslate()
+      return this.negativeTranslate()
   
     } else if (this.index === this.hoverItem) {
-      this.currentPositionStyle();
+      return this.currentPositionStyle()
   
     } else if (this.index > this.hoverItem) {  
-      this.afterHoverStyle();
+      return this.afterHoverStyle()
     }
-  
-    return this.hoverStyle;
   }
   
   currentPositionStyle = () => {
     if (this.index === 0) {
-      const translateHalf = Math.floor((this.translateX / 2) + 5);
-      this.hoverStyle.transform = this.translate3D(translateHalf, true);
+      const translateHalf = Math.floor((this.translateX / 2) + 5)
+      return this.translate3D(translateHalf, true)
   
     } else if (this.index === this.end) {
       const translateHalf = Math.floor((this.translateX / 2) + 8);
-      this.hoverStyle.transform = this.translate3D(-translateHalf, true);
+      return this.translate3D(-translateHalf, true)
   
     } else {
-      this.hoverStyle.transform = this.translate3D(0, true);
+      return this.translate3D(0, true)
     }
   }
   
   afterHoverStyle = () => {
     if (this.hoverItem === 0 || this.hoverItem === this.end) {
-      this.hoverStyle.transform = this.translate3D(this.translateX * 2);
+      return this.translate3D(this.translateX * 2)
   
     } else {
-      this.hoverStyle.transform = this.translate3D(this.translateX);
+      return this.translate3D(this.translateX)
     }
   }
 
   negativeTranslate = () => {
     if (this.hoverItem === this.end) {
-      return this.translate3D(-this.translateX * 2);
+      return this.translate3D(-this.translateX * 2)
     } else {
-      return this.translate3D(-this.translateX);
+      return this.translate3D(-this.translateX)
     }
   }
 
   translate3D = (x, scale = false) => {
     if (scale) {
-      return `scale(1.75) translate3d(${x}px, 0px, 0px)`;
+      return `scale(1.75) translate3d(${x}px, 0px, 0px)`
     } else {
-      return `translate3d(${x}px, 0px, 0px)`;
+      return `translate3d(${x}px, 0px, 0px)`
     }
   }
 }

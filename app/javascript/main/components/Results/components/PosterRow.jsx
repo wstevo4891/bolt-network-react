@@ -2,8 +2,7 @@
 
 import React, { Component } from 'react'
 
-import Poster from '../../Poster'
-import StaticPosterService from '../services/StaticPosterService'
+import PosterFactory from '../../PosterFactory'
 
 export default class PosterRow extends Component {
   state = {
@@ -17,24 +16,18 @@ export default class PosterRow extends Component {
 
     if (movies.length === 0) return null
 
-    return (
+    return(
       <div className="sliderContent">
-        {
-          movies.map((movie, index) =>
-            <Poster
-              key={index}
-              index={index}
-              movie={movie}
-              slideLength={slideLength}
-              hoverItem={this.state.hoverItem}
-              mouseOver={this.handleMouseOver}
-              mouseLeave={this.handleMouseLeave}
-              service={StaticPosterService}
-            />
-          )
-        }
+        <PosterFactory
+          type="static"
+          movies={movies}
+          slideLength={slideLength}
+          hoverItem={this.state.hoverItem}
+          mouseOver={this.handleMouseOver}
+          mouseLeave={this.handleMouseLeave}
+        />
       </div>
-    );
+    )
   }
 
   handleMouseOver = (event) => {
