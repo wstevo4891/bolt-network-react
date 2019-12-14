@@ -34,8 +34,6 @@ export const resetSuggestions = () => ({
 // API Actions
 // ========================================================
 export function fetchSuggestions({ query, suggestionId }) {
-  console.log('Fetching Suggestions')
-
   return async dispatch => {
     try {
       dispatch(fetchSuggestionsBegin())

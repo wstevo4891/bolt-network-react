@@ -66,8 +66,6 @@ class Search extends Component {
 
     const params = this.parseParams()
 
-    console.log(params.suggestionId)
-
     if (params.suggestionId) {
       this.props.dispatch(fetchSuggestions(params))
     } else {
