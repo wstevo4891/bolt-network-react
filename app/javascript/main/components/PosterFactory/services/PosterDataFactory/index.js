@@ -1,10 +1,10 @@
 // Poster Data Service
 
-import PosterParamsFactory from './PosterParamsFactory'
+import PosterParamsFactory from './services/PosterParamsFactory'
 
-import ContainerFactory from './ContainerFactory'
+import ContainerFactory from './services/ContainerFactory'
 
-import HoverStyleFactory from './HoverStyleFactory'
+import HoverStyleFactory from './services/HoverStyleFactory'
 
 function PosterData(movie, hoverItem) {
   this.movie = movie

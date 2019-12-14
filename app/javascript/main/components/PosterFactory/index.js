@@ -4,7 +4,7 @@
 
 import React from 'react'
 
-import PosterDataFactory from './services/PosterDataFactory'
+import PosterDataFactory from './services/PosterDataFactory/index'
 
 import Poster from '../Poster'
 
