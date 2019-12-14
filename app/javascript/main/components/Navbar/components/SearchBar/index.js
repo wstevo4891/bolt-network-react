@@ -16,7 +16,7 @@ class SearchBar extends Component {
   // When we click on the hour glass button, we'll hide it,
   // render the searchInput div, and animate its width to 270px.
   render() {
-    const { history } = this.props
+    const { history, handleInputClick } = this.props
     const { display, location, queryExists } = this.state
 
     const boxClass = display ? 'searchBox d-none' : 'searchBox'
@@ -40,6 +40,7 @@ class SearchBar extends Component {
             queryExists={queryExists}
             hideDisplay={this.hideDisplay}
             handleKeyUp={this.handleKeyUp}
+            handleInputClick={handleInputClick}
           />
         </div>
       </li>

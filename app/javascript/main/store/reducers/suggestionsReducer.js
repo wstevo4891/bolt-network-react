@@ -5,7 +5,8 @@
 import {
   FETCH_SUGGESTIONS_BEGIN,
   FETCH_SUGGESTIONS_SUCCESS,
-  FETCH_SUGGESTIONS_FAILURE
+  FETCH_SUGGESTIONS_FAILURE,
+  RESET_SUGGESTIONS
 } from '../types/suggestionsTypes'
 
 // Initial Store State
@@ -29,7 +30,7 @@ export default function suggestionsReducer(state = initialState, action) {
     case FETCH_SUGGESTIONS_SUCCESS:
       // All done: set loading "false".
       // Also, replace the items with the ones from the server
-      const { genres, movies, people } = action.payload.suggestions
+      const { movies } = action.payload.suggestions
 
       return {
         ...state,
@@ -50,6 +51,13 @@ export default function suggestionsReducer(state = initialState, action) {
         movies: [],
         loading: false,
         error: action.payload.error
+      }
+
+    case RESET_SUGGESTIONS:
+      return {
+        movies: [],
+        loading: false,
+        error: null
       }
 
     default:

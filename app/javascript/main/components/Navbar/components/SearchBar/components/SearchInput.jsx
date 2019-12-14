@@ -12,6 +12,7 @@ const SearchInput = (props) => (
     placeholder={props.placeholder}
     aria-label={props.placeholder}
     onKeyUp={(event) => props.handleKeyUp(event)}
+    onClick={(event) => props.handleClick(event)}
   />
 )
 

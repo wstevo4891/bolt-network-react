@@ -18,7 +18,7 @@ class InputDisplayPlus extends Component {
   render() {
     if (this.props.display === false) return null
 
-    const { queryExists, handleKeyUp } = this.props
+    const { queryExists, handleKeyUp, handleInputClick } = this.props
 
     return(
       <div id="searchInput" style={{ width: 0 }}>
@@ -28,15 +28,32 @@ class InputDisplayPlus extends Component {
           <SearchInput
             placeholder="Titles, people, genres"
             handleKeyUp={handleKeyUp}
+            handleClick={handleInputClick}
           />
         </div>
 
         <SearchClose
           query={queryExists}
-          handleClick={this.handleClick}
+          handleClick={this.handleCloseClick}
         />
       </div>
     )
+  }
+
+  handleCloseClick = () => {
+    const { history, location } = this.props
+    document.getElementById('search').value = ''
+    
+    if (location === '/search') {
+      history.push('/')
+    } else {
+      history.push(location)
+    }
+  }
+
+  componentDidMount() {
+    // Add the event listener that hides the search bar
+    document.addEventListener('mouseup', this.handleMouseUp)
   }
 
   handleMouseUp = (event) => {
@@ -61,22 +78,6 @@ class InputDisplayPlus extends Component {
     setTimeout(() => {
       this.props.hideDisplay()
     }, 400)
-  }
-
-  handleClick = () => {
-    const { history, location } = this.props
-    document.getElementById('search').value = ''
-    
-    if (location === '/search') {
-      history.push('/')
-    } else {
-      history.push(location)
-    }
-  }
-
-  componentDidMount() {
-    // Add the event listener that hides the search bar
-    document.addEventListener('mouseup', this.handleMouseUp)
   }
 
   componentDidUpdate() {

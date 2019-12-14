@@ -9,7 +9,7 @@ import SearchBar from './SearchBar'
 
 const NavCollapse = (props) => {
   const path = props.location.pathname
-  const { genreLinks, history, fetchSearchResults } = props
+  const { genreLinks, history } = props
 
   return(
     <div className="collapse navbar-collapse" id="navbarContent">
@@ -48,7 +48,8 @@ const NavCollapse = (props) => {
         <SearchBar
           location={path}
           history={history}
-          fetchSearchResults={fetchSearchResults}
+          fetchSearchResults={props.fetchSearchResults}
+          handleInputClick={props.handleInputClick}
         />
       </ul>
     </div>

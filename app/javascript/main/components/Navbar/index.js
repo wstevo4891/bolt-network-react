@@ -15,6 +15,8 @@ import logo from './images/bolt-network.svg'
 
 import { fetchSearchResults } from '../../store/actions/searchActions'
 
+import { resetSuggestions } from '../../store/actions/suggestionsActions'
+
 class Navbar extends Component {
   state = {
     location: this.props.location.pathname,
@@ -39,6 +41,7 @@ class Navbar extends Component {
           {...this.props}
           genreLinks={genreLinks}
           fetchSearchResults={fetchSearchResults}
+          handleInputClick={this.handleInputClick}
         />
 
         <div id="mobileSearchInput">
@@ -46,6 +49,7 @@ class Navbar extends Component {
             <SearchInput
               placeholder="Search"
               handleKeyUp={this.handleKeyUp}
+              handleClick={this.handleInputClick}
             />
           </div>
         </div>
@@ -72,6 +76,14 @@ class Navbar extends Component {
     this.updateLocation(query)
 
     this.props.dispatch(fetchSearchResults(query))
+  }
+
+  handleInputClick = (event) => {
+    const query = event.target.value
+
+    this.updateLocation(query)
+
+    this.props.dispatch(resetSuggestions())
   }
 
   updateLocation = (query) => {
