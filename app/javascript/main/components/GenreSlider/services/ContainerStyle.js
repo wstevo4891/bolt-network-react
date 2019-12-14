@@ -1,19 +1,20 @@
 // Service for building translate3d container style
 // for slides container
 
+const TRANSFORMATIONS = {
+  2: -150,
+  3: -133.33333333333334,
+  4: -125,
+  5: -120,
+  6: -116.66666666666667
+}
+
 export default class ContainerStyle {
   constructor(props) {
     this.slideLength = props.slideLength
     this.start = props.start
     this.next = props.next
     this.prev = props.prev
-    this.transformations = {
-      2: -150,
-      3: -133.33333333333334,
-      4: -125,
-      5: -120,
-      6: -116.66666666666667
-    }
   }
 
   call = () => {
@@ -33,7 +34,7 @@ export default class ContainerStyle {
   }
 
   transformStyle = () => {
-    const translateX = this.transformations[this.slideLength]
+    const translateX = TRANSFORMATIONS[this.slideLength]
 
     if (this.next) {
       return this.translate3D(translateX - 100)
