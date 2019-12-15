@@ -17,7 +17,7 @@ export default class ContainerStyle {
     this.prev = props.prev
   }
 
-  call = () => {
+  call() {
     if (this.start) {
       return this.startStyle()
     } else {
@@ -25,7 +25,7 @@ export default class ContainerStyle {
     }
   }
 
-  startStyle = () => {
+  startStyle() {
     if (this.next) {
       return this.translate3D(-100)
     } else {
@@ -33,7 +33,7 @@ export default class ContainerStyle {
     }
   }
 
-  transformStyle = () => {
+  transformStyle() {
     const translateX = TRANSFORMATIONS[this.slideLength]
 
     if (this.next) {
@@ -47,7 +47,7 @@ export default class ContainerStyle {
     }
   }
 
-  translate3D = (x) => {
+  translate3D(x) {
     return { transform: `translate3d(${x}%, 0px, 0px)` }
   }
 }

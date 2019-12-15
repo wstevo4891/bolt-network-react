@@ -9,7 +9,7 @@ export default class LinkedList {
     this.tail = null
   }
 
-  add = (value) => {
+  add(value) {
     const node = new Node(value)
 
     if (this._length > 0) {
@@ -26,13 +26,13 @@ export default class LinkedList {
     return node
   }
 
-  checkPosition = (position) => {
+  checkPosition(position) {
     if (this._length === 0 || position < 1 || position > this._length) {
       throw new Error('Failure: non-existent node in this list.')
     }
   }
 
-  searchNodeAt = (position) => {
+  searchNodeAt(position) {
     // 1st use-case: an invalid position
     this.checkPosition();
 

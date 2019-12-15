@@ -21,12 +21,12 @@ export default class PosterControls extends Component {
   }
 
   render() {
-    const { slideItem, hoverItem, movie } = this.props
     const liked = this.state.liked
+    if (liked === undefined) return null
+    
+    const { slideItem, hoverItem, movie } = this.props
 
     if (hoverItem !== slideItem) return <span></span>
-
-    if (liked === undefined) return null
 
     return(
       <span>

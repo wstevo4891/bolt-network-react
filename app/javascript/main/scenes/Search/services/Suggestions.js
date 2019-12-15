@@ -8,13 +8,13 @@ export default class Suggestions {
     this.movies = props.movies.slice(0, 6)
   }
 
-  call = () => {
+  call() {
     return this.genreLinks()
       .concat(this.peopleLinks())
       .concat(this.movieLinks())
   }
 
-  genreLinks = () => {
+  genreLinks() {
     if (this.genres.length === 0) return []
 
     return this.genres.map(genre => {
@@ -25,7 +25,7 @@ export default class Suggestions {
     })
   }
 
-  peopleLinks = () => {
+  peopleLinks() {
     if (this.people.length === 0) return []
 
     return this.people.map(person => {
@@ -36,7 +36,7 @@ export default class Suggestions {
     })
   }
 
-  movieLinks = () => {
+  movieLinks() {
     if (this.movies.length === 0) return []
 
     return this.movies.map(movie => {

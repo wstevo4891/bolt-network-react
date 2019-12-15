@@ -29,7 +29,7 @@ export default class MoviesList {
     this.list = new LinkedList()
   }
 
-  sliceMovies = (movies) => {
+  sliceMovies(movies) {
     if (this.slideLength === 6) return movies
 
     const lastIndex = LENGTH_MAP[this.slideLength]
@@ -37,7 +37,7 @@ export default class MoviesList {
     return movies.slice(0, lastIndex)
   }
 
-  call = () => {
+  call() {
     if (this.movies === null || this.movies.length <= 1) return []
 
     this.buildList()
@@ -45,7 +45,7 @@ export default class MoviesList {
     return this.list
   }
 
-  buildList = () => {
+  buildList() {
     let slideCount = 0
     let slide = []
 

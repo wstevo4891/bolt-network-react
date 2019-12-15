@@ -6,7 +6,7 @@ export default class LikeButtonService {
     this.list = JSON.parse(sessionStorage.getItem('LikedList'))
   }
 
-  add = () => {
+  add() {
     if (this.list === null) this.list = []
 
     const found = this.findMovie()
@@ -19,7 +19,7 @@ export default class LikeButtonService {
     }
   }
 
-  remove = () => {
+  remove() {
     for (let item of this.list) {
       if (item.id === this.movie.id) {
         const index = this.list.indexOf(item)
@@ -36,7 +36,7 @@ export default class LikeButtonService {
     return true
   }
 
-  findMovie = () => {
+  findMovie() {
     if (this.list === null || this.list.length === 0) return false
 
     let found = false
@@ -50,7 +50,7 @@ export default class LikeButtonService {
     return found
   }
 
-  addToList = () => {
+  addToList() {
     this.list.push(this.movie)
 
     sessionStorage.setItem('LikedList', JSON.stringify(this.list))

@@ -7,7 +7,7 @@ export default class Node {
     this.next = null
   }
 
-  last = () => {
+  last() {
     return this.data[this.data.length - 1]
   }
 }

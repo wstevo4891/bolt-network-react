@@ -6,15 +6,13 @@ export default class MyListService {
     this.list = this.setList()
   }
 
-  setList = () => {
+  setList() {
     const list = JSON.parse(sessionStorage.getItem('MyList'))
-
-    if (list === null) return {}
     
-    return list
+    return list === null ? {} : list
   }
 
-  add = () => {
+  add() {
     this.list[this.movie.id] = this.movie
 
     sessionStorage.setItem('MyList', JSON.stringify(this.list))
@@ -24,7 +22,7 @@ export default class MyListService {
     return true
   }
 
-  remove = () => {
+  remove() {
     delete this.list[this.movie.id]
 
     sessionStorage.setItem('MyList', JSON.stringify(this.list))
@@ -34,7 +32,7 @@ export default class MyListService {
     return true
   }
 
-  findMovie = () => {
+  findMovie() {
     return this.list[this.movie.id] ? true : false
   }
 }

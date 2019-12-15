@@ -16,7 +16,7 @@ export default class SlidesArray {
     this.slides = []
   }
 
-  call = () => {
+  call() {
     if (this.start) {
       this.startSlides()
     } else {
@@ -26,7 +26,7 @@ export default class SlidesArray {
     return this.slides
   }
 
-  startSlides = () => {
+  startSlides() {
     let current = this.list.head
     let count = 0
 
@@ -39,7 +39,7 @@ export default class SlidesArray {
     this.slides.push(current.data[0])
   }
 
-  nextSlides = () => {
+  nextSlides() {
     if (this.position === 1) {
       this.addSlides(this.list.tail)
 
@@ -51,7 +51,7 @@ export default class SlidesArray {
     }
   }
 
-  addSlides = (current) => {
+  addSlides(current) {
     const leftEnd = current.previous || this.list.tail
     let count = 0
 
@@ -66,7 +66,7 @@ export default class SlidesArray {
     this.slides.push(current.data[0])
   }
 
-  midPositionSlides = () => {
+  midPositionSlides() {
     let current = this.list.searchNodeAt(this.position)
 
     current = current.previous || this.list.tail

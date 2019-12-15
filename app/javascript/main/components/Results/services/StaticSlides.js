@@ -7,7 +7,7 @@ export default class StaticSlides {
     this.slides = []
   }
 
-  call = () => {
+  call() {
     if (this.movies === null || this.movies.length === 0) return []
 
     this.buildSlides()
@@ -15,7 +15,7 @@ export default class StaticSlides {
     return this.slides
   }
 
-  buildSlides = () => {
+  buildSlides() {
     let i = 0
     let len = this.movies.length
 
