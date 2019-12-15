@@ -1,6 +1,6 @@
 // PosterStyle Factory
 
-import TranslateCalculator from './TranslateCalculator'
+import TranslateCalculatorFactory from './TranslateCalculatorFactory'
 
 function HoverStyle(translateValue) {
   this.transform = translateValue || 'translate3d(0px, 0px, 0px)'
@@ -12,10 +12,10 @@ function HoverStyle(translateValue) {
 export default class HoverStyleFactory {
   constructor(params) {
     this.hoverItem = params.hoverItem
-    this.calculator = TranslateCalculator.build(params)
+    this.calculator = TranslateCalculatorFactory.build(params)
   }
 
-  build = (index) => {
+  build(index) {
     if (this.hoverItem === null) return new HoverStyle()
 
     const translateValue = this.calculator.call(index)

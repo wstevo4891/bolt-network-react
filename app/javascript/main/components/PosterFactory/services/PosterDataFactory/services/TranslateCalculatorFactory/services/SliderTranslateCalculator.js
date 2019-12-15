@@ -11,32 +11,28 @@ class SliderTranslateCalculator extends TranslateCalculator {
     this.hover = this.start ? this.hoverItem : this.hoverItem + this.slideLength
   }
 
-  call = (index) => {
-    this.index = index
-
-    return this.calculate()
-  }
-
-  calculate = () => {
-    if (this.index < this.hover) {
-      if (
-        this.start === false &&
-        this.hover === this.slideLength + 1
-      ) return null
+  call(index) {
+    if (index < this.hover) {
+      return this.beforeHoverTranslate()
   
-      return this.negativeTranslate()
+    } else if (index === this.hover) {
+      return this.currentPositionTranslate(index)
   
-    } else if (this.index === this.hover) {
-      return this.currentPositionTranslate()
-  
-    } else if (this.index > this.hover) {
-      if (this.hover === this.end - 1) return null
-  
+    } else if (index > this.hover) {
       return this.afterHoverTranslate()
     }
   }
 
-  negativeTranslate = () => {
+  beforeHoverTranslate() {
+    if (
+      this.start === false &&
+      this.hover === this.slideLength + 1
+    ) return null
+
+    return this.negativeTranslate()
+  }
+
+  negativeTranslate() {
     if (this.hover === this.end - 1) {
       return this.translate3D(-this.translateX * 2)
     } else {
@@ -44,31 +40,35 @@ class SliderTranslateCalculator extends TranslateCalculator {
     }
   }
   
-  currentPositionTranslate = () => {
-    const translate = this.calcCurrentTranslate()
+  currentPositionTranslate(index) {
+    const translate = this.calcCurrentTranslate(index)
 
     return this.translate3D(translate, true)
   }
 
-  calcCurrentTranslate = () => {
+  calcCurrentTranslate(index) {
     if (
-      (this.start && this.index === 0) ||
-      this.index === this.slideLength + 1
+      (this.start && index === 0) ||
+      index === this.slideLength + 1
     ) {
       return Math.floor((this.translateX / 2) + 5)
   
-    } else if (this.index === this.end - 1) {
+    } else if (index === this.end - 1) {
 
       return -Math.floor((this.translateX / 2) + 8)
   
     } else return 0
   }
   
-  afterHoverTranslate = () => {
+  afterHoverTranslate() {
+    if (this.hover === this.end - 1) return null
+
     if (
       (this.start && this.hover === 0) ||
       this.hover === this.slideLength + 1
-    ) return this.translate3D(this.translateX * 2)
+    ) {
+      return this.translate3D(this.translateX * 2)
+    }
   
     return this.translate3D(this.translateX)
   }

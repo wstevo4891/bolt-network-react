@@ -7,7 +7,7 @@ export default class TranslateCalculator {
     this.translateX = this.calcTranslateX()
   }
 
-  calcTranslateX = () => {
+  calcTranslateX() {
     const posters = document.getElementsByClassName('poster-container')
 
     if (posters.length === 0) return 0
@@ -17,7 +17,7 @@ export default class TranslateCalculator {
     return Math.round(width * 0.38)
   }
 
-  translate3D = (x, scale = false) => {
+  translate3D(x, scale = false) {
     if (scale) {
       return `scale(1.75) translate3d(${x}px, 0px, 0px)`
     } else {

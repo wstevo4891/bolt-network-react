@@ -10,13 +10,11 @@ import Poster from '../Poster'
 
 export default function PosterFactory(props) {
 
-  const factory = new PosterDataFactory(props)
-
-  console.log(factory)
+  const dataFactory = new PosterDataFactory(props)
 
   return props.movies.map((movie, index) => {
 
-    const posterData = factory.build(movie, index)
+    const posterData = dataFactory.build(movie, index)
 
     return(
       <Poster

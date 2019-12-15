@@ -5,7 +5,7 @@ export default class ContainerFactory {
     this.params = params
   }
 
-  call = index => {
+  build(index) {
     if (this.params.type === 'static') {
       return `poster-container slide-item-${index}`
 
@@ -14,7 +14,7 @@ export default class ContainerFactory {
     }
   }
 
-  sliderPosterContainer = index => {
+  sliderPosterContainer(index) {
     const { start, slideLength, limit } = this.params
 
     if (start) {

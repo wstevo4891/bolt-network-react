@@ -39,7 +39,7 @@ export default class PosterDataFactory {
   build(movie, index) {
     const data = new PosterData(movie, this.hoverItem)
 
-    const container = this.containerFactory.call(index)
+    const container = this.containerFactory.build(index)
 
     data.addContainerClass(container)
 

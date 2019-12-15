@@ -4,7 +4,7 @@ import SliderTranslateCalculator from './services/SliderTranslateCalculator'
 
 import StaticTranslateCalculator from './services/StaticTranslateCalculator'
 
-export default class TranslateCalculator {
+export default class TranslateCalculatorFactory {
   /**
    * Static factory function that returns the correct
    * type of TranslateCalculator class
