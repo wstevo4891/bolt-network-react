@@ -6,19 +6,21 @@ import { Link } from 'react-router-dom'
 // Components
 import MyListButton from '../../MyListButton'
 
+function BannerImage(movie) {
+  this.backgroundImage = `url(${movie.banner.url})`
+  this.backgroundRepeat = 'no-repeat'
+  this.backgroundPosition = 'center'
+  this.backgroundSize = 'cover'
+  this.height = '100%'
+}
+
 const MovieBanner = ({ movie }) => {
 
-  const slideImage = {
-    backgroundImage: `url(${movie.banner.url})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
-    height: '100%'
-  }
+  const bannerImage = new BannerImage(movie)
 
   return(
     <div className="banner">
-      <div style={slideImage}>
+      <div style={bannerImage}>
         <div className="slide-info d-none d-sm-block">
           <img
             src={movie.logo.url}

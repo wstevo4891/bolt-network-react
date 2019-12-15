@@ -70,7 +70,7 @@ describe('moviesIndexActions', () => {
       })
     })
 
-    it('creates FETCH_MOVIES_INDEX_FAILURE when fetch throws an error', () => {
+    it('creates failure action when fetch throws an error', () => {
       fetchMock.getOnce(actions.URI, { throws: moviesIndexError })
 
       const expectedActions = [

@@ -12,6 +12,8 @@ export default function PosterFactory(props) {
 
   const factory = new PosterDataFactory(props)
 
+  console.log(factory)
+
   return props.movies.map((movie, index) => {
 
     const posterData = factory.build(movie, index)
