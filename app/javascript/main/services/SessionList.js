@@ -1,4 +1,4 @@
-// app\javascript\main\components\Poster\services\SessionListService.js
+// app\javascript\main\services\SessionList.js
 
 /**
  * @class SessionListService
@@ -44,21 +44,3 @@ export default class SessionList {
     console.log(`Movie was removed from ${this.listName}`)
   }
 }
-
-// export class LikedList extends SessionList {
-//   constructor(movie) {
-//     super(movie, 'LikedList')
-//   }
-// }
-
-// export class UnlikedList extends SessionList {
-//   constructor(movie) {
-//     super(movie, 'UnlikedList')
-//   }
-// }
-
-// export class MyList extends SessionList {
-//   constructor(movie) {
-//     super(movie, 'MyList')
-//   }
-// }

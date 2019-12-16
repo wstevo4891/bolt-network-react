@@ -3,8 +3,7 @@
 import React, { Component } from 'react'
 
 // Services
-import LikeButtonService from '../services/LikeButtonService'
-import UnlikeButtonService from '../services/UnlikeButtonService'
+import SessionList from '../../../services/SessionList'
 
 // Components
 import MovieInfo from './MovieInfo'
@@ -17,6 +16,8 @@ import MyListButton from '../../MyListButton'
 
 export default class PosterControls extends Component {
   state = {
+    likedList: new SessionList(this.props.movie, 'LikedList'),
+    unlikedList: new SessionList(this.props.movie, 'UnlikedList'),
     liked: undefined
   }
 
@@ -24,9 +25,7 @@ export default class PosterControls extends Component {
     const liked = this.state.liked
     if (liked === undefined) return null
     
-    const { slideItem, hoverItem, movie } = this.props
-
-    if (hoverItem !== slideItem) return <span></span>
+    const { hoverItem, movie } = this.props
 
     return(
       <span>
@@ -44,7 +43,6 @@ export default class PosterControls extends Component {
 
             <UnlikeButton
               liked={liked}
-              movie={movie}
               toggleUnlike={this.toggleUnlike}
             />
 
@@ -56,20 +54,20 @@ export default class PosterControls extends Component {
   }
 
   componentDidMount() {
-    const movie = this.props.movie
-    const foundLike = new LikeButtonService(movie).findMovie()
-    const foundUnlike = new UnlikeButtonService(movie).findMovie()
+    const likeState = this.getLikeState()
 
     this.setState({
-      liked: this.determineLike(foundLike, foundUnlike)
+      liked: likeState
     })
   }
 
-  determineLike = (like, unlike) => {
-    if (like === true) {
+  getLikeState = () => {
+    const { likedList, unlikedList } = this.state
+
+    if (likedList.findMovie()) {
       return true
 
-    } else if (unlike === true) {
+    } else if (unlikedList.findMovie()) {
       return false
 
     } else {
@@ -77,16 +75,18 @@ export default class PosterControls extends Component {
     }
   }
 
-  toggleLike = (likeState, movie) => {
-    if (likeState === true) {
-      new LikeButtonService(movie).remove()
+  toggleLike = () => {
+    const { likedList, liked } = this.state
+
+    if (liked === true) {
+      likedList.remove()
 
       this.setState({
         liked: null
       })
 
     } else {
-      new LikeButtonService(movie).add()
+      likedList.add()
 
       this.setState({
         liked: true
@@ -94,16 +94,18 @@ export default class PosterControls extends Component {
     }
   }
 
-  toggleUnlike = (likeState, movie) => {
-    if (likeState === false) {
-      new UnlikeButtonService(movie).remove()
+  toggleUnlike = () => {
+    const { unlikedList, liked } = this.state
+
+    if (liked === false) {
+      unlikedList.remove()
 
       this.setState({
         liked: null
       })
 
     } else {
-      new UnlikeButtonService(movie).add()
+      unlikedList.add()
 
       this.setState({
         liked: false

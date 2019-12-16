@@ -1,39 +1,33 @@
 // app/javascript/main/scenes/components/LikeButton.jsx
 
-import React, { Component } from 'react'
+import React from 'react'
 
-class LikeButton extends Component {
-  render() {
-    const { liked, movie, toggleLike } = this.props
+const buttonClass = (liked) => {
+  if (liked === null) {
+    return 'poster-btn poster-btn-like static'
+  
+  } else if (liked === true) {
+    return 'poster-btn poster-btn-like move-down-selected'
 
-    return(
-      <li className={this.buttonClass(liked)}>
-        <button onClick={() => toggleLike(liked, movie)}>
-          <i className={this.iconClass(liked)}></i>
-        </button>
-      </li>
-    )
-  }
-
-  buttonClass = (liked) => {
-    if (liked === null) {
-      return 'poster-btn poster-btn-like static'
-    
-    } else if (liked === true) {
-      return 'poster-btn poster-btn-like move-down-selected'
-
-    } else if (liked === false) {
-      return 'poster-btn poster-btn-like hidden'
-    }
-  }
-
-  iconClass = (liked) => {
-    if (liked) {
-      return 'fa fa-thumbs-up'
-    } else {
-      return 'fa fa-thumbs-o-up'
-    }
+  } else if (liked === false) {
+    return 'poster-btn poster-btn-like hidden'
   }
 }
+
+const iconClass = (liked) => {
+  if (liked) {
+    return 'fa fa-thumbs-up'
+  } else {
+    return 'fa fa-thumbs-o-up'
+  }
+}
+
+const LikeButton = ({ liked, toggleLike }) => (
+  <li className={buttonClass(liked)}>
+    <button onClick={toggleLike}>
+      <i className={iconClass(liked)}></i>
+    </button>
+  </li>
+)
 
 export default LikeButton
