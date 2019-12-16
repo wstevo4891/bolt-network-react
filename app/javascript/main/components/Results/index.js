@@ -2,8 +2,9 @@
 
 import React from 'react'
 
-import PosterRow from './components/PosterRow'
 import StaticSlides from './services/StaticSlides'
+
+import PosterList from '../PosterList'
 
 const Results = ({ movies, slideLength }) => {
 
@@ -17,7 +18,13 @@ const Results = ({ movies, slideLength }) => {
           className="col-12"
           style={{ marginBottom: '5.5vw' }}
         >
-          <PosterRow movies={slide} slideLength={slideLength} />
+          <div className="sliderContent">
+            <PosterList
+              type="static"
+              movies={slide}
+              slideLength={slideLength}
+            />
+          </div>
         </div>
       )}
     </div>

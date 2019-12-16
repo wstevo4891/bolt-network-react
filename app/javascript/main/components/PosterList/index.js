@@ -1,10 +1,12 @@
-// app/javascript/main/scenes/components/PosterRow.jsx
+// Poster List Component
 
 import React, { Component } from 'react'
 
-import PosterFactory from '../../PosterFactory'
+import PosterDataFactory from '../../services/PosterDataFactory'
 
-export default class PosterRow extends Component {
+import Poster from '../Poster'
+
+export default class PosterList extends Component {
   state = {
     hoverItem: null
   }
@@ -12,22 +14,23 @@ export default class PosterRow extends Component {
   _mounted = false
 
   render() {
-    const { movies, slideLength } = this.props
+    const factoryParams = {...this.state, ...this.props }
 
-    if (movies.length === 0) return null
+    const dataFactory = new PosterDataFactory(factoryParams)
 
-    return(
-      <div className="sliderContent">
-        <PosterFactory
-          type="static"
-          movies={movies}
-          slideLength={slideLength}
-          hoverItem={this.state.hoverItem}
+    return this.props.movies.map((movie, index) => {
+
+      const posterData = dataFactory.build(movie, index)
+
+      return(
+        <Poster
+          key={index}
+          {...posterData}
           mouseOver={this.handleMouseOver}
           mouseLeave={this.handleMouseLeave}
         />
-      </div>
-    )
+      )
+    })
   }
 
   handleMouseOver = (event) => {
@@ -35,10 +38,8 @@ export default class PosterRow extends Component {
     const target = event.target.closest('.poster-container')
     const slideIndex = parseInt(target.classList[1].slice(-1), 10)
 
-    target.onmouseout = () => {
-      mouseOut = true
-    }
-    
+    target.onmouseout = () => mouseOut = true
+
     setTimeout(() => {
       if (mouseOut) return
 
