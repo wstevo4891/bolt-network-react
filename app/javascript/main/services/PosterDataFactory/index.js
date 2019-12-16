@@ -2,28 +2,11 @@
 
 import PosterParamsFactory from './services/PosterParamsFactory'
 
+import PosterData from './services/PosterData'
+
 import ContainerFactory from './services/ContainerFactory'
 
 import HoverStyleFactory from './services/HoverStyleFactory'
-
-class PosterData {
-  constructor(movie, hoverItem) {
-    this.movie = movie
-    this.posterImage = {
-      backgroundImage: `url(${movie.photo.url})`,
-      backgroundSize: '100% 100%'
-    }
-    this.hoverItem = hoverItem
-  }
-
-  addContainerClass(container) {
-    this.slideItem = parseInt(container.slice(-1), 10)
-
-    if (this.slideItem === this.hoverItem) container += ' mouseOver'
-
-    this.containerClass = container
-  }
-}
 
 export default class PosterDataFactory {
   constructor(props) {
