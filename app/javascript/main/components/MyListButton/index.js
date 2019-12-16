@@ -2,13 +2,14 @@
 
 import React, { Component } from 'react'
 
-import MyListService from './services/MyListService'
+import SessionList from '../../services/SessionList'
 
 import BannerButton from './components/BannerButton'
 import IconButton from './components/IconButton'
 
 export default class MyListButton extends Component {
   state = {
+    myList: new SessionList(this.props.movie, 'MyList'),
     inList: null
   }
 
@@ -33,23 +34,15 @@ export default class MyListButton extends Component {
   }
 
   componentDidMount() {
-    if (this.state.inList === null) {
+    const inList = this.state.myList.findMovie()
 
-      this.setState({
-        inList: new MyListService(this.props.movie).findMovie()
-      })
-    }
+    this.setState({ inList: inList })
   }
 
   toggleMyList = () => {
-    const inList = this.state.inList
-    const movie = this.props.movie
+    const { myList, inList } = this.state
 
-    if (inList === true) {
-      new MyListService(movie).remove()
-    } else {
-      new MyListService(movie).add()
-    }
+    inList ? myList.remove() : myList.add()
 
     this.setState({
       inList: !inList
