@@ -1,9 +1,18 @@
 // app/javascript/main/App.js
 
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import Layout from './scenes/Layout'
+// import Layout from './scenes/Layout'
+// import Layout from './components/Layout'
+import Routes from './Routes'
+import MainContainer from './components/MainContainer'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 import { fetchMoviesIndex } from './store/actions/moviesIndexActions'
 
@@ -11,7 +20,19 @@ class App extends Component {
   render() {
     if (this.props.genres.length === 0) return null
 
-    return <Layout />
+    return(
+      <Router>
+        <Route render={(routeProps) =>
+          <Navbar {...routeProps} />
+        } />
+
+        <MainContainer>
+          {slideLength => <Routes slideLength={slideLength} />}
+        </MainContainer>
+
+        <Footer />
+      </Router>
+    )
   }
 
   componentDidMount() {

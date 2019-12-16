@@ -75,6 +75,8 @@ class Navbar extends Component {
 
     this.updateLocation(query)
 
+    this.props.dispatch(resetSuggestions())
+
     this.props.dispatch(fetchSearchResults(query))
   }
 
