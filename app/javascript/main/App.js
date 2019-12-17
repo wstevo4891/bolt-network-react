@@ -7,9 +7,8 @@ import {
 } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-// import Layout from './scenes/Layout'
-// import Layout from './components/Layout'
 import Routes from './Routes'
+
 import MainContainer from './components/MainContainer'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'

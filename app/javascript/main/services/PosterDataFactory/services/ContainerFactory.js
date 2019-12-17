@@ -2,11 +2,14 @@
 
 export default class ContainerFactory {
   constructor(params) {
-    this.params = params
+    this.type = params.type
+    this.start = params.start
+    this.slideLength = params.slideLength
+    this.limit = params.limit
   }
 
   build(index) {
-    if (this.params.type === 'static') {
+    if (this.type === 'static') {
       return `poster-container slide-item-${index}`
 
     } else {
@@ -15,19 +18,20 @@ export default class ContainerFactory {
   }
 
   sliderPosterContainer(index) {
-    const { start, slideLength, limit } = this.params
+    if (this.start) return this.startContainer(index)
 
-    if (start) {
-      if (index <= slideLength) {
-        return `poster-container slide-item-${index}`
-      } else {
-        return 'poster-container slider-item-'
-      }
+    if (index >= this.slideLength && index <= this.limit) {
 
-    } else if (index >= slideLength && index <= limit) {
+      return `poster-container slide-item-${index - this.slideLength}`
 
-      return `poster-container slide-item-${index - slideLength}`
+    } else {
+      return 'poster-container slider-item-'
+    }
+  }
 
+  startContainer(index) {
+    if (index <= this.slideLength) {
+      return `poster-container slide-item-${index}`
     } else {
       return 'poster-container slider-item-'
     }
