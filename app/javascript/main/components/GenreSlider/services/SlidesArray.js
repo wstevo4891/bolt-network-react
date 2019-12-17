@@ -1,6 +1,8 @@
 // app/javascript/genre_sliders_plus/services/SlidesArray.js
 
 /**
+ * Builds Array of movie objects for slider content
+ * 
  * @param {Object} props
  * 
  * @property {Boolean} start

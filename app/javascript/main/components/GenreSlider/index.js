@@ -9,6 +9,8 @@ import MoviesList from './services/MoviesList'
 import Slider from './components/Slider'
 
 const GenreSlider = (props) => {
+  console.log(`${props.genre} GenreSlider Rendering`)
+
   if (props.movies === null) return null
 
   const moviesList = new MoviesList(props).call()

@@ -23,7 +23,7 @@ export default class Slider extends Component {
     const slides = new SlidesArray({ start, moviesList, position }).call()
 
     return (
-      <div id={`${genre.title}_slider`} className='genre-slider'>
+      <div id={`${genre}_slider`} className='genre-slider'>
         <PaginationList
           position={position}
           listLength={moviesList._length}
@@ -70,10 +70,10 @@ export default class Slider extends Component {
   }
 
   handleTransitionEnd = () => {
-    const position = this.determinePosition()
+    const nextPosition = this.determinePosition()
 
     this.setState({
-      position: position,
+      position: nextPosition,
       start: false,
       next: false,
       prev: false
@@ -81,16 +81,17 @@ export default class Slider extends Component {
   }
 
   determinePosition = () => {
-    const { next, prev, position } = this.state
+    const { next, prev } = this.state
 
     if (next) {
-      return this.nextPosition(position)
+      return this.nextPosition()
     } else if (prev) {
-      return this.prevPosition(position)
+      return this.prevPosition()
     }
   }
 
-  nextPosition = (position) => {
+  nextPosition = () => {
+    const position = this.state.position
     const listLength = this.props.moviesList._length
 
     if (position === listLength) {
@@ -100,7 +101,8 @@ export default class Slider extends Component {
     }
   }
 
-  prevPosition = (position) => {
+  prevPosition = () => {
+    const position = this.state.position
     const listLength = this.props.moviesList._length
 
     if (position === 1) {

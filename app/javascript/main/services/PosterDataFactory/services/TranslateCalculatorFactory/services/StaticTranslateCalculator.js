@@ -34,7 +34,7 @@ class StaticTranslateCalculator extends TranslateCalculator {
     return this.translate3D(translate, true)
   }
 
-  calcCurrentTranslate = (index) => {
+  calcCurrentTranslate(index) {
     if (index === 0) {
       return Math.floor((this.translateX / 2) + 5)
   

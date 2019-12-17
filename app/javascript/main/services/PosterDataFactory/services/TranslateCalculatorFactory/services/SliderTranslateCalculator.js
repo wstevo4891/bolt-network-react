@@ -46,11 +46,20 @@ class SliderTranslateCalculator extends TranslateCalculator {
     return this.translate3D(translate, true)
   }
 
+  /**
+   * Check if current poster is at the start or
+   * end of its list.
+   * 
+   * @param {Number} position
+   * 
+   * @returns {Boolean}
+   */
+  bookEndPosition(position) {
+    return (this.start && position === 0) || position === this.slideLength + 1
+  }
+
   calcCurrentTranslate(index) {
-    if (
-      (this.start && index === 0) ||
-      index === this.slideLength + 1
-    ) {
+    if (this.bookEndPosition(index)) {
       return Math.floor((this.translateX / 2) + 5)
   
     } else if (index === this.end - 1) {
@@ -63,10 +72,7 @@ class SliderTranslateCalculator extends TranslateCalculator {
   afterHoverTranslate() {
     if (this.hover === this.end - 1) return null
 
-    if (
-      (this.start && this.hover === 0) ||
-      this.hover === this.slideLength + 1
-    ) {
+    if (this.bookEndPosition(this.hover)) {
       return this.translate3D(this.translateX * 2)
     }
   

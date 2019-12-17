@@ -16,7 +16,7 @@ const containerClass = (next, prev) => {
   }
 }
 
-const SliderContainerPlus = (props) => {
+const SliderContainer = (props) => {
 
   const { slides, slideLength, start, next, prev } = props
   
@@ -39,4 +39,4 @@ const SliderContainerPlus = (props) => {
   )
 }
 
-export default SliderContainerPlus
+export default SliderContainer
