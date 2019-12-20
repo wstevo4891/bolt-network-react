@@ -3,7 +3,7 @@
 import React, { Component } from 'react'
 
 // Services
-import SessionList from '../../../../services/SessionList'
+import SessionList from '@services/SessionList'
 
 // Components
 import MovieInfo from './components/MovieInfo'

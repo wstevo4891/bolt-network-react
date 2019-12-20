@@ -6,7 +6,7 @@ import React from 'react'
 import ContainerStyle from '../services/ContainerStyle'
 
 // Components
-import PosterList from '../../PosterList'
+import PosterList from '@components/PosterList'
 
 const containerClass = (next, prev) => {
   if (next || prev) {

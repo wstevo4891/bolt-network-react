@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react'
 
-import PosterDataFactory from '../../services/PosterDataFactory'
+import PosterDataFactory from '@services/PosterDataFactory'
 
 import Poster from './components/Poster'
 

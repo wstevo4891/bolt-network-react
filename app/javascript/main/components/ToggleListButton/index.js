@@ -3,7 +3,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import SessionList from '../../services/SessionList'
+import SessionList from '@services/SessionList'
 
 import { ToggleIconButton } from '../IconButton'
 
@@ -31,9 +31,6 @@ class ToggleListButton extends Component {
   }
 
   render() {
-    // console.log('ToggleListButton Rendering')
-    // console.log(this.state)
-
     const { iconOptions, buttonClass, text } = this.props
     const inList = this.state.inList
 

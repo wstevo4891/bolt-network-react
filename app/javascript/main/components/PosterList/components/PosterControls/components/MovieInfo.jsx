@@ -1,6 +1,7 @@
-// app/javascript/main/scenes/components/MovieInfo.jsx
+// PosterControls/components/MovieInfo.jsx
 
 import React from 'react'
+import PropTypes from 'prop-types'
 
 function renderTitle(title) {
   if (title.length > 40) {
@@ -32,5 +33,9 @@ const MovieInfo = ({ movie }) => (
     </div>
   </div>
 )
+
+MovieInfo.propTypes = {
+  movie: PropTypes.object
+}
 
 export default MovieInfo

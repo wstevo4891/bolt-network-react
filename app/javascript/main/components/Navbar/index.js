@@ -13,9 +13,9 @@ import SearchInput from './components/SearchBar/components/SearchInput'
 
 import logo from './images/bolt-network.svg'
 
-import { fetchSearchResults } from '../../store/actions/searchActions'
+import { fetchSearchResults } from '@store/actions/searchActions'
 
-import { resetSuggestions } from '../../store/actions/suggestionsActions'
+import { resetSuggestions } from '@store/actions/suggestionsActions'
 
 class Navbar extends Component {
   state = {
