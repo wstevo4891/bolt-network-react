@@ -1,19 +1,20 @@
 // src/components/Poster/index.jsx
 
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
 // Components
-import PosterControls from './components/PosterControls'
+import PosterControls from './PosterControls'
 
-const renderControls = (props) => {
-  if (props.hoverItem !== props.slideItem) return <span></span>
+const renderControls = (params) => {
+  if (params.hoverItem !== params.slideItem) return <span></span>
 
   return(
     <PosterControls
-      movie={props.movie}
-      hoverItem={props.hoverItem}
-      slideItem={props.slideItem}
+      movie={params.movie}
+      hoverItem={params.hoverItem}
+      slideItem={params.slideItem}
     />
   )
 }
@@ -33,5 +34,16 @@ const Poster = (props) => (
     {renderControls(props)}
   </div>
 )
+
+Poster.propTypes = {
+  containerClass: PropTypes.string,
+  containerStyle: PropTypes.object,
+  mouseOver: PropTypes.func,
+  mouseLeave: PropTypes.func,
+  movie: PropTypes.object,
+  posterImage: PropTypes.object,
+  hoverItem: PropTypes.number,
+  slideItem: PropTypes.number
+}
 
 export default Poster

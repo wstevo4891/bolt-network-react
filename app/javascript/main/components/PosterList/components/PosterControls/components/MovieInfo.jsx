@@ -10,14 +10,6 @@ function renderTitle(title) {
   }
 }
 
-function renderGenres(genres) {
-  if (genres.length > 1) {
-    return genres.join(', ')
-  } else {
-    return genres.join('')
-  }
-}
-
 const MovieInfo = ({ movie }) => (
   <div className="movie-info">
     <div>
@@ -36,7 +28,7 @@ const MovieInfo = ({ movie }) => (
     </div>
     
     <div>
-      <p>{renderGenres(movie.genres)}</p>
+      <p>{movie.genres.join(', ')}</p>
     </div>
   </div>
 )

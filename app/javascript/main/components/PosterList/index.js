@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 
 import PosterDataFactory from '../../services/PosterDataFactory'
 
-import Poster from '../Poster'
+import Poster from './components/Poster'
 
 export default class PosterList extends Component {
   state = {

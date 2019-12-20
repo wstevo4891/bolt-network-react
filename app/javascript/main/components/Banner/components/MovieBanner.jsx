@@ -1,10 +1,11 @@
 // MovieBanner UI Component
 
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
 // Components
-import MyListButton from '../../MyListButton'
+import ToggleListButton from '../../ToggleListButton'
 
 function BannerImage(movie) {
   this.backgroundImage = `url(${movie.banner.url})`
@@ -40,7 +41,13 @@ const MovieBanner = ({ movie }) => {
                 <i className="fa fa-play"></i>PLAY
               </Link>
 
-              <MyListButton movie={movie} type="banner" />
+              <ToggleListButton
+                movie={movie}
+                buttonClass="btn-clear"
+                iconOptions={['fa-plus', 'fa-check']}
+                listName="MyList"
+                text="MY LIST"
+              />
             </div>
           </div>
         </div>
@@ -48,6 +55,10 @@ const MovieBanner = ({ movie }) => {
       </div>
     </div>
   )
+}
+
+MovieBanner.propTypes = {
+  movie: PropTypes.object
 }
 
 export default MovieBanner
