@@ -1,10 +1,11 @@
-import * as types from 'main/store/types/searchTypes'
-import reducer from 'main/store/reducers/searchReducer'
+import * as types from '@store/types/searchTypes'
+import reducer from '@store/reducers/searchReducer'
 
 describe('searchReducer', () => {
   const initialState = {
     genres: [],
     movies: [],
+    people: [],
     loading: false,
     error: null
   }
@@ -15,6 +16,11 @@ describe('searchReducer', () => {
       { title: 'Trainwreck' },
       { title: 'Borat' },
       { title: 'Deadpool' }
+    ],
+    people: [
+      'Amy Schumer',
+      'Sacha Baron Cohen',
+      'Ryan Reynolds'
     ]
   }
 
@@ -44,6 +50,7 @@ describe('searchReducer', () => {
     ).toEqual({
       genres: [],
       movies: [],
+      people: [],
       loading: true,
       error: null
     })
@@ -55,6 +62,7 @@ describe('searchReducer', () => {
     ).toEqual({
       genres: PAYLOAD.genres,
       movies: PAYLOAD.movies,
+      people: PAYLOAD.people,
       loading: false,
       error: null
     })
@@ -66,6 +74,7 @@ describe('searchReducer', () => {
     ).toEqual({
       genres: [],
       movies: [],
+      people: [],
       loading: false,
       error: REDUCER_ERROR
     })

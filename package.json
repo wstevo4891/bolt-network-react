@@ -45,7 +45,10 @@
   "jest": {
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test/javascript/__mocks__/fileMock.js",
-      "\\.(css|less)$": "<rootDir>/test/javascript/__mocks__/styleMock.js"
+      "\\.(css|less)$": "<rootDir>/test/javascript/__mocks__/styleMock.js",
+      "@components/(.*)$": "<rootDir>/app/javascript/main/components/$1",
+      "@services/(.*)$": "<rootDir>/app/javascript/main/services/$1",
+      "@store/(.*)$": "<rootDir>/app/javascript/main/store/$1"
     },
     "roots": [
       "app/javascript/packs",

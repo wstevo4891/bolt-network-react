@@ -31,13 +31,11 @@ export default function searchReducer(state = initialState, action) {
     case FETCH_SEARCH_RESULTS_SUCCESS:
       // All done: set loading "false".
       // Also, replace the items with the ones from the server
-      const { genres, movies, people } = action.payload.searchResults
-
       return {
         ...state,
-        genres: genres,
-        movies: movies,
-        people: people,
+        genres: action.payload.searchResults.genres,
+        movies: action.payload.searchResults.movies,
+        people: action.payload.searchResults.people,
         loading: false
       }
 

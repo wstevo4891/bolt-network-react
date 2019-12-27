@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IconButton should render correctly in "debug" mode 1`] = `
+<button
+  className="btn-clear"
+  onClick={[MockFunction]}
+>
+  <i
+    className="fa fa-plus"
+  />
+  MY LIST
+</button>
+`;

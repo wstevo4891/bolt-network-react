@@ -10,14 +10,15 @@ import { ToggleIconButton } from '../IconButton'
 class ToggleListButton extends Component {
   constructor(props) {
     super(props)
+    this.list = new SessionList(props.movie, props.listName)
     this.state = {
       inList: null
     }
-    this.list = new SessionList(props.movie, props.listName)
   }
 
   static propTypes = {
     movie: PropTypes.object.isRequired,
+    iconOptions: PropTypes.array.isRequired,
     listName: PropTypes.string.isRequired,
     updateContainer: PropTypes.func,
     buttonClass: PropTypes.string,

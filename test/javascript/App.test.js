@@ -28,5 +28,5 @@ describe('App', () => {
     )
   
     expect(component).toMatchSnapshot()
-  });
+  })
 })

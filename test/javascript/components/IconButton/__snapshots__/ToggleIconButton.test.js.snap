@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToggleIconButton should render correctly in "debug" mode 1`] = `
+<IconButton
+  buttonClass=""
+  handleClick={[Function]}
+  icon="fa-volume-up"
+  text=""
+/>
+`;
