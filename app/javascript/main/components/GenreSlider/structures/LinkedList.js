@@ -13,7 +13,7 @@ export default class LinkedList {
     const node = new Node(value)
 
     if (this._length > 0) {
-      node.previous = this.tail
+      node.prev = this.tail
       this.tail.next = node
       this.tail = node
     } else {

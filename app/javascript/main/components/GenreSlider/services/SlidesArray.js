@@ -46,7 +46,7 @@ export default class SlidesArray {
       this.addSlides(this.list.tail)
 
     } else if (this.position === this.list._length) {
-      this.addSlides(this.list.tail.previous)
+      this.addSlides(this.list.tail.prev)
   
     } else {
       this.midPositionSlides()
@@ -54,7 +54,7 @@ export default class SlidesArray {
   }
 
   addSlides(current) {
-    const leftEnd = current.previous || this.list.tail
+    const leftEnd = current.prev || this.list.tail
     let count = 0
 
     this.slides.push(leftEnd.last())
@@ -71,7 +71,7 @@ export default class SlidesArray {
   midPositionSlides() {
     let current = this.list.searchNodeAt(this.position)
 
-    current = current.previous || this.list.tail
+    current = current.prev || this.list.tail
 
     this.addSlides(current)
   }

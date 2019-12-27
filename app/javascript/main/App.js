@@ -1,6 +1,7 @@
 // app/javascript/main/App.js
 
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import {
   BrowserRouter as Router,
   Route
@@ -16,6 +17,10 @@ import Footer from './components/Footer'
 import { fetchMoviesIndex } from './store/actions/moviesIndexActions'
 
 class App extends Component {
+  static propTypes = {
+    genres: PropTypes.array
+  }
+
   render() {
     if (this.props.genres.length === 0) return null
 
