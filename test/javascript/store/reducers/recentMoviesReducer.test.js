@@ -1,5 +1,5 @@
-import * as types from 'main/store/types/recentMoviesTypes'
-import reducer from 'main/store/reducers/recentMoviesReducer'
+import * as types from '@store/types/recentMoviesTypes'
+import reducer from '@store/reducers/recentMoviesReducer'
 
 describe('recentMoviesReducer', () => {
   const initialState = {

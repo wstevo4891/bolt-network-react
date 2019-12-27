@@ -1,5 +1,5 @@
-import * as types from 'main/store/types/bannerMoviesTypes'
-import reducer from 'main/store/reducers/bannerMoviesReducer'
+import * as types from '@store/types/bannerMoviesTypes'
+import reducer from '@store/reducers/bannerMoviesReducer'
 
 describe('bannerMoviesReducer', () => {
   const initialState = {

@@ -2,8 +2,8 @@ import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 import fetchMock from 'fetch-mock'
 
-import * as actions from 'main/store/actions/moviesIndexActions'
-import * as types from 'main/store/types/moviesIndexTypes'
+import * as actions from '@store/actions/moviesIndexActions'
+import * as types from '@store/types/moviesIndexTypes'
 
 const middlewares = [thunk]
 const mockStore = configureMockStore(middlewares)

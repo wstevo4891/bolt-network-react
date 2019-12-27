@@ -1,5 +1,5 @@
-import * as types from 'main/store/types/moviesIndexTypes'
-import reducer from 'main/store/reducers/moviesIndexReducer'
+import * as types from '@store/types/moviesIndexTypes'
+import reducer from '@store/reducers/moviesIndexReducer'
 
 describe('movies index reducer', () => {
   const initialState = {
