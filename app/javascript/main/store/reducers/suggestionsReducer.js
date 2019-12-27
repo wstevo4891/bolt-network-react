@@ -30,22 +30,15 @@ export default function suggestionsReducer(state = initialState, action) {
     case FETCH_SUGGESTIONS_SUCCESS:
       // All done: set loading "false".
       // Also, replace the items with the ones from the server
-      const { movies } = action.payload.suggestions
-
       return {
         ...state,
-        movies: movies,
+        movies: action.payload.suggestions,
         loading: false
       }
 
     case FETCH_SUGGESTIONS_FAILURE:
       // The request failed. It's done. So set loading to "false".
       // Save the error, so we can display it somewhere.
-      // Since it failed, we don't have items to display anymore, so set `items` empty.
-      //
-      // This is all up to you and your app though:
-      // maybe you want to keep the items around!
-      // Do whatever seems right for your use case.
       return {
         ...state,
         movies: [],
@@ -54,11 +47,7 @@ export default function suggestionsReducer(state = initialState, action) {
       }
 
     case RESET_SUGGESTIONS:
-      return {
-        movies: [],
-        loading: false,
-        error: null
-      }
+      return state
 
     default:
       // ALWAYS have a default case in a reducer
