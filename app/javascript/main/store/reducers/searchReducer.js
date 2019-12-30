@@ -24,8 +24,7 @@ export default function searchReducer(state = initialState, action) {
       // Also, reset any errors. We're starting fresh.
       return {
         ...state,
-        loading: true,
-        error: null
+        loading: true
       }
 
     case FETCH_SEARCH_RESULTS_SUCCESS:
@@ -35,8 +34,7 @@ export default function searchReducer(state = initialState, action) {
         ...state,
         genres: action.payload.searchResults.genres,
         movies: action.payload.searchResults.movies,
-        people: action.payload.searchResults.people,
-        loading: false
+        people: action.payload.searchResults.people
       }
 
     case FETCH_SEARCH_RESULTS_FAILURE:
@@ -49,10 +47,6 @@ export default function searchReducer(state = initialState, action) {
       // Do whatever seems right for your use case.
       return {
         ...state,
-        genres: [],
-        movies: [],
-        people: [],
-        loading: false,
         error: action.payload.error
       }
 

@@ -30,6 +30,18 @@ class SearchResultsThree
   end
 
   def search_movies
+    movies = sorted_movie_search
+
+    return movies unless movies.empty?
+
+    return @genres.first.movies unless @genres.empty?
+
+    return @people.first.movies unless @people.empty?
+
+    []
+  end
+
+  def sorted_movie_search
     Movie.search(@query).sort_by do |movie|
       movie.title.downcase =~ /#{@query}/ || 100
     end

@@ -2,27 +2,27 @@
 
 # Class for movie genres
 class Genre < ApplicationRecord
-  # == Extensions ===========================================================
+  # == Extensions =============================================================
   include PgSearch::Model
 
-  # == Attributes ===========================================================
-  # title     {String}
-  # slug      {String}
-  # alias     {String}
+  # == Attributes =============================================================
+  # title  {String}
+  # slug   {String}
+  # alias  {String}
 
-  # == Relationships ========================================================
+  # == Relationships ==========================================================
   has_and_belongs_to_many :movies
   has_many :subgenres
 
-  # == Validations ==========================================================
+  # == Validations ============================================================
   validates :title, :slug, :alias, presence: true
 
-  # == Scopes ===============================================================
+  # == Scopes =================================================================
   pg_search_scope :full_text_search,
                   against: %i[title alias],
                   using: [:tsearch]
 
-  # == Class Methods ========================================================
+  # == Class Methods ==========================================================
   def self.by_first_char(query)
     where('lower(title) LIKE :prefix', prefix: "#{query}%")
   rescue ActiveRecord::RecordNotFound
@@ -51,6 +51,7 @@ class Genre < ApplicationRecord
 
   def self.match_title(query)
     where('LOWER(title) LIKE ?', "#{query}%")
+      .or(where('LOWER(alias) LIKE ?', "#{query}%"))
   end
 
   ##
@@ -61,11 +62,13 @@ class Genre < ApplicationRecord
   def self.with_most_movies
     joins(:genres_movies)
       .group('genres.id')
-      .having('count(genre_id) > ?', 28)
+      .having('COUNT(genre_id) > ?', 28)
       .pluck(:title)
   end
 
   def self.with_most_movies_index
     select { |genre| genre.movies.size > 28 }.pluck(:title)
   end
+
+  # == Instance Methods =======================================================
 end

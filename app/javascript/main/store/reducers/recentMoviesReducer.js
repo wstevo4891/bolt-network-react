@@ -1,5 +1,7 @@
 // Recent Movies Reducer
 
+import { MoviesState } from './helpers'
+
 // Constants
 // ==================================================================
 import {
@@ -8,11 +10,7 @@ import {
   FETCH_RECENT_MOVIES_FAILURE
 } from '../types/recentMoviesTypes'
 
-const initialState = {
-  movies: [],
-  loading: false,
-  error: null
-}
+const initialState = new MoviesState
 
 export default function recentMoviesReducer(state = initialState, action) {
   switch(action.type) {
