@@ -1,53 +1,79 @@
+// IconButton Unit Test
+
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { shallow } from 'enzyme'
+import { mount, shallow } from 'enzyme'
 
 import { IconButton } from '@components/IconButton'
 
 describe('IconButton', () => {
-  const myListClick = jest.fn()
+  const mockClick = jest.fn()
 
-  it('renders without crashing', () => {
-    const div = document.createElement('div')
+  const mountedComponent = (button, icon, text) => mount(
+    <IconButton
+      buttonClass={button}
+      handleClick={mockClick}
+      icon={icon}
+      text={text}
+    />
+  )
 
-    ReactDOM.render(
-      <IconButton
-        buttonClass="btn-clear"
-        handleClick={myListClick}
-        icon="fa-plus"
-        text="MY LIST"
-      />,
-      div
-    )
+  const shallowComponent = (button, icon, text) => shallow(
+    <IconButton
+      buttonClass={button}
+      handleClick={mockClick}
+      icon={icon}
+      text={text}
+    />
+  )
 
-    ReactDOM.unmountComponentAtNode(div)
-  })
+  let component
 
   it('should render correctly in "debug" mode', () => {
-    const component = shallow(
-      <IconButton
-        buttonClass="btn-clear"
-        handleClick={myListClick}
-        icon="fa-plus"
-        text="MY LIST"
-      />
-    )
-  
+    component = shallowComponent('btn-clear', 'fa-plus', 'MY LIST')
+
     expect(component).toMatchSnapshot()
   })
 
+  it('should render with default props', () => {
+    component = mount(<IconButton handleClick={mockClick} icon="fa-plus" />)
+
+    expect(component.prop('buttonClass')).toEqual('')
+    expect(component.prop('text')).toEqual('')
+
+    component.unmount()
+  })
+
+  it('should render expected icon prop', () => {
+    component = mountedComponent('btn-clear', 'fa-plus', '')
+
+    expect(
+      component.find('button').find('i').hasClass('fa-plus')
+    ).toEqual(true)
+
+    component.unmount()
+  })
+
+  it('should render expected text prop', () => {
+    component = mountedComponent('btn-clear', 'fa-plus', 'MY LIST')
+
+    expect(
+      component.find('button').text()
+    ).toEqual('MY LIST')
+
+    component.unmount()
+  })
+
+  // it('should render with expected prop types', () => {
+  //   component = mountedComponent('btn-clear', 'fa-plus', 'MY LIST')
+
+  //   expect(component.prop('buttonClass')).toBeString()
+  // })
+
   it('should respond to click event', () => {
-    const component = shallow(
-      <IconButton
-        buttonClass="btn-clear"
-        handleClick={myListClick}
-        icon="fa-plus"
-        text="MY LIST"
-      />
-    )
+    component = shallowComponent('btn-clear', 'fa-plus', 'MY LIST')
 
     component.find('button').simulate('click')
 
-    expect(myListClick.mock.calls.length).toEqual(1)
+    expect(mockClick.mock.calls.length).toEqual(1)
   })
 })

@@ -3,14 +3,14 @@ import { shallow } from 'enzyme'
 
 import { ToggleIconButton } from '@components/IconButton'
 
-describe('ToggleIconButton', () => {
-  const shallowComponent = () => shallow(
-    <ToggleIconButton
-      status={true}
-      iconOptions={['fa-volume-off', 'fa-volume-up']}
-    />
-  )
+const shallowComponent = () => shallow(
+  <ToggleIconButton
+    status={true}
+    iconOptions={['fa-volume-off', 'fa-volume-up']}
+  />
+)
 
+describe('ToggleIconButton', () => {
   let component = shallowComponent()
 
   it('should render correctly in "debug" mode', () => {
