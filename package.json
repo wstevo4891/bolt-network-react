@@ -61,7 +61,8 @@
     ],
     "setupFilesAfterEnv": [
       "./node_modules/jest-enzyme/lib/index.js",
-      "./test/javascript/setupTests.js"
+      "./test/javascript/setupTests.js",
+      "jest-extended"
     ]
   }
 }

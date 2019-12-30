@@ -63,11 +63,14 @@ describe('IconButton', () => {
     component.unmount()
   })
 
-  // it('should render with expected prop types', () => {
-  //   component = mountedComponent('btn-clear', 'fa-plus', 'MY LIST')
+  it('should render with expected prop types', () => {
+    component = mountedComponent('btn-clear', 'fa-plus', 'MY LIST')
 
-  //   expect(component.prop('buttonClass')).toBeString()
-  // })
+    expect(component.prop('buttonClass')).toBeString()
+    expect(component.prop('icon')).toBeString()
+    expect(component.prop('text')).toBeString()
+    expect(component.prop('handleClick')).toBeFunction()
+  })
 
   it('should respond to click event', () => {
     component = shallowComponent('btn-clear', 'fa-plus', 'MY LIST')
