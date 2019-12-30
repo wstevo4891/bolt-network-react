@@ -43,33 +43,37 @@ describe('IconButton', () => {
     component.unmount()
   })
 
-  it('should render expected icon prop', () => {
-    component = mountedComponent('btn-clear', 'fa-plus', '')
+  describe('IconButton props', () => {
+    beforeEach(() => {
+      component = mountedComponent('btn-clear', 'fa-plus', 'MY LIST')
+    })
 
-    expect(
-      component.find('button').find('i').hasClass('fa-plus')
-    ).toEqual(true)
+    afterEach(() => {
+      component.unmount()
+    })
 
-    component.unmount()
-  })
+    it('should render expected buttonClass prop', () => {
+      expect(component.find('button').hasClass('btn-clear')).toEqual(true)
+    })
 
-  it('should render expected text prop', () => {
-    component = mountedComponent('btn-clear', 'fa-plus', 'MY LIST')
-
-    expect(
-      component.find('button').text()
-    ).toEqual('MY LIST')
-
-    component.unmount()
-  })
-
-  it('should render with expected prop types', () => {
-    component = mountedComponent('btn-clear', 'fa-plus', 'MY LIST')
-
-    expect(component.prop('buttonClass')).toBeString()
-    expect(component.prop('icon')).toBeString()
-    expect(component.prop('text')).toBeString()
-    expect(component.prop('handleClick')).toBeFunction()
+    it('should render expected icon prop', () => {  
+      expect(
+        component.find('button').find('i').hasClass('fa-plus')
+      ).toEqual(true)
+    })
+  
+    it('should render expected text prop', () => {  
+      expect(
+        component.find('button').text()
+      ).toEqual('MY LIST')
+    })
+  
+    it('should render with expected prop types', () => {  
+      expect(component.prop('buttonClass')).toBeString()
+      expect(component.prop('icon')).toBeString()
+      expect(component.prop('text')).toBeString()
+      expect(component.prop('handleClick')).toBeFunction()
+    })
   })
 
   it('should respond to click event', () => {

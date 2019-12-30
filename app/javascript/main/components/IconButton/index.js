@@ -3,7 +3,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import makeToggleable from '../../helpers/makeToggleable'
+import makeToggleable from '@helpers/makeToggleable'
 
 const IconButton = (props) => (
   <button
