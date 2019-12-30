@@ -33,8 +33,6 @@ export default function recentMoviesReducer(state = initialState, action) {
     case FETCH_RECENT_MOVIES_FAILURE:
       return {
         ...state,
-        movies: [],
-        loading: false,
         error: action.payload.error
       }
 

@@ -5,7 +5,7 @@ import React from 'react'
 // Components
 import SuggestionsList from './SuggestionsList'
 import SuggestionHeader from './SuggestionHeader'
-import Results from '../../../components/Results'
+import Results from '@components/Results'
 
 const DesktopView = (props) => (
   <div className="search-results">

@@ -22,7 +22,7 @@ describe('suggestionsReducer', () => {
 
   const successAction = {
     type: types.FETCH_SUGGESTIONS_SUCCESS,
-    payload: { suggestions: PAYLOAD }
+    payload: { suggestions: { movies: PAYLOAD } }
   }
 
   const failureAction = {
