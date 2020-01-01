@@ -1,20 +1,29 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { mount, shallow } from 'enzyme'
 
 import ToggleListButton from '@components/ToggleListButton'
 
+const mockToggle = jest.fn()
+
+const mountedComponent = () => mount(
+  <ToggleListButton
+    movie={{ id: 1, title: 'The Avengers' }}
+    iconOptions={['fa-thumbs-o-up', 'fa-thumbs-up']}
+    listName="LikedList"
+    updateContainer={mockToggle}
+  />
+)
+
+const shallowComponent = () => shallow(
+  <ToggleListButton
+    movie={{ id: 1, title: 'The Avengers' }}
+    iconOptions={['fa-thumbs-o-up', 'fa-thumbs-up']}
+    listName="LikedList"
+    updateContainer={mockToggle}
+  />
+)
+
 describe('ToggleListButton', () => {
-  const mockToggle = jest.fn()
-
-  const shallowComponent = () => shallow(
-    <ToggleListButton
-      movie={{ id: 1, title: 'The Avengers' }}
-      iconOptions={['fa-thumbs-o-up', 'fa-thumbs-up']}
-      listName="LikedList"
-      updateContainer={mockToggle}
-    />
-  )
-
   let component = shallowComponent()
 
   it('should render correctly in "debug" mode', () => {
@@ -38,6 +47,14 @@ describe('ToggleListButton', () => {
       component.dive().dive().simulate('click')
 
       expect(component.state().inList).toEqual(false)
+    })
+
+    it('should toggle child icon prop', () => {
+      expect(component.dive().props().icon).toEqual('fa-thumbs-o-up')
+
+      component.dive().dive().simulate('click')
+
+      expect(component.dive().props().icon).toEqual('fa-thumbs-up')
     })
   })
 })

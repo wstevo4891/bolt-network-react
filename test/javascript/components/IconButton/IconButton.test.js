@@ -48,9 +48,7 @@ describe('IconButton', () => {
       component = mountedComponent('btn-clear', 'fa-plus', 'MY LIST')
     })
 
-    afterEach(() => {
-      component.unmount()
-    })
+    afterEach(() => component.unmount())
 
     it('should render expected buttonClass prop', () => {
       expect(component.find('button').hasClass('btn-clear')).toEqual(true)

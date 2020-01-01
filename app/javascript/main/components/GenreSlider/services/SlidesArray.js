@@ -1,20 +1,19 @@
-// app/javascript/genre_sliders_plus/services/SlidesArray.js
+// Slides Array Service
 
 /**
- * Builds Array of movie objects for slider content
+ * @description Builds Array of movie objects for slider content
  * 
- * @param {Object} props
+ * @param {Boolean} start
+ * @param {LinkedList} moviesList
+ * @param {Number} position 
  * 
- * @property {Boolean} start
- * @property {LinkedList} list
- * @property {Number} position
  * @property {Array} slides
  */
 export default class SlidesArray {
-  constructor(props) {
-    this.start = props.start
-    this.list = props.moviesList
-    this.position = props.position
+  constructor(start, moviesList, position) {
+    this.start = start
+    this.list = moviesList
+    this.position = position
     this.slides = []
   }
 

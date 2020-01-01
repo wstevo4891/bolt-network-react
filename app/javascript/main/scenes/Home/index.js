@@ -1,10 +1,11 @@
 // Home Page Functional Component
 
 import React from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
-import Banner from '../../components/Banner'
-import GenreSlider from '../../components/GenreSlider'
+import Banner from '@components/Banner'
+import GenreSlider from '@components/GenreSlider'
 
 const Home = (props) => (
   <main className="application">
@@ -40,6 +41,12 @@ const Home = (props) => (
     </div>
   </main>
 )
+
+Home.propTypes = {
+  genres: PropTypes.array,
+  moviesIndex: PropTypes.object,
+  slideLength: PropTypes.number
+}
 
 function mapStateToProps(state) {
   return {

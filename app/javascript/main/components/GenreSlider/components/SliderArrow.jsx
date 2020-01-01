@@ -1,6 +1,7 @@
 // app/javascript/main/scenes/Home/GenreSliders/components/SliderArrow.jsx
 
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const SliderArrow = (props) => {
   if (props.start) return null
@@ -18,6 +19,13 @@ const SliderArrow = (props) => {
       </b>
     </span>
   )
+}
+
+SliderArrow.propTypes = {
+  start: PropTypes.bool,
+  direction: PropTypes.string,
+  icon: PropTypes.string,
+  handleClick: PropTypes.func
 }
 
 export default SliderArrow

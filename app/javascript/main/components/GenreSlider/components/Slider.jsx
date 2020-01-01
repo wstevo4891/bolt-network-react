@@ -1,114 +1,58 @@
 // app/javascript/main/scenes/Home/GenreSliders/components/GenreSlider.jsx
 
-import React, { Component } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import SlidesArray from '../services/SlidesArray'
-
+// Components
+import RowHeader from './RowHeader'
 import PaginationList from './PaginationList'
 import SliderArrow from './SliderArrow'
 import SliderContainer from './SliderContainer'
 
-export default class Slider extends Component {
-  state = {
-    position: 1,
-    start: true,
-    next: false,
-    prev: false
-  }
+const Slider = (props) => (
+  <div id={`${props.genre}_row`} className='genre-slider-row'>
+    <RowHeader genre={props.genre} />
 
-  render() {
-    const { genre, moviesList, slideLength } = this.props
-    const { position, start, next, prev } = this.state
+    <div id={`${props.genre}_slider`} className='genre-slider'>
+      <PaginationList
+        active={props.position - 1}
+        listLength={props.listLength}
+      />
 
-    const slides = new SlidesArray({ start, moviesList, position }).call()
+      <SliderArrow
+        start={props.start}
+        direction='Prev'
+        icon='left'
+        handleClick={props.handleClick}
+      />
 
-    return (
-      <div id={`${genre}_slider`} className='genre-slider'>
-        <PaginationList
-          position={position}
-          listLength={moviesList._length}
-        />
+      <SliderContainer
+        slides={props.slides}
+        slideLength={props.slideLength}
+        next={props.next}
+        prev={props.prev}
+        start={props.start}
+      />
 
-        <SliderArrow
-          start={start}
-          direction='Prev'
-          icon='left'
-          handleClick={this.handleArrowClick}
-        />
+      <SliderArrow
+        direction='Next'
+        icon='right'
+        handleClick={props.handleClick}
+      />
+    </div>
+  </div>
+)
 
-        <SliderContainer
-          slides={slides}
-          slideLength={slideLength}
-          next={next}
-          prev={prev}
-          start={start}
-        />
-
-        <SliderArrow
-          direction='Next'
-          icon='right'
-          handleClick={this.handleArrowClick}
-        />
-      </div>
-    )
-  }
-
-  handleArrowClick = (direction) => {
-    const key = direction.toLowerCase()
-    const root = document.getElementById('root')
-
-    root.style['pointer-events'] = 'none'
-
-    this.setState({
-      [key]: true
-    })
-
-    setTimeout(() => {
-      this.handleTransitionEnd()
-      root.style['pointer-events'] = 'auto'
-    }, 1000)
-  }
-
-  handleTransitionEnd = () => {
-    const nextPosition = this.determinePosition()
-
-    this.setState({
-      position: nextPosition,
-      start: false,
-      next: false,
-      prev: false
-    })
-  }
-
-  determinePosition = () => {
-    const { next, prev } = this.state
-
-    if (next) {
-      return this.nextPosition()
-    } else if (prev) {
-      return this.prevPosition()
-    }
-  }
-
-  nextPosition = () => {
-    const position = this.state.position
-    const listLength = this.props.moviesList._length
-
-    if (position === listLength) {
-      return 1
-    } else {
-      return position + 1
-    }
-  }
-
-  prevPosition = () => {
-    const position = this.state.position
-    const listLength = this.props.moviesList._length
-
-    if (position === 1) {
-      return listLength
-    } else {
-      return position - 1
-    }
-  }
+Slider.propTypes = {
+  genre: PropTypes.string,
+  slideLength: PropTypes.number,
+  slides: PropTypes.array,
+  listLength: PropTypes.number,
+  position: PropTypes.number,
+  start: PropTypes.bool,
+  next: PropTypes.bool,
+  prev: PropTypes.bool,
+  handleClick: PropTypes.func
 }
+
+export default Slider

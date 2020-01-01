@@ -1,6 +1,6 @@
 // app/javascript/genre_sliders_plus/services/MoviesList.js
 
-import LinkedList from '../structures/LinkedList';
+import LinkedList from '../structures/LinkedList'
 
 const LENGTH_MAP = {
   6: 24,
@@ -23,9 +23,9 @@ const LENGTH_MAP = {
  * @property {LinkedList<Node>} list
  */
 export default class MoviesList {
-  constructor(props) {
-    this.slideLength = props.slideLength
-    this.movies = this.sliceMovies(props.movies)
+  constructor(slideLength, movies) {
+    this.slideLength = slideLength
+    this.movies = this.sliceMovies(movies)
     this.list = new LinkedList()
   }
 

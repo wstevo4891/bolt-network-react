@@ -1,5 +1,5 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { mount, shallow } from 'enzyme'
 
 import { ToggleIconButton } from '@components/IconButton'
 
@@ -10,11 +10,44 @@ const shallowComponent = () => shallow(
   />
 )
 
+const mountedComponent = () => mount(
+  <ToggleIconButton
+    status={true}
+    iconOptions={['fa-volume-off', 'fa-volume-up']}
+  />
+)
+
 describe('ToggleIconButton', () => {
-  let component = shallowComponent()
+  let component
 
   it('should render correctly in "debug" mode', () => {
+    component = shallowComponent()
+
     expect(component).toMatchSnapshot()
+  })
+
+  describe('ToggleIconButton props', () => {
+    beforeEach(() => {
+      component = mountedComponent()
+    })
+
+    afterEach(() => component.unmount())
+
+    it('should render with default props', () => {
+      expect(component.prop('buttonClass')).toEqual('')
+      expect(component.prop('text')).toEqual('')
+      expect(component.prop('updateStatus')()).toEqual(true)
+    })
+
+    it('should render with expected status prop', () => {
+      expect(component.prop('status')).toEqual(true)
+    })
+
+    it('should render with expected iconOptions prop', () => {
+      expect(
+        component.prop('iconOptions')
+      ).toEqual(['fa-volume-off', 'fa-volume-up'])
+    })
   })
 
   describe('toggle function', () => {

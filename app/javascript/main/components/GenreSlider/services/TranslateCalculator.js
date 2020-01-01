@@ -9,12 +9,12 @@ const TRANSFORMATIONS = {
   6: -116.66666666666667
 }
 
-export default class ContainerStyle {
-  constructor(props) {
-    this.slideLength = props.slideLength
-    this.start = props.start
-    this.next = props.next
-    this.prev = props.prev
+export default class TranslateCalculator {
+  constructor(slideLength, start, next, prev) {
+    this.slideLength = slideLength
+    this.start = start
+    this.next = next
+    this.prev = prev
   }
 
   call() {
