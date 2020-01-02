@@ -1,28 +1,24 @@
 // app/javascript/main/components/Navbar/containers/SideMenu.jsx
 
 import React from 'react'
+import PropTypes from 'prop-types'
 
 // Components
 import MenuItem from './components/MenuItem'
 
 const SideMenu = (props) => {
 
+  const translateX = props.display ? '0px' : '-9rem'
+
   const path = props.location.pathname
 
-  const handleClick = () => {
-    setTimeout(props.toggleDisplay(), 1000)
-  }
-
-  const containerStyle = () => {
-    if (props.display) {
-      return { transform: 'translate3d(0px, 0px, 0px)' }
-    } else {
-      return { transform: 'translate3d(-9rem, 0px, 0px)' }
-    }
-  }
+  const handleClick = () => setTimeout(props.toggleDisplay(), 1000)
 
   return(
-    <div id="side-menu" style={containerStyle()}>
+    <div
+      id="side-menu"
+      style={{ transform: `translate3d(${translateX}, 0px, 0px)` }}
+    >
       <ul className="navbar-nav">
         <MenuItem
           id="home-link"
@@ -61,6 +57,13 @@ const SideMenu = (props) => {
       </ul>
     </div>
   )
+}
+
+SideMenu.propTypes = {
+  display: PropTypes.bool,
+  location: PropTypes.object,
+  genres: PropTypes.array,
+  toggleDisplay: PropTypes.func
 }
 
 export default SideMenu

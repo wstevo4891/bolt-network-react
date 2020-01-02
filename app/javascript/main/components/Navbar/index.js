@@ -1,76 +1,57 @@
 // Navbar Main Component
 
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 // Components
-import NavContainer from './components/NavContainer'
-import NavCollapse from './components/NavCollapse'
-import SideMenu from './components/SideMenu'
-import Hamburger from './components/Hamburger'
-import SearchInput from './components/SearchBar/components/SearchInput'
+import NavbarUI from './components/NavbarUI'
 
-import logo from './images/bolt-network.svg'
-
+// Actions
 import { fetchSearchResults } from '@store/actions/searchActions'
 
 import { resetSuggestions } from '@store/actions/suggestionsActions'
 
 class Navbar extends Component {
-  state = {
-    location: this.props.location.pathname,
-    displayMenu: false
+  constructor(props) {
+    super(props)
+
+    this.genreLinks = Object.values(props.genresIndex)
+
+    this.state = {
+      location: props.location.pathname,
+      displayMenu: false
+    }
+
+    this.toggleDisplay = this.toggleDisplay.bind(this)
+    this.handleKeyUp = this.handleKeyUp.bind(this)
+    this.handleInputClick = this.handleInputClick.bind(this)
   }
 
   render() {
-    const genreLinks = Object.values(this.props.genresIndex)
+    const { history, location } = this.props
 
     return (
-      <NavContainer>
-        <Hamburger
-          dataTarget="side-menu"
-          handleClick={this.toggleDisplay}
-        />
-
-        <Link className="navbar-brand" to="/">
-          <img src={logo} alt="Bolt Network logo" className="logo" />
-        </Link>
-
-        <NavCollapse
-          {...this.props}
-          genreLinks={genreLinks}
-          fetchSearchResults={fetchSearchResults}
-          handleInputClick={this.handleInputClick}
-        />
-
-        <div id="mobileSearchInput">
-          <div className="form-inline">
-            <SearchInput
-              placeholder="Search"
-              handleKeyUp={this.handleKeyUp}
-              handleClick={this.handleInputClick}
-            />
-          </div>
-        </div>
-
-        <SideMenu
-          {...this.props}
-          genres={genreLinks}
-          display={this.state.displayMenu}
-          toggleDisplay={this.toggleDisplay}
-        />
-      </NavContainer>
+      <NavbarUI
+        history={history}
+        location={location}
+        displayMenu={this.state.displayMenu}
+        genreLinks={this.genreLinks}
+        toggleDisplay={this.toggleDisplay}
+        fetchSearchResults={fetchSearchResults}
+        handleKeyUp={this.handleKeyUp}
+        handleInputClick={this.handleInputClick}
+      />
     )
   }
 
-  toggleDisplay = () => {
+  toggleDisplay() {
     this.setState({
       displayMenu: !this.state.displayMenu
     })
   }
 
-  handleKeyUp = (event) => {
+  handleKeyUp(event) {
     const query = event.target.value
 
     this.updateLocation(query)
@@ -80,7 +61,7 @@ class Navbar extends Component {
     this.props.dispatch(fetchSearchResults(query))
   }
 
-  handleInputClick = (event) => {
+  handleInputClick(event) {
     const query = event.target.value
 
     this.updateLocation(query)
@@ -88,7 +69,7 @@ class Navbar extends Component {
     this.props.dispatch(resetSuggestions())
   }
 
-  updateLocation = (query) => {
+  updateLocation(query) {
     const history = this.props.history
     const location = this.state.location
 
@@ -116,6 +97,13 @@ class Navbar extends Component {
       location: propsLocation
     })
   }
+}
+
+Navbar.propTypes = {
+  genresIndex: PropTypes.object,
+  history: PropTypes.object,
+  location: PropTypes.object,
+  dispatch: PropTypes.func
 }
 
 function mapStateToProps(state) {
