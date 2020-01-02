@@ -50,9 +50,7 @@ class GenreSlider extends Component {
 
     root.style['pointer-events'] = 'none'
 
-    this.setState({
-      [key]: true
-    })
+    this.setState({ [key]: true })
 
     setTimeout(() => {
       this.handleTransitionEnd()

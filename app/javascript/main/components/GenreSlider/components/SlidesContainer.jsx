@@ -1,4 +1,4 @@
-// app/javascript/main/scenes/Home/GenreSliders/components/SliderContent.jsx
+// Slides Container
 
 import React from 'react'
 import PropTypes from 'prop-types'
@@ -9,7 +9,7 @@ import TranslateCalculator from '../services/TranslateCalculator'
 // Components
 import PosterList from '@components/PosterList'
 
-const SliderContainer = (props) => {
+const SlidesContainer = (props) => {
 
   const { slides, slideLength, start, next, prev } = props
 
@@ -34,7 +34,7 @@ const SliderContainer = (props) => {
   )
 }
 
-SliderContainer.propTypes = {
+SlidesContainer.propTypes = {
   slides: PropTypes.array,
   slideLength: PropTypes.number,
   start: PropTypes.bool,
@@ -42,4 +42,4 @@ SliderContainer.propTypes = {
   prev: PropTypes.bool
 }
 
-export default SliderContainer
+export default SlidesContainer

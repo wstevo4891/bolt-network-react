@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 import RowHeader from './RowHeader'
 import PaginationList from './PaginationList'
 import SliderArrow from './SliderArrow'
-import SliderContainer from './SliderContainer'
+import SlidesContainer from './SlidesContainer'
 
 const Slider = (props) => (
   <div id={`${props.genre}_row`} className='genre-slider-row'>
@@ -26,7 +26,7 @@ const Slider = (props) => (
         handleClick={props.handleClick}
       />
 
-      <SliderContainer
+      <SlidesContainer
         slides={props.slides}
         slideLength={props.slideLength}
         next={props.next}
