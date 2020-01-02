@@ -1,6 +1,7 @@
 // app/javascript/main/scenes/Search/components/Results.jsx
 
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import StaticSlides from './services/StaticSlides'
 
@@ -29,6 +30,11 @@ const Results = ({ movies, slideLength }) => {
       )}
     </div>
   )
+}
+
+Results.propTypes = {
+  movies: PropTypes.array,
+  slideLength: PropTypes.number
 }
 
 export default Results
