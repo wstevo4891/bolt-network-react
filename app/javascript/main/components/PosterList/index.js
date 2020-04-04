@@ -1,17 +1,27 @@
 // Poster List Component
 
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
+// Services
 import PosterDataFactory from '@services/PosterDataFactory'
 
+// Components
 import Poster from './components/Poster'
 
-export default class PosterList extends Component {
-  state = {
-    hoverItem: null
-  }
+class PosterList extends Component {
+  constructor(props) {
+    super(props)
 
-  _mounted = false
+    this.state = {
+      hoverItem: null
+    }
+
+    this._mounted = false
+
+    this.handleMouseLeave = this.handleMouseLeave.bind(this)
+    this.handleMouseOver = this.handleMouseOver.bind(this)
+  }
 
   render() {
     const factoryParams = {...this.state, ...this.props }
@@ -33,26 +43,23 @@ export default class PosterList extends Component {
     })
   }
 
-  handleMouseOver = (event) => {
+  handleMouseOver(event) {
     let mouseOut = false
     const target = event.target.closest('.poster-container')
-    const slideIndex = parseInt(target.classList[1].slice(-1), 10)
 
     target.onmouseout = () => mouseOut = true
 
     setTimeout(() => {
       if (mouseOut) return
 
-      this._mounted && this.setState({
-        hoverItem: slideIndex
-      })
+      const slideIndex = parseInt(target.classList[1].slice(-1), 10)
+
+      this._mounted && this.setState({ hoverItem: slideIndex })
     }, 500)
   }
 
-  handleMouseLeave = () => {
-    this._mounted && this.setState({
-      hoverItem: null
-    })
+  handleMouseLeave() {
+    this._mounted && this.setState({ hoverItem: null })
   }
 
   componentDidMount() {
@@ -63,3 +70,9 @@ export default class PosterList extends Component {
     this._mounted = false
   }
 }
+
+PosterList.propTypes = {
+  movies: PropTypes.array
+}
+
+export default PosterList

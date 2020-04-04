@@ -23,9 +23,9 @@ class Navbar extends Component {
       displayMenu: false
     }
 
-    this.toggleDisplay = this.toggleDisplay.bind(this)
-    this.handleKeyUp = this.handleKeyUp.bind(this)
     this.handleInputClick = this.handleInputClick.bind(this)
+    this.handleKeyUp = this.handleKeyUp.bind(this)
+    this.toggleDisplay = this.toggleDisplay.bind(this)
   }
 
   render() {
