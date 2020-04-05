@@ -5,19 +5,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
 // Components
-import PosterControls from './PosterControls'
-
-const renderControls = (params) => {
-  if (params.hoverItem !== params.slideItem) return <span></span>
-
-  return(
-    <PosterControls
-      movie={params.movie}
-      hoverItem={params.hoverItem}
-      slideItem={params.slideItem}
-    />
-  )
-}
+import PosterControlsWrapper from './PosterControlsWrapper'
 
 const Poster = (props) => (
   <div
@@ -31,7 +19,11 @@ const Poster = (props) => (
       <div className="poster-overlay"></div>
     </Link>
 
-    {renderControls(props)}
+    <PosterControlsWrapper
+      movie={props.movie}
+      hoverItem={props.hoverItem}
+      slideItem={props.slideItem}
+    />
   </div>
 )
 

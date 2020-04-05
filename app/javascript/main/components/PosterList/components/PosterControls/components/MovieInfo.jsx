@@ -3,13 +3,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function renderTitle(title) {
-  if (title.length > 40) {
-    return title.substring(0, 40) + '...'
-  } else {
-    return title
-  }
-}
+import MovieTitle from './MovieTitle'
 
 const MovieInfo = ({ movie }) => (
   <div className="movie-info">
@@ -20,7 +14,7 @@ const MovieInfo = ({ movie }) => (
     </div>
 
     <div>
-      <h3>{renderTitle(movie.title)}</h3>
+      <MovieTitle title={movie.title} />
     </div>
 
     <div>
@@ -35,7 +29,7 @@ const MovieInfo = ({ movie }) => (
 )
 
 MovieInfo.propTypes = {
-  movie: PropTypes.object
+  movie: PropTypes.object.isRequired
 }
 
 export default MovieInfo
