@@ -16,11 +16,11 @@ export default class StaticSlides {
   }
 
   buildSlides() {
+    let arr
     let i = 0
-    let len = this.movies.length
 
-    while(i < len) {
-      let arr = this.movies.slice(i, i += this.limit)
+    while(i < this.movies.length) {
+      arr = this.movies.slice(i, i += this.limit)
 
       this.slides.push(arr)
     }
