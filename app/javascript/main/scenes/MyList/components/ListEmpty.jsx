@@ -15,7 +15,7 @@ const ListEmpty = () => (
       
       <p>
         You may also add the movies in the home page slider.
-        Click on the "+ My List" button.
+        Click on the &quot;+ My List&quot; button.
       </p>
 
       <p>Return to the <Link to="/">Home Page</Link> and try it out.</p>

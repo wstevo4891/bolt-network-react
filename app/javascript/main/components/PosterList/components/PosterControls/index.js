@@ -16,8 +16,11 @@ function StatusMap(volume, like, unlike) {
 }
 
 export default class PosterControls extends Component {
-  state = {
-    likeState: undefined
+  constructor(props) {
+    super(props)
+    this.state = {
+      likeState: undefined
+    }
   }
 
   render() {

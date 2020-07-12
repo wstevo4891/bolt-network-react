@@ -4,12 +4,21 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import Home from './scenes/Home'
-import Genre from './scenes/Genre'
-import Movie from './scenes/Movie'
-import Recent from './scenes/Recent'
-import MyList from './scenes/MyList'
-import Search from './scenes/Search'
+// import Home from './scenes/Home'
+// import Genre from './scenes/Genre'
+// import Movie from './scenes/Movie'
+// import Recent from './scenes/Recent'
+// import MyList from './scenes/MyList'
+// import Search from './scenes/Search'
+
+import {
+  Home,
+  Genre,
+  Movie,
+  Recent,
+  MyList,
+  Search
+} from './scenes'
 
 const Routes = (props) => (
   <Switch>
