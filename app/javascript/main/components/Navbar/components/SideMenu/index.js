@@ -4,7 +4,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 // Components
-import MenuItem from './components/MenuItem'
+import MenuItem from './MenuItem'
 
 const SideMenu = (props) => {
 

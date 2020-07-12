@@ -3,21 +3,24 @@ import PropTypes from 'prop-types'
 
 const Icon = (props) => (
   <i
+    aria-hidden={props.ariaHidden}
     className={`fa ${props.icon}`}
     id={props.id}
-    aria-hidden={props.ariaHidden}
+    onClick={props.handleClick}
   />
 )
 
 Icon.propTypes = {
   icon: PropTypes.string.isRequired,
-  id: PropTypes.string,
   ariaHidden: PropTypes.string,
+  handleClick: PropTypes.func,
+  id: PropTypes.string,
 }
 
 Icon.defaultProps = {
-  id: null,
   ariaHidden: null,
+  handleClick: () => void {},
+  id: null,
 }
 
 export default Icon

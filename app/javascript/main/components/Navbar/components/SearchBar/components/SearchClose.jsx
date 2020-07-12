@@ -1,33 +1,26 @@
 // app/javascript/main/components/Navbar/components/SearchClose.jsx
 
 import React from 'react'
+import PropTypes from 'prop-types'
 
-const SearchClose = (props) => {
+import { Icon } from '@components'
 
-  const iconClass = () => {
-    if (props.query) {
-      return 'fa fa-times'
-    } else {
-      return 'fa fa-time d-none'
-    }
-  }
+const SearchClose = ({ handleClick, query }) => {
+  const iconClass = query ? 'fa-times' : 'fa-time d-none'
 
-  // const iconClass = function() {
-  //   if (props.query) {
-  //     return 'fa fa-times'
-  //   } else {
-  //     return 'fa fa-time d-none'
-  //   }
-  // }()
-
-  return(
-    <i
+  return (
+    <Icon
+      ariaHidden="true"
+      handleClick={handleClick}
+      icon={iconClass}
       id="closeIcon"
-      aria-hidden="true"
-      className={iconClass()}
-      onClick={() => props.handleClick()}
-    ></i>
+    />
   )
+}
+
+SearchClose.propTypes = {
+  handleClick: PropTypes.func,
+  query: PropTypes.bool,
 }
 
 export default SearchClose

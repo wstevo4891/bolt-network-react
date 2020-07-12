@@ -1,5 +1,3 @@
-// app/javascript/main/components/Navbar/components/Hamburger.jsx
-
 import React from 'react'
 import PropTypes from 'prop-types'
 
@@ -19,8 +17,8 @@ const Hamburger = (props) => (
 )
 
 Hamburger.propTypes = {
-  dataTarget: PropTypes.string,
-  handleClick: PropTypes.func,
+  dataTarget: PropTypes.string.isRequired,
+  handleClick: PropTypes.func.isRequired,
 }
 
 export default Hamburger
