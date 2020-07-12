@@ -4,56 +4,76 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 function makeToggleable(Clickable) {
-  return class Proxy extends React.Component {
+  class Proxy extends React.Component {
     constructor(props) {
       super(props)
       this.iconOptions = props.iconOptions
-      this.toggle = this.toggle.bind(this)
+
       this.state = {
-        status: this.props.status
+        status: props.status,
+        icon: this.setIcon(props.status)
       }
-    }
 
-    static propTypes = {
-      iconOptions: PropTypes.array.isRequired,
-      status: PropTypes.bool.isRequired,
-      buttonClass: PropTypes.string,
-      text: PropTypes.string,
-      updateStatus: PropTypes.func
-    }
-
-    static defaultProps = {
-      buttonClass: '',
-      text: '',
-      updateStatus: () => true
+      this.toggle = this.toggle.bind(this)
     }
 
     render() {
       const { buttonClass, text } = this.props
-      const icon = this.setIcon()
 
       return(
         <Clickable
           buttonClass={buttonClass}
           handleClick={this.toggle}
-          icon={icon}
+          iconProps={this.buildIconProps()}
           text={text}
         />
       )
     }
 
-    setIcon() {
-      return this.state.status ? this.iconOptions[1] : this.iconOptions[0]
+    setIcon(status) {
+      return status ? this.iconOptions[1] : this.iconOptions[0]
+    }
+
+    buildIconProps() {
+      const { iconProps } = this.props
+      const { icon } = this.state
+
+      return Object.assign({}, iconProps, { icon })
     }
 
     toggle() {
+      const newStatus = !this.state.status
+      const newIcon = this.setIcon(newStatus)
+
       this.setState({
-        status: !this.state.status
+        status: newStatus,
+        icon: newIcon,
       })
 
       this.props.updateStatus()
     }
   }
+
+  Proxy.propTypes = {
+    iconOptions: PropTypes.array.isRequired,
+    status: PropTypes.bool.isRequired,
+    iconProps: PropTypes.shape({
+      id: PropTypes.string,
+      ariaHidden: PropTypes.string,
+    }),
+    buttonClass: PropTypes.string,
+    text: PropTypes.string,
+    updateStatus: PropTypes.func
+  }
+
+  Proxy.defaultProps = {
+    buttonClass: null,
+    iconProps: {},
+    text: null,
+    updateStatus: () => void {},
+  }
+
+  return Proxy
 }
 
 export default makeToggleable

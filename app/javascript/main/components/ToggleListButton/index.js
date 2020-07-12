@@ -11,28 +11,14 @@ class ToggleListButton extends Component {
   constructor(props) {
     super(props)
     this.list = new SessionList(props.movie, props.listName)
+
     this.state = {
       inList: null
     }
   }
 
-  static propTypes = {
-    movie: PropTypes.object.isRequired,
-    iconOptions: PropTypes.array.isRequired,
-    listName: PropTypes.string.isRequired,
-    updateContainer: PropTypes.func,
-    buttonClass: PropTypes.string,
-    text: PropTypes.string
-  }
-
-  static defaultProps = {
-    updateContainer: () => true,
-    buttonClass: '',
-    text: ''
-  }
-
   render() {
-    const { iconOptions, buttonClass, text } = this.props
+    const { iconOptions, iconProps, buttonClass, text } = this.props
     const inList = this.state.inList
 
     if (inList === null) return null
@@ -41,6 +27,7 @@ class ToggleListButton extends Component {
       <ToggleIconButton
         status={inList}
         iconOptions={iconOptions}
+        iconProps={iconProps}
         buttonClass={buttonClass}
         text={text}
         updateStatus={this.toggleList}
@@ -59,10 +46,32 @@ class ToggleListButton extends Component {
   }
 
   componentDidMount() {
+    const movieInList = this.list.findMovie()
+
     this.setState({
-      inList: this.list.findMovie()
+      inList: movieInList
     })
   }
+}
+
+ToggleListButton.propTypes = {
+  movie: PropTypes.object.isRequired,
+  iconOptions: PropTypes.array.isRequired,
+  iconProps: PropTypes.shape({
+    id: PropTypes.string,
+    ariaHidden: PropTypes.string,
+  }),
+  listName: PropTypes.string.isRequired,
+  updateContainer: PropTypes.func,
+  buttonClass: PropTypes.string,
+  text: PropTypes.string
+}
+
+ToggleListButton.defaultProps = {
+  buttonClass: null,
+  iconProps: {},
+  text: null,
+  updateContainer: () => void {},
 }
 
 export default ToggleListButton

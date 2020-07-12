@@ -10,22 +10,25 @@ import Icon from '../Icon'
 const IconButton = (props) => (
   <button
     className={props.buttonClass}
+    id={props.id}
     onClick={props.handleClick}
   >
-    <Icon icon={props.icon} />{props.text}
+    <Icon {...props.iconProps} />{props.text}
   </button>
 )
 
 IconButton.propTypes = {
   handleClick: PropTypes.func.isRequired,
-  icon: PropTypes.string.isRequired,
+  iconProps: PropTypes.shape(Icon.propTypes),
+  id: PropTypes.string,
   buttonClass: PropTypes.string,
   text: PropTypes.string
 }
 
 IconButton.defaultProps = {
-  buttonClass: '',
-  text: ''
+  buttonClass: null,
+  id: null,
+  text: null
 }
 
 const ToggleIconButton = makeToggleable(IconButton)

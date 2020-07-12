@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 // Components
+import { IconButton } from '@components'
 import InputDisplay from './components/InputDisplay'
 
 class SearchBar extends Component {
@@ -21,16 +22,18 @@ class SearchBar extends Component {
 
     const boxClass = display ? 'searchBox d-none' : 'searchBox'
     const wrapperClass = display ? 'searchWrapper' : 'searchWrapper d-none'
+    const iconProps = {
+      icon: "fa-search",
+      ariaHidden: "true",
+    }
 
     return(
       <li className="d-sm-inline-block nav-item">
-        <button
-          className={boxClass}
-          id="nav-item"
-          onClick={this.handleClick}
-        >
-          <i className="fa fa-search" aria-hidden="true"></i>
-        </button>
+        <IconButton
+          buttonClass={boxClass}
+          handleClick={this.handleClick}
+          iconProps={iconProps}
+        />
 
         <div className={wrapperClass}>
           <InputDisplay

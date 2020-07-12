@@ -3,6 +3,7 @@
 import React, { Component } from 'react'
 
 // Components
+import { Icon } from '@components'
 import SearchInput from './SearchInput'
 import SearchClose from './SearchClose'
 
@@ -22,7 +23,7 @@ class InputDisplay extends Component {
 
     return(
       <div id="searchInput" style={{ width: 0 }}>
-        <i className="fa fa-search" id="searchIcon" aria-hidden="true"></i>
+        <Icon icon="fa-search" id="searchIcon" ariaHidden="true" />
 
         <div className="form-inline">
           <SearchInput

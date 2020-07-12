@@ -17,8 +17,12 @@ const PosterControlsWrapper = (props) => {
 
 PosterControlsWrapper.propTypes = {
   movie: PropTypes.object.isRequired,
-  hoverItem: PropTypes.number.isRequired,
-  slideItem: PropTypes.number.isRequired
+  slideItem: PropTypes.number.isRequired,
+  hoverItem: PropTypes.number,
+}
+
+PosterControlsWrapper.defaultProps = {
+  hoverItem: null,
 }
 
 export default PosterControlsWrapper
