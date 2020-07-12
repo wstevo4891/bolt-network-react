@@ -11,7 +11,7 @@ class Movie < ApplicationRecord
   SEARCH_LIMITS = {
     MULTI: 10,
     SINGLE: 30
-  }
+  }.freeze
 
   # == Attributes =============================================================
   # t.string   :title

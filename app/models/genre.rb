@@ -5,6 +5,11 @@ class Genre < ApplicationRecord
   # == Extensions =============================================================
   include PgSearch::Model
 
+  # == Constants ==============================================================
+  MOST_MOVIES_LIMIT = 28
+
+  SEARCH_LIMIT = 10
+
   # == Attributes =============================================================
   # title  {String}
   # slug   {String}
@@ -44,7 +49,7 @@ class Genre < ApplicationRecord
   end
 
   def self.search(query)
-    select(:id, :alias).match_title(query).limit(10)
+    select(:id, :alias).match_title(query).limit(SEARCH_LIMIT)
   rescue ActiveRecord::RecordNotFound
     []
   end
@@ -62,12 +67,12 @@ class Genre < ApplicationRecord
   def self.with_most_movies
     joins(:genres_movies)
       .group('genres.id')
-      .having('COUNT(genre_id) > ?', 28)
+      .having('COUNT(genre_id) > ?', MOST_MOVIES_LIMIT)
       .pluck(:title)
   end
 
   def self.with_most_movies_index
-    select { |genre| genre.movies.size > 28 }.pluck(:title)
+    select { |genre| genre.movies.size > MOST_MOVIES_LIMIT }.pluck(:title)
   end
 
   # == Instance Methods =======================================================
