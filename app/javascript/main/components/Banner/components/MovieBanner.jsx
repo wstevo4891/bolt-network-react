@@ -58,7 +58,7 @@ const MovieBanner = ({ movie }) => {
 }
 
 MovieBanner.propTypes = {
-  movie: PropTypes.object
+  movie: PropTypes.object.isRequired
 }
 
 export default MovieBanner

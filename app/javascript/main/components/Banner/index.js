@@ -20,7 +20,6 @@ class Banner extends Component {
 
   render() {
     const movies = this.props.movies
-
     if (movies.length === 0) return null
 
     const movie = movies[this.state.activeIndex]
@@ -39,7 +38,7 @@ class Banner extends Component {
     }
   }
 
-  randomIndex = max => {
+  randomIndex(max) {
     return Math.floor(Math.random() * Math.floor(max))
   }
 }

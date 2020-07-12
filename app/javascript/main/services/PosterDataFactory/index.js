@@ -1,11 +1,8 @@
 // Poster Data Service
 
 import PosterParamsFactory from './services/PosterParamsFactory'
-
 import PosterData from './services/PosterData'
-
 import ContainerFactory from './services/ContainerFactory'
-
 import HoverStyleFactory from './services/HoverStyleFactory'
 
 export default class PosterDataFactory {

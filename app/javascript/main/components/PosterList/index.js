@@ -24,9 +24,7 @@ class PosterList extends Component {
   }
 
   render() {
-    const factoryParams = {...this.state, ...this.props }
-
-    const dataFactory = new PosterDataFactory(factoryParams)
+    const dataFactory = new PosterDataFactory({...this.state, ...this.props })
 
     return this.props.movies.map((movie, index) => {
 
@@ -72,7 +70,7 @@ class PosterList extends Component {
 }
 
 PosterList.propTypes = {
-  movies: PropTypes.array
+  movies: PropTypes.array.isRequired
 }
 
 export default PosterList
