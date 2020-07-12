@@ -17,10 +17,6 @@ import Footer from './components/Footer'
 import { fetchMoviesIndex } from './store/actions/moviesIndexActions'
 
 class App extends Component {
-  static propTypes = {
-    genres: PropTypes.array
-  }
-
   render() {
     if (this.props.genres.length === 0) return null
 
@@ -42,6 +38,11 @@ class App extends Component {
   componentDidMount() {
     this.props.dispatch(fetchMoviesIndex())
   }
+}
+
+App.propTypes = {
+  dispatch: PropTypes.func,
+  genres: PropTypes.array
 }
 
 function mapStateToProps(state) {

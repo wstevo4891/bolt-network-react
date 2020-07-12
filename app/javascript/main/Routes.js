@@ -1,15 +1,9 @@
 // app/javascript/main/components/Routes.jsx
 
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Switch, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
-
-// import Home from './scenes/Home'
-// import Genre from './scenes/Genre'
-// import Movie from './scenes/Movie'
-// import Recent from './scenes/Recent'
-// import MyList from './scenes/MyList'
-// import Search from './scenes/Search'
 
 import {
   Home,
@@ -66,6 +60,10 @@ const Routes = (props) => (
     />
   </Switch>
 )
+
+Routes.propTypes = {
+  slideLength: PropTypes.number.isRequired,
+}
 
 function mapStateToProps(state) {
   return {
