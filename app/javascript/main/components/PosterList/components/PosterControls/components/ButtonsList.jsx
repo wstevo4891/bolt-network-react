@@ -4,8 +4,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import ListItem from './ListItem'
-import { ToggleIconButton } from '@components/IconButton'
-import ToggleListButton from '@components/ToggleListButton'
+import { ToggleIconButton, ToggleListButton } from '@components'
 
 const ButtonsList = (props) => (
   <ul className="poster-buttons">

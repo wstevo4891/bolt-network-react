@@ -1,6 +1,7 @@
 export { default as Banner } from './Banner'
 export { default as Footer } from './Footer'
 export { default as GenreSlider } from './GenreSlider'
+export { default as Icon } from './Icon'
 export { IconButton, ToggleIconButton } from './IconButton'
 export { default as MainContainer } from './MainContainer'
 export { default as Navbar } from './Navbar'
