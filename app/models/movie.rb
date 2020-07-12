@@ -2,10 +2,18 @@
 
 # Model for movies table
 class Movie < ApplicationRecord
-  # == Extensions ===========================================================
+  # == Extensions =============================================================
   include PgSearch::Model
 
-  # == Attributes ===========================================================
+  # == Constants ==============================================================
+  INDEX_LIMIT = 24
+
+  SEARCH_LIMITS = {
+    MULTI: 10,
+    SINGLE: 30
+  }
+
+  # == Attributes =============================================================
   # t.string   :title
   # t.string   :slug
   # t.integer  :year
@@ -29,23 +37,23 @@ class Movie < ApplicationRecord
 
   mount_uploader :logo, PhotoUploader
 
-  # == Relationships ========================================================
+  # == Relationships ==========================================================
   has_and_belongs_to_many :genres
   has_and_belongs_to_many :people
 
-  # == Validations ==========================================================
+  # == Validations ============================================================
   validates :title, :year, :rated, :run_time, :plot, presence: true
 
-  # == Scopes ===============================================================
+  # == Scopes =================================================================
   pg_search_scope :search_full_text,
                   against: %i[title genres_list directors writers actors],
                   using: %i[tsearch]
 
   scope :recent, -> { where('year > ?', 5.years.ago.year) }
 
-  # == Callbacks ============================================================
+  # == Callbacks ==============================================================
 
-  # == Class Methods ========================================================
+  # == Class Methods ==========================================================
   ##
   # self.index_by_genre()
   #   Create a hash with Genre titles as keys and arrays of
@@ -57,7 +65,7 @@ class Movie < ApplicationRecord
     # Cache this expensive lookup to improve performance
     Rails.cache.fetch('movies_index_by_genre', expires_in: 12.hours) do
       Genre.all.each_with_object({}) do |genre, hash|
-        hash[genre.title] = genre.movies.limit(24)
+        hash[genre.title] = genre.movies.limit(INDEX_LIMIT)
       end
     end
   end
@@ -97,7 +105,7 @@ class Movie < ApplicationRecord
   end
 
   def self.find_by_genres(genres)
-    limit = genres.length > 1 ? 10 : 30
+    limit = genres.length > 1 ? SEARCH_LIMITS.MULTI : SEARCH_LIMITS.SINGLE
 
     genres.each_with_object([]) do |genre, array|
       array.concat(genre.movies.limit(limit))
@@ -107,7 +115,7 @@ class Movie < ApplicationRecord
   def self.find_by_association(records)
     return [] if records.empty?
 
-    limit = records.length > 1 ? 10 : 30
+    limit = records.length > 1 ? SEARCH_LIMITS.MULTI : SEARCH_LIMITS.SINGLE
 
     records.each_with_object([]) do |record, array|
       array.concat(record.movies.limit(limit))
@@ -125,7 +133,7 @@ class Movie < ApplicationRecord
       .select(
         :id, :title, :slug, :photo, :year, :rated,
         :run_time, :plot, :genres_list
-      ).limit(30)
+      ).limit(SEARCH_LIMITS.SINGLE)
   rescue ActiveRecord::RecordNotFound
     []
   end
@@ -155,7 +163,7 @@ class Movie < ApplicationRecord
     search_by_title(match)
       .or(search_by_genre(match))
       .or(search_by_people(match))
-      .limit(30)
+      .limit(SEARCH_LIMITS.SINGLE)
       .to_a
   end
 
