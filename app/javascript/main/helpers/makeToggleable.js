@@ -10,44 +10,38 @@ function makeToggleable(Clickable) {
       this.options = props.options
 
       this.state = {
-        status: props.status,
-        icon: this.setIcon(props.status)
+        status: props.status
       }
 
       this.toggle = this.toggle.bind(this)
     }
 
     render() {
-      const { buttonClass, text } = this.props
-
       return(
         <Clickable
-          buttonClass={buttonClass}
           handleClick={this.toggle}
-          iconProps={this.buildIconProps()}
-          text={text}
+          {...this.buildClickableProps()}
         />
       )
     }
 
-    setIcon(status) {
-      return status ? this.options[1] : this.options[0]
+    selectOption() {
+      return this.state.status ? this.options[1] : this.options[0]
     }
 
-    buildIconProps() {
-      const { iconProps } = this.props
-      const { icon } = this.state
+    buildClickableProps() {
+      const { clickableProps, optionKey } = this.props
+      const option = this.selectOption()
 
-      return Object.assign({}, iconProps, { icon })
+
+      return Object.assign({}, clickableProps, { [optionKey]: option })
     }
 
     toggle() {
       const newStatus = !this.state.status
-      const newIcon = this.setIcon(newStatus)
 
       this.setState({
         status: newStatus,
-        icon: newIcon,
       })
 
       this.props.updateStatus()
@@ -57,19 +51,13 @@ function makeToggleable(Clickable) {
   Proxy.propTypes = {
     options: PropTypes.array.isRequired,
     status: PropTypes.bool.isRequired,
-    iconProps: PropTypes.shape({
-      id: PropTypes.string,
-      ariaHidden: PropTypes.string,
-    }),
-    buttonClass: PropTypes.string,
-    text: PropTypes.string,
+    optionKey: PropTypes.string.isRequired,
+    clickableProps: PropTypes.object,
     updateStatus: PropTypes.func
   }
 
   Proxy.defaultProps = {
-    buttonClass: null,
-    iconProps: {},
-    text: null,
+    clickableProps: {},
     updateStatus: () => void {},
   }
 

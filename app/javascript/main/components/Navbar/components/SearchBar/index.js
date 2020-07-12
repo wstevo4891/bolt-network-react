@@ -22,17 +22,16 @@ class SearchBar extends Component {
 
     const boxClass = display ? 'searchBox d-none' : 'searchBox'
     const wrapperClass = display ? 'searchWrapper' : 'searchWrapper d-none'
-    const iconProps = {
-      icon: "fa-search",
-      ariaHidden: "true",
-    }
 
     return(
       <li className="d-sm-inline-block nav-item">
         <IconButton
           buttonClass={boxClass}
           handleClick={this.handleClick}
-          iconProps={iconProps}
+          iconProps={{
+            icon: "fa-search",
+            ariaHidden: "true",
+          }}
         />
 
         <div className={wrapperClass}>

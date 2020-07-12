@@ -42,11 +42,14 @@ const MovieBanner = ({ movie }) => {
               </Link>
 
               <ToggleListButton
+                clickableProps={{
+                  buttonClass: 'btn-clear',
+                  text: 'MY LIST'
+                }}
                 movie={movie}
-                buttonClass="btn-clear"
                 options={['fa-plus', 'fa-check']}
+                optionKey="icon"
                 listName="MyList"
-                text="MY LIST"
               />
             </div>
           </div>

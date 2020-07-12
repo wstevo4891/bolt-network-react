@@ -7,18 +7,27 @@ import makeToggleable from '@helpers/makeToggleable'
 
 import Icon from '../Icon'
 
+function iconProps(props) {
+  if (props.icon) {
+    return Object.assign({}, props.iconProps, { icon: props.icon })
+  }
+
+  return props.iconProps
+}
+
 const IconButton = (props) => (
   <button
     className={props.buttonClass}
     id={props.id}
     onClick={props.handleClick}
   >
-    <Icon {...props.iconProps} />{props.text}
+    <Icon {...iconProps(props)} />{props.text}
   </button>
 )
 
 IconButton.propTypes = {
   handleClick: PropTypes.func.isRequired,
+  icon: PropTypes.string,
   iconProps: PropTypes.shape(Icon.propTypes),
   id: PropTypes.string,
   buttonClass: PropTypes.string,
