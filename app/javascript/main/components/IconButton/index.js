@@ -5,12 +5,14 @@ import PropTypes from 'prop-types'
 
 import makeToggleable from '@helpers/makeToggleable'
 
+import Icon from '../Icon'
+
 const IconButton = (props) => (
   <button
     className={props.buttonClass}
     onClick={props.handleClick}
   >
-    <i className={`fa ${props.icon}`}></i>{props.text}
+    <Icon icon={props.icon} />{props.text}
   </button>
 )
 
