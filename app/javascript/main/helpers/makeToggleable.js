@@ -7,7 +7,7 @@ function makeToggleable(Clickable) {
   class Proxy extends React.Component {
     constructor(props) {
       super(props)
-      this.iconOptions = props.iconOptions
+      this.options = props.options
 
       this.state = {
         status: props.status,
@@ -31,7 +31,7 @@ function makeToggleable(Clickable) {
     }
 
     setIcon(status) {
-      return status ? this.iconOptions[1] : this.iconOptions[0]
+      return status ? this.options[1] : this.options[0]
     }
 
     buildIconProps() {
@@ -55,7 +55,7 @@ function makeToggleable(Clickable) {
   }
 
   Proxy.propTypes = {
-    iconOptions: PropTypes.array.isRequired,
+    options: PropTypes.array.isRequired,
     status: PropTypes.bool.isRequired,
     iconProps: PropTypes.shape({
       id: PropTypes.string,

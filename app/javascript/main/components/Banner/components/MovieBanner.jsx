@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
 // Components
-import ToggleListButton from '../../ToggleListButton'
+import { Icon, ToggleListButton } from '@components'
 
 function BannerImage(movie) {
   this.backgroundImage = `url(${movie.banner.url})`
@@ -38,13 +38,13 @@ const MovieBanner = ({ movie }) => {
 
             <div className="slide-buttons">
               <Link to={movie.url} className="btn-blue" id="play">
-                <i className="fa fa-play"></i>PLAY
+                <Icon icon="fa-play" />PLAY
               </Link>
 
               <ToggleListButton
                 movie={movie}
                 buttonClass="btn-clear"
-                iconOptions={['fa-plus', 'fa-check']}
+                options={['fa-plus', 'fa-check']}
                 listName="MyList"
                 text="MY LIST"
               />

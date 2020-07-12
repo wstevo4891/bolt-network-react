@@ -18,7 +18,7 @@ class ToggleListButton extends Component {
   }
 
   render() {
-    const { iconOptions, iconProps, buttonClass, text } = this.props
+    const { options, iconProps, buttonClass, text } = this.props
     const inList = this.state.inList
 
     if (inList === null) return null
@@ -26,7 +26,7 @@ class ToggleListButton extends Component {
     return(
       <ToggleIconButton
         status={inList}
-        iconOptions={iconOptions}
+        options={options}
         iconProps={iconProps}
         buttonClass={buttonClass}
         text={text}
@@ -56,7 +56,7 @@ class ToggleListButton extends Component {
 
 ToggleListButton.propTypes = {
   movie: PropTypes.object.isRequired,
-  iconOptions: PropTypes.array.isRequired,
+  options: PropTypes.array.isRequired,
   iconProps: PropTypes.shape({
     id: PropTypes.string,
     ariaHidden: PropTypes.string,

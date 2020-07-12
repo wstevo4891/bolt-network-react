@@ -3,13 +3,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { Icon } from '@components'
+
 import MovieTitle from './MovieTitle'
 
 const MovieInfo = ({ movie }) => (
   <div className="movie-info">
     <div>
       <span className="play-icon">
-        <i className="fa fa-play"></i>
+        <Icon icon="fa-play" />
       </span>
     </div>
 
