@@ -10,9 +10,11 @@ import { connect } from 'react-redux'
 
 import Routes from './Routes'
 
-import MainContainer from './components/MainContainer'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
+import {
+  MainContainer,
+  Navbar,
+  Footer
+} from './components'
 
 import { fetchMoviesIndex } from './store/actions/moviesIndexActions'
 
