@@ -105,7 +105,7 @@ class Movie < ApplicationRecord
   end
 
   def self.find_by_genres(genres)
-    limit = genres.length > 1 ? SEARCH_LIMITS.MULTI : SEARCH_LIMITS.SINGLE
+    limit = genres.length > 1 ? SEARCH_LIMITS[:MULTI] : SEARCH_LIMITS[:SINGLE]
 
     genres.each_with_object([]) do |genre, array|
       array.concat(genre.movies.limit(limit))
@@ -115,7 +115,7 @@ class Movie < ApplicationRecord
   def self.find_by_association(records)
     return [] if records.empty?
 
-    limit = records.length > 1 ? SEARCH_LIMITS.MULTI : SEARCH_LIMITS.SINGLE
+    limit = records.length > 1 ? SEARCH_LIMITS[:MULTI] : SEARCH_LIMITS[:SINGLE]
 
     records.each_with_object([]) do |record, array|
       array.concat(record.movies.limit(limit))
@@ -133,7 +133,7 @@ class Movie < ApplicationRecord
       .select(
         :id, :title, :slug, :photo, :year, :rated,
         :run_time, :plot, :genres_list
-      ).limit(SEARCH_LIMITS.SINGLE)
+      ).limit(SEARCH_LIMITS[:SINGLE])
   rescue ActiveRecord::RecordNotFound
     []
   end
@@ -163,7 +163,7 @@ class Movie < ApplicationRecord
     search_by_title(match)
       .or(search_by_genre(match))
       .or(search_by_people(match))
-      .limit(SEARCH_LIMITS.SINGLE)
+      .limit(SEARCH_LIMITS[:SINGLE])
       .to_a
   end
 

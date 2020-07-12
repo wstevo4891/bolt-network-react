@@ -31,11 +31,8 @@ class SearchResultsThree
 
   def search_movies
     movies = sorted_movie_search
-
     return movies unless movies.empty?
-
     return @genres.first.movies unless @genres.empty?
-
     return @people.first.movies unless @people.empty?
 
     []
@@ -48,7 +45,7 @@ class SearchResultsThree
   end
 
   def add_movies_with_genres_and_people
-    return if @movies.size >= 30
+    return if @movies.size >= Movie::SEARCH_LIMITS[:SINGLE]
 
     records = @genres + @people
 
