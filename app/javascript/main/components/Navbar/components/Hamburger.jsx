@@ -3,19 +3,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { IconButton } from '@components'
+
 const Hamburger = (props) => (
-  <button
-    className="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target={`#${props.dataTarget}`}
-    aria-controls={props.dataTarget}
-    aria-expanded="false"
-    aria-label="Menu Button"
-    onClick={props.handleClick}
-  >
-    <span className="fa fa-bars"></span>
-  </button>
+  <IconButton
+    ariaControls={props.dataTarget}
+    ariaExpanded="false"
+    ariaLabel="Menu Button"
+    buttonClass="navbar-toggler"
+    dataToggle="collapse"
+    dataTarget={`#${props.dataTarget}`}
+    handleClick={props.handleClick}
+    icon="fa-bars"
+  />
 )
 
 Hamburger.propTypes = {
