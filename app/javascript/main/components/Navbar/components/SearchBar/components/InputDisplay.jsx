@@ -6,15 +6,15 @@ import React, { Component } from 'react'
 import SearchInput from './SearchInput'
 import SearchClose from './SearchClose'
 
-class InputDisplayPlus extends Component {
-  searchClasses = [
-    'searchWrapper',
-    'searchInput',
-    'fa',
-    'form-inline',
-    'form-control'
-  ]
+const SEARCH_CLASSES = [
+  'searchWrapper',
+  'searchInput',
+  'fa',
+  'form-inline',
+  'form-control'
+]
 
+class InputDisplay extends Component {
   render() {
     if (this.props.display === false) return null
 
@@ -70,7 +70,7 @@ class InputDisplayPlus extends Component {
   shrinkAndHide = (value, targetClass) => {
     if (
       value.length > 0 ||
-      this.searchClasses.includes(targetClass)
+      SEARCH_CLASSES.includes(targetClass)
     ) return
 
     document.querySelector('#searchInput').style.width = '0px'
@@ -100,4 +100,4 @@ class InputDisplayPlus extends Component {
   }
 }
 
-export default InputDisplayPlus
+export default InputDisplay
