@@ -1,6 +1,7 @@
 // app/javascript/main/components/Navbar/components/Hamburger.jsx
 
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Hamburger = (props) => (
   <button
@@ -16,5 +17,10 @@ const Hamburger = (props) => (
     <span className="fa fa-bars"></span>
   </button>
 )
+
+Hamburger.propTypes = {
+  dataTarget: PropTypes.string,
+  handleClick: PropTypes.func,
+}
 
 export default Hamburger

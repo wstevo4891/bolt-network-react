@@ -17,10 +17,12 @@ function makeToggleable(Clickable) {
     }
 
     render() {
+      const clickableProps = this.buildClickableProps()
+
       return(
         <Clickable
           handleClick={this.toggle}
-          {...this.buildClickableProps()}
+          {...clickableProps}
         />
       )
     }

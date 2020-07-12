@@ -5,7 +5,8 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
 // Components
-import { Icon, ToggleListButton } from '@components'
+import Icon from '../Icon'
+import ToggleListButton from '../ToggleListButton'
 
 function BannerImage(movie) {
   this.backgroundImage = `url(${movie.banner.url})`

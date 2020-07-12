@@ -46,9 +46,7 @@ class Navbar extends Component {
   }
 
   toggleDisplay() {
-    this.setState({
-      displayMenu: !this.state.displayMenu
-    })
+    this.setState(prevState => ({ displayMenu: !prevState.displayMenu }))
   }
 
   handleKeyUp(event) {

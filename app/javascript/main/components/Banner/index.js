@@ -1,12 +1,13 @@
 // Banner Component
 
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 // Components
-import MovieBanner from './components/MovieBanner'
+import MovieBanner from './MovieBanner'
 
-import { fetchBannerMovies } from '../../store/actions/bannerMoviesActions'
+import { fetchBannerMovies } from '@store/actions/bannerMoviesActions'
 
 class Banner extends Component {
   state = {
@@ -41,6 +42,11 @@ class Banner extends Component {
   randomIndex(max) {
     return Math.floor(Math.random() * Math.floor(max))
   }
+}
+
+Banner.propTypes = {
+  dispatch: PropTypes.func,
+  movies: PropTypes.array,
 }
 
 function mapStateToProps(state) {

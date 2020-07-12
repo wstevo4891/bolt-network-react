@@ -46,7 +46,7 @@ const SideMenu = (props) => {
 
         {props.genres.map((genre, index) =>
           <MenuItem
-            key={index}
+            key={genre.id}
             id={`genre-link-${index}`}
             path={path}
             href={genre.url}
