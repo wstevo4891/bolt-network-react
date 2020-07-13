@@ -2,14 +2,18 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 class NavContainer extends Component {
-  get navbar() {
-    return document.querySelector('.navbar')
+  constructor(props) {
+    super(props)
+    this.navbarRef = React.createRef()
   }
 
   render() {
     return(
       <div id="navbar">
-        <nav className="navbar navbar-expand-md fixed-top">
+        <nav
+          className="navbar navbar-expand-md fixed-top"
+          ref={this.navbarRef}
+        >
           {this.props.children}
         </nav>
       </div>
@@ -22,7 +26,7 @@ class NavContainer extends Component {
     window.addEventListener('resize', this.assignScrollListener)
   }
 
-  assignScrollListener() {
+  assignScrollListener = () => {
     if (window.innerWidth < 768) {
       this.addShadow()
       window.removeEventListener('scroll', this.handleScroll)
@@ -44,11 +48,11 @@ class NavContainer extends Component {
   }
 
   removeShadow = () => {
-    this.navbar.classList.remove('nav-shadow')
+    this.navbarRef.current.classList.remove('nav-shadow')
   }
 
   addShadow = () => {
-    this.navbar.classList.add('nav-shadow')
+    this.navbarRef.current.classList.add('nav-shadow')
   }
 
   componentWillUnmount() {

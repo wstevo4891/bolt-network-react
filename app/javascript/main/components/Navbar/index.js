@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 // Components
-import NavbarUI from './components/NavbarUI'
+import NavbarUI from './NavbarUI'
 
 // Actions
 import { fetchSearchResults } from '@store/actions/searchActions'

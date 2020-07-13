@@ -16,7 +16,7 @@ import {
 import NavCollapse from './NavCollapse'
 
 // Images
-import logo from '../images/bolt-network.svg'
+import logo from './images/bolt-network.svg'
 
 const NavbarUI = (props) => (
   <NavContainer>

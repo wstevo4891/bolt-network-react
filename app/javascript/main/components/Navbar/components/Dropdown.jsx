@@ -81,7 +81,6 @@ export default class Dropdown extends Component {
   }
 
   componentWillUnmount() {
-    // Remove the mouseUp event listener
     window.removeEventListener('mouseup', this.handleMouseUp)
   }
 }
