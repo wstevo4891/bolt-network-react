@@ -1,14 +1,15 @@
-// app/javascript/main/scenes/Search/components/NotFound.jsx
-
 import React from 'react'
+import PropTypes from 'prop-types'
 
-const NotFound = (props) => (
+import { DisplayContainer } from '@components'
+
+const NotFound = ({ query }) => (
   <div className="search-results">
-    <div className="display-container">
+    <DisplayContainer>
       <div className="row justify-content-center">
         <div className="not-found">
           <p className="not-found-query">
-            Your search for "{props.query}" did not have any matches.
+            Your search for &quot;{query}&quot; did not have any matches.
           </p>
 
           <p>Suggestions:</p>
@@ -19,8 +20,12 @@ const NotFound = (props) => (
           </ul>
         </div>
       </div>
-    </div>
+    </DisplayContainer>
   </div>
 )
+
+NotFound.propTypes = {
+  query: PropTypes.string,
+}
 
 export default NotFound

@@ -72,6 +72,10 @@
     margin: .8rem 0;
     list-style: none;
 
+    a {
+      color: white;
+    }
+
     @media (min-width: 768px) {
       -webkit-box-flex: 0;
       -webkit-flex: 0 auto;
@@ -81,10 +85,6 @@
       border-right: 1px solid grey;
       padding: 0 .5em;
       margin: 0;
-    }
-
-    a {
-      color: white;
     }
   }
 

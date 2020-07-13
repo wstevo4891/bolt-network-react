@@ -1,35 +1,27 @@
-// MovileDisplay.jsx
-
 import React from 'react'
 
 // Components
-import SuggestionsList from './SuggestionsList'
-import Results from '../../../components/Results'
+import { DisplayContainer, Results } from '@components'
 
-const MobileView = (props) => (
+import Suggestions from './Suggestions'
+
+const MobileView = ({ resultsProps, suggestionsProps }) => (
   <div className="search-results">
-    <div className="display-container">
+    <DisplayContainer>
       <div className="row">
         <div className="col-12 mb-2">
           <span className="suggestionsLabel">
-            Results for "{props.params.query}"
+            Results for &quot;{suggestionsProps.query}&quot;
           </span>
         </div>
       </div>
 
-      <Results movies={props.results} slideLength={props.slideLength} />
+      <Results {...resultsProps} />
 
       <div className="row">
-        <div className="col-12">
-          <SuggestionsList
-            query={props.params.query}
-            genres={props.genres}
-            movies={props.movies}
-            people={props.people}
-          />
-        </div>
+        <Suggestions {...suggestionsProps} />
       </div>
-    </div>
+    </DisplayContainer>
   </div>
 )
 

@@ -10,7 +10,12 @@ const DisplayContainer = ({ children }) => {
 }
 
 DisplayContainer.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.element),
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.element),
+    PropTypes.arrayOf(PropTypes.object),
+    PropTypes.element,
+    PropTypes.object,
+  ])
 }
 
 export default DisplayContainer

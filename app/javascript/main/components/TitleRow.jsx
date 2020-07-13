@@ -10,7 +10,7 @@ const TitleRow = ({ title }) => (
 )
 
 TitleRow.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired,
 }
 
 export default TitleRow

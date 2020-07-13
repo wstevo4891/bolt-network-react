@@ -24,15 +24,21 @@ class Search extends Component {
 
     return(
       <SearchResults
-        genres={genres}
-        movies={movies}
-        people={people}
-        params={params}
-        results={results}
-        suggestion={this.state.suggestion}
-        suggestionMovies={this.props.suggestions.movies}
-        slideLength={this.props.slideLength}
-        handleClick={this.handleClick}
+        headerProps={{
+          suggestion: this.state.suggestion,
+          suggestionId: params.suggestionId,
+        }}
+        resultsProps={{
+          movies: results,
+          slideLength: this.props.slideLength,
+        }}
+        suggestionsProps={{
+          genres,
+          movies,
+          people,
+          query: params.query,
+          handleClick: this.handleClick,
+        }}
       />
     )
   }
