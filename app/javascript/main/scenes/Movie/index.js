@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react'
 
-import MoviePage from './components/MoviePage'
+import MoviePage from './MoviePage'
 
 export default class Movie extends Component {
   state = {

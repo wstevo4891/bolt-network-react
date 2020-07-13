@@ -2,8 +2,9 @@
 
 import React, { Component } from 'react'
 
-import ListEmpty from './components/ListEmpty'
 import Results from '@components/Results'
+
+import ListEmpty from './ListEmpty'
 
 export default class MyList extends Component {
   state = {
