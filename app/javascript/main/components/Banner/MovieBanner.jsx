@@ -17,7 +17,6 @@ function BannerImage(movie) {
 }
 
 const MovieBanner = ({ movie }) => {
-
   const bannerImage = new BannerImage(movie)
 
   return(
@@ -44,8 +43,10 @@ const MovieBanner = ({ movie }) => {
 
               <ToggleListButton
                 clickableProps={{
-                  buttonClass: 'btn-clear',
-                  text: 'MY LIST'
+                  buttonProps: {
+                    buttonClass: 'btn-clear',
+                  },
+                  text: 'MY LIST',
                 }}
                 movie={movie}
                 options={['fa-plus', 'fa-check']}

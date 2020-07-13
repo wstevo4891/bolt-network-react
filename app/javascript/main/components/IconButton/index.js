@@ -5,73 +5,52 @@ import PropTypes from 'prop-types'
 
 import makeToggleable from '@helpers/makeToggleable'
 
+import Button from '../Button'
 import Icon from '../Icon'
 
 function buildIconProps(icon, iconProps) {
   if (icon) {
-    return Object.assign({}, iconProps, { icon: icon })
+    return Object.assign({}, iconProps, { icon })
   }
 
   return iconProps
 }
 
-function buttonContent(icon, iconProps, text, textPlacement) {
-  const propsForIcon = buildIconProps(icon, iconProps)
+function buildButtonProps(buttonProps, handleClick) {
+  if (buttonProps.handleClick) return buttonProps
 
-  if (textPlacement === "right") {
-    return <><Icon {...propsForIcon} />{text}</>
-  }
-
-  return <>{text}<Icon {...propsForIcon} /></>
+  return Object.assign({}, buttonProps, { handleClick })
 }
 
-const IconButton = (props) => (
-  <button
-    id={props.id}
-    className={props.buttonClass}
-    aria-controls={props.ariaControls}
-    aria-expanded={props.ariaExpanded}
-    aria-haspopup={props.ariaHasPopup}
-    aria-label={props.ariaLabel}
-    data-toggle={props.dataToggle}
-    data-target={props.dataTarget}
-    onClick={props.handleClick}
-    type="button"
-  >
-    {buttonContent(props.icon, props.iconProps, props.text, props.textPlacement)}
-  </button>
-)
+const IconButton = (props) => {
+  const propsForButton = buildButtonProps(props.buttonProps, props.handleClick)
+  const propsForIcon = buildIconProps(props.icon, props.iconProps)
+
+  return (
+    <Button {...propsForButton}>
+      {props.textPlacement === 'left' && props.text}
+      <Icon {...propsForIcon} />
+      {props.textPlacement === 'right' && props.text}
+    </Button>
+  ) 
+}
 
 IconButton.propTypes = {
-  ariaControls: PropTypes.string,
-  ariaExpanded: PropTypes.string,
-  ariaHasPopup: PropTypes.string,
-  ariaLabel: PropTypes.string,
-  buttonClass: PropTypes.string,
-  dataToggle: PropTypes.string,
-  dataTarget: PropTypes.string,
+  buttonProps: PropTypes.shape(Button.propTypes),
   handleClick: PropTypes.func,
   icon: PropTypes.string,
   iconProps: PropTypes.shape(Icon.propTypes),
-  id: PropTypes.string,
   text: PropTypes.string,
-  textPlacement: PropTypes.string,
+  textPlacement: PropTypes.oneOf(['left', 'right']),
 }
 
 IconButton.defaultProps = {
-  ariaControls: null,
-  ariaExpanded: null,
-  ariaHasPopup: null,
-  ariaLabel: null,
-  buttonClass: null,
-  dataToggle: null,
-  dataTarget: null,
+  buttonProps: {},
   handleClick: () => void {},
   icon: null,
   iconProps: null,
-  id: null,
   text: null,
-  textPlacement: "right"
+  textPlacement: 'right',
 }
 
 const ToggleIconButton = makeToggleable(IconButton)

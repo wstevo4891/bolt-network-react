@@ -13,7 +13,9 @@ const Button = (props) => (
     data-target={props.dataTarget}
     onClick={props.handleClick}
     type="button"
-  />
+  >
+    {props.children}
+  </button>
 )
 
 Button.propTypes = {
@@ -22,6 +24,7 @@ Button.propTypes = {
   ariaHasPopup: PropTypes.string,
   ariaLabel: PropTypes.string,
   buttonClass: PropTypes.string,
+  children: PropTypes.array,
   dataToggle: PropTypes.string,
   dataTarget: PropTypes.string,
   handleClick: PropTypes.func,
@@ -39,3 +42,5 @@ Button.defaultProps = {
   handleClick: () => void {},
   id: null,
 }
+
+export default Button

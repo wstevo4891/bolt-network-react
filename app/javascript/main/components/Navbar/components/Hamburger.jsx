@@ -5,13 +5,15 @@ import { IconButton } from '@components'
 
 const Hamburger = (props) => (
   <IconButton
-    ariaControls={props.dataTarget}
-    ariaExpanded="false"
-    ariaLabel="Menu Button"
-    buttonClass="navbar-toggler"
-    dataToggle="collapse"
-    dataTarget={`#${props.dataTarget}`}
-    handleClick={props.handleClick}
+    buttonProps={{
+      ariaControls: props.dataTarget,
+      ariaExpanded: 'false',
+      ariaLabel: 'Menu Button',
+      buttonClass: 'navbar-toggler',
+      dataToggle: 'collapse',
+      dataTarget: `#${props.dataTarget}`,
+      handleClick: props.handleClick,
+    }}
     icon="fa-bars"
   />
 )

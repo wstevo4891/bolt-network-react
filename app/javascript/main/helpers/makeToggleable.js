@@ -27,14 +27,9 @@ function makeToggleable(Clickable) {
       )
     }
 
-    selectOption() {
-      return this.state.status ? this.options[1] : this.options[0]
-    }
-
     buildClickableProps() {
       const { clickableProps, optionKey } = this.props
-      const option = this.selectOption()
-
+      const option = this.state.status ? this.options[1] : this.options[0]
 
       return Object.assign({}, clickableProps, { [optionKey]: option })
     }

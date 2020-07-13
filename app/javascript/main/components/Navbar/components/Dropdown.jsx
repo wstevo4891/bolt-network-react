@@ -16,10 +16,12 @@ export default class Dropdown extends Component {
     return(
       <li id={id} className={this.itemClass()}>
         <IconButton
-          ariaExpanded="false"
-          ariaHasPopup="true"
-          buttonClass="nav-link"
-          id={dropdownId}
+          buttonProps={{
+            ariaExpanded: 'false',
+            ariaHasPopup: 'true',
+            buttonClass: 'nav-link',
+            id: dropdownId,
+          }}
           icon="fa-angle-down"
           text={text}
           textPlacement="left"
