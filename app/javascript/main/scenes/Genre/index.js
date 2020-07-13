@@ -1,8 +1,11 @@
-// Genre Scene
-
 import React from 'react'
+import PropTypes from 'prop-types'
 
-import Results from '../../components/Results'
+import {
+  DisplayContainer,
+  Results,
+  TitleRow,
+} from '@components'
 
 const Genre = (props) => {
   const genre = props.genresIndex[props.genreSlug].text
@@ -10,19 +13,21 @@ const Genre = (props) => {
   const movies = props.moviesIndex[genre]
 
   return (
-    <div className="display-container">
-      <div className="row">
-        <div className="col-12 mb-4">
-          <h1 style={{ color: 'white' }}>{genre}</h1>
-        </div>
-      </div>
-
+    <DisplayContainer>
+      <TitleRow title={genre} />
       <Results
         movies={movies}
         slideLength={props.slideLength}
       />
-    </div>
+    </DisplayContainer>
   )
+}
+
+Genre.propTypes = {
+  genresIndex: PropTypes.object.isRequired,
+  genreSlug: PropTypes.string.isRequired,
+  moviesIndex: PropTypes.object.isRequired,
+  slideLength: PropTypes.number.isRequired,
 }
 
 export default Genre
