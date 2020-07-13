@@ -1,10 +1,13 @@
-// app/javascript/main/scenes/Recent/components/RecentlyAdded.jsx
-
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 // Components
-import Results from '../../components/Results'
+import {
+  DisplayContainer,
+  Results,
+  TitleRow,
+} from '@components'
 
 // Actions
 import { fetchRecentMovies } from '../../store/actions/recentMoviesActions'
@@ -15,16 +18,11 @@ class Recent extends Component {
 
     if (movies.length === 0) return null
 
-    return(
-      <div className="display-container">
-        <div className="row">
-          <div className="col-12 mb-4">
-            <h1 style={{ color: 'white' }}>Recently Added</h1>
-          </div>
-        </div>
-
+    return (
+      <DisplayContainer>
+        <TitleRow title="Recently Added" />
         <Results movies={movies} slideLength={slideLength} />
-      </div>
+      </DisplayContainer>
     )
   }
 
@@ -33,6 +31,12 @@ class Recent extends Component {
 
     this.props.dispatch(fetchRecentMovies())
   }
+}
+
+Recent.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  movies: PropTypes.array.isRequired,
+  slideLength: PropTypes.number.isRequired,
 }
 
 function mapStateToProps(state) {
