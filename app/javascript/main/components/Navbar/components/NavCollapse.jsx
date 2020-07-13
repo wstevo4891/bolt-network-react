@@ -1,6 +1,5 @@
-// app/javascript/main/components/Navbar/containers/NavCollapse.jsx
-
 import React from 'react'
+import PropTypes from 'prop-types'
 
 // Components
 import NavItem from './NavItem'
@@ -54,6 +53,16 @@ const NavCollapse = (props) => {
       </ul>
     </div>
   )
+}
+
+NavCollapse.propTypes = {
+  fetchSearchResults: PropTypes.func.isRequired,
+  genreLinks: PropTypes.array.isRequired,
+  handleInputClick: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired,
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
+  }).isRequired,
 }
 
 export default NavCollapse

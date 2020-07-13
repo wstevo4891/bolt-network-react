@@ -1,10 +1,8 @@
-// app/javascript/main/components/Navbar/containers/SideMenu.jsx
-
 import React from 'react'
 import PropTypes from 'prop-types'
 
 // Components
-import MenuItem from './MenuItem'
+import NavItem from './NavItem'
 
 const SideMenu = (props) => {
   const translateX = props.display ? '0px' : '-9rem'
@@ -17,7 +15,7 @@ const SideMenu = (props) => {
       style={{ transform: `translate3d(${translateX}, 0px, 0px)` }}
     >
       <ul className="navbar-nav">
-        <MenuItem
+        <NavItem
           id="home-link"
           path={path}
           href="/"
@@ -25,7 +23,7 @@ const SideMenu = (props) => {
           handleClick={handleClick}
         />
 
-        <MenuItem
+        <NavItem
           id="my-list-link"
           path={path}
           href="/my-list"
@@ -33,7 +31,7 @@ const SideMenu = (props) => {
           handleClick={handleClick}
         />
 
-        <MenuItem
+        <NavItem
           id="recent-link"
           path={path}
           href="/recent"
@@ -42,7 +40,7 @@ const SideMenu = (props) => {
         />
 
         {props.genres.map((genre, index) =>
-          <MenuItem
+          <NavItem
             key={index.toString()}
             id={`genre-link-${index}`}
             path={path}
@@ -57,10 +55,10 @@ const SideMenu = (props) => {
 }
 
 SideMenu.propTypes = {
-  display: PropTypes.bool,
-  location: PropTypes.object,
-  genres: PropTypes.array,
-  toggleDisplay: PropTypes.func
+  display: PropTypes.bool.isRequired,
+  location: PropTypes.object.isRequired,
+  genres: PropTypes.array.isRequired,
+  toggleDisplay: PropTypes.func.isRequired,
 }
 
 export default SideMenu

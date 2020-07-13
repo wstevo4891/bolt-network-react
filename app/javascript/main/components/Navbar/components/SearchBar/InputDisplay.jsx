@@ -30,8 +30,6 @@ class InputDisplay extends Component {
   render() {
     if (this.props.display === false) return null
 
-    const { queryExists, handleKeyUp, handleInputClick } = this.props
-
     return(
       <div id="searchInputDisplay" ref={this.mainRef} style={{ width: MIN_WIDTH }}>
         <Icon icon="fa-search" id="searchIcon" ariaHidden="true" />
@@ -39,13 +37,13 @@ class InputDisplay extends Component {
         <div className="form-inline">
           <SearchInput
             placeholder="Titles, people, genres"
-            handleKeyUp={handleKeyUp}
-            handleClick={handleInputClick}
+            handleKeyUp={this.props.handleKeyUp}
+            handleClick={this.props.handleInputClick}
           />
         </div>
 
         <SearchClose
-          query={queryExists}
+          query={this.props.queryExists}
           handleClick={this.handleCloseClick}
         />
       </div>
