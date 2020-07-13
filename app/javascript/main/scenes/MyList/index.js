@@ -2,7 +2,11 @@
 
 import React, { Component } from 'react'
 
-import Results from '@components/Results'
+import {
+  DisplayContainer,
+  Results,
+  TitleRow,
+} from '@components'
 
 import ListEmpty from './ListEmpty'
 
@@ -13,19 +17,13 @@ export default class MyList extends Component {
 
   render() {
     const movies = this.state.movies
-
     if (movies === null) return null
 
-    return(
-      <div className="display-container">
-        <div className="row">
-          <div className="col-12 mb-4">
-            <h1 style={{ color: 'white' }}>My List</h1>
-          </div>
-        </div>
-
+    return (
+      <DisplayContainer>
+        <TitleRow title="My List" />
         {this.renderList(movies, this.props.slideLength)}
-      </div>
+      </DisplayContainer>
     )
   }
 
@@ -36,16 +34,16 @@ export default class MyList extends Component {
   }
 
   componentDidMount() {
-    if (this.state.movies !== null) return
-
     this.fetchMyList()
   }
 
   fetchMyList = () => {
     const list = JSON.parse(sessionStorage.getItem('MyList'))
 
+    const newMovies = list === null ? [] : Object.values(list)
+
     this.setState({
-      movies: list === null ? [] : Object.values(list)
+      movies: newMovies
     })
   }
 }
