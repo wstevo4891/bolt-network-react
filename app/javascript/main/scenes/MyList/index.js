@@ -1,6 +1,5 @@
-// app/javascript/main/scenes/Recent/components/MyList.jsx
-
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 import {
   DisplayContainer,
@@ -10,7 +9,7 @@ import {
 
 import ListEmpty from './ListEmpty'
 
-export default class MyList extends Component {
+class MyList extends Component {
   state = {
     movies: null
   }
@@ -47,3 +46,9 @@ export default class MyList extends Component {
     })
   }
 }
+
+MyList.propTypes = {
+  slideLength: PropTypes.number,
+}
+
+export default MyList
