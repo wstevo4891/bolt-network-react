@@ -7,11 +7,8 @@ import PropTypes from 'prop-types'
 import MenuItem from './MenuItem'
 
 const SideMenu = (props) => {
-
   const translateX = props.display ? '0px' : '-9rem'
-
   const path = props.location.pathname
-
   const handleClick = () => setTimeout(props.toggleDisplay(), 1000)
 
   return(

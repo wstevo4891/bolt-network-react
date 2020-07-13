@@ -4,8 +4,12 @@ import React, { Component } from 'react'
 
 // Components
 import { Icon } from '@components'
-import SearchInput from './SearchInput'
+import SearchInput from '../SearchInput'
 import SearchClose from './SearchClose'
+
+const MIN_WIDTH = 0
+
+const MAX_WIDTH = '270px'
 
 const SEARCH_CLASSES = [
   'searchWrapper',
@@ -15,6 +19,8 @@ const SEARCH_CLASSES = [
   'form-control'
 ]
 
+const SEARCH_INPUT = 'searchInput'
+
 class InputDisplay extends Component {
   render() {
     if (this.props.display === false) return null
@@ -22,7 +28,7 @@ class InputDisplay extends Component {
     const { queryExists, handleKeyUp, handleInputClick } = this.props
 
     return(
-      <div id="searchInput" style={{ width: 0 }}>
+      <div id={SEARCH_INPUT} style={{ width: MIN_WIDTH }}>
         <Icon icon="fa-search" id="searchIcon" ariaHidden="true" />
 
         <div className="form-inline">
@@ -58,7 +64,7 @@ class InputDisplay extends Component {
   }
 
   handleMouseUp = (event) => {
-    const $input = document.getElementById('searchInput')
+    const $input = document.getElementById(SEARCH_INPUT)
 
     if ($input === null) return
 
@@ -70,11 +76,11 @@ class InputDisplay extends Component {
 
   shrinkAndHide = (value, targetClass) => {
     if (
-      value.length > 0 ||
+      value.length > MIN_WIDTH ||
       SEARCH_CLASSES.includes(targetClass)
     ) return
 
-    document.querySelector('#searchInput').style.width = '0px'
+    document.getElementById(SEARCH_INPUT).style.width = MIN_WIDTH
 
     setTimeout(() => {
       this.props.hideDisplay()
@@ -86,12 +92,12 @@ class InputDisplay extends Component {
     
     if (display === false) return
     
-    const inputWidth = document.querySelector('#searchInput').style.width
+    const inputWidth = document.getElementById(SEARCH_INPUT).style.width
 
-    if (inputWidth === '270px') return
+    if (inputWidth === MAX_WIDTH) return
 
     setTimeout(() => {
-      document.querySelector('#searchInput').style.width = '270px'
+      document.getElementById(SEARCH_INPUT).style.width = MAX_WIDTH
     }, 100)
   }
 

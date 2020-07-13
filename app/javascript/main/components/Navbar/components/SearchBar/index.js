@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 
 // Components
 import { IconButton } from '@components'
-import InputDisplay from './components/InputDisplay'
+import InputDisplay from './InputDisplay'
 
 class SearchBar extends Component {
   state = {

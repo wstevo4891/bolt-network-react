@@ -1,19 +1,15 @@
 // app/javascript/main/components/Navbar/components/NavItem.jsx
 
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import { Link } from 'react-router-dom'
+
+import ScreenReaderText from './ScreenReaderText'
 
 const MenuItem = (props) => {
   const itemClass = props.path === props.href ? 'nav-item active' : 'nav-item'
   const linkClass = props.disabled ? 'nav-link disabled' : 'nav-link'
-
-  const srOnlyText = () => {
-    if (props.path === props.href) {
-      return "(current)"
-    } else {
-      return props.text
-    }
-  }
 
   return (
     <li className={itemClass} onClick={props.handleClick}>
@@ -23,12 +19,23 @@ const MenuItem = (props) => {
         to={props.href}
       >
         {props.text}&nbsp;
-        <span className="sr-only">
-          {srOnlyText()}
-        </span>
+        <ScreenReaderText
+          href={props.href}
+          path={props.path}
+          text={props.text}
+        />
       </Link>
     </li>
   )
+}
+
+MenuItem.propTypes = {
+  disabled: PropTypes.bool,
+  handleClick: PropTypes.func,
+  href: PropTypes.string,
+  id: PropTypes.string,
+  path: PropTypes.string,
+  text: PropTypes.string,
 }
 
 export default MenuItem

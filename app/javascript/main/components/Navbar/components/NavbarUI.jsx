@@ -9,7 +9,7 @@ import NavContainer from './NavContainer'
 import NavCollapse from './NavCollapse'
 import SideMenu from './SideMenu'
 import Hamburger from './Hamburger'
-import SearchInput from './SearchBar/components/SearchInput'
+import SearchInput from './SearchInput'
 
 // Images
 import logo from '../images/bolt-network.svg'
