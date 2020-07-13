@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class NavContainer extends Component {
+  get navbar() {
+    return document.querySelector('.navbar')
+  }
+
   render() {
     return(
       <div id="navbar">
@@ -17,7 +22,7 @@ class NavContainer extends Component {
     window.addEventListener('resize', this.assignScrollListener)
   }
 
-  assignScrollListener = () => {
+  assignScrollListener() {
     if (window.innerWidth < 768) {
       this.addShadow()
       window.removeEventListener('scroll', this.handleScroll)
@@ -26,11 +31,6 @@ class NavContainer extends Component {
       this.removeShadow()
       window.addEventListener('scroll', this.handleScroll)
     }
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.assignScrollListener)
-    window.removeEventListener('scroll', this.handleScroll)
   }
 
   handleScroll = () => {
@@ -44,12 +44,21 @@ class NavContainer extends Component {
   }
 
   removeShadow = () => {
-    document.querySelector('.navbar').classList.remove('nav-shadow')
+    this.navbar.classList.remove('nav-shadow')
   }
 
   addShadow = () => {
-    document.querySelector('.navbar').classList.add('nav-shadow')
+    this.navbar.classList.add('nav-shadow')
   }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.assignScrollListener)
+    window.removeEventListener('scroll', this.handleScroll)
+  }
+}
+
+NavContainer.propTypes = {
+  children: PropTypes.arrayOf(PropTypes.element),
 }
 
 export default NavContainer

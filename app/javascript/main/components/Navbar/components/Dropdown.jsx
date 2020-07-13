@@ -3,45 +3,49 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
+import { IconButton } from '@components'
+
 export default class Dropdown extends Component {
   state = {
     show: false
   }
 
   render() {
-    const { id, dropdownId, text, links } = this.props
+    const { id, dropdownId, text } = this.props
 
     return(
       <li id={id} className={this.itemClass()}>
-        <button
-          className="nav-link"
+        <IconButton
+          ariaExpanded="false"
+          ariaHasPopup="true"
+          buttonClass="nav-link"
           id={dropdownId}
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          {text}
-          <i className="fa fa-angle-down"></i>
-        </button>
+          icon="fa-angle-down"
+          text={text}
+          textPlacement="left"
+        />
 
         <div
           id={id}
           className={this.menuClass()}
           aria-labelledby={dropdownId}
         >
-          {
-            links.map((link, index) =>
-              <Link
-                key={index}
-                id={`genre-link-${index}`}
-                className="dropdown-item"
-                to={link.url}
-              >
-                {link.text}
-              </Link>
-            )
-          }
+          {this.renderLinks()}
         </div>
       </li>
+    )
+  }
+
+  renderLinks() {
+    return this.props.links.map((link, index) =>
+      <Link
+        key={index.toString()}
+        id={`genre-link-${index}`}
+        className="dropdown-item"
+        to={link.url}
+      >
+        {link.text}
+      </Link>
     )
   }
 
@@ -62,15 +66,8 @@ export default class Dropdown extends Component {
     document.addEventListener('mouseup', this.handleMouseUp)
   }
 
-  componentWillUnmount() {
-    // Remove the mouseUp event listener
-    window.removeEventListener('mouseup', this.handleMouseUp)
-  }
-
   handleMouseUp = (event) => {
-    const targetId = event.target.id
-
-    if (targetId === this.props.dropdownId) {
+    if (event.target.id === this.props.dropdownId) {
       this.toggleShow()
     } else {
       this.setState({
@@ -80,8 +77,11 @@ export default class Dropdown extends Component {
   }
 
   toggleShow = () => {
-    this.setState({
-      show: !this.state.show
-    })
+    this.setState(prevState => ({ show: !prevState.show }))
+  }
+
+  componentWillUnmount() {
+    // Remove the mouseUp event listener
+    window.removeEventListener('mouseup', this.handleMouseUp)
   }
 }
