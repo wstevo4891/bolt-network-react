@@ -5,7 +5,7 @@ const SearchInput = (props) => (
   <input
     type="text"
     name="query"
-    id="search"
+    id="searchInput"
     className="form-control"
     maxLength="80"
     placeholder={props.placeholder}

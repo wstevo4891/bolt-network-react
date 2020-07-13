@@ -14,24 +14,28 @@ const MAX_WIDTH = '270px'
 
 const SEARCH_CLASSES = [
   'searchWrapper',
-  'searchInput',
-  'fa',
+  'fa fa-search',
   'form-inline',
   'form-control'
 ]
 
-const SEARCH_ID = 'search'
-
-const SEARCH_INPUT_ID = 'searchInput'
-
 class InputDisplay extends Component {
+  constructor(props) {
+    super(props)
+    this.mainRef = React.createRef()
+  }
+
+  get searchInput() {
+    return document.getElementById('searchInput')
+  }
+
   render() {
     if (this.props.display === false) return null
 
     const { queryExists, handleKeyUp, handleInputClick } = this.props
 
     return(
-      <div id={SEARCH_INPUT_ID} style={{ width: MIN_WIDTH }}>
+      <div id="searchInputDisplay" ref={this.mainRef} style={{ width: MIN_WIDTH }}>
         <Icon icon="fa-search" id="searchIcon" ariaHidden="true" />
 
         <div className="form-inline">
@@ -52,8 +56,8 @@ class InputDisplay extends Component {
 
   handleCloseClick = () => {
     const { history, location } = this.props
-    document.getElementById(SEARCH_ID).value = ''
-    
+    this.searchInput.value = ''
+
     if (location === '/search') {
       history.push('/')
     } else {
@@ -67,23 +71,13 @@ class InputDisplay extends Component {
   }
 
   handleMouseUp = (event) => {
-    const $input = document.getElementById(SEARCH_INPUT_ID)
-
-    if ($input === null) return
-
-    const searchValue = document.getElementById(SEARCH_ID).value
-    const targetClass = event.target.className
-
-    this.shrinkAndHide(searchValue, targetClass)
-  }
-
-  shrinkAndHide = (value, targetClass) => {
     if (
-      value.length > MIN_WIDTH ||
-      SEARCH_CLASSES.includes(targetClass)
+      this.mainRef.current === null ||
+      this.searchInput.value.length > MIN_WIDTH ||
+      SEARCH_CLASSES.includes(event.target.className)
     ) return
 
-    document.getElementById(SEARCH_INPUT_ID).style.width = MIN_WIDTH
+    this.mainRef.current.style.width = MIN_WIDTH
 
     setTimeout(() => {
       this.props.hideDisplay()
@@ -91,30 +85,33 @@ class InputDisplay extends Component {
   }
 
   componentDidUpdate() {
-    const display = this.props.display
-    
-    if (display === false) return
-    
-    const inputWidth = document.getElementById(SEARCH_INPUT_ID).style.width
-
-    if (inputWidth === MAX_WIDTH) return
+    if (
+      this.props.display === false ||
+      this.mainRef.current.style.width === MAX_WIDTH
+    ) return
 
     setTimeout(() => {
-      document.getElementById(SEARCH_INPUT_ID).style.width = MAX_WIDTH
+      this.mainRef.current.style.width = MAX_WIDTH
     }, 100)
   }
 
   componentWillUnmount() {
-    // Remove the mouseUp event listener
     document.removeEventListener('mouseup', this.handleMouseUp)
   }
 }
 
 InputDisplay.propTypes = {
-  display: PropTypes.bool,
-  queryExists: PropTypes.bool,
-  handleKeyUp: PropTypes.func,
-  handleInputClick: PropTypes.func,
+  display: PropTypes.bool.isRequired,
+  queryExists: PropTypes.bool.isRequired,
+  handleKeyUp: PropTypes.func.isRequired,
+  handleInputClick: PropTypes.func.isRequired,
+  hideDisplay: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired,
+  location: PropTypes.object,
+}
+
+InputDisplay.defaultProps = {
+  location: null,
 }
 
 export default InputDisplay

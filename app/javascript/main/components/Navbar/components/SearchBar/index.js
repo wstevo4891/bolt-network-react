@@ -66,9 +66,7 @@ class SearchBar extends Component {
     const query = event.target.value
 
     this.updateLocation(query)
-
     this.updateQueryState(query)
-
     this.props.dispatch(this.props.fetchSearchResults(query))
   }
 
