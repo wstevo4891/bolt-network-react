@@ -1,5 +1,3 @@
-// app/javascript/main/components/Navbar/components/InputDisplay.jsx
-
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
@@ -72,7 +70,7 @@ class InputDisplay extends Component {
 
   handleMouseUp = (event) => {
     if (
-      this.mainRef.current === null ||
+      this.props.display === false ||
       this.searchInput.value.length > MIN_WIDTH ||
       SEARCH_CLASSES.includes(event.target.className)
     ) return
@@ -107,7 +105,7 @@ InputDisplay.propTypes = {
   handleInputClick: PropTypes.func.isRequired,
   hideDisplay: PropTypes.func.isRequired,
   history: PropTypes.object.isRequired,
-  location: PropTypes.object,
+  location: PropTypes.string,
 }
 
 InputDisplay.defaultProps = {
