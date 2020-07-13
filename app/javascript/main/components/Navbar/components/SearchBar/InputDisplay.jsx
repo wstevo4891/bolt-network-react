@@ -1,6 +1,7 @@
 // app/javascript/main/components/Navbar/components/InputDisplay.jsx
 
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 // Components
 import { Icon } from '@components'
@@ -19,7 +20,9 @@ const SEARCH_CLASSES = [
   'form-control'
 ]
 
-const SEARCH_INPUT = 'searchInput'
+const SEARCH_ID = 'search'
+
+const SEARCH_INPUT_ID = 'searchInput'
 
 class InputDisplay extends Component {
   render() {
@@ -28,7 +31,7 @@ class InputDisplay extends Component {
     const { queryExists, handleKeyUp, handleInputClick } = this.props
 
     return(
-      <div id={SEARCH_INPUT} style={{ width: MIN_WIDTH }}>
+      <div id={SEARCH_INPUT_ID} style={{ width: MIN_WIDTH }}>
         <Icon icon="fa-search" id="searchIcon" ariaHidden="true" />
 
         <div className="form-inline">
@@ -49,7 +52,7 @@ class InputDisplay extends Component {
 
   handleCloseClick = () => {
     const { history, location } = this.props
-    document.getElementById('search').value = ''
+    document.getElementById(SEARCH_ID).value = ''
     
     if (location === '/search') {
       history.push('/')
@@ -64,11 +67,11 @@ class InputDisplay extends Component {
   }
 
   handleMouseUp = (event) => {
-    const $input = document.getElementById(SEARCH_INPUT)
+    const $input = document.getElementById(SEARCH_INPUT_ID)
 
     if ($input === null) return
 
-    const searchValue = document.getElementById('search').value
+    const searchValue = document.getElementById(SEARCH_ID).value
     const targetClass = event.target.className
 
     this.shrinkAndHide(searchValue, targetClass)
@@ -80,7 +83,7 @@ class InputDisplay extends Component {
       SEARCH_CLASSES.includes(targetClass)
     ) return
 
-    document.getElementById(SEARCH_INPUT).style.width = MIN_WIDTH
+    document.getElementById(SEARCH_INPUT_ID).style.width = MIN_WIDTH
 
     setTimeout(() => {
       this.props.hideDisplay()
@@ -92,12 +95,12 @@ class InputDisplay extends Component {
     
     if (display === false) return
     
-    const inputWidth = document.getElementById(SEARCH_INPUT).style.width
+    const inputWidth = document.getElementById(SEARCH_INPUT_ID).style.width
 
     if (inputWidth === MAX_WIDTH) return
 
     setTimeout(() => {
-      document.getElementById(SEARCH_INPUT).style.width = MAX_WIDTH
+      document.getElementById(SEARCH_INPUT_ID).style.width = MAX_WIDTH
     }, 100)
   }
 
@@ -105,6 +108,13 @@ class InputDisplay extends Component {
     // Remove the mouseUp event listener
     document.removeEventListener('mouseup', this.handleMouseUp)
   }
+}
+
+InputDisplay.propTypes = {
+  display: PropTypes.bool,
+  queryExists: PropTypes.bool,
+  handleKeyUp: PropTypes.func,
+  handleInputClick: PropTypes.func,
 }
 
 export default InputDisplay
