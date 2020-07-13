@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
 
+const BREAKPOINTS = [1400, 1100, 800, 500]
+
+const SLIDE_LENGTH_INDEX = {
+  1400: 6,
+  1100: 5,
+  800: 4,
+  500: 3,
+}
+
 export default class MainContainer extends Component {
   state = {
     slideLength: null
   }
-
-  slideLengthIndex = {
-    1400: 6,
-    1100: 5,
-    800: 4,
-    500: 3
-  }
-
-  breakpoints = [1400, 1100, 800, 500]
 
   render() {
     const slideLength = this.state.slideLength
@@ -27,15 +27,9 @@ export default class MainContainer extends Component {
   }
 
   componentDidMount() {
-    if (this.state.slideLength === null) {
-      this.updateSlideLength()
-    }
+    this.updateSlideLength()
 
     window.addEventListener("resize", this.updateSlideLength.bind(this))
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.updateSlideLength.bind(this))
   }
 
   updateSlideLength = () => {
@@ -52,13 +46,17 @@ export default class MainContainer extends Component {
     const width = window.innerWidth
     let slideLength = null
 
-    for (let point of this.breakpoints) {
+    for (let point of BREAKPOINTS) {
       if (width >= point) {
-        slideLength = this.slideLengthIndex[point]
+        slideLength = SLIDE_LENGTH_INDEX[point]
         break
       }
     }
 
-    return slideLength === null ? 2 : slideLength
+    return slideLength || 2
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateSlideLength.bind(this))
   }
 }
