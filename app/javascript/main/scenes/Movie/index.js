@@ -2,6 +2,8 @@
 
 import React, { Component } from 'react'
 
+import { DisplayContainer, TitleRow } from '@components'
+
 import MoviePage from './MoviePage'
 
 export default class Movie extends Component {
@@ -11,19 +13,13 @@ export default class Movie extends Component {
 
   render() {
     const movie = this.state.movie
-
     if (movie === null) return null
 
-    return(
-      <div className="display-container">
-        <div className="row">
-          <div className="col-12 mb-4">
-            <h1 style={{ color: 'white' }}>{movie.title}</h1>
-          </div>
-        </div>
-
+    return (
+      <DisplayContainer>
+        <TitleRow title={movie.title} />
         <MoviePage movie={movie} />
-      </div>
+      </DisplayContainer>
     )
   }
 
@@ -34,7 +30,6 @@ export default class Movie extends Component {
   fetchMovie = async (movieID) => {
     try {
       const response = await fetch(`/api/movies/${movieID}`)
-
       const data = await response.json()
 
       this.setState({
