@@ -47,4 +47,28 @@ export default class LinkedList {
 
     return currentNode
   }
+
+  calcPosition(next, prev, position) {
+    if (next) {
+      return this.nextPosition(position)
+    } else if (prev) {
+      return this.prevPosition(position)
+    }
+  }
+
+  nextPosition(position) {
+    if (position === this._length) {
+      return 1
+    } else {
+      return position + 1
+    }
+  }
+
+  prevPosition(position) {
+    if (position === 1) {
+      return this._length
+    } else {
+      return position - 1
+    }
+  }
 }

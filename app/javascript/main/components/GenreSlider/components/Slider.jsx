@@ -1,5 +1,3 @@
-// app/javascript/main/scenes/Home/GenreSliders/components/GenreSlider.jsx
-
 import React from 'react'
 import PropTypes from 'prop-types'
 
@@ -22,8 +20,8 @@ const Slider = (props) => (
       <SliderArrow
         start={props.start}
         direction='Prev'
-        icon='left'
-        handleClick={props.handleClick}
+        icon='fa-angle-left'
+        handleClick={props.handlePrevClick}
       />
 
       <SlidesContainer
@@ -36,8 +34,8 @@ const Slider = (props) => (
 
       <SliderArrow
         direction='Next'
-        icon='right'
-        handleClick={props.handleClick}
+        icon='fa-angle-right'
+        handleClick={props.handleNextClick}
       />
     </div>
   </div>
@@ -52,7 +50,8 @@ Slider.propTypes = {
   start: PropTypes.bool,
   next: PropTypes.bool,
   prev: PropTypes.bool,
-  handleClick: PropTypes.func
+  handlePrevClick: PropTypes.func,
+  handleNextClick: PropTypes.func,
 }
 
 export default Slider

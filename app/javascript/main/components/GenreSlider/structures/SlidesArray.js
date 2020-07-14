@@ -15,9 +15,10 @@ export default class SlidesArray {
     this.list = moviesList
     this.position = position
     this.slides = []
+    return this.create()
   }
 
-  call() {
+  create() {
     if (this.start) {
       this.startSlides()
     } else {

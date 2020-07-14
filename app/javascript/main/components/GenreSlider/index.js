@@ -1,23 +1,19 @@
-// GenreSlider Functional Component
-
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-// Services
-import MoviesList from './services/MoviesList'
-import PositionCalculator from './services/PositionCalculator'
-import SlidesArray from './services/SlidesArray'
+// Data Structures
+import {
+  MoviesList,
+  SlidesArray,
+} from './structures'
 
 // Components
-import Slider from './components/Slider'
+import { Slider } from './components'
 
 class GenreSlider extends Component {
   constructor(props) {
     super(props)
-
-    this.moviesList = new MoviesList(props.slideLength, props.movies).call()
-
-    this.calculator = new PositionCalculator(this.moviesList._length)
+    this.moviesList = new MoviesList(props.slideLength, props.movies)
 
     this.state = {
       position: 1,
@@ -26,12 +22,17 @@ class GenreSlider extends Component {
       prev: false
     }
 
-    this.handleArrowClick = this.handleArrowClick.bind(this)
+    this.handlePrevClick = this.handlePrevClick.bind(this)
+    this.handleNextClick = this.handleNextClick.bind(this)
+  }
+
+  get root() {
+    return document.getElementById('root')
   }
 
   render() {
     const { position, start } = this.state
-    const slides = new SlidesArray(start, this.moviesList, position).call()
+    const slides = new SlidesArray(start, this.moviesList, position)
 
     return(
       <Slider
@@ -39,28 +40,34 @@ class GenreSlider extends Component {
         {...this.state}
         slides={slides}
         listLength={this.moviesList._length}
-        handleClick={this.handleArrowClick}
+        handlePrevClick={this.handlePrevClick}
+        handleNextClick={this.handleNextClick}
       />
     )
   }
 
+  handlePrevClick() {
+    this.handleArrowClick('prev')
+  }
+
+  handleNextClick() {
+    this.handleArrowClick('next')
+  }
+
   handleArrowClick(direction) {
-    const key = direction.toLowerCase()
-    const root = document.getElementById('root')
+    this.root.style['pointer-events'] = 'none'
 
-    root.style['pointer-events'] = 'none'
-
-    this.setState({ [key]: true })
+    this.setState({ [direction]: true })
 
     setTimeout(() => {
       this.handleTransitionEnd()
-      root.style['pointer-events'] = 'auto'
+      this.root.style['pointer-events'] = 'auto'
     }, 1000)
   }
 
   handleTransitionEnd() {
     const { next, prev, position } = this.state
-    const nextPosition = this.calculator.calcPosition(next, prev, position)
+    const nextPosition = this.moviesList.calcPosition(next, prev, position)
 
     this.setState({
       position: nextPosition,
@@ -70,12 +77,11 @@ class GenreSlider extends Component {
     })
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     const { slideLength, movies } = this.props
+    if (prevProps.slideLength === slideLength) return
 
-    this.moviesList = new MoviesList(slideLength, movies).call()
-
-    this.calculator = new PositionCalculator(this.moviesList._length)
+    this.moviesList = new MoviesList(slideLength, movies)
   }
 }
 
