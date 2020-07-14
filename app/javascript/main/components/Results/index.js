@@ -1,28 +1,38 @@
-// app/javascript/main/scenes/Search/components/Results.jsx
-
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import StaticSlides from './services/StaticSlides'
-
 import PosterList from '../PosterList'
 
-const Results = ({ movies, slideLength }) => {
+export function buildMovieRows(movies, slideLength) {
+  const slides = []
+  if (movies === null || movies.length === 0) return slides
 
-  const slides = new StaticSlides(movies, slideLength).call()
+  let arr
+  let i = 0
 
-  return(
+  while(i < movies.length) {
+    arr = movies.slice(i, i += slideLength)
+    slides.push(arr)
+  }
+
+  return slides
+}
+
+export const Results = ({ movies, slideLength }) => {
+  const rows = buildMovieRows(movies, slideLength)
+
+  return (
     <div className="row">
-      {slides.map((slide, index) =>
+      {rows.map((row, index) =>
         <div
-          key={index}
+          key={`static_slide_${index}`}
           className="col-12"
           style={{ marginBottom: '5.5vw' }}
         >
           <div className="sliderContent">
             <PosterList
               type="static"
-              movies={slide}
+              movies={row}
               slideLength={slideLength}
             />
           </div>
@@ -36,5 +46,3 @@ Results.propTypes = {
   movies: PropTypes.array,
   slideLength: PropTypes.number
 }
-
-export default Results
