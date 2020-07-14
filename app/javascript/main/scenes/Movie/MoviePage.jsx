@@ -1,6 +1,7 @@
 // MoviePage View Component
 
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const MoviePage = ({ movie }) => (
   <div className="row">
@@ -34,5 +35,20 @@ const MoviePage = ({ movie }) => (
     </div>
   </div>
 )
+
+MoviePage.proptypes = {
+  movie: PropTypes.shape({
+    poster: PropTypes.string,
+    title: PropTypes.string,
+    year: PropTypes.number,
+    rated: PropTypes.string,
+    run_time: PropTypes.string,
+    release_date: PropTypes.string,
+    genres: PropTypes.array,
+    directors: PropTypes.array,
+    actors: PropTypes.array,
+    plot: PropTypes.string,
+  }),
+}
 
 export default MoviePage

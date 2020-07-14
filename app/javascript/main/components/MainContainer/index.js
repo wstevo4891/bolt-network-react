@@ -32,6 +32,7 @@ export default class MainContainer extends Component {
     window.addEventListener("resize", this.updateSlideLength.bind(this))
   }
 
+  // TODO: deBounce this function
   updateSlideLength = () => {
     const newLength = this.findSlideLength()
 
