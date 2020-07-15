@@ -22,13 +22,20 @@ const Routes = (props) => (
 
     <Route
       path={`/genres/:slug`}
-      render={(routeProps) =>
-        <Genre
-          // TODO: Only pass required props
-          {...props}
-          genreSlug={routeProps.match.params.slug}
-        />
-      }
+      render={(routeProps) => {
+        const genreSlug = routeProps.match.params.slug
+        const genre = props.genresIndex[genreSlug].text
+        const movies = props.moviesIndex[genre]
+
+        return (
+          <Genre
+            // TODO: Only pass required props
+            genre={genre}
+            movies={movies}
+            slideLength={props.slideLength}
+          />
+        )
+      }}
     />
 
     <Route
