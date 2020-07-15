@@ -18,7 +18,7 @@ export function buildMovieRows(movies, slideLength) {
   return slides
 }
 
-export const Results = ({ movies, slideLength }) => {
+export const Results = ({ movies, name, slideLength }) => {
   const rows = buildMovieRows(movies, slideLength)
 
   return (
@@ -31,9 +31,10 @@ export const Results = ({ movies, slideLength }) => {
         >
           <div className="sliderContent">
             <PosterList
-              type="static"
               movies={row}
+              name={name}
               slideLength={slideLength}
+              type="static"
             />
           </div>
         </div>
@@ -43,6 +44,7 @@ export const Results = ({ movies, slideLength }) => {
 }
 
 Results.propTypes = {
+  name: PropTypes.string.isRequired,
   movies: PropTypes.array,
   slideLength: PropTypes.number
 }

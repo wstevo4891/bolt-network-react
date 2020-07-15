@@ -8,7 +8,7 @@ import { TranslateCalculator } from '../services'
 import PosterList from '@components/PosterList'
 
 const SlidesContainer = (props) => {
-  const { slides, slideLength, start, next, prev } = props
+  const { genre, slides, slideLength, start, next, prev } = props
 
   const contentClass = `sliderContent${next || prev ? ' animating' : ''}`
 
@@ -23,10 +23,11 @@ const SlidesContainer = (props) => {
         style={transformStyle}
       >
         <PosterList
-          type="slider"
           movies={slides}
+          name={genre}
           slideLength={slideLength}
           start={start}
+          type="slider"
         />
       </div>
     </div>
@@ -34,6 +35,7 @@ const SlidesContainer = (props) => {
 }
 
 SlidesContainer.propTypes = {
+  genre: PropTypes.string,
   slides: PropTypes.array,
   slideLength: PropTypes.number,
   start: PropTypes.bool,

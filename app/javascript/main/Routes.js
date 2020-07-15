@@ -24,6 +24,7 @@ const Routes = (props) => (
       path={`/genres/:slug`}
       render={(routeProps) =>
         <Genre
+          // TODO: Only pass required props
           {...props}
           genreSlug={routeProps.match.params.slug}
         />

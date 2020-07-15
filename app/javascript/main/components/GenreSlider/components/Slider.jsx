@@ -25,6 +25,7 @@ const Slider = (props) => (
       />
 
       <SlidesContainer
+        genre={props.genre}
         slides={props.slides}
         slideLength={props.slideLength}
         next={props.next}

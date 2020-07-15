@@ -29,7 +29,7 @@ class MyList extends Component {
   renderList = (movies, slideLength) => {
     if (movies.length === 0) return <ListEmpty />
     
-    return <Results movies={movies} slideLength={slideLength} />
+    return <Results movies={movies} name="MyList" slideLength={slideLength} />
   }
 
   componentDidMount() {

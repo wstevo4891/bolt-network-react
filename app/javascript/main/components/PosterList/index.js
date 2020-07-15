@@ -27,12 +27,11 @@ class PosterList extends Component {
     const dataFactory = new PosterDataFactory({...this.state, ...this.props })
 
     return this.props.movies.map((movie, index) => {
-
       const posterData = dataFactory.build(movie, index)
 
       return(
         <Poster
-          key={index}
+          key={`${name}_Poster_${movie.id}`}
           {...posterData}
           mouseOver={this.handleMouseOver}
           mouseLeave={this.handleMouseLeave}
@@ -70,7 +69,15 @@ class PosterList extends Component {
 }
 
 PosterList.propTypes = {
-  movies: PropTypes.array.isRequired
+  movies: PropTypes.array.isRequired,
+  name: PropTypes.string.isRequired,
+  slideLength: PropTypes.number.isRequired,
+  type: PropTypes.oneOf(['slider', 'static']).isRequired,
+  start: PropTypes.bool,
+}
+
+PosterList.defaultProps = {
+  start: null,
 }
 
 export default PosterList

@@ -17,6 +17,7 @@ const Genre = (props) => {
       <TitleRow title={genre} />
       <Results
         movies={movies}
+        name={genre}
         slideLength={props.slideLength}
       />
     </DisplayContainer>

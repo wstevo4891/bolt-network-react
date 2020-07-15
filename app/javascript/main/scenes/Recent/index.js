@@ -21,7 +21,7 @@ class Recent extends Component {
     return (
       <DisplayContainer>
         <TitleRow title="Recently Added" />
-        <Results movies={movies} slideLength={slideLength} />
+        <Results movies={movies} name="Recent" slideLength={slideLength} />
       </DisplayContainer>
     )
   }
