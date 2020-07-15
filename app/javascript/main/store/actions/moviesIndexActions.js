@@ -6,8 +6,7 @@ import {
   FETCH_MOVIES_INDEX_BEGIN,
   FETCH_MOVIES_INDEX_SUCCESS,
   FETCH_MOVIES_INDEX_FAILURE
-} from '../types/moviesIndexTypes'
-
+} from '../types'
 
 // Dispatch Actions
 // ==================================================================
@@ -25,10 +24,8 @@ export const fetchMoviesIndexFailure = error => ({
   payload: { error }
 })
 
-
 // API Action
 // ==================================================================
-
 export const URI = '/api/movies-index'
 
 export function fetchMoviesIndex() {

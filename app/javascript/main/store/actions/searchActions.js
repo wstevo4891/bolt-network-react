@@ -6,7 +6,7 @@ import {
   FETCH_SEARCH_RESULTS_BEGIN,
   FETCH_SEARCH_RESULTS_SUCCESS,
   FETCH_SEARCH_RESULTS_FAILURE
-} from '../types/searchTypes'
+} from '../types'
 
 
 // Dispatch Actions

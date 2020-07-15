@@ -26,7 +26,6 @@ const Routes = (props) => (
         <Genre
           {...props}
           genreSlug={routeProps.match.params.slug}
-          key={routeProps.match.params.slug}
         />
       }
     />

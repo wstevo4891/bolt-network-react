@@ -7,8 +7,7 @@ import {
   FETCH_SUGGESTIONS_SUCCESS,
   FETCH_SUGGESTIONS_FAILURE,
   RESET_SUGGESTIONS
-} from '../types/suggestionsTypes'
-
+} from '../types'
 
 // Dispatch Actions
 // ========================================================

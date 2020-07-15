@@ -24,9 +24,7 @@ class App extends Component {
 
     return(
       <Router>
-        <Route render={(routeProps) =>
-          <Navbar {...routeProps} />
-        } />
+        <Route render={(routeProps) => <Navbar {...routeProps} />} />
 
         <MainContainer>
           {slideLength => <Routes slideLength={slideLength} />}

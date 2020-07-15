@@ -6,8 +6,7 @@ import {
   FETCH_BANNER_MOVIES_BEGIN,
   FETCH_BANNER_MOVIES_SUCCESS,
   FETCH_BANNER_MOVIES_FAILURE
-} from '../types/bannerMoviesTypes'
-
+} from '../types'
 
 // Dispatch Actions
 // ========================================================
@@ -25,7 +24,6 @@ export const fetchBannerMoviesFailure = error => ({
   payload: { error }
 })
 
-
 // API Actions
 // ========================================================
 function fetchResponse(titles) {
@@ -42,15 +40,10 @@ export function fetchBannerMovies(titles) {
   return async dispatch => {
     try {
       dispatch(fetchBannerMoviesBegin())
-
       const response = await fetchResponse(titles)
-
       const data = await response.json()
-
       dispatch(fetchBannerMoviesSuccess(data))
-
       return data
-    
     } catch(error) {
       dispatch(fetchBannerMoviesFailure(error))
     }
