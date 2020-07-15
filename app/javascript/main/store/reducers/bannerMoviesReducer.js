@@ -4,13 +4,11 @@ import {
   FETCH_BANNER_MOVIES_BEGIN,
   FETCH_BANNER_MOVIES_SUCCESS,
   FETCH_BANNER_MOVIES_FAILURE
-} from '../types/bannerMoviesTypes'
+} from '../types'
 
-const initialState = {
-  movies: [],
-  loading: false,
-  error: null
-}
+import { MoviesState } from './helpers'
+
+const initialState = new MoviesState
 
 export default function bannerMoviesReducer(state = initialState, action) {
   switch (action.type) {

@@ -5,8 +5,8 @@
 import {
   FETCH_MOVIES_INDEX_BEGIN,
   FETCH_MOVIES_INDEX_SUCCESS,
-  FETCH_MOVIES_INDEX_FAILURE
-} from '../types/moviesIndexTypes'
+  FETCH_MOVIES_INDEX_FAILURE,
+} from '../types'
 
 const initialState = {
   moviesIndex: {},
@@ -16,16 +16,24 @@ const initialState = {
   error: null
 }
 
-const buildGenresIndex = (genres) => {
-  const index = {}
-
-  for (let genre of genres) {
-    let slug = genre.toLowerCase()
-
-    index[slug] = { text: genre, url: `/genres/${slug}` }
+class MoviesIndexData {
+  constructor(moviesIndex) {
+    this.moviesIndex = moviesIndex
+    this.genres = Object.keys(moviesIndex)
+    this.genresIndex = this.buildGenresIndex()
   }
 
-  return index
+  buildGenresIndex() {
+    const index = {}
+  
+    for (let genre of this.genres) {
+      let slug = genre.toLowerCase()
+  
+      index[slug] = { text: genre, url: `/genres/${slug}` }
+    }
+  
+    return index
+  }
 }
 
 export default function moviesIndexReducer(state = initialState, action) {
@@ -41,17 +49,11 @@ export default function moviesIndexReducer(state = initialState, action) {
 
     case FETCH_MOVIES_INDEX_SUCCESS:
       // All done: set loading "false".
-      // Also, replace the items with the ones from the server
-      const moviesIndex = action.payload.moviesIndex
-      const genres = Object.keys(moviesIndex)
-      const genresIndex = buildGenresIndex(genres)
+      // Also, replace the items with the ones from the servers)
 
       return {
         ...state,
-        moviesIndex: action.payload.moviesIndex,
-        genres: genres,
-        genresIndex: genresIndex,
-        loading: false
+        ...new MoviesIndexData(action.payload.moviesIndex),
       }
 
     case FETCH_MOVIES_INDEX_FAILURE:

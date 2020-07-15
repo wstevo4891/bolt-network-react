@@ -1,14 +1,14 @@
 // Recent Movies Reducer
 
-import { MoviesState } from './helpers'
-
 // Constants
 // ==================================================================
 import {
   FETCH_RECENT_MOVIES_BEGIN,
   FETCH_RECENT_MOVIES_SUCCESS,
   FETCH_RECENT_MOVIES_FAILURE
-} from '../types/recentMoviesTypes'
+} from '../types'
+
+import { MoviesState } from './helpers'
 
 const initialState = new MoviesState
 

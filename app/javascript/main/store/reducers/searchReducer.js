@@ -5,8 +5,8 @@
 import {
   FETCH_SEARCH_RESULTS_BEGIN,
   FETCH_SEARCH_RESULTS_SUCCESS,
-  FETCH_SEARCH_RESULTS_FAILURE
-} from '../types/searchTypes'
+  FETCH_SEARCH_RESULTS_FAILURE,
+} from '../types'
 
 // Initial Store State
 const initialState = {
