@@ -8,7 +8,7 @@ import {
 } from './structures'
 
 // Components
-import { Slider } from './components'
+import Slider from './components/Slider'
 
 class GenreSlider extends Component {
   constructor(props) {

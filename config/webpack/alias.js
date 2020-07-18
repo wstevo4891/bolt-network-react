@@ -15,7 +15,9 @@ module.exports = {
 
       '@services': path.resolve(__dirname, APP_DIR + '/services'),
 
-      '@store': path.resolve(__dirname, APP_DIR + '/store')
+      '@store': path.resolve(__dirname, APP_DIR + '/store'),
+
+      '@utils': path.resolve(__dirname, APP_DIR + '/utils'),
     }
   }
 }

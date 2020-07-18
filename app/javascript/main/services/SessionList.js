@@ -1,5 +1,3 @@
-// app\javascript\main\services\SessionList.js
-
 /**
  * @class SessionListService
  * 

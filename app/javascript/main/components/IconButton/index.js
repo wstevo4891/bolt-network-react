@@ -1,9 +1,7 @@
 // Icon Button Component
 
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-
-import makeToggleable from '@helpers/makeToggleable'
 
 import Button from '../Button'
 import Icon from '../Icon'
@@ -62,7 +60,34 @@ SwitchIconButton.defaultProps = {
   textPlacement: 'right',
 }
 
-const ToggleIconButton = makeToggleable(SwitchIconButton)
+const ToggleIconButton = (props) => {
+  const [status, setStatus] = useState(props.status)
+
+  const handleClick = () => {
+    setStatus(!status)
+    props.callback()
+  }
+
+  return (
+    <SwitchIconButton
+      handleClick={handleClick}
+      status={status}
+      {...props.clickableProps}
+    />
+  )
+}
+
+ToggleIconButton.propTypes = {
+  clickableProps: PropTypes.object,
+  callback: PropTypes.func,
+  status: PropTypes.bool,
+}
+
+ToggleIconButton.defaultProps = {
+  clickableProps: {},
+  callback: () => void {},
+  status: true,
+}
 
 export {
   IconButton,
