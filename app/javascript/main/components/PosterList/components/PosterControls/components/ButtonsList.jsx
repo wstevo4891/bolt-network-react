@@ -6,8 +6,6 @@ import PropTypes from 'prop-types'
 import ListItem from './ListItem'
 import { ToggleIconButton, ToggleListButton } from '@components'
 
-const OPTION_KEY = "icon"
-
 const ButtonsList = (props) => (
   <ul className="poster-buttons">
     <ListItem
@@ -15,9 +13,7 @@ const ButtonsList = (props) => (
       status={props.statusMap.volume}
     >
       <ToggleIconButton
-        status={true}
-        options={['fa-volume-off', 'fa-volume-up']}
-        optionKey={OPTION_KEY}
+        clickableProps={{ options: ['fa-volume-up', 'fa-volume-off'] }}
       />
     </ListItem>
 
@@ -26,9 +22,8 @@ const ButtonsList = (props) => (
       status={props.statusMap.like}
     >
       <ToggleListButton
+        clickableProps={{ options: ['fa-thumbs-up', 'fa-thumbs-o-up'] }}
         movie={props.movie}
-        options={['fa-thumbs-o-up', 'fa-thumbs-up']}
-        optionKey={OPTION_KEY}
         listName="LikedList"
         updateContainer={props.toggleLike}
       />
@@ -39,9 +34,8 @@ const ButtonsList = (props) => (
       status={props.statusMap.unlike}
     >
       <ToggleListButton
+        clickableProps={{ options: ['fa-thumbs-down', 'fa-thumbs-o-down'] }}
         movie={props.movie}
-        options={['fa-thumbs-o-down', 'fa-thumbs-down']}
-        optionKey={OPTION_KEY}
         listName="UnlikedList"
         updateContainer={props.toggleUnlike}
       />
@@ -49,9 +43,8 @@ const ButtonsList = (props) => (
 
     <li className="poster-btn poster-btn-my-list">
       <ToggleListButton
+        clickableProps={{ options: ['fa-check', 'fa-plus'] }}
         movie={props.movie}
-        options={['fa-plus', 'fa-check']}
-        optionKey={OPTION_KEY}
         listName="MyList"
       />
     </li>

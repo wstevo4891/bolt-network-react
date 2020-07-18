@@ -8,54 +8,64 @@ import makeToggleable from '@helpers/makeToggleable'
 import Button from '../Button'
 import Icon from '../Icon'
 
-function buildIconProps(icon, iconProps) {
-  if (icon) {
-    return Object.assign({}, iconProps, { icon })
-  }
-
-  return iconProps
-}
-
-function buildButtonProps(buttonProps, handleClick) {
-  if (buttonProps.handleClick) return buttonProps
-
-  return Object.assign({}, buttonProps, { handleClick })
-}
-
-const IconButton = (props) => {
-  const propsForButton = buildButtonProps(props.buttonProps, props.handleClick)
-  const propsForIcon = buildIconProps(props.icon, props.iconProps)
-
-  return (
-    <Button {...propsForButton}>
-      {props.textPlacement === 'left' && props.text}
-      <Icon {...propsForIcon} />
-      {props.textPlacement === 'right' && props.text}
-    </Button>
-  ) 
-}
+const IconButton = (props) => (
+  <Button {...props.buttonProps}>
+    {props.textPlacement === 'left' && props.text}
+    <Icon {...props.iconProps} />
+    {props.textPlacement === 'right' && props.text}
+  </Button>
+)
 
 IconButton.propTypes = {
-  buttonProps: PropTypes.shape(Button.propTypes),
-  handleClick: PropTypes.func,
-  icon: PropTypes.string,
-  iconProps: PropTypes.shape(Icon.propTypes),
+  buttonProps: PropTypes.shape(Button.propTypes).isRequired,
+  iconProps: PropTypes.shape(Icon.propTypes).isRequired,
   text: PropTypes.string,
   textPlacement: PropTypes.oneOf(['left', 'right']),
 }
 
 IconButton.defaultProps = {
-  buttonProps: {},
-  handleClick: () => void {},
-  icon: null,
-  iconProps: null,
   text: null,
   textPlacement: 'right',
 }
 
-const ToggleIconButton = makeToggleable(IconButton)
+const SwitchIconButton = (props) => {
+  const icon = props.status ? props.options[0] : props.options[1]
+
+  return (
+    <IconButton
+      buttonProps={{
+        ...props.buttonProps,
+        handleClick: props.handleClick,
+      }}
+      iconProps={{ ...props.iconProps, icon }}
+      text={props.text}
+      textPlacement={props.textPlacement}
+    />
+  )
+}
+
+SwitchIconButton.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  status: PropTypes.bool.isRequired,
+  buttonProps: PropTypes.object,
+  handleClick: PropTypes.func,
+  iconProps: PropTypes.object,
+  text: PropTypes.string,
+  textPlacement: PropTypes.oneOf(['left', 'right']),
+}
+
+SwitchIconButton.defaultProps = {
+  buttonProps: {},
+  handleClick: () => void {},
+  iconProps: {},
+  text: null,
+  textPlacement: 'right',
+}
+
+const ToggleIconButton = makeToggleable(SwitchIconButton)
 
 export {
   IconButton,
-  ToggleIconButton
+  SwitchIconButton,
+  ToggleIconButton,
 }

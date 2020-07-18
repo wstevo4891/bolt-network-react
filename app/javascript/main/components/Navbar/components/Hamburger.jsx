@@ -14,7 +14,7 @@ const Hamburger = (props) => (
       dataTarget: `#${props.dataTarget}`,
       handleClick: props.handleClick,
     }}
-    icon="fa-bars"
+    iconProps={{ icon: 'fa-bars' }}
   />
 )
 

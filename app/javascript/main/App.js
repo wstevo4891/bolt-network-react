@@ -2,10 +2,12 @@
 
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+
 import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom'
+
 import { connect } from 'react-redux'
 
 import Routes from './Routes'
@@ -16,7 +18,7 @@ import {
   Footer
 } from './components'
 
-import { fetchMoviesIndex } from './store/actions/moviesIndexActions'
+import { fetchMoviesIndex } from './store/actions'
 
 class App extends Component {
   render() {

@@ -1,5 +1,3 @@
-// MyListButton Container Class
-
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
@@ -18,57 +16,39 @@ class ToggleListButton extends Component {
   }
 
   render() {
-    const { options, clickableProps } = this.props
     const inList = this.state.inList
-
     if (inList === null) return null
 
     return(
       <ToggleIconButton
-        clickableProps={clickableProps}
+        callback={this.toggleList}
+        clickableProps={this.props.clickableProps}
         status={inList}
-        options={options}
-        optionKey="icon"
-        updateStatus={this.toggleList}
       />
     )
   }
 
   toggleList = () => {
-    const inList = this.state.inList
+    this.state.inList ? this.list.remove() : this.list.add()
 
-    inList ? this.list.remove() : this.list.add()
-
-    this.setState({ inList: !inList })
-
-    this.props.updateContainer()
+    this.setState(prevState => ({ inList: !prevState.inList }), this.props.updateContainer())
   }
 
   componentDidMount() {
     const movieInList = this.list.findMovie()
 
-    this.setState({
-      inList: movieInList
-    })
+    this.setState({ inList: movieInList })
   }
 }
 
 ToggleListButton.propTypes = {
   movie: PropTypes.object.isRequired,
-  options: PropTypes.array.isRequired,
   listName: PropTypes.string.isRequired,
-  clickableProps: PropTypes.shape({
-    buttonClass: PropTypes.string,
-    text: PropTypes.string,
-  }),
+  clickableProps: PropTypes.object.isRequired,
   updateContainer: PropTypes.func,
 }
 
 ToggleListButton.defaultProps = {
-  clickableProps: {
-    buttonClass: null,
-    text: null,
-  },
   updateContainer: () => void {},
 }
 

@@ -22,7 +22,7 @@ export default class Dropdown extends Component {
             buttonClass: 'nav-link',
             id: dropdownId,
           }}
-          icon="fa-angle-down"
+          iconProps={{ icon: "fa-angle-down" }}
           text={text}
           textPlacement="left"
         />

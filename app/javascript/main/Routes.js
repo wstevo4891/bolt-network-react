@@ -17,19 +17,19 @@ import {
 const Routes = (props) => (
   <Switch>
     <Route exact path="/">
-      <Home {...props} />
+      <Home slideLength={props.slideLength} />
     </Route>
 
     <Route
       path={`/genres/:slug`}
       render={(routeProps) => {
+        console.log(props)
         const genreSlug = routeProps.match.params.slug
         const genre = props.genresIndex[genreSlug].text
         const movies = props.moviesIndex[genre]
 
         return (
           <Genre
-            // TODO: Only pass required props
             genre={genre}
             movies={movies}
             slideLength={props.slideLength}
@@ -40,11 +40,7 @@ const Routes = (props) => (
 
     <Route
       path={`/movies/:movieID`}
-      render={(routeProps) =>
-        <Movie
-          {...props}
-          {...routeProps}
-        />
+      render={routeProps => <Movie movieID={routeProps.match.params.movieID} />
       }
     />
 
@@ -58,18 +54,28 @@ const Routes = (props) => (
 
     <Route
       path="/search"
-      render={(routeProps) =>
-        <Search
-          {...props}
-          {...routeProps}
-        />
-      }
+      render={(routeProps) => {
+        const { genres, movies, people } = props.search
+
+        return (
+          <Search
+            genres={genres}
+            movies={movies}
+            people={people}
+            query={routeProps.location.search}
+            slideLength={props.slideLength}
+          />
+        )
+      }}
     />
   </Switch>
 )
 
 Routes.propTypes = {
+  genresIndex: PropTypes.object.isRequired,
+  moviesIndex: PropTypes.object.isRequired,
   slideLength: PropTypes.number.isRequired,
+  search: PropTypes.object,
 }
 
 function mapStateToProps(state) {

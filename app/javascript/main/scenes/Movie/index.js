@@ -1,6 +1,7 @@
 // Movie Scene stateful component
 
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 import { DisplayContainer, TitleRow } from '@components'
 
@@ -24,7 +25,7 @@ export default class Movie extends Component {
   }
 
   componentDidMount() {
-    this.fetchMovie(this.props.match.params.movieID)
+    this.fetchMovie(this.props.movieID)
   }
 
   fetchMovie = async (movieID) => {
@@ -41,4 +42,8 @@ export default class Movie extends Component {
       console.error(error)
     }
   }
+}
+
+Movie.propTypes = {
+  movieID: PropTypes.string.isRequired,
 }

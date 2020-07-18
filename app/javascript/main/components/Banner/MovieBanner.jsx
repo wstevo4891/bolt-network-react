@@ -46,11 +46,10 @@ const MovieBanner = ({ movie }) => {
                   buttonProps: {
                     buttonClass: 'btn-clear',
                   },
+                  options: ['fa-check', 'fa-plus'],
                   text: 'MY LIST',
                 }}
                 movie={movie}
-                options={['fa-plus', 'fa-check']}
-                optionKey="icon"
                 listName="MyList"
               />
             </div>

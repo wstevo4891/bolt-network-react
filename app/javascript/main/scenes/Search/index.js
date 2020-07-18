@@ -1,6 +1,7 @@
 // Search Scene
 
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import queryString from 'query-string'
 
@@ -16,11 +17,11 @@ class Search extends Component {
   }
 
   render() {
-    const { genres, movies, people } = this.props.search
+    const { genres, movies, people } = this.props
     
     const params = this.parseParams()
 
-    const results = this.setResults(params)
+    const results = this.setResults(movies, params)
 
     return(
       <SearchResults
@@ -29,6 +30,7 @@ class Search extends Component {
           suggestionId: params.suggestionId,
         }}
         resultsProps={{
+          name: 'Search_Results',
           movies: results,
           slideLength: this.props.slideLength,
         }}
@@ -44,20 +46,19 @@ class Search extends Component {
   }
 
   parseParams = () => {
-    const search = this.props.location.search
+    const parsedQuery = queryString.parse(this.props.query)
 
     return {
-      query: decodeURIComponent(queryString.parse(search).q),
-
-      suggestionId: queryString.parse(search).suggestionId
+      query: decodeURIComponent(parsedQuery.q),
+      suggestionId: parsedQuery.suggestionId,
     }
   }
 
-  setResults = (params) => {
+  setResults = (movies, params) => {
     if (params.suggestionId && this.state.suggestion) {
       return this.props.suggestions.movies
     } else {
-      return this.props.search.movies
+      return movies
     }
   }
 
@@ -68,7 +69,7 @@ class Search extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.location.search === prevProps.location.search) return
+    if (this.props.query === prevProps.query) return
 
     const params = this.parseParams()
 
@@ -78,6 +79,16 @@ class Search extends Component {
       this.setState({ suggestion: null })
     }
   }
+}
+
+Search.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  genres: PropTypes.array,
+  movies: PropTypes.array,
+  people: PropTypes.array,
+  slideLength: PropTypes.number,
+  suggestions: PropTypes.object,
+  query: PropTypes.string,
 }
 
 export default connect()(Search)

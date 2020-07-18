@@ -11,7 +11,7 @@ class SearchBar extends Component {
   state = {
     display: false,
     location: null,
-    queryExists: false
+    queryExists: false,
   }
 
   // When we click on the hour glass button, we'll hide it,
@@ -20,14 +20,16 @@ class SearchBar extends Component {
     const { history, handleInputClick } = this.props
     const { display, location, queryExists } = this.state
 
-    const boxClass = display ? 'searchBox d-none' : 'searchBox'
+    const buttonClass = display ? 'searchBox d-none' : 'searchBox'
     const wrapperClass = display ? 'searchWrapper' : 'searchWrapper d-none'
 
     return(
       <li className="d-sm-inline-block nav-item">
         <IconButton
-          buttonClass={boxClass}
-          handleClick={this.handleClick}
+          buttonProps={{
+            buttonClass,
+            handleClick: this.handleClick,
+          }}
           iconProps={{
             icon: "fa-search",
             ariaHidden: "true",
