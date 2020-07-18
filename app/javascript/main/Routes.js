@@ -23,7 +23,6 @@ const Routes = (props) => (
     <Route
       path={`/genres/:slug`}
       render={(routeProps) => {
-        console.log(props)
         const genreSlug = routeProps.match.params.slug
         const genre = props.genresIndex[genreSlug].text
         const movies = props.moviesIndex[genre]
@@ -40,7 +39,8 @@ const Routes = (props) => (
 
     <Route
       path={`/movies/:movieID`}
-      render={routeProps => <Movie movieID={routeProps.match.params.movieID} />
+      render={routeProps =>
+        <Movie movieID={routeProps.match.params.movieID} />
       }
     />
 
@@ -77,6 +77,7 @@ Routes.propTypes = {
   moviesIndex: PropTypes.object.isRequired,
   slideLength: PropTypes.number.isRequired,
   search: PropTypes.object,
+  suggestions: PropTypes.object,
 }
 
 function mapStateToProps(state) {

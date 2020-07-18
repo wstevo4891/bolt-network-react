@@ -31,7 +31,10 @@ class ToggleListButton extends Component {
   toggleList = () => {
     this.state.inList ? this.list.remove() : this.list.add()
 
-    this.setState(prevState => ({ inList: !prevState.inList }), this.props.updateContainer())
+    this.setState(
+      prevState => ({ inList: !prevState.inList }),
+      this.props.updateContainer()
+    )
   }
 
   componentDidMount() {

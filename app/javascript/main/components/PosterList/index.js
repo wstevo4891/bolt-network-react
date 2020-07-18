@@ -32,9 +32,9 @@ class PosterList extends Component {
       return(
         <Poster
           key={`${name}_Poster_${movie.id}`}
-          {...posterData}
-          mouseOver={this.handleMouseOver}
           mouseLeave={this.handleMouseLeave}
+          mouseOver={this.handleMouseOver}
+          {...posterData}
         />
       )
     })

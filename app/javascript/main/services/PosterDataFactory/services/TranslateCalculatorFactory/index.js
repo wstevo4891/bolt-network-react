@@ -4,6 +4,8 @@ import SliderTranslateCalculator from './services/SliderTranslateCalculator'
 
 import StaticTranslateCalculator from './services/StaticTranslateCalculator'
 
+import { SLIDER, STATIC } from '@utils'
+
 export default class TranslateCalculatorFactory {
   /**
    * Static factory function that returns the correct
@@ -15,10 +17,10 @@ export default class TranslateCalculatorFactory {
    */
   static build(params) {
     switch(params.type) {
-      case 'slider':
+      case SLIDER:
         return new SliderTranslateCalculator(params)
 
-      case 'static':
+      case STATIC:
         return new StaticTranslateCalculator(params)
 
       default:

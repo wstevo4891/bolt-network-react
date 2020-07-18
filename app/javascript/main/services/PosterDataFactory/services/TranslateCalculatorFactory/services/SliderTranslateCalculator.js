@@ -49,6 +49,7 @@ class SliderTranslateCalculator extends TranslateCalculator {
   /**
    * Check if current poster is at the start or
    * end of its list.
+   * @function bookEndPosition
    * 
    * @param {Number} position
    * 
