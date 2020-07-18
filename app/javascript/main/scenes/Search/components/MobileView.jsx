@@ -11,7 +11,7 @@ const MobileView = ({ resultsProps, suggestionsProps }) => (
       <div className="row">
         <div className="col-12 mb-2">
           <span className="suggestionsLabel">
-            Results for &quot;{suggestionsProps.query}&quot;
+            Results for &quot;{suggestionsProps.data.query}&quot;
           </span>
         </div>
       </div>

@@ -64,6 +64,7 @@ const Routes = (props) => (
             people={people}
             query={routeProps.location.search}
             slideLength={props.slideLength}
+            suggestions={props.suggestions}
           />
         )
       }}

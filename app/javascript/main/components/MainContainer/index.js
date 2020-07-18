@@ -1,12 +1,24 @@
 import React, { Component } from 'react'
 
-const BREAKPOINTS = [1400, 1100, 800, 500]
+import {
+  BREAKPOINT_1400,
+  BREAKPOINT_1100,
+  BREAKPOINT_800,
+  BREAKPOINT_500,
+} from '@utils'
+
+const BREAKPOINTS = [
+  BREAKPOINT_1400,
+  BREAKPOINT_1100,
+  BREAKPOINT_800,
+  BREAKPOINT_500
+]
 
 const SLIDE_LENGTH_INDEX = {
-  1400: 6,
-  1100: 5,
-  800: 4,
-  500: 3,
+  [BREAKPOINT_1400]: 6,
+  [BREAKPOINT_1100]: 5,
+  [BREAKPOINT_800]: 4,
+  [BREAKPOINT_500]: 3,
 }
 
 export default class MainContainer extends Component {

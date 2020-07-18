@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import queryString from 'query-string'
 
 // Actions
-import { fetchSuggestions } from '../../store/actions/suggestionsActions'
+import { fetchSuggestions } from '@store/actions/suggestionsActions'
 
 // Components
 import SearchResults from './components/SearchResults'
@@ -35,10 +35,12 @@ class Search extends Component {
           slideLength: this.props.slideLength,
         }}
         suggestionsProps={{
-          genres,
-          movies,
-          people,
-          query: params.query,
+          data: {
+            genres,
+            movies,
+            people,
+            query: params.query,
+          },
           handleClick: this.handleClick,
         }}
       />

@@ -7,7 +7,7 @@ import DesktopView from './DesktopView'
 
 const SearchResults = (props) => {
   const { resultsProps, suggestionsProps } = props
-  const { genres, movies, query } = suggestionsProps
+  const { genres, movies, query } = suggestionsProps.data
 
   if (genres.length === 0 && movies.length === 0) {
     return <NotFound query={query} />
