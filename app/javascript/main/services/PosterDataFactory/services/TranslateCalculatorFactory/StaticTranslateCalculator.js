@@ -1,11 +1,23 @@
 // Static Poster Translate Calculator
 
-import TranslateCalculator from './TranslateCalculator'
+const POSTER_WIDTH_MULTIPLIER = 0.38
 
-class StaticTranslateCalculator extends TranslateCalculator {
+export default class StaticTranslateCalculator {
   constructor(params) {
-    super(params)
     this.end = params.end
+    this.hoverItem = params.hoverItem
+    this.slideLength = params.slideLength
+    this.translateX = this.calcTranslateX()
+  }
+
+  calcTranslateX() {
+    const posters = document.getElementsByClassName('poster-container')
+
+    if (posters.length === 0) return 0
+
+    const width = posters[0].clientWidth
+
+    return Math.round(width * POSTER_WIDTH_MULTIPLIER)
   }
 
   call(index) {
@@ -30,7 +42,7 @@ class StaticTranslateCalculator extends TranslateCalculator {
 
   currentPositionTranslate(index) {
     const translate = this.calcCurrentTranslate(index)
-    
+
     return this.translate3D(translate, true)
   }
 
@@ -52,6 +64,12 @@ class StaticTranslateCalculator extends TranslateCalculator {
       return this.translate3D(this.translateX)
     }
   }
-}
 
-export default StaticTranslateCalculator
+  translate3D(x, scale = false) {
+    if (scale) {
+      return `scale(1.75) translate3d(${x}px, 0px, 0px)`
+    } else {
+      return `translate3d(${x}px, 0px, 0px)`
+    }
+  }
+}

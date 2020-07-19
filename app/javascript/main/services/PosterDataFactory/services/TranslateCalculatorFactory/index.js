@@ -1,8 +1,8 @@
 // Translate Calculator Factory Function
 
-import SliderTranslateCalculator from './services/SliderTranslateCalculator'
+import SliderTranslateCalculator from './SliderTranslateCalculator'
 
-import StaticTranslateCalculator from './services/StaticTranslateCalculator'
+import StaticTranslateCalculator from './StaticTranslateCalculator'
 
 import { SLIDER, STATIC } from '@utils'
 
