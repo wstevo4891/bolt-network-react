@@ -1,24 +1,8 @@
-// Static Poster Translate Calculator
-
-const POSTER_WIDTH_MULTIPLIER = 0.38
-
-export default class StaticTranslateCalculator {
-  constructor(params) {
-    this.end = params.end
-    this.hoverItem = params.hoverItem
-    this.slideLength = params.slideLength
-    this.translateX = this.calcTranslateX()
-  }
-
-  calcTranslateX() {
-    const posters = document.getElementsByClassName('poster-container')
-
-    if (posters.length === 0) return 0
-
-    const width = posters[0].clientWidth
-
-    return Math.round(width * POSTER_WIDTH_MULTIPLIER)
-  }
+const TranslateCalculator = {
+  end: null,
+  hoverItem: null,
+  slideLength: null,
+  translateX: null,
 
   call(index) {
     if (index < this.hoverItem) {  
@@ -30,7 +14,7 @@ export default class StaticTranslateCalculator {
     } else if (index > this.hoverItem) {  
       return this.afterHoverTranslate()
     }
-  }
+  },
 
   negativeTranslate() {
     if (this.hoverItem === this.end) {
@@ -38,23 +22,27 @@ export default class StaticTranslateCalculator {
     } else {
       return this.translate3D(-this.translateX)
     }
-  }
+  },
 
   currentPositionTranslate(index) {
     const translate = this.calcCurrentTranslate(index)
 
     return this.translate3D(translate, true)
-  }
+  },
 
   calcCurrentTranslate(index) {
-    if (index === 0) {
+    if (this.bookEndPosition(index)) {
       return Math.floor((this.translateX / 2) + 5)
   
     } else if (index === this.end) {
       return -Math.floor((this.translateX / 2) + 8)
   
     } else return 0
-  }
+  },
+
+  bookEndPosition(index) {
+    return index === 0
+  },
   
   afterHoverTranslate() {
     if (this.hoverItem === 0 || this.hoverItem === this.end) {
@@ -63,7 +51,7 @@ export default class StaticTranslateCalculator {
     } else {
       return this.translate3D(this.translateX)
     }
-  }
+  },
 
   translate3D(x, scale = false) {
     const translate = `translate3d(${x}px, 0px, 0px)`
@@ -71,5 +59,7 @@ export default class StaticTranslateCalculator {
     if (scale) return `scale(1.75) ${translate}`
 
     return translate
-  }
+  },
 }
+
+export default TranslateCalculator

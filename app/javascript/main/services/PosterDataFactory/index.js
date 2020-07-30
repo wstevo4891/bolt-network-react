@@ -1,30 +1,50 @@
 // Poster Data Service
 
-import PosterParamsFactory from './services/PosterParamsFactory'
-import PosterData from './services/PosterData'
-import ContainerFactory from './services/ContainerFactory'
-import HoverStyleFactory from './services/HoverStyleFactory'
+import {
+  ContainerFactory,
+  HoverStyleFactory,
+  PosterParamsFactory,
+} from './services'
 
-export default class PosterDataFactory {
-  constructor(props) {
-    const params = PosterParamsFactory.build(props)
+const PosterDataFactory = (props) => {
+  const params = PosterParamsFactory(props)
 
-    this.hoverItem = params.hoverItem
+  return {
+    hoverItem: params.hoverItem,
 
-    this.containerFactory = new ContainerFactory(params)
+    containerFactory: ContainerFactory(params),
 
-    this.styleFactory = new HoverStyleFactory(params)
-  }
+    styleFactory: HoverStyleFactory(params),
 
-  build(movie, index) {
-    const data = new PosterData(movie, this.hoverItem)
+    build(movie, index) {
+      // console.log('PosterDataFactory.build()')
 
-    const container = this.containerFactory.build(index)
+      const containerClass = this.containerFactory.build(index)
 
-    data.addContainerClass(container)
+      const containerStyle = this.styleFactory.build(index)
 
-    data.containerStyle = this.styleFactory.build(index)
+      return this.posterData(movie, containerClass, containerStyle)
+    },
 
-    return data
+    posterData(movie, containerClass, containerStyle) {
+      const data = {
+        containerStyle,
+        movie,
+        hoverItem: this.hoverItem,
+        posterImage: {
+          backgroundImage: `url(${movie.photo.url})`,
+          backgroundSize: '100% 100%',
+        },
+        slideItem: parseInt(containerClass.slice(-1), 10),
+      }
+    
+      if (data.slideItem === data.hoverItem) containerClass += ' mouseOver'
+    
+      data.containerClass = containerClass
+    
+      return data
+    }
   }
 }
+
+export default PosterDataFactory

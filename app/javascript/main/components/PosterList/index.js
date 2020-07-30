@@ -24,14 +24,16 @@ class PosterList extends Component {
   }
 
   render() {
-    const dataFactory = new PosterDataFactory({...this.state, ...this.props })
+    console.log('PosterList rendering')
+
+    const factory = PosterDataFactory({...this.state, ...this.props })
 
     return this.props.movies.map((movie, index) => {
-      const posterData = dataFactory.build(movie, index)
+      const posterData = factory.build(movie, index)
 
       return(
         <Poster
-          key={`${name}_Poster_${movie.id}`}
+          key={`${this.props.name}_Poster_${movie.id}`}
           mouseLeave={this.handleMouseLeave}
           mouseOver={this.handleMouseOver}
           {...posterData}

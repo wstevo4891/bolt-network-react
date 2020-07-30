@@ -3,6 +3,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+function displayArray(arr) {
+  if (arr.length === 1) return arr.join('')
+
+  return arr.join(', ')
+}
+
 const MoviePage = ({ movie }) => (
   <div className="row">
     <div className="col-4">
@@ -22,11 +28,11 @@ const MoviePage = ({ movie }) => (
 
       <p><span>Release Date: </span>{movie.release_date}</p>
 
-      <p><span>Genres: </span>{movie.genres.join(', ')}</p>
+      <p><span>Genres: </span>{displayArray(movie.genres)}</p>
 
-      <p><span>Director: </span>{movie.directors.join(', ')}</p>
+      <p><span>Director: </span>{displayArray(movie.directors)}</p>
 
-      <p><span>Actors: </span>{movie.actors.join(', ')}</p>
+      <p><span>Actors: </span>{displayArray(movie.actors)}</p>
 
       <p>
         <span>Plot: </span>
@@ -36,7 +42,7 @@ const MoviePage = ({ movie }) => (
   </div>
 )
 
-MoviePage.proptypes = {
+MoviePage.propTypes = {
   movie: PropTypes.shape({
     poster: PropTypes.string,
     title: PropTypes.string,

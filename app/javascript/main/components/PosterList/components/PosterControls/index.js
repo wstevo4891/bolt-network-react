@@ -9,10 +9,28 @@ import SessionList from '@services/SessionList'
 import MovieInfo from './components/MovieInfo'
 import ButtonsList from './components/ButtonsList'
 
-function StatusMap(volume, like, unlike) {
-  this.volume = volume || 'static'
-  this.like = like || 'static'
-  this.unlike = unlike || 'static'
+const STATIC = 'static'
+
+const MOVE_DOWN = 'move-down'
+
+const HIDDEN = 'hidden'
+
+const STATUS_MAP = {
+  [null]: {
+    volume: STATIC,
+    like: STATIC,
+    unlike: STATIC,
+  },
+  [true]: {
+    volume: MOVE_DOWN,
+    like: 'move-down-selected',
+    unlike: HIDDEN,
+  },
+  [false]: {
+    volume: MOVE_DOWN,
+    like: HIDDEN,
+    unlike: 'selected',
+  },
 }
 
 export default class PosterControls extends Component {
@@ -29,7 +47,7 @@ export default class PosterControls extends Component {
     
     const { hoverItem, movie } = this.props
 
-    const statusMap = this.setStatusMap(likeState)
+    const statusMap = STATUS_MAP[likeState]
 
     return(
       <span>
@@ -47,28 +65,16 @@ export default class PosterControls extends Component {
     )
   }
 
-  setStatusMap(likeState) {
-    if (likeState === null) {
-      return new StatusMap()
-
-    } else if (likeState === true) {
-      return new StatusMap('move-down', 'move-down-selected', 'hidden')
-    
-    } else if (likeState === false) {
-      return new StatusMap('move-down', 'hidden', 'selected')
-    }
-  }
-
   toggleLike = () => {
-    this.setState({
-      likeState: this.state.likeState ? null : true
-    })
+    this.setState(prevState => ({
+      likeState: prevState.likeState ? null : true
+    }))
   }
 
   toggleUnlike = () => {
-    this.setState({
-      likeState: this.state.likeState === false ? null : false
-    })
+    this.setState(prevState => ({
+      likeState: prevState.likeState === false ? null : false
+    }))
   }
 
   componentDidMount() {

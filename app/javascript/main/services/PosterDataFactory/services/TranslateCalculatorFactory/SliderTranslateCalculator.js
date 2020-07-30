@@ -11,25 +11,13 @@ class SliderTranslateCalculator extends StaticTranslateCalculator {
     this.hoverItem = this.start ? this.hoverItem : this.hoverItem + this.slideLength
   }
 
-  call(index) {
-    if (index < this.hoverItem) {
-      return this.beforeHoverTranslate()
-  
-    } else if (index === this.hoverItem) {
-      return this.currentPositionTranslate(index)
-  
-    } else if (index > this.hoverItem) {
-      return this.afterHoverTranslate()
-    }
-  }
-
-  beforeHoverTranslate() {
+  negativeTranslate() {
     if (
       this.start === false &&
       this.hoverItem === this.slideLength + 1
     ) return null
 
-    return this.negativeTranslate()
+    return super.negativeTranslate()
   }
 
   calcCurrentTranslate(index) {
@@ -54,7 +42,7 @@ class SliderTranslateCalculator extends StaticTranslateCalculator {
   bookEndPosition(position) {
     return (this.start && position === 0) || position === this.slideLength + 1
   }
-  
+
   afterHoverTranslate() {
     if (this.hoverItem === this.end) return null
 
