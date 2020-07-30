@@ -3,7 +3,6 @@
 import React, { Component } from 'react'
 
 // Services
-// import SessionList from '@services/SessionList'
 import SessionListInterface from '@services/SessionListInterface'
 
 // Components
