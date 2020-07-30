@@ -3,7 +3,8 @@
 import React, { Component } from 'react'
 
 // Services
-import SessionList from '@services/SessionList'
+// import SessionList from '@services/SessionList'
+import SessionListInterface from '@services/SessionListInterface'
 
 // Components
 import MovieInfo from './components/MovieInfo'
@@ -33,6 +34,10 @@ const STATUS_MAP = {
   },
 }
 
+const LIKED_LIST = 'LikedList'
+
+const UNLIKED_LIST = 'UnlikedList'
+
 export default class PosterControls extends Component {
   constructor(props) {
     super(props)
@@ -43,6 +48,7 @@ export default class PosterControls extends Component {
 
   render() {
     const likeState = this.state.likeState
+
     if (likeState === undefined) return null
     
     const { hoverItem, movie } = this.props
@@ -87,17 +93,11 @@ export default class PosterControls extends Component {
 
   getLikeState() {
     const movie = this.props.movie
-    const likedList = new SessionList(movie, 'LikedList')
-    const unlikedList = new SessionList(movie, 'UnlikedList')
-  
-    if (likedList.findMovie()) {
-      return true
-  
-    } else if (unlikedList.findMovie()) {
-      return false
-  
-    } else {
-      return null
-    }
+
+    if (SessionListInterface.findMovie(movie, LIKED_LIST)) return true
+
+    if (SessionListInterface.findMovie(movie, UNLIKED_LIST)) return false
+
+    return null
   }
 }
