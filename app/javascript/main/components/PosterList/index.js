@@ -24,12 +24,14 @@ class PosterList extends Component {
   }
 
   render() {
-    console.log('PosterList rendering')
+    const { slideLength, start, type } = this.props
 
-    const factory = PosterDataFactory({...this.state, ...this.props })
+    const hoverItem = this.state.hoverItem
+
+    const factoryProps = { hoverItem, slideLength, start, type }
 
     return this.props.movies.map((movie, index) => {
-      const posterData = factory.build(movie, index)
+      const posterData = PosterDataFactory(movie, index, factoryProps)
 
       return(
         <Poster

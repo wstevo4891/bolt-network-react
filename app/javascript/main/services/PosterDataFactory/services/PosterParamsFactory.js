@@ -1,24 +1,20 @@
 // Poster Params Factory
 
-const PosterParams = ({ type, slideLength, hoverItem }) => ({
-  type,
-  slideLength,
-  hoverItem,
+const staticParams = (params) => ({
+  end: params.slideLength - 1,
+  hoverItem: params.hoverItem,
+  slideLength: params.slideLength,
+  type: params.type,
 })
 
-const StaticParams = (params) => {
-  return Object.assign(PosterParams(params), {
-    end: params.slideLength - 1,
-  })
-}
-
-const SliderParams = (params) => {
-  return Object.assign(PosterParams(params), {
-    start: params.start,
-    end: params.slideLength - 1,
-    limit: (params.slideLength * 2) + 1,
-  })
-}
+const sliderParams = (params) => ({
+  end: params.slideLength - 1,
+  hoverItem: params.hoverItem,
+  limit: (params.slideLength * 2) + 1,
+  slideLength: params.slideLength,
+  start: params.start,
+  type: params.type,
+})
 
 /**
  * Factory Function to return the
@@ -32,10 +28,10 @@ const SliderParams = (params) => {
 export default function PosterParamsFactory(props) {
   switch(props.type) {
     case 'static':
-      return StaticParams(props)
+      return staticParams(props)
 
     case 'slider':
-      return SliderParams(props)
+      return sliderParams(props)
 
     default:
       return null

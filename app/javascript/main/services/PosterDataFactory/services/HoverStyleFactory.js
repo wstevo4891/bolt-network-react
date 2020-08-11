@@ -2,25 +2,19 @@
 
 import TranslateCalculatorFactory from './TranslateCalculatorFactory'
 
-const HoverStyle = (translate = 'translate3d(0px, 0px, 0px)') => ({
-  transform: translate,
+const hoverStyle = (translate = null) => ({
+  transform: translate || 'translate3d(0px, 0px, 0px)',
   transitionDuration: '400ms',
   transitionTimingFunction: 'cubic-bezier(0.5, 0, 0.1, 1)',
   transitionDelay: '0ms',
 })
 
-const HoverStyleFactory = (params) => ({
-  hoverItem: params.hoverItem,
+const HoverStyleFactory = (index, params) => {
+  if (params.hoverItem === null) return hoverStyle()
 
-  calculator: TranslateCalculatorFactory(params),
+  const translate = TranslateCalculatorFactory(params).call(index)
 
-  build(index) {
-    if (this.hoverItem === null) return HoverStyle()
-
-    const translateValue = this.calculator.call(index)
-
-    return HoverStyle(translateValue)
-  }
-})
+  return hoverStyle(translate)
+}
 
 export default HoverStyleFactory
