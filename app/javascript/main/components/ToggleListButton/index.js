@@ -22,8 +22,12 @@ class ToggleListButton extends Component {
     return(
       <ToggleIconButton
         callback={this.toggleList}
-        clickableProps={this.props.clickableProps}
+        buttonProps={this.props.buttonProps}
+        iconProps={this.props.iconProps}
+        options={this.props.options}
         status={inList}
+        text={this.props.text}
+        textPlacement={this.props.textPlacement}
       />
     )
   }
@@ -53,13 +57,17 @@ class ToggleListButton extends Component {
 }
 
 ToggleListButton.propTypes = {
-  movie: PropTypes.object.isRequired,
   listName: PropTypes.string.isRequired,
-  clickableProps: PropTypes.object.isRequired,
+  movie: PropTypes.object.isRequired,
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  buttonProps: PropTypes.object,
+  iconProps: PropTypes.object,
   updateContainer: PropTypes.func,
 }
 
 ToggleListButton.defaultProps = {
+  buttonProps: {},
+  iconProps: {},
   updateContainer: () => void {},
 }
 

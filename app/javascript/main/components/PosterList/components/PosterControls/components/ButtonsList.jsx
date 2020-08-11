@@ -13,7 +13,7 @@ const ButtonsList = (props) => (
       status={props.statusMap.volume}
     >
       <ToggleIconButton
-        clickableProps={{ options: ['fa-volume-up', 'fa-volume-off'] }}
+        options={['fa-volume-up', 'fa-volume-off']}
       />
     </ListItem>
 
@@ -22,7 +22,7 @@ const ButtonsList = (props) => (
       status={props.statusMap.like}
     >
       <ToggleListButton
-        clickableProps={{ options: ['fa-thumbs-up', 'fa-thumbs-o-up'] }}
+        options={['fa-thumbs-up', 'fa-thumbs-o-up']}
         movie={props.movie}
         listName="LikedList"
         updateContainer={props.toggleLike}
@@ -34,7 +34,7 @@ const ButtonsList = (props) => (
       status={props.statusMap.unlike}
     >
       <ToggleListButton
-        clickableProps={{ options: ['fa-thumbs-down', 'fa-thumbs-o-down'] }}
+        options={['fa-thumbs-down', 'fa-thumbs-o-down']}
         movie={props.movie}
         listName="UnlikedList"
         updateContainer={props.toggleUnlike}
@@ -43,7 +43,7 @@ const ButtonsList = (props) => (
 
     <li className="poster-btn poster-btn-my-list">
       <ToggleListButton
-        clickableProps={{ options: ['fa-check', 'fa-plus'] }}
+        options={['fa-check', 'fa-plus']}
         movie={props.movie}
         listName="MyList"
       />
