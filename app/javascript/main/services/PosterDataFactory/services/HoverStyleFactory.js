@@ -1,6 +1,6 @@
 // PosterStyle Factory
 
-import TranslateCalculatorFactory from './TranslateCalculatorFactory'
+import TranslateFactory from './TranslateFactory'
 
 const hoverStyle = (translate = null) => ({
   transform: translate || 'translate3d(0px, 0px, 0px)',
@@ -12,7 +12,7 @@ const hoverStyle = (translate = null) => ({
 const HoverStyleFactory = (index, params) => {
   if (params.hoverItem === null) return hoverStyle()
 
-  const translate = TranslateCalculatorFactory(params).call(index)
+  const translate = TranslateFactory(index, params)
 
   return hoverStyle(translate)
 }

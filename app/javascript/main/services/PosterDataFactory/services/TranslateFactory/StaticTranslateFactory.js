@@ -1,37 +1,29 @@
 // Static Poster Translate Calculator
 
-export default function StaticTranslateFactory(index, params) {
-  const { hoverItem } = params
+import { negativeTranslate, translate3D } from './helpers'
+
+export default function StaticTranslateFactory(params) {
+  const { index, hoverItem } = params
 
   if (index < hoverItem) {  
     return negativeTranslate(params)
 
   } else if (index === hoverItem) {
-    return currentPositionTranslate(index, params)
+    return currentPositionTranslate(params)
 
   } else if (index > hoverItem) {  
-    return afterHoverTranslate(index, params)
+    return afterHoverTranslate(params)
   }
 }
 
-function negativeTranslate(params) {
-  const { end, hoverItem, translateX } = params
-
-  if (hoverItem === end) {
-    return translate3D(-translateX * 2)
-  } else {
-    return translate3D(-translateX)
-  }
-}
-
-function currentPositionTranslate(index) {
-  const translate = currentTranslateX(index)
+function currentPositionTranslate(params) {
+  const translate = currentTranslateX(params)
 
   return translate3D(translate, true)
 }
 
-function currentTranslateX(index, params) {
-  const { end, translateX } = params
+function currentTranslateX(params) {
+  const { end, index, translateX } = params
 
   if (index === 0) {
     return Math.floor((translateX / 2) + 5)
@@ -51,12 +43,4 @@ function afterHoverTranslate(params) {
   } else {
     return translate3D(translateX)
   }
-}
-
-function translate3D(x, scale = false) {
-  const translate = `translate3d(${x}px, 0px, 0px)`
-
-  if (scale) return `scale(1.75) ${translate}`
-
-  return translate
 }
