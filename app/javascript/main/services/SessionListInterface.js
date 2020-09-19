@@ -1,10 +1,10 @@
 /**
- * @object SessionListSingleton
+ * @object SessionListInterface
  * 
  * @description Access a list in sessionStorage.
  * Find, add, or remove objects in the list.
  */
-const SessionListInterface = {
+export default {
   getList(listName) {
     const list = JSON.parse(sessionStorage.getItem(listName))
 
@@ -37,5 +37,3 @@ const SessionListInterface = {
     console.log(`Movie was removed from ${listName}`)
   },
 }
-
-export default SessionListInterface

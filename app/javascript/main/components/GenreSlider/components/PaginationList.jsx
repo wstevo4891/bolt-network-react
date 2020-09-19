@@ -1,5 +1,3 @@
-// app/javascript/main/scenes/Home/GenreSliders/components/PaginationList.jsx
-
 import React from 'react'
 import PropTypes from 'prop-types'
 

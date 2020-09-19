@@ -1,6 +1,13 @@
 // Doubly Linked List
 
-import Node from './Node'
+const Node = (data) => ({
+  data,
+  next: null,
+  prev: null,
+  get last() {
+    return this.data[this.data.length - 1]
+  },
+})
 
 export default class LinkedList {
   constructor() {
@@ -10,7 +17,7 @@ export default class LinkedList {
   }
 
   add(value) {
-    const node = new Node(value)
+    const node = Node(value)
 
     if (this._length > 0) {
       node.prev = this.tail
@@ -57,18 +64,14 @@ export default class LinkedList {
   }
 
   nextPosition(position) {
-    if (position === this._length) {
-      return 1
-    } else {
-      return position + 1
-    }
+    if (position === this._length) return 1
+
+    return position + 1
   }
 
   prevPosition(position) {
-    if (position === 1) {
-      return this._length
-    } else {
-      return position - 1
-    }
+    if (position === 1) return this._length
+
+    return position - 1
   }
 }

@@ -57,7 +57,7 @@ export default class SlidesArray {
     const leftEnd = current.prev || this.list.tail
     let count = 0
 
-    this.slides.push(leftEnd.last())
+    this.slides.push(leftEnd.last)
 
     while (count < 3) {
       this.slides = this.slides.concat(current.data)
