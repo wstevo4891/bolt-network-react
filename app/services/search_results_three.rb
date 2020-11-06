@@ -1,4 +1,4 @@
-# app/services/search_results.rb
+# frozen_string_literal: true
 
 # Service for search feature
 class SearchResultsThree
@@ -10,9 +10,9 @@ class SearchResultsThree
 
   def initialize(query)
     @query = query.downcase
-    @movies = []
-    @genres = []
-    @people = []
+    @genres = Genre.search(@query).to_a
+    @people = Person.search(@query).to_a
+    @movies = search_movies
   end
 
   def call

@@ -10,7 +10,7 @@ import {
 
 import { connect } from 'react-redux'
 
-import Routes from './Routes'
+import Routes from './routes'
 
 import {
   MainContainer,

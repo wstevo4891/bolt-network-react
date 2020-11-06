@@ -1,5 +1,3 @@
-// Movie Scene stateful component
-
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 

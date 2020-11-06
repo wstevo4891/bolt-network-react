@@ -1,4 +1,4 @@
-# app/models/movie.rb
+# frozen_string_literal: true
 
 # Model for movies table
 class Movie < ApplicationRecord
@@ -51,6 +51,8 @@ class Movie < ApplicationRecord
 
   scope :recent, -> { where('year > ?', 5.years.ago.year) }
 
+  scope :lower_title, ->(query) { where('LOWER(title) LIKE ?', query) }
+
   # == Callbacks ==============================================================
 
   # == Class Methods ==========================================================
@@ -62,10 +64,9 @@ class Movie < ApplicationRecord
   # @returns {Hash<Array>}
   #
   def self.index_by_genre
-    # Cache this expensive lookup to improve performance
-    Rails.cache.fetch('movies_index_by_genre', expires_in: 12.hours) do
-      Genre.all.each_with_object({}) do |genre, hash|
-        hash[genre.title] = genre.movies.limit(INDEX_LIMIT)
+    Rails.cache.fetch('movie.index_by_genre', expires_in: 1.hour) do
+      Genre.includes(:movies).each_with_object({}) do |genre, hash|
+        hash[genre.title] = genre.movies.take(INDEX_LIMIT)
       end
     end
   end
@@ -81,13 +82,13 @@ class Movie < ApplicationRecord
   end
 
   def self.find_people(query)
-    likes = <<-SQL
+    matches = <<-SQL
       array_to_string(directors, '||') LIKE :match
         OR array_to_string(writers, '||') LIKE :match
         OR array_to_string(actors, '||') LIKE :match
     SQL
 
-    select(:directors, :writers, :actors).where(likes, match: "%#{query}%")
+    select(:directors, :writers, :actors).where(matches, match: "%#{query}%")
   end
 
   # def self.search(search)
@@ -130,17 +131,18 @@ class Movie < ApplicationRecord
     match_title(query)
       .or(match_genre(query))
       .or(match_people(query))
-      .select(
-        :id, :title, :slug, :photo, :year, :rated,
-        :run_time, :plot, :genres_list
-      ).limit(SEARCH_LIMITS[:SINGLE])
+      .select_search_columns
+      .limit(SEARCH_LIMITS[:SINGLE])
   rescue ActiveRecord::RecordNotFound
     []
   end
 
+  def self.select_search_columns
+    select(:id, :title, :slug, :photo, :year, :rated, :run_time, :plot, :genres_list)
+  end
+
   def self.match_title(query)
-    where('LOWER(title) LIKE ?', "#{query}%")
-      .or(where('LOWER(title) LIKE ?', "%#{query}%"))
+    lower_title("#{query}%").or(lower_title("%#{query}%"))
   end
 
   def self.match_genre(query)

@@ -1,7 +1,7 @@
 # app/services/search_results_plus.rb
 
 # Service for search feature
-class SearchResultsPlus
+class SearchResultsTwo
   attr_reader :movies, :genres, :people
 
   def self.create(query)

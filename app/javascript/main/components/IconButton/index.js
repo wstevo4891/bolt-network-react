@@ -6,11 +6,14 @@ import PropTypes from 'prop-types'
 import Button from '../Button'
 import Icon from '../Icon'
 
+const LEFT = 'left'
+const RIGHT = 'right'
+
 const IconButton = (props) => (
   <Button {...props.buttonProps}>
-    {props.textPlacement === 'left' && props.text}
+    {props.textPlacement === LEFT && props.text}
     <Icon {...props.iconProps} />
-    {props.textPlacement === 'right' && props.text}
+    {props.textPlacement === RIGHT && props.text}
   </Button>
 )
 
@@ -18,12 +21,12 @@ IconButton.propTypes = {
   buttonProps: PropTypes.shape(Button.propTypes).isRequired,
   iconProps: PropTypes.shape(Icon.propTypes).isRequired,
   text: PropTypes.string,
-  textPlacement: PropTypes.oneOf(['left', 'right']),
+  textPlacement: PropTypes.oneOf([LEFT, RIGHT]),
 }
 
 IconButton.defaultProps = {
   text: null,
-  textPlacement: 'right',
+  textPlacement: RIGHT,
 }
 
 const ToggleIconButton = (props) => {
@@ -56,7 +59,7 @@ ToggleIconButton.propTypes = {
   iconProps: PropTypes.object,
   status: PropTypes.bool,
   text: PropTypes.string,
-  textPlacement: PropTypes.oneOf(['left', 'right']),
+  textPlacement: PropTypes.oneOf([LEFT, RIGHT]),
 }
 
 ToggleIconButton.defaultProps = {
@@ -65,7 +68,7 @@ ToggleIconButton.defaultProps = {
   iconProps: {},
   status: true,
   text: null,
-  textPlacement: 'right',
+  textPlacement: RIGHT,
 }
 
 export {

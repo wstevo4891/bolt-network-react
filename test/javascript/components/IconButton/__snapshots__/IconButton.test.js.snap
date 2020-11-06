@@ -1,13 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`IconButton should render correctly in "debug" mode 1`] = `
-<button
-  className="btn-clear"
-  onClick={[MockFunction]}
+exports[`<IconButton/> render should match snapshot 1`] = `
+<Button
+  ariaControls={null}
+  ariaExpanded={null}
+  ariaHasPopup={null}
+  ariaLabel={null}
+  buttonClass="btn-clear"
+  dataTarget={null}
+  dataToggle={null}
+  handleClick={[MockFunction]}
+  id={null}
 >
-  <i
-    className="fa fa-plus"
-  />
   MY LIST
-</button>
+  <Icon
+    ariaHidden={null}
+    handleClick={[Function]}
+    icon="fa-plus"
+    id={null}
+  />
+</Button>
 `;

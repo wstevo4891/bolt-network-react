@@ -72,7 +72,7 @@ class MovieParams
       poster: @movie['Poster'],
       ratings: @movie['Ratings'],
       genres_list: genres_short_list,
-      genre_ids: genre_ids_array
+      genre_ids: genre_ids_array,
     }
   end
 
