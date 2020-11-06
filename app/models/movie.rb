@@ -4,23 +4,23 @@
 #
 # Table: genres
 #
-# id           :integer
-# title        :string
-# slug         :string
-# year         :integer
-# rated        :string
-# release_date :string
-# run_time     :string
-# directors    :string    array: true, default: []
-# writers      :string    array: true, default: []
-# actors       :string    array: true, default: []
-# plot         :string
-# photo        :string
-# banner       :string
-# logo         :string
-# poster       :string
-# ratings      :json
-# genres_list  :string    array: true, default: []
+# id            :integer
+# title         :string
+# slug          :string
+# year          :integer
+# rated         :string
+# release_date  :string
+# run_time      :string
+# directors     :string    array: true, default: []
+# writers       :string    array: true, default: []
+# actors        :string    array: true, default: []
+# plot          :string
+# photo         :string
+# banner        :string
+# logo          :string
+# poster        :string
+# ratings       :json
+# genres_list   :string    array: true, default: []
 #
 class Movie < ApplicationRecord
   # == Extensions =============================================================
@@ -47,7 +47,7 @@ class Movie < ApplicationRecord
   has_and_belongs_to_many :people
 
   # == Validations ============================================================
-  validates :title, :year, :rated, :run_time, :plot, presence: true
+  validates :title, :slug, :year, :rated, :run_time, :plot, presence: true
 
   # == Scopes =================================================================
   pg_search_scope :search_full_text,
