@@ -81,6 +81,8 @@ group :development, :test do
 
   gem 'lograge'
 
+  gem 'rspec-rails', '~> 4.0'
+
   gem 'selenium-webdriver'
 end
 
