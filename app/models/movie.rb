@@ -1,6 +1,27 @@
 # frozen_string_literal: true
 
-# Model for movies table
+# == Schema Information =======================================================
+#
+# Table: genres
+#
+# id           :integer
+# title        :string
+# slug         :string
+# year         :integer
+# rated        :string
+# release_date :string
+# run_time     :string
+# directors    :string    array: true, default: []
+# writers      :string    array: true, default: []
+# actors       :string    array: true, default: []
+# plot         :string
+# photo        :string
+# banner       :string
+# logo         :string
+# poster       :string
+# ratings      :json
+# genres_list  :string    array: true, default: []
+#
 class Movie < ApplicationRecord
   # == Extensions =============================================================
   include PgSearch::Model
@@ -13,24 +34,7 @@ class Movie < ApplicationRecord
     SINGLE: 30
   }.freeze
 
-  # == Attributes =============================================================
-  # t.string   :title
-  # t.string   :slug
-  # t.integer  :year
-  # t.string   :rated
-  # t.string   :release_date
-  # t.string   :run_time
-  # t.string   :directors, array: true, default: []
-  # t.string   :writers, array: true, default: []
-  # t.string   :actors, array: true, default: []
-  # t.string   :plot
-  # t.string   :photo
-  # t.string   :banner
-  # t.string   :logo
-  # t.string   :poster
-  # t.json     :ratings
-  # t.string   :genres_list, array: true, default: []
-
+  # == Uploaders ==============================================================
   mount_uploader :photo, PhotoUploader
 
   mount_uploader :banner, PhotoUploader
@@ -39,6 +43,7 @@ class Movie < ApplicationRecord
 
   # == Relationships ==========================================================
   has_and_belongs_to_many :genres
+
   has_and_belongs_to_many :people
 
   # == Validations ============================================================
@@ -56,13 +61,6 @@ class Movie < ApplicationRecord
   # == Callbacks ==============================================================
 
   # == Class Methods ==========================================================
-  ##
-  # self.index_by_genre()
-  #   Create a hash with Genre titles as keys and arrays of
-  #   movie records as values.
-  #
-  # @returns {Hash<Array>}
-  #
   def self.index_by_genre
     Rails.cache.fetch('movie.index_by_genre', expires_in: 1.hour) do
       Genre.includes(:movies).each_with_object({}) do |genre, hash|

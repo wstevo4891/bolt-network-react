@@ -1,6 +1,14 @@
-# app/models/genre.rb
+# frozen_string_literal: true
 
-# Class for movie genres
+# == Schema Information =======================================================
+#
+# Table: genres
+#
+# id    :integer
+# title :string
+# slug  :string
+# alias :string
+#
 class Genre < ApplicationRecord
   # == Extensions =============================================================
   include PgSearch::Model
@@ -9,11 +17,6 @@ class Genre < ApplicationRecord
   MOST_MOVIES_LIMIT = 28
 
   SEARCH_LIMIT = 10
-
-  # == Attributes =============================================================
-  # title  {String}
-  # slug   {String}
-  # alias  {String}
 
   # == Relationships ==========================================================
   has_and_belongs_to_many :movies

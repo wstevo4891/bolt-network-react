@@ -1,12 +1,14 @@
-# Person Model
+# frozen_string_literal: true
 
+# == Schema Information =======================================================
+#
+# Table: persons
+#
+# id   :integer
+# name :string
+# role :string
+#
 class Person < ApplicationRecord
-  # == Extensions =============================================================
-
-  # == Attributes =============================================================
-  # t.string   :name
-  # t.string   :role
-
   # == Relationships ==========================================================
   has_and_belongs_to_many :movies
 
