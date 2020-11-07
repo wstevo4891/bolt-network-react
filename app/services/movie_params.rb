@@ -1,90 +1,60 @@
-# MovieParams Service
+# frozen_string_literal: true
 
 # Service for generating Movie params to use in seeds.rb script
 class MovieParams
   # == Constants ==============================================================
-  GENRE_IDS_MAP = {
-    'Action' => 1,
-    'Adventure' => 2,
-    'Comedy' => 3,
-    'Drama' => 4,
-    'Animation' => 5,
-    'Family' => 6,
-    'Romance' => 7,
-    'Fantasy' => 8,
-    'Sci-Fi' => 9,
-    'Horror' => 10
-  }.freeze
+  FILE_REGEX = %r{/[\w-]+\.yml}.freeze
+
+  # == Attribute Methods ======================================================
+  attr_reader :params
 
   # == Class Methods ==========================================================
-  def self.create(path)
-    new(path).call
+  def self.build(path, movie)
+    new(path, movie).params
   end
 
   # == Instance Methods =======================================================
-  def initialize(path)
-    @movie = load_movie(path)
-    @poster_file = poster_file_path(path)
-    @slug = movie_slug(path)
-  end
-
-  def call
-    build_movie_params
+  def initialize(path, movie)
+    @file = path[FILE_REGEX]
+    @movie = movie
+    @params = params_hash
+    add_genre_params
+    add_remote_url_params
   end
 
   private
 
-  def load_movie(path)
-    YAML.load_file(Rails.root.join(path))
-  end
-
-  def poster_file_path(path)
-    path[%r{/[\w-]+\.yml}].slice(1..-1).sub('.yml', '-poster.jpg')
-  end
-
-  def movie_slug(path)
-    path[%r{/[\w-]+\.yml}].slice(1..-5)
-  end
-
-  def build_movie_params
-    params = params_hash
-    return params unless @movie['Banner']
-
-    params[:remote_banner_url] = image_url(@movie['Banner'])
-    params[:remote_logo_url] = image_url(@movie['Logo'])
-
-    params
-  end
-
   def params_hash
     {
       title: @movie['Title'],
-      slug: @slug,
+      slug: @file.slice(1..-5),
       year: @movie['Year'],
-      rated: @movie['Rated'],
+      rating: @movie['Rated'],
       release_date: @movie['Released'],
       run_time: @movie['Runtime'],
-      directors: @movie['Director'].split(', '),
-      writers: @movie['Writer'].split(', '),
-      actors: @movie['Actors'].split(', '),
       plot: @movie['Plot'],
-      remote_photo_url: image_url(@poster_file),
-      poster: @movie['Poster'],
-      ratings: @movie['Ratings'],
-      genres_list: genres_short_list,
-      genre_ids: genre_ids_array,
+      poster: @movie['Poster']
     }
+  end
+
+  def add_genre_params
+    genres = @movie['Genre'].split(', ')
+
+    @params[:genres_list] = genres.take(3)
+    @params[:genre_ids] = Genre.where(title: genres).pluck(:id)
+  end
+
+  def add_remote_url_params
+    poster_file = @file.slice(1..-1).sub('.yml', '-poster.jpg')
+
+    @params[:remote_photo_url] = image_url(poster_file)
+    return unless @movie['Banner']
+
+    @params[:remote_banner_url] = image_url(@movie['Banner'])
+    @params[:remote_logo_url] = image_url(@movie['Logo'])
   end
 
   def image_url(file)
     "https://bolt-network.s3-us-west-2.amazonaws.com/#{file}"
-  end
-
-  def genre_ids_array
-    @movie['Genre'].split(', ').map { |name| GENRE_IDS_MAP[name] }
-  end
-
-  def genres_short_list
-    @movie['Genre'].split(', ').take(3)
   end
 end

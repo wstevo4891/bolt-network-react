@@ -2,22 +2,25 @@
 
 # == Schema Information =======================================================
 #
-# Table: persons
+# Table: people
 #
-# id   :integer
-# name :string
-# role :string
+# id          :integer     not null, primary key
+# name        :string
+# role        :integer     not null, default: 0
+# created_at  :datetime    not null
+# updated_at  :datetime    not null
 #
 class Person < ApplicationRecord
+  # == Extensions =============================================================
+  include MovieRoles
+
   # == Relationships ==========================================================
   has_and_belongs_to_many :movies
 
+  has_many :credits
+
   # == Validations ============================================================
-  validates :name, :role, presence: true
-
-  # == Scopes =================================================================
-
-  # == Callbacks ==============================================================
+  validates :name, presence: true
 
   # == Class Methods ==========================================================
   def self.search(query)
@@ -37,6 +40,4 @@ class Person < ApplicationRecord
   def self.lookup_with_movies(id)
     includes(:movies).find(id)
   end
-
-  # == Instance Methods =======================================================
 end

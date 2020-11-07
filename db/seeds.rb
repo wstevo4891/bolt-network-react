@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed
 # to seed the database with its default values.
 
@@ -15,7 +17,7 @@ end
 
 puts 'Seeding the Database...'
 
-# GENRES
+# Genres
 # =============================================================================
 
 puts 'Deleting old Genres...'
@@ -33,8 +35,11 @@ end
 
 puts 'Genres created!'
 
-# MOVIES
+# Movies, Reviews, People & Credits
 # =============================================================================
+
+puts 'Deleting old People...lul'
+Person.delete_all
 
 puts 'Deleting old Movies...'
 Movie.delete_all
@@ -42,11 +47,21 @@ Movie.delete_all
 puts 'Loading Movies...'
 
 Dir['db/yaml_data/movies/*.yml'].each do |path|
-  params = MovieParams.create(path)
+  creator = MovieCreator.new(path)
 
-  Movie.create!(params)
+  creator.create_movie
 
-  puts "Created Movie: #{params[:title]}"
+  puts "Created Movie: #{creator.title}"
+
+  puts 'Creating reviews...'
+
+  creator.create_reviews
+
+  puts "Reviews created for #{creator.title}!"
+
+  puts 'Creating people and credits...'
+
+  creator.create_credits
 end
 
 puts 'Movies Created!'
@@ -54,19 +69,19 @@ puts 'Movies Created!'
 # People
 # =============================================================================
 
-puts 'Deleting old People...lul'
-Person.delete_all
+# puts 'Deleting old People...lul'
+# Person.delete_all
 
-puts 'Loading all the peeps...'
-people = load_yaml('people')
+# puts 'Loading all the peeps...'
+# people = load_yaml('people')
 
-puts 'Let there be people...'
-people.each do |data|
-  Person.create!(data)
+# puts 'Let there be people...'
+# people.each do |data|
+#   Person.create!(data)
 
-  puts "Created person: #{data['name']}"
-end
+#   puts "Created person: #{data['name']}"
+# end
 
-puts 'Created people like God!'
+# puts 'Created people like God!'
 
-puts 'Seeding Database Complete!'
+# puts 'Seeding Database Complete!'

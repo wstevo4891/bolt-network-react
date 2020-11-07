@@ -4,23 +4,25 @@
 #
 # Table: genres
 #
-# id            :integer
+# id            :integer     not null, primary key
 # title         :string
 # slug          :string
 # year          :integer
 # rated         :string
 # release_date  :string
 # run_time      :string
-# directors     :string    array: true, default: []
-# writers       :string    array: true, default: []
-# actors        :string    array: true, default: []
+# directors     :string      array: true, default: []
+# writers       :string      array: true, default: []
+# actors        :string      array: true, default: []
 # plot          :string
 # photo         :string
 # banner        :string
 # logo          :string
 # poster        :string
 # ratings       :json
-# genres_list   :string    array: true, default: []
+# genres_list   :string      array: true, default: []
+# created_at    :datetime    not null
+# updated_at    :datetime    not null
 #
 class Movie < ApplicationRecord
   # == Extensions =============================================================
@@ -28,6 +30,8 @@ class Movie < ApplicationRecord
 
   # == Constants ==============================================================
   INDEX_LIMIT = 24
+
+  PERSON = 'Person'
 
   SEARCH_LIMITS = {
     MULTI: 10,
@@ -46,8 +50,20 @@ class Movie < ApplicationRecord
 
   has_and_belongs_to_many :people
 
+  scope :people_by_role, ->(key) { people.where(role: MovieRoles::ROLES[key]) }
+
+  has_many :actors, -> { people_by_role(:actor) }, class_name: PERSON
+
+  has_many :directors, -> { people_by_role(:director) }, class_name: PERSON
+
+  has_many :writers, -> { people_by_role(:writer) }, class_name: PERSON
+
+  has_many :credits
+
+  has_many :reviews
+
   # == Validations ============================================================
-  validates :title, :slug, :year, :rated, :run_time, :plot, presence: true
+  validates :title, :slug, :year, :rating, :run_time, :plot, presence: true
 
   # == Scopes =================================================================
   pg_search_scope :search_full_text,
