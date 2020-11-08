@@ -14,7 +14,7 @@
 #
 class Credit < ApplicationRecord
   # == Extensions =============================================================
-  include MovieRoles
+  include MovieRolesModelInterface
 
   # == Relationships ==========================================================
   belongs_to :movie, dependent: :destroy

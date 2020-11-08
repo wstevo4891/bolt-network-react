@@ -24,7 +24,7 @@ const MoviePage = ({ movie }) => (
 
       <p><span>Rated: </span>{movie.rated}</p>
 
-      <p><span>Runtime: </span>{movie.run_time}</p>
+      <p><span>Runtime: </span>{movie.runtime}</p>
 
       <p><span>Release Date: </span>{movie.release_date}</p>
 
@@ -48,13 +48,13 @@ MoviePage.propTypes = {
     title: PropTypes.string,
     year: PropTypes.number,
     rated: PropTypes.string,
-    run_time: PropTypes.string,
+    runtime: PropTypes.string,
     release_date: PropTypes.string,
     genres: PropTypes.array,
     directors: PropTypes.array,
     actors: PropTypes.array,
     plot: PropTypes.string,
-  }),
+  }).isRequired,
 }
 
 export default MoviePage

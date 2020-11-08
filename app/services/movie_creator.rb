@@ -2,7 +2,7 @@
 
 # Service for generating Movie params to use in seeds.rb script
 class MovieCreator
-  WRITER_REGEX = /([\w\s]+)\s\(([\w\s]+)\)/.freeze
+  include MovieRoles
 
   delegate :title, to: :@movie
 
@@ -32,9 +32,9 @@ class MovieCreator
   def create_credits
     creator = CreditCreator.new(@movie)
 
-    creator.create_credits(MovieRoles::ROLES[:actor], @data['Actors'])
-    creator.create_credits(MovieRoles::ROLES[:director], @data['Director'])
-    creator.create_credits(MovieRoles::ROLES[:writer], @data['Writer'])
+    creator.create_credits(ROLES[:actor], @data['Actors'])
+    creator.create_credits(ROLES[:director], @data['Director'])
+    creator.create_credits(ROLES[:writer], @data['Writer'])
   end
 
   private

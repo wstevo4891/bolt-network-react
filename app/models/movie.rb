@@ -5,13 +5,13 @@
 # Table: movies
 #
 # id            :integer     not null, primary key
-# title         :string
-# slug          :string
-# year          :integer
-# rating        :string
-# release_date  :string
-# run_time      :string
-# plot          :string
+# title         :string      not null
+# slug          :string      not null
+# year          :integer     not null
+# rating        :string      not null
+# release_date  :date        not null
+# runtime       :integer     not null
+# plot          :text        not null
 # photo         :string
 # banner        :string
 # logo          :string
@@ -22,6 +22,7 @@
 #
 class Movie < ApplicationRecord
   # == Extensions =============================================================
+  include MovieRoles
   include PgSearch::Model
 
   # == Constants ==============================================================
@@ -46,20 +47,18 @@ class Movie < ApplicationRecord
 
   has_and_belongs_to_many :people
 
-  scope :people_by_role, ->(key) { people.where(role: MovieRoles::ROLES[key]) }
+  # has_many :actors, through: :people
 
-  has_many :actors, -> { people_by_role(:actor) }, class_name: PERSON
+  # has_many :directors, through: :people
 
-  has_many :directors, -> { people_by_role(:director) }, class_name: PERSON
-
-  has_many :writers, -> { people_by_role(:writer) }, class_name: PERSON
+  # has_many :writers, through: :people
 
   has_many :credits
 
   has_many :reviews
 
   # == Validations ============================================================
-  validates :title, :slug, :rating, :run_time, :plot, presence: true
+  validates :title, :slug, :rating, :runtime, :plot, presence: true
 
   validates :year, numericality: { only_integer: true }
 
@@ -158,13 +157,17 @@ class Movie < ApplicationRecord
   end
 
   def self.match_people(query)
-    actors.match_name(query)
-          .or(directors.match_name(query))
-          .or(writers.match_name(query))
+    Person.match_name(query).map(&:movies).flatten
   end
 
+  # def self.match_people(query)
+  #   actors.match_name(query)
+  #         .or(directors.match_name(query))
+  #         .or(writers.match_name(query))
+  # end
+
   def self.select_search_columns
-    select(:id, :title, :slug, :photo, :year, :rated, :run_time, :plot, :genres_list)
+    select(:id, :title, :slug, :photo, :year, :rating, :runtime, :plot, :genres_list)
   end
 
   def self.search_all_models(query)
@@ -199,15 +202,15 @@ class Movie < ApplicationRecord
   end
 
   # == Instance Methods =======================================================
-  # def people
-  #   [directors, writers, actors].each_with_object([]) do |attr, arr|
-  #     next if attr.nil?
+  def actors
+    people.actors
+  end
 
-  #     arr.concat(clean_strings(attr))
-  #   end
-  # end
+  def directors
+    people.directors
+  end
 
-  # def clean_strings(attribute)
-  #   attribute.map { |attr| attr.sub(/\(.+\)/, '').strip }
-  # end
+  def writers
+    people.writers
+  end
 end

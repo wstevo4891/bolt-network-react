@@ -2,7 +2,9 @@
 
 # Service for creating rows in credits table
 class CreditCreator
-  WRITER_REGEX = /([\w\s]+)\s\(([\w\s]+)\)/.freeze
+  include MovieRoles
+
+  WRITER_REGEX = /(.+)\s\((.+)\)/.freeze
 
   def initialize(movie)
     @movie = movie
@@ -11,7 +13,7 @@ class CreditCreator
   def create_credits(role, data_string)
     @role = role
 
-    if @role == MovieRoles::Roles[:writer]
+    if @role == ROLES[:writer]
       create_writer_credits(data_string)
     else
       create_default_credits(data_string)
@@ -22,13 +24,7 @@ class CreditCreator
 
   def create_default_credits(data_string)
     data_string.split(', ').each do |name|
-      person = find_person(name)
-
-      Credit.create!(
-        role: @role,
-        movie_id: @movie.id,
-        person_id: person.id
-      )
+      create_with_name(name)
     end
   end
 
@@ -36,21 +32,39 @@ class CreditCreator
     data_string.split(', ').each do |name|
       match = name.match(WRITER_REGEX)
 
-      person = find_person(match[1])
+      return create_with_name(name) unless match
 
-      Credit.create!(
-        contribution: match[2],
-        role: @role,
-        movie_id: @movie.id,
-        person_id: person.id
-      )
+      create_with_match(match)
     end
+  end
+
+  def create_with_name(name)
+    person = find_person(name)
+
+    Credit.create!(
+      role: @role,
+      movie_id: @movie.id,
+      person_id: person.id
+    )
+  end
+
+  def create_with_match(match)
+    person = find_person(match[1])
+
+    Credit.create!(
+      contribution: match[2],
+      role: @role,
+      movie_id: @movie.id,
+      person_id: person.id
+    )
   end
 
   def find_person(name)
     person = Person.find_or_create_by(role: @role, name: name)
 
-    return person if @movie.people.exists?(person_id: person.id)
+    puts "person: #{person.name}, role: #{person.role}"
+
+    return person if @movie.people.exists?(id: person.id)
 
     @movie.people << person
 

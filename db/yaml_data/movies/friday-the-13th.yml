@@ -16,12 +16,12 @@ Country: USA
 Awards: 5 nominations.
 Poster: https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg
 Ratings:
-- :Source: Internet Movie Database
-  :Value: 6.5/10
-- :Source: Rotten Tomatoes
-  :Value: 63%
-- :Source: Metacritic
-  :Value: 22/100
+- Source: Internet Movie Database
+  Value: 6.5/10
+- Source: Rotten Tomatoes
+  Value: 63%
+- Source: Metacritic
+  Value: 22/100
 Metascore: '22'
 imdbRating: '6.5'
 imdbVotes: '103,069'

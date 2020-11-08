@@ -30,8 +30,8 @@ class MovieParams
       slug: @file.slice(1..-5),
       year: @movie['Year'],
       rating: @movie['Rated'],
-      release_date: @movie['Released'],
-      run_time: @movie['Runtime'],
+      release_date: Date.parse(@movie['Released']),
+      runtime: @movie['Runtime'].to_i,
       plot: @movie['Plot'],
       poster: @movie['Poster']
     }

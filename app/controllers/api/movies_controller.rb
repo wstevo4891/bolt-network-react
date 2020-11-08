@@ -1,4 +1,4 @@
-# app/controllers/api/movies_controller.rb
+# frozen_string_literal: true
 
 module Api
   # Movies API
@@ -6,7 +6,7 @@ module Api
   class MoviesController < ApplicationController
     # GET /api/movies/:id
     def show
-      @movie = Movie.find(params[:id])
+      @movie = Movie.includes(:people, :reviews).find(params[:id])
     end
   end
 end

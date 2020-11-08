@@ -12,7 +12,7 @@
 #
 class Person < ApplicationRecord
   # == Extensions =============================================================
-  include MovieRoles
+  include MovieRolesModelInterface
 
   # == Relationships ==========================================================
   has_and_belongs_to_many :movies

@@ -15,12 +15,12 @@ Country: USA
 Awards: N/A
 Poster: https://m.media-amazon.com/images/M/MV5BOTU5MDg3OGItZWQ1Ny00ZGVmLTg2YTUtMzBkYzQ1YWIwZjlhXkEyXkFqcGdeQXVyNTAzMTY4MDA@._V1_SX300.jpg
 Ratings:
-- :Source: Internet Movie Database
-  :Value: 7.3/10
-- :Source: Rotten Tomatoes
-  :Value: 89%
-- :Source: Metacritic
-  :Value: 87/100
+- Source: Internet Movie Database
+  Value: 7.3/10
+- Source: Rotten Tomatoes
+  Value: 89%
+- Source: Metacritic
+  Value: 87/100
 Metascore: '87'
 imdbRating: '7.3'
 imdbVotes: '130,454'
