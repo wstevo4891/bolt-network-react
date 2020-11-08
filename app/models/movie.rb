@@ -2,24 +2,20 @@
 
 # == Schema Information =======================================================
 #
-# Table: genres
+# Table: movies
 #
 # id            :integer     not null, primary key
 # title         :string
 # slug          :string
 # year          :integer
-# rated         :string
+# rating        :string
 # release_date  :string
 # run_time      :string
-# directors     :string      array: true, default: []
-# writers       :string      array: true, default: []
-# actors        :string      array: true, default: []
 # plot          :string
 # photo         :string
 # banner        :string
 # logo          :string
 # poster        :string
-# ratings       :json
 # genres_list   :string      array: true, default: []
 # created_at    :datetime    not null
 # updated_at    :datetime    not null
@@ -63,7 +59,9 @@ class Movie < ApplicationRecord
   has_many :reviews
 
   # == Validations ============================================================
-  validates :title, :slug, :year, :rating, :run_time, :plot, presence: true
+  validates :title, :slug, :rating, :run_time, :plot, presence: true
+
+  validates :year, numericality: { only_integer: true }
 
   # == Scopes =================================================================
   pg_search_scope :search_full_text,
@@ -151,10 +149,6 @@ class Movie < ApplicationRecord
     []
   end
 
-  def self.select_search_columns
-    select(:id, :title, :slug, :photo, :year, :rated, :run_time, :plot, :genres_list)
-  end
-
   def self.match_title(query)
     lower_title("#{query}%").or(lower_title("%#{query}%"))
   end
@@ -164,13 +158,13 @@ class Movie < ApplicationRecord
   end
 
   def self.match_people(query)
-    match_array_column(query, 'directors')
-      .or(match_array_column(query, 'writers'))
-      .or(match_array_column(query, 'actors'))
+    actors.match_name(query)
+          .or(directors.match_name(query))
+          .or(writers.match_name(query))
   end
 
-  def self.match_array_column(query, column)
-    where("LOWER(array_to_string(#{column}, '||')) LIKE ?", "%#{query}%")
+  def self.select_search_columns
+    select(:id, :title, :slug, :photo, :year, :rated, :run_time, :plot, :genres_list)
   end
 
   def self.search_all_models(query)
