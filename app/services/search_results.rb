@@ -16,8 +16,8 @@ class SearchResults
   def search_movies
     movies = sorted_movie_search
     return movies unless movies.empty?
-    return @genres.first.movies unless @genres.empty?
-    return @people.first.movies unless @people.empty?
+    return genre_movies unless @genres.empty?
+    return person_movies unless @people.empty?
 
     []
   end
@@ -26,5 +26,17 @@ class SearchResults
     Movie.search(@query).sort_by do |movie|
       movie.title.downcase =~ /#{@query}/ || 100
     end
+  end
+
+  def genre_movies
+    @genres.first.movies.select_search_columns
+  end
+
+  def person_movies
+    @people.first.movies.select_search_columns
+  end
+
+  def select_search_columns
+    select(:id, :title, :slug, :photo, :year, :rating, :runtime, :plot, :genres_list)
   end
 end

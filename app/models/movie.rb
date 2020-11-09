@@ -140,12 +140,18 @@ class Movie < ApplicationRecord
     joins(:genres).where(genres: { title: genre }).pluck(:title)
   end
 
+  # def self.search(query)
+  #   match_title(query)
+  #     .or(match_genre(query))
+  #     .or(match_people(query))
+  #     .select_search_columns
+  #     .limit(SEARCH_LIMITS[:SINGLE])
+  # rescue ActiveRecord::RecordNotFound
+  #   []
+  # end
+
   def self.search(query)
-    match_title(query)
-      .or(match_genre(query))
-      .or(match_people(query))
-      .select_search_columns
-      .limit(SEARCH_LIMITS[:SINGLE])
+    match_title(query).select_search_columns.limit(SEARCH_LIMITS[:SINGLE])
   rescue ActiveRecord::RecordNotFound
     []
   end
@@ -159,7 +165,7 @@ class Movie < ApplicationRecord
   end
 
   def self.match_people(query)
-    Person.match_name(query).map(&:movies).flatten
+    people.match_name(query)
   end
 
   # def self.match_people(query)
