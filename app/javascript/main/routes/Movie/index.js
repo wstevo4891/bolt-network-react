@@ -12,7 +12,10 @@ export default class Movie extends Component {
 
   render() {
     const movie = this.state.movie
+
     if (movie === null) return null
+
+    console.log('movie:', movie)
 
     return (
       <DisplayContainer>

@@ -3,11 +3,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function displayArray(arr) {
-  if (arr.length === 1) return arr.join('')
-
-  return arr.join(', ')
-}
+import DisplayRow from './DisplayRow'
+import ListRow from './ListRow'
+import ReviewsRow from './ReviewsRow'
 
 const MoviePage = ({ movie }) => (
   <div className="row">
@@ -20,40 +18,58 @@ const MoviePage = ({ movie }) => (
     </div>
 
     <div className="col-8 movie-display">
-      <p><span>Year: </span>{movie.year}</p>
+      <DisplayRow label="Year" value={movie.year} />
 
-      <p><span>Rated: </span>{movie.rated}</p>
+      <DisplayRow label="Rating" value={movie.rating} />
 
-      <p><span>Runtime: </span>{movie.runtime}</p>
+      <DisplayRow label="Runtime" value={`${movie.runtime} min`} />
 
-      <p><span>Release Date: </span>{movie.release_date}</p>
+      <DisplayRow label="Release Date" value={movie.release_date} />
 
-      <p><span>Genres: </span>{displayArray(movie.genres)}</p>
+      <ListRow
+        label={{ singular: 'Genre', plural: 'Genres' }}
+        list={movie.genres}
+      />
 
-      <p><span>Director: </span>{displayArray(movie.directors)}</p>
+      <ListRow
+        label={{ singular: 'Director', plural: 'Directors' }}
+        list={movie.directors}
+      />
 
-      <p><span>Actors: </span>{displayArray(movie.actors)}</p>
+      <ListRow
+        label={{ singular: 'Actor', plural: 'Actors' }}
+        list={movie.actors}
+      />
 
-      <p>
+      <ListRow
+        label={{ singular: 'Writer', plural: 'Writers' }}
+        list={movie.writers}
+      />
+
+      <p style={{ display: 'inline-block' }}>
         <span>Plot: </span>
         <span className="movie-plot">{movie.plot}</span>
       </p>
+
+      <ReviewsRow reviews={movie.reviews} />
     </div>
   </div>
 )
 
 MoviePage.propTypes = {
   movie: PropTypes.shape({
-    poster: PropTypes.string,
-    title: PropTypes.string,
-    year: PropTypes.number,
-    rated: PropTypes.string,
-    runtime: PropTypes.string,
-    release_date: PropTypes.string,
-    genres: PropTypes.array,
-    directors: PropTypes.array,
     actors: PropTypes.array,
+    directors: PropTypes.array,
+    genres: PropTypes.array,
     plot: PropTypes.string,
+    poster: PropTypes.string,
+    rating: PropTypes.string,
+    release_date: PropTypes.string,
+    reviews: PropTypes.array,
+    runtime: PropTypes.number,
+    title: PropTypes.string,
+    writers: PropTypes.array,
+    year: PropTypes.string,
   }).isRequired,
 }
 

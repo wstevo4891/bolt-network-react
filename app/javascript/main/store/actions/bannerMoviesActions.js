@@ -32,7 +32,7 @@ function fetchResponse(titles) {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ titles: titles })
+    body: JSON.stringify({ titles })
   })
 }
 

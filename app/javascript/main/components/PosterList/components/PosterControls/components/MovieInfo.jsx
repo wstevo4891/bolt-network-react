@@ -20,10 +20,10 @@ const MovieInfo = ({ movie }) => (
     </div>
 
     <div>
-      <span className="rating">{movie.rated}</span>
-      <span>{movie.run_time}</span>
+      <span className="rating">{movie.rating}</span>
+      <span>{movie.runtime} min</span>
     </div>
-    
+
     <div>
       <p>{movie.genres.join(', ')}</p>
     </div>

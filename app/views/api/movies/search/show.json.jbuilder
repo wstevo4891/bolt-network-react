@@ -1,12 +1,7 @@
-# app/views/api/movies/search/show.json.jbuilder
+# frozen_string_literal: true
 
 json.array!(@movies) do |movie|
-  json.extract! movie,
-                :id, :title, :slug, :poster, :photo, :year, :rated,
-                :run_time, :plot, :ratings, :release_date, :directors,
-                :writers, :actors, :banner, :logo
+  json.extract! movie, :id, :year, :rating, :runtime, :plot, :banner, :logo
 
   json.url "/movies/#{movie.id}"
-
-  json.genres movie.genres_list
 end

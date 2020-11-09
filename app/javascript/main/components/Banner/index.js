@@ -16,7 +16,7 @@ class Banner extends Component {
       'Pirates of the Caribbean: The Curse of the Black Pearl',
       'The Avengers',
       'Skyfall'
-    ]
+    ],
   }
 
   render() {

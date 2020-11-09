@@ -1,12 +1,9 @@
-# JSON format of MoviesIndex
+# frozen_string_literal: true
 
 @movies_index.each do |genre, list|
   json.set! genre do
     json.array! list do |movie|
-      json.extract! movie,
-                    :id, :title, :slug, :poster, :photo, :year, :rated,
-                    :run_time, :plot, :ratings, :release_date, :directors,
-                    :writers, :actors
+      json.extract! movie, :id, :title, :photo, :rating, :runtime
 
       json.url "/movies/#{movie.id}"
 

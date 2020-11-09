@@ -6,7 +6,7 @@ module Api
   class MoviesController < ApplicationController
     # GET /api/movies/:id
     def show
-      @movie = Movie.includes(:people, :reviews).find(params[:id])
+      @movie = Movie.with_display_data.find(params[:id])
     end
   end
 end

@@ -1,4 +1,4 @@
-# app/views/search/show.json.jbuilder
+# frozen_string_literal: true
 
 json.genres do
   json.array! @results.genres do |genre|

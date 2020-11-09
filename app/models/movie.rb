@@ -47,11 +47,11 @@ class Movie < ApplicationRecord
 
   has_and_belongs_to_many :people
 
-  # has_many :actors, through: :people
+  has_and_belongs_to_many :actors, -> { actors }, class_name: PERSON
 
-  # has_many :directors, through: :people
+  has_and_belongs_to_many :directors, -> { directors }, class_name: PERSON
 
-  # has_many :writers, through: :people
+  has_and_belongs_to_many :writers, -> { writers }, class_name: PERSON
 
   has_many :credits
 
@@ -70,6 +70,8 @@ class Movie < ApplicationRecord
   scope :recent, -> { where('year > ?', 5.years.ago.year) }
 
   scope :lower_title, ->(query) { where('LOWER(title) LIKE ?', query) }
+
+  scope :with_display_data, -> { includes(:actors, :directors, :reviews, :writers) }
 
   # == Callbacks ==============================================================
 
@@ -202,15 +204,7 @@ class Movie < ApplicationRecord
   end
 
   # == Instance Methods =======================================================
-  def actors
-    people.actors
-  end
-
-  def directors
-    people.directors
-  end
-
-  def writers
-    people.writers
+  def formatted_release_date
+    release_date.strftime('%B %e, %Y')
   end
 end

@@ -8,20 +8,20 @@ import { Link } from 'react-router-dom'
 import Icon from '../Icon'
 import ToggleListButton from '../ToggleListButton'
 
-function BannerImage(movie) {
-  this.backgroundImage = `url(${movie.banner.url})`
-  this.backgroundRepeat = 'no-repeat'
-  this.backgroundPosition = 'center'
-  this.backgroundSize = 'cover'
-  this.height = '100%'
-}
+const bannerImage = (movie) => ({
+  backgroundImage: `url(${movie.banner.url})`,
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  height: '100%',
+})
 
 const MovieBanner = ({ movie }) => {
-  const bannerImage = new BannerImage(movie)
+  const image = bannerImage(movie)
 
   return(
     <div className="banner">
-      <div style={bannerImage}>
+      <div style={image}>
         <div className="slide-info d-none d-sm-block">
           <img
             src={movie.logo.url}
@@ -31,8 +31,8 @@ const MovieBanner = ({ movie }) => {
 
           <div className="movie-content">
             <span className="movie-year">{movie.year}</span>
-            <span className="movie-rating">{movie.rated}</span>
-            <span className="movie-length">{movie.run_time}</span>
+            <span className="movie-rating">{movie.rating}</span>
+            <span className="movie-length">{movie.runtime}</span>
 
             <p className="blurb">{movie.plot}</p>
 
