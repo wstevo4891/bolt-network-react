@@ -15,8 +15,6 @@ export default class Movie extends Component {
 
     if (movie === null) return null
 
-    console.log('movie:', movie)
-
     return (
       <DisplayContainer>
         <TitleRow title={movie.title} />
