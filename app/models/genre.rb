@@ -3,13 +3,25 @@
 # == Schema Information =======================================================
 #
 # Table: genres
+# =========================================================
 #
 # id          :integer     not null, primary key
-# title       :string
-# slug        :string
-# alias       :string
+# title       :string      not null
+# slug        :string      not null
+# alias       :string      not null
 # created_at  :datetime    not null
 # updated_at  :datetime    not null
+#
+# Join Table: genres_movies
+# =========================================================
+#
+# genre_id  :integer
+# movie_id  :integer
+#
+# Indexes =============================
+#
+# index_genre_id  (genre_id)
+# index_movie_id  (movie_id)
 #
 class Genre < ApplicationRecord
   # == Extensions =============================================================

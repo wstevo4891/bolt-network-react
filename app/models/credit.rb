@@ -12,6 +12,11 @@
 # created_at    :datetime    not null
 # updated_at    :datetime    not null
 #
+# Indexes =======================================
+#
+# index_movie_id   (movie_id)
+# index_person_id  (person_id)
+#
 class Credit < ApplicationRecord
   # == Extensions =============================================================
   include MovieRolesModelInterface

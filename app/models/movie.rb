@@ -3,6 +3,7 @@
 # == Schema Information =======================================================
 #
 # Table: movies
+# =========================================================
 #
 # id            :integer     not null, primary key
 # title         :string      not null
@@ -19,6 +20,28 @@
 # genres_list   :string      array: true, default: []
 # created_at    :datetime    not null
 # updated_at    :datetime    not null
+#
+# Join Table: genres_movies
+# =========================================================
+#
+# genre_id  :integer
+# movie_id  :integer
+#
+# Indexes =============================
+#
+# index_genre_id  (genre_id)
+# index_movie_id  (movie_id)
+#
+# Join Table: movies_people
+# =========================================================
+#
+# movie_id   :integer
+# person_id  :integer
+#
+# Indexes =============================
+#
+# index_movie_id   (movie_id)
+# index_person_id  (person_id)
 #
 class Movie < ApplicationRecord
   # == Extensions =============================================================
@@ -58,9 +81,9 @@ class Movie < ApplicationRecord
   has_many :reviews
 
   # == Validations ============================================================
-  validates :title, :slug, :rating, :runtime, :plot, presence: true
+  validates :title, :slug, :rating, :plot, presence: true
 
-  validates :year, numericality: { only_integer: true }
+  validates :year, :runtime, numericality: { only_integer: true }
 
   # == Scopes =================================================================
   pg_search_scope :search_full_text,
@@ -71,7 +94,9 @@ class Movie < ApplicationRecord
 
   scope :lower_title, ->(query) { where('LOWER(title) LIKE ?', query) }
 
-  scope :with_display_data, -> { includes(:actors, :directors, :reviews, :writers) }
+  scope :with_display_data, lambda do
+    includes(:actors, :directors, :reviews, :writers)
+  end
 
   # == Callbacks ==============================================================
 
@@ -165,7 +190,7 @@ class Movie < ApplicationRecord
   end
 
   def self.match_people(query)
-    people.match_name(query)
+    Person.match_name(query).first.movies
   end
 
   # def self.match_people(query)

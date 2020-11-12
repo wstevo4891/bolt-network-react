@@ -10,6 +10,10 @@
 # created_at  :datetime    not null
 # updated_at  :datetime    not null
 #
+# Indexes =======================================
+#
+# index_role_name  (role, name)
+#
 class Person < ApplicationRecord
   # == Extensions =============================================================
   include MovieRolesModelInterface

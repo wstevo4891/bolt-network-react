@@ -11,6 +11,10 @@
 # created_at  :datetime    not null
 # updated_at  :datetime    not null
 #
+# Indexes =======================================
+#
+# index_movie_id  (movie_id)
+#
 class Review < ApplicationRecord
   # == Relationships ==========================================================
   belongs_to :movie, dependent: :destroy

@@ -5,9 +5,9 @@ FactoryBot.define do
     sequence(:title) { |n| "Movie #{n}" }
     sequence(:slug)  { |n| "movie-#{n}" }
     year             { 2.years.ago.year }
-    rated            { 'PG-13' }
-    run_time         { '90 min' }
-    plot             { 'Paragraph about movie plot details' }
+    rating           { 'PG-13' }
+    runtime          { 90 }
+    plot             { 'Paragraph about plot details and characters' }
 
     trait :with_genres do
       transient do
