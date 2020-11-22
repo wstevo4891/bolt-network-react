@@ -24,7 +24,7 @@ export default class PosterControls extends Component {
   }
 
   render() {
-    const likeState = this.state.likeState
+    const { likeState } = this.state
 
     if (likeState === undefined) return null
     

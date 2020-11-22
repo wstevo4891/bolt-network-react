@@ -1,3 +1,5 @@
+import { STATIC } from '@utils'
+
 import translateFactory from './translateFactory'
 
 const CONTAINER_CLASS = 'poster-container slide-item-'
@@ -12,7 +14,7 @@ export default class ContainerData {
   calcSlideItem(index, params) {
     const { limit, slideLength, start, type } = params
 
-    if (type === 'static') {
+    if (type === STATIC) {
       return index
     } else if (start) {
       return this.startSlideItem(index, slideLength)
