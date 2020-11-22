@@ -9,7 +9,7 @@ import { SLIDER, STATIC } from '@utils'
 import posterDataFactory from '@services/posterDataFactory'
 
 // Components
-import Poster from './components/Poster'
+import Poster from './Poster'
 
 class PosterList extends Component {
   constructor(props) {
