@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import { SLIDER, STATIC } from '@utils'
 
 // Services
-import PosterDataFactory from '@services/PosterDataFactory'
+import posterDataFactory from '@services/posterDataFactory'
 
 // Components
 import Poster from './components/Poster'
@@ -33,7 +33,7 @@ class PosterList extends Component {
     const factoryProps = { hoverItem, slideLength, start, type }
 
     return this.props.movies.map((movie, index) => {
-      const posterData = PosterDataFactory(movie, index, factoryProps)
+      const posterData = posterDataFactory(movie, index, factoryProps)
 
       const posterKey = `${name}_Poster_${movie.id}`
 

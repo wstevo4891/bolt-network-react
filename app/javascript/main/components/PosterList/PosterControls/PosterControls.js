@@ -5,8 +5,8 @@ import React, { Component } from 'react'
 import SessionListInterface from '@services/SessionListInterface'
 
 // Components
-import MovieInfo from './components/MovieInfo'
-import ButtonsList from './components/ButtonsList'
+import ButtonsList from './ButtonsList'
+import MovieInfo from './MovieInfo'
 
 // Constants
 import {
