@@ -2,7 +2,7 @@
 
 import { negativeTranslate, translate3D } from './helpers'
 
-export default function SliderTranslateFactory(params) {
+export default function sliderTranslateFactory(params) {
   const factoryParams = sliderParams(params)
 
   const { index, hoverItem } = factoryParams

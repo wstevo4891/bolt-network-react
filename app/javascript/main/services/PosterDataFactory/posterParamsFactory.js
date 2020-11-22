@@ -25,7 +25,7 @@ const sliderParams = (params) => ({
  * 
  * @returns {Object}
  */
-export default function PosterParamsFactory(props) {
+export default function posterParamsFactory(props) {
   switch(props.type) {
     case STATIC:
       return staticParams(props)

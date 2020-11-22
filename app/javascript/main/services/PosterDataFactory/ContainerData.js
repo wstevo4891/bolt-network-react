@@ -1,4 +1,4 @@
-import TranslateFactory from './TranslateFactory'
+import translateFactory from './translateFactory'
 
 const CONTAINER_CLASS = 'poster-container slide-item-'
 
@@ -46,7 +46,7 @@ export default class ContainerData {
   buildHoverStyle(index, params) {
     if (params.hoverItem === null) return this.hoverStyleData()
 
-    const translate = TranslateFactory(index, params)
+    const translate = translateFactory(index, params)
 
     return this.hoverStyleData(translate)
   }

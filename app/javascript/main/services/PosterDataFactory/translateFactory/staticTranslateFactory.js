@@ -2,7 +2,7 @@
 
 import { negativeTranslate, translate3D } from './helpers'
 
-export default function StaticTranslateFactory(params) {
+export default function staticTranslateFactory(params) {
   const { index, hoverItem } = params
 
   if (index < hoverItem) {  

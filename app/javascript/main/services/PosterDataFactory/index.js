@@ -1,7 +1,8 @@
-import { ContainerData, PosterParamsFactory } from './services'
+import ContainerData from './ContainerData'
+import posterParamsFactory from './posterParamsFactory'
 
-export default function PosterDataFactory(movie, index, factoryProps) {
-  const params = PosterParamsFactory(factoryProps)
+export default function posterDataFactory(movie, index, factoryProps) {
+  const params = posterParamsFactory(factoryProps)
 
   return {
     containerData: new ContainerData(index, params),

@@ -1,7 +1,7 @@
 import { SLIDER, STATIC } from '@utils'
 
-import StaticTranslateFactory from './StaticTranslateFactory'
-import SliderTranslateFactory from './SliderTranslateFactory'
+import staticTranslateFactory from './staticTranslateFactory'
+import sliderTranslateFactory from './sliderTranslateFactory'
 
 const POSTER_WIDTH_MULTIPLIER = 0.38
 
@@ -13,16 +13,16 @@ function calcTranslateX() {
   return Math.round(posters[0].clientWidth * POSTER_WIDTH_MULTIPLIER)
 }
 
-export default function TranslateFactory(index, params) {
+export default function translateFactory(index, params) {
   params.index = index
   params.translateX = calcTranslateX()
 
   switch(params.type) {
     case STATIC:
-      return StaticTranslateFactory(params)
+      return staticTranslateFactory(params)
 
     case SLIDER:
-      return SliderTranslateFactory(params)
+      return sliderTranslateFactory(params)
 
     default:
       return null
