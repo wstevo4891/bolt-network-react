@@ -21,10 +21,11 @@ export default function SliderTranslateFactory(params) {
 function sliderParams(params) {
   if (params.start) return params
 
-  params.end = params.limit - 1
-  params.hoverItem = params.hoverItem + params.slideLength
-
-  return params
+  return {
+    ...params,
+    end: params.limit - 1,
+    hoverItem: params.hoverItem + params.slideLength,
+  }
 }
 
 function beforeHoverTranslate(params) {

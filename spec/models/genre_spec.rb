@@ -3,11 +3,13 @@
 require 'rails_helper'
 
 RSpec.describe Genre, type: :model do
-  describe '.match_title' do
-    pending "add some examples to (or delete) #{__FILE__}"
-  end
+  subject { described_class.new }
 
-  describe '.search' do
-    pending "add some examples to (or delete) #{__FILE__}"
+  it 'is valid with valid attributes' do
+    subject.title = 'Action'
+    subject.slug = 'action'
+    subject.alias = 'Action Movies'
+
+    expect(subject).to be_valid
   end
 end

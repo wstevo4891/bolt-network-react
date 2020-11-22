@@ -3,21 +3,24 @@ import PropTypes from 'prop-types'
 
 import PosterControls from './PosterControls'
 
-const PosterControlsWrapper = (props) => {
-  if (props.hoverItem !== props.slideItem) return <span></span>
+const PosterControlsWrapper = ({ hoverItem, movie, slideItem }) => {
+  if (hoverItem !== slideItem) return <span></span>
 
   return(
     <PosterControls
-      movie={props.movie}
-      hoverItem={props.hoverItem}
-      slideItem={props.slideItem}
+      movie={movie}
+      hoverItem={hoverItem}
+      slideItem={slideItem}
     />
   )
 }
 
 PosterControlsWrapper.propTypes = {
   movie: PropTypes.object.isRequired,
-  slideItem: PropTypes.number.isRequired,
+  slideItem: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+  ]).isRequired,
   hoverItem: PropTypes.number,
 }
 

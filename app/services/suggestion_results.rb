@@ -1,34 +1,29 @@
-# Suggestion Results Service
+# frozen_string_literal: true
 
 # Service for building suggestion search results
 class SuggestionResults
   # Error thrown by a suggestion_id that does not match
   # 'genre', 'person', or 'movie'
   class SuggestionIDError < StandardError
-    def message
-      'Malformed suggestion ID'
-    end
   end
 
   attr_reader :movies
 
-  def self.create(suggestion_id)
-    new(suggestion_id).call
-  end
-
   def initialize(suggestion_id)
     @id, @klass = suggestion_id.split('_')
-    @movies = []
-  end
-
-  def call
     @movies = fetch_results
-    self
   end
 
   private
 
   def fetch_results
+    pick_result_type
+  rescue SuggestionIDError => e
+    Rails.logger.error(e.message)
+    []
+  end
+
+  def pick_result_type
     case @klass
     when 'genre'
       suggest_genre
@@ -37,7 +32,7 @@ class SuggestionResults
     when 'movie'
       suggest_movie
     else
-      raise SuggestionIDError
+      raise SuggestionIDError(error_message)
     end
   end
 
@@ -53,5 +48,9 @@ class SuggestionResults
     movie = Movie.includes(genres: [:movies]).find(@id)
 
     [movie].concat(movie.genres.map(&:movies).flatten).uniq
+  end
+
+  def error_message
+    "Malformed suggestion ID: #{@id}_#{@klass}"
   end
 end

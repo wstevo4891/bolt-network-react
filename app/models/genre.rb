@@ -44,6 +44,8 @@ class Genre < ApplicationRecord
                   against: %i[title alias],
                   using: [:tsearch]
 
+  scope :with_movies, -> { includes(:movies).select(:id, :title) }
+
   # == Class Methods ==========================================================
   def self.by_first_char(query)
     where('lower(title) LIKE :prefix', prefix: "#{query}%")

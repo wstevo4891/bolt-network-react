@@ -1,3 +1,4 @@
+export { default as ContainerData } from './ContainerData'
 export { default as ContainerFactory } from './ContainerFactory'
 export { default as HoverStyleFactory } from './HoverStyleFactory'
 export { default as PosterParamsFactory } from './PosterParamsFactory'

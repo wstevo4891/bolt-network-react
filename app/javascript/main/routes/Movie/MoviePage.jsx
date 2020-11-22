@@ -56,19 +56,27 @@ const MoviePage = ({ movie }) => (
   </div>
 )
 
+const STRING_ARRAY = PropTypes.arrayOf(PropTypes.string)
+
 MoviePage.propTypes = {
   movie: PropTypes.shape({
-    actors: PropTypes.array,
-    directors: PropTypes.array,
-    genres: PropTypes.array,
+    actors: STRING_ARRAY,
+    directors: STRING_ARRAY,
+    genres: STRING_ARRAY,
     plot: PropTypes.string,
     poster: PropTypes.string,
     rating: PropTypes.string,
     release_date: PropTypes.string,
-    reviews: PropTypes.array,
+    reviews: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number,
+        source: PropTypes.string,
+        value: PropTypes.string,
+      })
+    ),
     runtime: PropTypes.number,
     title: PropTypes.string,
-    writers: PropTypes.array,
+    writers: STRING_ARRAY,
     year: PropTypes.string,
   }).isRequired,
 }

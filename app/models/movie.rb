@@ -94,16 +94,12 @@ class Movie < ApplicationRecord
 
   scope :lower_title, ->(query) { where('LOWER(title) LIKE ?', query) }
 
-  scope :with_display_data, lambda do
-    includes(:actors, :directors, :reviews, :writers)
-  end
-
   # == Callbacks ==============================================================
 
   # == Class Methods ==========================================================
   def self.index_by_genre
     Rails.cache.fetch('movie.index_by_genre', expires_in: 1.hour) do
-      Genre.includes(:movies).each_with_object({}) do |genre, hash|
+      Genre.with_movies.each_with_object({}) do |genre, hash|
         hash[genre.title] = genre.movies.take(INDEX_LIMIT)
       end
     end
@@ -232,10 +228,5 @@ class Movie < ApplicationRecord
 
   def self.with_related_titles(id)
     includes(genres: [:movies]).find(id)
-  end
-
-  # == Instance Methods =======================================================
-  def formatted_release_date
-    release_date.strftime('%B %e, %Y')
   end
 end

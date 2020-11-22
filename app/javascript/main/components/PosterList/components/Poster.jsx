@@ -1,5 +1,3 @@
-// src/components/Poster/index.jsx
-
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
@@ -7,35 +5,55 @@ import { Link } from 'react-router-dom'
 // Components
 import PosterControlsWrapper from './PosterControlsWrapper'
 
-const Poster = (props) => (
-  <div
-    className={props.containerClass}
-    style={props.containerStyle}
-    onMouseOver={props.mouseOver}
-    onMouseLeave={props.mouseLeave}
-  >
-    <Link to={props.movie.url}>
-      <div className="poster" style={props.posterImage}></div>
-      <div className="poster-overlay"></div>
-    </Link>
+const Poster = (props) => {
+  const {
+    containerData: {
+      className,
+      hoverStyle,
+      slideItem,
+    },
+    hoverItem,
+    mouseOver,
+    mouseLeave,
+    movie,
+    posterImage,
+  } = props
 
-    <PosterControlsWrapper
-      movie={props.movie}
-      hoverItem={props.hoverItem}
-      slideItem={props.slideItem}
-    />
-  </div>
-)
+  return (
+    <div
+      className={className}
+      style={hoverStyle}
+      onMouseOver={(e) => mouseOver(e, slideItem)}
+      onMouseLeave={mouseLeave}
+    >
+      <Link to={movie.url}>
+        <div className="poster" style={posterImage}></div>
+        <div className="poster-overlay"></div>
+      </Link>
+  
+      <PosterControlsWrapper
+        movie={movie}
+        hoverItem={hoverItem}
+        slideItem={slideItem}
+      />
+    </div>
+  )
+}
 
 Poster.propTypes = {
-  containerClass: PropTypes.string,
-  containerStyle: PropTypes.object,
+  containerData: PropTypes.shape({
+    className: PropTypes.string,
+    hoverStyle: PropTypes.object,
+    slideItem: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.string,
+    ]),
+  }).isRequired,
+  hoverItem: PropTypes.number,
   mouseOver: PropTypes.func,
   mouseLeave: PropTypes.func,
   movie: PropTypes.object,
   posterImage: PropTypes.object,
-  hoverItem: PropTypes.number,
-  slideItem: PropTypes.number
 }
 
 export default Poster

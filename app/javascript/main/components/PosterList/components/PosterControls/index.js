@@ -1,5 +1,4 @@
-// app/javascript/main/scenes/components/PosterControls.jsx
-
+// Dependencies
 import React, { Component } from 'react'
 
 // Services
@@ -9,33 +8,12 @@ import SessionListInterface from '@services/SessionListInterface'
 import MovieInfo from './components/MovieInfo'
 import ButtonsList from './components/ButtonsList'
 
-const STATIC = 'static'
-
-const MOVE_DOWN = 'move-down'
-
-const HIDDEN = 'hidden'
-
-const STATUS_MAP = {
-  [null]: {
-    volume: STATIC,
-    like: STATIC,
-    unlike: STATIC,
-  },
-  [true]: {
-    volume: MOVE_DOWN,
-    like: 'move-down-selected',
-    unlike: HIDDEN,
-  },
-  [false]: {
-    volume: MOVE_DOWN,
-    like: HIDDEN,
-    unlike: 'selected',
-  },
-}
-
-const LIKED_LIST = 'LikedList'
-
-const UNLIKED_LIST = 'UnlikedList'
+// Constants
+import {
+  LIKED_LIST,
+  STATUS_MAP,
+  UNLIKED_LIST,
+} from './constants'
 
 export default class PosterControls extends Component {
   constructor(props) {

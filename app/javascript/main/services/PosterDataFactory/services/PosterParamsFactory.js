@@ -1,4 +1,4 @@
-// Poster Params Factory
+import { SLIDER, STATIC } from '@utils'
 
 const staticParams = (params) => ({
   end: params.slideLength - 1,
@@ -27,10 +27,10 @@ const sliderParams = (params) => ({
  */
 export default function PosterParamsFactory(props) {
   switch(props.type) {
-    case 'static':
+    case STATIC:
       return staticParams(props)
 
-    case 'slider':
+    case SLIDER:
       return sliderParams(props)
 
     default:

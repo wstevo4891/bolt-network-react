@@ -35,8 +35,4 @@ class SearchResults
   def person_movies
     @people.first.movies.select_search_columns
   end
-
-  def select_search_columns
-    select(:id, :title, :slug, :photo, :year, :rating, :runtime, :plot, :genres_list)
-  end
 end

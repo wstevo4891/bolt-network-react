@@ -1,7 +1,9 @@
-// Poster List Component
-
+// Dependencies
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+
+// Utils
+import { SLIDER, STATIC } from '@utils'
 
 // Services
 import PosterDataFactory from '@services/PosterDataFactory'
@@ -24,18 +26,20 @@ class PosterList extends Component {
   }
 
   render() {
-    const { slideLength, start, type } = this.props
+    const { slideLength, start, type, name } = this.props
 
-    const hoverItem = this.state.hoverItem
+    const { hoverItem } = this.state
 
     const factoryProps = { hoverItem, slideLength, start, type }
 
     return this.props.movies.map((movie, index) => {
       const posterData = PosterDataFactory(movie, index, factoryProps)
 
+      const posterKey = `${name}_Poster_${movie.id}`
+
       return(
         <Poster
-          key={`${this.props.name}_Poster_${movie.id}`}
+          key={posterKey}
           mouseLeave={this.handleMouseLeave}
           mouseOver={this.handleMouseOver}
           {...posterData}
@@ -44,7 +48,7 @@ class PosterList extends Component {
     })
   }
 
-  handleMouseOver(event) {
+  handleMouseOver(event, slideItem) {
     let mouseOut = false
     const target = event.target.closest('.poster-container')
 
@@ -53,9 +57,7 @@ class PosterList extends Component {
     setTimeout(() => {
       if (mouseOut) return
 
-      const slideIndex = parseInt(target.classList[1].slice(-1), 10)
-
-      this._mounted && this.setState({ hoverItem: slideIndex })
+      this._mounted && this.setState({ hoverItem: slideItem })
     }, 500)
   }
 
@@ -76,7 +78,7 @@ PosterList.propTypes = {
   movies: PropTypes.array.isRequired,
   name: PropTypes.string.isRequired,
   slideLength: PropTypes.number.isRequired,
-  type: PropTypes.oneOf(['slider', 'static']).isRequired,
+  type: PropTypes.oneOf([SLIDER, STATIC]).isRequired,
   start: PropTypes.bool,
 }
 
