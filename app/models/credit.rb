@@ -5,7 +5,7 @@
 # Table: credits
 #
 # id            :integer     not null, primary key
-# role          :string      not null
+# role          :integer     not null
 # contribution  :string
 # movie_id      :integer     not null, foreign key
 # person_id     :integer     not null, foreign key
@@ -24,7 +24,7 @@ class Credit < ApplicationRecord
   # == Relationships ==========================================================
   belongs_to :movie, dependent: :destroy
 
-  belongs_to :person
+  belongs_to :person, dependent: :destroy
 
   # == Validations ============================================================
   validates :movie_id, :person_id, numericality: { only_integer: true }

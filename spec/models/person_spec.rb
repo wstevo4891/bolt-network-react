@@ -1,5 +1,19 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe Person, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Person, type: :model do
+  before :each do
+    clean_database Person, Movie, Credit
+  end
+
+  after :all do
+    clean_database Person, Movie, Credit
+  end
+
+  describe 'associations' do
+    subject { create(:person, traits: [:with_movies]) }
+
+    
+  end
 end

@@ -16,13 +16,17 @@ FactoryBot.define do
       role { 'writer' }
     end
 
-    trait :with_movies do
+    trait :with_movies_and_credits do
       transient do
         movies_count { 3 }
       end
 
       after :create do |person, evaluator|
         create_list(:movie, evaluator.movies_count, people: [person])
+
+        person.movies.each do |movie|
+          create(:credit, role: person.role, movie: movie.id, person: person)
+        end
       end
     end
   end

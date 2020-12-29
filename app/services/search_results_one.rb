@@ -1,5 +1,3 @@
-# app/services/search_results.rb
-
 # Service for search feature
 class SearchResultsOne
   attr_reader :movies, :genres, :people
