@@ -62,9 +62,13 @@ Dir['db/yaml_data/movies/*.yml'].each do |path|
   puts 'Creating people and credits...'
 
   creator.create_credits
+
+  puts "All records created for #{creator.title}"
 end
 
 puts 'Movies Created!'
+
+puts 'Seeding Database Complete!'
 
 # People
 # =============================================================================

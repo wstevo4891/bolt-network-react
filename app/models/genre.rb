@@ -32,20 +32,38 @@ class Genre < ApplicationRecord
 
   MOST_MOVIES_LIMIT = 28
 
+  TOP_GENRES = %w[
+    Action
+    Adventure
+    Comedy
+    Drama
+    Animation
+    Family
+    Romance
+    Fantasy
+    Sci-Fi
+    Horror
+  ].freeze
+
   SEARCH_LIMIT = 10
 
   # == Extensions =============================================================
   include FullTextSearch
 
   # == Relationships ==========================================================
+  belongs_to :parent, class_name: 'Genre'
+
   has_and_belongs_to_many :movies
-  has_many :subgenres
+
+  has_many :sub_genres, class_name: 'Genre'
 
   # == Validations ============================================================
   validates :title, :slug, :alias, presence: true
 
   # == Scopes =================================================================
   scope :with_movies, -> { includes(:movies).select(:id, :title) }
+
+  scope :top, -> { where(title: TOP_GENRES) }
 
   # == Class Methods ==========================================================
   def self.by_first_char(query)

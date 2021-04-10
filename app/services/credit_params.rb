@@ -1,35 +1,34 @@
 # frozen_string_literal: true
 
-# Service for creating rows in credits table
-class CreditCreator
+# Service for building credit params hash
+class CreditParams
   WRITER_REGEX = /(.+)\s\((.+)\)/.freeze
 
-  attr_reader :movie
+  attr_reader :movie, :name, :role, :value
 
-  def initialize(movie)
-    @movie = movie
+  def self.build(movie, role, name)
+    new(movie, role, name).value
   end
 
-  def create_credits(role, data_string)
-    data_string.split(', ').each do |name|
-      params = build_params(role, name)
-
-      Credit.create!(params)
-    end
+  def initialize(movie, role, name)
+    @movie = movie
+    @role = role
+    @name = name
+    @value = build_params
   end
 
   private
 
-  def build_params(role, name)
+  def build_params
     {
-      contribution: credit_contribution(role, name),
+      contribution: credit_contribution,
       movie_id: movie.id,
-      person_id: find_person_id(role, name),
+      person_id: find_person_id,
       role: role
     }
   end
 
-  def credit_contribution(role, name)
+  def credit_contribution
     return nil unless role == MovieRoles::WRITER
 
     match = name.match(WRITER_REGEX)
@@ -39,7 +38,7 @@ class CreditCreator
     match[2]
   end
 
-  def find_person_id(role, name)
+  def find_person_id
     person = Person.find_or_create_by(role: role, name: name)
 
     return person.id if movie_has_person?(person.id)

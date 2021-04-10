@@ -6,7 +6,7 @@ class MovieParams
   FILE_REGEX = %r{/[\w-]+\.yml}.freeze
 
   # == Attribute Methods ======================================================
-  attr_reader :params
+  attr_reader :genres, :file, :movie, :params
 
   # == Class Methods ==========================================================
   def self.build(path, movie)
@@ -17,14 +17,17 @@ class MovieParams
   def initialize(path, movie)
     @file = path[FILE_REGEX]
     @movie = movie
-    @params = params_hash
-    add_genre_params
-    add_remote_url_params
+    @genres = movie['Genre'].split(', ')
+    @params = {
+      **base_params,
+      **genre_params,
+      **remote_url_params
+    }
   end
 
   private
 
-  def params_hash
+  def base_params
     {
       title: @movie['Title'],
       slug: @file.slice(1..-5),
@@ -37,24 +40,32 @@ class MovieParams
     }
   end
 
-  def add_genre_params
-    genres = @movie['Genre'].split(', ')
-
-    @params[:genres_list] = genres.take(3)
-    @params[:genre_ids] = Genre.where(title: genres).pluck(:id)
+  def genre_params
+    {
+      genres_list: @genres.take(3),
+      genre_ids: Genre.where(title: @genres).pluck(:id)
+    }
   end
 
-  def add_remote_url_params
-    poster_file = @file.slice(1..-1).sub('.yml', '-poster.jpg')
+  def remote_url_params
+    params_hash = { remote_photo_url: image_url(poster_file) }
+    return params_hash unless @movie['Banner']
 
-    @params[:remote_photo_url] = image_url(poster_file)
-    return unless @movie['Banner']
-
-    @params[:remote_banner_url] = image_url(@movie['Banner'])
-    @params[:remote_logo_url] = image_url(@movie['Logo'])
+    params_hash.merge(banner_logo_remote_url_params)
   end
 
-  def image_url(file)
-    "https://bolt-network.s3-us-west-2.amazonaws.com/#{file}"
+  def banner_logo_remote_url_params
+    {
+      remote_banner_url: image_url(@movie['Banner']),
+      remote_logo_url: image_url(@movie['Logo'])
+    }
+  end
+
+  def image_url(file_name)
+    "https://bolt-network.s3-us-west-2.amazonaws.com/#{file_name}"
+  end
+
+  def poster_file
+    @file.slice(1..-1).sub('.yml', '-poster.jpg')
   end
 end

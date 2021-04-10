@@ -2,6 +2,8 @@
 
 # Service for generating Movie params to use in seeds.rb script
 class MovieCreator
+  attr_reader :path, :data
+
   delegate :title, to: :@movie
 
   def initialize(path)
@@ -16,15 +18,7 @@ class MovieCreator
   end
 
   def create_reviews
-    reviews = @data['Ratings'].map do |rating|
-      {
-        source: rating['Source'],
-        value: rating['Value'],
-        movie_id: @movie.id
-      }
-    end
-
-    Review.create!(reviews)
+    Review.create!(review_params)
   end
 
   def create_credits
@@ -39,5 +33,17 @@ class MovieCreator
 
   def load_movie_data
     YAML.load_file(Rails.root.join(@path))
+  end
+
+  def review_params
+    movie_id = @movie.id
+
+    @data['Ratings'].map do |rating|
+      {
+        source: rating['Source'],
+        value: rating['Value'],
+        movie_id: movie_id
+      }
+    end
   end
 end
