@@ -1,20 +1,21 @@
 # frozen_string_literal: true
 
-# == Schema Information =======================================================
+# # Table: reviews
+# =============================
 #
-# Table: reviews
+# - id          :integer     not null, primary key
+# - source      :string      not null
+# - value       :string      not null
+# - movie_id    :integer     not null, foreign key
+# - created_at  :datetime    not null
+# - updated_at  :datetime    not null
 #
-# id          :integer     not null, primary key
-# source      :string      not null
-# value       :string      not null
-# movie_id    :integer     not null, foreign key
-# created_at  :datetime    not null
-# updated_at  :datetime    not null
+# ## Indices
+# =============================
 #
-# Indexes =======================================
+# - index_movie_id  (movie_id)
 #
-# index_movie_id  (movie_id)
-#
+# =============================
 class Review < ApplicationRecord
   # == Relationships ==========================================================
   belongs_to :movie, dependent: :destroy

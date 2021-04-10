@@ -1,19 +1,20 @@
 # frozen_string_literal: true
 
-# == Schema Information =======================================================
+# # Table: people
+# =============================
 #
-# Table: people
+# - id          :integer     not null, primary key
+# - name        :string
+# - role        :integer     not null, default: 0
+# - created_at  :datetime    not null
+# - updated_at  :datetime    not null
 #
-# id          :integer     not null, primary key
-# name        :string
-# role        :integer     not null, default: 0
-# created_at  :datetime    not null
-# updated_at  :datetime    not null
+# ## Indices
+# =============================
 #
-# Indexes =======================================
+# - index_role_name  (role, name)
 #
-# index_role_name  (role, name)
-#
+# =============================
 class Person < ApplicationRecord
   # == Extensions =============================================================
   include MovieRoles::Interface

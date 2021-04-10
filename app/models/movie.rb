@@ -1,56 +1,57 @@
 # frozen_string_literal: true
 
-# == Schema Information =======================================================
+# # Table: movies
+# =============================
 #
-# Table: movies
-# =========================================================
+# - id            :integer     not null, primary key
+# - title         :string      not null
+# - slug          :string      not null
+# - year          :integer     not null
+# - rating        :string      not null
+# - release_date  :date        not null
+# - runtime       :integer     not null
+# - plot          :text        not null
+# - photo         :string
+# - banner        :string
+# - logo          :string
+# - poster        :string
+# - genres_list   :string      array: true, default: []
+# - created_at    :datetime    not null
+# - updated_at    :datetime    not null
 #
-# id            :integer     not null, primary key
-# title         :string      not null
-# slug          :string      not null
-# year          :integer     not null
-# rating        :string      not null
-# release_date  :date        not null
-# runtime       :integer     not null
-# plot          :text        not null
-# photo         :string
-# banner        :string
-# logo          :string
-# poster        :string
-# genres_list   :string      array: true, default: []
-# created_at    :datetime    not null
-# updated_at    :datetime    not null
+# ## Join Table: genres_movies
+# =============================
 #
-# Join Table: genres_movies
-# =========================================================
+# - genre_id  :integer
+# - movie_id  :integer
 #
-# genre_id  :integer
-# movie_id  :integer
+# ## Indices
+# =============================
 #
-# Indexes =============================
+# - index_genre_id  (genre_id)
+# - index_movie_id  (movie_id)
 #
-# index_genre_id  (genre_id)
-# index_movie_id  (movie_id)
+# ## Join Table: movies_people
+# =============================
 #
-# Join Table: movies_people
-# =========================================================
+# - movie_id   :integer
+# - person_id  :integer
 #
-# movie_id   :integer
-# person_id  :integer
+# ## Indices
+# =============================
 #
-# Indexes =============================
+# - index_movie_id   (movie_id)
+# - index_person_id  (person_id)
 #
-# index_movie_id   (movie_id)
-# index_person_id  (person_id)
-#
+# =============================
 class Movie < ApplicationRecord
   # == Constants ==============================================================
+  BASE_COLUMNS = %i[id title photo rating runtime genres_list].freeze
+
   FULL_TEXT_SEARCH_SETTINGS = {
     against: %i[title genres_list directors writers actors],
     using: %i[tsearch]
   }.freeze
-
-  INDEX_LIMIT = 24
 
   PERSON = 'Person'
 
@@ -65,6 +66,7 @@ class Movie < ApplicationRecord
 
   # == Extensions =============================================================
   include FullTextSearch
+  include TitleSearch
 
   # == Uploaders ==============================================================
   mount_uploader :photo, PhotoUploader
@@ -99,46 +101,18 @@ class Movie < ApplicationRecord
   # == Callbacks ==============================================================
 
   # == Class Methods ==========================================================
-  def self.index_by_genre
-    Rails.cache.fetch('movie.index_by_genre', expires_in: 1.hour) do
-      Genre.with_movies.each_with_object({}) do |genre, hash|
-        hash[genre.title] = genre.movies.take(INDEX_LIMIT)
-      end
-    end
+  def self.search(query)
+    select(*SEARCH_COLUMNS).match_title(query).limit(SEARCH_LIMITS[:SINGLE])
+  rescue ActiveRecord::RecordNotFound
+    []
+  end
+
+  def self.search_people(query)
+    people.match_name(query)
   end
 
   def self.find_by_genre(genre_id)
     Genre.find(genre_id).movies
-  end
-
-  def self.by_first_char(query)
-    where('lower(title) LIKE :prefix', prefix: "#{query}%")
-  rescue ActiveRecord::RecordNotFound
-    []
-  end
-
-  def self.find_people(query)
-    matches = <<-SQL
-      array_to_string(directors, '||') LIKE :match
-        OR array_to_string(writers, '||') LIKE :match
-        OR array_to_string(actors, '||') LIKE :match
-    SQL
-
-    select(:directors, :writers, :actors).where(matches, match: "%#{query}%")
-  end
-
-  # def self.search(search)
-  #   where('title ~* :search', search: "(#{search})")
-  # end
-
-  def self.lower_case_match(query)
-    where(arel_table[:title].lower.matches("%#{query}%"))
-  end
-
-  def self.title_match(query, limit)
-    lower_case_match(query).limit(limit)
-  rescue ActiveRecord::RecordNotFound
-    []
   end
 
   def self.find_by_genres(genres)
@@ -159,38 +133,8 @@ class Movie < ApplicationRecord
     end
   end
 
-  def self.titles(genre)
+  def self.titles_under_genre(genre)
     joins(:genres).where(genres: { title: genre }).pluck(:title)
-  end
-
-  # def self.search(query)
-  #   match_title(query)
-  #     .or(match_genre(query))
-  #     .or(match_people(query))
-  #     .select_search_columns
-  #     .limit(SEARCH_LIMITS[:SINGLE])
-  # rescue ActiveRecord::RecordNotFound
-  #   []
-  # end
-
-  # def self.search(query)
-  #   match_title(query).select_search_columns.limit(SEARCH_LIMITS[:SINGLE])
-  # rescue ActiveRecord::RecordNotFound
-  #   []
-  # end
-
-  def self.search(query)
-    select(*SEARCH_COLUMNS).match_title(query).limit(SEARCH_LIMITS[:SINGLE])
-  rescue ActiveRecord::RecordNotFound
-    []
-  end
-
-  def self.match_title(query)
-    lower_title("#{query}%").or(lower_title("%#{query}%"))
-  end
-
-  def self.lower_title(query)
-    where('LOWER(title) LIKE ?', query)
   end
 
   def self.match_genre(query)
@@ -201,15 +145,7 @@ class Movie < ApplicationRecord
     Person.match_name(query).first.movies
   end
 
-  # def self.match_people(query)
-  #   actors.match_name(query)
-  #         .or(directors.match_name(query))
-  #         .or(writers.match_name(query))
-  # end
-
   def self.select_search_columns
-    # select(:id, :title, :slug, :photo, :year, :rating, :runtime, :plot, :genres_list)
-
     select(*SEARCH_COLUMNS)
   end
 

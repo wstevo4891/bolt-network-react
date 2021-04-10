@@ -1,4 +1,4 @@
-# app/controllers/api/movies/recent_controller.rb
+# frozen_string_literal: true
 
 module Api
   # Controller for /api/movies/recent route

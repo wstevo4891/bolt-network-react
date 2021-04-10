@@ -1,4 +1,4 @@
-# app/controllers/api_controller.rb
+# frozen_string_literal: true
 
 class ApiController < ApplicationController
 end

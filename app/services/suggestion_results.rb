@@ -32,7 +32,7 @@ class SuggestionResults
     when 'movie'
       suggest_movie
     else
-      raise SuggestionIDError(error_message)
+      raise SuggestionIDError, error_message
     end
   end
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   root to: 'home#index'
 
@@ -11,10 +13,6 @@ Rails.application.routes.draw do
 
   get '/search(/:q)', to: 'home#index'
 
-  if Rails.env.development?
-    get '/query-labs', to: 'query_labs#show'
-  end
-
   namespace :api, defaults: { format: :json } do
     get '/movies-index', to: 'movies_index#index'
 
@@ -27,7 +25,15 @@ Rails.application.routes.draw do
     get '/suggestions/:query/:suggestion_id', to: 'suggestions#show'
 
     namespace :movies do
+      get '/recent', to: 'recent#index'
+
       post '/search', to: 'search#show'
+
+      get '/top-genres', to: 'top_genres#index'
     end
+  end
+
+  costraints Rails.env.development? do
+    get '/query-labs', to: 'query_labs#show'
   end
 end

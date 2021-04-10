@@ -1,4 +1,4 @@
-# app/controllers/api/movies_index_controller.rb
+# frozen_string_literal: true
 
 module Api
   # Movies Index API
@@ -6,7 +6,15 @@ module Api
   class MoviesIndexController < ApiController
     # GET /api/movies-index
     def index
-      @movies_index = Movie.index_by_genre
+      @movies_index = movies_index_from_cache
+    end
+
+    private
+
+    def movies_index_from_cache
+      Rails.cache.fetch('api.movies_index', expires_in: 1.hour) do
+        MoviesIndex.new.value
+      end
     end
   end
 end
