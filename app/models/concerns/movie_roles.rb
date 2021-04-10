@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
-# Module for movie roles constants
+# Module for movie role constants.
+# These numeric values are used in an enum interface
 module MovieRoles
-  ROLES = {
-    actor: 0,
-    director: 1,
-    writer: 2
-  }.freeze
+  ACTOR = 0
+
+  DIRECTOR = 1
+
+  WRITER = 2
 end

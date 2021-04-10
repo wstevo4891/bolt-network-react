@@ -16,7 +16,7 @@
 #
 class Person < ApplicationRecord
   # == Extensions =============================================================
-  include MovieRolesModelInterface
+  include MovieRoles::Interface
 
   # == Relationships ==========================================================
   has_and_belongs_to_many :movies

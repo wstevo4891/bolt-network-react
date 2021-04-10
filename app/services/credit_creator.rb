@@ -2,8 +2,6 @@
 
 # Service for creating rows in credits table
 class CreditCreator
-  include MovieRoles
-
   WRITER_REGEX = /(.+)\s\((.+)\)/.freeze
 
   def initialize(movie)
@@ -13,7 +11,7 @@ class CreditCreator
   def create_credits(role, data_string)
     @role = role
 
-    if @role == ROLES[:writer]
+    if @role == MovieRoles::WRITER
       create_writer_credits(data_string)
     else
       create_default_credits(data_string)
@@ -49,13 +47,13 @@ class CreditCreator
   end
 
   def create_with_match(match)
-    person = find_person(match[1])
+    person_id = find_person(match[1]).id
 
     Credit.create!(
       contribution: match[2],
       role: @role,
       movie_id: @movie.id,
-      person_id: person.id
+      person_id: person_id
     )
   end
 

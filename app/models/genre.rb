@@ -24,13 +24,18 @@
 # index_movie_id  (movie_id)
 #
 class Genre < ApplicationRecord
-  # == Extensions =============================================================
-  include PgSearch::Model
-
   # == Constants ==============================================================
+  FULL_TEXT_SEARCH_SETTINGS = {
+    against: %i[title alias],
+    using: %i[tsearch]
+  }.freeze
+
   MOST_MOVIES_LIMIT = 28
 
   SEARCH_LIMIT = 10
+
+  # == Extensions =============================================================
+  include FullTextSearch
 
   # == Relationships ==========================================================
   has_and_belongs_to_many :movies
@@ -40,10 +45,6 @@ class Genre < ApplicationRecord
   validates :title, :slug, :alias, presence: true
 
   # == Scopes =================================================================
-  pg_search_scope :full_text_search,
-                  against: %i[title alias],
-                  using: [:tsearch]
-
   scope :with_movies, -> { includes(:movies).select(:id, :title) }
 
   # == Class Methods ==========================================================

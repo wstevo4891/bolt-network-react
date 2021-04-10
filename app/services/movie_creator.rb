@@ -2,8 +2,6 @@
 
 # Service for generating Movie params to use in seeds.rb script
 class MovieCreator
-  include MovieRoles
-
   delegate :title, to: :@movie
 
   def initialize(path)
@@ -32,9 +30,9 @@ class MovieCreator
   def create_credits
     creator = CreditCreator.new(@movie)
 
-    creator.create_credits(ROLES[:actor], @data['Actors'])
-    creator.create_credits(ROLES[:director], @data['Director'])
-    creator.create_credits(ROLES[:writer], @data['Writer'])
+    creator.create_credits(MovieRoles::ACTOR, @data['Actors'])
+    creator.create_credits(MovieRoles::DIRECTOR, @data['Director'])
+    creator.create_credits(MovieRoles::WRITER, @data['Writer'])
   end
 
   private

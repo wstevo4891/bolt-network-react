@@ -3,13 +3,14 @@
 module Api
   # Presenter for Movie API
   class MoviePresenter
-    attr_reader :movie, :reviews, :actors, :directors, :writers
+    attr_reader :movie, :reviews, :actors, :directors, :url, :writers
 
     delegate :id, :title, :poster, :year, :rating, :runtime, :plot,
              :genres_list, to: :@movie
 
     def initialize(movie)
       @movie = movie
+      @url = "/movies/#{movie.id}"
       @reviews = reviews_list
       @actors = people_list(:actors)
       @directors = people_list(:directors)
@@ -18,10 +19,6 @@ module Api
 
     def formatted_release_date
       @movie.release_date.strftime('%B %e, %Y')
-    end
-
-    def url
-      "/movies/#{id}"
     end
 
     private

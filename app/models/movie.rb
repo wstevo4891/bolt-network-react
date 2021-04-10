@@ -44,19 +44,27 @@
 # index_person_id  (person_id)
 #
 class Movie < ApplicationRecord
-  # == Extensions =============================================================
-  include MovieRoles
-  include PgSearch::Model
-
   # == Constants ==============================================================
+  FULL_TEXT_SEARCH_SETTINGS = {
+    against: %i[title genres_list directors writers actors],
+    using: %i[tsearch]
+  }.freeze
+
   INDEX_LIMIT = 24
 
   PERSON = 'Person'
+
+  SEARCH_COLUMNS = %i[
+    id title slug photo year rating runtime plot genres_list
+  ].freeze
 
   SEARCH_LIMITS = {
     MULTI: 10,
     SINGLE: 30
   }.freeze
+
+  # == Extensions =============================================================
+  include FullTextSearch
 
   # == Uploaders ==============================================================
   mount_uploader :photo, PhotoUploader
@@ -86,13 +94,7 @@ class Movie < ApplicationRecord
   validates :year, :runtime, numericality: { only_integer: true }
 
   # == Scopes =================================================================
-  pg_search_scope :search_full_text,
-                  against: %i[title genres_list directors writers actors],
-                  using: %i[tsearch]
-
   scope :recent, -> { where('year > ?', 5.years.ago.year) }
-
-  scope :lower_title, ->(query) { where('LOWER(title) LIKE ?', query) }
 
   # == Callbacks ==============================================================
 
@@ -171,14 +173,24 @@ class Movie < ApplicationRecord
   #   []
   # end
 
+  # def self.search(query)
+  #   match_title(query).select_search_columns.limit(SEARCH_LIMITS[:SINGLE])
+  # rescue ActiveRecord::RecordNotFound
+  #   []
+  # end
+
   def self.search(query)
-    match_title(query).select_search_columns.limit(SEARCH_LIMITS[:SINGLE])
+    select(*SEARCH_COLUMNS).match_title(query).limit(SEARCH_LIMITS[:SINGLE])
   rescue ActiveRecord::RecordNotFound
     []
   end
 
   def self.match_title(query)
     lower_title("#{query}%").or(lower_title("%#{query}%"))
+  end
+
+  def self.lower_title(query)
+    where('LOWER(title) LIKE ?', query)
   end
 
   def self.match_genre(query)
@@ -196,7 +208,9 @@ class Movie < ApplicationRecord
   # end
 
   def self.select_search_columns
-    select(:id, :title, :slug, :photo, :year, :rating, :runtime, :plot, :genres_list)
+    # select(:id, :title, :slug, :photo, :year, :rating, :runtime, :plot, :genres_list)
+
+    select(*SEARCH_COLUMNS)
   end
 
   def self.search_all_models(query)
