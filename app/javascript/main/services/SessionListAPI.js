@@ -1,5 +1,5 @@
 /**
- * @object SessionListInterface
+ * @object SessionListAPI
  * 
  * @description Access a list in sessionStorage.
  * Find, add, or remove objects in the list.

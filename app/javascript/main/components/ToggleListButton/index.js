@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import SessionListInterface from '@services/SessionListInterface'
+import SessionListAPI from '@services/SessionListAPI'
 
 import { ToggleIconButton } from '../IconButton'
 
@@ -36,9 +36,9 @@ class ToggleListButton extends Component {
     const { movie, listName } = this.props
 
     if (this.state.inList) {
-      SessionListInterface.remove(movie, listName)
+      SessionListAPI.remove(movie, listName)
     } else {
-      SessionListInterface.add(movie, listName)
+      SessionListAPI.add(movie, listName)
     }
 
     this.setState(
@@ -50,7 +50,7 @@ class ToggleListButton extends Component {
   componentDidMount() {
     const { movie, listName } = this.props
 
-    const movieInList = SessionListInterface.findMovie(movie, listName)
+    const movieInList = SessionListAPI.findMovie(movie, listName)
 
     this.setState({ inList: movieInList })
   }

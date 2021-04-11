@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 
 // Services
-import SessionListInterface from '@services/SessionListInterface'
+import SessionListAPI from '@services/SessionListAPI'
 
 // Components
 import ButtonsList from './ButtonsList'
@@ -71,9 +71,9 @@ export default class PosterControls extends Component {
   getLikeState() {
     const movie = this.props.movie
 
-    if (SessionListInterface.findMovie(movie, LIKED_LIST)) return true
+    if (SessionListAPI.findMovie(movie, LIKED_LIST)) return true
 
-    if (SessionListInterface.findMovie(movie, UNLIKED_LIST)) return false
+    if (SessionListAPI.findMovie(movie, UNLIKED_LIST)) return false
 
     return null
   }
