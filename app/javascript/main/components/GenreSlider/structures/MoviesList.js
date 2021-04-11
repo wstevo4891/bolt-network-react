@@ -24,7 +24,7 @@ export default class MoviesList {
   constructor(slideLength, movies) {
     this.slideLength = slideLength
     this.movies = this.sliceMovies(movies)
-    return this.create()
+    return this.buildList()
   }
 
   sliceMovies(movies) {
@@ -35,27 +35,28 @@ export default class MoviesList {
     return movies.slice(0, slideSize)
   }
 
-  create() {
+  buildList() {
     if (this.movies === null || this.movies.length <= 1) return []
 
-    this.list = new LinkedList()
-    this.buildList()
+    const list = new LinkedList()
 
-    return this.list
+    this.addSlidesToList(list)
+
+    return list
   }
 
-  buildList() {
-    let slideCount = 0
+  addSlidesToList(list) {
+    let count = 0
     let slide = []
 
     for (let movie of this.movies) {
       slide.push(movie)
-      slideCount++
+      count++
 
-      if (slideCount === this.slideLength) {
-        this.list.add(slide)
+      if (count === this.slideLength) {
+        list.add(slide)
         slide = []
-        slideCount = 0
+        count = 0
       }
     }
   }

@@ -25,6 +25,8 @@ Rails.application.routes.draw do
     get '/suggestions/:query/:suggestion_id', to: 'suggestions#show'
 
     namespace :movies do
+      get '/paginated-list/:genre_id/:size/:page', to: 'paginated_list#show'
+
       get '/recent', to: 'recent#index'
 
       post '/search', to: 'search#show'
