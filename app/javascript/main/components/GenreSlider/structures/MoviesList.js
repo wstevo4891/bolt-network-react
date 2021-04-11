@@ -14,19 +14,28 @@ const SLIDE_SIZE_MAP = {
  * @description Service for building linked list of slides
  * for GenreSlider. Each slide is an array of movie objects.
  * 
- * @param {Object} props
- * 
- * @property {Integer} slideLength
- * @property {Array<Object>} movies
- * @property {LinkedList<Node>} list
+ * @property {number} slideLength
+ * @property {Object[]} movies
  */
 export default class MoviesList {
+  /**
+   * @constructor
+   * @param {number} slideLength
+   * @param {Object[]} movies
+   * 
+   * @returns LinkedList
+   */
   constructor(slideLength, movies) {
     this.slideLength = slideLength
     this.movies = this.sliceMovies(movies)
     return this.buildList()
   }
 
+  /**
+   * @function
+   * @param {Array} movies 
+   * @returns Array
+   */
   sliceMovies(movies) {
     if (this.slideLength === 6) return movies
 
