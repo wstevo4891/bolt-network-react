@@ -57,12 +57,12 @@ class GenreSlider extends Component {
   handleArrowClick(direction) {
     this.root.style['pointer-events'] = 'none'
 
-    this.setState({ [direction]: true })
-
-    setTimeout(() => {
-      this.handleTransitionEnd()
-      this.root.style['pointer-events'] = 'auto'
-    }, 1000)
+    this.setState({ [direction]: true }, () => {
+      setTimeout(() => {
+        this.handleTransitionEnd()
+        this.root.style['pointer-events'] = 'auto'
+      }, 1000)
+    })
   }
 
   handleTransitionEnd() {

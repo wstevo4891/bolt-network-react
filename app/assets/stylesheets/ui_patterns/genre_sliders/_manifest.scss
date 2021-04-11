@@ -26,6 +26,7 @@
     text-decoration: none;
     display: inline-block;
     min-width: 6em;
+
     @include bp-mobile {
       font-size: 12px;
     }

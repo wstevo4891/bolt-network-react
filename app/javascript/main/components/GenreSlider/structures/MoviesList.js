@@ -1,6 +1,6 @@
 import LinkedList from './LinkedList'
 
-const MOVIES_PER_SLIDE_LENGTH_MAP = {
+const SLIDE_SIZE_MAP = {
   6: 24,
   5: 20,
   4: 20,
@@ -30,9 +30,9 @@ export default class MoviesList {
   sliceMovies(movies) {
     if (this.slideLength === 6) return movies
 
-    const lastIndex = MOVIES_PER_SLIDE_LENGTH_MAP[this.slideLength]
+    const slideSize = SLIDE_SIZE_MAP[this.slideLength]
 
-    return movies.slice(0, lastIndex)
+    return movies.slice(0, slideSize)
   }
 
   create() {
