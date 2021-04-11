@@ -12,18 +12,16 @@ module Api
     class PaginatedList
       LIMIT_MULTIPLIER = 3
 
-      attr_reader :genre_id, :size, :page, :limit, :offset
+      attr_reader :genre_id, :limit, :offset
 
       def self.fetch(genre_id, size, page)
         new(genre_id, size, page).call
       end
 
-      def initialize(params)
-        @genre_id = params[:genre_id]
-        @size = params[:size]
-        @page = params[:page]
+      def initialize(genre_id: 1, size: 6, page: 0)
+        @genre_id = genre_id
         @limit = size * LIMIT_MULTIPLIER
-        @offset = page_offset
+        @offset = page_offset(size, page)
       end
 
       def call
@@ -32,7 +30,7 @@ module Api
 
       private
 
-      def page_offset
+      def page_offset(size, page)
         return 0 if page == 1
 
         size * page
