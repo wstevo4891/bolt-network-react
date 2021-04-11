@@ -35,7 +35,7 @@ Rails.application.routes.draw do
     end
   end
 
-  costraints Rails.env.development? do
+  constraints Rails.env.development? do
     get '/query-labs', to: 'query_labs#show'
   end
 end
