@@ -23,7 +23,7 @@ gem 'puma', '~> 3.7'
 gem 'sass-rails'
 
 # Use Bootstrap V4 for CSS Framework
-gem 'bootstrap', '~> 4.0.0.beta3'
+gem 'bootstrap', '~> 4.3.1'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
