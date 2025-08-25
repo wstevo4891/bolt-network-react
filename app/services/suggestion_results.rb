@@ -16,6 +16,8 @@ class SuggestionResults
 
   private
 
+  attr_reader :id, :klass
+
   def fetch_results
     pick_result_type
   rescue SuggestionIDError => e
@@ -24,7 +26,7 @@ class SuggestionResults
   end
 
   def pick_result_type
-    case @klass
+    case klass
     when 'genre'
       suggest_genre
     when 'person'
@@ -37,20 +39,20 @@ class SuggestionResults
   end
 
   def suggest_genre
-    Genre.includes(:movies).find(@id).movies
+    Genre.includes(:movies).find(id).movies
   end
 
   def suggest_person
-    Person.includes(:movies).find(@id).movies
+    Person.includes(:movies).find(id).movies
   end
 
   def suggest_movie
-    movie = Movie.includes(genres: [:movies]).find(@id)
+    movie = Movie.includes(genres: [:movies]).find(id)
 
     [movie].concat(movie.genres.map(&:movies).flatten).uniq
   end
 
   def error_message
-    "Malformed suggestion ID: #{@id}_#{@klass}"
+    "Malformed suggestion ID: #{id}_#{klass}"
   end
 end

@@ -1,4 +1,4 @@
-# app/services/omdb_api/client.rb
+# frozen_string_literal: true
 
 module OmdbApi
   class Client

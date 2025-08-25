@@ -1,5 +1,3 @@
-# lib/tasks/movies.rake
-
 require 'services/movies_yaml'
 
 # YAML.dump(hash, file_path)

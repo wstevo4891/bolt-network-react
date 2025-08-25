@@ -1,13 +1,16 @@
-# app/services/omdb_api/api_request.rb
+# frozen_string_literal: true
 
 module OmdbApi
   ##
   # Service for processing API requests to OMDB
-  #
   class ApiRequest
     HEADERS = {
       'Content-Type' => 'application/json'
     }.freeze
+
+    delegate :api_key, :api_path, to: :@client
+
+    delegate :hostname, :port, to: :api_path
 
     def initialize(client: nil)
       @client = client
@@ -27,24 +30,8 @@ module OmdbApi
 
     protected
 
-    def api_key
-      @client.api_key
-    end
-
-    def api_path
-      @client.api_path
-    end
-
     def api_root
-      @client.api_path.to_s
-    end
-
-    def hostname
-      @client.api_path.hostname
-    end
-
-    def port
-      @client.api_path.port
+      api_path.to_s
     end
 
     private

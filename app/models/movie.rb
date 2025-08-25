@@ -46,7 +46,14 @@
 # =============================
 class Movie < ApplicationRecord
   # == Constants ==============================================================
-  BASE_COLUMNS = %i[id title photo rating runtime genres_list].freeze
+  BASE_COLUMNS = %i[
+    id
+    title
+    photo
+    rating
+    runtime
+    genres_list
+  ].freeze
 
   FULL_TEXT_SEARCH_SETTINGS = {
     against: %i[title genres_list directors writers actors],
@@ -56,7 +63,15 @@ class Movie < ApplicationRecord
   PERSON = 'Person'
 
   SEARCH_COLUMNS = %i[
-    id title slug photo year rating runtime plot genres_list
+    id
+    title
+    slug
+    photo
+    year
+    rating
+    runtime
+    plot
+    genres_list
   ].freeze
 
   SEARCH_LIMITS = {
