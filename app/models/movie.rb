@@ -80,7 +80,7 @@ class Movie < ApplicationRecord
   }.freeze
 
   # == Extensions =============================================================
-  include FullTextSearch
+  include PgSearch::Model
   include TitleSearch
 
   # == Uploaders ==============================================================
@@ -111,6 +111,8 @@ class Movie < ApplicationRecord
   validates :year, :runtime, numericality: { only_integer: true }
 
   # == Scopes =================================================================
+  pg_search_scope :full_text_search, FULL_TEXT_SEARCH_SETTINGS
+
   scope :recent, -> { where('year > ?', 5.years.ago.year) }
 
   # == Callbacks ==============================================================

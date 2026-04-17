@@ -30,10 +30,12 @@ class Genre < ApplicationRecord
     using: %i[tsearch]
   }.freeze
 
+  MOVIE = 'Movie'
+
   SEARCH_LIMIT = 10
 
   # == Extensions =============================================================
-  include FullTextSearch
+  include PgSearch::Model
   include TitleSearch
 
   # == Relationships ==========================================================
@@ -45,16 +47,18 @@ class Genre < ApplicationRecord
 
   has_many :index_movies,
            -> { select(*Movie::BASE_COLUMNS) },
-           class_name: 'Movie'
+           class_name: MOVIE
 
   has_many :search_movies,
-           -> { select(*Movie::SEACH_COLUMNS) },
-           class_name: 'Movie'
+           -> { select(*Movie::SEARCH_COLUMNS) },
+           class_name: MOVIE
 
   # == Validations ============================================================
   validates :title, :slug, :alias, presence: true
 
   # == Scopes =================================================================
+  pg_search_scope :full_text_search, FULL_TEXT_SEARCH_SETTINGS
+
   scope :with_movies, -> { includes(:movies) }
 
   # == Class Methods ==========================================================
