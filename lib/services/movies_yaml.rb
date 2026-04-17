@@ -50,7 +50,7 @@ class MoviesYAML
   end
 
   def path_for(title)
-    file = title.gsub(/(\s-\s|:\s|\s)/, '-').downcase + '.yml'
+    file = "#{title.gsub(/(\s-\s|:\s|\s)/, '-').downcase}.yml"
 
     Rails.root.join("db/yaml_data/movies/#{file}")
   end

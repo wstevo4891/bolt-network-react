@@ -8,7 +8,7 @@ module MovieRoles
   WRITER = 2
 
   ROLE_TYPES = %w[actor director writer].freeze
-  
+
   extend ActiveSupport::Concern
 
   included do

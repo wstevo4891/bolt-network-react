@@ -37,8 +37,7 @@ module OmdbApi
     private
 
     def get_request(url)
-      req = Net::HTTP::Get.new(url, HEADERS)
-      req
+      Net::HTTP::Get.new(url, HEADERS)
     end
 
     def post_request(data)

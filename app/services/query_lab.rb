@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Custom SQL Query
 class QueryLab
   def self.call
@@ -14,9 +16,7 @@ class QueryLab
   end
 
   def self.movies_index
-    Genre.all.each_with_object({}) do |genre, hash|
-      hash[genre.title] = genre.movies
-    end
+    Genre.all.to_h { |genre| [genre.title, genre.movies] }
   end
 
   def self.find_people
@@ -107,7 +107,7 @@ class QueryLab
   def self.all_indicies
     ActiveRecord::Base.connection.tables.each do |table|
       indexes = ActiveRecord::Base.connection.indexes(table)
-      next unless indexes.length > 0
+      next unless indexes.any?
 
       puts "====>  #{table} <===="
       indexes.each do |ind|
